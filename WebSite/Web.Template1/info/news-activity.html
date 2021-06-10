@@ -1,0 +1,39 @@
+﻿
+<div class="frame-info-content">
+    <div class="frame-info-tab" data-tab-container="true" data-bind-action="/handler/site/info/columnlist" data-bind-type="list" data-bind-callback="list,news-activity-column" data-bind-data="Type=Activity">
+        <a href="javascript:" class="current" data-colid="0">所有活动</a>
+        <span data-list-element="true">
+            <a href="javascript:" data-colid="${ID}">${Name}</a>
+        </span>
+    </div>
+    <form id="info-news-activity-search">
+        <input type="hidden" name="ColID" value="0" />
+        <input type="hidden" name="Type" value="Activity" />
+    </form>
+
+    <div class="frame-info-news-activity" id="frame-info-news-activity" data-bind-action="/handler/site/info/newslist" data-bind-type="list" data-bind-callback="list" data-bind-search="info-news-activity-search">
+        <ul data-list-element="true">
+            <li>
+                <a href="javascript:">
+                    <img src="${Cover}" class="cover" data-diag-name="info-news-activity" data-diag-type="control" data-diag-src="info/news-detail.html" data-diag-mask="true" data-diag-title="${Title}" data-diag-data="id=${ID}" />
+                </a>
+                <h3>${Title}</h3>
+            </li>
+        </ul>
+    </div>
+</div>
+<script type="text/javascript">
+    BW.callback["news-activity-column"] = function (result) {
+        var t = this;
+        var list = t.dom.element.getElements("a[data-colid]");
+        var current = list[0];
+        list.addEvent("click", function () {
+            if (this == current) return;
+            current.removeClass("current");
+            this.addClass("current");
+            current = this;
+            $("info-news-activity-search").getElement("input[name=ColID]").set("value", current.get("data-colid"));
+            BW.Bind($("frame-info-news-activity")).fire();
+        });
+    };
+</script>

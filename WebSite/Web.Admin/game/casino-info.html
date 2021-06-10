@@ -1,0 +1,76 @@
+﻿<div class="page-table">
+
+    <form action="casino-info.html" method="post" data-bind-action="admin/game/transfercasino" data-bind-type="ajax" data-bind-load="game-casino-check" data-bind-callback="game-casino-check,html">
+        <table class="post" data-scan="true">
+            <tr>
+                <th>扫码：</th>
+                <td>
+                    <input type="password" name="Code" class="txt am-form-field am-text-xl" autocomplete="off" />
+                </td>
+            </tr>
+        </table>
+        <table class="post" style="display:none;" data-show="true">
+            <tr>
+                <td colspan="2">
+                    <p class="am-alert-success am-text-center am-text-xl am-padding am-round">
+                        兑换成功
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <th>用户名：</th>
+                <td>${UserName}</td>
+            </tr>
+            <tr>
+                <th>兑换金额：</th>
+                <td class="am-text-danger am-text-xl">${Money:money}元 (人民币)</td>
+            </tr>
+            <tr>
+                <th>美元：</th>
+                <td class="am-text-danger am-text-xl">
+                    ${Money:money-doller} 元
+                </td>
+            </tr>
+            <tr>
+                <th>菲律宾比索：</th>
+                <td class="am-text-danger am-text-xl">
+                    ${Money:money-pesos} 元
+                </td>
+            </tr>
+        </table>
+    </form>
+
+</div>
+<script type="text/javascript">
+    BW.load["game-casino-check"] = function () {
+        var t = this;
+        var setFocus = function () {
+            var code = t.dom.element.getElement("[name=Code]");
+            if (!code) return;
+            code.focus();
+            setFocus.delay(200);
+        };
+        setFocus.apply(t);
+    };
+
+    BW.callback["game-casino-check"] = function (result) {
+        var t = this;
+        var code = t.dom.element.getElement("[name=Code]");
+
+
+        if (!result.success) {
+            new BW.Tip(result.msg, {
+                "callback": function () {
+                    code.set("value", "");
+                    code.focus();
+                }
+            });
+            return;
+        };
+        t.dom.element.getElement("[data-show]").setStyle("display", null);
+
+        (function () {
+            code.focus();
+        }).delay(1000);
+    }
+</script>

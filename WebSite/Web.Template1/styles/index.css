@@ -1,0 +1,52 @@
+﻿html { height: 100%; background: url(../images/background.jpg) no-repeat fixed; background-size: cover; }
+body { height: 100%; }
+
+
+.container { width: 1220px; margin: auto; padding-top: 12px; }
+
+    .container .banner { width: 1200px; height: 430px; background: url(../images/index-banner.jpg) no-repeat; border: solid 10px #fff; border-radius: 12px; box-shadow: 0px 0px 20px #000; }
+        .container .banner a { background-size: cover; }
+.UI-Image-Banner-index { position: absolute; z-index: 1; text-align: center; width: 100%; bottom: 0px; }
+    .UI-Image-Banner-index a { width: 12px; height: 12px; display: inline-block; background: #fff; cursor: pointer; text-indent: -9999px; border-radius: 50%; margin: auto 5px; }
+        .UI-Image-Banner-index a.current { background: #349aff; box-shadow: 0px 0px 5px #fff; }
+
+
+.container .menu { padding: 10px 0px; }
+    .container .menu a { float: left; width: 370px; height: 130px; background-image: url(../images/index-menu.png); margin: 19px auto; position: relative; border-radius: 18px; overflow: hidden; }
+        .container .menu a:hover { box-shadow: 0px 0px 10px #000; }
+        .container .menu a.center { margin-left: 55px; margin-right: 55px; }
+        .container .menu a::after { display: block; content: " "; background-color: rgb(0,0,0); width: 100%; height: 100%; left: 0px; top: 0px; position: absolute; opacity: 0; transition: all 0.5s; border-radius: 18px; }
+        .container .menu a.mask::after { opacity: 0.8; }
+
+.m1 { background-position: 0px 0px; }
+.m2 { background-position: 0px -130px; }
+.m3 { background-position: 0px -260px; }
+.m4 { background-position: 0px -390px; }
+.m5 { background-position: 0px -520px; }
+.m6 { background-position: 0px -650px; }
+
+.footer { height: 120px; background: url(../images/index-footer.png) no-repeat center center; }
+
+
+
+.diag.login-success { overflow: visible; border-width: 0px; box-shadow: none; }
+    .diag.login-success .diag-title,
+    .diag.login-success .diag-content,
+    .diag.login-success .diag-close { display: none; }
+
+.login-success-box { display: block; width: 100%; height: 100%; left: 0px; top: 0px; }
+    .login-success-box em { width: 64px; height: 47px; background-image: url(../images/loginbox-success.png); background-repeat: no-repeat; position: absolute; transition: all 1.5s; }
+
+
+.activity-news { padding: 10px 0px; display: none; }
+    .activity-news.show { display: block; }
+    .activity-news li { float: left; width: 370px; height: 150px; margin: 10px auto; position: relative; border-radius: 18px; overflow: hidden; transition: all 0.5s; transform: scale(0); }
+        .activity-news li.show { transform: scale(1); }
+        .activity-news li:nth-child(3n-1) { margin-left: 55px; margin-right: 55px; }
+        .activity-news li a { display: block; height: 100%; background:#000 no-repeat center center; background-size: cover; position: relative; }
+            .activity-news li a label { width: 100%; height: 32px; line-height: 32px; background-color: rgba(0,0,0,.5); position: absolute; left: 0px; bottom: 0px; text-align: center; }
+
+.diag-activity { }
+    .diag-activity h1 { text-align: center; padding: 10px; }
+    .diag-activity h4 { text-align: center; color: #666; padding: 10px; }
+    .diag-activity .newsinfo-content { font-size: 14px; line-height: 200%; }

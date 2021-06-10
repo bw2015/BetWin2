@@ -1,0 +1,90 @@
+﻿<!-- 用户中心 -->
+<div class="user-center" data-menu="center">
+    <div class="header-info" data-bind-action="/handler/user/info/get" data-bind-type="ajax" data-bind-callback="html,html-img,user-center">
+        <div class="face">
+            <a href="javascript:OpenFrame('user/center-message.html','站内信');">
+                <img src="images/space.gif" data-src="${FaceShow}" />
+                <span class="message">0</span>
+            </a>
+        </div>
+        <div class="money white">
+            <strong>${TotalMoney:money}</strong>
+            <label>账户总金额</label>
+        </div>
+        <div class="bar sm-3 line2 clear bar-white padding-top-10 padding-bottom-10">
+            <a href="javascript:"><strong class="bold" data-usermoney="true">${Money:money}</strong><label class="block ft12 gray">可用金额</label></a>
+            <a href="javascript:"><strong class="bold">${LockMoney:money}</strong><label class="block ft12 gray">锁定金额</label></a>
+            <a href="javascript:"><strong class="bold">${Wallet:money}</strong><label class="block ft12 gray">游戏金额</label></a>
+        </div>
+    </div>
+
+    <div class="lineHeight"></div>
+
+    <div class="interest bg-white" data-bind-action="/handler/user/money/winstatistic" data-bind-type="ajax" data-bind-callback="html">
+        <div class="mobile-title">
+            <i class="am-icon-line-chart ft16 bold blue"></i>
+            <span class="ft16 gray">盈亏统计</span>
+        </div>
+        <ul class="clear sm-2" data-list-element="true">
+            <li>
+                <span class="ft16 orange bold">${Today:money}</span>
+                <span class="gray ft14">今日盈亏</span>
+            </li>
+            <li>
+                <span class="ft16 orange bold">${Yesterday:money}</span>
+                <span class="gray ft14">昨日盈亏</span>
+            </li>
+            <li onclick="OpenFrame('user/money-recharge.html', '充值记录');">
+                <span class="ft16 orange bold">${Recharge:money}</span>
+                <span class="gray ft14">累计充值</span>
+            </li>
+            <li onclick="OpenFrame('user/money-withdraw.html', '提现记录');">
+                <span class="ft16 orange bold">${Withdraw:money}</span>
+                <span class="gray ft14">累计提现</span>
+            </li>
+        </ul>
+    </div>
+    <div class="lineHeight"></div>
+    <ul class="link-list">
+        <li>
+            <a href="javascript:OpenFrame('user/setting.html','个人资料');">
+                <i class="am-icon-cog blue"></i>
+                个人设置
+            </a>
+        </li>
+        <li>
+            <a href="javascript:OpenFrame('user/team-index.html','团队管理');">
+                <i class="am-icon-group blue"></i>
+                团队管理
+            </a>
+        </li>
+        <li>
+            <a href="javascript:OpenFrame('user/report-index.html','游戏记录');">
+                <i class="am-icon-list blue"></i>
+                游戏记录
+            </a>
+        </li>
+        <li>
+            <a href="login.html#logout">
+                <i class="am-icon-sign-out blue"></i>
+                退出当前用户
+            </a>
+        </li>
+    </ul>
+
+    <div class="lineHeight"></div>
+    <ul class="link-list">
+        <li>
+            <a href="javascript:" data-sound="true">
+                <i class="am-icon-volume-up blue"></i>
+                关闭/开启声音
+            </a>
+        </li>
+        <li data-app="true">
+            <a href="javascript:APP.ClearCache()">
+                <i class="am-icon-bolt blue"></i>
+                清除缓存
+            </a>
+        </li>
+    </ul>
+</div>

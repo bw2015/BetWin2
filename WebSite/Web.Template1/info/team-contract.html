@@ -1,0 +1,78 @@
+﻿<div class="frame-info-content">
+    <div class="team-contract-list">
+        <h3>
+            上级契约
+            <span class="buttons">
+                <a href="javascript:" class="btn btn-blue" data-action="form" data-diag-name="team-contract-add" data-diag-type="control" data-diag-src="info/team-contract-add.html" data-diag-title="工资契约" data-diag-mask="true" data-diag-drag="true" data-diag-data="Type=WagesAgent" data-bind-action="/handler/user/team/getcontractinfo" data-bind-type="ajax" data-bind-callback="team-contract-check" data-bind-data="Type=WagesAgent"><i class="icon icon24 account"></i><s></s>工资契约</a>
+                <a></a>
+                <a href="javascript:" class="btn btn-green" data-action="form" data-diag-name="team-contract-add" data-diag-type="control" data-diag-src="info/team-contract-add.html" data-diag-title="挂单契约" data-diag-mask="true" data-diag-drag="true" data-diag-data="Type=LossWages" data-bind-action="/handler/user/team/getcontractinfo" data-bind-type="ajax" data-bind-callback="team-contract-check" data-bind-data="Type=LossWages"><i class="icon icon24 account"></i><s></s>挂单契约</a>
+                <a></a>
+                <a href="javascript:" class="btn btn-orange" data-action="form" data-diag-name="team-contract-add" data-diag-type="control" data-diag-src="info/team-contract-add.html" data-diag-title="分红契约" data-diag-mask="true" data-diag-drag="true" data-diag-data="Type=Bouns" data-bind-action="/handler/user/team/getcontractinfo" data-bind-type="ajax" data-bind-callback="team-contract-check" data-bind-data="Type=Bouns"><i class="icon icon24 card"></i><s></s>分红契约</a>
+                <a></a>
+                <a href="javascript:" class="btn btn-gray" data-action="form" data-diag-name="team-contract-add" data-diag-type="control" data-diag-src="info/team-contract-add.html" data-diag-title="游戏契约" data-diag-mask="true" data-diag-drag="true" data-diag-data="Type=GameWages" data-bind-action="/handler/user/team/getcontractinfo" data-bind-type="ajax" data-bind-callback="team-contract-check" data-bind-data="Type=GameWages"><i class="icon icon24 card"></i><s></s>游戏契约</a>
+                <a></a>
+                <a href="javascript:" class="btn btn-red" data-action="form" data-diag-name="team-contract-list" data-diag-type="control" data-diag-src="info/team-contract-payment.html" data-diag-title="未发放资金" data-diag-mask="true" data-diag-drag="true" data-diag-width="800"><i class="icon icon24 sign"></i><s></s>未发放资金</a>
+            </span>
+        </h3>
+        <table class="list" data-bind-action="/handler/user/team/contactlist" data-bind-type="list" data-bind-callback="list,team-contact-list" data-bind-data="type=parent">
+            <thead>
+                <tr>
+                    <th>契约类型</th>
+                    <th>签订时间</th>
+                    <th>状态</th>
+                    <th>操作</th>
+                </tr>
+            </thead>
+            <tbody data-list-element="true">
+                <tr>
+                    <td>${Type}</td>
+                    <td>${CreateAt}</td>
+                    <td>${Status}</td>
+                    <td>
+                        <a href="javascript:" class="btn btn-green" data-diag-name="team-contract-detail" data-diag-type="control" data-diag-src="info/team-contract-detail.html" data-diag-data="id=${ID}" data-diag-title="契约详情" data-diag-mask="true" data-diag-drag="true">详情</a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="lineHeight"></div>
+        <div class="lineHeight"></div>
+
+        <h3>
+            下级契约
+        </h3>
+
+        <table class="list" data-bind-action="/handler/user/team/contactlist" id="team-contact-list" data-bind-type="list" data-bind-callback="list,team-contact-list" data-bind-data="type=child">
+            <thead>
+                <tr>
+                    <th>契约类型</th>
+                    <th>下级</th>
+                    <th>签订时间</th>
+                    <th>状态</th>
+                    <th>操作</th>
+                </tr>
+            </thead>
+            <tbody data-list-element="true">
+                <tr>
+                    <td>${Type}</td>
+                    <td>${UserName}</td>
+                    <td>${CreateAt}</td>
+                    <td>${Status}</td>
+                    <td>
+                        <a href="javascript:" class="btn btn-green" data-diag-name="team-contract-detail" data-diag-type="control" data-diag-src="info/team-contract-detail.html" data-diag-data="id=${ID}" data-diag-title="契约详情" data-diag-mask="true" data-diag-drag="true">详情</a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+
+<script type="text/javascript">
+    BW.callback["team-contract-check"] = function (result) {
+        var t = this;
+        if (!result.success) {
+            t.dom.element.dispose();
+        }
+    };
+</script>

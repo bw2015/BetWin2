@@ -1,0 +1,27 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <script src="../studio/scripts/mootools.js"></script>
+    <script src="../studio/scripts/mootools-more.js"></script>
+    <script src="../studio/scripts/betwin.js"></script>
+    <script type="text/javascript">
+        new Request({
+            "url": "/handler/user/money/recharge",
+            "onSuccess": function (result) {
+                document.body.set("html", result);
+                var form = $(document.body).getElement("form");
+                if (form) form.submit();
+            }
+        }).post({
+            "PayID": location.href.get("ID"),
+            "Money": location.href.get("Money"),
+            "BankType": location.href.get("BankCode")
+        });
+    </script>
+</head>
+<body>
+    正在提交充值订单
+</body>
+</html>

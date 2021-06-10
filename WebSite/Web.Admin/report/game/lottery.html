@@ -1,0 +1,42 @@
+﻿<div class="page-header">
+    <h1>彩票报表</h1>
+    <h6>如未填写时间段，则查询当前时间起24小时的数据</h6>
+    <div class="page-searchbox">
+        <form action="lottery.html" method="post">
+            时间段：<input type="datetime-local" name="StartAt" class="txt" /> ～ <input type="datetime-local" name="EndAt" class="txt" />
+            <input type="submit" class="am-btn am-btn-success am-round" value="搜索" />
+            <input type="reset" class="am-btn am-btn-xs am-btn-default am-round" value="重置" />
+        </form>
+    </div>
+</div>
+<div class="page-table">
+    <table class="list" data-bind-action="admin/report/lottery" data-bind-type="list" data-bind-callback="list" data-bind-load="search,list-sort">
+        <thead>
+            <tr>
+                <th>彩种</th>
+                <th data-list-sort="true">投注量</th>
+                <th data-list-sort="true">派奖量</th>
+                <th data-list-sort="true">盈亏</th>
+                <th data-list-sort="true">返奖率</th>
+                <th>操作</th>
+            </tr>
+        </thead>
+        <tbody data-list-element="true">
+            <tr>
+                <td>${Game}</td>
+                <td>${BetMoney:money}</td>
+                <td>${Reward:money}</td>
+                <td>${Money:money-show}</td>
+                <td>${Return:p}</td>
+                <td>
+                    <a href="javascript:" data-diag-name="report-game-lottery-player" data-diag-type="control" data-diag-src="report/game/lottery-player.html" data-diag-width="960" data-diag-height="600" data-diag-title="查看玩法" data-diag-data="Type=${Type}" data-diag-mask="true" data-diag-drag="true">查看玩法</a>
+                    <a href="javascript:" data-diag-name="report-game-lottery-user" data-diag-type="control" data-diag-src="report/game/lottery-user.html" data-diag-width="960" data-diag-height="600" data-diag-title="查看会员" data-diag-data="Type=${Type}" data-diag-mask="true" data-diag-drag="true">查看会员</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<script type="text/javascript">
+   
+</script>

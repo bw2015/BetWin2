@@ -1,0 +1,117 @@
+﻿<div class="page-header">
+    <h1>游戏余额</h1>
+    <form action="credit.html" method="post">
+        <input type="hidden" name="Type" />
+    </form>
+    <div class="page-action">
+        <a href="javascript:" class="am-btn am-btn-primary am-round" data-action="admin/game/updatecredit">批量刷新余额</a>
+    </div>
+</div>
+<div class="page-table">
+    <table class="list" data-bind-action="admin/game/creditlist" data-bind-type="list" data-bind-callback="list,game-credit-list" data-bind-load="pagesplit,search,game-credit-update">
+        <thead>
+            <tr>
+                <th>用户名</th>
+            </tr>
+        </thead>
+        <tbody data-list-element="true">
+            <tr data-userid="${UserID}">
+                <td><a href="javascript:" class="diag-user" data-userid="${UserID}">${UserName}</a></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<script type="text/javascript">
+    BW.callback["game-credit-list"] = function (result) {
+        var t = this;
+        var thead = t.dom.element.getElement("thead tr");
+        var search = t.dom.searchbox;
+        var type = t.dom.searchbox.getElement("[name=Type]");
+        if (!type.get("value")) {
+            type.set("value", 1);
+            var index = 0;
+            var current = null;
+            Object.forEach(result.info.data, function (value, key) {
+                new Element("th", {
+                    "text": value,
+                    "data-type": key,
+                    "class": "sort",
+                    "events": {
+                        "click": function () {
+                            if (current) current.removeClass("desc");
+                            current = this;
+                            current.addClass("desc");
+                            type.set("value", this.get("data-type"));
+                            t.fire();
+                        }
+                    }
+                }).inject(thead);
+                index++;
+            });
+        }
+        var list = new Object();
+        result.info.list.each(function (item) {
+            list[item.UserID] = item;
+        });
+        t.dom.element.getElements("tbody tr[data-userid]").each(function (tr) {
+            var userid = tr.get("data-userid");
+            var user = list[userid].Credit;
+
+            Object.forEach(result.info.data, function (value, key) {
+                new Element("td", {
+                    "text": user[key] ? htmlFunction["money"](user[key]) : "未开户",
+                    "class": user[key] ? "am-text-success" : "am-text-xs"
+                }).inject(tr);
+            });
+
+        });
+    };
+
+    BW.load["game-credit-update"] = function () {
+        var t = this;
+        !function () {
+            var btn = t.dom.element.getParent(".frame-item").getElement("[data-action]");
+            if (!btn) return;
+
+            var action = btn.get("data-action");
+            var post = function (pageIndex) {
+                new Request.JSON({
+                    "url": action,
+                    "onRequest": function () {
+                        btn.set("disabled", true);
+                    },
+                    "onSuccess": function (result) {
+                        var recordCount = result.info.RecordCount.toInt();
+                        var pageSize = result.info.PageSize.toInt();
+                        var maxPage = recordCount % pageSize == 0 ? recordCount / pageSize : Math.floor(recordCount / pageSize) + 1;
+                        if (maxPage > pageIndex) {
+                            btn.addClass("am-btn-danger");
+                            btn.set("text", "当前进度：" + (pageIndex / maxPage).ToString("p"));
+                            post.apply(this, [pageIndex + 1]);
+                        } else {
+                            new BW.Tip("余额刷新完成", {
+                                "callback": function () {
+                                    btn.removeClass("am-btn-danger");
+                                    btn.set({
+                                        "text": "批量刷新余额",
+                                        "disabled": false
+                                    });
+                                    t.fire();
+                                }
+                            });
+                        }
+                    }
+                }).post({
+                    "PageIndex": pageIndex,
+                    "PageSize": 5
+                })
+            }
+            btn.addEvent("click", function () {
+                if (this.get("disabled")) return;
+                this.set("text", "当前进度：0%");
+                post.apply(this, [1]);
+
+            });
+        }();
+    };
+</script>

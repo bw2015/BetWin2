@@ -1,0 +1,41 @@
+﻿<div class="page-header">
+    <h1>第三方参数设定</h1>
+    <h6>第三方接口需预存额度会员才可以转账进入游戏平台</h6>
+    <!--<div class="page-action">
+        <a href="javascript:" class="am-btn am-btn-success" >添加游戏接口</a>
+    </div>-->
+</div>
+<div class="page-table">
+    <table class="list" id="game-setting-list" data-bind-action="admin/game/gamelist" data-bind-type="list" data-bind-callback="list">
+        <thead>
+            <tr>
+                <th>接口类型</th>
+                <th>当前状态</th>
+                <th>提现流水要求</th>
+                <th>总额度</th>
+                <th>当前额度</th>
+                <th>预存比例</th>
+                <th class="w150">操作</th>
+            </tr>
+        </thead>
+        <tbody data-list-element="true">
+            <tr>
+                <td>${TypeName}</td>
+                <td>${IsOpen:open}</td>
+                <td>${Turnover:p}</td>
+                <td>${TotalMoney:money}</td>
+                <td>
+                    <a href="javascript:" class="am-text-default" data-diag-name="game-setting-money" data-diag-type="control" data-diag-src="game/setting-money-log.html" data-diag-title="${TypeName}额度日志" data-diag-mask="true" data-diag-drag="true" data-diag-data="type=${Type}">
+                        ${Money:money}
+                    </a><p class="am-text-xs am-text-success">(${MoneyValue:money}分)</p>
+</td>
+                <td>${Rate:p}</td>
+                <td>
+                    <a href="javascript:" data-diag-name="game-setting" data-diag-type="control" data-diag-src="game/setting-info.html" data-diag-title="${TypeName}接口参数设定" data-diag-mask="true" data-diag-drag="true" data-diag-data="type=${Type}">参数</a>
+                    <a href="javascript:" data-diag-name="game-setting-player" data-diag-type="control" data-diag-src="game/setting-player-info.html" data-diag-title="${TypeName}游戏设定" data-diag-mask="true" data-diag-drag="true" data-diag-width="960" data-diag-height="640" data-diag-data="type=${Type}">游戏</a>
+                    <a href="javascript:">购买额度</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

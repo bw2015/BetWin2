@@ -1,0 +1,37 @@
+﻿body { margin: 0px; padding: 0px; background: url(../images/container.jpg) no-repeat center top; }
+header { width: 100%; height: 65px; background: #2f2f2f; display: block; text-align: center; }
+.w { width: 980px; margin: auto; }
+header #logo { width: 200px; height: 55px; margin: 5px; background: no-repeat center center; background-size: contain; }
+.container { margin: 250px auto auto; background-color: #fff; border-radius: 8px; font-size: 14px; }
+    .container .info { padding: 10px 20px; }
+.website { border: 1px solid #dadee6; padding: 10px; margin: 0px 20px; }
+    .website::after { content: " "; display: block; clear: both; }
+    .website a { float: left; width: 46%; margin: 2%; text-decoration: none; color: #333; line-height: 24px; }
+        .website a::before { display: inline-block; }
+        .website a label { position: relative; display: inline-block; width: 200px; border: 1px solid #ccc; border-radius: 4px; height: 22px; margin-left: 10px; overflow: hidden; text-indent: -100em; vertical-align: middle; }
+        .website a:nth-child(1)::before { content: "登录地址1"; }
+        .website a:nth-child(2)::before { content: "登录地址2"; }
+        .website a:nth-child(3)::before { content: "登录地址3"; }
+        .website a:nth-child(4)::before { content: "登录地址4"; }
+        .website a:nth-child(5)::before { content: "登录地址5"; }
+        .website a:nth-child(6)::before { content: "登录地址6"; }
+        .website a:nth-child(7)::before { content: "登录地址7"; }
+        .website a label::after { position: absolute; top: 0px; left: 0px; width: 0%; height: 11px; margin: 5px 5px; background: url(../images/greenline.png) repeat-x; content: " "; display: block; }
+        .website a.good label::after { width: 80%; background-image: url(../images/greenline.png); }
+        .website a.normal label::after { width: 60%; background-image: url(../images/yellowline.png); }
+        .website a.low label::after { width: 40%; background-image: url(../images/redline.png); }
+        .website a span { position: relative; font-size: 0px; display: inline-block; vertical-align: top; }
+            .website a span::after { position: absolute; left: 0px; top: 0px; content: "立即进入"; display: inline-block; background: -webkit-linear-gradient(#7e7efd, #5c73e6); background: -o-linear-gradient(#7e7efd, #5c73e6); background: -moz-linear-gradient(#7e7efd, #5c73e6); background: linear-gradient(#7e7efd, #5c73e6); color: #fff; border-radius: 6px; text-decoration: none; font-size: 12px; padding: 2px 7px; width: 66px; text-align: center; margin-left: 10px; }
+.tip h2 { font-size: 14px; text-align: center; font-weight: normal; }
+    .tip h2 span::before { content: " "; width: 10px; height: 10px; display: inline-block; border-radius: 50%; vertical-align: middle; margin-right: 2px; }
+    .tip h2 .good::before { background-color: green; }
+    .tip h2 .normal::before { background-color: yellow; }
+    .tip h2 .low::before { background-color: red; }
+
+.tip .test { display: block; margin: auto; width: auto; }
+
+.vaild { background: #e6eaf6; border-radius: 0px 0px 8px 8px; padding: 20px; }
+
+.form { background: #fff; width: 380px; margin: auto; padding: 40px; }
+    .form .txt { background: #e6eaf6; border: 1px solid #bdc3e2; padding: 9px 12px; border-radius: 3px; vertical-align: middle; display: inline-block; width: 200px; }
+    .form .btn { display: inline-block; vertical-align: middle; background-color: #6c78f2; background: -webkit-linear-gradient(#7f80fe, #5b72e5); background: -o-linear-gradient(#7f80fe, #5b72e5); background: -moz-linear-gradient(#7f80fe, #5b72e5); background: linear-gradient(#7f80fe, #5b72e5); width: 72px; height: 36px; text-align: center; color: #fff; text-decoration: none; font-size: 16px; border-radius: 5px; border: none; outline: none; }

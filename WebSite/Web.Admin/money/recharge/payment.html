@@ -1,0 +1,35 @@
+﻿<div class="page-header">
+    <h1>代客充值</h1>
+    <h6>此处提交订单并没有直接到达会员账户，会在充值记录里面生成一笔未付款记录，请到充值记录中进行审核入账。</h6>
+</div>
+
+<div class="page-table">
+    <form action="/admin/money/payment" method="post" data-bind-action="/admin/money/payment" data-bind-type="ajax" data-bind-callback="form-tip" data-bind-load="event-userinfo">
+        <table class="post">
+            <tr>
+                <th>用户名：</th>
+                <td><input type="text" name="UserName" class="txt am-form-field" required="required" data-userinfo="1" /></td>
+            </tr>
+            <tr>
+                <th>充值金额：</th>
+                <td><input type="number" name="Money" class="txt w100 am-form-field" required="required" /> 元</td>
+            </tr>
+            <tr>
+                <th>充值渠道：</th>
+                <td>
+                    <select class="txt am-form-field" name="PayID" data-bind-action="/admin/site/getpaymentlist" data-bind-type="ajax" data-bind-callback="select" data-select-value="ID" data-select-text="Name"></select>
+                </td>
+            </tr>
+            <tr>
+                <th>备注信息：</th>
+                <td><textarea name="Description" class="txt am-form-field" cols="50" rows="2" required="required"></textarea></td>
+            </tr>
+            <tr>
+                <th></th>
+                <td>
+                    <input type="submit" value="提交" class="am-btn am-btn-success am-round" />
+                </td>
+            </tr>
+        </table>
+    </form>
+</div>

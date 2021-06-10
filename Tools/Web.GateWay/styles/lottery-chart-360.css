@@ -1,0 +1,63 @@
+﻿.chart-nav2 { clear: both; overflow: hidden; zoom: 1; background: url(http://p6.qhimg.com/t01905c37d539a00d59.png) repeat-x top #f7f7f7; border: 1px #d8d8d8 solid; border-top: 0; line-height: 25px; padding: 3px 0 4px 15px; }
+    .chart-nav2 li { float: left; width: 470px; color: #d8d8d8; }
+        .chart-nav2 li span { width: 32px; height: 19px; line-height: 19px; text-align: center; vertical-align: middle; background: #e5e5e5; border-radius: 2px; display: inline-block; margin-right: 5px; color: #666; }
+        .chart-nav2 li a { color: #666; margin: 0 1px; }
+        .chart-nav2 li .cur { font-weight: bold; color: #e11000; }
+.btn-prese { display: inline-block; width: 32px; height: 14px; vertical-align: middle; }
+    .btn-prese .add, .btn-prese .cut { float: left; width: 14px; height: 14px; margin-right: 1px; background: url(http://p9.qhimg.com/t018c6d78d5727d9978.png) no-repeat; }
+    .btn-prese .cut { float: left; background-position: -14px 0; }
+    .btn-prese .add:hover { background-position: 0 -16px; }
+    .btn-prese .cut:hover { background-position: -14px -16px; }
+.yun-txt { text-align: left; line-height: 21px; }
+    .yun-txt span { float: right; }
+.chart-tab { padding-right: 1px; }
+    .chart-tab td { height: 20px; font: 12px/1 Tahoma,Helvetica,Arial,'\5b8b\4f53',sans-serif; }
+.zx4 td { height: 18px; }
+.zx5 td { height: 16px; }
+.zx5zh td { height: 18px; }
+.sum { font-size: 14px; }
+.chart-tab .num { font-size: 14px; }
+.w1_7 { width: 1.7%; width: 16px;\9 }
+.w2_1 { width: 2.1%; width: 20px;\9 }
+.w2_2 { width: 2.2%; width: 21px;\9 }
+.w2_3 { width: 2.3%; width: 22px;\9 }
+.w2_4 { width: 2.4%; width: 23px;\9 }
+.w2_5 { width: 2.5%; width: 24px;\9 }
+.w2_6 { width: 2.6%; width: 25px;\9 }
+.w2_7 { width: 2.7%; width: 26px;\9 }
+.w2_8 { width: 2.8%; width: 27px;\9 }
+.w2_9 { width: 2.9%; width: 28px;\9 }
+.w3_0 { width: 3%; width: 29px;\9 }
+.w3_1 { width: 3.1%; width: 30px;\9 }
+.w3_2 { width: 3.2%; width: 31px;\9 }
+.w3_4 { width: 3.4%; width: 33px;\9 }
+.w3_8 { width: 3.8%; width: 37px;\9 }
+.w4_0 { width: 4.0%; width: 39px;\9 }
+.w4_7 { width: 4.7%; width: 46px;\9 }
+.w31 { width: 31px; }
+.w35 { width: 35px; }
+.w40 { width: 40px; }
+.w41 { width: 41px; }
+.w43 { width: 43px; }
+.w45 { width: 45px; }
+.w48 { width: 48px; }
+.w50 { width: 50px; }
+.w52 { width: 52px; }
+.w57 { width: 57px; }
+.w58 { width: 58px; }
+.w60 { width: 60px; }
+.w65 { width: 65px; }
+.w66 { width: 66px; }
+.w70 { width: 70px; }
+.w75 { width: 75px; }
+.w80 { width: 80px; }
+.w90 { width: 90px; }
+.w95 { width: 95px; }
+.w100 { width: 100px; }
+#kline-tab { height: 400px; border: solid #d8d8d8; border-width: 0 1px 1px 1px; position: relative; }
+#kLine { height: 400px; }
+#histo-tab { height: 400px; border: solid #d8d8d8; border-width: 0 1px 1px 1px; position: relative; }
+#histo { height: 400px; }
+
+
+#hd, .site, .chart-hd .logo, .chart-hd .lot, .footer, .quick, .btn-msg, a[href="/kaijiang/ssccq"] { display: none; }

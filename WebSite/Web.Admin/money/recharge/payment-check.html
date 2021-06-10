@@ -1,0 +1,97 @@
+﻿<div class="page-table">
+    <form action="admin/money/rechargecheck" method="post" data-bind-action="/admin/money/rechargecheck" data-bind-type="ajax" data-bind-callback="form-tip" data-bind-form-tip="money-payment-check-result">
+        <table class="post">
+            <tr>
+                <th>充值接口：</th>
+                <td>
+                    <select name="PayID" class="txt am-form-field" data-bind-action="/admin/site/getpaymentlist" data-bind-type="ajax" data-bind-callback="select" data-select-value="ID" data-select-text="Name"></select>
+                </td>
+            </tr>
+            <tr>
+                <th>时间段：</th>
+                <td>
+                    <input type="datetime-local" name="StartAt" class="txt am-form-field"> ～
+                    <input type="datetime-local" name="EndAt" class="txt am-form-field">
+                    <label class="am-text-lg">
+                        <input type="checkbox" name="IsPayment" value="1" data-type="switch" placeholder="到账时间" />
+                        到账时间
+                    </label>
+                </td>
+            </tr>
+            <tr>
+                <th>接口数据：</th>
+                <td>
+                    <textarea cols="72" rows="12" class="txt am-form-field" placeholder="格式：订单编号 金额" style="font-family:'Arial';" name="Content"></textarea>
+                </td>
+            </tr>
+            <tr>
+                <th></th>
+                <td>
+                    <input type="submit" value=" 对账 " class="am-btn am-btn-success am-round" />
+                </td>
+            </tr>
+        </table>
+    </form>
+</div>
+<script type="text/javascript">
+    BW.callback["money-payment-check-result"] = function (result) {
+        var t = this;
+        t.dom.element.empty();
+
+        var table = new Element("table", {
+            "class": "list"
+        });
+
+        var searchbox = new Element("div", {
+            "class": "page-searchbox am-padding-bottom am-padding-top"
+        });
+        var status = new Element("select", {
+            "class": "txt am-form-field",
+            "data-enum-none": "全部状态",
+            "data-enum-name": "BW.Common.Users.RechargeCheckStatus",
+            "events": {
+                "change": function () {
+                    var value = this.get("value");
+                    table.getElements("tbody [data-status]").each(function (item) {
+                        var itemStatus = item.get("data-status");
+                        item.setStyle("display", value == "" || item.get("data-status") == value ? "table-row" : "none");
+                    });
+                }
+            }
+        });
+
+        status.inject(searchbox);
+        searchbox.inject(t.dom.element);
+
+        BW.load["enum"].apply(t);
+
+        new Element("p", {
+            "class": "am-alert-danger am-padding",
+            "html": result.msg
+        }).inject(t.dom.element);
+
+
+
+
+        new Element("thead", {
+            "html": "<tr><th>编号</th><th>本地金额</th><th>网关金额</th><th>状态</th></tr>"
+        }).inject(table);
+
+        var tbody = new Element("tbody");
+
+        result.info.list.each(function (item) {
+            new Element("tr", {
+                "data-status": item.Status,
+                "html": "<td>${ID}</td><td>${Money:money}</td><td>${Amount:money}</td><td>${StatusName:money-payment-check-status}</td>".toHtml(item)
+            }).inject(tbody);
+        });
+        tbody.inject(table);
+
+        table.inject(t.dom.element);
+    };
+
+    htmlFunction["money-payment-check-status"] = function (value) {
+        var status = value == "对单成功" ? "success" : "danger";
+        return "<label class=\"am-text-" + status + "\">" + value + "</label>";
+    };
+</script>

@@ -1,0 +1,42 @@
+﻿<div class="page-header">
+    <h1>平台公告</h1>
+    <div class="page-action am-btn-group">
+        <a href="javascript:" data-diag-name="news-column" data-diag-type="control" data-diag-src="system/setting/news-info.html" data-diag-mask="true" data-diag-title="添加公告" data-diag-drag="true" data-diag-width="1024" data-diag-height="600" class="am-btn am-btn-danger am-round">添加公告</a>
+        <a href="javascript:" data-diag-name="news-column" data-diag-type="control" data-diag-src="system/setting/news-column.html" data-diag-mask="true" data-diag-title="栏目管理" data-diag-drag="true" data-diag-data="Type=News" class="am-btn am-btn-success am-round">栏目管理</a>
+    </div>
+    <div class="page-searchbox">
+        <form action="news.html" method="post">
+            <select class="txt" data-bind-action="admin/news/columnlist" data-bind-type="ajax" data-bind-callback="select" data-select-value="ID" data-select-text="Name"><option>所有栏目</option></select>
+            <input type="text" name="Title" class="txt" placeholder="标题" />
+            <input type="submit" value="搜索" class="am-btn am-btn-success am-round am-text-xs" />
+            <input type="reset" value="重置" class="am-btn am-round am-text-xs" />
+        </form>
+    </div>
+</div>
+<div class="page-table">
+    <table class="list" id="system-setting-news-list" data-bind-action="/admin/news/list" data-bind-type="list" data-bind-callback="list" data-bind-load="search,pagesplit">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>栏目</th>
+                <th>标题</th>
+                <th>添加时间</th>
+                <th>添加人</th>
+                <th>操作</th>
+            </tr>
+        </thead>
+        <tbody data-list-element="true">
+            <tr data-bind-delete="true">
+                <td>${ID}</td>
+                <td>${ColName}</td>
+                <td>${Title}</td>
+                <td>${CreateAt}</td>
+                <td>${Admin}</td>
+                <td>
+                    <a href="javascript:" data-diag-name="news-column" data-diag-type="control" data-diag-src="system/setting/news-info.html" data-diag-mask="true" data-diag-title="添加公告" data-diag-drag="true" data-diag-width="1024" data-diag-height="600" data-diag-data="id=${ID}">修改</a>
+                    <a href="javascript:" data-bind-action-delay="admin/news/delete" data-bind-type="ajax" data-bind-callback="delete" data-bind-data="id=${ID}" data-bind-stop="true" data-bind-event="confirm" data-bind-confirm-tip="确认要删除吗？">删除</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

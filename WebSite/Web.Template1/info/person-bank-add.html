@@ -1,0 +1,109 @@
+﻿
+<form action="/handler/user/info/addcard" method="post" data-bind-action="/handler/user/info/addcard" data-bind-type="ajax" data-bind-callback="diag-form,success-fire" data-bind-fire-target="person-bank-list">
+
+    <table class="post" data-bind-action="/handler/user/info/getwithdrawbank" data-bind-type="ajax" data-bind-callback="person-bank-add">
+        <tr>
+            <th>开户姓名：</th>
+            <td>
+                <input type="text" name="AccountName" class="txt" />
+            </td>
+        </tr>
+        <tr>
+            <th>开户行：</th>
+            <td>
+                <select name="Type" class="txt"></select>
+            </td>
+        </tr>
+        <tr id="info-person-bank-name" style="display:none;">
+            <th>银行名称：</th>
+            <td>
+                <input type="text" name="Bank" class="txt" size="30" maxlength="36" />
+            </td>
+        </tr>
+        <tr>
+            <th>银行帐号：</th>
+            <td>
+                <input type="text" name="Account" class="txt" size="50" maxlength="36" />
+            </td>
+        </tr>
+        <tr>
+            <th>支付密码：</th>
+            <td>
+                <input type="password" class="txt" name="PayPassword" />
+            </td>
+        </tr>
+        <tr>
+            <th></th>
+            <td>
+                <input type="hidden" data-check="account" data-bind-action="/handler/user/info/checkaccount" data-bind-type="ajax" data-bind-stop="true" data-bind-callback="person-bank-checkaccount" />
+                <input type="submit" value=" 保存提现帐号 " class="btn btn-red" />
+            </td>
+        </tr>
+    </table>
+</form>
+
+<script type="text/javascript">
+    if (!BW.callback["person-bank-add"]) {
+        BW.callback["person-bank-add"] = function (result) {
+            var t = this;
+            if (!result.success) {
+                new BW.Tip(result.msg, {
+                    "callback": function () {
+                        BW.callback["diag-close"].apply(t, [result]);
+                    }
+                });
+                return;
+            }
+            var type = t.dom.element.getElement("[name=Type]");
+            var accountName = t.dom.element.getElement("[name=AccountName]");
+            var account = t.dom.element.getElement("[name=Account]");
+            var check = t.dom.element.getElement("input[data-check=account]");
+            if (result.info.AccountName) {
+                new Element("label", {
+                    "class": "red",
+                    "text": result.info.AccountName
+                }).inject(accountName, "after");
+                accountName.dispose();
+            }
+            result.info.BankList.bind(type);
+
+            // 其他银行的判断
+            !function () {
+                var input = $("info-person-bank-name").getElement("input");
+                type.addEvent("change", function () {
+                    var value = this.value;
+                    input.set("value", "");
+                    if (value === "BANK") {
+                        $("info-person-bank-name").setStyle("display", "");
+                    } else {
+                        $("info-person-bank-name").setStyle("display", "none");
+                    }
+                });
+                type.fireEvent("change");
+            }();
+            //account.addEvent("change", function () {
+            //    check.set("data-bind-data", "Account=" + this.get("value"));
+            //    BW.Bind(check).fire();
+            //});
+        }
+    }
+
+    if (!BW.callback["person-bank-checkaccount"]) {
+        BW.callback["person-bank-checkaccount"] = function (result) {
+            var t = this;
+            var table = t.dom.element.getParent("table");
+            var account = table.getElement("[name=Account]");
+            var type = table.getElement("[name=Type]");
+            if (!result.success) {
+                new BW.Tip(result.msg, {
+                    "callback": function () {
+                        account.select();
+                    }
+                });
+                return;
+            }
+            type.set("value", result.info.Type);
+            type.highlight();
+        }
+    }
+</script>

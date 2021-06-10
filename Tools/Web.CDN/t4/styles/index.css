@@ -1,0 +1,27 @@
+﻿body { margin: 0px; padding: 0px; background-color: #252a2e; color: #fff; font-family: sans-serif,微软雅黑; }
+.w { width: 980px; margin: auto; }
+header { height: 110px; border-bottom: 1px solid #4a545c; }
+    header #logo { width: 300px; height: 100px; margin: 5px auto; float: left; background-repeat: no-repeat; background-position: left center; background-size: contain; }
+    header .w::after { content: "温馨提示：测速数值越小，访问速度越快"; float: right; font-size: 16px; line-height: 110px; }
+
+.website { }
+    .website::after { clear: both; display: block; content: " "; }
+    .website a { width: 280px; height: 100px; border-radius: 12px; background-color: #333a40; position: relative; float: left; margin: 20px; color: #fff; text-decoration: none; transition: all 0.5s; }
+        .website a span { display: block; padding: 10px 20px; margin: 0px; font-weight: normal; line-height: 42px; text-align: center; font-size: 22px; }
+        .website a label { position: absolute; width: 100%; top: 50px; text-align: center; font-size: 14px; color: #fff; }
+        .website a.error { background-color: #f00; }
+            .website a.error label::after { content: "检测超时"; }
+        .website a.good { background-color: #51bb5d; }
+        .website a.normal { background-color: #da9e40; }
+        .website a.low { background-color: #da4040; }
+
+.test { background: #5DA3F5; box-shadow: 0 2px 8px 0 #64A6F5; border-radius: 66.68px; color: #fff; font-size: 16px; display: block; width: 130px; height: 40px; line-height: 40px; text-align: center; text-decoration: none; margin: auto; }
+
+
+h1 { text-align: center; }
+h2 { font-size: 16px; font-weight: normal; text-align: center; }
+    h2 span { margin: auto 20px; }
+        h2 span::before { width: 24px; height: 24px; content: " "; display: inline-block; vertical-align: middle; border-radius: 50%; margin-right: 10px; }
+        h2 span.good::before { background-color: #51bb5d; }
+        h2 span.normal::before { background-color: #da9e40; }
+        h2 span.low::before { background-color: #da4040; }

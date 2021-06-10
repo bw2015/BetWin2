@@ -1,0 +1,144 @@
+﻿<div class="page-header">
+    <h1>投注记录</h1>
+    <div class="page-searchbox">
+        <form action="log.html" method="post">
+            <input type="text" name="ID" class="txt w120" placeholder="投注订单" />
+            <input type="text" name="User" class="txt w120" placeholder="用户" />
+            <input type="text" name="Agent" class="txt w120" placeholder="团队名称" />
+            <select name="Type" class="txt" data-bind-action="admin/lottery/gamelist" data-bind-type="ajax" data-bind-callback="select"><option value="">所有彩种</option></select>
+            <input type="text" name="Index" class="txt w120" placeholder="期号" />
+            <input type="datetime-local" name="StartAt" class="txt" placeholder="投注时间（开始）" />
+            <input type="datetime-local" name="EndAt" class="txt" placeholder="投注时间（结束）" />
+            <select name="Status" class="txt" data-enum-name="BW.Common.Lottery.LotteryOrder+OrderStatus" data-enum-none="所有状态"></select>
+            <input name="MinMoney" type="number" class="txt w80" placeholder="投注大于" />
+            <input name="MaxMoney" type="number" class="txt w80" placeholder="投注小于" />
+            <input name="MinReward" type="number" class="txt w80" placeholder="中奖大于" />
+            <input name="MaxReward" type="number" class="txt w80" placeholder="中奖小于" />
+            <input name="Content" type="text" class="txt w100" placeholder="投注内容" />
+            <label for="bet-log-istest">
+                <input type="checkbox" name="NoTest" value="1" id="bet-log-istest" data-type="switch" />
+                不含测试号
+            </label>
+            <input type="submit" value="查找" class="am-btn am-btn-success am-round am-text-xs" />
+            <input type="reset" value="重置" class="am-btn am-btn-default am-round am-text-xs" />
+        </form>
+    </div>
+</div>
+<div class="page-table">
+    <table class="list" data-bind-action="/admin/lottery/betlog" data-bind-type="list" data-bind-load="search,pagesplit" data-bind-callback="list,count,selectall,lottery-log-status">
+        <thead>
+            <tr>
+                <th><input type="checkbox" data-selectall="OrderID" /></th>
+                <th>投注编号</th>
+                <th>用户</th>
+                <th>彩种/彩期</th>
+                <th>玩法</th>
+                <th>投注时间</th>
+                <th>投注内容</th>
+                <th>倍数</th>
+                <th>模式</th>
+                <th>注数/金额</th>
+                <th>中奖/状态</th>
+            </tr>
+        </thead>
+        <tbody data-list-element="true">
+            <tr>
+                <td><input type="checkbox" name="OrderID" value="${ID}" /></td>
+                <td><a href="javascript:" class="am-btn am-btn-secondary am-round am-text-xs" data-diag-name="betinfo" data-diag-data="ID=${ID}" data-diag-title="${Game}[${Index}] 编号：${ID}" data-diag-type="control" data-diag-src="controls/betinfo.html" data-diag-mask="true" data-diag-drag="true" data-diag-width="800" data-diag-height="600">${ID}</a></td>
+                <td><a href="javascript:" class="diag-user" data-userid="${UserID}">${UserName}</a></td>
+                <td><p>${Game}</p><p>${Index}</p></td>
+                <td>${Player}</td>
+                <td>${CreateAt}</td>
+                <td><textarea class="txt" readonly="readonly" data-id="${ID}">${Number}</textarea></td>
+                <td>${Times}</td>
+                <td>${Mode:mode-show}</td>
+                <td>
+                    <p>${Bet}注</p>
+                    <p class="am-text-danger">${Money:money}元</p>
+                </td>
+                <td>
+                    <label data-status="${Status}" data-reward="${Reward}">${Status}</label>
+                </td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <td colspan="2">
+                    <input type="button" class="am-btn am-btn-danger am-text-xs am-round" value="提交撤单" data-action="revoke" />
+                </td>
+                <td colspan="7"></td>
+                <td><label class="am-text-danger">${data.Money:money}</label>元</td>
+                <td><label class="am-text-success">${data.Reward:money}</label>元</td>
+            </tr>
+        </tfoot>
+    </table>
+</div>
+
+<script type="text/javascript">
+    BW.callback["lottery-log-status"] = function (result) {
+        var t = this;
+        t.dom.element.getElements("[data-status]").each(function (item) {
+            var reward = item.get("data-reward").toFloat();
+            var status = item.get("data-status");
+            if (reward > 0) {
+                item.set("html", "<span class=\"am-text-success\">+" + htmlFunction["money"](reward) + "</span>" + (status == "撤单" ? "(撤单)" : ""));
+            } else {
+                item.set("html", "<span class=\"am-text-xs\">" + status + "</span>");
+            }
+        });
+
+        t.dom.element.getElements("textarea").addEvent("dblclick", function (e) {
+            var id = this.get("data-id");
+            new BW.Diag("bet-log-detail", {
+                "name": "bet-log-detail",
+                "data": "id=" + id,
+                "title": "修改投注订单",
+                "type": "control",
+                "src": "lottery/bet/log-detail.html",
+                "mask": true,
+                "drag": true,
+                "width": 800,
+                "height": 600
+            });
+        });
+
+        t.dom.element.getElement("input[data-action=revoke]").addEvent("click", function () {
+            new BW.Tip("您确认要操作批量撤单吗？", {
+                "type": "confirm",
+                "callback": function () {
+                    var list = t.dom.element.getElements("input[name=OrderID]::checked").map(function (item) { return item.get("value"); });
+                    if (list.length == 0) {
+                        new BW.Tip("没有选择要操作的订单");
+                        return;
+                    }
+
+                    var complete = 0;
+                    list.each(function (item) {
+                        new Request.JSON({
+                            "url": "/admin/lottery/revoke",
+                            "onComplete": function () {
+                                complete++;
+                                if (complete == list.length) {
+                                    new BW.Tip("提交完毕", {
+                                        "callback": function () {
+                                            t.fire();
+                                        }
+                                    })
+                                }
+                            },
+                            "onSuccess": function (result) {
+                                new BW.Tip("当前进度：" + complete + "/" + list.length + " " + result.msg, {
+                                    "type": "tip",
+                                    "mask": false
+                                });
+                            }
+                        }).post({
+                            "ID": item
+                        })
+                    });
+                }
+            });
+        });
+    };
+
+</script>

@@ -1,0 +1,9 @@
+﻿table{ width:auto; border-spacing:0px; font-size:12px; border-top:1px solid #808080; border-left:1px solid #808080; }
+table th.first{ width:20px; }
+table th , table td{ padding:3px 4px; }
+table th{ background:#D4D0C8; font-weight:normal; border-left:1px solid #FFFFFF; border-top:1px solid #FFFFFF; border-bottom:1px solid #808080; border-right:1px solid #808080; }
+table td{ border-right:1px solid #D4D0C8; border-bottom:1px solid #D4D0C8; }
+table td div{ width:150px; height:15px; overflow:hidden; }
+table td div input{ font-size:12px; width:150px; }
+table tr.selected th{ background:#D4D0C8 url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAHCAYAAAA8sqwkAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAADNJREFUKFNjYGBg+A/E+ACGPEgAmyaYGDoNVoxPE4YcsgZk09DF4RrJtgHd43j9QHQoAQDR1yTcHiaxAwAAAABJRU5ErkJggg==) no-repeat 4px center; }
+table.disable td div{ color:#cccccc; }

@@ -1,0 +1,51 @@
+﻿<div class="lottery-player lottery-player-p10" data-bind-action="/handler/user/lottery/player" data-bind-type="ajax" data-bind-callback="lottery-player" data-bind-data="parent">
+    <input type="hidden" data-resulttime="OpenTime" />
+    <!-- 开奖记录 -->
+    <div class="lottery-player-body1">
+        <div class="lottery-player-info1">
+            <h3 class="lottery-game-name"></h3>
+            <h4 class="lottery-game-betindex" data-resulttime="BetIndex"></h4>
+            <h5>
+                <span class="tit"><i class="icon16 icon-clock"></i> 销售倒计时</span>
+                <label class="counter-time" data-timer="0" data-resulttime="BetTime"></label>
+            </h5>
+        </div>
+        <div class="lottery-player-info2 loading" data-resulttime="OpenNumber" data-video="PK10,HKSM">
+            <div class="tit">
+                <span class="name text lottery-game-name"></span>
+                <span class="index lottery-game-index" data-resulttime="OpenIndex"></span>
+                <span class="text">期开奖结果</span>
+                <a href="javascript:" class="icon24 sound"></a>
+            </div>
+            <div class="lottery-number lottery-number-p10">
+                <ul>
+                    <li class="index0"></li>
+                    <li class="index1"></li>
+                    <li class="index2"></li>
+                    <li class="index3"></li>
+                    <li class="index4"></li>
+                    <li class="index5"></li>
+                    <li class="index6"></li>
+                    <li class="index7"></li>
+                    <li class="index8"></li>
+                    <li class="index9"></li>
+                </ul>
+            </div>
+        </div>
+        <!-- 彩票信息 -->
+        <div class="lottery-player-info3" data-bind-action-delay="controls/lottery-info.html" data-bind-type="control" data-bind-callback="lottery-player-info">
+
+        </div>
+    </div>
+
+    <!-- 玩法列表 -->
+    <div class="lottery-player-body2" data-bind-action="lottery/bet-player.html" data-bind-type="control" data-bind-callback="lottery-bet-player">
+    </div>
+
+    <!-- 投注记录 -->
+    <div class="lottery-player-body3 frame-info" data-bind-action="lottery/bet-log.html" data-bind-type="control" data-bind-callback="lottery-bet-log">
+    </div>
+
+    <div class="lottery-player-bottom">
+    </div>
+</div>

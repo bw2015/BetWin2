@@ -1,0 +1,71 @@
+﻿<div class="lottery-player lottery-x5" data-bind-action="/handler/user/lottery/player" data-bind-type="ajax" data-bind-callback="lottery-player" data-bind-data="parent">
+    <div class="lottery-player-name">
+        <h3>后三 直选 复式</h3>
+        <a href="javascript:" class="lottery-player-select"><i class="am-icon-chevron-down"></i></a>
+
+        <div class="lottery-player-list">
+
+        </div>
+    </div>
+
+    <div class="lottery-player-betindex ft12 sm-4">
+        <input type="hidden" data-resulttime="OpenTime" />
+        <div class="item" style="width:50%;">
+            当前期：<label class="lottery-game-betindex" data-resulttime="BetIndex"></label>
+        </div>
+        <div class="item">
+            <i class="am-icon-clock-o"></i>
+            <label class="counter-time" data-timer="0" data-resulttime="BetTime">00:00:00</label>
+        </div>
+        <div class="item">
+            <a href="javascript:" class="blue" data-id="betlog">投注记录</a>
+        </div>
+    </div>
+    <div class="lottery-player-result loading" data-resulttime="OpenNumber">
+        <p class="ft12">第<span class="index lottery-game-index" data-resulttime="OpenIndex"></span>期开奖结果</p>
+        <div class="lottery-number lottery-number-x5">
+            <ul>
+                <li class="index0">0</li>
+                <li class="index1">1</li>
+                <li class="index2">2</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="lottery-player-selector">
+        <!-- 选号区 -->
+        <div class="lottery-player-selector-ball" data-dom="container">
+
+        </div>
+        <!-- 单式投注区 -->
+        <div class="lottery-player-selector-single">
+        </div>
+    </div>
+
+    <div class="lottery-player-submit-tool">
+        <div class="lottery-player-submit-mode" data-dom="mode">
+            <a href="javascript:" class="current mode-yuan">元</a>
+            <a href="javascript:" class="mode-angle">角</a>
+            <a href="javascript:" class="mode-points">分</a>
+            <a href="javascript:" class="mode-thousandth">厘</a>
+        </div>
+        <div class="lottery-player-submit-times">
+            <input type="number" class="lottery-player-submit-times-input" placeholder="倍数" min="1" data-dom="times" value="1"> 倍
+        </div>
+    </div>
+
+    <div class="lottery-player-submit">
+        <div class="lottery-player-submit-save">
+            <div class="lottery-player-submit-total ft12">
+                <p>
+                    <span class="text">共<label data-dom="bet" class="red">0</label>注，共<label data-dom="money" class="red">0.00</label>元</span>
+                </p>
+                <p>
+                    <span class="text">当前余额：<label class="red" data-usermoney="true">0.00</label>元</span>
+                </p>
+            </div>
+        </div>
+        <a href="javascript:" class="lottery-player-submit-button btn btn-blue" data-dom=quick>立即投注</a>
+    </div>
+
+</div>

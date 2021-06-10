@@ -1,0 +1,35 @@
+﻿<div class="login-google-code">
+    <form action="login-code.html" data-bind-action="handler/user/account/codelogin" data-bind-type="ajax" data-bind-callback="common-login" data-bind-load="login-getusername">
+        <table class="post">
+            <tr>
+                <th>用户名：</th>
+                <td>
+                    <input type="text" name="UserName" class="txt" />
+                </td>
+            </tr>
+            <tr>
+                <th>谷歌验证码：</th>
+                <td>
+                    <input type="text" name="Code" class="txt" size="6" maxlength="6" />
+                    <a href="help/ga.html" target="_blank" class="blue">如何安装？</a>
+                </td>
+            </tr>
+            <tr>
+                <th></th>
+                <td>
+                    <input type="submit" value=" 快速登录 " class="btn btn-blue padding-5 ft14" />
+                </td>
+            </tr>
+        </table>
+    </form>
+</div>
+
+<script type="text/javascript">
+    BW.load["login-getusername"] = function () {
+        var t = this;
+        var username = document.body.getElement("input[name=UserName]");
+        if (username != null) {
+            t.dom.element.getElement("[name=UserName]").set("value", username.get("value"));
+        }
+    }
+</script>

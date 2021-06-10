@@ -1,0 +1,322 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<!-- 会员、代理的活动策划 -->
+<root>
+  <!-- 真人视频游戏的代理返水 -->
+  <item PlanType="VideoGameAgent" Type="Agent" MoneyType="VideoGameAgent" Name="真人游戏上级返水" Description="设置上级的返水金额，如果返1%则填写0.01，设置为0表示该级别不返水">
+    <MinMoney Name="最低金额" Description="单日累计流水达到该金额才返水，否则不予返还">0</MinMoney>
+    <Agent1 Name="上级" Description="上级的返水比例">0</Agent1>
+    <Agent2 Name="上上级" Description="上上级的返水比例">0</Agent2>
+    <Agent3 Name="上上上级" Description="上上上级的返水比例">0</Agent3>
+  </item>
+
+  <!-- 真人游戏会员反水 -->
+  <item PlanType="VideoGame" Type="User" MoneyType="VideoGame" Name="真人游戏反水" Description="真人游戏自身可以得到的反水，如果返1%则填写0.01">
+    <MinMoney Name="最低金额" Description="单日累计流水达到该金额才返水">0</MinMoney>
+    <Rate Name="反水" Description="反水比例">0</Rate>
+  </item>
+
+  <!-- 电子游戏的代理返水 -->
+  <item PlanType="SlotGameAgent" Type="Agent" MoneyType="SlotGameAgent" Name="电子游戏上级返水" Description="设置上级的返水金额，如果返1%则填写0.01，设置为0表示该级别不返水">
+    <MinMoney Name="最低金额" Description="单日累计流水达到该金额才返水，否则不予返还">0</MinMoney>
+    <Agent1 Name="上级" Description="上级的返水比例">0</Agent1>
+    <Agent2 Name="上上级" Description="上上级的返水比例">0</Agent2>
+    <Agent3 Name="上上上级" Description="上上上级的返水比例">0</Agent3>
+  </item>
+
+  <!-- 电子游戏会员反水 -->
+  <item PlanType="SlotGame" Type="User" MoneyType="SlotGame" Name="电子游戏反水" Description="电子游戏自身可以得到的反水，如果返1%则填写0.01">
+    <MinMoney Name="最低金额" Description="单日累计流水达到该金额才返水">0</MinMoney>
+    <Rate Name="反水" Description="反水比例">0</Rate>
+  </item>
+
+  <!-- 体育游戏代理反水 -->
+  <item PlanType="SportGameAgent" Type="Agent" MoneyType="SportGameAgent" Name="体育游戏上级返水" Description="设置上级的返水金额，如果返1%则填写0.01，设置为0表示该级别不返水">
+    <MinMoney Name="最低金额" Description="单日累计流水达到该金额才返水，否则不予返还">0</MinMoney>
+    <Agent1 Name="上级" Description="上级的返水比例">0</Agent1>
+    <Agent2 Name="上上级" Description="上上级的返水比例">0</Agent2>
+    <Agent3 Name="上上上级" Description="上上上级的返水比例">0</Agent3>
+  </item>
+
+  <!-- 体育游戏会员反水 -->
+  <item PlanType="SportGame" Type="User" MoneyType="SportGame" Name="体育游戏反水" Description="体育游戏自身可以得到的反水，如果返1%则填写0.01">
+    <MinMoney Name="最低金额" Description="单日累计流水达到该金额才返水">0</MinMoney>
+    <Rate Name="反水" Description="反水比例">0</Rate>
+  </item>
+
+  <!-- 彩票上级返点 -->
+  <item PlanType="LotteryBetAgent" Type="Agent" MoneyType="BetAgent" Name="彩票投注返点" Description="按代理的点差进行返点">
+  </item>
+
+  <!-- 日工资 -->
+  <item PlanType="WagesAgent" Type="Agent" MoneyType="WagesAgent" Name="代理工资" Description="工资发给总代，如果工资设置小于1则按百分比发放，如0.01就是当前流水的1%。大于或者等于1则是金额发放">
+    <Period Name="工资周期" Description="代理工资的计算周期，单位为天">1</Period>
+    <Limit Name="仅作点位限制" Description="允许下级工资金额超过上级（点位加工资不超过）">0</Limit>
+
+    <Money1 Name="工资流水1" Description="要求的流水">0</Money1>
+    <Agent1 Name="工资金额1" Description="达到工资流水要求1所发放的工资">0</Agent1>
+
+    <Money2 Name="工资流水2" Description="要求的流水">0</Money2>
+    <Agent2 Name="工资金额2" Description="达到工资流水要求2所发放的工资">0</Agent2>
+
+    <Money3 Name="工资流水3" Description="要求的流水">0</Money3>
+    <Agent3 Name="工资金额3" Description="达到工资流水要求3所发放的工资">0</Agent3>
+
+    <Money4 Name="工资流水4" Description="要求的流水">0</Money4>
+    <Agent4 Name="工资金额4" Description="达到工资流水要求4所发放的工资">0</Agent4>
+
+    <Money5 Name="工资流水5" Description="要求的流水">0</Money5>
+    <Agent5 Name="工资金额5" Description="达到工资流水要求5所发放的工资">0</Agent5>
+  </item>
+
+  <!-- 首充奖励 -->
+  <item PlanType="FirstRecharge" Type="User" MoneyType="RechargeReward" Name="首充奖励" Description="会员第一次充值奖励">
+    <Money1 Name="首充金额1" Description=""></Money1>
+    <Reward1 Name="奖励金额1" Description=""></Reward1>
+    <Money2 Name="首充金额2" Description=""></Money2>
+    <Reward2 Name="奖励金额2" Description=""></Reward2>
+    <Money3 Name="首充金额3" Description=""></Money3>
+    <Reward3 Name="奖励金额3" Description=""></Reward3>
+    <Money4 Name="首充金额4" Description=""></Money4>
+    <Reward4 Name="奖励金额4" Description=""></Reward4>
+    <Money5 Name="首充金额5" Description=""></Money5>
+    <Reward5 Name="奖励金额5" Description=""></Reward5>
+  </item>
+
+  <!-- 彩票的日消费 -->
+  <item PlanType="LotteryConsumption" Type="User" MoneyType="LotteryConsome" Name="彩票消费奖励" Description="会员单日消费总额奖励">
+    <Money1 Name="消费金额1" Description=""></Money1>
+    <Reward1 Name="奖励金额1" Description=""></Reward1>
+    <Money2 Name="消费金额2" Description=""></Money2>
+    <Reward2 Name="奖励金额2" Description=""></Reward2>
+    <Money3 Name="消费金额3" Description=""></Money3>
+    <Reward3 Name="奖励金额3" Description=""></Reward3>
+    <Money4 Name="消费金额4" Description=""></Money4>
+    <Reward4 Name="奖励金额4" Description=""></Reward4>
+    <Money5 Name="消费金额5" Description=""></Money5>
+    <Reward5 Name="奖励金额5" Description=""></Reward5>
+  </item>
+
+  <!-- 绑定银行卡赠送 -->
+  <item PlanType="BankAccount" Type="User" MoneyType="ActivityBindBank" Name="绑定银行卡奖励" Description="会员第一次绑定银行卡赠送">
+    <Reward Name="奖励金额" Description=""></Reward>
+    <Check Name="检查同用户" Description="设置为1标识开启，开启之后如果同一会员注册多个账户不予奖励">0</Check>
+  </item>
+
+  <!-- 彩票单日亏损代理分红 -->
+  <item PlanType="LotteryLossBrokerage" Type="Agent" MoneyType="LossAgent" Name="彩票单日亏损佣金" Description="会员的单日亏损，给上级代理提成">
+    <Level1 Name="级别一" Description="级别一的亏损金额"></Level1>
+    <Agent11 Name="上级" Description="级别一上级可得金额"></Agent11>
+    <Agent12 Name="上上级" Description="级别一上上级可得金额"></Agent12>
+    <Agent13 Name="上上上级" Description="级别一上上上级可得金额"></Agent13>
+
+    <Level2 Name="级别二" Description="级别二的亏损金额"></Level2>
+    <Agent21 Name="上级" Description="级别二上级可得金额"></Agent21>
+    <Agent22 Name="上上级" Description="级别二上上级可得金额"></Agent22>
+    <Agent23 Name="上上上级" Description="级别二上上上级可得金额"></Agent23>
+
+    <Level3 Name="级别三" Description="级别三的亏损金额"></Level3>
+    <Agent31 Name="上级" Description="级别三上级可得金额"></Agent31>
+    <Agent32 Name="上上级" Description="级别三上上级可得金额"></Agent32>
+    <Agent33 Name="上上上级" Description="级别三上上上级可得金额"></Agent33>
+
+    <Level4 Name="级别四" Description="级别四的亏损金额"></Level4>
+    <Agent41 Name="上级" Description="级别四上级可得金额"></Agent41>
+    <Agent42 Name="上上级" Description="级别四上上级可得金额"></Agent42>
+    <Agent43 Name="上上上级" Description="级别四上上上级可得金额"></Agent43>
+
+    <Level5 Name="级别五" Description="级别五的亏损金额"></Level5>
+    <Agent51 Name="上级" Description="级别五上级可得金额"></Agent51>
+    <Agent52 Name="上上级" Description="级别五上上级可得金额"></Agent52>
+    <Agent53 Name="上上上级" Description="级别五上上上级可得金额"></Agent53>
+  </item>
+
+
+  <!-- 分红 -->
+  <item PlanType="Bonus" Type="Agent" MoneyType="TopLossAgent" Name="分红" Description="发放分红给到总代账户">
+    <Period Name="不计分红" Description="计算亏损时是否不包括上次分红">0</Period>
+    <Depth Name="分红层级" Description="0为总代，1为总代直属，依此类推">0</Depth>
+    <UserMoney Name="有效用户" Description="日消费达标到多少元算为有效用户">0</UserMoney>
+    <Rule Name="分红规则" Description="0：需满足所有条件 1：一到三等级日量亏损二者满足其一，等级三以上满足所有条件">0</Rule>
+    
+    <Money1 Name="亏损金额1" Description="团队亏损额">0</Money1>
+    <Sale1 Name="销售业绩1" Description="团队的彩票销售业绩">0</Sale1>
+    <User1 Name="有效用户1" Description="要求达到的有效用户"></User1>
+    <Agent1 Name="分红比例1" Description="达到业绩金额1所发放的亏损分红比例">0</Agent1>
+    
+    <Money2 Name="亏损金额2" Description="团队亏损额">0</Money2>
+    <Sale2 Name="销售业绩2" Description="团队的彩票销售业绩">0</Sale2>
+    <User2 Name="有效用户2" Description="要求达到的有效用户"></User2>
+    <Agent2 Name="分红比例2" Description="达到业绩金额2所发放的亏损分红比例">0</Agent2>
+    
+    <Money3 Name="亏损金额3" Description="团队亏损额">0</Money3>
+    <Sale3 Name="销售业绩3" Description="团队的彩票销售业绩">0</Sale3>
+    <User3 Name="有效用户3" Description="要求达到的有效用户"></User3>
+    <Agent3 Name="分红比例3" Description="达到业绩金额3所发放的亏损分红比例">0</Agent3>
+    
+    <Money4 Name="亏损金额4" Description="团队亏损额">0</Money4>
+    <Sale4 Name="销售业绩4" Description="团队的彩票销售业绩">0</Sale4>
+    <User4 Name="有效用户4" Description="要求达到的有效用户"></User4>
+    <Agent4 Name="分红比例4" Description="达到业绩金额4所发放的亏损分红比例">0</Agent4>
+    
+    <Money5 Name="亏损金额5" Description="团队亏损额">0</Money5>
+    <Sale5 Name="销售业绩5" Description="团队的彩票销售业绩">0</Sale5>
+    <User5 Name="有效用户5" Description="要求达到的有效用户"></User5>
+    <Agent5 Name="分红比例5" Description="达到业绩金额5所发放的亏损分红比例">0</Agent5>
+    
+    <Money6 Name="亏损金额6" Description="团队亏损额">0</Money6>
+    <Sale6 Name="销售业绩6" Description="团队的彩票销售业绩">0</Sale6>
+    <User6 Name="有效用户6" Description="要求达到的有效用户"></User6>
+    <Agent6 Name="分红比例6" Description="达到业绩金额6所发放的亏损分红比例">0</Agent6>
+    
+    <Money7 Name="亏损金额7" Description="团队亏损额">0</Money7>
+    <Sale7 Name="销售业绩7" Description="团队的彩票销售业绩">0</Sale7>
+    <User7 Name="有效用户7" Description="要求达到的有效用户"></User7>
+    <Agent7 Name="分红比例7" Description="达到业绩金额7所发放的亏损分红比例">0</Agent7>
+    
+    <Money8 Name="亏损金额8" Description="团队亏损额">0</Money8>
+    <Sale8 Name="销售业绩8" Description="团队的彩票销售业绩">0</Sale8>
+    <User8 Name="有效用户8" Description="要求达到的有效用户"></User8>
+    <Agent8 Name="分红比例8" Description="达到业绩金额8所发放的亏损分红比例">0</Agent8>
+    
+    <Money9 Name="亏损金额9" Description="团队亏损额">0</Money9>
+    <Sale9 Name="销售业绩9" Description="团队的彩票销售业绩">0</Sale9>
+    <User9 Name="有效用户9" Description="要求达到的有效用户"></User9>
+    <Agent9 Name="分红比例9" Description="达到业绩金额9所发放的亏损分红比例">0</Agent9>
+    
+    <Money10 Name="亏损金额10" Description="团队亏损额">0</Money10>
+    <Sale10 Name="销售业绩10" Description="团队的彩票销售业绩">0</Sale10>
+    <User10 Name="有效用户10" Description="要求达到的有效用户"></User10>
+    <Agent10 Name="分红比例10" Description="达到业绩金额10所发放的亏损分红比例">0</Agent10>
+    
+    <Money11 Name="亏损金额11" Description="团队亏损额">0</Money11>
+    <Sale11 Name="销售业绩11" Description="团队的彩票销售业绩">0</Sale11>
+    <User11 Name="有效用户11" Description="要求达到的有效用户"></User11>
+    <Agent11 Name="分红比例11" Description="达到业绩金额11所发放的亏损分红比例">0</Agent11>
+    
+    <Money12 Name="亏损金额12" Description="团队亏损额">0</Money12>
+    <Sale12 Name="销售业绩12" Description="团队的彩票销售业绩">0</Sale12>
+    <User12 Name="有效用户12" Description="要求达到的有效用户"></User12>
+    <Agent12 Name="分红比例12" Description="达到业绩金额12所发放的亏损分红比例">0</Agent12>
+  </item>
+
+  <!-- 指定层级分红 -->
+  <item PlanType="SingleBonus" Type="Agent" MoneyType="SingleBonus" Name="单级分红" Description="单级别分红">
+    <!--<Period Name="不计分红" Description="计算亏损时是否不包括上次分红">0</Period>-->
+    <Depth Name="分红层级" Description="0为总代，1为总代直属，依此类推">0</Depth>
+    <UserMoney Name="有效人数" Description="达到指定投注金额才算有效人数">0</UserMoney>
+    <Type Name="结算规则" Description="0：需要满足所有条件 1：销售业绩与亏损金额满足其一">0</Type>
+    <!--<UserIP Name="过滤IP" Description="结算周期内的同IP不算有效用户">0</UserIP>
+    <Time Name="亏损周期" Description="周期内结算需包含上一次的业绩,0：不开启 1：一星期 2：半个月 3：一个月">0</Time>-->
+
+    <Money1 Name="亏损金额1" Description="要求的亏损业绩">0</Money1>
+    <Sale1 Name="销售业绩1" Description="要求的销售业绩">0</Sale1>
+    <User1 Name="有效人数1" Description="要求达到的有效人数">0</User1>
+    <Agent1 Name="分红比例1" Description="1级别的分红比例">0</Agent1>
+
+    <Money2 Name="亏损金额2" Description="要求的亏损业绩">0</Money2>
+    <Sale2 Name="销售业绩2" Description="要求的销售业绩">0</Sale2>
+    <User2 Name="有效人数3" Description="要求达到的有效人数">0</User2>
+    <Agent2 Name="分红比例2" Description="2级别的分红比例">0</Agent2>
+
+    <Money3 Name="亏损金额3" Description="要求的亏损业绩">0</Money3>
+    <Sale3 Name="销售业绩3" Description="要求的销售业绩">0</Sale3>
+    <User3 Name="有效人数3" Description="要求达到的有效人数">0</User3>
+    <Agent3 Name="分红比例3" Description="3级别的分红比例">0</Agent3>
+
+    <Money4 Name="亏损金额4" Description="要求的亏损业绩">0</Money4>
+    <Sale4 Name="销售业绩4" Description="要求的销售业绩">0</Sale4>
+    <User4 Name="有效人数4" Description="要求达到的有效人数">0</User4>
+    <Agent4 Name="分红比例4" Description="4级别的分红比例">0</Agent4>
+
+    <Money5 Name="亏损金额5" Description="要求的亏损业绩">0</Money5>
+    <Sale5 Name="销售业绩5" Description="要求的销售业绩">0</Sale5>
+    <User5 Name="有效人数5" Description="要求达到的有效人数">0</User5>
+    <Agent5 Name="分红比例5" Description="5级别的分红比例">0</Agent5>
+
+    <Money6 Name="亏损金额6" Description="要求的亏损业绩">0</Money6>
+    <Sale6 Name="销售业绩6" Description="要求的销售业绩">0</Sale6>
+    <User6 Name="有效人数6" Description="要求达到的有效人数">0</User6>
+    <Agent6 Name="分红比例6" Description="6级别的分红比例">0</Agent6>
+
+    <Money7 Name="亏损金额7" Description="要求的亏损业绩">0</Money7>
+    <Sale7 Name="销售业绩7" Description="要求的销售业绩">0</Sale7>
+    <User7 Name="有效人数7" Description="要求达到的有效人数">0</User7>
+    <Agent7 Name="分红比例7" Description="7级别的分红比例">0</Agent7>
+
+    <Money8 Name="亏损金额8" Description="要求的亏损业绩">0</Money8>
+    <Sale8 Name="销售业绩8" Description="要求的销售业绩">0</Sale8>
+    <User8 Name="有效人数8" Description="要求达到的有效人数">0</User8>
+    <Agent8 Name="分红比例8" Description="8级别的分红比例">0</Agent8>
+
+    <Money9 Name="亏损金额9" Description="要求的亏损业绩">0</Money9>
+    <Sale9 Name="销售业绩9" Description="要求的销售业绩">0</Sale9>
+    <User9 Name="有效人数9" Description="要求达到的有效人数">0</User9>
+    <Agent9 Name="分红比例9" Description="9级别的分红比例">0</Agent9>
+    
+    <Money10 Name="亏损金额10" Description="要求的亏损业绩">0</Money10>
+    <Sale10 Name="销售业绩10" Description="要求的销售业绩">0</Sale10>
+    <User10 Name="有效人数10" Description="要求达到的有效人数">0</User10>
+    <Agent10 Name="分红比例10" Description="10级别的分红比例">0</Agent10>
+    
+    <Money11 Name="亏损金额11" Description="要求的亏损业绩">0</Money11>
+    <Sale11 Name="销售业绩11" Description="要求的销售业绩">0</Sale11>
+    <User11 Name="有效人数11" Description="要求达到的有效人数">0</User11>
+    <Agent11 Name="分红比例11" Description="11级别的分红比例">0</Agent11>
+
+    <Money12 Name="亏损金额12" Description="要求的亏损业绩">0</Money12>
+    <Sale12 Name="销售业绩12" Description="要求的销售业绩">0</Sale12>
+    <User12 Name="有效人数12" Description="要求达到的有效人数">0</User12>
+    <Agent12 Name="分红比例12" Description="12级别的分红比例">0</Agent12>
+  </item>
+
+  <!-- 挂单工资 -->
+  <item PlanType="LossWages" Type="Agent" MoneyType="LossWagesAgent" Name="挂单工资" Description="按照挂单的流水发放给总代。如0.01就是当前流水的1%。">
+    <Member Name="有效人数金额" Description="当日投注累计达到金额才算做是有效人数"></Member>
+
+    <Money1 Name="挂单金额1" Description="要求的挂单流水">0</Money1>
+    <Member1 Name="有效人数1" Description="要求的有效人数数量">0</Member1>
+    <Agent1 Name="挂单工资1" Description="挂单工资级别1所发放的工资，如0.01就是当前流水的1%。">0</Agent1>
+
+    <Money2 Name="挂单金额2" Description="要求的挂单流水">0</Money2>
+    <Member2 Name="有效人数2" Description="要求的有效人数数量">0</Member2>
+    <Agent2 Name="挂单工资2" Description="挂单工资级别2所发放的工资，如0.01就是当前流水的1%。">0</Agent2>
+
+    <Money3 Name="挂单金额3" Description="要求的挂单流水">0</Money3>
+    <Member3 Name="有效人数3" Description="要求的有效人数数量">0</Member3>
+    <Agent3 Name="挂单工资3" Description="挂单工资级别3所发放的工资，如0.01就是当前流水的1%。">0</Agent3>
+
+    <Money4 Name="挂单金额4" Description="要求的挂单流水">0</Money4>
+    <Member4 Name="有效人数4" Description="要求的有效人数数量">0</Member4>
+    <Agent4 Name="挂单工资4" Description="挂单工资级别4所发放的工资，如0.01就是当前流水的1%。">0</Agent4>
+
+    <Money5 Name="挂单金额5" Description="要求的挂单流水">0</Money5>
+    <Member5 Name="有效人数5" Description="要求的有效人数数量">0</Member5>
+    <Agent5 Name="挂单工资5" Description="挂单工资级别5所发放的工资，如0.01就是当前流水的1%。">0</Agent5>
+
+    <Money6 Name="挂单金额6" Description="要求的挂单流水">0</Money6>
+    <Member6 Name="有效人数6" Description="要求的有效人数数量">0</Member6>
+    <Agent6 Name="挂单工资6" Description="挂单工资级别6所发放的工资，如0.01就是当前流水的1%。">0</Agent6>
+
+    <Money7 Name="挂单金额7" Description="要求的挂单流水">0</Money7>
+    <Member7 Name="有效人数7" Description="要求的有效人数数量">0</Member7>
+    <Agent7 Name="挂单工资7" Description="挂单工资级别7所发放的工资，如0.01就是当前流水的1%。">0</Agent7>
+
+    <Money8 Name="挂单金额8" Description="要求的挂单流水">0</Money8>
+    <Member8 Name="有效人数8" Description="要求的有效人数数量">0</Member8>
+    <Agent8 Name="挂单工资8" Description="挂单工资级别8所发放的工资，如0.01就是当前流水的1%。">0</Agent8>
+
+    <Money9 Name="挂单金额9" Description="要求的挂单流水">0</Money9>
+    <Member9 Name="有效人数9" Description="要求的有效人数数量">0</Member9>
+    <Agent9 Name="挂单工资9" Description="挂单工资级别9所发放的工资，如0.01就是当前流水的1%。">0</Agent9>
+  </item>
+
+  <!-- 第三方游戏日工资 -->
+  <item PlanType="GameWages" Type="Agent" MoneyType="GameWages" Name="游戏工资" Description="第三方游戏的日工资,如1%请填写0.01">
+    <PT Name="PT工资" Description="PT的流水工资">0.00</PT>
+    <AG Name="AG工资" Description="AG的流水工资">0.00</AG>
+    <BBIN Name="BBIN工资" Description="BBIN的流水工资">0.00</BBIN>
+    <MG Name="MG工资" Description="MG的流水工资">0.00</MG>
+    <SunBet Name="申博工资" Description="申博的流水工资">0.00</SunBet>
+    <MW Name="MW工资" Description="MW的流水工资">0.00</MW>
+  </item>
+</root>

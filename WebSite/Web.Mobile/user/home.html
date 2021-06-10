@@ -1,0 +1,66 @@
+﻿<div data-menu="home" class="user-home">
+    <div class="recommend">
+        <div class="banner" style="height:100px"></div>
+        <div data-bind-action="/handler/site/info/newslist" data-bind-type="list" data-bind-callback="list" data-bind-data="pagesize=1">
+            <div class="news" data-list-element="true">
+                <i class="am-icon-bell ft16 orange"></i>
+                <a href="javascript:OpenFrame('user/home-news.html','查看公告','id=${ID}');">${Title}</a>
+            </div>
+        </div>
+    </div>
+    <div class="header-info">
+        <div class="bar sm-3 bar-white">
+            <a href="javascript:OpenFrame('user/finance-recharge.html','充值');">充值</a>
+            <a href="javascript:OpenFrame('user/finance-withdraw.html','提现');">提现</a>
+            <a href="javascript:OpenFrame('user/finance-transfer.html','转账');">转账</a>
+        </div>
+    </div>
+    <div class="lineHeight"></div>
+    <div class="game" data-bind-action="/handler/user/lottery/list" data-bind-type="list" data-bind-callback="list">
+        <div class="mobile-title">
+            <i class="am-icon-star ft18 blue"></i>
+            <span class="ft16 bold">彩票游戏</span>
+        </div>
+        <div class="clear lottery-list" data-list-element="true">
+            <a href="javascript:OpenFrame('user/lottery-${Category:lower}.html','${Name}','Game=${Game}&IsMobile=1')">
+                <i class="icon48 ${Game}"></i>
+                <span>${Name}</span>
+            </a>
+        </div>
+    </div>
+    <div class="lineHeight"></div>
+
+    <div class="game">
+        <div class="mobile-title">
+            <i class="am-icon-star ft18 blue"></i>
+            <span class="ft16 bold">其他游戏</span>
+        </div>
+        <ul class="clear">
+            <li>
+                <a href="javascript:userOpen('../controls/game-entry.html?Type=AG');" class="bg-blue">
+                    <i class="am-icon-video-camera"></i>
+                    真人游戏
+                </a>
+            </li>
+            <li>
+                <a href="javascript:OpenFrame('user/game-pt.html','电子游戏');" class="bg-orange">
+                    <i class="am-icon-tv"></i>
+                    电子游戏
+                </a>
+            </li>
+            <li>
+                <a href="javascript:userOpen('../controls/game-entry.html?Type=AG&Game=7');" class="bg-red">
+                    <i class="am-icon-pied-piper-alt"></i>
+                    AG捕鱼王
+                </a>
+            </li>
+            <li>
+                <a href="javascript:alert('开发中');" class="bg-green">
+                    <i class="am-icon-soccer-ball-o"></i>
+                    体育赛事
+                </a>
+            </li>
+        </ul>
+    </div>
+
+</div>

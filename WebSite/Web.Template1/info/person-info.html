@@ -1,0 +1,59 @@
+﻿<div class="diag-tip red" data-bind-action="/handler/user/account/getinfo" data-bind-type="ajax" data-bind-callback="frame-person-diag-info">
+    温馨提示：联系信息设定之后将不能修改，请正确填写。您的联系信息在平台任何区域都不会完整显示。
+</div>
+<form action="/handler/user/account/saveinfo" data-bind-action="/handler/user/account/saveinfo" data-bind-type="ajax" data-bind-callback="diag-form">
+    <table class="post">
+        <tr>
+            <th>昵称：</th>
+            <td>
+                <input type="text" name="NickName" class="txt" />
+            </td>
+        </tr>
+        <tr>
+            <th>QQ：</th>
+            <td>
+                <input type="text" name="QQ" class="txt" data-only="true" />
+            </td>
+        </tr>
+        <tr>
+            <th>Email：</th>
+            <td>
+                <input type="text" name="Email" class="txt" data-only="true" />
+            </td>
+        </tr>
+        <tr>
+            <th>手机：</th>
+            <td>
+                <input type="text" name="Mobile" class="txt" data-only="true" />
+            </td>
+        </tr>
+        <tr>
+            <th></th>
+            <td>
+                <input type="submit" value=" 保存联系信息 " class="btn btn-red" />
+            </td>
+        </tr>
+    </table>
+</form>
+
+<script type="text/javascript">
+    if (!BW.callback["frame-person-diag-info"]) {
+        BW.callback["frame-person-diag-info"] = function (result) {
+            var t = this;
+            var form = t.dom.element.getNext("form");
+            if (form == null) return;
+            Object.forEach(result.info, function (value, key) {
+                var input = form.getElement("input[name=" + key + "]");
+                if (input == null) return;
+                input.set("value", value);
+                if (input.get("data-only") && value != "") {
+                    new Element("span", {
+                        "class": "red",
+                        "text": value
+                    }).inject(input, "after");
+                    input.dispose();
+                }
+            });
+        }
+    }
+</script>

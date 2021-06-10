@@ -1,0 +1,35 @@
+﻿<div class="page-table" data-bind-action="/admin/site/getwithdrawsettinginfo" data-bind-type="ajax" data-bind-callback="form-fill,loadsetting" data-bind-data="parent">
+    <form action="/admin/site/savewithdrawsetting" data-bind-action="/admin/site/savewithdrawsetting" data-bind-type="ajax" data-bind-load="enum,loadsetting" data-bind-callback="form-tip,fire,diag-close" data-bind-fire-target="money-withdraw-setting">
+        <input type="hidden" name="ID" value="${ID}" />
+        <table class="post">
+            <tr>
+                <th>接口名字：</th>
+                <td><input type="text" name="Name" class="txt am-form-field" required="required" /></td>
+            </tr>
+            <tr>
+                <th>开启：</th>
+                <td>
+                    <input type="checkbox" name="IsOpen" value="1" data-type="switch" />
+                </td>
+            </tr>
+            <tr>
+                <th>排序值：</th>
+                <td>
+                    <input type="number" name="Sort" class="txt am-form-field w50" required="required" />
+                </td>
+            </tr>
+            <tr>
+                <th>接口类型：</th>
+                <td>
+                    <select name="Type" class="txt am-form-field" data-enum-name="BW.GateWay.Withdraw.WithdrawType" data-loadsetting="/admin/site/withdrawsetting" data-id="${ID}"></select>
+                </td>
+            </tr>
+            <tr>
+                <th></th>
+                <td>
+                    <input type="submit" value="保存" class="am-btn am-btn-success am-round" />
+                </td>
+            </tr>
+        </table>
+    </form>
+</div>

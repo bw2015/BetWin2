@@ -1,0 +1,44 @@
+﻿
+<div class="frame-info-tip" data-setting-fill="1">
+    <i class="icon icon40 alert"></i>
+    <p class="red">温馨提示</p>
+    <p class="red">1、银行卡绑定成功之后，平台任何区域都不会出现您的完整银行帐号，开户姓名等信息</p>
+    <p class="red">
+        2、每个平台账户最多绑定${Site.Setting.MaxCard}张银行卡。
+    </p><p class="red"> 3、新绑定的提现银行卡需要绑定时间超过${Site.Setting.CardTime}小时才能正常提款</p>
+    <p class="red">
+        4、一个平台账户只能绑定同一个开户人姓名的银行卡
+    </p>
+</div>
+
+<div class="frame-info-content">
+
+    <h3>
+        提现账号管理
+        <span class="buttons">
+            <a href="javascript:" class="btn btn-red" data-diag-name="AddCard" data-diag-src="info/person-bank-add.html" data-diag-type="control" data-diag-title="添加银行卡" data-diag-drag="true" data-diag-height="420"><i class="icon icon24 card"></i><s></s> 添加银行卡</a>
+        </span>
+    </h3>
+    <table class="list" data-bind-action="/handler/user/info/getcardlist" data-bind-type="list" data-bind-callback="list" id="person-bank-list">
+        <thead>
+            <tr>
+                <th>序号</th>
+                <th>银行帐号</th>
+                <th>添加时间</th>
+                <th>当前状态</th>
+            </tr>
+        </thead>
+        <tbody data-list-element="true">
+            <tr>
+                <td>${ID}</td>
+                <td>${Account}</td>
+                <td>${Time}</td>
+                <td class="status-${IsWithdraw}">${IsWithdraw:Status}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<script type="text/javascript">
+
+</script>

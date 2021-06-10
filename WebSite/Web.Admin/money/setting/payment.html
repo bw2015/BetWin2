@@ -1,0 +1,37 @@
+﻿<div class="page-header">
+    <h1>充值接口设定</h1>
+    <h6>设定第三方支付接口的参数。</h6>
+    <div class="page-action">
+        <a href="javascript:" class="am-btn am-btn-danger am-round shadow-bottom" data-diag-name="money-setting-payment" data-diag-src="money/setting/payment-info.html" data-diag-type="control" data-diag-drag="true" data-diag-mask="true" data-diag-title="添加支付接口" data-diag-width="800" data-diag-height="600" data-diag-callback="enum"><i class="am-icon-plus"></i> 添加支付接口</a>
+    </div>
+</div>
+
+<div class="page-table">
+    <table class="list" id="money-setting-payment-list" data-bind-action="/admin/site/getpaymentlist" data-bind-type="list" data-bind-callback="list">
+        <thead>
+            <tr>
+                <th>编号</th>
+                <th>名称</th>
+                <th>接口类型</th>
+                <th>手续费</th>
+                <th>状态</th>
+                <th>排序值</th>
+                <th>操作</th>
+            </tr>
+        </thead>
+        <tbody data-list-element="true">
+            <tr data-bind-delete="1">
+                <td>${ID}</td>
+                <td>${Name}</td>
+                <td>${Type}</td>
+                <td>${Fee}</td>
+                <td>${IsOpen:open}</td>
+                <td>${Sort}</td>
+                <td>
+                    <a href="javascript:" data-diag-name="money-setting-payment" data-diag-type="control" data-diag-src="money/setting/payment-info.html" data-diag-title="修改充值接口" data-diag-width="800" data-diag-height="600" data-diag-drag="true" data-diag-mask="true" data-diag-data="id=${ID}">修改</a>
+                    <a href="javascript:" data-bind-action="/admin/site/deletepaymentsetting" data-bind-type="ajax" data-bind-callback="delete" data-bind-data="id=${ID}" data-bind-event="click" data-bind-stop="1">删除</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

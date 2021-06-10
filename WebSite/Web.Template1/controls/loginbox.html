@@ -1,0 +1,33 @@
+﻿
+<div class="items">
+    <div class="item">
+        <form action="loginbox.html" method="post" data-bind-action="/handler/user/account/login" data-bind-type="form" data-bind-load="form" data-bind-callback="login">
+            <p>
+                <i class="icon icon24 account"></i>
+                <input type="text" name="UserName" class="txt" placeholder="用户名" />
+            </p>
+            <p>
+                <i class="icon icon24 password"></i>
+                <input type="password" name="Password" class="txt" placeholder="密码" />
+            </p>
+            <p>
+                <i class="icon icon24 code"></i>
+                <input type="text" name="Code" class="txt code" placeholder="验证码" />
+                <img src="/images/space.gif" class="vcode" data-name="login" />
+            </p>
+            <p class="submit">
+                <button type="submit" class="button">
+                    <i class="icon icon24 sign"></i>
+                    <span>登录</span>
+                </button>
+            </p>
+            <p class="forget">
+                <a href="javascript:" class="forget" data-diag-name="forget-diag" data-diag-src="controls/forget.html" data-diag-type="control" data-diag-title="忘记密码" data-diag-drag="true" data-diag-cssname="diag-forget" data-diag-mask="true">忘记密码</a>
+
+            </p>
+        </form>
+    </div>
+    <div class="item">
+
+    </div>
+</div>

@@ -1,0 +1,70 @@
+﻿<div class="frame-info-tip" data-setting-fill="1">
+    <i class="icon icon40 alert"></i>
+    <p class="red">温馨提示</p>
+    <p class="red">由于各平台数据返回时间延迟，本页只做数据汇总统计，如需查询时时统计或详细下注内容，请进入各平台查看</p>
+</div>
+
+<div class="frame-info-content">
+
+    <div class="frame-info-search right">
+        <form action="report-game.html" method="post" id="report-game-searchbox">
+            时间范围：<input type="text" class="txt" name="StartAt" data-type="calendar" size="10" readonly="readonly" />
+            ～
+            <input type="text" class="txt" name="EndAt" data-type="calendar" size="10" readonly="readonly" />
+            <input type="submit" value="搜索" class="btn btn-blue" data-event-fire="report-user-moneylog-list">
+        </form>
+    </div>
+
+    <div class="report-game-count clear" data-bind-action="handler/user/money/getusergamereport" data-bind-type="ajax" data-bind-load="search" data-bind-callback="html,success-fire" data-bind-fire-target="report-game-type-report" data-bind-search="report-game-searchbox">
+        <div class="item lottery">
+            <i class="am-icon-cc"></i>
+            <div class="item-content">
+                <h4>彩票</h4>
+                <p>输赢：<strong>${Reward:n}</strong></p>
+                <p>流水：<strong>${Bet:n}</strong></p>
+            </div>
+        </div>
+        <div class="item video">
+            <i class="am-icon-video-camera"></i>
+            <div class="item-content">
+                <h4>真人</h4>
+                <p>输赢：<strong>${VideoMoney:n}</strong></p>
+                <p>流水：<strong>${VideoBet:n}</strong></p>
+            </div>
+        </div>
+        <div class="item slot">
+            <i class="am-icon-gamepad"></i>
+            <div class="item-content">
+                <h4>电子</h4>
+                <p>输赢：<strong>${SlotMoney:n}</strong></p>
+                <p>流水：<strong>${SlotBet:n}</strong></p>
+            </div>
+        </div>
+        <div class="item sport">
+            <i class="am-icon-soccer-ball-o"></i>
+            <div class="item-content">
+                <h4>体育</h4>
+                <p>输赢：<strong>${SportMoney:n}</strong></p>
+                <p>流水：<strong>${SportBet:n}</strong></p>
+            </div>
+        </div>
+    </div>
+    <div class="lineHeight"></div>
+
+    <table class="list" data-bind-action="handler/user/money/getusergametypereport" data-bind-type="list" data-bind-callback="list"  data-bind-search="report-game-searchbox" data-bind-stop="true" id="report-game-type-report">
+        <thead>
+            <tr>
+                <th>平台</th>
+                <th>下注流水</th>
+                <th>输赢状况</th>
+            </tr>
+        </thead>
+        <tbody data-list-element="true">
+            <tr>
+                <td>${Type}</td>
+                <td>${Bet:n}</td>
+                <td>${Money:money-show}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

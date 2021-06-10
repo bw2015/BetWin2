@@ -1,0 +1,43 @@
+﻿<div class="page-header">
+    <h1>单层分红</h1>
+    <h6>单次分红的规则位于会员活动 - 单次分红中配置</h6>
+    <div class="page-searchbox">
+        <form action="singlebouns.html" method="post">
+            日期范围：<input type="date" name="StartAt" class="txt" /> ～ <input type="date" name="EndAt" class="txt" />
+            <input type="submit" class="am-btn am-btn-xs am-btn-success am-round" value="查询">
+        </form>
+    </div>
+</div>
+<div class="page-table">
+    <table class="list" data-bind-action="admin/user/singlebounslist" data-bind-type="list" data-bind-load="search" data-bind-callback="list">
+        <thead>
+            <tr>
+                <th>代理名</th>
+                <th>销售业绩</th>
+                <th>有效人数</th>
+                <th>团队亏损</th>
+                <th>本次分红</th>
+            </tr>
+        </thead>
+        <tbody data-list-element="true">
+            <tr>
+                <td>
+                    <a href="javascript:" data-userid="${UserID}">${UserName}</a>
+                </td>
+                <td>${Sales:c}</td>
+                <td>${MemberCount}</td>
+                <td>${Money:c}</td>
+                <td>${Bouns:c}</td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <td colspan="5" class="am-text-center">
+                    <button type="button" class="am-btn am-btn-danger am-round" data-start="2018/5/10" data-end="2018/5/10">
+                        发放分红
+                    </button>
+                </td>
+            </tr>
+        </tfoot>
+    </table>
+</div>

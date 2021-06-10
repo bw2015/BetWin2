@@ -1,0 +1,113 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>处理开奖号码</title>
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/amazeui/2.7.2/css/amazeui.min.css" />
+    <script src="../scripts/mootools.js"></script>
+    <script src="../scripts/mootools-more.js"></script>
+    <script type="text/javascript">
+        var KEY = "iptables";
+        window.addEvent("domready", function () {
+            $("btn").addEvent("click", function () {
+                var type = $("type").get("value");
+                var data = JSON.decode($("input").get("value"));
+                if (!data) return;
+
+                var list = new Array();
+                data.data.each(function (item) {
+                    var index = item.expect;
+                    if (/\d{8}\d{3,4}/.test(index)) index = index.replace(/(\d{8})(\d{3,4})/, "$1-$2");
+                    item.opencode = item.opencode.replace("+", ",");
+                    var number = item.opencode.split(',').map(function (item) { return item.toInt(); });
+                    number.sort(function (a, b) { return a - b; });
+                    var result = [0, 0, 0, 0, 0];
+                    if (number.length == 20) {
+                        for (var i = 0; i < result.length; i++) {
+                            var num = 0;
+                            var start = Math.floor(number.length / result.length) * i;
+                            for (var n = start; n < start + number.length / result.length; n++) {
+                                num += number[n];
+                            }
+                            result[i] = num % 10;
+                        }
+                    } else if (number.length == 5) {
+                        result = number;
+                    } else {
+                        return;
+                    }
+
+                    list.push("IF NOT EXISTS(SELECT 0 FROM lot_ResultNumber WHERE Type = " + type + " AND [Index] = '" + index + "') BEGIN \n" +
+                        "INSERT INTO lot_ResultNumber VALUES(" + type + ",'" + index + "','" + result.join(",") + "',GETDATE(),0)\n" +
+                        "END");
+
+                });
+
+                $("result").set("value", list.join("\n\r"));
+            });
+        });
+    </script>
+</head>
+<body>
+    <fieldset>
+        <legend>iptables</legend>
+        <div class="am-form">
+            <label for="result">类型</label>
+            <select id="type" style="width:120px;">
+                <option value="1">ChungKing</option>
+                <option value="2">Kiangsi</option>
+                <option value="3">Minute</option>
+                <option value="4">Minute5</option>
+                <option value="5">ticaiP3</option>
+                <option value="6">fucai3D</option>
+                <option value="7">MarkSix</option>
+                <option value="8">PK10</option>
+                <option value="9">Sinkiang</option>
+                <option value="10">Second</option>
+                <option value="11">SX11x5</option>
+                <option value="12">Japan15</option>
+                <option value="13">Second45</option>
+                <option value="14">BJKL8</option>
+                <option value="15">Minute2</option>
+                <option value="16">SD11x5</option>
+                <option value="17">JS11x5</option>
+                <option value="18">GD11x5</option>
+                <option value="19">JSK3</option>
+                <option value="20">AHK3</option>
+                <option value="21">HBK3</option>
+                <option value="22">HEBEIK3</option>
+                <option value="23">GXK3</option>
+                <option value="24">JLK3</option>
+                <option value="25">SHK3</option>
+                <option value="26">Minute10</option>
+                <option value="27">TWBingo</option>
+                <option value="28">SGKeno</option>
+                <option value="29">Tencent</option>
+                <option value="30">KRKeno</option>
+                <option value="31">CAKeno</option>
+                <option value="32">HKSM</option>
+                <option value="33">Minute15</option>
+                <option value="34">Tokyo15</option>
+                <option value="35">VRVenus</option>
+                <option value="36">VRMars</option>
+                <option value="37">VR3</option>
+                <option value="38">VRRacing</option>
+                <option value="39">VRBoat</option>
+                <option value="40">Boat</option>
+                <option value="41">USBall45</option>
+                <option value="42">USBall15</option>
+            </select>
+        </div>
+        <div class="am-form">
+            <label for="result">彩票</label>
+            <textarea class="" rows="16" id="input"></textarea>
+        </div>
+        <input type="submit" class="am-btn am-btn-success am-btn-block am-round am-margin-top am-margin-bottom" value="生成" id="btn" />
+        <div class="am-form">
+            <label for="result">结果</label>
+            <textarea class="" rows="16" id="result"></textarea>
+        </div>
+
+    </fieldset>
+</body>
+</html>

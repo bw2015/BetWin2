@@ -1,0 +1,48 @@
+﻿<div class="page-header">
+    <h1>契约管理</h1>
+    <div class="page-searchbox">
+        <form action="contract.html" method="post">
+            契约编号：<input type="text" name="ID" class="txt" size="6" />
+            类型：<select name="Type" class="txt" data-enum-name="BW.Common.Users.Contract+ContractType" data-enum-none="所有类型"></select>
+            甲方：<input type="text" name="User1" class="txt" size="8" />
+            乙方：<input type="text" name="User2" class="txt" size="8" />
+            状态：<select name="Status" class="txt" data-enum-name="BW.Common.Users.Contract+ContractStatus" data-enum-none="所有状态"></select>
+            签订时间：<input type="date" name="StartAt" class="txt" />～<input type="date" name="EndAt" class="txt" />
+            <input type="submit" value="搜索" class="am-btn am-btn-success am-text-xs am-round" />
+            <input type="reset" value="重置" class="am-btn am-btn-default am-text-xs am-round" />
+        </form>
+    </div>
+    <div class="page-action">
+        <a href="javascript:" class="am-btn am-btn-success am-round" data-bind-action="admin/user/contractrun" data-bind-type="ajax" data-bind-callback="form-tip" data-bind-event="confirm" data-bind-stop="true" data-bind-data="Type=WagesAgent">运行昨日工资契约</a>
+
+        <a href="javascript:" class="am-btn am-btn-primary am-round" data-bind-action="admin/user/contractrun" data-bind-type="ajax" data-bind-callback="form-tip" data-bind-event="confirm" data-bind-stop="true" data-bind-data="Type=LossWages">运行昨日挂单契约</a>
+    </div>
+</div>
+<div class="page-table">
+    <table class="list" data-bind-action="admin/user/contractlist" data-bind-type="list" data-bind-callback="list" data-bind-load="search,pagesplit">
+        <thead>
+            <tr>
+                <th>编号</th>
+                <th>类型</th>
+                <th>甲方</th>
+                <th>乙方</th>
+                <th>签订日期</th>
+                <th>当前状态</th>
+                <th>操作</th>
+            </tr>
+        </thead>
+        <tbody data-list-element="true">
+            <tr>
+                <td>${ID}</td>
+                <td>${Type}</td>
+                <td><a href="javascript:" class="diag-user" data-userid="${User1}">${UserName1}</a></td>
+                <td><a href="javascript:" class="diag-user" data-userid="${User2}">${UserName2}</a></td>
+                <td>${CreateAt}</td>
+                <td>${Status}</td>
+                <td>
+                    <a href="javascript:" data-diag-name="user-contract-detail" data-diag-type="control" data-diag-src="user/agent/contract-info.html" data-diag-drag="true" data-diag-mask="true" data-diag-title="契约详情" data-diag-width="800" data-diag-height="600" data-diag-data="ID=${ID}">详情</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

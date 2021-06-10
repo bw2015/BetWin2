@@ -1,0 +1,35 @@
+﻿<div class="page-header">
+    <h1>聊天记录</h1>
+</div>
+<div class="page-table">
+    <table class="list" data-bind-action="admin/im/sessionlog" data-bind-type="list" data-bind-callback="list,service-log-list" data-bind-load="pagesplit">
+        <thead>
+            <tr>
+                <th>类型</th>
+                <th>用户</th>
+                <th>最后聊天时间</th>
+                <th>聊天数量</th>
+                <th>操作</th>
+            </tr>
+        </thead>
+        <tbody data-list-element="true">
+            <tr>
+                <td>${Type}</td>
+                <td>
+                    <a href="javascript:" class="diag-user" data-userid="${User1}">${UserName1}</a>
+                    <a href="javascript:" class="diag-user" data-userid="${User2}">${UserName2}</a>
+                </td>
+                <td>${LastAt}</td>
+                <td>${Count}</td>
+                <td><a href="javascript:" data-diag-name="service-log-detail" data-diag-type="control" data-diag-src="services/log-detail.html" data-diag-title="查看聊天内容" data-diag-drag="true" data-diag-mask="true" data-diag-data="key=${Key}" data-diag-width="800" data-diag-height="600">详情</a></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<script type="text/javascript">
+    BW.callback["service-log-list"] = function (result) {
+        var t = this;
+        t.dom.element.getElements("a[data-userid=0]").dispose();
+    };
+</script>

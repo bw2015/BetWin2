@@ -1,0 +1,30 @@
+﻿<!-- 安全提示问题 -->
+<div class="user-info-safe">
+    <div class="alert-tip">
+        温馨提示：安全答案设定之后不可修改，请记住您的安全问题
+    </div>
+    <form action="/handler/user/account/saveanswer" method="post" data-bind-action="/handler/user/account/saveanswer" data-bind-type="ajax" data-bind-callback="form-tip" data-bind-form-tip="mobile-back">
+        <table class="post" data-bind-action="/handler/user/account/question" data-bind-type="ajax" data-bind-callback="mobile-info-question">
+            <tr>
+                <td>
+                    <select class="txt" name="Question"></select>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="text" class="txt" name="Answer" placeholder="安全答案" data-fill-hide="true" />
+                </td>
+            </tr>
+            <tr data-fill-hide="true">
+                <td>
+                    <input type="text" class="txt" name="Answer2" placeholder="重复输入一次安全答案" />
+                </td>
+            </tr>
+            <tr data-fill-hide="true">
+                <td>
+                    <input type="submit" value="确认设定安全问题" class="button" />
+                </td>
+            </tr>
+        </table>
+    </form>
+</div>

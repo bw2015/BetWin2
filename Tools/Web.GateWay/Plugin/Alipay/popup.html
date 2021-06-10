@@ -1,0 +1,42 @@
+<!doctype html>
+<html>
+<head>
+    <title>Getting Started Extension's Popup</title>
+    <!-- JavaScript and HTML must be in separate files for security. -->
+    <script src="scripts/mootools.js"></script>
+    <script src="scripts/md5.js"></script>
+    <script src="scripts/popup.js"></script>
+    <link href="styles/popup.css" rel="stylesheet" />
+</head>
+<body>
+    <header></header>
+    <form action="popup.html" method="get">
+        <table class="post">
+            <tr>
+                <th>支付宝账户：</th>
+                <td>
+                    <input type="text" name="Alipay" class="txt" placeholder="支付宝账户" />
+                </td>
+            </tr>
+            <tr>
+                <th>密钥：</th>
+                <td>
+                    <input type="text" name="Key" class="txt" placeholder="密钥" />
+                </td>
+            </tr>
+            <tr>
+                <th>网关域名：</th>
+                <td>
+                    <input type="text" name="Gateway" class="txt" placeholder="网关域名，不包含http以及路径" />
+                </td>
+            </tr>
+            <tr>
+                <th></th>
+                <td>
+                    <input type="button" value="保存" class="btn" id="btnSave" />
+                </td>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>

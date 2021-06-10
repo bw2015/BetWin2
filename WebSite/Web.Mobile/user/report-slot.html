@@ -1,0 +1,26 @@
+﻿<div class="mobile-report-video">
+    <div class="alert-tip">
+        温馨提示：移动端仅显示最新的20笔记录，更多记录请移步网页版
+    </div>
+
+    <table class="list" data-bind-action="/handler/game/gateway/slotlog" data-bind-type="list" data-bind-callback="list">
+        <thead>
+            <tr>
+                <th>平台</th>
+                <th>游戏名称</th>
+                <th>投注金额</th>
+                <th>盈亏金额</th>
+                <th>投注时间</th>
+            </tr>
+        </thead>
+        <tbody data-list-element="true">
+            <tr>
+                <td>${Type}</td>
+                <td>${GameName}</td>
+                <td>${BetAmount:money}</td>
+                <td>${Money:trunover}</td>
+                <td>${PlayAt}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

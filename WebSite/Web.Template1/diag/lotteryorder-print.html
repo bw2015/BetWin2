@@ -1,0 +1,54 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>订单打印</title>
+    <link href="../styles/print.css" rel="stylesheet" />
+    <script src="../studio/scripts/mootools.js"></script>
+    <script src="../studio/scripts/mootools-more.js"></script>
+    <script src="../studio/scripts/betwin.js"></script>
+
+</head>
+<body>
+    <div class="order" id="order" data-bind-action="/handler/user/lottery/orderdetail" data-bind-type="ajax" data-bind-callback="html">
+        <table>
+            <tr>
+                <td>游戏：${Game}</td>
+                <td>单号：${ID}</td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    玩法：${Player}
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">期号：${Index}</td>
+            </tr>
+            <tr>
+                <td colspan="2">销售时间：${CreateAt}</td>
+            </tr>
+            <tr>
+                <td>倍数：${Times}倍</td>
+                <td>模式：${LotteryMode}</td>
+            </tr>
+            <tr>
+                <td colspan="2">金额：${Money}元</td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <h6>投注内容</h6>
+                    <p>${Number}</p>
+                </td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="print">    <input type="button" value="打印" onclick="window.print();" /></div>
+
+    <script type="text/javascript">
+        !function () {
+            $("order").set("data-bind-data", "ID=" + location.href.get("id"));
+        }();
+    </script>
+</body>
+</html>

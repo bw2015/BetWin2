@@ -1,0 +1,37 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <meta content="yes" name="apple-mobile-web-app-capable" />
+    <meta content="black" name="apple-mobile-web-app-status-bar-style" />
+    <meta content="telephone=no" name="format-detection" />
+    <meta name="viewport" content="minimal-ui=yes,width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
+    <title>微信支付</title>
+    <style type="text/css">
+        body { font: 100%/1.4 Verdana, Arial, Helvetica, sans-serif; background-color: #ededed; margin: 0; padding: 0; color: #000; text-align: center; }
+        .order { margin-top: 50px; }
+        .money { margin-top: 20px; font-size: 64px; font-weight: bold; }
+        .shop { margin-top: 20px; height: 32px; line-height: 32px; background-color: #fff; margin: auto 2px; font-size: 12px; text-align: left; text-indent: 1em; color: #ccc; position: relative; }
+            .shop label { position: absolute; right: 1em; top: 0px; color: #333; }
+        .btn { width: 95%; height: 45px; border-radius: 5px; background-color: #25ab28; border: 0px #FE6714 solid; cursor: pointer; font-weight: bold; color: white; font-size: 16px; margin-top: 20px; }
+    </style>
+</head>
+<body>
+    <div class="order">
+        订单号：${_orderid}
+    </div>
+    <div class="money">
+        ￥${_money}
+    </div>
+    <div class="shop">
+        收款方：
+        <label>微信支付</label>
+    </div>
+
+    <form action="${_gateway}" method="post">
+        ${Input}
+        <input type="submit" value="确认支付" class="btn" />
+    </form>
+</body>
+</html>

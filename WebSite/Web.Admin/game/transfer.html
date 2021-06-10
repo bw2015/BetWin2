@@ -1,0 +1,48 @@
+﻿<div class="page-header">
+    <h1>游戏转账记录</h1>
+    <div class="page-searchbox">
+        <form action="slot.html">
+            <select class="txt" name="Type" data-enum-name="BW.Common.Games.GameType" data-enum-none="所有平台"></select>
+            <select class="txt" name="Action" data-enum-name="BW.Common.Games.TransferLog+ActionType" data-enum-none="所有类型"></select>
+            <select class="txt" name="Status" data-enum-name="BW.Common.Games.TransferLog+TransferStatus" data-enum-none="所有状态"></select>
+            <input type="text" name="User" class="txt w120" placeholder="用户名" />
+            <input type="text" name="SourceID" class="txt w120" placeholder="转账编号" />
+            <input type="datetime-local" name="StartAt" class="txt" placeholder="转账时间（开始）" />
+            <input type="datetime-local" name="EndAt" class="txt" placeholder="转账时间（结束）" />
+            <input type="submit" value="查询" class="am-btn am-btn-success am-round am-text-xs" />
+            <input type="reset" value="重置" class="am-btn am-round am-text-xs" />
+        </form>
+    </div>
+</div>
+
+<div class="page-table">
+    <table class="list" data-bind-action="admin/game/transferlog" data-bind-type="list" data-bind-callback="list" data-bind-load="search,pagesplit" id="game-transfer-list">
+        <thead>
+            <tr>
+                <th>编号</th>
+                <th>平台</th>
+                <th>用户名</th>
+                <th>资金方向</th>
+                <th>金额</th>
+                <th>转账时间</th>
+                <th>确认时间</th>
+                <th>当前状态</th>
+                <th>操作</th>
+            </tr>
+        </thead>
+        <tbody data-list-element="true">
+            <tr>
+                <td>${ID}</td>
+                <td>${Type}</td>
+                <td><a href="javascript:" class="diag-user" data-userid="${UserID}">${UserName}</a></td>
+                <td>${Action}</td>
+                <td>${Money:money}</td>
+                <td>${CreateAt}</td>
+                <td>${CheckAt}</td>
+                <td>${Status}</td>
+                <!--data-bind-action="admin/game/transfercheck" data-bind-type="ajax" data-bind-callback="form-tip" data-bind-stop="true" data-bind-event="click"-->
+                <td><a href="javascript:" data-diag-name="game-transfer-check" data-diag-type="control" data-diag-src="game/transfer-check.html" data-diag-drag="true" data-diag-title="核对转账记录" data-diag-data="ID=${ID}">详情</a></td>
+            </tr>
+        </tbody>
+    </table>
+</div>

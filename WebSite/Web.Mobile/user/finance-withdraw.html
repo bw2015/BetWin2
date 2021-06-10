@@ -1,0 +1,50 @@
+﻿<!-- 提现 -->
+<div class="user-finance-withdraw" data-bind-action="/handler/user/money/withdrawinfo" data-bind-type="ajax" data-bind-callback="mobile-error,html,finance-withdraw">
+    <div class="alert-tip">
+        温馨提示：
+        <p>
+            1、提现所产生的银行手续费由平台为您免除。
+        </p>
+        <p>
+            2、可提现额度是指您在进行提款时，实际可以进行提现的金额。
+        </p>
+    </div>
+    <form action="finance-withdraw.html" method="post" data-bind-action="/handler/user/money/withdraw" data-bind-type="ajax" data-bind-callback="form-tip" data-bind-form-tip="mobile-back">
+        <table class="post">
+            <tr>
+                <td>
+                    <select class="txt" name="BankID"></select>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div class="txt">
+                        当前余额：  <span class="red bold">${Money:money}</span> 元
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div class="txt">
+                        可提现额度：   <span class="green bold">${Withdraw:money}</span> 元
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="number" class="txt" name="Money" min="${MinWithdraw}" max="${MaxWithdraw}" data-withdraw="${Withdraw}" placeholder="提现金额（${MinWithdraw:money}～${MaxWithdraw:money}）元" maxlength="5" />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="password" class="txt" name="PayPassword" placeholder="资金密码" />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="submit" value=" 提交提现申请 " class="button" />
+                </td>
+            </tr>
+        </table>
+    </form>
+</div>

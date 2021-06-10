@@ -1,0 +1,58 @@
+﻿<div class="page-header">
+    <h1>团队充提</h1>
+    <div class="page-searchbox">
+        <form action="payment.html" method="post">
+            <input type="date" name="StartAt" class="txt" placeholder="统计时间（开始）" data-value="today" />
+            <input type="date" name="EndAt" class="txt" placeholder="统计时间（结束）" data-value="today" />
+            <input type="text" name="User" class="txt" placeholder="团队" id="report-payment-search-user" />
+            <input type="submit" class="am-btn am-btn-success am-round am-text-xs" value="搜索" />
+            <input type="reset" class="am-btn am-round am-text-xs" value="重置" />
+        </form>
+    </div>
+</div>
+
+
+<div class="page-table">
+    <table class="list" data-bind-action="/admin/report/payment" data-bind-type="list" data-bind-callback="list,count" data-bind-load="search,report-payment-enter,list-sort">
+        <thead>
+            <tr>
+                <th>团队领导</th>
+                <th data-list-sort="true">总充值</th>
+                <th data-list-sort="true">总提现</th>
+                <th data-list-sort="true">盈亏</th>
+                <th>操作</th>
+            </tr>
+        </thead>
+        <tbody data-list-element="true">
+            <tr>
+                <td><a href="javascript:" class="diag-user" data-userid="${UserID}">${UserName}</a></td>
+                <td>${Recharge:money}</td>
+                <td>${Withdraw:money}</td>
+                <td>${Money:money}</td>
+                <td><a href="javascript:" data-username="${UserName}">进入下级</a></td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <td>统计：</td>
+                <td class="am-text-success">${data.Recharge:money}</td>
+                <td class="am-text-success">${data.Withdraw:money}</td>
+                <td class="am-text-success">${data.Money:money}</td>
+                <td></td>
+            </tr>
+        </tfoot>
+    </table>
+</div>
+
+<script type="text/javascript">
+    BW.load["report-payment-enter"] = function () {
+        var t = this;
+        t.dom.element.addEvent("click", function (e) {
+            var obj = $(e.target);
+            if (obj.get("data-username")) {
+                $("report-payment-search-user").set("value", obj.get("data-username"));
+                t.fire();
+            }
+        });
+    }
+</script>

@@ -1,0 +1,46 @@
+﻿<div class="page-header">
+    <h1>追号管理</h1>
+    <div class="page-searchbox">
+        <form action="/admin/lottery/betlog" method="post">
+            <input type="text" name="User" class="txt w120" placeholder="用户" />
+            <select name="Type" class="txt" data-bind-action="admin/lottery/gamelist" data-bind-type="ajax" data-bind-callback="select"><option value="">所有彩种</option></select>
+            <input type="date" name="StartAt" class="txt w120" placeholder="追号时间（开始）" data-type="datetime" />
+            <input type="date" name="EndAt" class="txt w120" placeholder="追号时间（结束）" data-type="datetime" />
+            <select name="Status" class="txt" data-enum-name="BW.Common.Lottery.LotteryChase+ChaseStatus" data-enum-none="追号状态"></select>
+            <input type="submit" value="查找" class="am-btn am-btn-success am-round am-text-xs" />
+            <input type="reset" value="重置" class="am-btn am-btn-default am-round am-text-xs" />
+        </form>
+    </div>
+</div>
+<div class="page-table">
+    <table class="list" data-bind-action="admin/lottery/chaselist" data-bind-type="list" data-bind-callback="list" data-bind-load="search,pagesplit">
+        <thead>
+            <tr>
+                <th>追号编号</th>
+                <th>用户</th>
+                <th>彩种</th>
+                <th>总金额</th>
+                <th>当前进度</th>
+                <th>中奖后停止</th>
+                <th>创建时间</th>
+                <th>状态</th>
+                <th>已投金额</th>
+                <th>中奖/状态</th>
+            </tr>
+        </thead>
+        <tbody data-list-element="true">
+            <tr>
+                <td><a href="javascript:" class="am-btn am-btn-primary am-round am-text-xs" data-diag-name="lottery-chase-detail" data-diag-src="lottery/bet/chase-detail.html" data-diag-type="control" data-diag-title="追号详情" data-diag-drag="true" data-diag-data="ID=${ID}">${ID}</a></td>
+                <td><a href="javascript:" class="diag-user" data-userid="${UserID}">${UserName}</a></td>
+                <td>${Game}</td>
+                <td>${Money:money}</td>
+                <td>${Count}/${Total}</td>
+                <td>${IsRewardStop:open}</td>
+                <td>${CreateAt}</td>
+                <td>${Status}</td>
+                <td><label class="am-text-danger">${BetMoney:money}</label></td>
+                <td><label class="am-text-success">${Reward:money}</label></td>
+            </tr>
+        </tbody>
+    </table>
+</div>

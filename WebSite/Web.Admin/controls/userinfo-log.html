@@ -1,0 +1,35 @@
+﻿ <!-- 用户日志 -->
+<div class="userinfo-frame  userinfo-log">
+    <div class="page-searchbox">
+        <form action="/admin/user/log" method="post" id="userinfo-log-search" data-bind-action="/admin/user/log" data-bind-type="ajax" data-bind-load="tip" data-bind-callback="list" data-bind-data="parent" data-bind-target="userinfo-log-list">
+            <input type="date" class="txt" name="StartAt" placeholder="开始时间" />
+            <input type="date" class="txt" name="EndAt" placeholder="结束时间" />
+            <input type="text" class="txt w120" name="Key" placeholder="关键词" />
+            <input type="submit" value=" 搜索 " class="am-btn am-btn-success am-round" />
+            <input type="reset" value="重置" class="am-btn am-btn-primary am-round" />
+        </form>
+    </div>
+
+    <div class="page-table">
+        <table class="list" id="userinfo-log-list" data-bind-action="/admin/user/log" data-bind-type="list" data-bind-search="userinfo-log-search" data-bind-callback="list" data-bind-data="parent" data-bind-pagesplit="userinfo-log-pagesplit">
+            <thead>
+                <tr>
+                    <th class="w80">编号</th>
+                    <th class="w120">操作时间</th>
+                    <th class="w180">IP</th>
+                    <th>备注信息</th>
+                </tr>
+            </thead>
+            <tbody data-list-element="true">
+                <tr>
+                    <td>${ID}</td>
+                    <td>${CreateAt}</td>
+                    <td>${IP}<p>(${IPAddress})</p></td>
+                    <td><p class="am-text-success">${Content}</p> </td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="pageSplit" id="userinfo-log-pagesplit">
+        </div>
+    </div>
+</div>

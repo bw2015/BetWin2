@@ -1,0 +1,14 @@
+﻿<div class="home-news" data-bind-action="/handler/site/info/newsinfo" data-bind-type="ajax" data-bind-callback="html,home-news-nav" data-bind-data="parent">
+    <h1 class="text-center ft18">${Title}</h1>
+    <h3 class="gray text-center ft14 padding-top-10">${CreateAt}</h3>
+    <div class="home-news-content">${Content}</div>
+
+    <div class="home-news-bar">
+        <p class="previous">
+            上一篇：<a href="javascript:" data-action="previous" data-newsid="0">没有了</a>
+        </p>
+        <p class="next">
+            下一篇：<a href="javascript:" data-action="next" data-newsid="0">没有了</a>
+        </p>
+    </div>
+</div>

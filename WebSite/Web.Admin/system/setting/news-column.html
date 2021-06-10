@@ -1,0 +1,41 @@
+﻿<div class="page-table">
+    <form action="admin/news/savecolumn" data-bind-action="admin/news/savecolumn" data-bind-type="ajax" data-bind-callback="form-tip,fire" data-bind-fire-target="news-column-list">
+        <table class="list" id="news-column-list" data-bind-action="admin/news/columnlist" data-bind-type="list" data-bind-load="form-parent" data-bind-callback="list,update" data-bind-update-action="admin/news/updatecolumn" data-bind-data="parent">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>栏目名</th>
+                    <th>排序</th>
+                    <th>操作</th>
+                </tr>
+            </thead>
+            <tbody data-list-element="true">
+                <tr data-bind-delete="true">
+                    <td>${ID}</td>
+                    <td><input type="text" class="txt" data-update-name="Name" value="${Name}" data-update-id="${ID}" /></td>
+                    <td><input type="number" class="txt w50" data-update-name="Sort" value="${Sort}" data-update-id="${ID}" /></td>
+                    <td>
+                        <a href="javascript:" data-bind-action-delay="admin/news/deletecolumn" data-bind-type="ajax" data-bind-callback="delete" data-bind-data="id=${ID}" data-bind-stop="true" data-bind-event="confirm" data-bind-confirm-tip="确认要删除吗？">删除</a>
+                    </td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td>
+                        新增栏目
+                    </td>
+                    <td>
+                        <input type="text" name="Name" class="txt" placeholder="栏目名称" />
+                    </td>
+                    <td>
+                        <input type="number" name="Sort" class="txt w50" />
+                    </td>
+                    <td>
+                        <input type="hidden" name="Type" />
+                        <input type="submit" value="保存" class="am-btn am-btn-success am-round am-text-xs" />
+                    </td>
+                </tr>
+            </tfoot>
+        </table>
+    </form>
+</div>

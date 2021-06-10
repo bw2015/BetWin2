@@ -1,0 +1,22 @@
+﻿<!-- 团队报表 -->
+<div class="user-team-list">
+    <table class="list">
+        <thead>
+            <tr>
+                <th>今日返点</th>
+                <th>今日佣金</th>
+                <th>团队人数</th>
+                <th>团队余额</th>
+            </tr>
+        </thead>
+        <tbody data-bind-action="/handler/user/team/today" data-bind-type="ajax" data-bind-callback="html">
+            <tr>
+                <td>${Return:money}</td>
+                <td>${Agent:money}</td>
+                <td>${Member}</td>
+                <td>${Balance:money}</td>
+            </tr>
+        </tbody>
+    </table>
+
+</div>

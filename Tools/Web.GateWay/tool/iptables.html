@@ -1,0 +1,112 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>生成iptalbes</title>
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/amazeui/2.7.2/css/amazeui.min.css" />
+    <script src="../scripts/mootools.js"></script>
+    <script src="../scripts/mootools-more.js"></script>
+    <script type="text/javascript">
+        var KEY = "iptables";
+        window.addEvent("domready", function () {
+            var getport = function (port) {
+                var list = new Array();
+                port.split(',').each(function (item) {
+                    if (/^\d+$/.test(item)) {
+                        list.push(item);
+                    } else if (/^\d+\-\d+$/.test(item)) {
+                        var reg = /^(\d+)\-(\d+)$/;
+                        var start = reg.exec(item)[1].toInt();
+                        var end = reg.exec(item)[2].toInt();
+                        for (var i = start; i <= end; i++) {
+                            list.push(i);
+                        }
+                    }
+                });
+                return list;
+            };
+            var form = $$("form")[0];
+            !function () {
+                var data = JSON.decode(localStorage.getItem(KEY));
+                if (!data) return;
+                if (data["internalip"] == data["localip"]) data["internalip"] = "";
+                form.getElements("[name]").each(function (item) {
+                    var name = item.get("name");
+                    if (data[name]) item.set("value", data[name]);
+                });
+
+            }();
+            form.addEvent("submit", function (e) {
+                e.stop();
+
+                var data = new Object();
+                this.getElements("[name]").each(function (item) {
+                    data[item.get("name")] = item.get("value");
+                });
+                if (!data["internalip"]) data["internalip"] = data["localip"];
+                if (!data["targetport"]) data["port"] = data["localip"];
+                localStorage.setItem(KEY, JSON.encode(data));
+
+                var port1 = getport(data["port"]);
+                var port2 = getport(data["targetport"]);
+
+                if (port1.length != port2.length || port1.length == 0) {
+                    alert("端口设置错误");
+                    return;
+                }
+
+                var result = new Array();
+                result.push("echo 1 > /proc/sys/net/ipv4/ip_forward");
+                result.push("sed -i '/net.ipv4.ip_forward/ s/\(.*= \).*/\11/' /etc/sysctl.conf");
+                port1.each(function (form, index) {
+                    var to = port2[index];
+                    data["form"] = form;
+                    data["to"] = to;
+                    result.push("iptables -t nat -A PREROUTING --dst ${localip} -p tcp --dport ${form} -j DNAT --to-destination ${targetip}:${to}".toHtml(data));
+                    result.push("iptables -t nat -A POSTROUTING --dst  ${targetip} -p tcp --dport ${to} -j SNAT --to-source ${internalip}".toHtml(data));
+                });
+                result.push("service iptables save");
+                result.push("service iptables restart");
+                result.push("");
+                $("result").set("value", result.join("\n"));
+            });
+        });
+    </script>
+</head>
+<body>
+    <form action="iptables.html" method="post" class="am-form am-form-inline">
+        <fieldset>
+            <legend>iptables</legend>
+            <div class="am-form-group am-form-icon">
+                <i class="am-icon-server"></i>
+                <input type="text" class="am-form-field" placeholder="公网IP" name="localip">
+            </div>
+            <div class="am-form-group am-form-icon">
+                <i class="am-icon-wifi"></i>
+                <input type="text" class="am-form-field" placeholder="内网IP" name="internalip">
+            </div>
+            <div class="am-form-group am-form-icon">
+                <i class="am-icon-cloud"></i>
+                <input type="text" class="am-form-field" placeholder="目标IP" name="targetip">
+            </div>
+
+            <div class="am-form-group am-form-icon">
+                <i class="am-icon-cloud-download"></i>
+                <input type="text" class="am-form-field" placeholder="本地端口" name="port">
+            </div>
+            <div class="am-form-group am-form-icon">
+                <i class="am-icon-cloud-upload"></i>
+                <input type="text" class="am-form-field" placeholder="目标端口" name="targetport">
+            </div>
+            <div class="am-form-group">
+                <input type="submit" class="am-btn am-btn-success am-round" value="生成" />
+            </div>
+            <div class="am-form am-margin-top">
+                <label for="result">结果</label>
+                <textarea class="" rows="32" id="result"></textarea>
+            </div>
+
+        </fieldset>
+    </form>
+</body>
+</html>

@@ -1,0 +1,37 @@
+﻿<!-- 帐变记录 -->
+<div class="userinfo-frame  userinfo-moneylog" data-bind-search="true">
+    <div class="page-searchbox">
+        <form action="userinfo-moneylog.html" method="post">
+            <input type="date" class="txt" name="StartAt" placeholder="开始时间" />
+            <input type="date" class="txt" name="EndAt" placeholder="结束时间" />
+            <input type="text" class="txt w120" name="Key" placeholder="关键词" />
+            <select class="txt" name="Type" data-bind-action="admin/user/moneylogtype" data-bind-type="ajax" data-bind-callback="select"><option value="">所有类型</option></select>
+            <input type="submit" value=" 搜索 " class="am-btn am-btn-success am-round" />
+            <input type="reset" value="重置" class="am-btn am-btn-default am-round" />
+        </form>
+    </div>
+    <div class="page-table">
+        <table class="list" data-bind-action="/admin/user/moneylog" data-bind-type="list" data-bind-callback="list" data-bind-load="search,pagesplit" data-bind-data="parent">
+            <thead>
+                <tr>
+                    <th>编号</th>
+                    <th>类型</th>
+                    <th>金额</th>
+                    <th>余额</th>
+                    <th>操作时间</th>
+                    <th>备注信息</th>
+                </tr>
+            </thead>
+            <tbody data-list-element="true">
+                <tr>
+                    <td>${ID}</td>
+                    <td>${Type:moneytype}</td>
+                    <td>${Money}</td>
+                    <td>${Balance}</td>
+                    <td>${CreateAt}</td>
+                    <td>${Description}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

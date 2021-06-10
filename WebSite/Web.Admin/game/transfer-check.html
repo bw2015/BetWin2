@@ -1,0 +1,85 @@
+﻿<div class="page-table">
+    <form action="transfer-check.html" method="post" data-bind-action="admin/game/transfercheck" data-bind-type="ajax" data-bind-callback="form-tip,success-fire" data-bind-form-tip="diag-close" data-bind-fire-target="game-transfer-list">
+        <table class="post" data-bind-action="admin/game/transferinfo" data-bind-type="ajax" data-bind-callback="html,transfer-check-moneylog" data-bind-data="parent">
+            <tr>
+                <th>用户：</th>
+                <td colspan="3">${UserName}</td>
+            </tr>
+            <tr>
+                <th>编号：</th>
+                <td>${ID}</td>
+                <th>平台：</th>
+                <td>${Type}</td>
+            </tr>
+            <tr>
+                <th>提交时间：</th>
+                <td>${CreateAt}</td>
+                <th>审核时间：</th>
+                <td>${CheckAt}</td>
+            </tr>
+            <tr>
+                <th>资金类型：</th>
+                <td>${Action}</td>
+                <th>当前状态：</th>
+                <td>${Status}</td>
+            </tr>
+            <tr>
+                <th>备注信息：</th>
+                <td colspan="3">${Description}</td>
+            </tr>
+            <tr>
+                <th>远程返回结果：</th>
+                <td colspan="3">
+                    ${Result}
+                </td>
+            </tr>
+            <tr>
+                <th>锁定信息：</th>
+                <td colspan="3">${MoneyLock}</td>
+            </tr>
+            <tr>
+                <td colspan="4">
+                    <table class="list am-text-xs">
+                        <thead>
+                            <tr>
+                                <th>时间</th>
+                                <th>金额</th>
+                                <th>余额</th>
+                                <th>备注</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>${MoneyLog.CreateAt}</td>
+                                <td>${MoneyLog.Money:money}</td>
+                                <td>${MoneyLog.Balance:money}</td>
+                                <td>${MoneyLog.Description}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td class="am-text-center" colspan="4">
+                    <input type="hidden" name="ID" value="${ID}" />
+                    <input type="submit" value="自动检查" class="am-btn am-btn-success am-round" />
+                </td>
+            </tr>
+        </table>
+    </form>
+</div>
+
+<script type="text/javascript">
+    if (!BW.callback["transfer-check-moneylog"]) {
+        BW.callback["transfer-check-moneylog"] = function (result) {
+            var t = this;
+            var tbody = t.dom.element.getElement(".list tbody");
+            if (!result.info.MoneyLog) {
+                tbody.empty();
+                new Element("tr", {
+                    "html": "<td colspan=\"4\"><p class=\"am-alert\">没有资金记录</p></td>"
+                }).inject(tbody);
+            }
+        };
+    }
+</script>

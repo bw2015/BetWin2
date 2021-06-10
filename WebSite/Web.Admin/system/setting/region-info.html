@@ -1,0 +1,43 @@
+﻿<div class="page-table" data-bind-action="admin/news/regioninfo" data-bind-type="ajax" data-bind-callback="form-fill,region-info-fill" data-bind-data="parent">
+    <form action="region-info.html" method="post" data-bind-action="admin/news/saveregioninfo" data-bind-type="ajax" data-bind-callback="form-tip,success-fire" data-bind-form-tip="diag-close" data-bind-fire-target="system-setting-region-list">
+        <table class="post">
+            <tr>
+                <th>名称：</th>
+                <td><input type="text" class="txt am-form-field" name="Name" /></td>
+            </tr>
+            <tr>
+                <th>说明：</th>
+                <td>
+                    <input type="text" class="txt am-form-field" size="50" name="Title" />
+                </td>
+            </tr>
+            <tr>
+                <th>内容：</th>
+                <td><input type="hidden" name="Content" id="region-info-content" /></td>
+            </tr>
+            <tr>
+                <th></th>
+                <td>
+                    <input type="hidden" name="ID" />
+                    <input type="submit" value="保存" class="am-btn am-btn-success am-round" />
+                </td>
+            </tr>
+        </table>
+    </form>
+</div>
+
+<script type="text/javascript">
+    BW.callback["region-info-fill"] = function (result) {
+        var t = this;
+        var content = t.dom.element.getElement("[name=Content]");
+        var id = "news-" + new Date().getTime();
+        content.set("id", id);
+        new Element("iframe", {
+            "src": "controls/kindeditor.html#" + id,
+            "styles": {
+                "width": "100%",
+                "height": 400
+            }
+        }).inject(content, "after");
+    }
+</script>

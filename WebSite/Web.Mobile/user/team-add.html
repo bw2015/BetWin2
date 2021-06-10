@@ -1,0 +1,38 @@
+﻿<!-- 安全提示问题 -->
+<div class="user-info-safe">
+    <form action="team-add.html" method="post" data-bind-action="/handler/user/account/create" data-bind-type="ajax" data-bind-callback="form-tip" data-bind-form-tip="mobile-back">
+        <table class="post" data-bind-action="/handler/user/account/createinfo" data-bind-type="ajax" data-bind-callback="html,mobile-team-createinfo">
+            <tr>
+                <td>
+                    <input type="text" class="txt" name="UserName" placeholder="用户名" />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <p class="txt">
+                        默认密码：
+                        <span class="red bold">${Password}</span>
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <select name="Type" class="txt"><option value="Agent">代理</option><option value="Member">会员</option></select>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <select name="Rebate" class="txt">
+                        <optgroup label="返水">
+                        </optgroup>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="submit" value="添加用户" class="button" />
+                </td>
+            </tr>
+        </table>
+    </form>
+</div>

@@ -1,0 +1,78 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+    <title>APP 下载</title>
+    <link href="styles/app.css" rel="stylesheet" />
+    <script type="text/javascript" src="../studio/scripts/mootools.js"></script>
+    <script type="text/javascript">
+        var url = {
+            "android": null,
+            "ios": null
+        };
+        var loadAPP = function () {
+            var userAgent = navigator.userAgent;
+            var isAndroid = userAgent.indexOf('Android') > -1 || userAgent.indexOf('Adr') > -1;
+            var isiOS = !!userAgent.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/);
+            var isMobile = isAndroid || isiOS;
+            if (!isMobile) {
+                location.href = "/index.html";
+                return;
+            }
+            var isWeChat = userAgent.toLowerCase().match(/MicroMessenger/i);
+            var isQQBrowser = userAgent.match(/QQ\//i);
+
+
+            document.getElementById('download').onclick = function (e) {
+
+                if (isWeChat || isQQBrowser) {
+                    document.getElementById('wechat').className = 'wechat show';
+                    return false;
+                }
+                var file = null;
+                if (isAndroid) {
+                    file = url.android;
+                } else if (isiOS) {
+                    file = url.ios;
+                }
+
+                if (!file) {
+                    location.href = "/mobile/"
+                } else {
+                    location.href = file;
+                }
+            };
+        };
+        window.addEvent("domready", function () {
+            new Request.JSON({
+                "url": "/handler/site/info/get",
+                "onSuccess": function (result) {
+                    $(document.body).removeClass("loading");
+                    url.android = result.info.Setting.APPAndroid;
+                    url.ios = result.info.Setting.APPIOS;
+                    loadAPP.apply();
+                }
+            }).post();
+        });
+    </script>
+</head>
+<body class="loading">
+    <div class="app">
+        <div class="logo"></div>
+        <a class="btn" id="download" href="javascript:"></a>
+    </div>
+
+    <div class="btn-ios">
+        <a href="javascript:" onclick="document.getElementById('ios').className='ios show';">IOS安装说明</a>
+    </div>
+
+    <div class="ios" id="ios">
+        <a href="javascript:" onclick="document.getElementById('ios').className='ios';">朕知道了</a>
+    </div>
+
+    <div class="wechat" id="wechat">
+        <span class="arrow"></span>
+    </div>
+</body>
+</html>

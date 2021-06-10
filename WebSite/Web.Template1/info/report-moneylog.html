@@ -1,0 +1,77 @@
+﻿<div class="frame-info-tip" data-setting-fill="1">
+    <i class="icon icon40 alert"></i>
+    <p class="red">温馨提示</p>
+    <p class="red">因数据量太大，帐变记录约有10分钟左右的延迟。</p>
+</div>
+<div class="frame-info-content">
+    <h3>
+        帐变记录
+        <span class="buttons">
+            <a href="javascript:" class="btn btn-blue" id="report-user-moneylog-lockmoney" data-diag-name="report-user-lockmoney" data-diag-type="control" data-diag-src="diag/userinfo-lockmoney.html" data-diag-title="查看锁定明细" data-diag-mask="true" data-diag-drag="true"><i class="icon icon24 account"></i><s></s>锁定（${LockMoney:money}）</a>
+        </span>
+    </h3>
+    <div class="frame-info-search right">
+        <form action="report-moneylog.html" method="post">
+            类型：<select name="Type" class="txt" data-bind-action="/handler/user/money/moneytype" data-bind-type="ajax" data-bind-callback="select">
+                <option value="">所有类型</option>
+            </select>
+            &nbsp;&nbsp;
+            查看：<select name="View" class="txt">
+                <option value="0">自己</option>
+                <option value="1">直属下级</option>
+                <option value="2">所有下级</option>
+                <option value="3">指定用户</option>
+            </select>
+            &nbsp;&nbsp;
+            用户：<input type="text" name="User" class="txt" disabled="disabled" />
+            &nbsp;&nbsp;
+            时间范围：<input type="text" class="txt" name="StartAt" data-type="calendar" size="8" readonly="readonly" />
+            ～
+            <input type="text" class="txt" name="EndAt" data-type="calendar" size="8" readonly="readonly" />
+            <input type="button" value="搜索" class="btn btn-blue" data-event-fire="report-user-moneylog-list">
+        </form>
+    </div>
+
+    <table class="list" id="report-user-moneylog-list" data-bind-action="/handler/user/money/moneylog" data-bind-type="list" data-bind-callback="list" data-bind-load="search,pagesplit,report-moneylog">
+        <thead>
+            <tr>
+                <th>编号</th>
+                <th>用户名</th>
+                <th>类型</th>
+                <th>帐变金额</th>
+                <th>可用余额</th>
+                <th>帐变时间</th>
+                <th>说明</th>
+            </tr>
+        </thead>
+        <tbody data-list-element="true">
+            <tr>
+                <td>${ID}</td>
+                <td>${UserName}</td>
+                <td>${Type}</td>
+                <td>${Money:money}</td>
+                <td>${Balance:money}</td>
+                <td>${CreateAt}</td>
+                <td>${Description}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<script type="text/javascript">
+    BW.load["report-moneylog"] = function () {
+        var t = this;
+
+        console.log(Setting.User);
+        var lockMoney = $("report-user-moneylog-lockmoney");
+        if (lockMoney != null) {
+            lockMoney.set("html", lockMoney.get("html").toHtml(Setting.User));
+        }
+        var container = t.dom.element.getParent();
+        var view = container.getElement("[name=View]");
+        var user = container.getElement("[name=User]");
+        view.addEvent("change", function () {
+            var value = this.get("value");
+            user.set("disabled", value != "3");
+        });
+    }
+</script>

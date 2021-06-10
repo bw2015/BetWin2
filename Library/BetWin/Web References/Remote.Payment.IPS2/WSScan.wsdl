@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://payat.ips.com.cn/WebService/Scan" xmlns:ns1="http://schemas.xmlsoap.org/soap/http" name="WSScan" targetNamespace="http://payat.ips.com.cn/WebService/Scan" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types />
+  <wsdl:message name="barCodeScanPay">
+    <wsdl:part name="barCodeScanPay" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="barCodeScanPayResponse">
+    <wsdl:part name="barCodeScanPayResult" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="scanPayResponse">
+    <wsdl:part name="scanPayRsp" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="scanPay">
+    <wsdl:part name="scanPayReq" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:portType name="ScanService">
+    <wsdl:operation name="scanPay">
+      <wsdl:input name="scanPay" message="tns:scanPay" />
+      <wsdl:output name="scanPayResponse" message="tns:scanPayResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="barCodeScanPay">
+      <wsdl:input name="barCodeScanPay" message="tns:barCodeScanPay" />
+      <wsdl:output name="barCodeScanPayResponse" message="tns:barCodeScanPayResponse" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="WSScanSoapBinding" type="tns:ScanService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="rpc" />
+    <wsdl:operation name="scanPay">
+      <soap:operation soapAction="http://payat.ips.com.cn/WebService/Scan/scanPay" style="rpc" />
+      <wsdl:input name="scanPay">
+        <soap:body use="literal" namespace="http://payat.ips.com.cn/WebService/Scan" />
+      </wsdl:input>
+      <wsdl:output name="scanPayResponse">
+        <soap:body use="literal" namespace="http://payat.ips.com.cn/WebService/Scan" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="barCodeScanPay">
+      <soap:operation soapAction="http://payat.ips.com.cn/WebService/Scan/barCodeScanPay" style="rpc" />
+      <wsdl:input name="barCodeScanPay">
+        <soap:body use="literal" namespace="http://payat.ips.com.cn/WebService/Scan" />
+      </wsdl:input>
+      <wsdl:output name="barCodeScanPayResponse">
+        <soap:body use="literal" namespace="http://payat.ips.com.cn/WebService/Scan" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="WSScan">
+    <wsdl:port name="WSScanSoap" binding="tns:WSScanSoapBinding">
+      <soap:address location="http://thumbpay.e-years.com/psfp-webscan/services/scan" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

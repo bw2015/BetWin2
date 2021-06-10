@@ -1,0 +1,72 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <link href="../styles/invite.css" rel="stylesheet" />
+    <script src="../scripts/mootools.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="circle">
+            <div class="circle-progress circle-progress-left"><em></em></div>
+            <div class="circle-progress circle-progress-right"><em></em></div>
+            <div class="progress">
+                <strong id="second">5</strong>
+                <span>secs</span>
+            </div>
+        </div>
+        <h3 id="tip">A8短网址跳转</h3>
+        <p>
+            A8短网址不对该网站内容承担任何责任，如有违法内容请<a href="javascript:">举报</a>。
+        </p>
+        <p>
+            <a href="javascript:" class="btn" id="btn">立即进入</a>
+        </p>
+    </div>
+
+    <script type="text/javascript">
+        var link = "${LINK}";
+
+        var progress = $$(".circle-progress em");
+        var second = $("second");
+        var btn = $("btn");
+        var tip = $("tip");
+
+        var setProgress = function (index) {
+            var right = Math.min(50, index) / 50 * 180 + 135;
+            progress[1].setStyle("transform", "rotate(" + right + "deg)");
+
+            var left = Math.max(0, index - 50) / 50 * 180 + 315;
+            progress[0].setStyle("transform", "rotate(" + left + "deg)");
+        }
+        if (link) {
+            btn.set("href", link);
+        }
+
+
+        var index = 10;
+        var timer = setInterval(function () {
+            index--;
+            setProgress((10 - index) * 10);
+            second.set("text", Math.round(index / 2));
+            if (index == 0) {
+                clearInterval(timer);
+                if (!link) {
+                    tip.addClass("error");
+                    tip.set("text", "发生错误:网址不存在")
+                    btn.set({
+                        "href": "javascript:window.close();",
+                        "text": "关闭页面"
+                    });
+                } else {
+                    location.href = link;
+                }
+                return;
+            }
+
+        }, 500);
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,117 @@
+﻿<div class="frame-info-tip" data-setting-fill="1">
+    <i class="icon icon40 alert"></i>
+    <p class="red">温馨提示</p>
+    <p class="red">1、平台每天的提现时间为：${Site.Setting.WithdrawTime}</p>
+    <p class="red">2、每个账户每天限制提款次数为${Site.Setting.WithdrawCount}次，您今日已经成功发起了<label id="person-withdraw-count-today">0</label>笔提现申请</p>
+    <p class="red">3、新绑定的提款银行卡需要绑定时间超过${Site.Setting.CardTime}小时才能正常提款</p>
+    <p class="red">4、为了防止恶意洗钱，提现金额需消费超过充值金额的${Site.Setting.Turnover:p}方可申请提款</p>
+</div>
+
+<div class="frame-info-content" data-bind-action="/handler/user/money/withdrawinfo" data-bind-type="ajax" data-bind-callback="person-withdraw-info">
+    <h3>
+        申请提现
+    </h3>
+    <form action="/handler/user/money/withdraw" data-bind-action="/handler/user/money/withdraw" data-bind-type="ajax" data-bind-callback="form-tip" method="post">
+        <table class="post">
+            <tr>
+                <th>可用余额</th>
+                <td><label class="red ft14" data-field="Money"></label></td>
+            </tr>
+            <tr>
+                <th>可提现金额</th>
+                <td><label class="red ft14" data-field="Withdraw"></label></td>
+            </tr>
+            <tr>
+                <th>提现金额</th>
+                <td>
+                    <input type="text" class="txt" name="Money" size="6" /> 元
+                    <span class="red desc">单笔提现金额<label data-field="WithdrawMin"></label> ～ <label data-field="WithdrawMax"></label></span>
+                </td>
+            </tr>
+            <tr>
+                <th>提现账号</th>
+                <td>
+                    <select class="txt" name="BankID"></select>
+                </td>
+            </tr>
+            <tr>
+                <th>资金密码</th>
+                <td>
+                    <input type="password" class="txt" name="PayPassword" />
+                </td>
+            </tr>
+            <tr>
+                <th></th>
+                <td>
+                    <input type="submit" value="提交申请" class="btn btn-red" />
+                </td>
+            </tr>
+        </table>
+    </form>
+    <h3>
+        提现记录
+    </h3>
+    <table class="list" data-bind-action="/handler/user/money/withdrawlist" data-bind-type="list" data-bind-callback="list">
+        <thead>
+            <tr>
+                <th>提现编号</th>
+                <th>提现金额</th>
+                <th>提交时间</th>
+                <th>提现账户</th>
+                <th>当前状态</th>
+                <th>备注信息</th>
+            </tr>
+        </thead>
+        <tbody data-list-element="true">
+            <tr>
+                <td>${ID}</td>
+                <td>${Money:money}</td>
+                <td>${CreateAt}</td>
+                <td>${Account}</td>
+                <td>${Status}</td>
+                <td>${Description}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<script type="text/javascript">
+    // 提现信息
+    BW.callback["person-withdraw-info"] = function (result) {
+        var t = this;
+        if (!result.success) {
+            new BW.Tip(result.msg, {
+                "callback": function () {
+                    var target = $("frame-person-link-account");
+                    if (target != null) {
+                        BW.Bind(target).fire();
+                    }
+                }
+            });
+            return;
+        }
+
+        result.info.WithdrawMin = Setting.Site.Setting.WithdrawMin;
+        result.info.WithdrawMax = Setting.Site.Setting.WithdrawMax;
+
+        t.dom.element.getElements("[data-field]").each(function (item) {
+            var name = item.get("data-field");
+            if (result.info[name]) {
+                item.set("text", result.info[name].toFloat().ToString("c"));
+            }
+        });
+        var drpBank = t.dom.element.getElement("[name=BankID]");
+        result.info.BankAccount.each(function (item) {
+            new Element("option", {
+                "value": item.ID,
+                "text": item.Value + (item.IsWithdraw ? "" : "(不可用)"),
+                "disabled": item.IsWithdraw == 0
+            }).inject(drpBank);
+        });
+    }
+
+    // 提现申请提交
+    BW.callback["person-withdraw-submit"] = function (result) {
+        new BW.Tip(result.msg);
+    }
+</script>

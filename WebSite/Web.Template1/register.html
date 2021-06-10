@@ -1,0 +1,79 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>注册页面</title>
+    <link href="styles/common.css" rel="stylesheet" />
+    <link href="styles/register.css" rel="stylesheet" />
+    <link href="theme/styles/register.css" rel="stylesheet" />
+    <script src="studio/scripts/mootools.js"></script>
+    <script src="studio/scripts/mootools-more.js"></script>
+    <script src="studio/scripts/betwin.js"></script>
+    <script src="studio/scripts/diag.js"></script>
+    <script src="scripts/common.js"></script>
+    <script type="text/javascript">
+        var frame = parent.window != window;
+        BW.load["invite"] = function () {
+            var t = this;
+            if (frame) document.body.addClass("iframe");
+            var href = location.href;
+            var regex = /#(\w{5,8})$/i;
+            if (!regex.test(href)) {
+                new BW.Tip("邀请链接错误", {
+                    "callback": function () {
+                        if (frame) {
+                            BW.diagObj["register"].target.Close();
+                        } else {
+                            location.href = "index.html";
+                        }
+                    }
+                });
+                return;
+            }
+            t.dom.element.getElements("[name^=_]").each(function (item) {
+                item.set("name", item.get("name").replace("_", ""));
+            });
+            var code = regex.exec(href)[1];
+            t.dom.element.getElement("input[name=invite]").set("value", code);
+        };
+        BW.callback["register-success"] = function (result) {
+            window.open("index.html", "_top");
+        };
+    </script>
+</head>
+<body>
+    <div class="container">
+        <a href="index.html" class="logo"></a>
+        <form action="register.html" method="post" data-bind-action="/handler/user/account/invite" data-bind-type="ajax" data-bind-callback="form-tip" data-bind-form-tip="register-success" data-bind-load="invite">
+            <div class="box">
+                <p>
+                    <i class="user"></i>
+                    <input type="text" name="_UserName" class="txt" placeholder="请输入用户名" autocomplete="off" />
+                </p>
+                <p>
+                    <i class="pass"></i>
+                    <input type="password" name="_Password" class="txt" placeholder="请输入登录密码" autocomplete="off" />
+                </p>
+                <p>
+                    <i class="pass"></i>
+                    <input type="password" name="_Password2" class="txt" placeholder="请重复输入一次密码" autocomplete="off" />
+                </p>
+                <p>
+                    <i class="qq"></i>
+                    <input type="text" name="QQ" class="txt" placeholder="请输入QQ号码" autocomplete="off" data-regex="qq" />
+                </p>
+                <p>
+                    <i class="mobile"></i>
+                    <input type="text" name="Mobile" class="txt" placeholder="请输入手机号码（选填）" autocomplete="off" />
+                </p>
+                <!--<p>
+                    <i class="mail"></i>
+                    <input type="text" name="Email" class="txt" placeholder="请输入电子邮件（选填）" autocomplete="off" />
+                </p>-->
+            </div>
+            <input type="hidden" name="_invite" />
+            <input type="submit" value="注册" class="btn" />
+        </form>
+    </div>
+</body>
+</html>

@@ -1,0 +1,70 @@
+﻿<div class="page-header">
+    <h1>平台盈亏统计</h1>
+    <div class="page-searchbox">
+        <form action="money.html" method="post">
+            统计时间：
+            <input type="date" name="StartAt" class="txt" />
+            ～
+            <input type="date" name="EndAt" class="txt" />
+            <input type="submit" class="am-btn am-btn-success am-round am-text-xs" value="搜索" />
+        </form>
+    </div>
+</div>
+
+<div class="page-table">
+    <table class="list" data-bind-action="/admin/report/sitemoney" data-bind-type="list" data-bind-callback="list,count,report-sitemoney" data-bind-load="search">
+        <thead>
+            <tr>
+                <th>日期</th>
+                <th>投注</th>
+                <th>派奖</th>
+                <th>返点</th>
+                <th>佣金</th>
+                <th>活动</th>
+                <th>日工资</th>
+                <th>分红</th>
+                <th>游戏</th>
+                <th>盈亏</th>
+            </tr>
+        </thead>
+        <tbody data-list-element="true">
+            <tr>
+                <td>${Date}</td>
+                <td>${Data.Bet:money}</td>
+                <td>${Data.Reward:money}</td>
+                <td>${Data.Return:money}</td>
+                <td>${Data.Agent:money}</td>
+                <td>${Data.Activity:money}</td>
+                <td>${Data.Wages:money}</td>
+                <td>${Data.Bonus:money}</td>
+                <td>${Data.Game:money}</td>
+                <td>${Money:money-show}</td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <td>统计：</td>
+                <td>${data.Data.Bet:money}</td>
+                <td>${data.Data.Reward:money}</td>
+                <td>${data.Data.Return:money}</td>
+                <td>${data.Data.Agent:money}</td>
+                <td>${data.Data.Activity:money}</td>
+                <td>${data.Data.Wages:money}</td>
+                <td>${data.Data.Bonus:money}</td>
+                <td>${data.Data.Game:money}</td>
+                <td>${data.Money:money-show}</td>
+            </tr>
+        </tfoot>
+    </table>
+</div>
+
+<script type="text/javascript">
+    BW.callback["report-sitemoney"] = function (result) {
+        var t = this;
+        t.dom.element.getElements("tbody td,tfoot td").each(function (item) {
+            if (item.get("text").contains("$")) {
+                item.set("text", "0.00");
+            }
+        });
+    };
+</script>

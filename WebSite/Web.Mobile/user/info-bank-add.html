@@ -1,0 +1,38 @@
+﻿<!-- 设定手机绑定 -->
+<div class="user-info-bank">
+    <div class="alert-tip">
+        温馨提示
+        <p>1、银行卡绑定成功之后，平台任何区域都不会出现您的完整银行帐号，开户姓名等信息</p>
+        <p>2、您输入银行卡号之后系统会自动识别所属的银行</p>
+    </div>
+    <form action="/handler/user/info/addcard" method="post" data-bind-action="/handler/user/info/addcard" data-bind-type="ajax" data-bind-callback="form-tip,success-fire" data-bind-form-tip="mobile-back" data-bind-fire-target="info-bank-list">
+        <table class="post" data-bind-action="/handler/user/info/getbankinfo" data-bind-type="ajax" data-bind-callback="form-fill,mobile-error,mobile-info-bank">
+            <tr>
+                <td>
+                    <input type="text" class="txt" name="AccountName" placeholder="开户名" />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="number" class="txt" name="Account" placeholder="银行卡号" data-fill-hide="true" />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label class="txt">所属银行：<span class="red bold typeName"></span></label>
+                </td>
+            </tr>
+            <tr data-fill-hide="true">
+                <td>
+                    <input type="password" class="txt" name="PayPassword" placeholder="资金密码" />
+                </td>
+            </tr>
+            <tr data-fill-hide="true">
+                <td>
+                    <input type="hidden" name="Type" />
+                    <input type="submit" value="确认绑定银行卡" class="button" />
+                </td>
+            </tr>
+        </table>
+    </form>
+</div>

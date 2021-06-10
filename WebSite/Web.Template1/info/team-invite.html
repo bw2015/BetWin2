@@ -1,0 +1,76 @@
+﻿<div class="frame-info-content">
+    <h3>
+        注册链接
+    </h3>
+
+    <table class="list" id="team-invite-list" data-bind-action="/handler/user/team/invitelist" data-bind-type="list" data-bind-callback="list" data-bind-load="team-invite-init">
+        <thead>
+            <tr>
+                <th>编号</th>
+                <th>类型</th>
+                <th>返点</th>
+                <th>当前配额</th>
+                <th>已注册</th>
+                <th class="w200">操作</th>
+            </tr>
+        </thead>
+        <tbody data-list-element="true">
+            <tr data-bind-delete="true">
+                <td>${ID}</td>
+                <td>${Type}</td>
+                <td>${Rebate}</td>
+                <td>${Quota}</td>
+                <td>${Member}</td>
+                <td>
+                    <a href="javascript:" class="btn btn-red ft12" data-diag-name="team-invite-url" data-diag-type="control" data-diag-src="diag/inviteurl.html" data-diag-title="查看邀请链接" data-diag-data="id=${ID}" data-diag-mask="true">链接</a>
+                    <a href="javascript:" class="btn btn-red ft12">修改</a>
+                    <a href="javascript:" class="btn btn-red ft12" data-bind-action="/handler/user/team/deleteinvite" data-bind-data="id=${ID}" data-bind-type="ajax" data-bind-callback="delete" data-bind-stop="true" data-bind-event="click">删除</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <form action="/handler/user/team/saveinvite" data-bind-action="/handler/user/team/saveinvite" data-bind-type="ajax" data-bind-callback="form-tip,fire" data-bind-load="team-invite-form-init" data-bind-fire-target="team-invite-list">
+        <h3>
+            新建注册链接
+        </h3>
+        <table class="post">
+            <tr>
+                <th>用户类型：</th>
+                <td>
+                    <select class="txt" name="Type">
+                        <option value="Agent">代理</option>
+                        <option value="Member">用户</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <th>返点：</th>
+                <td><input type="number" name="Rebate" class="txt" required="required" min="${Site.Setting.MinRebate}" max="${User.InviteRebate}" step="2" />
+                    <span class="desc gray">返点在${Site.Setting.MinRebate} ～ ${User.InviteRebate}之间</span>
+                </td>
+            </tr>
+            <tr>
+                <th></th>
+                <td>
+                    <input type="submit" value="保存" class="btn btn-red" />
+                </td>
+            </tr>
+        </table>
+    </form>
+</div>
+
+
+<script type="text/javascript">
+    BW.load["team-invite-form-init"] = function () {
+        var t = this;
+        t.dom.element.set("html", t.dom.element.get("html").toHtml(Setting));
+    }
+
+    BW.load["team-invite-init"] = function () {
+        var t = this;
+        t.dom.element.addEvent("click", function (e) {
+            var obj = $(e.target);
+        })
+    }
+</script>

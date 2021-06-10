@@ -1,0 +1,146 @@
+﻿
+<div class="frame-info" style="padding:10px 0px;" data-bind-action="/handler/game/lottery/unitedinit" data-bind-type="ajax" data-bind-callback="game-lottery-united-init" data-bind-data="parent">
+    <form action="bet-united.html" data-bind-action="/handler/game/lottery/saveunited" data-bind-type="ajax" data-bind-callback="form-tip" data-bind-form-tip="diag-close">
+        <table class="post">
+            <tr>
+                <th>合买标题：</th>
+                <td>
+                    <input type="text" name="Title" class="txt" />
+                </td>
+            </tr>
+            <tr>
+                <th>彩种：</th>
+                <td>
+                    <span class="red" data-dom="game"></span>
+                </td>
+            </tr>
+            <tr>
+                <th>合买期号：</th>
+                <td>
+                    <select name="Index" class="txt" data-dom="index"></select>
+                </td>
+            </tr>
+            <tr>
+                <th>总金额：</th>
+                <td>
+                    <span class="red" data-dom="money">0.00</span> 元
+                </td>
+            </tr>
+            <tr>
+                <th>方案公开：</th>
+                <td>
+                    <select name="Public" class="txt" data-dom="public"></select>
+                </td>
+            </tr>
+            <tr>
+                <th>总份数：</th>
+                <td>
+                    <input type="number" class="txt w100" value="100" size="4" name="Total" /> 份
+                    <span class="desc gray">
+                        总金额除以总份数要求可以被整除到1分钱。
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <th>发起人认购：</th>
+                <td>
+                    <input type="number" class="txt w100" value="10" size="4" name="Buyed" /> 份
+                    <span class="desc gray">发起人认购数量不得低于总份数的<label class="red" data-dom="">10%</label></span>
+                </td>
+            </tr>
+            <tr>
+                <th>保底份额：</th>
+                <td>
+                    <input type="number" class="txt w100" value="" size="4" name="Package" /> 份
+
+                    <span class="desc gray"> 如未投满，发起人将最多购买剩余份额的数量</span>
+                </td>
+            </tr>
+            <tr>
+                <th>盈利佣金：</th>
+                <td>
+                    <select class="txt" data-dom="commission" name="Commission"></select>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2" class="center">
+                    <input type="hidden" name="Type" data-dom="type" />
+                    <input type="hidden" name="Number" data-dom="number" />
+                    <input type="submit" value="发起合买" class="btn btn-red" data-dom="submit" />
+                    &nbsp;&nbsp;
+                    <input type="button" value="取消" class="btn btn-while" data-dom="cancel" />
+                </td>
+            </tr>
+        </table>
+    </form>
+</div>
+
+<script type="text/javascript">
+    BW.callback["game-lottery-united"] = function (html) {
+        var t = this;
+
+        var data = t.dom.element.retrieve("data");
+        if (data == null || data.length == 0) {
+            new BW.Tip("没有选择合买内容", {
+                "callback": function () {
+                    BW.callback["diag-close"].apply(t);
+                }
+            });
+            return;
+        }
+
+        var dom = new Object();
+        t.dom.element.getElements("[data-dom]").each(function (item) {
+            dom[item.get("data-dom")] = item;
+        });
+
+        dom["cancel"].addEvent("click", function () {
+            BW.callback["diag-close"].apply(t);
+        });
+
+        for (var i = 0; i <= 0.2; i += 0.01) {
+            new Element("option", {
+                "value": i,
+                "text": i == 0 ? "免佣" : i.ToString("p")
+            }).inject(dom["commission"]);
+        };
+
+        // 总金额
+        !function () {
+            var money = 0;
+            data.each(function (item) {
+                money += item.money;
+            });
+            dom["money"].set("text", money.ToString("n"));
+        }();
+
+        // 投注号码
+        !function () {
+            dom["number"].set("value", JSON.encode(data));
+        }();
+    };
+
+    // 合买初始化信息
+    BW.callback["game-lottery-united-init"] = function (result) {
+        var t = this;
+
+        var dom = new Object();
+        t.dom.element.getElements("[data-dom]").each(function (item) {
+            dom[item.get("data-dom")] = item;
+        });
+
+        dom["game"].set("text", result.info.Game);
+        dom["type"].set("value", result.info.Type);
+        result.info.Index.each(function (item) {
+            new Element("option", {
+                "value": item.Index,
+                "text": item.Index + "期   (" + item.ResultAt + ")"
+            }).inject(dom["index"]);
+        });
+
+        result.info.Public.bind(dom["public"], {
+            "text": "Description",
+            "value": "Name"
+        });
+    };
+</script>

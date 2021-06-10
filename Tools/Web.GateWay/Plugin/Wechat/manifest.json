@@ -1,0 +1,29 @@
+﻿{
+  "name": "微信二维码收款支付自动到帐",
+  "version": "0.0.6",
+  "manifest_version": 2,
+  "minimum_chrome_version": "10.0",
+  "description": "2018.06.14 更新，增加對web.wechat.com域名的適配",
+  "background": {
+    "scripts": [ "scripts/mootools.js", "scripts/md5.js", "scripts/background.js" ]
+  },
+  "icons": {
+    "16": "images/icon16.png",
+    "48": "images/icon48.png",
+    "128": "images/icon128.png"
+  },
+  "browser_action": {
+    "default_icon": "images/icon48.png",
+    "default_popup": "popup.html"
+  },
+  "content_scripts": [
+    {
+      "matches": [ "https://wx.qq.com/", "https://wx2.qq.com/", "https://web.wechat.com/" ],
+      "css": [ "styles/client.css" ],
+      "js": [ "scripts/mootools.js", "scripts/md5.js", "scripts/content.js" ],
+      "run_at": "document_end",
+      "all_frames": true
+    }
+  ],
+  "permissions": [ "webRequest", "webRequestBlocking", "debugger", "tabs", "https://wx.qq.com/*", "https://wx2.qq.com/*", "https://web.wechat.com/*" ]
+}

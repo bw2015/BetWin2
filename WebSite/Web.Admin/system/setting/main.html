@@ -1,0 +1,294 @@
+﻿<div class="page-header">
+    <h1>常规设置</h1>
+    <div class="page-action  am-btn-group">
+        <a href="javascript:" class="am-btn am-btn-success am-round" data-diag-name="setting-main-moneytype" data-diag-type="control" data-diag-src="system/setting/main-moneytype.html" data-diag-mask="true" data-diag-drag="true" data-diag-title="资金类型设定">资金类型设定</a>
+        <a href="javascript:" class="am-btn am-btn-primary am-round" data-diag-name="setting-main-taskstatus" data-diag-type="control" data-diag-src="system/setting/main-taskstatus.html" data-diag-mask="true" data-diag-drag="true" data-diag-title="系统任务状态查看">任务状态查看</a>
+        <a href="javascript:" class="am-btn am-btn-danger am-round" data-diag-name="setting-main-domain" data-diag-type="control" data-diag-src="system/setting/main-domain.html" data-diag-mask="true" data-diag-drag="true" data-diag-title="平台域名设置">域名设置</a>
+    </div>
+</div>
+<div class="page-table" data-bind-action="/admin/site/get" data-bind-type="ajax" data-bind-callback="form-fill,system-setting-main-info" id="system-setting-main">
+    <form action="/admin/site/savesetting" method="post" onreset="return false;" data-bind-action="/admin/site/savesetting" data-bind-type="ajax" data-bind-callback="UpdateSiteInfo,form-tip,fire" data-bind-fire-target="system-setting-main">
+        <table class="post">
+            <tr>
+                <th>平台状态：</th>
+                <td>
+                    <select name="Status" class="txt am-form-field"><option value="Normal">正常</option><option value="Stop">停止</option></select>
+                </td>
+            </tr>
+            <tr>
+                <th>停站说明：</th>
+                <td>
+                    <textarea name="StopDesc" class="txt am-form-field" rows="4" cols="64" placeholder="如果停止平台，请在此输入停止说明"></textarea>
+                </td>
+            </tr>
+            <tr>
+                <th>平台名字：</th>
+                <td><input type="text" class="txt am-form-field" name="Name" required="required" /></td>
+            </tr>
+            <tr>
+                <th>数据有效期：</th>
+                <td>
+                    <input type="number" class="txt am-form-field" name="Setting.ExpireDay" required="required" /> 天
+                    <span class="desc">前台可查询的数据有效期</span>
+                </td>
+            </tr>
+
+            <tr>
+                <th>会员设定：</th>
+                <td>
+                    <table class="post">
+                        <tr>
+                            <th>返点设定：</th>
+                            <td>
+                                <input type="number" class="txt w100 am-form-field" name="Setting.MinRebate" placeholder="最低返点" required="required" min="0" max="2000" />
+                                ～
+                                <input type="number" class="txt w100 am-form-field" name="Setting.MaxRebate" placeholder="最高返点" required="required" min="0" max="2000" />
+                            </td>
+                            <th>参数设定：</th>
+                            <td>
+                                <label for="Setting-IsSameRebate">
+                                    <input type="checkbox" id="Setting-IsSameRebate" value="1" name="Setting.IsSameRebate" data-type="switch" />
+                                    允许同级账号
+                                </label>
+                                &nbsp;&nbsp;
+                                <label for="Setting-RechargeNeedBank">
+                                    <input type="checkbox" id="Setting-RechargeNeedBank" value="1" name="Setting.RechargeNeedBank" data-type="switch" />
+                                    需绑定银行卡才可充值
+                                </label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>默认密码：</th>
+                            <td colspan="3">
+                                <input type="text" class="txt am-form-field" name="Setting.DefaultPassword" placeholder="默认密码" required="required" />
+                                <span class="desc">重置用户密码的时候会设置成此处设置的密码</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>自动锁定：</th>
+                            <td colspan="3">
+                                <input type="number" class="txt am-form-field w80" name="Setting.LockNoBank" placeholder="未绑定银行卡" required="required" /> 天
+                                <span class="desc">系统自动锁定未绑定银行卡且没有资金流水超过设定天数的账户，为0表示不执行该锁定条件</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>消费流水：</th>
+                            <td colspan="3">
+                                <input type="text" class="txt am-form-field w80" name="Setting.Turnover" placeholder="消费流水" required="required" /> 倍
+                                <span class="desc">如果设定提现需消费充值的30%，则填入0.3。 填写0表示提现不需要流水。</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>注册编号：</th>
+                            <td colspan="3">
+                                <input type="text" class="txt am-form-field w80" name="Setting.RegisterInvite" placeholder="邀请码" />
+                                <span class="desc">如果开放站点注册，请在此输入用户主动注册邀请链接编号</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>最大投注奖金组：</th>
+                            <td colspan="3">
+                                <input type="text" class="txt am-form-field w80" name="Setting.MaxBetRebate" placeholder="最大投注奖金组" />
+                                <span class="desc">超过此奖金组的用户投注，将会按照此奖金组派奖，高出的点位自动返点</span>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <th>提现设定：</th>
+                <td>
+                    <table class="post">
+                        <tr>
+                            <th>银行卡数量：</th>
+                            <td>
+                                <input type="number" class="txt w50 am-form-field" name="Setting.MaxCard" placeholder="0" required="required" min="0" max="10" /> 张
+                            </td>
+                            <th>冻结时间：</th>
+                            <td>
+                                <input type="number" class="txt w50 am-form-field" name="Setting.CardTime" placeholder="0" required="required" min="0" max="10" /> 小时
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>提现时间：</th>
+                            <td>
+                                <input type="time" name="Setting.WithdrawTime1" class="txt am-form-field" />
+                                ～
+                                <input type="time" name="Setting.WithdrawTime2" class="txt am-form-field" />
+                            </td>
+                            <th>金额范围：</th>
+                            <td>
+                                <input type="number" class="txt w100 am-form-field" name="Setting.WithdrawMin" /> 元
+                                ～
+                                <input type="number" class="txt w100 am-form-field" name="Setting.WithdrawMax" /> 元
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>拆单金额：</th>
+                            <td colspan="3">
+                                <input type="number" class="txt w100 am-form-field" name="Setting.WithdrawUnit" /> 元
+                                <span class="desc">单笔提现金额超过金额，后台可按照此处设置进行拆分</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>单日可提现次数：</th>
+                            <td>
+                                <input type="number" class="txt w80 am-form-field" name="Setting.WithdrawCount" /> 次
+                            </td>
+                            <th>同名开户名：</th>
+                            <td><input type="number" class="txt w80 am-form-field" name="Setting.SameAccountName" /> <span class="desc">同名的提现名字最多可用于几个账户</span></td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <th>短信网关设定：</th>
+                <td>
+                    <table class="post">
+                        <tr>
+                            <th>网关类型：</th>
+                            <td><select name="Setting.SMS" data-enum-name="BW.GateWay.SMS.SMSProvider" class="txt am-form-field"></select></td>
+                            <th>验证码有效时间：</th>
+                            <td>
+                                <input type="number" class="txt am-form-field w80" name="Setting.SMSCodeTime" /> 秒
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>短信网关用户名：</th>
+                            <td><input type="text" class="txt am-form-field" /></td>
+                            <th>短信网关密码：</th>
+                            <td><input type="text" class="txt am-form-field" name="Setting.SMSPass" /></td>
+                        </tr>
+                        <tr>
+                            <th>同号码发送间隔：</th>
+                            <td>
+                                <input type="number" class="txt am-form-field w80" name="Setting.SendDelay" /> 秒
+                            </td>
+                            <th></th>
+                            <td></td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <th>资金模式：</th>
+                <td>
+                    <span data-dom="lotteryMode"></span>
+                </td>
+            </tr>
+            <tr>
+                <th>IM服务器：</th>
+                <td>
+                    <input type="text" class="txt am-form-field" style="width:60%;" name="Setting.ServiceServer" placeholder="多个服务器地址用逗号隔开" />
+                    <span class="desc">如果不填写则调用当前访问的域名作为客服服务地址</span>
+                </td>
+            </tr>
+            <tr>
+                <th>外部客服系统：</th>
+                <td>
+                    <input type="text" class="txt am-form-field" style="width:60%;" name="Setting.CustomerServer" />
+                    <span class="desc">第三方的客服系统链接地址</span>
+                </td>
+            </tr>
+            <tr>
+                <th>APP最新版本：</th>
+                <td>
+                    <input type="text" class="txt am-form-field" style="width:60%;" name="Setting.APPVersion" />
+                    <span class="desc">APP的最新版本，如小于最新版本号的APP进入页面将会提示自动升级</span>
+                </td>
+            </tr>
+            <tr>
+                <th>APP下载页面：</th>
+                <td>
+                    <input type="text" class="txt am-form-field" style="width:60%;" name="Setting.APP" />
+                    <span class="desc">apk文件下载地址</span>
+                </td>
+            </tr>
+            <tr>
+                <th>安卓APP：</th>
+                <td>
+                    <input type="text" class="txt am-form-field" style="width:60%;" name="Setting.APPAndroid" />
+                    <span class="desc">apk文件下载地址</span>
+                </td>
+            </tr>
+            <tr>
+                <th>苹果APP：</th>
+                <td>
+                    <input type="text" class="txt am-form-field" style="width:60%;" name="Setting.APPIOS" />
+                    <span class="desc">ipa文件下载地址</span>
+                </td>
+            </tr>
+            <tr>
+                <th>微信地址：</th>
+                <td>
+                    <input type="text" class="txt am-form-field" style="width:60%;" name="Setting.Wechat" />
+                    <span class="desc">微信玩法进入的地址</span>
+                </td>
+            </tr>
+            <tr>
+                <th>电脑客户端：</th>
+                <td>
+                    <input type="text" class="txt am-form-field" style="width:60%;" name="Setting.APPPC" />
+                    <span class="desc">exe文件下载地址</span>
+                </td>
+            </tr>
+            <tr>
+                <th>挂机客户端：</th>
+                <td>
+                    <input type="text" class="txt am-form-field" style="width:60%;" name="Setting.Guaji" />
+                    <span class="desc">挂机软件下载地址</span>
+                </td>
+            </tr>
+            <tr>
+                <th>API密钥：</th>
+                <td>
+                    <input type="text" class="txt am-form-field" style="width:60%;" name="Setting.APIKey" />
+                    <span class="desc">与第三方平台的通信密钥</span>
+                </td>
+            </tr>
+            <tr>
+                <th></th>
+                <td>
+                    <input type="submit" value=" 保存 " class="am-btn am-btn-success am-round" />
+                </td>
+            </tr>
+        </table>
+    </form>
+</div>
+
+<script type="text/javascript">
+    BW.callback["system-setting-main-info"] = function (result) {
+        var t = this;
+        if (!result.success) return;
+        // 资金模式
+        !function () {
+            var dom = t.dom.element.getElement("[data-dom=lotteryMode]");
+            if (!dom) return;
+            dom.empty();
+            var mode = result.info.Setting.LotteryMode.split(',');
+            var list = GolbalSetting.Enum["BW.Common.Lottery.LotteryMode"];
+            list.each(function (item) {
+                if (MODE[item.value]) item.num = MODE[item.value];
+            });
+            list.sort(function (n1, n2) { return n1.num > n2.num ? -1 : 1 });
+
+            list.each(function (item) {
+                var label = new Element("label", {
+                    "for": "lotteryMode-" + item.value,
+                    "html": " " + item.text,
+                    "style": "margin-right:16px;"
+                });
+
+                new Element("input", {
+                    "type": "checkbox",
+                    "name": "Setting.LotteryMode",
+                    "value": item.value,
+                    "id": "lotteryMode-" + item.value,
+                    "checked": mode.contains(item.value)
+                }).inject(label, "top");
+
+                label.inject(dom);
+            });
+        }();
+    };
+</script>

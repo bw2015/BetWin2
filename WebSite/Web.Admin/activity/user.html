@@ -1,0 +1,30 @@
+﻿<div class="page-header">
+    <h1>会员活动设置</h1>
+    <div class="page-action">
+        <a href="javascript:" class="am-btn am-btn-success am-round" data-diag-name="activity-user-status" data-diag-type="control" data-diag-src="activity/plan-status.html" data-diag-title="状态查看" data-diag-mask="true" data-diag-drag="true">状态查看</a>
+    </div>
+</div>
+<div class="page-table">
+    <table class="list" id="activity-plan-list" data-bind-action="admin/site/planlist" data-bind-type="list" data-bind-callback="list">
+        <thead>
+            <tr>
+                <th>类型</th>
+                <th>名称</th>
+                <th>说明</th>
+                <th>状态</th>
+                <th>操作</th>
+            </tr>
+        </thead>
+        <tbody data-list-element="true">
+            <tr>
+                <td>${Type}</td>
+                <td>${Name}</td>
+                <td>${Description}</td>
+                <td>${IsOpen:open}</td>
+                <td>
+                    <a href="javascript:" data-diag-name="user-activity-info" data-diag-type="control" data-diag-src="activity/plan-info.html" data-diag-title="${Name}" data-diag-mask="true" data-diag-drag="true" data-diag-data="Type=${Type}">设置</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

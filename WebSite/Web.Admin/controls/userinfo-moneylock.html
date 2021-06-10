@@ -1,0 +1,38 @@
+﻿<div class="page-table">
+    <table class="list" id="userinfo-moneylock-list" data-bind-action="/admin/user/moneylock" data-bind-type="list" data-bind-callback="list,count" data-bind-data="parent">
+        <thead>
+            <tr>
+                <th>编号</th>
+                <th>类型</th>
+                <th>目标编号</th>
+                <th>金额</th>
+                <th>锁定时间</th>
+                <th>备注信息</th>
+                <th>操作</th>
+            </tr>
+        </thead>
+        <tbody data-list-element="true">
+            <tr>
+                <td>${ID}</td>
+                <td>${Type}</td>
+                <td>${SourceID}</td>
+                <td>${Money:money}</td>
+                <td>${LockAt}</td>
+                <td>${Description}</td>
+                <td>
+                    <a href="javascript:" class="am-btn am-btn-success am-round am-text-xs" data-bind-action-delay="admin/user/moneyunlock" data-bind-type="ajax" 
+                       data-bind-callback="form-tip,success-fire" data-bind-fire-target="userinfo-moneylock-list" data-bind-stop="true" data-bind-event="confirm"
+                       data-bind-data="ID=${ID}">解锁</a>
+                </td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <td colspan="2">统计：</td>
+                <td></td>
+                <td>${data.Money:money}</td>
+                <td colspan="2"></td>
+            </tr>
+        </tfoot>
+    </table>
+</div>

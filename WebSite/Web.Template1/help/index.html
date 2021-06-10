@@ -1,0 +1,92 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>帮助中心</title>
+    <script type="text/javascript" src="../studio/scripts/mootools.js"></script>
+    <script type="text/javascript" src="../studio/scripts/mootools-more.js"></script>
+    <script type="text/javascript" src="../studio/scripts/betwin.js"></script>
+    <link href="../styles/help.css" rel="stylesheet" />
+    <script type="text/javascript">
+        BW.callback["list-column"] = function (result) {
+            var t = this;
+            var colId = $("txtColID");
+            var title = $("txtLabel");
+            var content = $("content");
+            var list = t.dom.element.getElements("[data-id]");
+            var current = null;
+            var id = location.href.get("id");
+            var defaultColumn = list.filter(function (item) { return item.get("data-id") == id; }).getLast();
+            list.addEvent("click", function () {
+                var obj = this;
+                colId.set("value", obj.get("data-id"));
+                title.set("text", obj.get("text"));
+                content.getBindEvent().fire();
+                if (current) current.removeClass("current");
+                current = obj;
+                current.addClass("current");
+            });
+            if (list.length > 0) {
+                if (!defaultColumn) {
+                    defaultColumn = list[0];
+                }
+                defaultColumn.fireEvent("click", defaultColumn);
+            }
+        };
+
+        BW.callback["list-news"] = function () {
+            var t = this;
+            t.dom.element.getElements("[data-id] label").each(function (item, index) {
+                item.set("text", index + 1);
+            });
+
+            var current = null;
+            var list = t.dom.element.getElements("[data-id]");
+            console.log(list);
+            list.addEvent("click", function () {
+                var parent = this.getParent("li");
+                if (current) current.removeClass("current");
+                current = parent;
+                current.addClass("current");
+            });
+            if (list.length > 0) list[0].fireEvent("click", list[0]);
+        };
+    </script>
+</head>
+<body>
+
+    <header>
+        <div class="w">
+            <img src="../images/space.gif" class="logo" />
+        </div>
+    </header>
+    <div class="container w">
+        <form action="index.html" method="post">
+            <input type="hidden" name="ColID" id="txtColID" />
+            <input type="hidden" name="Type" value="Help" />
+            <input type="hidden" name="Content" value="1" />
+        </form>
+        <menu data-bind-action="../handler/site/info/columnlist" data-bind-type="list" data-bind-callback="list,list-column" data-bind-data="Type=Help">
+            <ul data-list-element="true">
+                <li>
+                    <a href="javascript:" data-id="${ID}">${Name}</a>
+                </li>
+            </ul>
+        </menu>
+        <content data-bind-action="../handler/site/info/newslist" data-bind-type="list" data-bind-callback="list,list-news" data-bind-load="search" data-bind-stop="true" id="content">
+            <h3 id="txtLabel"></h3>
+            <ul class="list" data-list-element="true">
+                <li>
+                    <a href="javascript:" class="tit" data-id="${ID}">
+                        <label></label>
+                        <span>${Title}</span>
+                    </a>
+                    <div class="list-content">
+                        ${Content}
+                    </div>
+                </li>
+            </ul>
+        </content>
+    </div>
+</body>
+</html>

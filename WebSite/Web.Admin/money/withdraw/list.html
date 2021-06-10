@@ -1,0 +1,137 @@
+﻿<div class="page-header">
+    <h1>提现记录</h1>
+    <div class="page-searchbox">
+        <form action="list.html" method="post">
+            <input type="text" name="ID" class="txt w120" placeholder="出款编号" />
+            <input type="text" name="User" class="txt w120" placeholder="用户名/姓名" />
+            <input type="text" name="Agent" class="txt w80" placeholder="团队代理" />
+            申请时间：<input type="date" name="StartAt" class="txt" />～<input type="date" name="EndAt" class="txt" />
+            预约时间：<input type="date" name="StartAt1" class="txt" />～<input type="date" name="EndAt1" class="txt" />
+            <select class="txt" data-enum-name="BW.Common.Users.WithdrawOrder+WithdrawStatus" data-enum-none="全部状态" name="Status"></select>
+            <select name="WithdrawSettingID" class="txt" data-select-value="ID" data-select-text="Name" data-bind-action-delay="/admin/site/getwithdrawlist" data-bind-type="ajax" data-bind-data="IsOpen=1" data-bind-callback="select">
+                <option value="">所有</option>
+                <option value="0">N/A</option>
+            </select>
+            来源：<select name="Source" class="txt" data-bind-action="admin/money/withdrawsource" data-bind-type="ajax" data-bind-callback="select">
+                <option value="">所有来源</option>
+            </select>
+            需手工：<input type="checkbox" name="IsManual" value="1" data-type="switch" />
+            <input type="submit" value="搜索" class="am-btn am-btn-success am-round am-text-xs" />
+            <input type="reset" value="重置" class="am-btn am-round am-text-xs" />
+        </form>
+    </div>
+    <div class="page-action">
+        <a href="javascript:" class="am-btn am-btn-success" data-diag-name="money-withdraw-batch" data-diag-type="control" data-diag-src="money/withdraw/withdraw-batch.html" data-diag-title="批量出款" data-diag-drag="true">批量出款</a>
+    </div>
+</div>
+
+<div class="page-table">
+    <table class="list" id="money-withdraw-list" data-bind-action="/admin/money/withdrawlist" data-bind-type="list" data-bind-callback="list,count,money-withdraw-list" data-bind-load="search,pagesplit">
+        <thead>
+            <tr>
+                <th>编号</th>
+                <th>提现用户</th>
+                <th>提现金额</th>
+                <th>手续费</th>
+                <th>实际到账</th>
+                <th>申请时间</th>
+                <th>当前状态</th>
+                <th>出款接口</th>
+                <th>收款信息</th>
+                <th>操作</th>
+            </tr>
+        </thead>
+        <tbody data-list-element="true">
+            <tr>
+                <td>${ID}</td>
+                <td><a href="javascript:" class="diag-user" data-userid="${UserID}">${UserName}</a></td>
+                <td><label class="am-text-danger">${TotalMoney:money}元</label></td>
+                <td><label class="am-text-danger">${Fee:money}元</label></td>
+                <td><label class="am-text-danger">${Money:money}元</label></td>
+                <td>
+                    ${CreateAt}
+                    <p data-appointment="${Appointment}"></p>
+                </td>
+                <td>${Status:withdraw-status}</td>
+                <td>${WithdrawSetting:withdraw-setting}</td>
+                <td><p class="am-text-xs am-text-left">${Bank} ${AccountName} ${AccountNumber}</p></td>
+                <td><a href="javascript:" data-diag-name="money-withdraw" data-diag-title="处理/详情" data-diag-type="control" data-diag-src="money/withdraw/withdraw-check.html" data-diag-data="id=${ID}" data-diag-mask="true" data-diag-drag="true">处理</a></td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <td colspan="2"></td>
+                <td><label class="am-text-success">${data.TotalMoney:money}元</label></td>
+                <td><label class="am-text-success">${data.Fee:money}元</label></td>
+                <td><label class="am-text-success">${data.Money:money}元</label></td>
+                <td colspan="5"></td>
+            </tr>
+        </tfoot>
+    </table>
+</div>
+
+<script type="text/javascript">
+    htmlFunction["withdraw-status"] = function (value) {
+        var color = "default";
+        switch (value) {
+            case "待处理":
+                color = "secondary";
+                break;
+            case "审核失败":
+                color = "warning";
+                break;
+            case "银行付款中":
+                color = "primary";
+                break;
+            case "已到账":
+                color = "success";
+                break;
+            case "银行退单":
+                color = "danger"
+                break;
+        }
+        return "<span class=\"am-text-" + color + "\">" + value + "</span>";
+    };
+
+    if (!window["withdraw-setting-type"]) {
+        window["withdraw-setting-type"] = {};
+    }
+
+    htmlFunction["withdraw-setting"] = function (value) {
+        if (!window["withdraw-setting-type"][value]) {
+            window["withdraw-setting-type"][value] = ["default", "primary", "secondary", "success", "warning", "danger"].getRandom();
+        }
+        return "<span class=\"am-text-" + window["withdraw-setting-type"][value] + "\">" + value + "</span>";
+    };
+
+    // 字符串转化成日期格式
+    String.prototype.toDate = function () {
+        var value = this;
+        var regex = /^(\d{4})[\-\/](\d{1,2})[\-\/](\d{1,2}) (\d{1,2}):(\d{1,2}):(\d{1,2})/;
+        if (!regex.test(value)) return NaN;
+        var date = new Date(regex.exec(value)[1].toInt(), regex.exec(value)[2].toInt() - 1, regex.exec(value)[3].toInt(),
+            regex.exec(value)[4].toInt(),
+            regex.exec(value)[5].toInt(),
+            regex.exec(value)[6].toInt()
+            );
+        return date;
+    };
+
+    BW.callback["money-withdraw-list"] = function (result) {
+        var t = this;
+        var now = new Date();
+        t.dom.element.getElements("[data-appointment]").each(function (item) {
+            var time = item.get("data-appointment");
+            if (time == "") { item.dispose(); }
+            var date = time.toDate();
+            if (isNaN(date)) { item.dispose(); return; }
+            if (date.getFullYear() < 2000) {
+                item.dispose();
+                return;
+            }
+            var diff = date.getDateDiff(now);
+            console.log(diff);
+            item.set("text", "预约：" + time);
+        });
+    };
+</script>

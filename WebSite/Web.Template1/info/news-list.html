@@ -1,0 +1,22 @@
+﻿<div class="info-news-content">
+    <div class="frame-info-content">
+        <table class="list" data-bind-action="/handler/site/info/newslist" data-bind-type="list" data-bind-callback="list" data-bind-load="pagesplit">
+            <thead>
+                <tr>
+                    <th>标题</th>
+                    <th class="w200">发布时间</th>
+                </tr>
+            </thead>
+            <tbody data-list-element="true">
+                <tr>
+                    <td>
+                        <a href="javascript:" class="blue" data-diag-name="info-news-detial" data-diag-type="control" data-diag-src="info/news-detail.html" data-diag-mask="true" data-diag-title="${Title}" data-diag-data="id=${ID}">
+                            [${Column}] ${Title}
+                        </a>
+                    </td>
+                    <td>${CreateAt}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

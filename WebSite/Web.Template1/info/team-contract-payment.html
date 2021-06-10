@@ -1,0 +1,69 @@
+﻿<div class="frame-info">
+    <div class="lineHeight"></div>
+    <table class="list" data-bind-action="/handler/user/team/getcontractpayment" data-bind-type="list" data-bind-callback="list,team-contract-payment">
+        <thead>
+            <tr>
+                <th>编号</th>
+                <th>契约方</th>
+                <th>类型</th>
+                <th>创建时间</th>
+                <th>金额</th>
+                <th>备注信息</th>
+                <th>操作</th>
+            </tr>
+        </thead>
+        <tbody data-list-element="true">
+            <tr>
+                <td>${ID}</td>
+                <td>${User}</td>
+                <td>${Type}</td>
+                <td>${CreateAt}</td>
+                <td>${Money:money}</td>
+                <td>${Description}</td>
+                <td data-parent="${IsParent}" data-id="${ID}"></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<script type="text/javascript">
+    BW.callback["team-contract-payment"] = function () {
+        var t = this;
+        t.dom.element.getElements("[data-parent]").each(function (item) {
+            var isParent = item.get("data-parent");
+            var link = new Element("a", {
+                "href": "javascript:",
+                "class": "btn",
+                "events": {
+                    "click": function () {
+                        var obj = this;
+                        var id = item.get("data-id");
+                        obj.fade("hide");
+                        new Request.JSON({
+                            "url": "/handler/user/team/submitcontractlog",
+                            "onComplete": function () {
+                                obj.fade("in");
+                            },
+                            "onSuccess": function (result) {
+                                new BW.Tip(result.msg, {
+                                    "callback": function () {
+                                        t.fire();
+                                    }
+                                });
+                            }
+                        }).post({
+                            "ID": id
+                        });
+                    }
+                }
+            });
+            if (isParent == "0") {
+                link.addClass("btn-red");
+                link.set("text", "提醒上级");
+            } else {
+                link.addClass("btn-green");
+                link.set("text", "发放");
+            }
+            link.inject(item);
+        });
+    };
+</script>

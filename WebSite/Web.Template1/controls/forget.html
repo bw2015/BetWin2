@@ -1,0 +1,124 @@
+﻿<div class="step">
+    <label>输入基本信息</label>
+    <label>重置密码</label>
+    <label>密码修改成功</label>
+</div>
+
+<form class="step1" action="forget.html" method="post" data-bind-action="handler/user/account/findpasswordquery" data-bind-type="ajax" data-bind-callback="user-foeget-query" data-bind-load="user-forget-step">
+    <table class="post">
+        <tr>
+            <th>用户名：</th>
+            <td>
+                <input type="text" name="UserName" class="txt" />
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2" class="submit">
+                <input type="submit" value="下一步" class="btn btn-red" />
+            </td>
+        </tr>
+    </table>
+</form>
+
+<form class="step2" action="forget.html" method="post" data-bind-action="handler/user/account/forget" data-bind-type="ajax" data-bind-callback="user-foeget-reset">
+    <table class="post">
+        <tr>
+            <th>用户名：</th>
+            <td>
+                <label class="ft14 bold red" data-field="UserName"></label>
+            </td>
+        </tr>
+        <tr>
+            <th>支付密码：</th>
+            <td>
+                <input type="text" name="PayPassword" class="txt" />
+            </td>
+        </tr>
+        <tr>
+            <th>提现账户名：</th>
+            <td>
+                <input type="text" name="AccountName" class="txt" />
+            </td>
+        </tr>
+        <tr>
+            <th>密保问题：</th>
+            <td>
+                <label class="ft14 bold red" data-field="Question"></label>
+            </td>
+        </tr>
+        <tr>
+            <th>密保答案：</th>
+            <td>
+                <input type="text" name="Answer" class="txt" />
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2" class="submit">
+                <input type="hidden" name="UserName" data-field="UserName" />
+                <input type="submit" value="重置密码" class="btn btn-red" />
+            </td>
+        </tr>
+    </table>
+</form>
+
+<form class="step3" action="forget.html" method="post">
+    <div class="findpwd-success"></div>
+</form>
+
+
+<script type="text/javascript">
+
+    BW.load["user-forget-step"] = function (index) {
+        var t = this;
+        if (!index) index = 1;
+        var obj = t.dom.element.getParent();
+        var bar = obj.getElements(".step label");
+
+        for (var i = 1; i <= 3; i++) {
+            obj.removeClass("step-" + i);
+        }
+        bar.each(function (item) {
+            item.removeClass("current");
+        });
+        bar[index - 1].addClass("current");
+        obj.addClass("step-" + index);
+    };
+
+    BW.callback["user-foeget-query"] = function (result) {
+        var t = this;
+        var msg = null;
+        if (!result.success) {
+            msg = result.msg;
+        } else {
+            if (!result.info.AccountName) msg = "该账户未设置真实姓名，请联系客服找回。";
+            if (!result.info.PayPassword) msg = "该账户未设置资金密码，请联系客服找回。";
+            if (!result.info.Question) msg = "该账户未设置密保问题，请联系客服找回。";
+        }
+        if (msg) {
+            new BW.Tip(msg, {
+                "callback": function () {
+                    BW.callback["diag-close"].apply(t);
+                }
+            });
+            return;
+        }
+        var forget = t.dom.element.getParent();
+        forget.getElements("[data-field]").each(function (item) {
+            var name = item.get("data-field");
+            if (result.info[name]) item.set(item.get("tag") == "input" ? "value" : "text", result.info[name]);
+        });
+        BW.load["user-forget-step"].apply(t, [2]);
+    };
+
+    BW.callback["user-foeget-reset"] = function (result) {
+        var t = this;
+        if (!result.success) {
+            new BW.Tip(result.msg);
+            return;
+        }
+        var forget = t.dom.element.getParent();
+
+        BW.load["user-forget-step"].apply(t, [3]);
+        forget.getElement(".findpwd-success").set("text", result.msg);
+    };
+</script>

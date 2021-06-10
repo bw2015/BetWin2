@@ -1,0 +1,61 @@
+﻿<div class="page-header">
+    <h1>电子游戏报表</h1>
+    <div class="page-searchbox">
+        <form action="slot.html">
+            <select class="txt" name="Type" data-enum-name="BW.Common.Games.GameType" data-enum-none="所有平台"></select>
+            <input type="text" name="User" class="txt w120" placeholder="用户名" />
+            <input type="text" name="Game" class="txt w120" placeholder="游戏名称" />
+            <input type="text" name="BillNo" class="txt w120" placeholder="流水号" />
+            <input type="date" name="StartAt" class="txt" data-type="calendar" placeholder="游戏日期（开始）" />
+            <input type="date" name="EndAt" class="txt" data-type="calendar" placeholder="游戏日期（结束）" />
+            <input type="submit" value="查询" class="am-btn am-btn-success am-round am-text-xs" />
+            <input type="reset" value="重置" class="am-btn am-round am-text-xs" />
+        </form>
+    </div>
+</div>
+
+<div class="page-table">
+    <table class="list" data-bind-action="/admin/game/slotlog" data-bind-type="list" data-bind-callback="list,count" data-bind-load="search,pagesplit">
+        <thead>
+            <tr>
+                <th>编号</th>
+                <th>平台</th>
+                <th>用户名</th>
+                <th>流水号</th>
+                <th>游戏名</th>
+                <th>投注金额</th>
+                <th>盈亏金额</th>
+                <th>余额</th>
+                <th>游戏时间</th>
+                <th>记录同步时间</th>
+                <th>操作</th>
+            </tr>
+        </thead>
+        <tbody data-list-element="true">
+            <tr>
+                <td>${ID}</td>
+                <td>${Type}</td>
+                <td><a href="javascript:" class="diag-user" data-userid="${UserID}">${UserName}</a></td>
+                <td>${BillNo}</td>
+                <td>${GameName}</td>
+                <td>${BetAmount:money}</td>
+                <td>${Money:money}</td>
+                <td>${Balance:money}</td>
+                <td>${PlayAt}</td>
+                <td>${CreateAt}</td>
+                <td>
+                    <a href="javascript:" data-diag-name="game-log-video-view" data-diag-type="control" data-diag-src="game/log/log-view.html" data-diag-title="电子游戏原始记录" data-diag-drag="true" data-diag-data="Type=Slot&ID=${ID}">原始记录</a>
+                </td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <td colspan="2">统计：</td>
+                <td colspan="3"></td>
+                <td><label class="am-text-success">${data.BetAmount:money} 元</label></td>
+                <td><label class="am-text-success">${data.Money:money} 元</label></td>
+                <td colspan="4"></td>
+            </tr>
+        </tfoot>
+    </table>
+</div>

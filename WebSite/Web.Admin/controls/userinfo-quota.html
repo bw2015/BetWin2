@@ -1,0 +1,24 @@
+﻿<div class="userinfo-frame  userinfo-quota">
+    <div class="page-table">
+        <table class="list" data-bind-action="admin/user/getquotalist" data-bind-type="list" data-bind-callback="list,update" data-bind-update-action="admin/user/updatequota" data-bind-data="parent">
+            <thead>
+                <tr>
+                    <th>奖金组</th>
+                    <th>配额数量</th>
+                    <th>剩余数量</th>
+                </tr>
+            </thead>
+            <tbody data-list-element="true">
+                <tr>
+                    <td>${MinRebate}～${MaxRebate}</td>
+                    <td>
+                        <input type="number" class="txt w100" value="${Number}" data-update-name="Number" data-update-id="${ID}" data-update-userid="${UserID}" />
+                    </td>
+                    <td>
+                        ${Overage}
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

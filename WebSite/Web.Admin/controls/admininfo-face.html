@@ -1,0 +1,18 @@
+﻿<div class="page-table" data-bind-action="admin/account/info" data-bind-type="ajax" data-bind-callback="admininfo-face-editor">
+
+</div>
+
+<script type="text/javascript">
+    BW.callback["admininfo-face-editor"] = function (result) {
+        var t = this;
+        new Swiff("images/face.swf", {
+            "width": 750,
+            "height": 420,
+            "container": t.dom.element,
+            "vars": {
+                "requestURL": "admin/account/saveface",
+                "tbToken": result.info.Session
+            }
+        });
+    }
+</script>

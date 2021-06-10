@@ -1,0 +1,53 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link href="../css/common.css" rel="stylesheet" />
+    <script src="../config/site.js"></script>
+    <title>进入AG游戏</title>
+    <script type="text/javascript">
+        // 进入游戏
+        var entryGame = function () {
+            new Request({
+                "url": "/handler/game/gateway/login",
+                "onSuccess": function (html) {
+                    document.body.set("html", html);
+                    document.getElementsByTagName("form")[0].submit();
+                }
+            }).post({
+                "Type": "AG",
+                "Key": location.href.get("key")
+            });
+        };
+
+        BW.callback["game-ag-entry"] = function (result) {
+            var t = this;
+            if (result.success) {
+                entryGame();
+            } else {
+                t.dom.element.set("text", "正在为您创建AG账户..");
+                new Request.JSON({
+                    "url": "/handler/game/gateway/register",
+                    "onSuccess": function (info) {
+                        if (!info.success) {
+                            new BW.Tip(info.msg, {
+                                "callback": function () {
+                                    window.close();
+                                }
+                            });
+                        } else {
+                            entryGame.apply(t);
+                        }
+                    }
+                }).post({
+                    "Type": "AG"
+                });
+            }
+        };
+    </script>
+
+</head>
+<body>
+    <p data-bind-action="/handler/game/gateway/getinfo" data-bind-type="ajax" data-bind-callback="game-ag-entry" data-bind-data="Type=AG">正在进入AG游戏..</p>
+</body>
+</html>

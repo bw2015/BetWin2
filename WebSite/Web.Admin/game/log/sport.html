@@ -1,0 +1,61 @@
+﻿<div class="page-header">
+    <h1>体育报表</h1>
+    <div class="page-searchbox">
+        <form action="/admin/game/slot">
+            <select class="txt" name="Type" data-enum-name="BW.Common.Games.GameType" data-enum-none="所有平台"></select>
+            <input type="text" name="User" class="txt w120" placeholder="用户名" />
+            <input type="text" name="WagersID" class="txt w120" placeholder="流水号" />
+            <input type="text" name="GameType" class="txt w120" placeholder="游戏类型" />
+            <input type="date" name="StartAt" class="txt" data-type="datetime" placeholder="下注时间（开始）" />
+            <input type="date" name="EndAt" class="txt" data-type="datetime" placeholder="下注时间（结束）" />
+            <input type="submit" value="查询" class="am-btn am-btn-success am-round am-text-xs" />
+            <input type="reset" value="重置" class="am-btn am-round am-text-xs" />
+        </form>
+    </div>
+</div>
+
+<div class="page-table">
+    <table class="list" data-bind-action="/admin/game/sportlog" data-bind-type="list" data-bind-callback="list,count" data-bind-load="search,pagesplit">
+        <thead>
+            <tr>
+                <th>类型</th>
+                <th>流水号</th>
+                <th>用户名</th>
+                <th>游戏类型</th>
+                <th>下注时间</th>
+                <th>投注金额</th>
+                <th>有效投注</th>
+                <th>盈亏金额</th>
+                <th>派奖时间</th>
+                <th>开奖结果</th>
+                <th>操作</th>
+            </tr>
+        </thead>
+        <tbody data-list-element="true">
+            <tr>
+                <td>${Type}</td>
+                <td>${WagersID}</td>
+                <td><a href="javascript:" class="diag-user" data-userid="${UserID}">${UserName}</a></td>
+                <td>${GameType}</td>
+                <td>${PlayAt}</td>
+                <td>${BetAmount:money}</td>
+                <td>${BetMoney:money}</td>
+                <td>${Money:money}</td>
+                <td>${ResultAt}</td>
+                <td>${Result}</td>
+                <td>
+                    <a href="javascript:" data-diag-name="game-log-video-view" data-diag-type="control" data-diag-src="game/log/log-view.html" data-diag-title="体育投注原始记录" data-diag-drag="true" data-diag-data="Type=Sport&ID=${ID}">原始记录</a>
+                </td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <td>统计：</td>
+                <td colspan="5"></td>
+                <td><label class="am-text-success">${data.BetMoney:money} 元</label></td>
+                <td><label class="am-text-success">${data.Money:money} 元</label></td>
+                <td colspan="3"></td>
+            </tr>
+        </tfoot>
+    </table>
+</div>

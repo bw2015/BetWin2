@@ -1,0 +1,147 @@
+﻿<!DOCTYPE HTML PUBLIC "-//WAPFORUM//DTD XHTML Mobile 1.0//EN" "http://www.wapforum.org/DTD/xhtml-mobile10.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>用户登录</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+    <script src="/studio/scripts/mootools.js"></script>
+    <script src="/studio/scripts/mootools-more.js"></script>
+    <script src="/studio/scripts/betwin.js"></script>
+    <link href="styles/common.css" rel="stylesheet" />
+    <link href="styles/login.css" rel="stylesheet" />
+    <link href="styles/icon.css" rel="stylesheet" />
+    <link href="styles/theme-black.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="header-info" style="background:none;">
+        <div class="logo"></div>
+    </div>
+    <form action="login.html" data-bind-action="/handler/user/account/login" data-bind-type="ajax" data-bind-callback="login" id="form-login">
+        <table class="post">
+            <tr>
+                <td class="icon">
+                    <i class="am-icon-user"></i>
+                    <input type="text" name="UserName" class="txt" placeholder="用户名" autocomplete="off" id="txtUserName" />
+                </td>
+            </tr>
+            <tr>
+                <td class="icon">
+                    <i class="am-icon-key"></i>
+                    <input type="password" name="Password" class="txt" placeholder="密码" autocomplete="off" />
+                </td>
+            </tr>
+            <tr>
+                <td class="icon">
+                    <i class="am-icon-code"></i>
+                    <input type="number" name="Code" maxlength="4" class="txt" placeholder="验证码" />
+                    <img src="images/space.gif" class="right" id="vcode" />
+                </td>
+            </tr>
+            <tr>
+                <td class="transparent">
+                    <input type="submit" value="会员登录" class="button" />
+                    <div class="link" data-bind-action="/handler/site/info/get" data-bind-type="ajax" data-bind-callback="link-register">
+                        <a href="javascript:">新会员注册</a>
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </form>
+    <form action="login.html" method="post" data-bind-action="/handler/user/account/invite" data-bind-type="ajax" data-bind-callback="form-tip,register" class="form-register" id="form-register">
+        <table class="post">
+            <tr>
+                <td class="icon">
+                    <i class="am-icon-user"></i>
+                    <input type="text" name="UserName" class="txt" placeholder="用户名" autocomplete="off" id="txtUserName" />
+                </td>
+            </tr>
+            <tr>
+                <td class="icon">
+                    <i class="am-icon-key"></i>
+                    <input type="password" name="Password" class="txt" placeholder="密码" autocomplete="off" />
+                </td>
+            </tr>
+            <tr>
+                <td class="icon">
+                    <i class="am-icon-key"></i>
+                    <input type="password" name="Password2" class="txt" placeholder="重复密码" autocomplete="off" />
+                </td>
+            </tr>
+            <tr>
+                <td class="icon">
+                    <i class="am-icon-code"></i>
+                    <input type="number" name="QQ" class="txt" placeholder="QQ号码" />
+                </td>
+            </tr>
+            <tr>
+                <td class="transparent">
+                    <input type="hidden" name="Invite" id="inviteCode" />
+                    <input type="submit" value="注册会员" class="button" />
+                    <div class="link">
+                        <a href="javascript:Back();">返回登录</a>
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </form>
+    <img src="http://192.168.0.113/images/logo.png" onload="location.href = 'http://192.168.0.113/mobile2/index.html?1496566228897'" onerror="$(this).dispose();" id="testServer">
+    <script type="text/javascript">
+
+        $("testServer").set("src", "http://192.168.0.113/images/logo.png?" + new Date().getTime());
+
+        BW.callback["validcode"] = function (result) {
+            $("vcode").set("src", "/handler/ValidateCode.axd?name=login&r=" + new Date().getTime());
+        };
+
+        BW.callback["login"] = function (result) {
+            var t = this;
+            if (result.success) {
+                try {
+                    localStorage.setItem("username", $("txtUserName").get("value"));
+                } catch (e) {
+
+                }
+                document.body.empty();
+                location.href = "main.html";
+            } else {
+                new BW.Tip(result.msg, {
+                    "callback": BW.callback["validcode"]
+                });
+            }
+        };
+
+        BW.callback["validcode"].apply();
+
+        $("vcode").addEvent("touchend", BW.callback["validcode"]);
+
+        if (localStorage["username"]) {
+            $("txtUserName").set("value", localStorage["username"]);
+        }
+
+        BW.callback["link-register"] = function (result) {
+            var t = this;
+            if (!result.success || !result.info.Setting.RegisterInvite) { t.dom.element.dispose(); return; }
+
+            $("inviteCode").set("value", result.info.Setting.RegisterInvite);
+            t.dom.element.getElement("a").addEvent("click", function () {
+                $("form-login").setStyle("display", "none");
+                $("form-register").setStyle("display", "block");
+            });
+        };
+
+        BW.callback["register"] = function (result) {
+            if (result.success) {
+                Back();
+            }
+        };
+
+        function Back() {
+            $("form-login").setStyle("display", "block");
+            $("form-register").setStyle("display", "none");
+        }
+
+
+    </script>
+</body>
+</html>

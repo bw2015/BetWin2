@@ -1,0 +1,116 @@
+﻿
+<div class="page-header">
+    <h1>用户列表</h1>
+    <div class="page-action">
+        <a href="javascript:" class="am-btn am-btn-success" data-bind-action="/admin/user/online" data-bind-type="ajax" data-bind-callback="html" data-bind-event="click">当前在线<label id="user-list-online">${Count}</label>人</a>
+    </div>
+    <div class="page-searchbox">
+        <form action="/admin/user/list" method="post" id="user-list-search" data-bind-action="/admin/user/list" data-bind-type="search" data-bind-target="user-list-obj" data-bind-load="tip">
+            <input type="number" name="UserID" class="txt w80" placeholder="用户编号" />
+            <input type="text" name="User" class="txt w80" placeholder="用户名" />
+            <input type="text" name="AccountName" class="txt w80" placeholder="用户姓名/手机/电子邮件" />
+            <input type="text" name="Agent" class="txt w80" placeholder="查询下级" id="user-search-agent" />
+            <input type="text" name="RegIP" class="txt w120" placeholder="注册IP" />
+            <input type="text" name="MinMoney" class="txt w80" placeholder="最低余额" />
+            <input type="text" name="MaxMoney" class="txt w80" placeholder="最多余额" />
+            <select name="Status" class="txt" data-enum-name="BW.Common.Users.User+UserStatus" data-enum-none="所有状态"></select>
+            <select name="Test" class="txt">
+                <option value="">所有</option>
+                <option value="0">正式会员</option>
+                <option value="1">测试帐号</option>
+            </select>
+            <select name="GroupID" class="txt" data-bind-action="admin/user/grouplist" data-bind-type="ajax" data-bind-callback="select" data-select-value="ID" data-select-text="Name"><option value="">所有分组</option></select>
+            <label for="user-list-online">
+                <input type="checkbox" name="Online" value="1" data-type="switch" id="user-list-online" /> 在线
+            </label>
+            <input type="submit" class="am-btn am-btn-xs am-btn-success am-round" value="查询" />
+            <input type="reset" class="am-btn am-btn-xs am-btn-default am-round" value="重置" />
+        </form>
+    </div>
+</div>
+
+<div class="page-table">
+    <table class="list" data-bind-type="list" data-bind-action="/admin/user/list" data-bind-callback="list,count,user-list-callback" data-bind-search="user-list-search" data-bind-pagesplit="user-list-page" id="user-list-obj">
+        <thead>
+            <tr>
+                <th>用户ID</th>
+                <th>用户名</th>
+                <th>下级数量</th>
+                <th>可用余额</th>
+                <th>锁定资金</th>
+                <th>用户类型</th>
+                <th>用户姓名</th>
+                <th>返点</th>
+                <th>用户状态</th>
+                <th>注册时间</th>
+                <th>分组</th>
+                <th>在线</th>
+                <th>操作</th>
+            </tr>
+        </thead>
+        <tbody data-list-element="true">
+            <tr>
+                <td>${ID}</td>
+                <td><a href="javascript:" class="diag-user" data-userid="${ID}">${UserName}</a> ${IsTest:istest}</td>
+                <td><a href="javascript:" data-agent="${UserName}">${ChildCount}</a></td>
+                <td><span class="am-text-success">${Money:money}</span></td>
+                <td><span class="am-text-danger">${LockMoney:money}</span></td>
+                <td>${TypeName}</td>
+                <td>${AccountName}</td>
+                <td>${Rebate}</td>
+                <td>${StatusName}</td>
+                <td>${CreateAt}</td>
+                <td>${Group}</td>
+                <td>${Online:online}</td>
+                <td>
+                    <a href="javascript:" data-bind-action="admin/im/gettalkkey" data-bind-type="ajax" data-bind-callback="im-chat" data-bind-stop="true" data-bind-event="click" data-bind-data="ID=${ID}">发起会话</a>
+                    <a href="javascript:" data-bind-action="admin/user/offline" data-bind-type="ajax" data-bind-callback="form-tip" data-bind-event="confirm" data-bind-stop="true" data-bind-data="ID=${ID}">踢下线</a>
+                </td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <td>统计：</td>
+                <td colspan="2"></td>
+                <td><label class="am-text-success">${data.Money:money}</label></td>
+                <td><label class="am-text-danger">${data.LockMoney:money}</label></td>
+                <td colspan="7"></td>
+            </tr>
+        </tfoot>
+    </table>
+
+    <div id="user-list-page" class="pageSplit"></div>
+
+</div>
+
+
+<script type="text/javascript">
+    // 在线效果
+    htmlFunction["online"] = function (obj) {
+        var result = obj;
+        switch (obj) {
+            case "true":
+                result = "<span class=\"am-text-success\">在线</span>";
+                break;
+            case "false":
+                result = "离线";
+                break;
+        }
+        return result;
+    };
+
+    BW.callback["user-list-callback"] = function (result) {
+        var t = this;
+        t.dom.element.addEvent("click", function (e) {
+            var obj = $(e.target);
+            if (obj.get("data-agent")) {
+                var agent = obj.get("data-agent");
+                if (obj.get("text") == "0") return;
+                $("user-search-agent").getParent("form").reset();
+                $("user-search-agent").set("value", agent);
+                t.fire();
+            }
+        });
+    };
+
+</script>

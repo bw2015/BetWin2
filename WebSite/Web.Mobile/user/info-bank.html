@@ -1,0 +1,28 @@
+﻿<!-- 设定手机绑定 -->
+<div class="user-info-bank">
+    <div class="alert-tip">
+        温馨提示
+        <p>1、银行卡绑定成功之后，平台任何区域都不会出现您的完整银行帐号，开户姓名等信息</p>
+        <p>2、每个平台账户最多绑定1张银行卡，同名的银行卡账户最多可被3个账户绑定。</p>
+        <p>3、新绑定的提现银行卡需要超过6小时才能正常提款</p>
+    </div>
+    <table class="list" data-bind-action="/handler/user/info/getcardlist" data-bind-type="list" data-bind-callback="list" id="info-bank-list">
+        <thead>
+            <tr>
+                <th>序号</th>
+                <th>银行帐号</th>
+                <th>状态</th>
+            </tr>
+        </thead>
+        <tbody data-list-element="true">
+            <tr>
+                <td>${ID}</td>
+                <td>${Account}</td>
+                <td>${IsWithdraw:Status}</td>
+            </tr>
+        </tbody>
+    </table>
+    <p class="padding-10">
+        <a href="javascript:OpenFrame('user/info-bank-add.html','添加银行卡');" class="btn btn-blue block padding-10 ft18 text-center " style=" margin:auto; border-radius:6px;">添加银行卡</a>
+    </p>
+</div>

@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<root>
+  <!-- 游戏类型 -->
+  <gameType>
+    <item name="Baccarat_1" value="百家乐 01" />
+    <item name="Baccarat_2" value="百家乐 02" />
+    <item name="Baccarat_3" value="百家乐 03" />
+    <item name="Baccarat_4" value="百家乐 04" />
+    <item name="Baccarat_5" value="百家乐 05" />
+    <item name="Baccarat_6" value="百家乐 06" />
+    <item name="Super_Baccarat_1" value="星级百家乐 01" />
+    <item name="Super_Baccarat_2" value="星级百家乐 02" />
+    <item name="Super_Baccarat_3" value="星级百家乐 03" />
+    <item name="Super_Baccarat_4" value="星级百家乐 04" />
+    <item name="Super_Baccarat_5" value="星级百家乐 05" />
+    <item name="Super_Baccarat_6" value="星级百家乐 06" />
+    <item name="Dragon_Tiger" value="龙虎" />
+    <item name="Sic_Bo" value="宝骰" />
+    <item name="Roulette" value="轮盘" />
+    <item name="Bullfight" value="斗牛" />
+    <item name="3_Card_Poker" value="三公" />
+    <item name="Mahjong" value="雀九" />
+    <item name="Sunbet_Lobby" value="申博真人娱乐馆" />
+    <item name="All-In-One_Game" value="自选多合一" />
+    <item name="Bid_Baccarat" value="咪牌百家乐" />
+    <item name="Sunbet_Lobby" value="申博真人娱乐馆" />
+  </gameType>
+</root>

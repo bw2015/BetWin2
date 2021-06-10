@@ -1,0 +1,58 @@
+﻿body { margin:0px; font-size:12px; background:#9595af;  }
+a{ text-decoration:none; }
+ul , li{ list-style-type:none; padding:0px; margin:0px; }
+.Container{ }
+.Container .ContainerLeft{ width:150px;   }
+
+.Toolbar{ background:#f8f8f8 url(workflow.axd?type=image&src=tools.png) repeat-y -185px top; border-right:solid 2px #bfdbff; position:fixed; width:150px; height:100%; }
+.Toolbar .title{ background:url(workflow.axd?type=image&src=tools.png) no-repeat; height:16px; border:solid 1px #9997b5;  }
+.Toolbar .title span{ margin:0px auto auto 16px; display:inline-block; }
+.Toolbar .Bar{ padding:5px 1px; } 
+.Toolbar .Bar a{ display:block; margin:8px; background:url(workflow.axd?type=image&src=tools.png) no-repeat; color:#000000; padding:2px 2px  2px 30px; }
+.Toolbar .Bar a.on{ background-color:#3399ff; color:White; }
+.Toolbar .Bar a.t1{ background-position:-3px -21px; }
+.Toolbar .Bar a.t2{ background-position:-3px -56px; }
+.Toolbar .Bar a.t3{ background-position:-3px -91px; }
+.Toolbar .Bar a.t4{ background-position:-3px -119px; }
+.Toolbar .Bar ul li div{ position:absolute; height:22px; width:140px; background:#FFF; }
+.Toolbar .Bar ul li div.t1{ background:url(workflow.axd?type=image&src=tools.png) no-repeat left -138px; width:57px; height:40px; }
+.Toolbar .Bar ul li div.t2{ background:url(workflow.axd?type=image&src=tools.png) no-repeat left -178px; width:57px; height:40px; }
+.Toolbar .Bar ul li div.t3{ background:url(workflow.axd?type=image&src=tools.png) no-repeat left -218px; width:57px; height:40px; }
+.Toolbar .Bar ul li div.t4{ background:url(workflow.axd?type=image&src=tools.png) no-repeat left -258px; width:57px; height:40px; }
+.Toolbar .control{ padding:1px 5px; }
+.Toolbar .control a{ display:block; padding:2px; }
+.Toolbar .control a.loading{ background:url(workflow.axd?type=image&src=loading.gif) no-repeat; padding-left:18px; }
+
+.Container .ContainerBody{ margin-left:152px; padding:32px 0px; }
+
+.Container .ContainerBody .Group{ position:fixed; bottom:0px; width:100%; height:19px; background:url(workflow.axd?type=image&src=group.png) repeat-x; }
+.Container .ContainerBody .Group a{  border:solid 1px #8c8b9b; padding:0px 6px; color:#000000; height:17px; }
+.Container .ContainerBody .Group a.on{ background:#FFF; }
+
+.Container .ContainerBody .body{ width:840px; background:url(workflow.axd?type=image&src=body.png); border:solid 1px #CCC; min-height:900px; margin:auto; }
+
+/*  弹出窗口    */
+DIV.UI-diag{ background:#f0f0f0; overflow:hidden; }
+.UI-diag .body{ font-size:12px;  }
+.UI-diag .body table{ width:90%; margin:5px auto; }
+.UI-diag .body table th{ font-weight:normal; padding:2px 2px; }
+.UI-diag .body table td{ padding:4px 0px; } 
+.UI-diag .body table td input ,
+.UI-diag .body table td select ,
+.UI-diag .body table td textarea{ border:solid 1px #abadb3; background:#FFF; font-size:12px; padding:2px; color:Black; width:100%; resize:none; }
+.UI-diag .body table td select.loading{ color:#666666; background:#ffffff url(workflow.axd?type=image&src=loading.gif) no-repeat 2px 2px; padding-left:16px; }
+
+
+.UI-diag .body .button{ text-align:right; border-top:solid 1px #d5dfe5;  margin:auto 12px; padding:5px 5px; }
+.UI-diag .body .button input{ background:url(workflow.axd?type=image&src=button.png) no-repeat; width:68px; height:19px; font-size:12px; text-align:center; color:Black; border:none; cursor:pointer;  }
+.UI-diag .body .button input.delete{ float:left; }
+.UI-diag .body .button input.over{ background-position:left -19px; }
+
+
+
+
+
+
+
+
+

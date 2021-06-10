@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<!-- 百家乐 -->
+<root>
+  <Player1 Category="百家乐" Label="庄闲" Name="庄赢">
+    闲家及庄家两位数字相加后的个位数字，若闲家小于庄家: 庄赢，开奖结果为和时返还一半本金
+  </Player1>
+  <Player2 Category="百家乐" Label="庄闲" Name="闲赢">
+    闲家及庄家两位数字相加后的个位数字，若闲家大于庄家: 闲赢，开奖结果为和时返还一半本金
+  </Player2>
+  <Player3 Category="百家乐" Label="和对子" Name="和">
+    闲家等于庄家: 和
+  </Player3>
+  <Player4 Category="百家乐" Label="和对子" Name="庄对">
+    若闲家的两位数字为对子: 庄对
+  </Player4>
+  <Player5 Category="百家乐" Label="和对子" Name="闲对">
+    若庄家的两位数字为对子: 闲对
+  </Player5>
+</root>

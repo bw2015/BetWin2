@@ -1,0 +1,106 @@
+﻿<div class="page-header">
+    <h1>第三方游戏报表</h1>
+    <div class="page-searchbox">
+        <form action="game.html" method="post">
+            会员：<input type="text" name="User" class="txt" size="8" />
+            上级代理：<input type="text" name="Agent" class="txt" size="8" />
+            日期：<input type="date" name="StartAt" class="txt w120" /> ～ <input type="date" name="EndAt" class="txt w120" />
+            <input type="submit" value="搜索" class="am-btn am-btn-success am-round" />
+        </form>
+    </div>
+</div>
+<div class="page-table">
+    <table class="list" data-bind-action="admin/report/gamelist" data-bind-callback="list,count,report-gamelist" data-bind-type="list" data-bind-load="search,report-game-type">
+        <thead>
+            <tr>
+                <th>用户</th>
+                <th>查看下级</th>
+            </tr>
+        </thead>
+        <tbody data-list-element="true">
+            <tr>
+                <td data-none="true"><a href="javascript:" class="diag-user" data-userid="${UserID}">${UserName}</a></td>
+                <td data-none="true"><a href="javascript:" data-agent="${UserName}">查看下级</a></td>
+                <!--<td data-amount="PT">${Game.PT.Amount:money}</td>
+                <td data-money="PT">${Game.PT.Money:money-show}</td>
+                <td data-amount="AG">${Game.AG.Amount:money}</td>
+                <td data-money="AG">${Game.AG.Money:money-show}</td>
+                <td data-amount="BBIN">${Game.BBIN.Amount:money}</td>
+                <td data-money="BBIN">${Game.BBIN.Money:money-show}</td>
+                <td data-total-amount="1"></td>
+                <td data-total-money="1"></td>-->
+            </tr>
+        </tbody>
+    </table>
+</div>
+<script type="text/javascript">
+    BW.load["report-game-type"] = function () {
+        var t = this;
+        // 头部设定
+        !function () {
+            var header = t.dom.element.getElement("thead tr");
+            GolbalSetting.Enum["BW.Common.Games.GameType"].each(function (item) {
+                new Element("th", {
+                    "text": item.text + "投注"
+                }).inject(header);
+                new Element("th", {
+                    "text": item.text + "盈亏"
+                }).inject(header);
+            });
+            new Element("th", { "text": "总投注" }).inject(header);
+            new Element("th", { "text": "总盈亏" }).inject(header);
+        }();
+        // 内容设定
+        !function () {
+            var tbody = t.dom.element.getElement("tbody tr");
+            GolbalSetting.Enum["BW.Common.Games.GameType"].each(function (item) {
+                new Element("td", {
+                    "data-amount": item.value,
+                    "text": "${Game." + item.value + ".Amount:money}"
+                }).inject(tbody);
+                new Element("td", {
+                    "data-money": item.value,
+                    "text": "${Game." + item.value + ".Money:money-show}"
+                }).inject(tbody);
+            });
+            new Element("td", { "data-total": "amount" }).inject(tbody);
+            new Element("td", { "data-total": "money" }).inject(tbody);
+        }();
+    };
+
+    BW.callback["report-gamelist"] = function (result) {
+        var t = this;
+        var agentObj = t.dom.searchbox.getElement("[name=Agent]");
+        t.dom.element.getElements("tbody tr").each(function (tr) {
+            var amount = 0;
+            var money = 0;
+            tr.getElements("td").each(function (td) {
+                if (td.get("data-none") || td.get("colspan") != 1) return;
+                var value = td.get("text");
+                if (value.contains("$")) {
+                    td.set("text", "0.00");
+                    value = 0;
+                } else {
+                    value = value.replace(/￥|,/g, "").toFloat();
+                }
+                if (!value) value = 0;
+                console.log(value + "," + td.get("text"));
+                if (td.get("data-amount")) {
+                    amount += value;
+                } else if (td.get("data-money")) {
+                    money += value;
+                } else if (td.get("data-total") == "amount") {
+                    td.set("html", htmlFunction["money"](amount));
+                } else if (td.get("data-total") == "money") {
+                    td.set("html", htmlFunction["money-show"](money));
+                }
+            });
+        });
+
+        t.dom.element.getElements("[data-agent]").addEvent("click", function (e) {
+            var agent = this.get("data-agent");
+            if (agentObj) agentObj.set("value", agent);
+            t.fire();
+        });
+    };
+</script>

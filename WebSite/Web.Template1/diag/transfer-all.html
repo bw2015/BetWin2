@@ -1,0 +1,34 @@
+﻿<div class="frame-info">
+    <table class="list" data-bind-action="/handler/game/gateway/transferinfo" data-bind-type="list" data-bind-callback="list,transfer-all">
+        <thead>
+            <tr>
+                <th>账户</th>
+                <th>当前余额</th>
+                <th>可转出余额</th>
+            </tr>
+        </thead>
+        <tbody data-list-element="true">
+            <tr data-disabled="${disabled}">
+                <td>${Name}</td>
+                <td><span class="red">${Money:money}</span></td>
+                <td><span class="green">${Withdraw:money}</span></td>
+            </tr>
+        </tbody>
+    </table>
+    <form action="transfer-all.html" method="post" data-bind-action="/handler/game/gateway/transferall" data-bind-type="ajax" data-bind-callback="form-tip,success-fire" data-bind-form-tip="diag-close" data-bind-fire-target="person-transfer-list">
+        <table class="post">
+            <tr>
+                <td class="text-center">
+                    <input type="submit" class="btn btn-red ft14" value="批量转出到主账户" />
+                </td>
+            </tr>
+        </table>
+    </form>
+</div>
+
+<script type="text/javascript">
+    BW.callback["transfer-all"] = function (result) {
+        var t = this;
+        t.dom.element.getElements("[data-disabled=true]").dispose();
+    };
+</script>

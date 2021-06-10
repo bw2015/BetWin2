@@ -1,0 +1,37 @@
+﻿<div class="page-header">
+    <h1>管理员日志</h1>
+    <div class="page-searchbox">
+        <form action="/admin/system/managelog" method="post">
+            <input type="text" name="Title" class="txt" placeholder="关键词" />
+            <input type="text" name="Admin" class="txt" placeholder="管理员" />
+            <input type="date" name="StartAt" class="txt" placeholder="日志时间（开始）" />
+            <input type="date" name="EndAt" class="txt" placeholder="日志时间（结束）" />
+            <input type="submit" value="搜索" class="am-btn am-btn-success am-round am-text-xs" />
+            <input type="reset" value="重置" class="am-btn am-round am-text-xs" />
+        </form>
+    </div>
+</div>
+<div class="page-table">
+    <table class="list" data-bind-action="admin/account/log" data-bind-type="list" data-bind-callback="list,pagesplit" data-bind-load="search" data-bind-pagesplit="system-admin-log-pagesplit">
+        <thead>
+            <tr>
+                <th class="w100">ID</th>
+                <th class="w150">管理员</th>
+                <th class="w150">操作时间</th>
+                <th class="w180">IP</th>
+                <th>日志内容</th>
+            </tr>
+        </thead>
+        <tbody data-list-element="true">
+            <tr>
+                <td>${ID}</td>
+                <td>${Admin}</td>
+                <td>${CreateAt}</td>
+                <td>${IP}<p>(${IPAddress})</p></td>
+                <td><textarea class="txt am-text-left" style="width:100%;" readonly="readonly">${Content}</textarea></td>
+            </tr>
+        </tbody>
+    </table>
+    <div id="system-admin-log-pagesplit" class="pageSplit">
+    </div>
+</div>

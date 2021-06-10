@@ -1,0 +1,92 @@
+﻿<div class="page-table">
+    <form action="log-detail.html" data-bind-action="/admin/lottery/betmodify" data-bind-type="ajax" data-bind-callback="form-tip" data-bind-form-tip="diag-close">
+        <table class="post" data-bind-action="/admin/lottery/betinfo" data-bind-type="ajax" data-bind-load="lottery-game" data-bind-callback="html,form-fill,bet-log-detail-player" data-bind-data="parent">
+            <tr>
+                <th>彩种：</th>
+                <td>
+                    <select name="Type" class="am-form-field txt w180" data-lottery-game="true"></select>
+                </td>
+            </tr>
+            <tr>
+                <th>玩法：</th>
+                <td>
+                    <select name="PlayerID" class="am-form-field txt w180" data-value="${PlayerID}" data-name="${Player}"></select>
+                </td>
+            </tr>
+            <tr>
+                <th>投注内容：</th>
+                <td>
+                    <textarea class="am-form-field txt" name="Number" rows="10" cols="70" placeholder="修改订单前后金额、注数应保持一致"></textarea>
+                </td>
+            </tr>
+            <tr>
+                <th>订单信息：</th>
+                <td>
+                    【${Mode:mode-show}】
+                    ${Bet}注
+                    ${Times}倍
+                    ${Money:money}元
+                </td>
+            </tr>
+            <tr>
+                <th></th>
+                <td>
+                    <input type="hidden" name="ID" />
+                    <input type="submit" value=" 确认修改 " class="am-btn am-btn-success am-round" />
+                </td>
+            </tr>
+        </table>
+    </form>
+</div>
+
+<script type="text/javascript">
+    BW.callback["bet-log-detail-player"] = function (result) {
+        var t = this;
+        if (!result.info.LotteryAt.contains("1900")) {
+            new BW.Tip("该订单已经开奖", {
+                "callback": function () {
+                    BW.callback["diag-close"].apply(t);
+                }
+            });
+            return;
+        }
+        var t = this;
+
+        var game = t.dom.element.getElement("[data-lottery-game]");
+        var player = t.dom.element.getElement("[name=PlayerID]");
+        var selected = player.get("data-value");
+        game.addEvent("change", function () {
+            var value = this.get("value");
+            new Request.JSON({
+                "url": "/admin/lottery/player",
+                "onRequest": function () {
+                    player.set("disabled", true);
+                },
+                "onComplete": function () {
+                    player.set("disabled", false);
+                },
+                "onSuccess": function (result) {
+                    player.empty();
+                    var grouplist = result.info.list.map(function (item) { return item.GroupName; }).distinct();
+                    grouplist.each(function (key) {
+                        var group = new Element("optgroup", {
+                            "label": key
+                        });
+                        result.info.list.filter(function (item) { return item.GroupName == key; }).each(function (item) {
+                            new Element("option", {
+                                "value": item.ID,
+                                "text": item.LabelName + " " + item.PlayName,
+                                "selected": selected == item.ID
+                            }).inject(group);
+                        });
+                        group.inject(player);
+                    });
+                }
+            }).post({
+                "Lottery": value
+            })
+        });
+
+        game.fireEvent("change");
+    };
+</script>

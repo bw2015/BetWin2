@@ -1,0 +1,269 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<root>
+  <!-- 游戏类型 -->
+  <gameType>
+    <item name="BAC" value="百家乐" />
+    <item name="CBAC" value="包桌百家乐" />
+    <item name="LINK" value="连环百家乐" />
+    <item name="DT" value="龙虎" />
+    <item name="SHB" value="骰宝" />
+    <item name="ROU" value="轮盘" />
+    <item name="FT" value="番摊" />
+    <item name="LBAC" value="竞咪百家乐" />
+    <item name="ULPK" value="终极德州扑克" />
+    <item name="SBAC" value="保险百家乐"/>
+    <item name="NN" value="牛牛"/>
+    <item name="BJ" value="21点"/>
+    <item name="ZJH" value="炸金花"/>
+    <item name="SL1" value="巴西世界杯" />
+    <item name="SL2" value="疯狂水果店" />
+    <item name="SL3" value="3D水族馆" />
+    <item name="PK_J" value="杰克高手" />
+    <item name="SL4" value="极速赛车" />
+    <item name="PKBJ" value="新视频扑克" />
+    <item name="FRU" value="水果拉霸" />
+    <item name="HUNTER" value="捕鱼王" />
+    <item name="SLM1" value="美女沙排" />
+    <item name="SLM2" value="运财羊" />
+    <item name="SLM3" value="武圣传" />
+    <item name="SC01" value="幸运老虎机" />
+    <item name="TGLW" value="极速幸运轮" />
+    <item name="SLM4" value="武则天" />
+    <item name="TGCW" value="赌场战争" />
+    <item name="SB01" value="太空漫游" />
+    <item name="SB02" value="复古花园" />
+    <item name="SB03" value="关东煮" />
+    <item name="SB04" value="牧场咖啡" />
+    <item name="SB05" value="甜一甜屋" />
+    <item name="SB06" value="日本武士" />
+    <item name="SB07" value="象棋老虎机" />
+    <item name="SB08" value="麻将老虎机" />
+    <item name="SB09" value="西洋棋老虎机" />
+    <item name="SB10" value="开心农场" />
+    <item name="SB11" value="夏日营地" />
+    <item name="SB12" value="海底漫游" />
+    <item name="SB13" value="鬼马小丑" />
+    <item name="SB14" value="机动乐园" />
+    <item name="SB15" value="惊吓鬼屋" />
+    <item name="SB16" value="疯狂马戏团" />
+    <item name="SB17" value="海洋剧场" />
+    <item name="SB18" value="水上乐园" />
+    <item name="SB19" value="空中战争" />
+    <item name="SB20" value="摇滚狂迷" />
+    <item name="SB25" value="土地神" />
+    <item name="SB26" value="布袋和尚" />
+    <item name="SB27" value="正财神" />
+    <item name="SB28" value="武财神" />
+    <item name="SB29" value="偏财神" />
+    <item name="YFP" value="水果派对"/>
+    <item name="YDZ" value="德州牛仔"/>
+    <item name="YBIR" value="飞禽走兽"/>
+    <item name="YMFD" value="森林舞会多人版"/>
+    <item name="YFD" value="森林舞会"/>
+    <item name="YBEN" value="奔驰宝马"/>
+    <item name="YHR" value="极速赛马"/>
+    <item name="YMFR" value="水果拉霸多人版"/>
+    <item name="YGS" value="猜猜乐"/>
+    <item name="YFR" value="水果拉霸"/>
+    <item name="YMGS" value="猜猜乐多人版"/>
+    <item name="YMBN" value="百人牛牛"/>
+    <item name="YGFS" value="多宝水果拉霸"/>
+    <item name="YJFS" value="彩金水果拉霸"/>
+    <item name="YMBI" value="飞禽走兽多人版"/>
+    <item name="YMBA" value="牛牛对战"/>
+    <item name="YMBZ" value="奔驰宝马多人版"/>
+    <item name="YMAC" value="动物狂欢"/>
+  </gameType>
+  <!-- 游戏玩法 -->
+  <playType>
+    <!-- 百家乐玩法 -->
+    <item name="1" value="庄" />
+    <item name="2" value="闲" />
+    <item name="3" value="和" />
+    <item name="4" value="庄对" />
+    <item name="5" value="闲对" />
+    <item name="6" value="大" />
+    <item name="7" value="小" />
+    <item name="8" value="庄保险" />
+    <item name="9" value="闲保险" />
+    <item name="11" value="庄免佣" />
+    <item name="12" value="庄龙宝" />
+    <item name="13" value="闲龙宝" />
+    <!-- 龙虎玩法 -->
+    <item name="21" value="龙" />
+    <item name="22" value="虎" />
+    <item name="23" value="和（龙虎）" />
+    <!-- 骰宝玩法 -->
+    <item name="41" value="大" />
+    <item name="42" value="小" />
+    <item name="43" value="单" />
+    <item name="44" value="双" />
+    <item name="45" value="全围" />
+    <item name="46" value="围1" />
+    <item name="47" value="围2" />
+    <item name="48" value="围3" />
+    <item name="49" value="围4" />
+    <item name="50" value="围5" />
+    <item name="51" value="围6" />
+    <item name="52" value="单点1" />
+    <item name="53" value="单点2" />
+    <item name="54" value="单点3" />
+    <item name="55" value="单点4" />
+    <item name="56" value="单点5" />
+    <item name="57" value="单点6" />
+    <item name="58" value="对子1" />
+    <item name="59" value="对子2" />
+    <item name="60" value="对子3" />
+    <item name="61" value="对子4" />
+    <item name="62" value="对子5" />
+    <item name="63" value="对子6" />
+    <item name="64" value="组合12" />
+    <item name="65" value="组合13" />
+    <item name="66" value="组合14" />
+    <item name="67" value="组合15" />
+    <item name="68" value="组合16" />
+    <item name="69" value="组合23" />
+    <item name="70" value="组合24" />
+    <item name="71" value="组合25" />
+    <item name="72" value="组合26" />
+    <item name="73" value="组合34" />
+    <item name="74" value="组合35" />
+    <item name="75" value="组合36" />
+    <item name="76" value="组合45" />
+    <item name="77" value="组合46" />
+    <item name="78" value="组合56" />
+    <item name="79" value="和值4" />
+    <item name="80" value="和值5" />
+    <item name="81" value="和值6" />
+    <item name="82" value="和值7" />
+    <item name="83" value="和值8" />
+    <item name="84" value="和值9" />
+    <item name="85" value="和值10" />
+    <item name="86" value="和值11" />
+    <item name="87" value="和值12" />
+    <item name="88" value="和值13" />
+    <item name="89" value="和值14" />
+    <item name="90" value="和值15" />
+    <item name="91" value="和值16" />
+    <item name="92" value="和值17" />
+    <!-- 轮盘玩法 -->
+    <item name="101" value="直接注" />
+    <item name="102" value="分注" />
+    <item name="103" value="街注" />
+    <item name="104" value="三数" />
+    <item name="105" value="4个号码" />
+    <item name="106" value="角注" />
+    <item name="107" value="列柱（列1）" />
+    <item name="108" value="列柱（列2）" />
+    <item name="109" value="列柱（列3）" />
+    <item name="110" value="线注" />
+    <item name="111" value="打一" />
+    <item name="112" value="打二" />
+    <item name="113" value="打三" />
+    <item name="114" value="红" />
+    <item name="115" value="黑" />
+    <item name="116" value="大" />
+    <item name="117" value="小" />
+    <item name="118" value="单" />
+    <item name="119" value="双" />
+    <!-- 番摊玩法 -->
+    <item name="130" value="1番" />
+    <item name="131" value="2番" />
+    <item name="132" value="3番" />
+    <item name="133" value="4番" />
+    <item name="134" value="1念2" />
+    <item name="135" value="1念3" />
+    <item name="136" value="1念4" />
+    <item name="137" value="2念1" />
+    <item name="138" value="2念3" />
+    <item name="139" value="2念4" />
+    <item name="140" value="3念1" />
+    <item name="141" value="3念2" />
+    <item name="142" value="3念4" />
+    <item name="143" value="4念1" />
+    <item name="144" value="4念2" />
+    <item name="145" value="4念3" />
+    <item name="146" value="角(1,2)" />
+    <item name="147" value="单" />
+    <item name="148" value="角(1,4)" />
+    <item name="149" value="角(2,3)" />
+    <item name="150" value="双" />
+    <item name="151" value="角(3,4)" />
+    <item name="152" value="1,2 四通" />
+    <item name="153" value="1,2 三通" />
+    <item name="154" value="1,3 四通" />
+    <item name="155" value="1,3 二通" />
+    <item name="156" value="1,4 三通" />
+    <item name="157" value="1,4 二通" />
+    <item name="158" value="2,3 四通" />
+    <item name="159" value="2,3 一通" />
+    <item name="160" value="2,3 三通" />
+    <item name="161" value="2,4 一通" />
+    <item name="162" value="3,4 二通" />
+    <item name="163" value="3,4 一通" />
+    <item name="164" value="三门(3,2,1)" />
+    <item name="165" value="三门(2,1,4)" />
+    <item name="166" value="三门(1,4,3)" />
+    <item name="167" value="三门(4,3,2)" />
+    <!-- 终极德州扑克 -->
+    <item name="180" value="底注+盲注" />
+    <item name="181" value="一倍加注" />
+    <item name="182" value="二倍加注" />
+    <item name="183" value="三倍加注" />
+    <item name="184" value="四倍加注" />
+    <!-- 斗牛 -->
+    <item name="211" value="闲1平倍" />
+    <item name="212" value="闲1翻倍" />
+    <item name="213" value="闲2平倍" />
+    <item name="214" value="闲2翻倍" />
+    <item name="215" value="闲3平倍" />
+    <item name="216" value="闲3翻倍" />
+    <item name="207" value="庄1平倍" />
+    <item name="208" value="庄1翻倍" />
+    <item name="209" value="庄2平倍" />
+    <item name="210" value="庄2翻倍" />
+    <item name="217" value="庄3平倍" />
+    <item name="218" value="庄3翻倍" />
+    <!-- 21点 -->
+    <item name="220" value="底注" />
+    <item name="221" value="分牌" />
+    <item name="222" value="保险" />
+    <item name="22" value="3分牌保险" />
+    <item name="224" value="加注" />
+    <item name="225" value="分牌加注" />
+    <item name="226" value="完美对子" />
+    <item name="227" value="21+3" />
+    <item name="228" value="旁注" />
+    <item name="229" value="旁注分牌" />
+    <item name="230" value="旁注保险" />
+    <item name="231" value="旁注分牌保险" />
+    <item name="232" value="旁注加注" />
+    <item name="233" value="旁注分牌加注" />
+    <!-- 诈金花 -->
+    <item name="260" value="龙" />
+    <item name="261" value="凤" />
+    <item name="262" value="对8以上" />
+    <item name="263" value="同花" />
+    <item name="264" value="顺子" />
+    <item name="265" value="豹子" />
+    <item name="266" value="同花顺" />
+  </playType>
+  <!-- 大厅类型 -->
+  <round>
+    <item name="DSP" value="国际厅" />
+    <item name="AGQ" value="旗舰厅" />
+    <item name="VIP" value="包桌厅" />
+    <item name="SLOT" value="电子游戏" />
+    <item name="LED" value="竞咪厅" />
+    <item name="LOTTO" value="彩票" />
+  </round>
+  <!-- 结算状态（返回枚举）-->
+  <flag>
+    <item name="1" value="Finish" />
+    <item name="0" value="None" />
+    <item name="-1" value="Reset" />
+    <item name="-2" value="Error" />
+    <item name="-8" value="Cancel" />
+    <item name="-9" value="Quit" />
+  </flag>
+</root>

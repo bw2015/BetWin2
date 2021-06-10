@@ -1,0 +1,50 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>MD5Key生成</title>
+    <meta content="telephone=no" name="format-detection">
+    <meta content="address=no" name="format-detection">
+    <meta content="width=device-width,maximum-scale=1.0,initial-scale=1.0,minimum-scale=1.0,user-scalable=yes" name="viewport">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/amazeui/2.7.2/css/amazeui.min.css" />
+    <script src="../scripts/mootools.js"></script>
+    <script src="../scripts/mootools-more.js"></script>
+    <script src="../scripts/md5.js"></script>
+    <script type="text/javascript">
+        window.addEvent("domready", function () {
+            !function () {
+                var dom = new Object();
+                $$("form [name]").each(function (item) {
+                    dom[item.get("name")] = item;
+                });
+                [dom["siteid"], dom["key"]].each(function (item) {
+                    item.addEvent("blur", function () {
+                        var str = dom["siteid"].get("value") + dom["key"].get("value");
+                        dom["result"].set("value", dom["siteid"].get("value") + hex_md5(str).substr(0, 3).toUpperCase());
+                        dom["result"].select();
+                    });
+                });
+            }();
+        });
+    </script>
+</head>
+<body>
+    <form action="iptables.html" method="post" class="am-form am-form-inline">
+        <fieldset>
+            <legend>MD5密钥生成</legend>
+            <div class="am-form-group am-form-icon">
+                <i class="am-icon-server"></i>
+                <input type="number" class="am-form-field" placeholder="站点ID" name="siteid" value="1000" min="1000">
+            </div>
+            <div class="am-form-group am-form-icon">
+                <i class="am-icon-key"></i>
+                <input type="text" class="am-form-field" placeholder="密钥" name="key" value="BetWin">
+            </div>
+            <div class="am-form-group am-form-icon">
+                <i class="am-icon-send"></i>
+                <input type="text" class="am-form-field" placeholder="结果" name="result" readonly="readonly" />
+            </div>
+        </fieldset>
+    </form>
+</body>
+</html>

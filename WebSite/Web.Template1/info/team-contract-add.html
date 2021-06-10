@@ -1,0 +1,82 @@
+﻿<form action="team-contract-add.html" method="post" data-bind-action="handler/user/team/addcontract" data-bind-type="ajax" data-bind-callback="form-tip" data-bind-form-tip="fire" data-bind-fire-target="team-contact-list">
+    <section class="frame-info" data-bind-action="handler/user/team/getcontractinfo" data-bind-type="ajax" data-bind-callback="error-tip,html,team-contract-info" data-bind-error-tip="diag-close" data-bind-data="parent">
+        <table class="post">
+            <tr>
+                <th>契约类型：</th>
+                <td>${ContractType}</td>
+            </tr>
+            <tr>
+                <th>下级用户名：</th>
+                <td>
+                    <input type="text" name="UserName" class="txt" />
+                </td>
+            </tr>
+            <tr>
+                <th>资金密码：</th>
+                <td>
+                    <input type="password" class="txt" name="PayPassword" />
+                </td>
+            </tr>
+        </table>
+        <table class="list">
+            <thead class="thead">
+                <tr></tr>
+            </thead>
+            <tbody class="tbody"></tbody>
+        </table>
+
+        <table class="post">
+            <tr>
+                <td class="text-center">
+                    <input type="hidden" name="Type" value="${Type}" />
+                    <input type="hidden" name="Percent" value="1" />
+                    <input type="submit" value="提交契约" class="btn btn-red" />
+                </td>
+            </tr>
+        </table>
+    </section>
+</form>
+<script type="text/javascript">
+    BW.callback["team-contract-info"] = function (result) {
+        var t = this;
+        if (!result.success) return;
+        var tbody = t.dom.element.getElement(".tbody");
+        var thead = t.dom.element.getElement(".thead tr");
+
+        var tit = new Array();
+        result.info.Setting.map(function (item) { return item.name.replace(/\d+/, ""); }).distinct().each(function (item) {
+            tit.push(item);
+            new Element("th", {
+                "text": item
+            }).inject(thead);
+        });
+        var html = [];
+        result.info.Setting.each(function (item) {
+            if (!/\d+$/.test(item.name)) {
+                html.push("<td><input type=\"text\" class=\"txt text-center\" size=\"4\" data-max=\"" + item.maxvalue + "\" name=\"Setting." + item.key + "\" /> %" + "&nbsp;&nbsp;<span class=\"desc gray ft12\">当前：" + item.maxvalue.ToString("p") + "</span></td>");
+            } else {
+                if (new RegExp(tit[0]).test(item.name)) {
+                    html.push("<tr>");
+                }
+                if (new RegExp(tit.getLast()).test(item.name)) {
+                    html.push("<td><input type=\"text\" class=\"txt text-center\" size=\"6\" data-max=\"" + item.maxvalue + "\" name=\"Setting." + item.key + "\" />%" + "&nbsp;&nbsp;<span class=\"desc gray\">当前：" + item.maxvalue.ToString("p") + "</span></td>");
+                    html.push("</tr>");
+                } else {
+                    html.push("<td>" + item.maxvalue + "</td>");
+                }
+            }
+
+
+            //var html = ["<th>", item.name, "</th>", "<td>"];
+            //if (item.readonly) {
+            //    html.push("<input type=\"text\" value=\"" + item.maxvalue + "\" class=\"txt\" readonly=\"readonly\" />");
+            //} else {
+            //    html.push("<input type=\"text\" class=\"txt\" size=\"6\" data-max=\"" + item.maxvalue + "\" name=\"Setting." + item.key + "\" />");
+            //}
+            //html.push(" <span class=\"desc gray\">" + item.description + "</span>");
+            //html.push("</td>");
+
+        });
+        tbody.set("html", html.join(""));
+    };
+</script>

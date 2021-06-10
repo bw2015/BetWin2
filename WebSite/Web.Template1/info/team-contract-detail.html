@@ -1,0 +1,86 @@
+﻿<form action="team-contract-detail.html" method="post" data-bind-action="handler/user/team/updatecontract" data-bind-type="ajax" data-bind-callback="form-tip" data-bind-form-tip="diag-close">
+    <table class="post" data-bind-action="handler/user/team/getcontractdetail" data-bind-type="ajax" data-bind-callback="html,error-tip,team-contract-detail" data-bind-error-tip="diag-close" data-bind-data="parent">
+        <tr>
+            <th>契约类型：</th>
+            <td>${ContractType}</td>
+            <th>契约编号：</th>
+            <td>${ID}</td>
+        </tr>
+        <tr>
+            <th>契约甲方：</th>
+            <td>${User1}</td>
+            <th>契约乙方：</th>
+            <td>${User2}</td>
+        </tr>
+        <tr>
+            <th>签订时间：</th>
+            <td>
+                ${CreateAt}
+            </td>
+            <th>当前状态：</th>
+            <td>${Status}</td>
+        </tr>
+        <tr>
+            <th colspan="4">
+                契约内容
+            </th>
+        </tr>
+        <tbody></tbody>
+        <tr>
+            <th>资金密码：</th>
+            <td colspan="3">
+                <input type="password" class="txt" name="PayPassword" />
+            </td>
+        </tr>
+        <tr>
+            <td colspan="4" class="text-center">
+                <input type="hidden" name="ID" value="${ID}" />
+                <input type="hidden" name="Action" />
+                <input type="button" value="  接受  " class="btn btn-green" data-action="Agree" />
+                &nbsp;&nbsp;
+                <input type="button" value="  拒绝  " class="btn btn-red" data-action="Inject" />
+                &nbsp;&nbsp;
+                <input type="button" value="  申请取消  " class="btn btn-blue" data-action="Delete" />
+            </td>
+        </tr>
+    </table>
+</form>
+<script type="text/javascript">
+    BW.callback["team-contract-detail"] = function (result) {
+        var t = this;
+        console.log(t);
+        if (!result.success) return;
+        var tbody = t.dom.element.getElement("tbody");
+        result.info.Setting.each(function (item) {
+            var html = ["<th>", item.name, "</th>", "<td colspan=\"3\">"];
+            html.push("<label class=\"ft14 red\">" + (item.maxvalue < 1 && item.maxvalue > 0 ? htmlFunction["p"](item.maxvalue) : item.maxvalue) + "</label>");
+            html.push("</td>");
+            new Element("tr", {
+                "html": html.join("")
+            }).inject(tbody);
+        });
+
+        var action = t.dom.element.getElement("[name=Action]");
+        var form = t.dom.element.getParent("form");
+        t.dom.element.getElements("[data-action]").each(function (item) {
+            var actionName = item.get("data-action");
+            if (!result.info.Action.contains(actionName)) {
+                item.dispose();
+                return;
+            }
+            item.addEvent("click", function (e) {
+                var obj = this;
+                new BW.Tip("您确认要" + obj.get("value").trim() + "该契约吗？", {
+                    "type": "confirm",
+                    "callback": function () {
+                        action.set("value", obj.get("data-action"));
+                        form.send();
+                    }
+                });
+            });
+        });
+        if (t.dom.element.getElements("[data-action]").length == 0) {
+            t.dom.element.getElement("[name=PayPassword]").getParent("tr").dispose();
+        }
+    };
+</script>

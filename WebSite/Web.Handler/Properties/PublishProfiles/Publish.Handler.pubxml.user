@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+您 Web 项目的发布/打包进程将使用此文件。您可以通过编辑此 MSBuild 文件
+来自定义该进程的行为。若要了解与此相关的详细信息，请访问 http://go.microsoft.com/fwlink/?LinkID=208121。
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <_PublishTargetUrl>F:\My Project\2016\BetWin2.0\Publish\Web.Handler</_PublishTargetUrl>
+  </PropertyGroup>
+  <ItemGroup>
+    <File Include="bin/BetWin.dll">
+      <publishTime>06/22/2016 14:45:07</publishTime>
+    </File>
+    <File Include="bin/Newtonsoft.Json.dll">
+      <publishTime>05/01/2016 19:38:48</publishTime>
+    </File>
+    <File Include="bin/SP.Studio.dll">
+      <publishTime>06/22/2016 14:42:21</publishTime>
+    </File>
+    <File Include="bin/Web.Handler.dll">
+      <publishTime>06/22/2016 14:45:08</publishTime>
+    </File>
+    <File Include="Web.config">
+      <publishTime>06/22/2016 14:45:08</publishTime>
+    </File>
+  </ItemGroup>
+</Project>

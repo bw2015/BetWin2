@@ -1,0 +1,28 @@
+﻿<!-- 左侧边栏 -->
+<ul>
+    <li>
+        <a href="javascript:BW.Task.Minimize();" class="aside-desktop"></a>
+        <label>桌面</label>
+    </li>
+    <li>
+        <a href="javascript:" class="aside-person" data-name="Person" data-title="个人中心" data-src="info/person.html" data-callback="frame-tab,frame-control"></a>
+        <label>个人</label>
+        <span class="newmessage" data-newmessage="1"></span>
+    </li>
+    <li class="li-aside-team">
+        <a href="javascript:" class="aside-team" data-name="Team" data-title="团队中心" data-src="info/team.html" data-callback="frame-tab,frame-control"></a>
+        <label>团队</label>
+    </li>
+    <li>
+        <a href="javascript:" class="aside-report" data-name="Report" data-title="报表中心" data-src="info/report.html" data-callback="frame-tab,frame-control"></a>
+        <label>记录</label>
+    </li>
+    <li data-bind-action="/handler/site/info/newstip" data-bind-type="ajax" data-bind-callback="news-tip">
+        <a href="javascript:" class="aside-news" data-name="News" data-title="公告" data-src="info/news.html" data-callback="frame-tab,frame-control"></a>
+        <label>公告</label>
+    </li>
+    <li>
+        <a href="javascript:" class="aside-discount" data-frame-tab="优惠活动" data-name="News" data-title="公告" data-src="info/news.html" data-callback="frame-tab,frame-control,frame-control-discount"></a>
+        <label>优惠</label>
+    </li>
+</ul>

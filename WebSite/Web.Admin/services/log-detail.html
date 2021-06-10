@@ -1,0 +1,46 @@
+﻿<div class="layim-chat-main" data-bind-action="/admin/im/loglist" data-bind-type="list" data-bind-callback="list,pagesplit,services-log-detail" data-bind-pagesplit="log-detail-pagesplit" data-bind-data="parent" style="height:500px;">
+    <ul data-list-element="true">
+        <li class="${Mine:service-log-mine}">
+            <div class="layim-chat-user">
+                <img src="${Face}">
+                <cite>                    ${IsRead:service-log-isread}
+                    <i>${CreateAt}</i>${Name}
+                </cite>
+            </div>
+            <div class="layim-chat-text">${Content}</div>
+        </li>
+    </ul>
+</div>
+<div id="log-detail-pagesplit" style="height: 52px; overflow: hidden;">
+
+</div>
+<script type="text/javascript">
+    htmlFunction["service-log-mine"] = function (value) {
+        return value == "1" ? "layim-chat-mine" : "";
+    };
+
+    htmlFunction["service-log-isread"] = function (value) {
+        switch (value) {
+            case "1":
+            case "true":
+                value = "<span class=\"am-text-xs am-badge am-badge-success am-radius\">已读</span>";
+                break;
+            default:
+                value = "";
+                break;
+        }
+        return value;
+    };
+
+    BW.callback["services-log-detail"] = function (result) {
+        var t = this;
+        t.dom.element.getElements("li[class=] cite").each(function (item) {
+            var i = item.getElement("i");
+            i.inject(item);
+        });
+
+        new Fx.Scroll(t.dom.element).toBottom();
+    };
+
+
+</script>

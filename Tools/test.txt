@@ -1,0 +1,2321 @@
+<html><body><script language="javascript">window.top.location.href="?c=session&a=loginForm&refer=";</script></body></html><html><body><script language="javascript">window.top.location.href="?c=session&a=loginForm&refer=";</script></body></html><!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="renderer" content="webkit">
+    <title></title>
+    <link rel="stylesheet" href="/statics/global/352e48a2.main.css">
+    <script src="/statics/lib/e8b5d896.lib.js"></script>
+    <script>
+        seajs.config({
+            base: "/statics/",
+            'map': [[/^(.*\.(?:css|js))(.*)$/i, '$1?10000_31136']]
+        });
+
+        var site = {
+            'messageUrl':'http://s1.088cnc.com:8080/index.php?c=user&a=getzjmessage&r=1467123072',
+            'moneyUrl':'http://s1.088cnc.com:8080/index.php?c=user&a=getusermoney&r=1467123072',
+            'setcurrentmode':'http://s1.088cnc.com:8080/index.php?c=user&a=setcurrentmode&r=1467123072',
+            'currentmode':'4',
+            'domain':'http://hit.088cnc.com:82',
+            'game':{
+                'dian_21':{
+                    'url':'http://s1.088cnc.com:8080/index.php?c=app&a=index&app_id=10001&r=1467123072'
+                }
+            },
+            'userName' : 'xiaohe777'
+        }
+        seajs.use('global/main.js');
+    </script>
+</head>
+<body>
+
+<!-- toolbar -->
+<div class="toolbar">
+    <div class="center clearfix">
+        <!-- left -->
+        <div class="tb_menu fl mT10">
+			<span class="game">
+				褰╃エ<i class="icon_down">&nbsp;</i>
+				<!-- 褰╃エ绉嶇被 -->
+				<div class="game-menu-panel ">
+                    <!--					<span class="triangle game-menu-triangle"><span></span></span>-->
+                    <i class="tri"></i>
+
+                    <div class="game-menu-inner">
+                        <div class="game-menu-box clearfix">
+
+                            
+
+                            <div class="game-menu-title fl">楂橀褰?/div>
+                            <div class="game-menu-list fr">
+                                <a class="hot-game" title="濡傛剰鍒嗗垎褰?
+                                   href="http://s1.088cnc.com:8080/index.php?c=user&a=cqssc&lotteryid=81&r=1467123072">濡傛剰鍒嗗垎褰?                                   <i></i></a>
+                                <a title="棣欐腐涓夊垎褰?
+                                   href="http://s1.088cnc.com:8080/index.php?c=user&a=cqssc&lotteryid=82&r=1467123072">棣欐腐涓夊垎褰?/a>
+                                <a title="婢抽棬浜斿垎褰?
+                                   href="http://s1.088cnc.com:8080/index.php?c=user&a=cqssc&lotteryid=83&r=1467123072">婢抽棬浜斿垎褰?/a>
+                                <a title="鍚夌ゥ绉掔褰?
+                                   href="http://s1.088cnc.com:8080/index.php?c=user&a=cqssc&lotteryid=80&r=1467123072">鍚夌ゥ绉掔褰?/a>
+                                <a title="閲嶅簡鏃舵椂褰? href="http://s1.088cnc.com:8080/index.php?c=user&a=cqssc&lotteryid=1&r=1467123072">閲嶅簡鏃舵椂褰?/a>
+                                <a title="鏂扮枂鏃舵椂褰? href="http://s1.088cnc.com:8080/index.php?c=user&a=cqssc&lotteryid=3&r=1467123072">鏂扮枂鏃舵椂褰?/a>
+                                <a title="鍖椾含PK10" href="http://s1.088cnc.com:8080/index.php?c=user&a=cqssc&lotteryid=10&r=1467123072">鍖椾含PK10</a>
+                            </div>
+                        </div>
+                        <div class="game-menu-box clearfix">
+                            <div class="game-menu-title fl">涔愰€忓僵</div>
+                            <div class="game-menu-list fr">
+                                <a title="骞夸笢11閫?" href="http://s1.088cnc.com:8080/index.php?c=user&a=cqssc&lotteryid=8&r=1467123072">骞夸笢11閫?</a>
+                                <a title="鍗佷竴杩愬ず閲? href="http://s1.088cnc.com:8080/index.php?c=user&a=cqssc&lotteryid=6&r=1467123072">鍗佷竴杩愬ず閲?/a>
+                                <a title="姹熻タ11閫?" href="http://s1.088cnc.com:8080/index.php?c=user&a=cqssc&lotteryid=11&r=1467123072">姹熻タ11閫?</a>
+                                <a title="涓婃捣11閫?" href="http://s1.088cnc.com:8080/index.php?c=user&a=cqssc&lotteryid=12&r=1467123072">涓婃捣11閫?</a>
+                            </div>
+                        </div>
+                        <div class="game-menu-box clearfix">
+                            <div class="game-menu-title fl">浣庨褰?/div>
+                            <div class="game-menu-list fr">
+                                <a title="绂忓僵3D"
+                                   href="http://s1.088cnc.com:8080/index.php?c=user&a=cqssc&lotteryid=9&r=1467123072">绂忓僵3D</a>
+                                <a title="鍏悎褰? href="http://s1.088cnc.com:8080/index.php?c=user&a=cqssc&lotteryid=13&r=1467123072">鍏悎褰?/a>
+                                <a title="鎺掑垪3鎺掑垪5"
+                                   href="http://s1.088cnc.com:8080/index.php?c=user&a=cqssc&lotteryid=14&r=1467123072">鎺掑垪3鎺掑垪5</a>
+                            </div>
+                        </div>
+                        <div class="game-menu-box clearfix">
+                            <div class="game-menu-title fl">鐪熶汉濞变箰</div>
+                            <div class="game-menu-list fr">
+                                <a title="鐪熶汉濞变箰" href="http://s1.088cnc.com:8080/index.php?c=user&a=zryl&r=1467123072">鐪熶汉濞变箰</a>
+                            </div>
+                        </div>
+                    </div>
+                    <iframe class="h-iframe"></iframe>
+                </div>
+			</span>
+            <a id="game21dian" href="http://s1.088cnc.com:8080/index.php?c=app&a=index&app_id=10001&r=1467123072" target="_blank">21鐐规父鎴?/a>
+            <a href="http://s1.088cnc.com:8080/index.php?c=user&a=zryl&r=1467123072" target="_blank">鐪熶汉濞变箰</a>
+            <a href="/">杩斿洖棣栭〉</a>
+        </div>
+
+        <!-- 鍥哄畾/鑷敱璋冭妭 -->
+        <div class=" mT10 switch">
+                            <div class="automode clearfix">
+                    <div class="usermod fl">
+                                                    <a href="javascript:;" id="jfauto_top">鑷敱璋冭妭</a>
+                                                    <a id="Showjiangjin">鍥哄畾濂栭噾</a>
+                                            </div>
+                                            <div id="jangjinmod" class="fl" style="display:none">
+                            <select name="jffixed" id="jffixed" type="hidden">
+                                                                    <option value="3">1800</option>
+                                                                    <option value="5">1900</option>
+                                                            </select>
+                        </div>
+                                    </div>
+                    </div>
+
+
+        <!-- right -->
+        <ul class="tb_user fr mT10">
+            <li>鎮ㄥソ, <span id="userName">鎭枩鍙戣储</span></li>
+            <li class="my_account">
+                鎴戠殑璐︽埛<i class="icon_down">&nbsp;</i>
+
+                <div class="menu-nav">
+                    <i class="tri"></i>
+                    <a href="http://s1.088cnc.com:8080/index.php?c=user&a=sscorder&r=1467123072">鎶曟敞璁板綍</a>
+                    <a href="http://s1.088cnc.com:8080/index.php?c=user&a=userblotters&r=1467123072">璐︽埛鏄庣粏</a>
+                    <a href="http://s1.088cnc.com:8080/index.php?c=user&a=changeview&r=1467123072">瀹夊叏涓績</a>
+                </div>
+            </li>
+            <!--<li><i class="tb_msg br5">0</i></li>-->
+            <!--			<li><div class="tb_account">浣欓锛?<span id="spanBall">20.10</span><i class="icon_refresh mL5">&nbsp;</i></div></li>-->
+            <li class="tb_account">浣欓锛?<span
+                    id="leftusermoney">85.33</span><i id="refreshMoney_top" class="icon_refresh mL5">&nbsp;</i></li>
+            <li class="tb_other_link">
+                <a href="http://s1.088cnc.com:8080/index.php?c=user&a=paysel&r=1467123072">鍏呭€?/a><a class="tb_tx"
+                                                                                    href="http://s1.088cnc.com:8080/index.php?c=user&a=cashview&nexturl=applycashview&r=1467123072">鎻愮幇</a><a
+                    href="http://s1.088cnc.com:8080/index.php?c=session&a=logout&r=1467123072">閫€鍑?/a>
+            </li>
+        </ul>
+    </div>
+</div><div class="header">
+    <div class="center clearfix">
+        <!-- logo -->
+        <a href="/" class="logo fl" name="Page_firefrog_index"></a>
+        <div class="service">
+            <a href="/service.htm" target="_blank" class="link-service" title="瀹㈡湇">鑱旂郴瀹㈡湇</a>
+            <a href="http://s1.088cnc.com:8080/?c=user&a=help_play" target="_blank" class="link-help" title="甯姪">鎶曟敞鎸囧崡</a>
+        </div>
+    </div>
+</div><div class='center content_wrap clearfix mT10'><link rel="stylesheet" href="/statics/pages/content/f7d3d9a9.main.css">
+<!--[if lt IE 9]>
+<link rel="stylesheet" href='/statics/pages/content_ie/eb3d1329.main.css'>
+<![endif]-->
+
+<div class="g_5 fl">
+	<div class="common-side">
+		<div class="nav-side">
+			<dl class="side-bet">
+				<dt class="title"><a style="color: red;" href="http://s1.088cnc.com:8080/index.php?c=user&a=active_index&r=1467123072">娲诲姩涓績<span style="font-family: 瀹嬩綋; font-size: 14px; font-weight: normal">>></span></a></dt>
+			</dl>
+			<dl class="side-bet">
+				<dt class="title">娓告垙璁板綍</dt>
+				<dd><a href="http://s1.088cnc.com:8080/index.php?c=user&a=sscorder&r=1467123072">鎶曟敞璁板綍</a></dd>
+				<dd><a href="http://s1.088cnc.com:8080/index.php?c=user&a=ssctraceorder&r=1467123072">杩藉彿璁板綍</a></dd>
+				<dd><a href="http://s1.088cnc.com:8080/index.php?c=session&a=lotterycodehistory&lotteryid=1&day=1&count=30&r=1467123072" target="_blank">璧板娍鍥?/a></dd>
+			</dl>
+			<dl class="side-safe">
+				<dt class="title">鐢ㄦ埛绠＄悊</dt>
+									<dd><a title="鎵€鏈夌敤鎴蜂俊鎭? href="http://s1.088cnc.com:8080/index.php?c=user&a=user_list_frame&r=1467123072">鐢ㄦ埛鍒楄〃</a>
+					</dd>
+					<dd><a title="澧炲姞涓嬬骇鐢ㄦ埛" href="http://s1.088cnc.com:8080/index.php?c=user&a=addForm&r=1467123072">澧炲姞鐢ㄦ埛</a></dd>
+					<dd><a title="杞?nbsp;&nbsp;璐? href="http://s1.088cnc.com:8080/index.php?c=user&a=remit_view&r=1467123072">杞?nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;璐?/a></dd>
+								<dd><a title="淇敼鑷繁鐨勬樀绉? href="http://s1.088cnc.com:8080/index.php?c=user&a=editnickname&r=1467123072">淇敼鏄电О</a></dd>
+				<dd><a title="鏌ョ湅鍚勫僵绉嶅閲? href="http://s1.088cnc.com:8080/index.php?c=user&a=prizeinfo&r=1467123072">濂栭噾璇︽儏</a></dd>
+			</dl>
+			<dl class="side-service">
+				<dt class="title">鎶ヨ〃绠＄悊</dt>
+
+				<dd><a title="鏌ョ湅鎵€鏈夎处鍙樹俊鎭? href="http://s1.088cnc.com:8080/index.php?c=user&a=userblotters&r=1467123072">璐﹀彉鍒楄〃</a></dd>
+				<dd><a title="鏌ヨ娓告垙缁熻淇℃伅" href="http://s1.088cnc.com:8080/index.php?c=user&a=reportlist1&report_type=last&r=1467123072">鎶ヨ〃鏌ヨ</a></dd>
+
+									<dd><a title="搴旂敤鎶ヨ〃" href="http://s1.088cnc.com:8080/index.php?c=user&a=appreport&app_id=10001&r=1467123072">搴旂敤鎶ヨ〃</a></dd>
+					<dd><a title="缁熻杩旂偣鎯呭喌" href="http://s1.088cnc.com:8080/index.php?c=user&a=rebatepoint&r=1467123072">杩旂偣缁熻</a></dd>
+								<dd><a title="浠婃棩娓告垙缁熻" href="http://s1.088cnc.com:8080/index.php?c=user&a=todayreport&r=1467123072">涓汉缁熻</a></dd>
+			</dl>
+			<dl class="side-funds">
+				<dt class="title">璐︽埛绠＄悊</dt>
+				<dd><a title="淇敼鐧婚檰瀵嗙爜鍜岃祫閲戝瘑鐮? href="http://s1.088cnc.com:8080/index.php?c=user&a=changeview&r=1467123072">淇敼瀵嗙爜</a></dd>
+				<dd><a title="濉啓鍏呭€肩敵璇? href="http://s1.088cnc.com:8080/index.php?c=user&a=paysel&r=1467123072">鍏呭€肩敵璇?/a></dd>
+				<dd><a title="濉啓鎻愮幇鐢宠" href="http://s1.088cnc.com:8080/index.php?c=user&a=cashview&nexturl=applycashview&r=1467123072">鎻愮幇鐢宠</a></dd>
+				<dd><a title="绠＄悊鎴戠殑閾惰鍗? href="http://s1.088cnc.com:8080/index.php?c=user&a=cashview&nexturl=bankinfoview&r=1467123072">鎴戠殑璧勬枡</a></dd>
+			</dl>
+			<dl class="side-funds">
+				<dt class="title">甯姪涓績</dt>
+				<dd><a title="淇℃伅涓績" href="http://s1.088cnc.com:8080/index.php?c=user&a=infomation&r=1467123072">淇℃伅涓績</a></dd>
+				<dd><a title="鐜╂硶浠嬬粛" href="http://s1.088cnc.com:8080/?c=user&a=help_play">鐜╂硶浠嬬粛</a></dd>
+				<dd><a title="骞冲彴鍔熻兘浠嬬粛" href="http://s1.088cnc.com:8080/?c=user&a=help_func">鍔熻兘浠嬬粛</a></dd>
+				<dd><a title="甯歌闂璇存槑" href="http://s1.088cnc.com:8080/?c=user&a=help_faq">甯歌闂</a></dd>
+				<dd><a title="鍊嶆姇宸ュ叿" target="_blank" href="http://www.shishicai.cn/tool/beitou/">鍊嶆姇宸ュ叿</a></dd>
+				<dd><a title="缂╂按宸ュ叿" target="_blank" href="http://tools.cjcp.com.cn/gl/ssc/">缂╂按宸ュ叿</a></dd>
+				<dd><a title="鎵嬫満瀹夎" href="http://s1.088cnc.com:8080/?c=user&a=help_appsetup">鎵嬫満瀹夎</a></dd>
+			</dl>
+			<dl class="side-funds">
+				<dt class="title"><a title="鍦ㄧ嚎瀹㈡湇" target="_blank" href="service.htm">鍦ㄧ嚎瀹㈡湇</a></dt>
+			</dl>
+		</div>
+	</div>
+</div><style>
+    .msgbox {
+        text-align: center;
+        padding: 50px 0;
+        border: 1px solid #E3E3E3;
+        font-size: 14px;
+    }
+
+    .msg {
+        padding-left: 40px;
+        position: relative;
+    }
+
+    .msg i {
+        position: relative;
+        top: 0;
+        left: 0;
+        margin: 0 10px 0 0;
+    }
+</style>
+<div id="main_box" class="fr common-article">
+    <div class="title">绯荤粺娑堟伅</div>
+
+    <div class="msgbox">
+                <span class="msg mT20" style="color: red;"><i
+                class="ico-waring"></i>浣欓涓嶈冻锛?/span>
+        <p class="mT20">濡傛灉鎮ㄤ笉鍋氬嚭閫夋嫨锛屽皢鍦?<span id="spanSeconds">3</span> 绉掑悗璺宠浆鍒扮涓€涓摼鎺ュ湴鍧€</p>
+    </div>
+</div>
+
+<script type="text/javascript">
+
+    var $spanSeconds = $('#spanSeconds'),
+        seconds = Number($.trim($('#spanSeconds').text())),
+        defaultUrl = "http://s1.088cnc.com:8080/index.php?c=user&a=infomation&r=1467123072",
+        play = null,
+        reloadflag = 0;
+
+    play = window.setInterval(redirection, 1500);
+
+    function redirection() {
+        seconds--;
+        if (seconds <= 0) {
+            clearInterval(play);
+            if (reloadflag == 0) {
+                window.location.href = defaultUrl;
+            } else {
+                top.document.location.reload();
+            }
+        }
+        else {
+            $spanSeconds.text(seconds);
+        }
+    }
+</script></div><div class="footer_safe">
+    <div class="center clearfix">
+        <div class="f_safe_p1">
+            <em>100%璧勯噾瀹夊叏</em>
+            <span>鍚堜綔閾惰</span>
+        </div>
+        <div class="f_safe_p2">
+            <em>100%璐︽埛瀹夊叏</em>
+            <span>瀹夊叏淇濇姢</span>
+        </div>
+        <div class="f_safe_p3">
+            <em>100%缃戠珯瀹夊叏</em>
+            <span>璧勮川鍙潬</span>
+        </div>
+    </div>
+</div>
+<div class="footer">
+    <div class="center">
+        <a href="/service.htm" target="_blank">鍦ㄧ嚎瀹㈡湇</a><span></span>
+        <a href="http://s1.088cnc.com:8080/index.php?c=user&a=active_index&r=1467123072" target="_blank">娲诲姩涓績</a><span></span>
+        <a href="http://s1.088cnc.com:8080/index.php?c=user&a=changeview&r=1467123072" target="_blank">瀹夊叏涓績</a><span></span>
+        <a href="http://s1.088cnc.com:8080/index.php?c=user&a=help_func&r=1467123072" target="_blank">鍔熻兘浠嬬粛</a>
+
+        <p class="footer-copyright">漏2010-2016 CNC濞变箰 All Rights Reserved</p>
+    </div>
+</div></body></html><!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="renderer" content="webkit">
+    <title></title>
+    <link rel="stylesheet" href="/statics/global/352e48a2.main.css">
+    <script src="/statics/lib/e8b5d896.lib.js"></script>
+    <script>
+        seajs.config({
+            base: "/statics/",
+            'map': [[/^(.*\.(?:css|js))(.*)$/i, '$1?10000_31136']]
+        });
+
+        var site = {
+            'messageUrl':'http://s1.088cnc.com:8080/index.php?c=user&a=getzjmessage&r=1467123072',
+            'moneyUrl':'http://s1.088cnc.com:8080/index.php?c=user&a=getusermoney&r=1467123072',
+            'setcurrentmode':'http://s1.088cnc.com:8080/index.php?c=user&a=setcurrentmode&r=1467123072',
+            'currentmode':'4',
+            'domain':'http://hit.088cnc.com:82',
+            'game':{
+                'dian_21':{
+                    'url':'http://s1.088cnc.com:8080/index.php?c=app&a=index&app_id=10001&r=1467123072'
+                }
+            },
+            'userName' : 'xiaohe777'
+        }
+        seajs.use('global/main.js');
+    </script>
+</head>
+<body>
+
+<!-- toolbar -->
+<div class="toolbar">
+    <div class="center clearfix">
+        <!-- left -->
+        <div class="tb_menu fl mT10">
+			<span class="game">
+				褰╃エ<i class="icon_down">&nbsp;</i>
+				<!-- 褰╃エ绉嶇被 -->
+				<div class="game-menu-panel ">
+                    <!--					<span class="triangle game-menu-triangle"><span></span></span>-->
+                    <i class="tri"></i>
+
+                    <div class="game-menu-inner">
+                        <div class="game-menu-box clearfix">
+
+                            
+
+                            <div class="game-menu-title fl">楂橀褰?/div>
+                            <div class="game-menu-list fr">
+                                <a class="hot-game" title="濡傛剰鍒嗗垎褰?
+                                   href="http://s1.088cnc.com:8080/index.php?c=user&a=cqssc&lotteryid=81&r=1467123072">濡傛剰鍒嗗垎褰?                                   <i></i></a>
+                                <a title="棣欐腐涓夊垎褰?
+                                   href="http://s1.088cnc.com:8080/index.php?c=user&a=cqssc&lotteryid=82&r=1467123072">棣欐腐涓夊垎褰?/a>
+                                <a title="婢抽棬浜斿垎褰?
+                                   href="http://s1.088cnc.com:8080/index.php?c=user&a=cqssc&lotteryid=83&r=1467123072">婢抽棬浜斿垎褰?/a>
+                                <a title="鍚夌ゥ绉掔褰?
+                                   href="http://s1.088cnc.com:8080/index.php?c=user&a=cqssc&lotteryid=80&r=1467123072">鍚夌ゥ绉掔褰?/a>
+                                <a title="閲嶅簡鏃舵椂褰? href="http://s1.088cnc.com:8080/index.php?c=user&a=cqssc&lotteryid=1&r=1467123072">閲嶅簡鏃舵椂褰?/a>
+                                <a title="鏂扮枂鏃舵椂褰? href="http://s1.088cnc.com:8080/index.php?c=user&a=cqssc&lotteryid=3&r=1467123072">鏂扮枂鏃舵椂褰?/a>
+                                <a title="鍖椾含PK10" href="http://s1.088cnc.com:8080/index.php?c=user&a=cqssc&lotteryid=10&r=1467123072">鍖椾含PK10</a>
+                            </div>
+                        </div>
+                        <div class="game-menu-box clearfix">
+                            <div class="game-menu-title fl">涔愰€忓僵</div>
+                            <div class="game-menu-list fr">
+                                <a title="骞夸笢11閫?" href="http://s1.088cnc.com:8080/index.php?c=user&a=cqssc&lotteryid=8&r=1467123072">骞夸笢11閫?</a>
+                                <a title="鍗佷竴杩愬ず閲? href="http://s1.088cnc.com:8080/index.php?c=user&a=cqssc&lotteryid=6&r=1467123072">鍗佷竴杩愬ず閲?/a>
+                                <a title="姹熻タ11閫?" href="http://s1.088cnc.com:8080/index.php?c=user&a=cqssc&lotteryid=11&r=1467123072">姹熻タ11閫?</a>
+                                <a title="涓婃捣11閫?" href="http://s1.088cnc.com:8080/index.php?c=user&a=cqssc&lotteryid=12&r=1467123072">涓婃捣11閫?</a>
+                            </div>
+                        </div>
+                        <div class="game-menu-box clearfix">
+                            <div class="game-menu-title fl">浣庨褰?/div>
+                            <div class="game-menu-list fr">
+                                <a title="绂忓僵3D"
+                                   href="http://s1.088cnc.com:8080/index.php?c=user&a=cqssc&lotteryid=9&r=1467123072">绂忓僵3D</a>
+                                <a title="鍏悎褰? href="http://s1.088cnc.com:8080/index.php?c=user&a=cqssc&lotteryid=13&r=1467123072">鍏悎褰?/a>
+                                <a title="鎺掑垪3鎺掑垪5"
+                                   href="http://s1.088cnc.com:8080/index.php?c=user&a=cqssc&lotteryid=14&r=1467123072">鎺掑垪3鎺掑垪5</a>
+                            </div>
+                        </div>
+                        <div class="game-menu-box clearfix">
+                            <div class="game-menu-title fl">鐪熶汉濞变箰</div>
+                            <div class="game-menu-list fr">
+                                <a title="鐪熶汉濞变箰" href="http://s1.088cnc.com:8080/index.php?c=user&a=zryl&r=1467123072">鐪熶汉濞变箰</a>
+                            </div>
+                        </div>
+                    </div>
+                    <iframe class="h-iframe"></iframe>
+                </div>
+			</span>
+            <a id="game21dian" href="http://s1.088cnc.com:8080/index.php?c=app&a=index&app_id=10001&r=1467123072" target="_blank">21鐐规父鎴?/a>
+            <a href="http://s1.088cnc.com:8080/index.php?c=user&a=zryl&r=1467123072" target="_blank">鐪熶汉濞变箰</a>
+            <a href="/">杩斿洖棣栭〉</a>
+        </div>
+
+        <!-- 鍥哄畾/鑷敱璋冭妭 -->
+        <div class=" mT10 switch">
+                            <div class="automode clearfix">
+                    <div class="usermod fl">
+                                                    <a href="javascript:;" id="jfauto_top">鑷敱璋冭妭</a>
+                                                    <a id="Showjiangjin">鍥哄畾濂栭噾</a>
+                                            </div>
+                                            <div id="jangjinmod" class="fl" style="display:none">
+                            <select name="jffixed" id="jffixed" type="hidden">
+                                                                    <option value="3">1800</option>
+                                                                    <option value="5">1900</option>
+                                                            </select>
+                        </div>
+                                    </div>
+                    </div>
+
+
+        <!-- right -->
+        <ul class="tb_user fr mT10">
+            <li>鎮ㄥソ, <span id="userName">鎭枩鍙戣储</span></li>
+            <li class="my_account">
+                鎴戠殑璐︽埛<i class="icon_down">&nbsp;</i>
+
+                <div class="menu-nav">
+                    <i class="tri"></i>
+                    <a href="http://s1.088cnc.com:8080/index.php?c=user&a=sscorder&r=1467123072">鎶曟敞璁板綍</a>
+                    <a href="http://s1.088cnc.com:8080/index.php?c=user&a=userblotters&r=1467123072">璐︽埛鏄庣粏</a>
+                    <a href="http://s1.088cnc.com:8080/index.php?c=user&a=changeview&r=1467123072">瀹夊叏涓績</a>
+                </div>
+            </li>
+            <!--<li><i class="tb_msg br5">0</i></li>-->
+            <!--			<li><div class="tb_account">浣欓锛?<span id="spanBall">20.10</span><i class="icon_refresh mL5">&nbsp;</i></div></li>-->
+            <li class="tb_account">浣欓锛?<span
+                    id="leftusermoney">85.33</span><i id="refreshMoney_top" class="icon_refresh mL5">&nbsp;</i></li>
+            <li class="tb_other_link">
+                <a href="http://s1.088cnc.com:8080/index.php?c=user&a=paysel&r=1467123072">鍏呭€?/a><a class="tb_tx"
+                                                                                    href="http://s1.088cnc.com:8080/index.php?c=user&a=cashview&nexturl=applycashview&r=1467123072">鎻愮幇</a><a
+                    href="http://s1.088cnc.com:8080/index.php?c=session&a=logout&r=1467123072">閫€鍑?/a>
+            </li>
+        </ul>
+    </div>
+</div><div class="header">
+    <div class="center clearfix">
+        <!-- logo -->
+        <a href="/" class="logo fl" name="Page_firefrog_index"></a>
+        <div class="service">
+            <a href="/service.htm" target="_blank" class="link-service" title="瀹㈡湇">鑱旂郴瀹㈡湇</a>
+            <a href="http://s1.088cnc.com:8080/?c=user&a=help_play" target="_blank" class="link-help" title="甯姪">鎶曟敞鎸囧崡</a>
+        </div>
+    </div>
+</div><div class='center content_wrap clearfix mT10'><link rel="stylesheet" href="/statics/pages/content/f7d3d9a9.main.css">
+<!--[if lt IE 9]>
+<link rel="stylesheet" href='/statics/pages/content_ie/eb3d1329.main.css'>
+<![endif]-->
+
+<div class="g_5 fl">
+	<div class="common-side">
+		<div class="nav-side">
+			<dl class="side-bet">
+				<dt class="title"><a style="color: red;" href="http://s1.088cnc.com:8080/index.php?c=user&a=active_index&r=1467123072">娲诲姩涓績<span style="font-family: 瀹嬩綋; font-size: 14px; font-weight: normal">>></span></a></dt>
+			</dl>
+			<dl class="side-bet">
+				<dt class="title">娓告垙璁板綍</dt>
+				<dd><a href="http://s1.088cnc.com:8080/index.php?c=user&a=sscorder&r=1467123072">鎶曟敞璁板綍</a></dd>
+				<dd><a href="http://s1.088cnc.com:8080/index.php?c=user&a=ssctraceorder&r=1467123072">杩藉彿璁板綍</a></dd>
+				<dd><a href="http://s1.088cnc.com:8080/index.php?c=session&a=lotterycodehistory&lotteryid=1&day=1&count=30&r=1467123072" target="_blank">璧板娍鍥?/a></dd>
+			</dl>
+			<dl class="side-safe">
+				<dt class="title">鐢ㄦ埛绠＄悊</dt>
+									<dd><a title="鎵€鏈夌敤鎴蜂俊鎭? href="http://s1.088cnc.com:8080/index.php?c=user&a=user_list_frame&r=1467123072">鐢ㄦ埛鍒楄〃</a>
+					</dd>
+					<dd><a title="澧炲姞涓嬬骇鐢ㄦ埛" href="http://s1.088cnc.com:8080/index.php?c=user&a=addForm&r=1467123072">澧炲姞鐢ㄦ埛</a></dd>
+					<dd><a title="杞?nbsp;&nbsp;璐? href="http://s1.088cnc.com:8080/index.php?c=user&a=remit_view&r=1467123072">杞?nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;璐?/a></dd>
+								<dd><a title="淇敼鑷繁鐨勬樀绉? href="http://s1.088cnc.com:8080/index.php?c=user&a=editnickname&r=1467123072">淇敼鏄电О</a></dd>
+				<dd><a title="鏌ョ湅鍚勫僵绉嶅閲? href="http://s1.088cnc.com:8080/index.php?c=user&a=prizeinfo&r=1467123072">濂栭噾璇︽儏</a></dd>
+			</dl>
+			<dl class="side-service">
+				<dt class="title">鎶ヨ〃绠＄悊</dt>
+
+				<dd><a title="鏌ョ湅鎵€鏈夎处鍙樹俊鎭? href="http://s1.088cnc.com:8080/index.php?c=user&a=userblotters&r=1467123072">璐﹀彉鍒楄〃</a></dd>
+				<dd><a title="鏌ヨ娓告垙缁熻淇℃伅" href="http://s1.088cnc.com:8080/index.php?c=user&a=reportlist1&report_type=last&r=1467123072">鎶ヨ〃鏌ヨ</a></dd>
+
+									<dd><a title="搴旂敤鎶ヨ〃" href="http://s1.088cnc.com:8080/index.php?c=user&a=appreport&app_id=10001&r=1467123072">搴旂敤鎶ヨ〃</a></dd>
+					<dd><a title="缁熻杩旂偣鎯呭喌" href="http://s1.088cnc.com:8080/index.php?c=user&a=rebatepoint&r=1467123072">杩旂偣缁熻</a></dd>
+								<dd><a title="浠婃棩娓告垙缁熻" href="http://s1.088cnc.com:8080/index.php?c=user&a=todayreport&r=1467123072">涓汉缁熻</a></dd>
+			</dl>
+			<dl class="side-funds">
+				<dt class="title">璐︽埛绠＄悊</dt>
+				<dd><a title="淇敼鐧婚檰瀵嗙爜鍜岃祫閲戝瘑鐮? href="http://s1.088cnc.com:8080/index.php?c=user&a=changeview&r=1467123072">淇敼瀵嗙爜</a></dd>
+				<dd><a title="濉啓鍏呭€肩敵璇? href="http://s1.088cnc.com:8080/index.php?c=user&a=paysel&r=1467123072">鍏呭€肩敵璇?/a></dd>
+				<dd><a title="濉啓鎻愮幇鐢宠" href="http://s1.088cnc.com:8080/index.php?c=user&a=cashview&nexturl=applycashview&r=1467123072">鎻愮幇鐢宠</a></dd>
+				<dd><a title="绠＄悊鎴戠殑閾惰鍗? href="http://s1.088cnc.com:8080/index.php?c=user&a=cashview&nexturl=bankinfoview&r=1467123072">鎴戠殑璧勬枡</a></dd>
+			</dl>
+			<dl class="side-funds">
+				<dt class="title">甯姪涓績</dt>
+				<dd><a title="淇℃伅涓績" href="http://s1.088cnc.com:8080/index.php?c=user&a=infomation&r=1467123072">淇℃伅涓績</a></dd>
+				<dd><a title="鐜╂硶浠嬬粛" href="http://s1.088cnc.com:8080/?c=user&a=help_play">鐜╂硶浠嬬粛</a></dd>
+				<dd><a title="骞冲彴鍔熻兘浠嬬粛" href="http://s1.088cnc.com:8080/?c=user&a=help_func">鍔熻兘浠嬬粛</a></dd>
+				<dd><a title="甯歌闂璇存槑" href="http://s1.088cnc.com:8080/?c=user&a=help_faq">甯歌闂</a></dd>
+				<dd><a title="鍊嶆姇宸ュ叿" target="_blank" href="http://www.shishicai.cn/tool/beitou/">鍊嶆姇宸ュ叿</a></dd>
+				<dd><a title="缂╂按宸ュ叿" target="_blank" href="http://tools.cjcp.com.cn/gl/ssc/">缂╂按宸ュ叿</a></dd>
+				<dd><a title="鎵嬫満瀹夎" href="http://s1.088cnc.com:8080/?c=user&a=help_appsetup">鎵嬫満瀹夎</a></dd>
+			</dl>
+			<dl class="side-funds">
+				<dt class="title"><a title="鍦ㄧ嚎瀹㈡湇" target="_blank" href="service.htm">鍦ㄧ嚎瀹㈡湇</a></dt>
+			</dl>
+		</div>
+	</div>
+</div><style>
+    .msgbox {
+        text-align: center;
+        padding: 50px 0;
+        border: 1px solid #E3E3E3;
+        font-size: 14px;
+    }
+
+    .msg {
+        padding-left: 40px;
+        position: relative;
+    }
+
+    .msg i {
+        position: relative;
+        top: 0;
+        left: 0;
+        margin: 0 10px 0 0;
+    }
+</style>
+<div id="main_box" class="fr common-article">
+    <div class="title">绯荤粺娑堟伅</div>
+
+    <div class="msgbox">
+                <span class="msg mT20" style="color: red;"><i
+                class="ico-waring"></i>浣欓涓嶈冻锛?/span>
+        <p class="mT20">濡傛灉鎮ㄤ笉鍋氬嚭閫夋嫨锛屽皢鍦?<span id="spanSeconds">3</span> 绉掑悗璺宠浆鍒扮涓€涓摼鎺ュ湴鍧€</p>
+    </div>
+</div>
+
+<script type="text/javascript">
+
+    var $spanSeconds = $('#spanSeconds'),
+        seconds = Number($.trim($('#spanSeconds').text())),
+        defaultUrl = "http://s1.088cnc.com:8080/index.php?c=user&a=infomation&r=1467123072",
+        play = null,
+        reloadflag = 0;
+
+    play = window.setInterval(redirection, 1500);
+
+    function redirection() {
+        seconds--;
+        if (seconds <= 0) {
+            clearInterval(play);
+            if (reloadflag == 0) {
+                window.location.href = defaultUrl;
+            } else {
+                top.document.location.reload();
+            }
+        }
+        else {
+            $spanSeconds.text(seconds);
+        }
+    }
+</script></div><div class="footer_safe">
+    <div class="center clearfix">
+        <div class="f_safe_p1">
+            <em>100%璧勯噾瀹夊叏</em>
+            <span>鍚堜綔閾惰</span>
+        </div>
+        <div class="f_safe_p2">
+            <em>100%璐︽埛瀹夊叏</em>
+            <span>瀹夊叏淇濇姢</span>
+        </div>
+        <div class="f_safe_p3">
+            <em>100%缃戠珯瀹夊叏</em>
+            <span>璧勮川鍙潬</span>
+        </div>
+    </div>
+</div>
+<div class="footer">
+    <div class="center">
+        <a href="/service.htm" target="_blank">鍦ㄧ嚎瀹㈡湇</a><span></span>
+        <a href="http://s1.088cnc.com:8080/index.php?c=user&a=active_index&r=1467123072" target="_blank">娲诲姩涓績</a><span></span>
+        <a href="http://s1.088cnc.com:8080/index.php?c=user&a=changeview&r=1467123072" target="_blank">瀹夊叏涓績</a><span></span>
+        <a href="http://s1.088cnc.com:8080/index.php?c=user&a=help_func&r=1467123072" target="_blank">鍔熻兘浠嬬粛</a>
+
+        <p class="footer-copyright">漏2010-2016 CNC濞变箰 All Rights Reserved</p>
+    </div>
+</div></body></html><!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="renderer" content="webkit">
+    <title></title>
+    <link rel="stylesheet" href="/statics/global/352e48a2.main.css">
+    <script src="/statics/lib/e8b5d896.lib.js"></script>
+    <script>
+        seajs.config({
+            base: "/statics/",
+            'map': [[/^(.*\.(?:css|js))(.*)$/i, '$1?10000_31136']]
+        });
+
+        var site = {
+            'messageUrl':'http://s1.088cnc.com:8080/index.php?c=user&a=getzjmessage&r=1467123073',
+            'moneyUrl':'http://s1.088cnc.com:8080/index.php?c=user&a=getusermoney&r=1467123073',
+            'setcurrentmode':'http://s1.088cnc.com:8080/index.php?c=user&a=setcurrentmode&r=1467123073',
+            'currentmode':'4',
+            'domain':'http://hit.088cnc.com:82',
+            'game':{
+                'dian_21':{
+                    'url':'http://s1.088cnc.com:8080/index.php?c=app&a=index&app_id=10001&r=1467123073'
+                }
+            },
+            'userName' : 'xiaohe777'
+        }
+        seajs.use('global/main.js');
+    </script>
+</head>
+<body>
+
+<!-- toolbar -->
+<div class="toolbar">
+    <div class="center clearfix">
+        <!-- left -->
+        <div class="tb_menu fl mT10">
+			<span class="game">
+				褰╃エ<i class="icon_down">&nbsp;</i>
+				<!-- 褰╃エ绉嶇被 -->
+				<div class="game-menu-panel ">
+                    <!--					<span class="triangle game-menu-triangle"><span></span></span>-->
+                    <i class="tri"></i>
+
+                    <div class="game-menu-inner">
+                        <div class="game-menu-box clearfix">
+
+                            
+
+                            <div class="game-menu-title fl">楂橀褰?/div>
+                            <div class="game-menu-list fr">
+                                <a class="hot-game" title="濡傛剰鍒嗗垎褰?
+                                   href="http://s1.088cnc.com:8080/index.php?c=user&a=cqssc&lotteryid=81&r=1467123073">濡傛剰鍒嗗垎褰?                                   <i></i></a>
+                                <a title="棣欐腐涓夊垎褰?
+                                   href="http://s1.088cnc.com:8080/index.php?c=user&a=cqssc&lotteryid=82&r=1467123073">棣欐腐涓夊垎褰?/a>
+                                <a title="婢抽棬浜斿垎褰?
+                                   href="http://s1.088cnc.com:8080/index.php?c=user&a=cqssc&lotteryid=83&r=1467123073">婢抽棬浜斿垎褰?/a>
+                                <a title="鍚夌ゥ绉掔褰?
+                                   href="http://s1.088cnc.com:8080/index.php?c=user&a=cqssc&lotteryid=80&r=1467123073">鍚夌ゥ绉掔褰?/a>
+                                <a title="閲嶅簡鏃舵椂褰? href="http://s1.088cnc.com:8080/index.php?c=user&a=cqssc&lotteryid=1&r=1467123073">閲嶅簡鏃舵椂褰?/a>
+                                <a title="鏂扮枂鏃舵椂褰? href="http://s1.088cnc.com:8080/index.php?c=user&a=cqssc&lotteryid=3&r=1467123073">鏂扮枂鏃舵椂褰?/a>
+                                <a title="鍖椾含PK10" href="http://s1.088cnc.com:8080/index.php?c=user&a=cqssc&lotteryid=10&r=1467123073">鍖椾含PK10</a>
+                            </div>
+                        </div>
+                        <div class="game-menu-box clearfix">
+                            <div class="game-menu-title fl">涔愰€忓僵</div>
+                            <div class="game-menu-list fr">
+                                <a title="骞夸笢11閫?" href="http://s1.088cnc.com:8080/index.php?c=user&a=cqssc&lotteryid=8&r=1467123073">骞夸笢11閫?</a>
+                                <a title="鍗佷竴杩愬ず閲? href="http://s1.088cnc.com:8080/index.php?c=user&a=cqssc&lotteryid=6&r=1467123073">鍗佷竴杩愬ず閲?/a>
+                                <a title="姹熻タ11閫?" href="http://s1.088cnc.com:8080/index.php?c=user&a=cqssc&lotteryid=11&r=1467123073">姹熻タ11閫?</a>
+                                <a title="涓婃捣11閫?" href="http://s1.088cnc.com:8080/index.php?c=user&a=cqssc&lotteryid=12&r=1467123073">涓婃捣11閫?</a>
+                            </div>
+                        </div>
+                        <div class="game-menu-box clearfix">
+                            <div class="game-menu-title fl">浣庨褰?/div>
+                            <div class="game-menu-list fr">
+                                <a title="绂忓僵3D"
+                                   href="http://s1.088cnc.com:8080/index.php?c=user&a=cqssc&lotteryid=9&r=1467123073">绂忓僵3D</a>
+                                <a title="鍏悎褰? href="http://s1.088cnc.com:8080/index.php?c=user&a=cqssc&lotteryid=13&r=1467123073">鍏悎褰?/a>
+                                <a title="鎺掑垪3鎺掑垪5"
+                                   href="http://s1.088cnc.com:8080/index.php?c=user&a=cqssc&lotteryid=14&r=1467123073">鎺掑垪3鎺掑垪5</a>
+                            </div>
+                        </div>
+                        <div class="game-menu-box clearfix">
+                            <div class="game-menu-title fl">鐪熶汉濞变箰</div>
+                            <div class="game-menu-list fr">
+                                <a title="鐪熶汉濞变箰" href="http://s1.088cnc.com:8080/index.php?c=user&a=zryl&r=1467123073">鐪熶汉濞变箰</a>
+                            </div>
+                        </div>
+                    </div>
+                    <iframe class="h-iframe"></iframe>
+                </div>
+			</span>
+            <a id="game21dian" href="http://s1.088cnc.com:8080/index.php?c=app&a=index&app_id=10001&r=1467123073" target="_blank">21鐐规父鎴?/a>
+            <a href="http://s1.088cnc.com:8080/index.php?c=user&a=zryl&r=1467123073" target="_blank">鐪熶汉濞变箰</a>
+            <a href="/">杩斿洖棣栭〉</a>
+        </div>
+
+        <!-- 鍥哄畾/鑷敱璋冭妭 -->
+        <div class=" mT10 switch">
+                            <div class="automode clearfix">
+                    <div class="usermod fl">
+                                                    <a href="javascript:;" id="jfauto_top">鑷敱璋冭妭</a>
+                                                    <a id="Showjiangjin">鍥哄畾濂栭噾</a>
+                                            </div>
+                                            <div id="jangjinmod" class="fl" style="display:none">
+                            <select name="jffixed" id="jffixed" type="hidden">
+                                                                    <option value="3">1800</option>
+                                                                    <option value="5">1900</option>
+                                                            </select>
+                        </div>
+                                    </div>
+                    </div>
+
+
+        <!-- right -->
+        <ul class="tb_user fr mT10">
+            <li>鎮ㄥソ, <span id="userName">鎭枩鍙戣储</span></li>
+            <li class="my_account">
+                鎴戠殑璐︽埛<i class="icon_down">&nbsp;</i>
+
+                <div class="menu-nav">
+                    <i class="tri"></i>
+                    <a href="http://s1.088cnc.com:8080/index.php?c=user&a=sscorder&r=1467123073">鎶曟敞璁板綍</a>
+                    <a href="http://s1.088cnc.com:8080/index.php?c=user&a=userblotters&r=1467123073">璐︽埛鏄庣粏</a>
+                    <a href="http://s1.088cnc.com:8080/index.php?c=user&a=changeview&r=1467123073">瀹夊叏涓績</a>
+                </div>
+            </li>
+            <!--<li><i class="tb_msg br5">0</i></li>-->
+            <!--			<li><div class="tb_account">浣欓锛?<span id="spanBall">20.10</span><i class="icon_refresh mL5">&nbsp;</i></div></li>-->
+            <li class="tb_account">浣欓锛?<span
+                    id="leftusermoney">85.33</span><i id="refreshMoney_top" class="icon_refresh mL5">&nbsp;</i></li>
+            <li class="tb_other_link">
+                <a href="http://s1.088cnc.com:8080/index.php?c=user&a=paysel&r=1467123073">鍏呭€?/a><a class="tb_tx"
+                                                                                    href="http://s1.088cnc.com:8080/index.php?c=user&a=cashview&nexturl=applycashview&r=1467123073">鎻愮幇</a><a
+                    href="http://s1.088cnc.com:8080/index.php?c=session&a=logout&r=1467123073">閫€鍑?/a>
+            </li>
+        </ul>
+    </div>
+</div><div class="header">
+    <div class="center clearfix">
+        <!-- logo -->
+        <a href="/" class="logo fl" name="Page_firefrog_index"></a>
+        <div class="service">
+            <a href="/service.htm" target="_blank" class="link-service" title="瀹㈡湇">鑱旂郴瀹㈡湇</a>
+            <a href="http://s1.088cnc.com:8080/?c=user&a=help_play" target="_blank" class="link-help" title="甯姪">鎶曟敞鎸囧崡</a>
+        </div>
+    </div>
+</div><div class='center content_wrap clearfix mT10'><link rel="stylesheet" href="/statics/pages/content/f7d3d9a9.main.css">
+<!--[if lt IE 9]>
+<link rel="stylesheet" href='/statics/pages/content_ie/eb3d1329.main.css'>
+<![endif]-->
+
+<div class="g_5 fl">
+	<div class="common-side">
+		<div class="nav-side">
+			<dl class="side-bet">
+				<dt class="title"><a style="color: red;" href="http://s1.088cnc.com:8080/index.php?c=user&a=active_index&r=1467123073">娲诲姩涓績<span style="font-family: 瀹嬩綋; font-size: 14px; font-weight: normal">>></span></a></dt>
+			</dl>
+			<dl class="side-bet">
+				<dt class="title">娓告垙璁板綍</dt>
+				<dd><a href="http://s1.088cnc.com:8080/index.php?c=user&a=sscorder&r=1467123073">鎶曟敞璁板綍</a></dd>
+				<dd><a href="http://s1.088cnc.com:8080/index.php?c=user&a=ssctraceorder&r=1467123073">杩藉彿璁板綍</a></dd>
+				<dd><a href="http://s1.088cnc.com:8080/index.php?c=session&a=lotterycodehistory&lotteryid=1&day=1&count=30&r=1467123073" target="_blank">璧板娍鍥?/a></dd>
+			</dl>
+			<dl class="side-safe">
+				<dt class="title">鐢ㄦ埛绠＄悊</dt>
+									<dd><a title="鎵€鏈夌敤鎴蜂俊鎭? href="http://s1.088cnc.com:8080/index.php?c=user&a=user_list_frame&r=1467123073">鐢ㄦ埛鍒楄〃</a>
+					</dd>
+					<dd><a title="澧炲姞涓嬬骇鐢ㄦ埛" href="http://s1.088cnc.com:8080/index.php?c=user&a=addForm&r=1467123073">澧炲姞鐢ㄦ埛</a></dd>
+					<dd><a title="杞?nbsp;&nbsp;璐? href="http://s1.088cnc.com:8080/index.php?c=user&a=remit_view&r=1467123073">杞?nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;璐?/a></dd>
+								<dd><a title="淇敼鑷繁鐨勬樀绉? href="http://s1.088cnc.com:8080/index.php?c=user&a=editnickname&r=1467123073">淇敼鏄电О</a></dd>
+				<dd><a title="鏌ョ湅鍚勫僵绉嶅閲? href="http://s1.088cnc.com:8080/index.php?c=user&a=prizeinfo&r=1467123073">濂栭噾璇︽儏</a></dd>
+			</dl>
+			<dl class="side-service">
+				<dt class="title">鎶ヨ〃绠＄悊</dt>
+
+				<dd><a title="鏌ョ湅鎵€鏈夎处鍙樹俊鎭? href="http://s1.088cnc.com:8080/index.php?c=user&a=userblotters&r=1467123073">璐﹀彉鍒楄〃</a></dd>
+				<dd><a title="鏌ヨ娓告垙缁熻淇℃伅" href="http://s1.088cnc.com:8080/index.php?c=user&a=reportlist1&report_type=last&r=1467123073">鎶ヨ〃鏌ヨ</a></dd>
+
+									<dd><a title="搴旂敤鎶ヨ〃" href="http://s1.088cnc.com:8080/index.php?c=user&a=appreport&app_id=10001&r=1467123073">搴旂敤鎶ヨ〃</a></dd>
+					<dd><a title="缁熻杩旂偣鎯呭喌" href="http://s1.088cnc.com:8080/index.php?c=user&a=rebatepoint&r=1467123073">杩旂偣缁熻</a></dd>
+								<dd><a title="浠婃棩娓告垙缁熻" href="http://s1.088cnc.com:8080/index.php?c=user&a=todayreport&r=1467123073">涓汉缁熻</a></dd>
+			</dl>
+			<dl class="side-funds">
+				<dt class="title">璐︽埛绠＄悊</dt>
+				<dd><a title="淇敼鐧婚檰瀵嗙爜鍜岃祫閲戝瘑鐮? href="http://s1.088cnc.com:8080/index.php?c=user&a=changeview&r=1467123073">淇敼瀵嗙爜</a></dd>
+				<dd><a title="濉啓鍏呭€肩敵璇? href="http://s1.088cnc.com:8080/index.php?c=user&a=paysel&r=1467123073">鍏呭€肩敵璇?/a></dd>
+				<dd><a title="濉啓鎻愮幇鐢宠" href="http://s1.088cnc.com:8080/index.php?c=user&a=cashview&nexturl=applycashview&r=1467123073">鎻愮幇鐢宠</a></dd>
+				<dd><a title="绠＄悊鎴戠殑閾惰鍗? href="http://s1.088cnc.com:8080/index.php?c=user&a=cashview&nexturl=bankinfoview&r=1467123073">鎴戠殑璧勬枡</a></dd>
+			</dl>
+			<dl class="side-funds">
+				<dt class="title">甯姪涓績</dt>
+				<dd><a title="淇℃伅涓績" href="http://s1.088cnc.com:8080/index.php?c=user&a=infomation&r=1467123073">淇℃伅涓績</a></dd>
+				<dd><a title="鐜╂硶浠嬬粛" href="http://s1.088cnc.com:8080/?c=user&a=help_play">鐜╂硶浠嬬粛</a></dd>
+				<dd><a title="骞冲彴鍔熻兘浠嬬粛" href="http://s1.088cnc.com:8080/?c=user&a=help_func">鍔熻兘浠嬬粛</a></dd>
+				<dd><a title="甯歌闂璇存槑" href="http://s1.088cnc.com:8080/?c=user&a=help_faq">甯歌闂</a></dd>
+				<dd><a title="鍊嶆姇宸ュ叿" target="_blank" href="http://www.shishicai.cn/tool/beitou/">鍊嶆姇宸ュ叿</a></dd>
+				<dd><a title="缂╂按宸ュ叿" target="_blank" href="http://tools.cjcp.com.cn/gl/ssc/">缂╂按宸ュ叿</a></dd>
+				<dd><a title="鎵嬫満瀹夎" href="http://s1.088cnc.com:8080/?c=user&a=help_appsetup">鎵嬫満瀹夎</a></dd>
+			</dl>
+			<dl class="side-funds">
+				<dt class="title"><a title="鍦ㄧ嚎瀹㈡湇" target="_blank" href="service.htm">鍦ㄧ嚎瀹㈡湇</a></dt>
+			</dl>
+		</div>
+	</div>
+</div>
+<style>
+	.yh{
+		line-height:normal;
+	}
+	.common-article th{
+		font-weight:bold;
+		text-align:left;
+	}
+	.common-article td, .common-article th{
+		padding:5px 0;
+	}
+</style>
+
+<div class="fr common-article" id="main_box">
+<div class="title clearfix">鐪熶汉濞变箰</div>
+
+      <div style="background:#FAFAFA;border: 1px solid #E3E3E3;padding:20px;">
+        <div>
+          <table class="ct2" border="0" cellpadding="0" cellspacing="0">
+            <tbody>
+              <tr>
+                <th width=120px>绠€浠?</th>
+                <td>1銆丆NC鐪熶汉瑙嗚閲囩敤BBIN骞冲彴涓嶮G鎻愪緵鐨勬父鎴忔湇鍔★紝鎻愪緵鍖呮嫭鐧惧涔愩€佽疆鐩樸€侀瀹濄€佽€佽檸鏈哄湪鍐呯殑澶氱娓告垙銆?br>
+2銆佹父鎴忕敾闈㈢簿鑷寸粴涓斤紝鐪熶汉鐜板満鎿嶄綔鍙戠墝锛屽叕姝ｏ紝鍏钩锛岃鎮ㄥ敖浜翰涓寸幇鍦烘姇娉ㄧ殑娓告垙浣撻獙銆?<br>
+3銆佸閲嶆姇娉ㄩ檺棰濋€夋嫨锛屼汉鎬у寲绯荤粺璁剧疆锛屽鍙板疄鏃舵父鎴忓垎浜紝璁╂偍浜彈鐪熶汉娓告垙鏃犻檺绮惧僵涓庡埡婵€銆?/td>
+              </tr>
+              <tr>
+                <th>杩涘叆鐪熶汉娓告垙锛?/th>
+                <td><input type="submit" class="yh" name="btnBBIN" value="BBIN鐪熶汉" onclick="self.location='http://s1.088cnc.com:8080/index.php?c=user&a=zrlogin&type=1&r=1467123073'" id="btnBBIN" class="tj_btn2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <input type="submit" class="yh" name="btnMG" value="MG鐪熶汉" onclick="self.location='http://s1.088cnc.com:8080/index.php?c=user&a=zrlogin&type=2&r=1467123073'" id="btnMG" class="tj_btn2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <input type="submit" class="yh" name="btnMG" value="MG鐢靛瓙濞变箰" onclick="self.location='http://s1.088cnc.com:8080/index.php?c=user&a=zrlist&type=1&r=1467123073'" id="btnMG" class="tj_btn2" style="font-size:12px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                   </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <table border="0" cellpadding="0" cellspacing="0" width="100%">
+          <tbody>
+            <tr>
+              <th colspan="2">鐪熶汉娓告垙璐︽埛</th>
+            </tr>
+          </tbody>
+        </table>
+        <div class="bd">
+          <div style="display: block;" class="bd2" id="general_txt_0"><br>
+            <div style="margin:0 0 18px 40px;font-size:14px;">
+              <table>
+                <tbody>
+			    <form method="post" name="updateform" action="http://s1.088cnc.com:8080/index.php?c=user&a=zrmoney&r=1467123073" onsubmit="">
+			      <tr>
+                    <td>璐︽埛杞处: </td>
+                    <td width="450px">
+                    	<select name="tomy" readonly="readonly" style="height:20px;width:100px;">
+			                <option selected="selected" value="default">CNC濞变箰璐︽埛</option>
+			            </select> 杞叆
+			            <select name="toplatform" style="height:20px;width:100px;">
+			                <option selected="selected" value="1">BBIN璐︽埛</option>
+			                <option value="2">MG璐︽埛</option>
+			            </select>
+			            <input name="tomoneynum" id="moneynum" style="width:90px;" type="text">鍏?
+			            <input name="submit1" class="yh" value="&nbsp;杞处&nbsp;" type="submit">
+                  </tr>
+                  <tr>
+                    <td>璐︽埛杞处: </td>
+                    <td width="450px">
+			            <select name="fromplatform" style="height:20px;width:100px;">
+			                <option selected="selected" value="1">BBIN璐︽埛</option>
+			                <option value="2">MG璐︽埛</option>
+			            </select> 杞叆
+                    	<select name="frommy" readonly="readonly" style="height:20px;width:100px;">
+			                <option selected="selected" value="default">CNC濞变箰璐︽埛</option>
+			            </select>
+			            <input name="frommoneynum" id="moneynum" style="width:90px;" type="text">鍏?
+			            <input name="submit2" class="yh" value="&nbsp;杞处&nbsp;" type="submit">
+                  </tr>
+                  </form>
+                  <tr>
+                  <td>CNC璐︽埛浣欓锛?/td><td>85.3300鍏?nbsp;<a href="http://s1.088cnc.com:8080/index.php?c=user&a=zryl&r=1467123073">鍒锋柊</a></td>
+                  </tr>
+                  <tr>
+                  <td>BBIN璐︽埛浣欓锛?/td><td>1010鍏?/td>
+                  </tr>
+                  <tr>
+                  <td>MG璐︽埛浣欓锛?/td><td>0鍏?/td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </form>
+</div>
+</div><div class="footer_safe">
+    <div class="center clearfix">
+        <div class="f_safe_p1">
+            <em>100%璧勯噾瀹夊叏</em>
+            <span>鍚堜綔閾惰</span>
+        </div>
+        <div class="f_safe_p2">
+            <em>100%璐︽埛瀹夊叏</em>
+            <span>瀹夊叏淇濇姢</span>
+        </div>
+        <div class="f_safe_p3">
+            <em>100%缃戠珯瀹夊叏</em>
+            <span>璧勮川鍙潬</span>
+        </div>
+    </div>
+</div>
+<div class="footer">
+    <div class="center">
+        <a href="/service.htm" target="_blank">鍦ㄧ嚎瀹㈡湇</a><span></span>
+        <a href="http://s1.088cnc.com:8080/index.php?c=user&a=active_index&r=1467123073" target="_blank">娲诲姩涓績</a><span></span>
+        <a href="http://s1.088cnc.com:8080/index.php?c=user&a=changeview&r=1467123073" target="_blank">瀹夊叏涓績</a><span></span>
+        <a href="http://s1.088cnc.com:8080/index.php?c=user&a=help_func&r=1467123073" target="_blank">鍔熻兘浠嬬粛</a>
+
+        <p class="footer-copyright">漏2010-2016 CNC濞变箰 All Rights Reserved</p>
+    </div>
+</div></body></html><!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="renderer" content="webkit">
+    <title></title>
+    <link rel="stylesheet" href="/statics/global/352e48a2.main.css">
+    <script src="/statics/lib/e8b5d896.lib.js"></script>
+    <script>
+        seajs.config({
+            base: "/statics/",
+            'map': [[/^(.*\.(?:css|js))(.*)$/i, '$1?10000_31136']]
+        });
+
+        var site = {
+            'messageUrl':'http://s1.088cnc.com:8080/index.php?c=user&a=getzjmessage&r=1467123073',
+            'moneyUrl':'http://s1.088cnc.com:8080/index.php?c=user&a=getusermoney&r=1467123073',
+            'setcurrentmode':'http://s1.088cnc.com:8080/index.php?c=user&a=setcurrentmode&r=1467123073',
+            'currentmode':'4',
+            'domain':'http://hit.088cnc.com:82',
+            'game':{
+                'dian_21':{
+                    'url':'http://s1.088cnc.com:8080/index.php?c=app&a=index&app_id=10001&r=1467123073'
+                }
+            },
+            'userName' : 'xiaohe777'
+        }
+        seajs.use('global/main.js');
+    </script>
+</head>
+<body>
+
+<!-- toolbar -->
+<div class="toolbar">
+    <div class="center clearfix">
+        <!-- left -->
+        <div class="tb_menu fl mT10">
+			<span class="game">
+				褰╃エ<i class="icon_down">&nbsp;</i>
+				<!-- 褰╃エ绉嶇被 -->
+				<div class="game-menu-panel ">
+                    <!--					<span class="triangle game-menu-triangle"><span></span></span>-->
+                    <i class="tri"></i>
+
+                    <div class="game-menu-inner">
+                        <div class="game-menu-box clearfix">
+
+                            
+
+                            <div class="game-menu-title fl">楂橀褰?/div>
+                            <div class="game-menu-list fr">
+                                <a class="hot-game" title="濡傛剰鍒嗗垎褰?
+                                   href="http://s1.088cnc.com:8080/index.php?c=user&a=cqssc&lotteryid=81&r=1467123073">濡傛剰鍒嗗垎褰?                                   <i></i></a>
+                                <a title="棣欐腐涓夊垎褰?
+                                   href="http://s1.088cnc.com:8080/index.php?c=user&a=cqssc&lotteryid=82&r=1467123073">棣欐腐涓夊垎褰?/a>
+                                <a title="婢抽棬浜斿垎褰?
+                                   href="http://s1.088cnc.com:8080/index.php?c=user&a=cqssc&lotteryid=83&r=1467123073">婢抽棬浜斿垎褰?/a>
+                                <a title="鍚夌ゥ绉掔褰?
+                                   href="http://s1.088cnc.com:8080/index.php?c=user&a=cqssc&lotteryid=80&r=1467123073">鍚夌ゥ绉掔褰?/a>
+                                <a title="閲嶅簡鏃舵椂褰? href="http://s1.088cnc.com:8080/index.php?c=user&a=cqssc&lotteryid=1&r=1467123073">閲嶅簡鏃舵椂褰?/a>
+                                <a title="鏂扮枂鏃舵椂褰? href="http://s1.088cnc.com:8080/index.php?c=user&a=cqssc&lotteryid=3&r=1467123073">鏂扮枂鏃舵椂褰?/a>
+                                <a title="鍖椾含PK10" href="http://s1.088cnc.com:8080/index.php?c=user&a=cqssc&lotteryid=10&r=1467123073">鍖椾含PK10</a>
+                            </div>
+                        </div>
+                        <div class="game-menu-box clearfix">
+                            <div class="game-menu-title fl">涔愰€忓僵</div>
+                            <div class="game-menu-list fr">
+                                <a title="骞夸笢11閫?" href="http://s1.088cnc.com:8080/index.php?c=user&a=cqssc&lotteryid=8&r=1467123073">骞夸笢11閫?</a>
+                                <a title="鍗佷竴杩愬ず閲? href="http://s1.088cnc.com:8080/index.php?c=user&a=cqssc&lotteryid=6&r=1467123073">鍗佷竴杩愬ず閲?/a>
+                                <a title="姹熻タ11閫?" href="http://s1.088cnc.com:8080/index.php?c=user&a=cqssc&lotteryid=11&r=1467123073">姹熻タ11閫?</a>
+                                <a title="涓婃捣11閫?" href="http://s1.088cnc.com:8080/index.php?c=user&a=cqssc&lotteryid=12&r=1467123073">涓婃捣11閫?</a>
+                            </div>
+                        </div>
+                        <div class="game-menu-box clearfix">
+                            <div class="game-menu-title fl">浣庨褰?/div>
+                            <div class="game-menu-list fr">
+                                <a title="绂忓僵3D"
+                                   href="http://s1.088cnc.com:8080/index.php?c=user&a=cqssc&lotteryid=9&r=1467123073">绂忓僵3D</a>
+                                <a title="鍏悎褰? href="http://s1.088cnc.com:8080/index.php?c=user&a=cqssc&lotteryid=13&r=1467123073">鍏悎褰?/a>
+                                <a title="鎺掑垪3鎺掑垪5"
+                                   href="http://s1.088cnc.com:8080/index.php?c=user&a=cqssc&lotteryid=14&r=1467123073">鎺掑垪3鎺掑垪5</a>
+                            </div>
+                        </div>
+                        <div class="game-menu-box clearfix">
+                            <div class="game-menu-title fl">鐪熶汉濞变箰</div>
+                            <div class="game-menu-list fr">
+                                <a title="鐪熶汉濞变箰" href="http://s1.088cnc.com:8080/index.php?c=user&a=zryl&r=1467123073">鐪熶汉濞变箰</a>
+                            </div>
+                        </div>
+                    </div>
+                    <iframe class="h-iframe"></iframe>
+                </div>
+			</span>
+            <a id="game21dian" href="http://s1.088cnc.com:8080/index.php?c=app&a=index&app_id=10001&r=1467123073" target="_blank">21鐐规父鎴?/a>
+            <a href="http://s1.088cnc.com:8080/index.php?c=user&a=zryl&r=1467123073" target="_blank">鐪熶汉濞变箰</a>
+            <a href="/">杩斿洖棣栭〉</a>
+        </div>
+
+        <!-- 鍥哄畾/鑷敱璋冭妭 -->
+        <div class=" mT10 switch">
+                            <div class="automode clearfix">
+                    <div class="usermod fl">
+                                                    <a href="javascript:;" id="jfauto_top">鑷敱璋冭妭</a>
+                                                    <a id="Showjiangjin">鍥哄畾濂栭噾</a>
+                                            </div>
+                                            <div id="jangjinmod" class="fl" style="display:none">
+                            <select name="jffixed" id="jffixed" type="hidden">
+                                                                    <option value="3">1800</option>
+                                                                    <option value="5">1900</option>
+                                                            </select>
+                        </div>
+                                    </div>
+                    </div>
+
+
+        <!-- right -->
+        <ul class="tb_user fr mT10">
+            <li>鎮ㄥソ, <span id="userName">鎭枩鍙戣储</span></li>
+            <li class="my_account">
+                鎴戠殑璐︽埛<i class="icon_down">&nbsp;</i>
+
+                <div class="menu-nav">
+                    <i class="tri"></i>
+                    <a href="http://s1.088cnc.com:8080/index.php?c=user&a=sscorder&r=1467123073">鎶曟敞璁板綍</a>
+                    <a href="http://s1.088cnc.com:8080/index.php?c=user&a=userblotters&r=1467123073">璐︽埛鏄庣粏</a>
+                    <a href="http://s1.088cnc.com:8080/index.php?c=user&a=changeview&r=1467123073">瀹夊叏涓績</a>
+                </div>
+            </li>
+            <!--<li><i class="tb_msg br5">0</i></li>-->
+            <!--			<li><div class="tb_account">浣欓锛?<span id="spanBall">20.10</span><i class="icon_refresh mL5">&nbsp;</i></div></li>-->
+            <li class="tb_account">浣欓锛?<span
+                    id="leftusermoney">85.33</span><i id="refreshMoney_top" class="icon_refresh mL5">&nbsp;</i></li>
+            <li class="tb_other_link">
+                <a href="http://s1.088cnc.com:8080/index.php?c=user&a=paysel&r=1467123073">鍏呭€?/a><a class="tb_tx"
+                                                                                    href="http://s1.088cnc.com:8080/index.php?c=user&a=cashview&nexturl=applycashview&r=1467123073">鎻愮幇</a><a
+                    href="http://s1.088cnc.com:8080/index.php?c=session&a=logout&r=1467123073">閫€鍑?/a>
+            </li>
+        </ul>
+    </div>
+</div><div class="header">
+    <div class="center clearfix">
+        <!-- logo -->
+        <a href="/" class="logo fl" name="Page_firefrog_index"></a>
+        <div class="service">
+            <a href="/service.htm" target="_blank" class="link-service" title="瀹㈡湇">鑱旂郴瀹㈡湇</a>
+            <a href="http://s1.088cnc.com:8080/?c=user&a=help_play" target="_blank" class="link-help" title="甯姪">鎶曟敞鎸囧崡</a>
+        </div>
+    </div>
+</div><div class='center content_wrap clearfix mT10'><link rel="stylesheet" href="/statics/pages/content/f7d3d9a9.main.css">
+<!--[if lt IE 9]>
+<link rel="stylesheet" href='/statics/pages/content_ie/eb3d1329.main.css'>
+<![endif]-->
+
+<div class="g_5 fl">
+	<div class="common-side">
+		<div class="nav-side">
+			<dl class="side-bet">
+				<dt class="title"><a style="color: red;" href="http://s1.088cnc.com:8080/index.php?c=user&a=active_index&r=1467123073">娲诲姩涓績<span style="font-family: 瀹嬩綋; font-size: 14px; font-weight: normal">>></span></a></dt>
+			</dl>
+			<dl class="side-bet">
+				<dt class="title">娓告垙璁板綍</dt>
+				<dd><a href="http://s1.088cnc.com:8080/index.php?c=user&a=sscorder&r=1467123073">鎶曟敞璁板綍</a></dd>
+				<dd><a href="http://s1.088cnc.com:8080/index.php?c=user&a=ssctraceorder&r=1467123073">杩藉彿璁板綍</a></dd>
+				<dd><a href="http://s1.088cnc.com:8080/index.php?c=session&a=lotterycodehistory&lotteryid=1&day=1&count=30&r=1467123073" target="_blank">璧板娍鍥?/a></dd>
+			</dl>
+			<dl class="side-safe">
+				<dt class="title">鐢ㄦ埛绠＄悊</dt>
+									<dd><a title="鎵€鏈夌敤鎴蜂俊鎭? href="http://s1.088cnc.com:8080/index.php?c=user&a=user_list_frame&r=1467123073">鐢ㄦ埛鍒楄〃</a>
+					</dd>
+					<dd><a title="澧炲姞涓嬬骇鐢ㄦ埛" href="http://s1.088cnc.com:8080/index.php?c=user&a=addForm&r=1467123073">澧炲姞鐢ㄦ埛</a></dd>
+					<dd><a title="杞?nbsp;&nbsp;璐? href="http://s1.088cnc.com:8080/index.php?c=user&a=remit_view&r=1467123073">杞?nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;璐?/a></dd>
+								<dd><a title="淇敼鑷繁鐨勬樀绉? href="http://s1.088cnc.com:8080/index.php?c=user&a=editnickname&r=1467123073">淇敼鏄电О</a></dd>
+				<dd><a title="鏌ョ湅鍚勫僵绉嶅閲? href="http://s1.088cnc.com:8080/index.php?c=user&a=prizeinfo&r=1467123073">濂栭噾璇︽儏</a></dd>
+			</dl>
+			<dl class="side-service">
+				<dt class="title">鎶ヨ〃绠＄悊</dt>
+
+				<dd><a title="鏌ョ湅鎵€鏈夎处鍙樹俊鎭? href="http://s1.088cnc.com:8080/index.php?c=user&a=userblotters&r=1467123073">璐﹀彉鍒楄〃</a></dd>
+				<dd><a title="鏌ヨ娓告垙缁熻淇℃伅" href="http://s1.088cnc.com:8080/index.php?c=user&a=reportlist1&report_type=last&r=1467123073">鎶ヨ〃鏌ヨ</a></dd>
+
+									<dd><a title="搴旂敤鎶ヨ〃" href="http://s1.088cnc.com:8080/index.php?c=user&a=appreport&app_id=10001&r=1467123073">搴旂敤鎶ヨ〃</a></dd>
+					<dd><a title="缁熻杩旂偣鎯呭喌" href="http://s1.088cnc.com:8080/index.php?c=user&a=rebatepoint&r=1467123073">杩旂偣缁熻</a></dd>
+								<dd><a title="浠婃棩娓告垙缁熻" href="http://s1.088cnc.com:8080/index.php?c=user&a=todayreport&r=1467123073">涓汉缁熻</a></dd>
+			</dl>
+			<dl class="side-funds">
+				<dt class="title">璐︽埛绠＄悊</dt>
+				<dd><a title="淇敼鐧婚檰瀵嗙爜鍜岃祫閲戝瘑鐮? href="http://s1.088cnc.com:8080/index.php?c=user&a=changeview&r=1467123073">淇敼瀵嗙爜</a></dd>
+				<dd><a title="濉啓鍏呭€肩敵璇? href="http://s1.088cnc.com:8080/index.php?c=user&a=paysel&r=1467123073">鍏呭€肩敵璇?/a></dd>
+				<dd><a title="濉啓鎻愮幇鐢宠" href="http://s1.088cnc.com:8080/index.php?c=user&a=cashview&nexturl=applycashview&r=1467123073">鎻愮幇鐢宠</a></dd>
+				<dd><a title="绠＄悊鎴戠殑閾惰鍗? href="http://s1.088cnc.com:8080/index.php?c=user&a=cashview&nexturl=bankinfoview&r=1467123073">鎴戠殑璧勬枡</a></dd>
+			</dl>
+			<dl class="side-funds">
+				<dt class="title">甯姪涓績</dt>
+				<dd><a title="淇℃伅涓績" href="http://s1.088cnc.com:8080/index.php?c=user&a=infomation&r=1467123073">淇℃伅涓績</a></dd>
+				<dd><a title="鐜╂硶浠嬬粛" href="http://s1.088cnc.com:8080/?c=user&a=help_play">鐜╂硶浠嬬粛</a></dd>
+				<dd><a title="骞冲彴鍔熻兘浠嬬粛" href="http://s1.088cnc.com:8080/?c=user&a=help_func">鍔熻兘浠嬬粛</a></dd>
+				<dd><a title="甯歌闂璇存槑" href="http://s1.088cnc.com:8080/?c=user&a=help_faq">甯歌闂</a></dd>
+				<dd><a title="鍊嶆姇宸ュ叿" target="_blank" href="http://www.shishicai.cn/tool/beitou/">鍊嶆姇宸ュ叿</a></dd>
+				<dd><a title="缂╂按宸ュ叿" target="_blank" href="http://tools.cjcp.com.cn/gl/ssc/">缂╂按宸ュ叿</a></dd>
+				<dd><a title="鎵嬫満瀹夎" href="http://s1.088cnc.com:8080/?c=user&a=help_appsetup">鎵嬫満瀹夎</a></dd>
+			</dl>
+			<dl class="side-funds">
+				<dt class="title"><a title="鍦ㄧ嚎瀹㈡湇" target="_blank" href="service.htm">鍦ㄧ嚎瀹㈡湇</a></dt>
+			</dl>
+		</div>
+	</div>
+</div><style>
+    .msgbox {
+        text-align: center;
+        padding: 50px 0;
+        border: 1px solid #E3E3E3;
+        font-size: 14px;
+    }
+
+    .msg {
+        padding-left: 40px;
+        position: relative;
+    }
+
+    .msg i {
+        position: relative;
+        top: 0;
+        left: 0;
+        margin: 0 10px 0 0;
+    }
+</style>
+<div id="main_box" class="fr common-article">
+    <div class="title">绯荤粺娑堟伅</div>
+
+    <div class="msgbox">
+                <span class="msg mT20" style="color: red;"><i
+                class="ico-waring"></i>浣欓涓嶈冻锛?/span>
+        <p class="mT20">濡傛灉鎮ㄤ笉鍋氬嚭閫夋嫨锛屽皢鍦?<span id="spanSeconds">3</span> 绉掑悗璺宠浆鍒扮涓€涓摼鎺ュ湴鍧€</p>
+    </div>
+</div>
+
+<script type="text/javascript">
+
+    var $spanSeconds = $('#spanSeconds'),
+        seconds = Number($.trim($('#spanSeconds').text())),
+        defaultUrl = "http://s1.088cnc.com:8080/index.php?c=user&a=infomation&r=1467123073",
+        play = null,
+        reloadflag = 0;
+
+    play = window.setInterval(redirection, 1500);
+
+    function redirection() {
+        seconds--;
+        if (seconds <= 0) {
+            clearInterval(play);
+            if (reloadflag == 0) {
+                window.location.href = defaultUrl;
+            } else {
+                top.document.location.reload();
+            }
+        }
+        else {
+            $spanSeconds.text(seconds);
+        }
+    }
+</script></div><div class="footer_safe">
+    <div class="center clearfix">
+        <div class="f_safe_p1">
+            <em>100%璧勯噾瀹夊叏</em>
+            <span>鍚堜綔閾惰</span>
+        </div>
+        <div class="f_safe_p2">
+            <em>100%璐︽埛瀹夊叏</em>
+            <span>瀹夊叏淇濇姢</span>
+        </div>
+        <div class="f_safe_p3">
+            <em>100%缃戠珯瀹夊叏</em>
+            <span>璧勮川鍙潬</span>
+        </div>
+    </div>
+</div>
+<div class="footer">
+    <div class="center">
+        <a href="/service.htm" target="_blank">鍦ㄧ嚎瀹㈡湇</a><span></span>
+        <a href="http://s1.088cnc.com:8080/index.php?c=user&a=active_index&r=1467123073" target="_blank">娲诲姩涓績</a><span></span>
+        <a href="http://s1.088cnc.com:8080/index.php?c=user&a=changeview&r=1467123073" target="_blank">瀹夊叏涓績</a><span></span>
+        <a href="http://s1.088cnc.com:8080/index.php?c=user&a=help_func&r=1467123073" target="_blank">鍔熻兘浠嬬粛</a>
+
+        <p class="footer-copyright">漏2010-2016 CNC濞变箰 All Rights Reserved</p>
+    </div>
+</div></body></html><!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="renderer" content="webkit">
+    <title></title>
+    <link rel="stylesheet" href="/statics/global/352e48a2.main.css">
+    <script src="/statics/lib/e8b5d896.lib.js"></script>
+    <script>
+        seajs.config({
+            base: "/statics/",
+            'map': [[/^(.*\.(?:css|js))(.*)$/i, '$1?10000_31136']]
+        });
+
+        var site = {
+            'messageUrl':'http://s1.088cnc.com:8080/index.php?c=user&a=getzjmessage&r=1467123074',
+            'moneyUrl':'http://s1.088cnc.com:8080/index.php?c=user&a=getusermoney&r=1467123074',
+            'setcurrentmode':'http://s1.088cnc.com:8080/index.php?c=user&a=setcurrentmode&r=1467123074',
+            'currentmode':'4',
+            'domain':'http://hit.088cnc.com:82',
+            'game':{
+                'dian_21':{
+                    'url':'http://s1.088cnc.com:8080/index.php?c=app&a=index&app_id=10001&r=1467123074'
+                }
+            },
+            'userName' : 'xiaohe777'
+        }
+        seajs.use('global/main.js');
+    </script>
+</head>
+<body>
+
+<!-- toolbar -->
+<div class="toolbar">
+    <div class="center clearfix">
+        <!-- left -->
+        <div class="tb_menu fl mT10">
+			<span class="game">
+				褰╃エ<i class="icon_down">&nbsp;</i>
+				<!-- 褰╃エ绉嶇被 -->
+				<div class="game-menu-panel ">
+                    <!--					<span class="triangle game-menu-triangle"><span></span></span>-->
+                    <i class="tri"></i>
+
+                    <div class="game-menu-inner">
+                        <div class="game-menu-box clearfix">
+
+                            
+
+                            <div class="game-menu-title fl">楂橀褰?/div>
+                            <div class="game-menu-list fr">
+                                <a class="hot-game" title="濡傛剰鍒嗗垎褰?
+                                   href="http://s1.088cnc.com:8080/index.php?c=user&a=cqssc&lotteryid=81&r=1467123074">濡傛剰鍒嗗垎褰?                                   <i></i></a>
+                                <a title="棣欐腐涓夊垎褰?
+                                   href="http://s1.088cnc.com:8080/index.php?c=user&a=cqssc&lotteryid=82&r=1467123074">棣欐腐涓夊垎褰?/a>
+                                <a title="婢抽棬浜斿垎褰?
+                                   href="http://s1.088cnc.com:8080/index.php?c=user&a=cqssc&lotteryid=83&r=1467123074">婢抽棬浜斿垎褰?/a>
+                                <a title="鍚夌ゥ绉掔褰?
+                                   href="http://s1.088cnc.com:8080/index.php?c=user&a=cqssc&lotteryid=80&r=1467123074">鍚夌ゥ绉掔褰?/a>
+                                <a title="閲嶅簡鏃舵椂褰? href="http://s1.088cnc.com:8080/index.php?c=user&a=cqssc&lotteryid=1&r=1467123074">閲嶅簡鏃舵椂褰?/a>
+                                <a title="鏂扮枂鏃舵椂褰? href="http://s1.088cnc.com:8080/index.php?c=user&a=cqssc&lotteryid=3&r=1467123074">鏂扮枂鏃舵椂褰?/a>
+                                <a title="鍖椾含PK10" href="http://s1.088cnc.com:8080/index.php?c=user&a=cqssc&lotteryid=10&r=1467123074">鍖椾含PK10</a>
+                            </div>
+                        </div>
+                        <div class="game-menu-box clearfix">
+                            <div class="game-menu-title fl">涔愰€忓僵</div>
+                            <div class="game-menu-list fr">
+                                <a title="骞夸笢11閫?" href="http://s1.088cnc.com:8080/index.php?c=user&a=cqssc&lotteryid=8&r=1467123074">骞夸笢11閫?</a>
+                                <a title="鍗佷竴杩愬ず閲? href="http://s1.088cnc.com:8080/index.php?c=user&a=cqssc&lotteryid=6&r=1467123074">鍗佷竴杩愬ず閲?/a>
+                                <a title="姹熻タ11閫?" href="http://s1.088cnc.com:8080/index.php?c=user&a=cqssc&lotteryid=11&r=1467123074">姹熻タ11閫?</a>
+                                <a title="涓婃捣11閫?" href="http://s1.088cnc.com:8080/index.php?c=user&a=cqssc&lotteryid=12&r=1467123074">涓婃捣11閫?</a>
+                            </div>
+                        </div>
+                        <div class="game-menu-box clearfix">
+                            <div class="game-menu-title fl">浣庨褰?/div>
+                            <div class="game-menu-list fr">
+                                <a title="绂忓僵3D"
+                                   href="http://s1.088cnc.com:8080/index.php?c=user&a=cqssc&lotteryid=9&r=1467123074">绂忓僵3D</a>
+                                <a title="鍏悎褰? href="http://s1.088cnc.com:8080/index.php?c=user&a=cqssc&lotteryid=13&r=1467123074">鍏悎褰?/a>
+                                <a title="鎺掑垪3鎺掑垪5"
+                                   href="http://s1.088cnc.com:8080/index.php?c=user&a=cqssc&lotteryid=14&r=1467123074">鎺掑垪3鎺掑垪5</a>
+                            </div>
+                        </div>
+                        <div class="game-menu-box clearfix">
+                            <div class="game-menu-title fl">鐪熶汉濞变箰</div>
+                            <div class="game-menu-list fr">
+                                <a title="鐪熶汉濞变箰" href="http://s1.088cnc.com:8080/index.php?c=user&a=zryl&r=1467123074">鐪熶汉濞变箰</a>
+                            </div>
+                        </div>
+                    </div>
+                    <iframe class="h-iframe"></iframe>
+                </div>
+			</span>
+            <a id="game21dian" href="http://s1.088cnc.com:8080/index.php?c=app&a=index&app_id=10001&r=1467123074" target="_blank">21鐐规父鎴?/a>
+            <a href="http://s1.088cnc.com:8080/index.php?c=user&a=zryl&r=1467123074" target="_blank">鐪熶汉濞变箰</a>
+            <a href="/">杩斿洖棣栭〉</a>
+        </div>
+
+        <!-- 鍥哄畾/鑷敱璋冭妭 -->
+        <div class=" mT10 switch">
+                            <div class="automode clearfix">
+                    <div class="usermod fl">
+                                                    <a href="javascript:;" id="jfauto_top">鑷敱璋冭妭</a>
+                                                    <a id="Showjiangjin">鍥哄畾濂栭噾</a>
+                                            </div>
+                                            <div id="jangjinmod" class="fl" style="display:none">
+                            <select name="jffixed" id="jffixed" type="hidden">
+                                                                    <option value="3">1800</option>
+                                                                    <option value="5">1900</option>
+                                                            </select>
+                        </div>
+                                    </div>
+                    </div>
+
+
+        <!-- right -->
+        <ul class="tb_user fr mT10">
+            <li>鎮ㄥソ, <span id="userName">鎭枩鍙戣储</span></li>
+            <li class="my_account">
+                鎴戠殑璐︽埛<i class="icon_down">&nbsp;</i>
+
+                <div class="menu-nav">
+                    <i class="tri"></i>
+                    <a href="http://s1.088cnc.com:8080/index.php?c=user&a=sscorder&r=1467123074">鎶曟敞璁板綍</a>
+                    <a href="http://s1.088cnc.com:8080/index.php?c=user&a=userblotters&r=1467123074">璐︽埛鏄庣粏</a>
+                    <a href="http://s1.088cnc.com:8080/index.php?c=user&a=changeview&r=1467123074">瀹夊叏涓績</a>
+                </div>
+            </li>
+            <!--<li><i class="tb_msg br5">0</i></li>-->
+            <!--			<li><div class="tb_account">浣欓锛?<span id="spanBall">20.10</span><i class="icon_refresh mL5">&nbsp;</i></div></li>-->
+            <li class="tb_account">浣欓锛?<span
+                    id="leftusermoney">85.33</span><i id="refreshMoney_top" class="icon_refresh mL5">&nbsp;</i></li>
+            <li class="tb_other_link">
+                <a href="http://s1.088cnc.com:8080/index.php?c=user&a=paysel&r=1467123074">鍏呭€?/a><a class="tb_tx"
+                                                                                    href="http://s1.088cnc.com:8080/index.php?c=user&a=cashview&nexturl=applycashview&r=1467123074">鎻愮幇</a><a
+                    href="http://s1.088cnc.com:8080/index.php?c=session&a=logout&r=1467123074">閫€鍑?/a>
+            </li>
+        </ul>
+    </div>
+</div><div class="header">
+    <div class="center clearfix">
+        <!-- logo -->
+        <a href="/" class="logo fl" name="Page_firefrog_index"></a>
+        <div class="service">
+            <a href="/service.htm" target="_blank" class="link-service" title="瀹㈡湇">鑱旂郴瀹㈡湇</a>
+            <a href="http://s1.088cnc.com:8080/?c=user&a=help_play" target="_blank" class="link-help" title="甯姪">鎶曟敞鎸囧崡</a>
+        </div>
+    </div>
+</div><div class='center content_wrap clearfix mT10'><link rel="stylesheet" href="/statics/pages/content/f7d3d9a9.main.css">
+<!--[if lt IE 9]>
+<link rel="stylesheet" href='/statics/pages/content_ie/eb3d1329.main.css'>
+<![endif]-->
+
+<div class="g_5 fl">
+	<div class="common-side">
+		<div class="nav-side">
+			<dl class="side-bet">
+				<dt class="title"><a style="color: red;" href="http://s1.088cnc.com:8080/index.php?c=user&a=active_index&r=1467123074">娲诲姩涓績<span style="font-family: 瀹嬩綋; font-size: 14px; font-weight: normal">>></span></a></dt>
+			</dl>
+			<dl class="side-bet">
+				<dt class="title">娓告垙璁板綍</dt>
+				<dd><a href="http://s1.088cnc.com:8080/index.php?c=user&a=sscorder&r=1467123074">鎶曟敞璁板綍</a></dd>
+				<dd><a href="http://s1.088cnc.com:8080/index.php?c=user&a=ssctraceorder&r=1467123074">杩藉彿璁板綍</a></dd>
+				<dd><a href="http://s1.088cnc.com:8080/index.php?c=session&a=lotterycodehistory&lotteryid=1&day=1&count=30&r=1467123074" target="_blank">璧板娍鍥?/a></dd>
+			</dl>
+			<dl class="side-safe">
+				<dt class="title">鐢ㄦ埛绠＄悊</dt>
+									<dd><a title="鎵€鏈夌敤鎴蜂俊鎭? href="http://s1.088cnc.com:8080/index.php?c=user&a=user_list_frame&r=1467123074">鐢ㄦ埛鍒楄〃</a>
+					</dd>
+					<dd><a title="澧炲姞涓嬬骇鐢ㄦ埛" href="http://s1.088cnc.com:8080/index.php?c=user&a=addForm&r=1467123074">澧炲姞鐢ㄦ埛</a></dd>
+					<dd><a title="杞?nbsp;&nbsp;璐? href="http://s1.088cnc.com:8080/index.php?c=user&a=remit_view&r=1467123074">杞?nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;璐?/a></dd>
+								<dd><a title="淇敼鑷繁鐨勬樀绉? href="http://s1.088cnc.com:8080/index.php?c=user&a=editnickname&r=1467123074">淇敼鏄电О</a></dd>
+				<dd><a title="鏌ョ湅鍚勫僵绉嶅閲? href="http://s1.088cnc.com:8080/index.php?c=user&a=prizeinfo&r=1467123074">濂栭噾璇︽儏</a></dd>
+			</dl>
+			<dl class="side-service">
+				<dt class="title">鎶ヨ〃绠＄悊</dt>
+
+				<dd><a title="鏌ョ湅鎵€鏈夎处鍙樹俊鎭? href="http://s1.088cnc.com:8080/index.php?c=user&a=userblotters&r=1467123074">璐﹀彉鍒楄〃</a></dd>
+				<dd><a title="鏌ヨ娓告垙缁熻淇℃伅" href="http://s1.088cnc.com:8080/index.php?c=user&a=reportlist1&report_type=last&r=1467123074">鎶ヨ〃鏌ヨ</a></dd>
+
+									<dd><a title="搴旂敤鎶ヨ〃" href="http://s1.088cnc.com:8080/index.php?c=user&a=appreport&app_id=10001&r=1467123074">搴旂敤鎶ヨ〃</a></dd>
+					<dd><a title="缁熻杩旂偣鎯呭喌" href="http://s1.088cnc.com:8080/index.php?c=user&a=rebatepoint&r=1467123074">杩旂偣缁熻</a></dd>
+								<dd><a title="浠婃棩娓告垙缁熻" href="http://s1.088cnc.com:8080/index.php?c=user&a=todayreport&r=1467123074">涓汉缁熻</a></dd>
+			</dl>
+			<dl class="side-funds">
+				<dt class="title">璐︽埛绠＄悊</dt>
+				<dd><a title="淇敼鐧婚檰瀵嗙爜鍜岃祫閲戝瘑鐮? href="http://s1.088cnc.com:8080/index.php?c=user&a=changeview&r=1467123074">淇敼瀵嗙爜</a></dd>
+				<dd><a title="濉啓鍏呭€肩敵璇? href="http://s1.088cnc.com:8080/index.php?c=user&a=paysel&r=1467123074">鍏呭€肩敵璇?/a></dd>
+				<dd><a title="濉啓鎻愮幇鐢宠" href="http://s1.088cnc.com:8080/index.php?c=user&a=cashview&nexturl=applycashview&r=1467123074">鎻愮幇鐢宠</a></dd>
+				<dd><a title="绠＄悊鎴戠殑閾惰鍗? href="http://s1.088cnc.com:8080/index.php?c=user&a=cashview&nexturl=bankinfoview&r=1467123074">鎴戠殑璧勬枡</a></dd>
+			</dl>
+			<dl class="side-funds">
+				<dt class="title">甯姪涓績</dt>
+				<dd><a title="淇℃伅涓績" href="http://s1.088cnc.com:8080/index.php?c=user&a=infomation&r=1467123074">淇℃伅涓績</a></dd>
+				<dd><a title="鐜╂硶浠嬬粛" href="http://s1.088cnc.com:8080/?c=user&a=help_play">鐜╂硶浠嬬粛</a></dd>
+				<dd><a title="骞冲彴鍔熻兘浠嬬粛" href="http://s1.088cnc.com:8080/?c=user&a=help_func">鍔熻兘浠嬬粛</a></dd>
+				<dd><a title="甯歌闂璇存槑" href="http://s1.088cnc.com:8080/?c=user&a=help_faq">甯歌闂</a></dd>
+				<dd><a title="鍊嶆姇宸ュ叿" target="_blank" href="http://www.shishicai.cn/tool/beitou/">鍊嶆姇宸ュ叿</a></dd>
+				<dd><a title="缂╂按宸ュ叿" target="_blank" href="http://tools.cjcp.com.cn/gl/ssc/">缂╂按宸ュ叿</a></dd>
+				<dd><a title="鎵嬫満瀹夎" href="http://s1.088cnc.com:8080/?c=user&a=help_appsetup">鎵嬫満瀹夎</a></dd>
+			</dl>
+			<dl class="side-funds">
+				<dt class="title"><a title="鍦ㄧ嚎瀹㈡湇" target="_blank" href="service.htm">鍦ㄧ嚎瀹㈡湇</a></dt>
+			</dl>
+		</div>
+	</div>
+</div><style>
+    .msgbox {
+        text-align: center;
+        padding: 50px 0;
+        border: 1px solid #E3E3E3;
+        font-size: 14px;
+    }
+
+    .msg {
+        padding-left: 40px;
+        position: relative;
+    }
+
+    .msg i {
+        position: relative;
+        top: 0;
+        left: 0;
+        margin: 0 10px 0 0;
+    }
+</style>
+<div id="main_box" class="fr common-article">
+    <div class="title">绯荤粺娑堟伅</div>
+
+    <div class="msgbox">
+                <span class="msg mT20" style="color: red;"><i
+                class="ico-waring"></i>浣欓涓嶈冻锛?/span>
+        <p class="mT20">濡傛灉鎮ㄤ笉鍋氬嚭閫夋嫨锛屽皢鍦?<span id="spanSeconds">3</span> 绉掑悗璺宠浆鍒扮涓€涓摼鎺ュ湴鍧€</p>
+    </div>
+</div>
+
+<script type="text/javascript">
+
+    var $spanSeconds = $('#spanSeconds'),
+        seconds = Number($.trim($('#spanSeconds').text())),
+        defaultUrl = "http://s1.088cnc.com:8080/index.php?c=user&a=infomation&r=1467123074",
+        play = null,
+        reloadflag = 0;
+
+    play = window.setInterval(redirection, 1500);
+
+    function redirection() {
+        seconds--;
+        if (seconds <= 0) {
+            clearInterval(play);
+            if (reloadflag == 0) {
+                window.location.href = defaultUrl;
+            } else {
+                top.document.location.reload();
+            }
+        }
+        else {
+            $spanSeconds.text(seconds);
+        }
+    }
+</script></div><div class="footer_safe">
+    <div class="center clearfix">
+        <div class="f_safe_p1">
+            <em>100%璧勯噾瀹夊叏</em>
+            <span>鍚堜綔閾惰</span>
+        </div>
+        <div class="f_safe_p2">
+            <em>100%璐︽埛瀹夊叏</em>
+            <span>瀹夊叏淇濇姢</span>
+        </div>
+        <div class="f_safe_p3">
+            <em>100%缃戠珯瀹夊叏</em>
+            <span>璧勮川鍙潬</span>
+        </div>
+    </div>
+</div>
+<div class="footer">
+    <div class="center">
+        <a href="/service.htm" target="_blank">鍦ㄧ嚎瀹㈡湇</a><span></span>
+        <a href="http://s1.088cnc.com:8080/index.php?c=user&a=active_index&r=1467123074" target="_blank">娲诲姩涓績</a><span></span>
+        <a href="http://s1.088cnc.com:8080/index.php?c=user&a=changeview&r=1467123074" target="_blank">瀹夊叏涓績</a><span></span>
+        <a href="http://s1.088cnc.com:8080/index.php?c=user&a=help_func&r=1467123074" target="_blank">鍔熻兘浠嬬粛</a>
+
+        <p class="footer-copyright">漏2010-2016 CNC濞变箰 All Rights Reserved</p>
+    </div>
+</div></body></html><!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="renderer" content="webkit">
+    <title></title>
+    <link rel="stylesheet" href="/statics/global/352e48a2.main.css">
+    <script src="/statics/lib/e8b5d896.lib.js"></script>
+    <script>
+        seajs.config({
+            base: "/statics/",
+            'map': [[/^(.*\.(?:css|js))(.*)$/i, '$1?10000_31136']]
+        });
+
+        var site = {
+            'messageUrl':'http://s1.088cnc.com:8080/index.php?c=user&a=getzjmessage&r=1467123073',
+            'moneyUrl':'http://s1.088cnc.com:8080/index.php?c=user&a=getusermoney&r=1467123073',
+            'setcurrentmode':'http://s1.088cnc.com:8080/index.php?c=user&a=setcurrentmode&r=1467123073',
+            'currentmode':'4',
+            'domain':'http://hit.088cnc.com:82',
+            'game':{
+                'dian_21':{
+                    'url':'http://s1.088cnc.com:8080/index.php?c=app&a=index&app_id=10001&r=1467123073'
+                }
+            },
+            'userName' : 'xiaohe777'
+        }
+        seajs.use('global/main.js');
+    </script>
+</head>
+<body>
+
+<!-- toolbar -->
+<div class="toolbar">
+    <div class="center clearfix">
+        <!-- left -->
+        <div class="tb_menu fl mT10">
+			<span class="game">
+				褰╃エ<i class="icon_down">&nbsp;</i>
+				<!-- 褰╃エ绉嶇被 -->
+				<div class="game-menu-panel ">
+                    <!--					<span class="triangle game-menu-triangle"><span></span></span>-->
+                    <i class="tri"></i>
+
+                    <div class="game-menu-inner">
+                        <div class="game-menu-box clearfix">
+
+                            
+
+                            <div class="game-menu-title fl">楂橀褰?/div>
+                            <div class="game-menu-list fr">
+                                <a class="hot-game" title="濡傛剰鍒嗗垎褰?
+                                   href="http://s1.088cnc.com:8080/index.php?c=user&a=cqssc&lotteryid=81&r=1467123073">濡傛剰鍒嗗垎褰?                                   <i></i></a>
+                                <a title="棣欐腐涓夊垎褰?
+                                   href="http://s1.088cnc.com:8080/index.php?c=user&a=cqssc&lotteryid=82&r=1467123073">棣欐腐涓夊垎褰?/a>
+                                <a title="婢抽棬浜斿垎褰?
+                                   href="http://s1.088cnc.com:8080/index.php?c=user&a=cqssc&lotteryid=83&r=1467123073">婢抽棬浜斿垎褰?/a>
+                                <a title="鍚夌ゥ绉掔褰?
+                                   href="http://s1.088cnc.com:8080/index.php?c=user&a=cqssc&lotteryid=80&r=1467123073">鍚夌ゥ绉掔褰?/a>
+                                <a title="閲嶅簡鏃舵椂褰? href="http://s1.088cnc.com:8080/index.php?c=user&a=cqssc&lotteryid=1&r=1467123073">閲嶅簡鏃舵椂褰?/a>
+                                <a title="鏂扮枂鏃舵椂褰? href="http://s1.088cnc.com:8080/index.php?c=user&a=cqssc&lotteryid=3&r=1467123073">鏂扮枂鏃舵椂褰?/a>
+                                <a title="鍖椾含PK10" href="http://s1.088cnc.com:8080/index.php?c=user&a=cqssc&lotteryid=10&r=1467123073">鍖椾含PK10</a>
+                            </div>
+                        </div>
+                        <div class="game-menu-box clearfix">
+                            <div class="game-menu-title fl">涔愰€忓僵</div>
+                            <div class="game-menu-list fr">
+                                <a title="骞夸笢11閫?" href="http://s1.088cnc.com:8080/index.php?c=user&a=cqssc&lotteryid=8&r=1467123073">骞夸笢11閫?</a>
+                                <a title="鍗佷竴杩愬ず閲? href="http://s1.088cnc.com:8080/index.php?c=user&a=cqssc&lotteryid=6&r=1467123073">鍗佷竴杩愬ず閲?/a>
+                                <a title="姹熻タ11閫?" href="http://s1.088cnc.com:8080/index.php?c=user&a=cqssc&lotteryid=11&r=1467123073">姹熻タ11閫?</a>
+                                <a title="涓婃捣11閫?" href="http://s1.088cnc.com:8080/index.php?c=user&a=cqssc&lotteryid=12&r=1467123073">涓婃捣11閫?</a>
+                            </div>
+                        </div>
+                        <div class="game-menu-box clearfix">
+                            <div class="game-menu-title fl">浣庨褰?/div>
+                            <div class="game-menu-list fr">
+                                <a title="绂忓僵3D"
+                                   href="http://s1.088cnc.com:8080/index.php?c=user&a=cqssc&lotteryid=9&r=1467123073">绂忓僵3D</a>
+                                <a title="鍏悎褰? href="http://s1.088cnc.com:8080/index.php?c=user&a=cqssc&lotteryid=13&r=1467123073">鍏悎褰?/a>
+                                <a title="鎺掑垪3鎺掑垪5"
+                                   href="http://s1.088cnc.com:8080/index.php?c=user&a=cqssc&lotteryid=14&r=1467123073">鎺掑垪3鎺掑垪5</a>
+                            </div>
+                        </div>
+                        <div class="game-menu-box clearfix">
+                            <div class="game-menu-title fl">鐪熶汉濞变箰</div>
+                            <div class="game-menu-list fr">
+                                <a title="鐪熶汉濞变箰" href="http://s1.088cnc.com:8080/index.php?c=user&a=zryl&r=1467123073">鐪熶汉濞变箰</a>
+                            </div>
+                        </div>
+                    </div>
+                    <iframe class="h-iframe"></iframe>
+                </div>
+			</span>
+            <a id="game21dian" href="http://s1.088cnc.com:8080/index.php?c=app&a=index&app_id=10001&r=1467123073" target="_blank">21鐐规父鎴?/a>
+            <a href="http://s1.088cnc.com:8080/index.php?c=user&a=zryl&r=1467123073" target="_blank">鐪熶汉濞变箰</a>
+            <a href="/">杩斿洖棣栭〉</a>
+        </div>
+
+        <!-- 鍥哄畾/鑷敱璋冭妭 -->
+        <div class=" mT10 switch">
+                            <div class="automode clearfix">
+                    <div class="usermod fl">
+                                                    <a href="javascript:;" id="jfauto_top">鑷敱璋冭妭</a>
+                                                    <a id="Showjiangjin">鍥哄畾濂栭噾</a>
+                                            </div>
+                                            <div id="jangjinmod" class="fl" style="display:none">
+                            <select name="jffixed" id="jffixed" type="hidden">
+                                                                    <option value="3">1800</option>
+                                                                    <option value="5">1900</option>
+                                                            </select>
+                        </div>
+                                    </div>
+                    </div>
+
+
+        <!-- right -->
+        <ul class="tb_user fr mT10">
+            <li>鎮ㄥソ, <span id="userName">鎭枩鍙戣储</span></li>
+            <li class="my_account">
+                鎴戠殑璐︽埛<i class="icon_down">&nbsp;</i>
+
+                <div class="menu-nav">
+                    <i class="tri"></i>
+                    <a href="http://s1.088cnc.com:8080/index.php?c=user&a=sscorder&r=1467123073">鎶曟敞璁板綍</a>
+                    <a href="http://s1.088cnc.com:8080/index.php?c=user&a=userblotters&r=1467123073">璐︽埛鏄庣粏</a>
+                    <a href="http://s1.088cnc.com:8080/index.php?c=user&a=changeview&r=1467123073">瀹夊叏涓績</a>
+                </div>
+            </li>
+            <!--<li><i class="tb_msg br5">0</i></li>-->
+            <!--			<li><div class="tb_account">浣欓锛?<span id="spanBall">20.10</span><i class="icon_refresh mL5">&nbsp;</i></div></li>-->
+            <li class="tb_account">浣欓锛?<span
+                    id="leftusermoney">85.33</span><i id="refreshMoney_top" class="icon_refresh mL5">&nbsp;</i></li>
+            <li class="tb_other_link">
+                <a href="http://s1.088cnc.com:8080/index.php?c=user&a=paysel&r=1467123073">鍏呭€?/a><a class="tb_tx"
+                                                                                    href="http://s1.088cnc.com:8080/index.php?c=user&a=cashview&nexturl=applycashview&r=1467123073">鎻愮幇</a><a
+                    href="http://s1.088cnc.com:8080/index.php?c=session&a=logout&r=1467123073">閫€鍑?/a>
+            </li>
+        </ul>
+    </div>
+</div><div class="header">
+    <div class="center clearfix">
+        <!-- logo -->
+        <a href="/" class="logo fl" name="Page_firefrog_index"></a>
+        <div class="service">
+            <a href="/service.htm" target="_blank" class="link-service" title="瀹㈡湇">鑱旂郴瀹㈡湇</a>
+            <a href="http://s1.088cnc.com:8080/?c=user&a=help_play" target="_blank" class="link-help" title="甯姪">鎶曟敞鎸囧崡</a>
+        </div>
+    </div>
+</div><div class='center content_wrap clearfix mT10'><link rel="stylesheet" href="/statics/pages/content/f7d3d9a9.main.css">
+<!--[if lt IE 9]>
+<link rel="stylesheet" href='/statics/pages/content_ie/eb3d1329.main.css'>
+<![endif]-->
+
+<div class="g_5 fl">
+	<div class="common-side">
+		<div class="nav-side">
+			<dl class="side-bet">
+				<dt class="title"><a style="color: red;" href="http://s1.088cnc.com:8080/index.php?c=user&a=active_index&r=1467123073">娲诲姩涓績<span style="font-family: 瀹嬩綋; font-size: 14px; font-weight: normal">>></span></a></dt>
+			</dl>
+			<dl class="side-bet">
+				<dt class="title">娓告垙璁板綍</dt>
+				<dd><a href="http://s1.088cnc.com:8080/index.php?c=user&a=sscorder&r=1467123073">鎶曟敞璁板綍</a></dd>
+				<dd><a href="http://s1.088cnc.com:8080/index.php?c=user&a=ssctraceorder&r=1467123073">杩藉彿璁板綍</a></dd>
+				<dd><a href="http://s1.088cnc.com:8080/index.php?c=session&a=lotterycodehistory&lotteryid=1&day=1&count=30&r=1467123073" target="_blank">璧板娍鍥?/a></dd>
+			</dl>
+			<dl class="side-safe">
+				<dt class="title">鐢ㄦ埛绠＄悊</dt>
+									<dd><a title="鎵€鏈夌敤鎴蜂俊鎭? href="http://s1.088cnc.com:8080/index.php?c=user&a=user_list_frame&r=1467123073">鐢ㄦ埛鍒楄〃</a>
+					</dd>
+					<dd><a title="澧炲姞涓嬬骇鐢ㄦ埛" href="http://s1.088cnc.com:8080/index.php?c=user&a=addForm&r=1467123073">澧炲姞鐢ㄦ埛</a></dd>
+					<dd><a title="杞?nbsp;&nbsp;璐? href="http://s1.088cnc.com:8080/index.php?c=user&a=remit_view&r=1467123073">杞?nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;璐?/a></dd>
+								<dd><a title="淇敼鑷繁鐨勬樀绉? href="http://s1.088cnc.com:8080/index.php?c=user&a=editnickname&r=1467123073">淇敼鏄电О</a></dd>
+				<dd><a title="鏌ョ湅鍚勫僵绉嶅閲? href="http://s1.088cnc.com:8080/index.php?c=user&a=prizeinfo&r=1467123073">濂栭噾璇︽儏</a></dd>
+			</dl>
+			<dl class="side-service">
+				<dt class="title">鎶ヨ〃绠＄悊</dt>
+
+				<dd><a title="鏌ョ湅鎵€鏈夎处鍙樹俊鎭? href="http://s1.088cnc.com:8080/index.php?c=user&a=userblotters&r=1467123073">璐﹀彉鍒楄〃</a></dd>
+				<dd><a title="鏌ヨ娓告垙缁熻淇℃伅" href="http://s1.088cnc.com:8080/index.php?c=user&a=reportlist1&report_type=last&r=1467123073">鎶ヨ〃鏌ヨ</a></dd>
+
+									<dd><a title="搴旂敤鎶ヨ〃" href="http://s1.088cnc.com:8080/index.php?c=user&a=appreport&app_id=10001&r=1467123073">搴旂敤鎶ヨ〃</a></dd>
+					<dd><a title="缁熻杩旂偣鎯呭喌" href="http://s1.088cnc.com:8080/index.php?c=user&a=rebatepoint&r=1467123073">杩旂偣缁熻</a></dd>
+								<dd><a title="浠婃棩娓告垙缁熻" href="http://s1.088cnc.com:8080/index.php?c=user&a=todayreport&r=1467123073">涓汉缁熻</a></dd>
+			</dl>
+			<dl class="side-funds">
+				<dt class="title">璐︽埛绠＄悊</dt>
+				<dd><a title="淇敼鐧婚檰瀵嗙爜鍜岃祫閲戝瘑鐮? href="http://s1.088cnc.com:8080/index.php?c=user&a=changeview&r=1467123073">淇敼瀵嗙爜</a></dd>
+				<dd><a title="濉啓鍏呭€肩敵璇? href="http://s1.088cnc.com:8080/index.php?c=user&a=paysel&r=1467123073">鍏呭€肩敵璇?/a></dd>
+				<dd><a title="濉啓鎻愮幇鐢宠" href="http://s1.088cnc.com:8080/index.php?c=user&a=cashview&nexturl=applycashview&r=1467123073">鎻愮幇鐢宠</a></dd>
+				<dd><a title="绠＄悊鎴戠殑閾惰鍗? href="http://s1.088cnc.com:8080/index.php?c=user&a=cashview&nexturl=bankinfoview&r=1467123073">鎴戠殑璧勬枡</a></dd>
+			</dl>
+			<dl class="side-funds">
+				<dt class="title">甯姪涓績</dt>
+				<dd><a title="淇℃伅涓績" href="http://s1.088cnc.com:8080/index.php?c=user&a=infomation&r=1467123073">淇℃伅涓績</a></dd>
+				<dd><a title="鐜╂硶浠嬬粛" href="http://s1.088cnc.com:8080/?c=user&a=help_play">鐜╂硶浠嬬粛</a></dd>
+				<dd><a title="骞冲彴鍔熻兘浠嬬粛" href="http://s1.088cnc.com:8080/?c=user&a=help_func">鍔熻兘浠嬬粛</a></dd>
+				<dd><a title="甯歌闂璇存槑" href="http://s1.088cnc.com:8080/?c=user&a=help_faq">甯歌闂</a></dd>
+				<dd><a title="鍊嶆姇宸ュ叿" target="_blank" href="http://www.shishicai.cn/tool/beitou/">鍊嶆姇宸ュ叿</a></dd>
+				<dd><a title="缂╂按宸ュ叿" target="_blank" href="http://tools.cjcp.com.cn/gl/ssc/">缂╂按宸ュ叿</a></dd>
+				<dd><a title="鎵嬫満瀹夎" href="http://s1.088cnc.com:8080/?c=user&a=help_appsetup">鎵嬫満瀹夎</a></dd>
+			</dl>
+			<dl class="side-funds">
+				<dt class="title"><a title="鍦ㄧ嚎瀹㈡湇" target="_blank" href="service.htm">鍦ㄧ嚎瀹㈡湇</a></dt>
+			</dl>
+		</div>
+	</div>
+</div><style>
+    .msgbox {
+        text-align: center;
+        padding: 50px 0;
+        border: 1px solid #E3E3E3;
+        font-size: 14px;
+    }
+
+    .msg {
+        padding-left: 40px;
+        position: relative;
+    }
+
+    .msg i {
+        position: relative;
+        top: 0;
+        left: 0;
+        margin: 0 10px 0 0;
+    }
+</style>
+<div id="main_box" class="fr common-article">
+    <div class="title">绯荤粺娑堟伅</div>
+
+    <div class="msgbox">
+                <span class="msg mT20" style="color: red;"><i
+                class="ico-waring"></i>浣欓涓嶈冻锛?/span>
+        <p class="mT20">濡傛灉鎮ㄤ笉鍋氬嚭閫夋嫨锛屽皢鍦?<span id="spanSeconds">3</span> 绉掑悗璺宠浆鍒扮涓€涓摼鎺ュ湴鍧€</p>
+    </div>
+</div>
+
+<script type="text/javascript">
+
+    var $spanSeconds = $('#spanSeconds'),
+        seconds = Number($.trim($('#spanSeconds').text())),
+        defaultUrl = "http://s1.088cnc.com:8080/index.php?c=user&a=infomation&r=1467123073",
+        play = null,
+        reloadflag = 0;
+
+    play = window.setInterval(redirection, 1500);
+
+    function redirection() {
+        seconds--;
+        if (seconds <= 0) {
+            clearInterval(play);
+            if (reloadflag == 0) {
+                window.location.href = defaultUrl;
+            } else {
+                top.document.location.reload();
+            }
+        }
+        else {
+            $spanSeconds.text(seconds);
+        }
+    }
+</script></div><div class="footer_safe">
+    <div class="center clearfix">
+        <div class="f_safe_p1">
+            <em>100%璧勯噾瀹夊叏</em>
+            <span>鍚堜綔閾惰</span>
+        </div>
+        <div class="f_safe_p2">
+            <em>100%璐︽埛瀹夊叏</em>
+            <span>瀹夊叏淇濇姢</span>
+        </div>
+        <div class="f_safe_p3">
+            <em>100%缃戠珯瀹夊叏</em>
+            <span>璧勮川鍙潬</span>
+        </div>
+    </div>
+</div>
+<div class="footer">
+    <div class="center">
+        <a href="/service.htm" target="_blank">鍦ㄧ嚎瀹㈡湇</a><span></span>
+        <a href="http://s1.088cnc.com:8080/index.php?c=user&a=active_index&r=1467123073" target="_blank">娲诲姩涓績</a><span></span>
+        <a href="http://s1.088cnc.com:8080/index.php?c=user&a=changeview&r=1467123073" target="_blank">瀹夊叏涓績</a><span></span>
+        <a href="http://s1.088cnc.com:8080/index.php?c=user&a=help_func&r=1467123073" target="_blank">鍔熻兘浠嬬粛</a>
+
+        <p class="footer-copyright">漏2010-2016 CNC濞变箰 All Rights Reserved</p>
+    </div>
+</div></body></html><!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="renderer" content="webkit">
+    <title></title>
+    <link rel="stylesheet" href="/statics/global/352e48a2.main.css">
+    <script src="/statics/lib/e8b5d896.lib.js"></script>
+    <script>
+        seajs.config({
+            base: "/statics/",
+            'map': [[/^(.*\.(?:css|js))(.*)$/i, '$1?10000_31136']]
+        });
+
+        var site = {
+            'messageUrl':'http://s1.088cnc.com:8080/index.php?c=user&a=getzjmessage&r=1467123074',
+            'moneyUrl':'http://s1.088cnc.com:8080/index.php?c=user&a=getusermoney&r=1467123074',
+            'setcurrentmode':'http://s1.088cnc.com:8080/index.php?c=user&a=setcurrentmode&r=1467123074',
+            'currentmode':'4',
+            'domain':'http://hit.088cnc.com:82',
+            'game':{
+                'dian_21':{
+                    'url':'http://s1.088cnc.com:8080/index.php?c=app&a=index&app_id=10001&r=1467123074'
+                }
+            },
+            'userName' : 'xiaohe777'
+        }
+        seajs.use('global/main.js');
+    </script>
+</head>
+<body>
+
+<!-- toolbar -->
+<div class="toolbar">
+    <div class="center clearfix">
+        <!-- left -->
+        <div class="tb_menu fl mT10">
+			<span class="game">
+				褰╃エ<i class="icon_down">&nbsp;</i>
+				<!-- 褰╃エ绉嶇被 -->
+				<div class="game-menu-panel ">
+                    <!--					<span class="triangle game-menu-triangle"><span></span></span>-->
+                    <i class="tri"></i>
+
+                    <div class="game-menu-inner">
+                        <div class="game-menu-box clearfix">
+
+                            
+
+                            <div class="game-menu-title fl">楂橀褰?/div>
+                            <div class="game-menu-list fr">
+                                <a class="hot-game" title="濡傛剰鍒嗗垎褰?
+                                   href="http://s1.088cnc.com:8080/index.php?c=user&a=cqssc&lotteryid=81&r=1467123074">濡傛剰鍒嗗垎褰?                                   <i></i></a>
+                                <a title="棣欐腐涓夊垎褰?
+                                   href="http://s1.088cnc.com:8080/index.php?c=user&a=cqssc&lotteryid=82&r=1467123074">棣欐腐涓夊垎褰?/a>
+                                <a title="婢抽棬浜斿垎褰?
+                                   href="http://s1.088cnc.com:8080/index.php?c=user&a=cqssc&lotteryid=83&r=1467123074">婢抽棬浜斿垎褰?/a>
+                                <a title="鍚夌ゥ绉掔褰?
+                                   href="http://s1.088cnc.com:8080/index.php?c=user&a=cqssc&lotteryid=80&r=1467123074">鍚夌ゥ绉掔褰?/a>
+                                <a title="閲嶅簡鏃舵椂褰? href="http://s1.088cnc.com:8080/index.php?c=user&a=cqssc&lotteryid=1&r=1467123074">閲嶅簡鏃舵椂褰?/a>
+                                <a title="鏂扮枂鏃舵椂褰? href="http://s1.088cnc.com:8080/index.php?c=user&a=cqssc&lotteryid=3&r=1467123074">鏂扮枂鏃舵椂褰?/a>
+                                <a title="鍖椾含PK10" href="http://s1.088cnc.com:8080/index.php?c=user&a=cqssc&lotteryid=10&r=1467123074">鍖椾含PK10</a>
+                            </div>
+                        </div>
+                        <div class="game-menu-box clearfix">
+                            <div class="game-menu-title fl">涔愰€忓僵</div>
+                            <div class="game-menu-list fr">
+                                <a title="骞夸笢11閫?" href="http://s1.088cnc.com:8080/index.php?c=user&a=cqssc&lotteryid=8&r=1467123074">骞夸笢11閫?</a>
+                                <a title="鍗佷竴杩愬ず閲? href="http://s1.088cnc.com:8080/index.php?c=user&a=cqssc&lotteryid=6&r=1467123074">鍗佷竴杩愬ず閲?/a>
+                                <a title="姹熻タ11閫?" href="http://s1.088cnc.com:8080/index.php?c=user&a=cqssc&lotteryid=11&r=1467123074">姹熻タ11閫?</a>
+                                <a title="涓婃捣11閫?" href="http://s1.088cnc.com:8080/index.php?c=user&a=cqssc&lotteryid=12&r=1467123074">涓婃捣11閫?</a>
+                            </div>
+                        </div>
+                        <div class="game-menu-box clearfix">
+                            <div class="game-menu-title fl">浣庨褰?/div>
+                            <div class="game-menu-list fr">
+                                <a title="绂忓僵3D"
+                                   href="http://s1.088cnc.com:8080/index.php?c=user&a=cqssc&lotteryid=9&r=1467123074">绂忓僵3D</a>
+                                <a title="鍏悎褰? href="http://s1.088cnc.com:8080/index.php?c=user&a=cqssc&lotteryid=13&r=1467123074">鍏悎褰?/a>
+                                <a title="鎺掑垪3鎺掑垪5"
+                                   href="http://s1.088cnc.com:8080/index.php?c=user&a=cqssc&lotteryid=14&r=1467123074">鎺掑垪3鎺掑垪5</a>
+                            </div>
+                        </div>
+                        <div class="game-menu-box clearfix">
+                            <div class="game-menu-title fl">鐪熶汉濞变箰</div>
+                            <div class="game-menu-list fr">
+                                <a title="鐪熶汉濞变箰" href="http://s1.088cnc.com:8080/index.php?c=user&a=zryl&r=1467123074">鐪熶汉濞变箰</a>
+                            </div>
+                        </div>
+                    </div>
+                    <iframe class="h-iframe"></iframe>
+                </div>
+			</span>
+            <a id="game21dian" href="http://s1.088cnc.com:8080/index.php?c=app&a=index&app_id=10001&r=1467123074" target="_blank">21鐐规父鎴?/a>
+            <a href="http://s1.088cnc.com:8080/index.php?c=user&a=zryl&r=1467123074" target="_blank">鐪熶汉濞变箰</a>
+            <a href="/">杩斿洖棣栭〉</a>
+        </div>
+
+        <!-- 鍥哄畾/鑷敱璋冭妭 -->
+        <div class=" mT10 switch">
+                            <div class="automode clearfix">
+                    <div class="usermod fl">
+                                                    <a href="javascript:;" id="jfauto_top">鑷敱璋冭妭</a>
+                                                    <a id="Showjiangjin">鍥哄畾濂栭噾</a>
+                                            </div>
+                                            <div id="jangjinmod" class="fl" style="display:none">
+                            <select name="jffixed" id="jffixed" type="hidden">
+                                                                    <option value="3">1800</option>
+                                                                    <option value="5">1900</option>
+                                                            </select>
+                        </div>
+                                    </div>
+                    </div>
+
+
+        <!-- right -->
+        <ul class="tb_user fr mT10">
+            <li>鎮ㄥソ, <span id="userName">鎭枩鍙戣储</span></li>
+            <li class="my_account">
+                鎴戠殑璐︽埛<i class="icon_down">&nbsp;</i>
+
+                <div class="menu-nav">
+                    <i class="tri"></i>
+                    <a href="http://s1.088cnc.com:8080/index.php?c=user&a=sscorder&r=1467123074">鎶曟敞璁板綍</a>
+                    <a href="http://s1.088cnc.com:8080/index.php?c=user&a=userblotters&r=1467123074">璐︽埛鏄庣粏</a>
+                    <a href="http://s1.088cnc.com:8080/index.php?c=user&a=changeview&r=1467123074">瀹夊叏涓績</a>
+                </div>
+            </li>
+            <!--<li><i class="tb_msg br5">0</i></li>-->
+            <!--			<li><div class="tb_account">浣欓锛?<span id="spanBall">20.10</span><i class="icon_refresh mL5">&nbsp;</i></div></li>-->
+            <li class="tb_account">浣欓锛?<span
+                    id="leftusermoney">85.33</span><i id="refreshMoney_top" class="icon_refresh mL5">&nbsp;</i></li>
+            <li class="tb_other_link">
+                <a href="http://s1.088cnc.com:8080/index.php?c=user&a=paysel&r=1467123074">鍏呭€?/a><a class="tb_tx"
+                                                                                    href="http://s1.088cnc.com:8080/index.php?c=user&a=cashview&nexturl=applycashview&r=1467123074">鎻愮幇</a><a
+                    href="http://s1.088cnc.com:8080/index.php?c=session&a=logout&r=1467123074">閫€鍑?/a>
+            </li>
+        </ul>
+    </div>
+</div><div class="header">
+    <div class="center clearfix">
+        <!-- logo -->
+        <a href="/" class="logo fl" name="Page_firefrog_index"></a>
+        <div class="service">
+            <a href="/service.htm" target="_blank" class="link-service" title="瀹㈡湇">鑱旂郴瀹㈡湇</a>
+            <a href="http://s1.088cnc.com:8080/?c=user&a=help_play" target="_blank" class="link-help" title="甯姪">鎶曟敞鎸囧崡</a>
+        </div>
+    </div>
+</div><div class='center content_wrap clearfix mT10'><link rel="stylesheet" href="/statics/pages/content/f7d3d9a9.main.css">
+<!--[if lt IE 9]>
+<link rel="stylesheet" href='/statics/pages/content_ie/eb3d1329.main.css'>
+<![endif]-->
+
+<div class="g_5 fl">
+	<div class="common-side">
+		<div class="nav-side">
+			<dl class="side-bet">
+				<dt class="title"><a style="color: red;" href="http://s1.088cnc.com:8080/index.php?c=user&a=active_index&r=1467123074">娲诲姩涓績<span style="font-family: 瀹嬩綋; font-size: 14px; font-weight: normal">>></span></a></dt>
+			</dl>
+			<dl class="side-bet">
+				<dt class="title">娓告垙璁板綍</dt>
+				<dd><a href="http://s1.088cnc.com:8080/index.php?c=user&a=sscorder&r=1467123074">鎶曟敞璁板綍</a></dd>
+				<dd><a href="http://s1.088cnc.com:8080/index.php?c=user&a=ssctraceorder&r=1467123074">杩藉彿璁板綍</a></dd>
+				<dd><a href="http://s1.088cnc.com:8080/index.php?c=session&a=lotterycodehistory&lotteryid=1&day=1&count=30&r=1467123074" target="_blank">璧板娍鍥?/a></dd>
+			</dl>
+			<dl class="side-safe">
+				<dt class="title">鐢ㄦ埛绠＄悊</dt>
+									<dd><a title="鎵€鏈夌敤鎴蜂俊鎭? href="http://s1.088cnc.com:8080/index.php?c=user&a=user_list_frame&r=1467123074">鐢ㄦ埛鍒楄〃</a>
+					</dd>
+					<dd><a title="澧炲姞涓嬬骇鐢ㄦ埛" href="http://s1.088cnc.com:8080/index.php?c=user&a=addForm&r=1467123074">澧炲姞鐢ㄦ埛</a></dd>
+					<dd><a title="杞?nbsp;&nbsp;璐? href="http://s1.088cnc.com:8080/index.php?c=user&a=remit_view&r=1467123074">杞?nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;璐?/a></dd>
+								<dd><a title="淇敼鑷繁鐨勬樀绉? href="http://s1.088cnc.com:8080/index.php?c=user&a=editnickname&r=1467123074">淇敼鏄电О</a></dd>
+				<dd><a title="鏌ョ湅鍚勫僵绉嶅閲? href="http://s1.088cnc.com:8080/index.php?c=user&a=prizeinfo&r=1467123074">濂栭噾璇︽儏</a></dd>
+			</dl>
+			<dl class="side-service">
+				<dt class="title">鎶ヨ〃绠＄悊</dt>
+
+				<dd><a title="鏌ョ湅鎵€鏈夎处鍙樹俊鎭? href="http://s1.088cnc.com:8080/index.php?c=user&a=userblotters&r=1467123074">璐﹀彉鍒楄〃</a></dd>
+				<dd><a title="鏌ヨ娓告垙缁熻淇℃伅" href="http://s1.088cnc.com:8080/index.php?c=user&a=reportlist1&report_type=last&r=1467123074">鎶ヨ〃鏌ヨ</a></dd>
+
+									<dd><a title="搴旂敤鎶ヨ〃" href="http://s1.088cnc.com:8080/index.php?c=user&a=appreport&app_id=10001&r=1467123074">搴旂敤鎶ヨ〃</a></dd>
+					<dd><a title="缁熻杩旂偣鎯呭喌" href="http://s1.088cnc.com:8080/index.php?c=user&a=rebatepoint&r=1467123074">杩旂偣缁熻</a></dd>
+								<dd><a title="浠婃棩娓告垙缁熻" href="http://s1.088cnc.com:8080/index.php?c=user&a=todayreport&r=1467123074">涓汉缁熻</a></dd>
+			</dl>
+			<dl class="side-funds">
+				<dt class="title">璐︽埛绠＄悊</dt>
+				<dd><a title="淇敼鐧婚檰瀵嗙爜鍜岃祫閲戝瘑鐮? href="http://s1.088cnc.com:8080/index.php?c=user&a=changeview&r=1467123074">淇敼瀵嗙爜</a></dd>
+				<dd><a title="濉啓鍏呭€肩敵璇? href="http://s1.088cnc.com:8080/index.php?c=user&a=paysel&r=1467123074">鍏呭€肩敵璇?/a></dd>
+				<dd><a title="濉啓鎻愮幇鐢宠" href="http://s1.088cnc.com:8080/index.php?c=user&a=cashview&nexturl=applycashview&r=1467123074">鎻愮幇鐢宠</a></dd>
+				<dd><a title="绠＄悊鎴戠殑閾惰鍗? href="http://s1.088cnc.com:8080/index.php?c=user&a=cashview&nexturl=bankinfoview&r=1467123074">鎴戠殑璧勬枡</a></dd>
+			</dl>
+			<dl class="side-funds">
+				<dt class="title">甯姪涓績</dt>
+				<dd><a title="淇℃伅涓績" href="http://s1.088cnc.com:8080/index.php?c=user&a=infomation&r=1467123074">淇℃伅涓績</a></dd>
+				<dd><a title="鐜╂硶浠嬬粛" href="http://s1.088cnc.com:8080/?c=user&a=help_play">鐜╂硶浠嬬粛</a></dd>
+				<dd><a title="骞冲彴鍔熻兘浠嬬粛" href="http://s1.088cnc.com:8080/?c=user&a=help_func">鍔熻兘浠嬬粛</a></dd>
+				<dd><a title="甯歌闂璇存槑" href="http://s1.088cnc.com:8080/?c=user&a=help_faq">甯歌闂</a></dd>
+				<dd><a title="鍊嶆姇宸ュ叿" target="_blank" href="http://www.shishicai.cn/tool/beitou/">鍊嶆姇宸ュ叿</a></dd>
+				<dd><a title="缂╂按宸ュ叿" target="_blank" href="http://tools.cjcp.com.cn/gl/ssc/">缂╂按宸ュ叿</a></dd>
+				<dd><a title="鎵嬫満瀹夎" href="http://s1.088cnc.com:8080/?c=user&a=help_appsetup">鎵嬫満瀹夎</a></dd>
+			</dl>
+			<dl class="side-funds">
+				<dt class="title"><a title="鍦ㄧ嚎瀹㈡湇" target="_blank" href="service.htm">鍦ㄧ嚎瀹㈡湇</a></dt>
+			</dl>
+		</div>
+	</div>
+</div><style>
+    .msgbox {
+        text-align: center;
+        padding: 50px 0;
+        border: 1px solid #E3E3E3;
+        font-size: 14px;
+    }
+
+    .msg {
+        padding-left: 40px;
+        position: relative;
+    }
+
+    .msg i {
+        position: relative;
+        top: 0;
+        left: 0;
+        margin: 0 10px 0 0;
+    }
+</style>
+<div id="main_box" class="fr common-article">
+    <div class="title">绯荤粺娑堟伅</div>
+
+    <div class="msgbox">
+                <span class="msg mT20" style="color: red;"><i
+                class="ico-waring"></i>浣欓涓嶈冻锛?/span>
+        <p class="mT20">濡傛灉鎮ㄤ笉鍋氬嚭閫夋嫨锛屽皢鍦?<span id="spanSeconds">3</span> 绉掑悗璺宠浆鍒扮涓€涓摼鎺ュ湴鍧€</p>
+    </div>
+</div>
+
+<script type="text/javascript">
+
+    var $spanSeconds = $('#spanSeconds'),
+        seconds = Number($.trim($('#spanSeconds').text())),
+        defaultUrl = "http://s1.088cnc.com:8080/index.php?c=user&a=infomation&r=1467123074",
+        play = null,
+        reloadflag = 0;
+
+    play = window.setInterval(redirection, 1500);
+
+    function redirection() {
+        seconds--;
+        if (seconds <= 0) {
+            clearInterval(play);
+            if (reloadflag == 0) {
+                window.location.href = defaultUrl;
+            } else {
+                top.document.location.reload();
+            }
+        }
+        else {
+            $spanSeconds.text(seconds);
+        }
+    }
+</script></div><div class="footer_safe">
+    <div class="center clearfix">
+        <div class="f_safe_p1">
+            <em>100%璧勯噾瀹夊叏</em>
+            <span>鍚堜綔閾惰</span>
+        </div>
+        <div class="f_safe_p2">
+            <em>100%璐︽埛瀹夊叏</em>
+            <span>瀹夊叏淇濇姢</span>
+        </div>
+        <div class="f_safe_p3">
+            <em>100%缃戠珯瀹夊叏</em>
+            <span>璧勮川鍙潬</span>
+        </div>
+    </div>
+</div>
+<div class="footer">
+    <div class="center">
+        <a href="/service.htm" target="_blank">鍦ㄧ嚎瀹㈡湇</a><span></span>
+        <a href="http://s1.088cnc.com:8080/index.php?c=user&a=active_index&r=1467123074" target="_blank">娲诲姩涓績</a><span></span>
+        <a href="http://s1.088cnc.com:8080/index.php?c=user&a=changeview&r=1467123074" target="_blank">瀹夊叏涓績</a><span></span>
+        <a href="http://s1.088cnc.com:8080/index.php?c=user&a=help_func&r=1467123074" target="_blank">鍔熻兘浠嬬粛</a>
+
+        <p class="footer-copyright">漏2010-2016 CNC濞变箰 All Rights Reserved</p>
+    </div>
+</div></body></html><!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="renderer" content="webkit">
+    <title></title>
+    <link rel="stylesheet" href="/statics/global/352e48a2.main.css">
+    <script src="/statics/lib/e8b5d896.lib.js"></script>
+    <script>
+        seajs.config({
+            base: "/statics/",
+            'map': [[/^(.*\.(?:css|js))(.*)$/i, '$1?10000_31136']]
+        });
+
+        var site = {
+            'messageUrl':'http://s1.088cnc.com:8080/index.php?c=user&a=getzjmessage&r=1467123075',
+            'moneyUrl':'http://s1.088cnc.com:8080/index.php?c=user&a=getusermoney&r=1467123075',
+            'setcurrentmode':'http://s1.088cnc.com:8080/index.php?c=user&a=setcurrentmode&r=1467123075',
+            'currentmode':'4',
+            'domain':'http://hit.088cnc.com:82',
+            'game':{
+                'dian_21':{
+                    'url':'http://s1.088cnc.com:8080/index.php?c=app&a=index&app_id=10001&r=1467123075'
+                }
+            },
+            'userName' : 'xiaohe777'
+        }
+        seajs.use('global/main.js');
+    </script>
+</head>
+<body>
+
+<!-- toolbar -->
+<div class="toolbar">
+    <div class="center clearfix">
+        <!-- left -->
+        <div class="tb_menu fl mT10">
+			<span class="game">
+				褰╃エ<i class="icon_down">&nbsp;</i>
+				<!-- 褰╃エ绉嶇被 -->
+				<div class="game-menu-panel ">
+                    <!--					<span class="triangle game-menu-triangle"><span></span></span>-->
+                    <i class="tri"></i>
+
+                    <div class="game-menu-inner">
+                        <div class="game-menu-box clearfix">
+
+                            
+
+                            <div class="game-menu-title fl">楂橀褰?/div>
+                            <div class="game-menu-list fr">
+                                <a class="hot-game" title="濡傛剰鍒嗗垎褰?
+                                   href="http://s1.088cnc.com:8080/index.php?c=user&a=cqssc&lotteryid=81&r=1467123075">濡傛剰鍒嗗垎褰?                                   <i></i></a>
+                                <a title="棣欐腐涓夊垎褰?
+                                   href="http://s1.088cnc.com:8080/index.php?c=user&a=cqssc&lotteryid=82&r=1467123075">棣欐腐涓夊垎褰?/a>
+                                <a title="婢抽棬浜斿垎褰?
+                                   href="http://s1.088cnc.com:8080/index.php?c=user&a=cqssc&lotteryid=83&r=1467123075">婢抽棬浜斿垎褰?/a>
+                                <a title="鍚夌ゥ绉掔褰?
+                                   href="http://s1.088cnc.com:8080/index.php?c=user&a=cqssc&lotteryid=80&r=1467123075">鍚夌ゥ绉掔褰?/a>
+                                <a title="閲嶅簡鏃舵椂褰? href="http://s1.088cnc.com:8080/index.php?c=user&a=cqssc&lotteryid=1&r=1467123075">閲嶅簡鏃舵椂褰?/a>
+                                <a title="鏂扮枂鏃舵椂褰? href="http://s1.088cnc.com:8080/index.php?c=user&a=cqssc&lotteryid=3&r=1467123075">鏂扮枂鏃舵椂褰?/a>
+                                <a title="鍖椾含PK10" href="http://s1.088cnc.com:8080/index.php?c=user&a=cqssc&lotteryid=10&r=1467123075">鍖椾含PK10</a>
+                            </div>
+                        </div>
+                        <div class="game-menu-box clearfix">
+                            <div class="game-menu-title fl">涔愰€忓僵</div>
+                            <div class="game-menu-list fr">
+                                <a title="骞夸笢11閫?" href="http://s1.088cnc.com:8080/index.php?c=user&a=cqssc&lotteryid=8&r=1467123075">骞夸笢11閫?</a>
+                                <a title="鍗佷竴杩愬ず閲? href="http://s1.088cnc.com:8080/index.php?c=user&a=cqssc&lotteryid=6&r=1467123075">鍗佷竴杩愬ず閲?/a>
+                                <a title="姹熻タ11閫?" href="http://s1.088cnc.com:8080/index.php?c=user&a=cqssc&lotteryid=11&r=1467123075">姹熻タ11閫?</a>
+                                <a title="涓婃捣11閫?" href="http://s1.088cnc.com:8080/index.php?c=user&a=cqssc&lotteryid=12&r=1467123075">涓婃捣11閫?</a>
+                            </div>
+                        </div>
+                        <div class="game-menu-box clearfix">
+                            <div class="game-menu-title fl">浣庨褰?/div>
+                            <div class="game-menu-list fr">
+                                <a title="绂忓僵3D"
+                                   href="http://s1.088cnc.com:8080/index.php?c=user&a=cqssc&lotteryid=9&r=1467123075">绂忓僵3D</a>
+                                <a title="鍏悎褰? href="http://s1.088cnc.com:8080/index.php?c=user&a=cqssc&lotteryid=13&r=1467123075">鍏悎褰?/a>
+                                <a title="鎺掑垪3鎺掑垪5"
+                                   href="http://s1.088cnc.com:8080/index.php?c=user&a=cqssc&lotteryid=14&r=1467123075">鎺掑垪3鎺掑垪5</a>
+                            </div>
+                        </div>
+                        <div class="game-menu-box clearfix">
+                            <div class="game-menu-title fl">鐪熶汉濞变箰</div>
+                            <div class="game-menu-list fr">
+                                <a title="鐪熶汉濞变箰" href="http://s1.088cnc.com:8080/index.php?c=user&a=zryl&r=1467123075">鐪熶汉濞变箰</a>
+                            </div>
+                        </div>
+                    </div>
+                    <iframe class="h-iframe"></iframe>
+                </div>
+			</span>
+            <a id="game21dian" href="http://s1.088cnc.com:8080/index.php?c=app&a=index&app_id=10001&r=1467123075" target="_blank">21鐐规父鎴?/a>
+            <a href="http://s1.088cnc.com:8080/index.php?c=user&a=zryl&r=1467123075" target="_blank">鐪熶汉濞变箰</a>
+            <a href="/">杩斿洖棣栭〉</a>
+        </div>
+
+        <!-- 鍥哄畾/鑷敱璋冭妭 -->
+        <div class=" mT10 switch">
+                            <div class="automode clearfix">
+                    <div class="usermod fl">
+                                                    <a href="javascript:;" id="jfauto_top">鑷敱璋冭妭</a>
+                                                    <a id="Showjiangjin">鍥哄畾濂栭噾</a>
+                                            </div>
+                                            <div id="jangjinmod" class="fl" style="display:none">
+                            <select name="jffixed" id="jffixed" type="hidden">
+                                                                    <option value="3">1800</option>
+                                                                    <option value="5">1900</option>
+                                                            </select>
+                        </div>
+                                    </div>
+                    </div>
+
+
+        <!-- right -->
+        <ul class="tb_user fr mT10">
+            <li>鎮ㄥソ, <span id="userName">鎭枩鍙戣储</span></li>
+            <li class="my_account">
+                鎴戠殑璐︽埛<i class="icon_down">&nbsp;</i>
+
+                <div class="menu-nav">
+                    <i class="tri"></i>
+                    <a href="http://s1.088cnc.com:8080/index.php?c=user&a=sscorder&r=1467123075">鎶曟敞璁板綍</a>
+                    <a href="http://s1.088cnc.com:8080/index.php?c=user&a=userblotters&r=1467123075">璐︽埛鏄庣粏</a>
+                    <a href="http://s1.088cnc.com:8080/index.php?c=user&a=changeview&r=1467123075">瀹夊叏涓績</a>
+                </div>
+            </li>
+            <!--<li><i class="tb_msg br5">0</i></li>-->
+            <!--			<li><div class="tb_account">浣欓锛?<span id="spanBall">20.10</span><i class="icon_refresh mL5">&nbsp;</i></div></li>-->
+            <li class="tb_account">浣欓锛?<span
+                    id="leftusermoney">85.33</span><i id="refreshMoney_top" class="icon_refresh mL5">&nbsp;</i></li>
+            <li class="tb_other_link">
+                <a href="http://s1.088cnc.com:8080/index.php?c=user&a=paysel&r=1467123075">鍏呭€?/a><a class="tb_tx"
+                                                                                    href="http://s1.088cnc.com:8080/index.php?c=user&a=cashview&nexturl=applycashview&r=1467123075">鎻愮幇</a><a
+                    href="http://s1.088cnc.com:8080/index.php?c=session&a=logout&r=1467123075">閫€鍑?/a>
+            </li>
+        </ul>
+    </div>
+</div><div class="header">
+    <div class="center clearfix">
+        <!-- logo -->
+        <a href="/" class="logo fl" name="Page_firefrog_index"></a>
+        <div class="service">
+            <a href="/service.htm" target="_blank" class="link-service" title="瀹㈡湇">鑱旂郴瀹㈡湇</a>
+            <a href="http://s1.088cnc.com:8080/?c=user&a=help_play" target="_blank" class="link-help" title="甯姪">鎶曟敞鎸囧崡</a>
+        </div>
+    </div>
+</div><div class='center content_wrap clearfix mT10'><link rel="stylesheet" href="/statics/pages/content/f7d3d9a9.main.css">
+<!--[if lt IE 9]>
+<link rel="stylesheet" href='/statics/pages/content_ie/eb3d1329.main.css'>
+<![endif]-->
+
+<div class="g_5 fl">
+	<div class="common-side">
+		<div class="nav-side">
+			<dl class="side-bet">
+				<dt class="title"><a style="color: red;" href="http://s1.088cnc.com:8080/index.php?c=user&a=active_index&r=1467123075">娲诲姩涓績<span style="font-family: 瀹嬩綋; font-size: 14px; font-weight: normal">>></span></a></dt>
+			</dl>
+			<dl class="side-bet">
+				<dt class="title">娓告垙璁板綍</dt>
+				<dd><a href="http://s1.088cnc.com:8080/index.php?c=user&a=sscorder&r=1467123075">鎶曟敞璁板綍</a></dd>
+				<dd><a href="http://s1.088cnc.com:8080/index.php?c=user&a=ssctraceorder&r=1467123075">杩藉彿璁板綍</a></dd>
+				<dd><a href="http://s1.088cnc.com:8080/index.php?c=session&a=lotterycodehistory&lotteryid=1&day=1&count=30&r=1467123075" target="_blank">璧板娍鍥?/a></dd>
+			</dl>
+			<dl class="side-safe">
+				<dt class="title">鐢ㄦ埛绠＄悊</dt>
+									<dd><a title="鎵€鏈夌敤鎴蜂俊鎭? href="http://s1.088cnc.com:8080/index.php?c=user&a=user_list_frame&r=1467123075">鐢ㄦ埛鍒楄〃</a>
+					</dd>
+					<dd><a title="澧炲姞涓嬬骇鐢ㄦ埛" href="http://s1.088cnc.com:8080/index.php?c=user&a=addForm&r=1467123075">澧炲姞鐢ㄦ埛</a></dd>
+					<dd><a title="杞?nbsp;&nbsp;璐? href="http://s1.088cnc.com:8080/index.php?c=user&a=remit_view&r=1467123075">杞?nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;璐?/a></dd>
+								<dd><a title="淇敼鑷繁鐨勬樀绉? href="http://s1.088cnc.com:8080/index.php?c=user&a=editnickname&r=1467123075">淇敼鏄电О</a></dd>
+				<dd><a title="鏌ョ湅鍚勫僵绉嶅閲? href="http://s1.088cnc.com:8080/index.php?c=user&a=prizeinfo&r=1467123075">濂栭噾璇︽儏</a></dd>
+			</dl>
+			<dl class="side-service">
+				<dt class="title">鎶ヨ〃绠＄悊</dt>
+
+				<dd><a title="鏌ョ湅鎵€鏈夎处鍙樹俊鎭? href="http://s1.088cnc.com:8080/index.php?c=user&a=userblotters&r=1467123075">璐﹀彉鍒楄〃</a></dd>
+				<dd><a title="鏌ヨ娓告垙缁熻淇℃伅" href="http://s1.088cnc.com:8080/index.php?c=user&a=reportlist1&report_type=last&r=1467123075">鎶ヨ〃鏌ヨ</a></dd>
+
+									<dd><a title="搴旂敤鎶ヨ〃" href="http://s1.088cnc.com:8080/index.php?c=user&a=appreport&app_id=10001&r=1467123075">搴旂敤鎶ヨ〃</a></dd>
+					<dd><a title="缁熻杩旂偣鎯呭喌" href="http://s1.088cnc.com:8080/index.php?c=user&a=rebatepoint&r=1467123075">杩旂偣缁熻</a></dd>
+								<dd><a title="浠婃棩娓告垙缁熻" href="http://s1.088cnc.com:8080/index.php?c=user&a=todayreport&r=1467123075">涓汉缁熻</a></dd>
+			</dl>
+			<dl class="side-funds">
+				<dt class="title">璐︽埛绠＄悊</dt>
+				<dd><a title="淇敼鐧婚檰瀵嗙爜鍜岃祫閲戝瘑鐮? href="http://s1.088cnc.com:8080/index.php?c=user&a=changeview&r=1467123075">淇敼瀵嗙爜</a></dd>
+				<dd><a title="濉啓鍏呭€肩敵璇? href="http://s1.088cnc.com:8080/index.php?c=user&a=paysel&r=1467123075">鍏呭€肩敵璇?/a></dd>
+				<dd><a title="濉啓鎻愮幇鐢宠" href="http://s1.088cnc.com:8080/index.php?c=user&a=cashview&nexturl=applycashview&r=1467123075">鎻愮幇鐢宠</a></dd>
+				<dd><a title="绠＄悊鎴戠殑閾惰鍗? href="http://s1.088cnc.com:8080/index.php?c=user&a=cashview&nexturl=bankinfoview&r=1467123075">鎴戠殑璧勬枡</a></dd>
+			</dl>
+			<dl class="side-funds">
+				<dt class="title">甯姪涓績</dt>
+				<dd><a title="淇℃伅涓績" href="http://s1.088cnc.com:8080/index.php?c=user&a=infomation&r=1467123075">淇℃伅涓績</a></dd>
+				<dd><a title="鐜╂硶浠嬬粛" href="http://s1.088cnc.com:8080/?c=user&a=help_play">鐜╂硶浠嬬粛</a></dd>
+				<dd><a title="骞冲彴鍔熻兘浠嬬粛" href="http://s1.088cnc.com:8080/?c=user&a=help_func">鍔熻兘浠嬬粛</a></dd>
+				<dd><a title="甯歌闂璇存槑" href="http://s1.088cnc.com:8080/?c=user&a=help_faq">甯歌闂</a></dd>
+				<dd><a title="鍊嶆姇宸ュ叿" target="_blank" href="http://www.shishicai.cn/tool/beitou/">鍊嶆姇宸ュ叿</a></dd>
+				<dd><a title="缂╂按宸ュ叿" target="_blank" href="http://tools.cjcp.com.cn/gl/ssc/">缂╂按宸ュ叿</a></dd>
+				<dd><a title="鎵嬫満瀹夎" href="http://s1.088cnc.com:8080/?c=user&a=help_appsetup">鎵嬫満瀹夎</a></dd>
+			</dl>
+			<dl class="side-funds">
+				<dt class="title"><a title="鍦ㄧ嚎瀹㈡湇" target="_blank" href="service.htm">鍦ㄧ嚎瀹㈡湇</a></dt>
+			</dl>
+		</div>
+	</div>
+</div><style>
+    .msgbox {
+        text-align: center;
+        padding: 50px 0;
+        border: 1px solid #E3E3E3;
+        font-size: 14px;
+    }
+
+    .msg {
+        padding-left: 40px;
+        position: relative;
+    }
+
+    .msg i {
+        position: relative;
+        top: 0;
+        left: 0;
+        margin: 0 10px 0 0;
+    }
+</style>
+<div id="main_box" class="fr common-article">
+    <div class="title">绯荤粺娑堟伅</div>
+
+    <div class="msgbox">
+                <span class="msg mT20" style="color: red;"><i
+                class="ico-waring"></i>浣欓涓嶈冻锛?/span>
+        <p class="mT20">濡傛灉鎮ㄤ笉鍋氬嚭閫夋嫨锛屽皢鍦?<span id="spanSeconds">3</span> 绉掑悗璺宠浆鍒扮涓€涓摼鎺ュ湴鍧€</p>
+    </div>
+</div>
+
+<script type="text/javascript">
+
+    var $spanSeconds = $('#spanSeconds'),
+        seconds = Number($.trim($('#spanSeconds').text())),
+        defaultUrl = "http://s1.088cnc.com:8080/index.php?c=user&a=infomation&r=1467123075",
+        play = null,
+        reloadflag = 0;
+
+    play = window.setInterval(redirection, 1500);
+
+    function redirection() {
+        seconds--;
+        if (seconds <= 0) {
+            clearInterval(play);
+            if (reloadflag == 0) {
+                window.location.href = defaultUrl;
+            } else {
+                top.document.location.reload();
+            }
+        }
+        else {
+            $spanSeconds.text(seconds);
+        }
+    }
+</script></div><div class="footer_safe">
+    <div class="center clearfix">
+        <div class="f_safe_p1">
+            <em>100%璧勯噾瀹夊叏</em>
+            <span>鍚堜綔閾惰</span>
+        </div>
+        <div class="f_safe_p2">
+            <em>100%璐︽埛瀹夊叏</em>
+            <span>瀹夊叏淇濇姢</span>
+        </div>
+        <div class="f_safe_p3">
+            <em>100%缃戠珯瀹夊叏</em>
+            <span>璧勮川鍙潬</span>
+        </div>
+    </div>
+</div>
+<div class="footer">
+    <div class="center">
+        <a href="/service.htm" target="_blank">鍦ㄧ嚎瀹㈡湇</a><span></span>
+        <a href="http://s1.088cnc.com:8080/index.php?c=user&a=active_index&r=1467123075" target="_blank">娲诲姩涓績</a><span></span>
+        <a href="http://s1.088cnc.com:8080/index.php?c=user&a=changeview&r=1467123075" target="_blank">瀹夊叏涓績</a><span></span>
+        <a href="http://s1.088cnc.com:8080/index.php?c=user&a=help_func&r=1467123075" target="_blank">鍔熻兘浠嬬粛</a>
+
+        <p class="footer-copyright">漏2010-2016 CNC濞变箰 All Rights Reserved</p>
+    </div>
+</div></body></html><html><body><script language="javascript">window.top.location.href="?c=session&a=loginForm&refer=";</script></body></html><html><body><script language="javascript">window.top.location.href="?c=session&a=loginForm&refer=";</script></body></html><html><body><script language="javascript">window.top.location.href="?c=session&a=loginForm&refer=";</script></body></html><html><body><script language="javascript">window.top.location.href="?c=session&a=loginForm&refer=";</script></body></html><html><body><script language="javascript">window.top.location.href="?c=session&a=loginForm&refer=";</script></body></html><html><body><script language="javascript">window.top.location.href="?c=session&a=loginForm&refer=";</script></body></html><html><body><script language="javascript">window.top.location.href="?c=session&a=loginForm&refer=";</script></body></html><html><body><script language="javascript">window.top.location.href="?c=session&a=loginForm&refer=";</script></body></html><html><body><script language="javascript">window.top.location.href="?c=session&a=loginForm&refer=";</script></body></html>

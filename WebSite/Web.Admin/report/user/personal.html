@@ -1,0 +1,63 @@
+﻿<div class="page-header">
+    <h1>个人盈亏报表</h1>
+    <div class="page-searchbox">
+        <form method="post" action="personal.html">
+            <input type="date" name="StartAt" class="txt" placeholder="统计时间（开始）" data-type="datetime" />
+            <input type="date" name="EndAt" class="txt" placeholder="统计时间（结束）" data-type="datetime" />
+            <input type="submit" class="am-btn am-btn-success am-round am-text-xs" value="搜索" />
+            <input type="reset" class="am-btn am-round am-text-xs" value="重置" />
+        </form>
+    </div>
+</div>
+
+<div class="page-table">
+    <table class="list" data-bind-action="/admin/report/usermoney" data-bind-type="list" data-bind-callback="list,count,report-personmoney" data-bind-load="search,list-sort">
+        <thead>
+            <tr>
+                <th>序号</th>
+                <th>用户名</th>
+                <th data-list-sort="true">投注</th>
+                <th data-list-sort="true">派奖</th>
+                <th data-list-sort="true">返点</th>
+                <th data-list-sort="true">佣金</th>
+                <th data-list-sort="true">活动</th>
+                <th data-list-sort="true">日工资</th>
+                <th data-list-sort="true">分红</th>
+                <th data-list-sort="true">盈亏</th>
+            </tr>
+        </thead>
+        <tbody data-list-element="true">
+            <tr>
+                <td>${Index}</td>
+                <td><a href="javascript:" class="diag-user" data-userid="${UserID}">${UserName}</a></td>
+                <td>${Data.Bet:money}</td>
+                <td>${Data.Reward:money}</td>
+                <td>${Data.Return:money}</td>
+                <td>${Data.Agent:money}</td>
+                <td>${Data.Activity:money}</td>
+                <td>${Data.Wages:money}</td>
+                <td>${Data.Bonus:money}</td>
+                <td>${Money:money-show}</td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <td>统计：</td>
+                <td colspan="8"></td>
+                <td>${data.Money:money-show}</td>
+            </tr>
+        </tfoot>
+    </table>
+</div>
+
+
+<script type="text/javascript">
+    BW.callback["report-personmoney"] = function (result) {
+        var t = this;
+        t.dom.element.getElements("tbody td").each(function (item) {
+            if (item.get("text").contains("$")) {
+                item.set("text", "0.00");
+            }
+        });
+    };
+</script>

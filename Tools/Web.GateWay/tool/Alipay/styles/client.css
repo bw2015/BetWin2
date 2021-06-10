@@ -1,0 +1,7 @@
+﻿body { }
+.plugin-check { display: block; font-size: 72px; line-height: 200%; text-align: center; font-weight: bold; }
+
+#globalContainer, #faq, #topSearchForm, div#onlineService { display: none; }
+
+.progress-bg { background-color: #efefef; }
+.progress-bar { background-color: green; height: 4px; transition: width 0.5s; width: 0%; }

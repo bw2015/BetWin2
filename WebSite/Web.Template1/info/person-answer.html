@@ -1,0 +1,54 @@
+﻿<div id="frame-info-getquestion">
+    <form action="/handler/user/account/saveanswer" method="post" data-bind-action="/handler/user/account/saveanswer" data-bind-type="ajax" data-bind-callback="diag-form">
+        <table class="post">
+            <tr>
+                <th>密保问题：</th>
+                <td><select name="Question" class="txt"></select></td>
+            </tr>
+            <tr>
+                <th>答案：</th>
+                <td><input type="text" class="txt" name="Answer" data-question-hide="true" /></td>
+            </tr>
+            <tr data-question-hide="true">
+                <th>重复答案：</th>
+                <td><input type="text" class="txt" name="Answer2" /></td>
+            </tr>
+            <tr data-question-hide="true">
+                <th></th>
+                <td>
+                    <input type="submit" value="设定密保" class="btn btn-red" />
+                </td>
+            </tr>
+        </table>
+    </form>
+</div>
+
+<input type="hidden" data-bind-action="/handler/user/account/question" data-bind-type="ajax" data-bind-target="frame-info-getquestion" data-bind-callback="frame-info-question" />
+
+<script type="text/javascript">
+    BW.callback["frame-info-question"] = function (result) {
+        var t = this;
+        if (!result.success) {
+            new BW.Tip(result.msg);
+            return;
+        }
+        var element = t.dom.container;
+        var question = element.getElement("select[name=Question]");
+        var answer = element.getElement("[name=Answer]");
+        Object.forEach(result.info, function (value, key) {
+            if (key == "None") return;
+            new Element("option", {
+                "value": key,
+                "text": value
+            }).inject(question);
+        });
+
+        if (!result.info["None"]) {
+            new Element("span", {
+                "class": "red",
+                "text" : "已经设定，如需修改请联系客服"
+            }).inject(answer, "after");
+            element.getElements("[data-question-hide]").dispose();
+        }
+    }
+</script>

@@ -1,0 +1,66 @@
+﻿<div class="page-table">
+    <table class="post" data-bind-action="admin/user/getcontractinfo" data-bind-type="ajax" data-bind-callback="html,contract-info" data-bind-data="parent">
+        <tr>
+            <th>契约编号：</th>
+            <td>${ID}</td>
+            <th>契约类型：</th>
+            <td>${Type}</td>
+        </tr>
+        <tr>
+            <th>甲方：</th>
+            <td>${User1}</td>
+            <th>乙方：</th>
+            <td>${User2}</td>
+        </tr>
+        <tr>
+            <th>签订日期：</th>
+            <td>
+                ${CreateAt}
+            </td>
+            <th>当前状态：</th>
+            <td>
+                ${Status}
+            </td>
+        </tr>
+        <tr>
+            <th>契约内容：</th>
+            <td colspan="3" data-content="true">
+                <p>
+                    <span class="am-text-danger">工资流水1：</span>
+
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <th>操作：</th>
+            <td>
+                <input type="button" value="取消契约" class="am-btn am-btn-danger am-round" data-bind-action="admin/user/deletecontractinfo" data-bind-type="ajax" data-bind-callback="form-tip" data-bind-form-tip="diag-close" data-bind-event="confirm" data-bind-stop="true" data-bind-data="parent" />
+            </td>
+        </tr>
+    </table>
+</div>
+
+<script type="text/javascript">
+    BW.callback["contract-info"] = function (result) {
+        var t = this;
+        if (!result.success) {
+            new BW.Tip(result.msg, {
+                "callback": function () {
+                    BW.callback["diag-close"].apply(t);
+                }
+            });
+            return;
+        }
+        var content = t.dom.element.getElement("[data-content]");
+        content.empty();
+
+        result.info.Setting.each(function (item) {
+            if (item.maxvalue < 1) item.maxvalue = htmlFunction["p"](item.maxvalue);
+            new Element("p", {
+                "class" : "am-text-xl am-padding-bottom-xs",
+                "html": "<span class=\"am-text-danger\">${name}：</span><span class=\"am-text-success\">${maxvalue}</span>".toHtml(item)
+            }).inject(content);
+        });
+
+    };
+</script>

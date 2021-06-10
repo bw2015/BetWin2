@@ -1,0 +1,28 @@
+﻿<div class="page-table">
+    <form action="userinfo-updateagent.html" method="post" data-bind-action="admin/user/updateagent" data-bind-type="ajax" data-bind-callback="form-tip" data-bind-form-tip="diag-close">
+        <table class="post" data-bind-action="admin/user/get" data-bind-type="ajax" data-bind-callback="html" data-bind-data="parent">
+            <tr>
+                <th>用户名：</th>
+                <td><label class="am-text-danger">${UserName}</label></td>
+            </tr>
+            <tr>
+                <th>当前代理：</th>
+                <td><span class="am-text-success">${Agent}</span></td>
+            </tr>
+            <tr>
+                <th>修改代理：</th>
+                <td>
+                    <input type="text" class="txt am-form-field" name="Agent" />
+                    <span class="desc">如果需要修改为总代请输入中文“总代”</span>
+                </td>
+            </tr>
+            <tr>
+                <th></th>
+                <td>
+                    <input type="hidden" name="UserID" value="${ID}" />
+                    <input type="submit" value=" 修改 " class="am-btn am-btn-success am-round" />
+                </td>
+            </tr>
+        </table>
+    </form>
+</div>

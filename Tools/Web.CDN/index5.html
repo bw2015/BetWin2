@@ -1,0 +1,47 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <script src="scripts/mootools.js"></script>
+    <script src="/handler/site/info/cdndomain"></script>
+    <link href="t5/styles/index.css" rel="stylesheet" />
+    <title>测速</title>
+</head>
+<body>
+    <header>
+        <div class="w">
+            <img src="images/space.gif" id="logo" />
+        </div>
+    </header>
+    <div class="container w">
+        <div class="info">
+            <p>亲爱的客户，<label data-dom="name"></label>创立十余年作为最顶尖线上购彩平台，业界首家推出品牌域名 旗舰版: <label data-dom="domain"></label>；</p>
+            <p> 除此之外，本平台秉承重视安全的宗旨，将不定期更换其他主要域名,为了使您能随时最方便的获取到平台最新最快的登录域名，请点击右上角“一键收藏”，永久自动更新域名。</p>
+        </div>
+        <div class="website" id="website">
+        </div>
+        <div class="tip">
+            <h2>
+                访问状态说明：
+                <span class="good">很好</span>
+                <span class="normal">一般</span>
+                <span class="low">较差</span>
+            </h2>
+        </div>
+        <div class="vaild">
+            <div class="test">
+                <p>为了帮助您更好的识别本平台的真实域名，除了直接点击页面上方的【立即登入】之外，您还可以将域名复制到下方进行验证，只需在输入框中输入要验证的域名，便可轻松辨别真伪。</p>
+            </div>
+            <div class="form">
+                <form id="form" action="/handler/site/info/checkdomain" method="post">
+                    域名检测：<input type="text" name="Domain" placeholder="域名检测" class="txt" />
+                    <input type="hidden" name="SiteID" data-dom="siteid" />
+                    <input type="submit" value="检测" class="btn" />
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="scripts/speed.js"></script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+﻿<div class="page-header">
+    <h1>日志管理</h1>
+    <div class="page-searchbox">
+        <form action="log.html" method="post">
+            <input type="text" name="User" placeholder="用户名" class="txt" />
+            <input type="date" name="StartAt" placeholder="开始时间" class="txt"  />
+            <input type="date" name="EndAt" placeholder="结束时间" class="txt" />
+            <input type="text" name="IP" placeholder="操作IP" class="txt" />
+            <input type="text" name="Key" placeholder="关键词搜索" class="txt" />
+            <input type="submit" value="搜索" class="am-btn am-btn-success am-round am-text-xs" />
+            <input type="reset" value="重置" class="am-btn am-round  am-text-xs" />
+        </form>
+    </div>
+</div>
+<div class="page-table">
+    <table class="list" data-bind-action="/admin/user/loglist" data-bind-type="list" data-bind-callback="list" data-bind-load="search,pagesplit">
+        <thead>
+            <tr>
+                <th>编号</th>
+                <th>用户</th>
+                <th>IP</th>
+                <th>操作时间</th>
+                <th>操作内容</th>
+            </tr>
+        </thead>
+        <tbody data-list-element="true"> 
+            <tr>
+                <td>${ID}</td>
+                <td><a href="javascript:" class="diag-user" data-userid="${UserID}">${UserName}</a></td>
+                <td>${IP}<div class="am-text-xs">${IPAddress}</div></td>
+                <td>${CreateAt}</td>
+                <td class="am-text-xs am-text-left">${Content}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

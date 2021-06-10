@@ -1,0 +1,35 @@
+﻿<div class="page-header">
+    <h1>会员扣款</h1>
+    <h6>将会从用户账户上直接扣除对应金额</h6>
+</div>
+
+<div class="page-table">
+    <form action="/admin/money/debit" method="post" data-bind-action="/admin/money/debit" data-bind-type="ajax" data-bind-callback="form-tip" data-bind-load="event-userinfo">
+        <table class="post">
+            <tr>
+                <th>用户名：</th>
+                <td><input type="text" name="UserName" class="txt am-form-field" required="required" data-userinfo="1" /></td>
+            </tr>
+            <tr>
+                <th>扣款金额：</th>
+                <td><input type="text" name="Money" class="txt am-form-field" size="6" required="required" /> 元</td>
+            </tr>
+            <tr>
+                <th>扣款类型：</th>
+                <td>
+                    <select class="txt am-form-field" name="Type" data-bind-action="/admin/money/rewardtype" data-bind-type="ajax" data-bind-callback="select" data-bind-data="Type=debit"></select>
+                </td>
+            </tr>
+            <tr>
+                <th>备注信息：</th>
+                <td><textarea name="Description" class="txt am-form-field" cols="50" rows="2" required="required"></textarea></td>
+            </tr>
+            <tr>
+                <th></th>
+                <td>
+                    <input type="submit" value="提交" class="am-btn am-btn-success am-round" />
+                </td>
+            </tr>
+        </table>
+    </form>
+</div>

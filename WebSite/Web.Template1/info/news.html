@@ -1,0 +1,26 @@
+﻿<div class="frame-info">
+    <div class="frame-info-title clear">
+        <h1>公告通知</h1>
+        <h2>Notice</h2>
+    </div>
+
+    <div class="frame-info-body">
+        <div class="frame-info-tab clear" data-tab-container="true">
+            <a href="javascript:" data-tab-item="true" class="current" data-bind-action="info/news-list.html" data-bind-type="control" data-bind-target="info-news-content" data-bind-event="click">平台公告</a>
+            <a href="javascript:" data-tab-item="true" data-bind-action="info/news-activity.html" data-bind-type="control" data-bind-target="info-news-content" data-bind-event="click" data-bind-stop="1">优惠活动</a>
+        </div>
+
+        <div id="info-news-content"></div>
+
+    </div>
+</div>
+
+<script type="text/javascript">
+    BW.callback["frame-control-discount"] = function () {
+        var t = this;
+        var discount = t.dom.element.getElement("a[data-bind-action='info/news-activity.html']");
+        if (discount) {
+            discount.fireEvent.delay(500, discount, ["click"]);
+        }
+    };
+</script>

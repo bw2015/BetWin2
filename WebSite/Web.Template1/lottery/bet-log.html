@@ -1,0 +1,62 @@
+﻿<!-- 投注记录 -->
+<div class="frame-info-content">
+    <h3>
+        投注记录
+        <span class="buttons">
+            <a href="javascript:" class="btn btn-blue" data-type="refser">刷新</a>
+        </span>
+    </h3>
+</div>
+<!-- 游戏	奖期	玩法	赔率	方案	注单金额	开奖号码	中奖金额	状态	操作 -->
+<table class="list lottery-bet-orderlist" data-bind-action="/handler/user/lottery/playerorders" data-bind-type="list" data-bind-callback="list" data-bind-data="parent">
+    <thead>
+        <tr>
+            <th>游戏</th>
+            <th>奖期</th>
+            <th class="lottery-betlog-player">玩法</th>
+            <th>赔率</th>
+            <th class="lottery-betlog-plan">方案</th>
+            <th>注单金额</th>
+            <th>开奖号码</th>
+            <th>中奖金额</th>
+            <th>状态</th>
+            <th>操作</th>
+        </tr>
+    </thead>
+    <tbody data-list-element="true">
+        <tr>
+            <td>${Game}</td>
+            <td>${Index}</td>
+            <td class="lottery-betlog-player"><label class="ft12">${Player}</label></td>
+            <td>${Rebate}</td>
+            <td class="lottery-betlog-plan">${Number}</td>
+            <td>${Money:money}</td>
+            <td>${ResultNumber}</td>
+            <td>${Reward:money}</td>
+            <td>${Status:bet-log-status}</td>
+            <td><a href="javascript:" data-diag-name="lotteryorder-info" data-diag-type="control" data-diag-src="diag/lotteryorder-info.html" data-diag-title="查看投注详情" data-diag-mask="true" data-diag-drag="true" data-diag-width="800" data-diag-height="600" data-diag-data="id=${ID}" class="btn btn-blue ft12">详情</a>
+                <a href="javascript:" data-bind-action="handler/user/lottery/orderrepeater" data-bind-type="ajax" data-bind-callback="form-tip" data-bind-data="id=${ID}" data-bind-stop="true" data-bind-event="confirm" class="btn btn-green ft12">再次购买</a>
+
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+<script type="text/javascript">
+    htmlFunction["bet-log-status"] = function (value) {
+        var cssName = null;
+        switch (value) {
+            case "等待开奖":
+                cssName = "gray";
+                break;
+            case "未中奖":
+                cssName = "red";
+                break;
+            case "中奖":
+                cssName = "green";
+                break;
+        }
+        if (!cssName) return value;
+        return "<span class=\"" + cssName + "\">" + value + "</span>";
+    };
+</script>

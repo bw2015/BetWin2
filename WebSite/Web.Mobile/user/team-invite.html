@@ -1,0 +1,31 @@
+﻿<!-- 邀请链接 -->
+<div class="user-team-list">
+    <table class="list" id="team-invite-list" data-bind-action="/handler/user/team/invitelist" data-bind-type="list" data-bind-callback="list">
+        <thead>
+            <tr>
+                <th>编号</th>
+                <th>类型</th>
+                <th>返点</th>
+                <th>配额</th>
+                <th>已注册</th>
+                <th>删除</th>
+            </tr>
+        </thead>
+        <tbody data-list-element="true">
+            <tr>
+                <td><a href="javascript:OpenFrame('user/team-invite-info.html','查看邀请链接','id=${ID}');" class="blue">${ID}</a></td>
+                <td>${Type}</td>
+                <td>${Rebate}</td>
+                <td>${Quota}</td>
+                <td>${Member}</td>
+                <td>
+                    删除
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <p class="padding-10">
+        <a href="javascript:OpenFrame('user/team-invite-add.html','创建邀请链接');" class="btn btn-blue block padding-10 ft18 text-center" style=" margin:auto; border-radius:6px;">创建邀请链接</a>
+    </p>
+</div>

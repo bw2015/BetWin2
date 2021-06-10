@@ -1,0 +1,38 @@
+﻿<!-- 备注信息 -->
+<div class="userinfo-frame userinfo-remark">
+    <div class="page-table">
+        <table class="list" id="userinfo-remark-list" data-bind-action="/admin/user/remark" data-bind-type="list" data-bind-callback="list" data-bind-data="parent">
+            <thead>
+                <tr>
+                    <th>操作人</th>
+                    <th>备注时间</th>
+                    <th>备注内容</th>
+                </tr>
+            </thead>
+            <tbody data-list-element="true">
+                <tr>
+                    <td>${Admin}</td>
+                    <td>${CreateAt}</td>
+                    <td><span class="am-text-success">${Content}</span></td>
+                </tr>
+            </tbody>
+        </table>
+        <hr />
+        <form action="/admin/user/remarkadd" method="post" data-bind-action="/admin/user/remarkadd" data-bind-type="ajax" data-bind-data="parent" data-bind-callback="fire" data-bind-fire-target="userinfo-remark-list">
+            <table class="post">
+                <tr>
+                    <th>备注内容：</th>
+                    <td>
+                        <textarea name="Content" rows="3" cols="64" class="txt am-form-field" required="required"></textarea>
+                    </td>
+                </tr>
+                <tr>
+                    <th></th>
+                    <td>
+                        <input type="submit" value=" 提交 " class="am-btn am-btn-success am-round" />
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </div>
+</div>

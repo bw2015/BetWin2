@@ -1,0 +1,65 @@
+﻿<div class="page-header">
+    <h1>会员帐变</h1>
+    <h6>帐变数据更新时间：<label class="am-text-danger" id="lblMoneyHistoryUpdateAt"></label></h6>
+    <div class="page-searchbox">
+        <form action="/admin/report/moneylog" method="post">
+            <input type="text" class="txt w120" name="UserName" placeholder="用户名" />
+            <select class="txt" name="Type" data-bind-action="admin/user/moneylogtype" data-bind-type="ajax" data-bind-callback="select"><option value="">所有类型</option></select>
+            <input type="text" class="txt w120" name="IP" placeholder="IP" />
+            <input type="date" name="StartAt" class="txt" placeholder="记录时间（开始）" />
+            <input type="date" name="EndAt" class="txt" placeholder="记录时间（结束）" />
+            <input type="text" class="txt w80" name="MinMoney" placeholder="金额大于" />
+            <input type="text" class="txt w80" name="MaxMoney" placeholder="金额小于" />
+            <input type="submit" class="am-btn am-btn-success am-round am-text-xs" value="搜索" />
+            <input type="reset" class="am-btn am-round am-text-xs" value="重置" />
+        </form>
+    </div>
+</div>
+
+<div class="page-table">
+    <table class="list" id="report-user-moneylog" data-bind-action="/admin/report/moneyhistory" data-bind-type="list" data-bind-callback="list,count,report-user-moneylog-update" data-bind-load="pagesplit,search">
+        <thead>
+            <tr>
+                <th>编号</th>
+                <th>用户</th>
+                <th>资金类型</th>
+                <th>帐变金额</th>
+                <th>余额</th>
+                <th>帐变时间</th>
+                <th>IP</th>
+                <th>备注信息</th>
+            </tr>
+        </thead>
+        <tbody data-list-element="true">
+            <tr>
+                <td>${ID}</td>
+                <td><a href="javascript:" class="diag-user" data-userid="${UserID}">${UserName}</a></td>
+                <td>${Type:moneytype}</td>
+                <td>${Money:money}元</td>
+                <td>${Balance:money}元</td>
+                <td>${CreateAt}</td>
+                <td>
+                    ${IP}
+                    <p class="am-text-default am-text-xs">${IPAddress}</p>
+                </td>
+                <td class="am-text-left">${Description}</td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <td>统计：</td>
+                <td colspan="2"></td>
+                <td><label class="am-text-success">${data.Money:money}</label></td>
+                <td colspan="4"></td>
+            </tr>
+        </tfoot>
+    </table>
+</div>
+<script type="text/javascript">
+    BW.callback["report-user-moneylog-update"] = function (result) {
+        var t = this;
+        var obj = $("lblMoneyHistoryUpdateAt");
+        if (!obj || !result.success) return;
+        obj.set("text", result.info.data.UpdateAt);
+    };
+</script>

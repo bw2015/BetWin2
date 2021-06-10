@@ -1,0 +1,20 @@
+﻿<div class="control-userinfo" data-bind-action="/admin/user/get" data-bind-data="parent" data-bind-callback="userinfo">
+    <div class="userinfo-title">
+        <div class="userinfo-status am-padding-xs">
+            <a href="javascript:" class="am-icon-user" title="会员资料" data-bind-action="controls/userinfo-basic.html" data-bind-type="control" data-bind-target="userinfo-content" data-bind-event="click"><label>基本资料</label></a>
+            <a href="javascript:" class="am-icon-comment" title="备注信息" data-bind-action="controls/userinfo-remark.html" data-bind-type="control" data-bind-target="userinfo-content" data-bind-event="click" data-bind-stop="1"><label>备注信息</label></a>
+            <a href="javascript:" class="am-icon-table" title="帐变记录" data-bind-action="controls/userinfo-moneylog.html" data-bind-type="control" data-bind-target="userinfo-content" data-bind-event="click" data-bind-stop="1"><label>帐变记录</label></a>
+            <a href="javascript:" class="am-icon-lock" title="锁定资金" data-bind-action="controls/userinfo-moneylock.html" data-bind-type="control" data-bind-target="userinfo-content" data-bind-event="click" data-bind-stop="1"><label>锁定资金</label></a>
+            <a href="javascript:" class="am-icon-gamepad" title="游戏账户" data-bind-action="controls/userinfo-game.html" data-bind-type="control" data-bind-target="userinfo-content" data-bind-event="click" data-bind-stop="1"><label>游戏账户</label></a>
+            <a href="javascript:" class="am-icon-database" title="用户日志" data-bind-action="controls/userinfo-log.html" data-bind-type="control" data-bind-target="userinfo-content" data-bind-event="click" data-bind-stop="1"><label>用户日志</label></a>
+            <a href="javascript:" class="am-icon-credit-card" title="银行卡绑定" data-bind-action="controls/userinfo-bank.html" data-bind-type="control" data-bind-target="userinfo-content" data-bind-event="click" data-bind-stop="1"><label>银行卡绑定</label></a>
+            <a href="javascript:" class="am-icon-inbox" title="站内信" data-bind-action="controls/userinfo-message.html" data-bind-type="control" data-bind-target="userinfo-content" data-bind-event="click" data-bind-stop="1"><label>站内信</label></a>
+            <a href="javascript:" class="am-icon-pie-chart" title="盈亏报表" data-bind-action="controls/userinfo-report.html" data-bind-type="control" data-bind-target="userinfo-content" data-bind-event="click" data-bind-stop="1"><label>盈亏报表</label></a>
+            <a href="javascript:" class="am-icon-hourglass-end" title="配额管理" data-bind-action="controls/userinfo-quota.html" data-bind-type="control" data-bind-target="userinfo-content" data-bind-event="click" data-bind-stop="1"><label>配额调整</label></a>
+            <a href="javascript:" class="am-icon-mobile" title="配额管理" data-bind-action="controls/userinfo-device.html" data-bind-type="control" data-bind-target="userinfo-content" data-bind-event="click" data-bind-stop="1"><label>登录设备</label></a>
+        </div>
+    </div>
+    <div class="userinfo-content" id="userinfo-content">
+
+    </div>
+</div>

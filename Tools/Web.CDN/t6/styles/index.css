@@ -1,0 +1,24 @@
+﻿html { height: 100%; }
+body { background-image: linear-gradient(to bottom right, #ffd551, #a92c2d); width: 100%; height: 100%; margin: 0px; padding: 0px; letter-spacing: 1px; text-shadow: 0 1px 1px rgba(0, 0, 0, .2); font-family: "Arial", "Microsoft YaHei"; font-size: 14px; }
+.w { width: 980px; margin: auto; }
+header { width: 100%; background-color: rgba(0, 0, 0, 0.7); height: 80px; }
+    header #logo { width: 200px; height: 60px; margin: 10px auto; background: no-repeat center center; background-size: contain; }
+
+h1 { text-align: center; color: #fff; font-size: 42px; }
+
+.content { color: #fff; padding: 20px; border-radius: 10px; background-color: rgba(255, 255, 255, .1); background-image: -webkit-gradient(linear, center top, center bottom, from(rgba(255, 255, 255, 0.2)), to(rgba(130, 130, 130, 0.2))); background-image: -webkit-linear-gradient(top, rgba(255, 255, 255, 0.2), rgba(130, 130, 130, 0.2)); background-image: -moz-linear-gradient(top, rgba(255, 255, 255, 0.2), rgba(130, 130, 130, 0.2)); background-image: -o-linear-gradient(top, rgba(255, 255, 255, 0.2), rgba(130, 130, 130, 0.2)); background-image: -ms-linear-gradient(top, rgba(255, 255, 255, 0.2), rgba(130, 130, 130, 0.2)); background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.2), rgba(130, 130, 130, 0.2)); -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.3); -moz-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.3); box-shadow: 0 1px 1px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.3); }
+    .content::after { content: " "; display: block; clear: both; }
+
+    .content .left { width: 600px; float: left; }
+    .content .website a { display: block; padding: 10px; background-color: rgba(255, 255, 2558, 0.3); text-decoration: none; color: #666; line-height: 40px; position: relative; }
+        .content .website a:nth-child(even) { background-color: rgba(255, 255, 2558, 0.5); }
+        .content .website a label { background-color: #fff; color: #000; display: inline-block; width: 50px; padding: 0px 10px; text-align: center; }
+        .content .website a.error label { background-color: red; height: 40px; vertical-align: middle; }
+            .content .website a.error label::after { color: #fff; content: "超时"; }
+        .content .website a span { background-color: #fff; display: inline-block; width: 300px; padding: 0px 10px; margin-left: 10px; }
+        .content .website a::before { position: absolute; width: 27px; height: 27px; background: url(../images/icon-arrow.png) no-repeat; left: 420px; top: 15px; content: " "; }
+        .content .website a::after { padding: 3px 20px 6px; border-radius: 20px; text-align: center; background: -webkit-linear-gradient(#c74546, #a92c2d); background: -o-linear-gradient(#c74546, #a92c2d); background: -moz-linear-gradient(#c74546, #a92c2d); background: linear-gradient(#c74546, #a92c2d); color: #fff; display: inline-block; cursor: pointer; content: "进入网站"; line-height: 22px; position: absolute; left: 460px; top: 13px; }
+
+    .content .right { float: right; width: 300px; }
+
+.info { text-align: center; padding: 20px; color: #fff; }

@@ -1,0 +1,31 @@
+﻿<div class="user-message-info" data-bind-action="/handler/user/info/messageinfo" data-bind-type="ajax" data-bind-callback="html,user-message-info-read" data-bind-data="parent">
+    <table class="post">
+        <tr>
+            <th>标题：</th>
+            <td class="ft14 bold">${Title}</td>
+        </tr>
+        <tr>
+            <th>发送时间：</th>
+            <td class="ft14">${CreateAt}</td>
+        </tr>
+        <tr>
+            <th>内容：</th>
+            <td class="ft14">${Content}</td>
+        </tr>
+    </table>
+</div>
+<script type="text/javascript">
+    BW.callback["user-message-info-read"] = function (result) {
+        var t = this;
+        if (result.success) {
+            var obj = $("user-message-read-" + result.info.ID);
+            if (obj != null) obj.set("html", htmlFunction["user-message-read"]("true"));
+        } else {
+            new BW.Tip(result.msg, {
+                "callback": function () {
+                    BW.callback["diag-close"].apply(t);
+                }
+            });
+        }
+    };
+</script>

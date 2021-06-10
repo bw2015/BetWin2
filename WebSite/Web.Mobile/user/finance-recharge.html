@@ -1,0 +1,29 @@
+﻿<!-- 在线充值 -->
+<div class="user-finance-recharge" data-bind-action="/handler/site/info/paymentlist" data-bind-type="list" data-bind-callback="list,mobile-finance-recharge">
+    <div class="header-info">
+        <div class="bar bar-white sm-3" data-list-element="true">
+            <a href="javascript:" data-id="${ID}">${Name}</a>
+        </div>
+    </div>
+    <form action="/handler/user/money/getrechargeid" method="post" data-bind-action="/handler/user/money/getrechargeid" data-bind-type="ajax" data-bind-callback="mobile-finance-recharge-submit">
+        <table class="post">
+            <tr>
+                <td>
+                    <input type="number" class="txt" placeholder="充值金额" name="Money" />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <select name="BankCode" class="txt"></select>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="hidden" name="PayID" />
+                    <input type="hidden" name="Action" value="GetOrderID" />
+                    <input type="submit" value=" 提交充值 " class="button" />
+                </td>
+            </tr>
+        </table>
+    </form>
+</div>

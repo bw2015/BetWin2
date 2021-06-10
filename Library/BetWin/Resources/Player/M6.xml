@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<!-- 香港六合彩 -->
+<root>
+  <Player1 Category="特码" Label="特码" Name="直选">
+    
+  </Player1>
+  <Player2 Category="特码" Label="趣味" Name="生肖">
+    
+  </Player2>
+  <Player3 Category="特码" Label="趣味" Name="两面">
+    
+  </Player3>
+  <Player4 Category="特码" Label="趣味" Name="色波">
+    
+  </Player4>
+</root>

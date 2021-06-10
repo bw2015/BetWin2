@@ -1,0 +1,114 @@
+﻿<div class="frame-info" style="padding:10px;" data-bind-action="/handler/game/lottery/unitedinfo" data-bind-type="ajax" data-bind-callback="list,html,lottery-united-info" data-bind-data="parent">
+    <form action="lottery-united-info.html" data-bind-action="/handler/game/lottery/joinunited" data-bind-type="ajax" data-bind-callback="form-tip" data-bind-form-tip="diag-close">
+        <table class="post">
+            <tr>
+                <th>合买标题：</th>
+                <td colspan="3">
+                    ${Title}
+                </td>
+            </tr>
+            <tr>
+                <th>彩种：</th>
+                <td>${Game}</td>
+                <th>彩期：</th>
+                <td>${Index}</td>
+            </tr>
+            <tr>
+                <th>投注内容：</th>
+                <td colspan="3">
+                    参与后可查看
+                </td>
+            </tr>
+            <tr>
+                <th>总份额：</th>
+                <td>${Total} 份</td>
+                <th>总金额：</th>
+                <td>${Money:money}</td>
+            </tr>
+            <tr>
+                <th>保底：</th>
+                <td>${Package}份</td>
+                <th>每份金额：</th>
+                <td><span class="red ft14 bold">${UnitMoney:money}</span></td>
+            </tr>
+            <tr>
+                <th>发起人：</th>
+                <td>${UserName}</td>
+                <th>历史盈利率：</th>
+                <td><span class="green">${Profit:p}</span></td>
+            </tr>
+            <tr>
+                <th>当前状态：</th>
+                <td>${StatusName}</td>
+                <th>佣金：</th>
+                <td>
+                    ${Commission:p}
+                </td>
+            </tr>
+            <tr>
+                <th>当前剩余：</th>
+                <td colspan="3"><span class="ft14 bold">${Remaining} 份</span></td>
+            </tr>
+            <tr>
+                <th>购买份额：</th>
+                <td colspan="3">
+                    <input type="number" name="Unit" class="txt w100" /> 份
+                    <span class="red ft14">0.00</span>元
+                </td>
+            </tr>
+            <tr>
+                <th></th>
+                <td colspan="3">
+                    <input type="hidden" name="ID" value="${ID}" />
+                    <input type="submit" value="确认购买" class="btn btn-red" />
+                </td>
+            </tr>
+            <tr>
+                <th>参与记录：</th>
+                <td colspan="3">
+                    <table class="list">
+                        <thead>
+                            <tr>
+                                <th>参与人</th>
+                                <th>购买份额</th>
+                                <th>购买时间</th>
+                            </tr>
+                        </thead>
+                        <tbody data-list-element="true">
+                            <tr>
+                                <td>
+                                    ${UserName}
+                                </td>
+                                <td>
+                                    ${Unit}份
+                                </td>
+                                <td>
+                                    ${CreateAt}
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </td>
+            </tr>
+        </table>
+    </form>
+</div>
+
+<script type="text/javascript">
+    BW.callback["lottery-united-info"] = function (result) {
+        var t = this;
+        if (!result.success) {
+            new BW.Tip(result.msg, {
+                "callback": function () {
+                    BW.callback["diag-close"].apply(t);
+                }
+            });
+            return;
+        }
+
+        var submit = t.dom.element.getElement("input[type=submit]");
+        if (result.info.Status != "Normal") {
+            submit.getParent("tr").dispose();
+        }
+    };
+</script>

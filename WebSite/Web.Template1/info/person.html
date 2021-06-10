@@ -1,0 +1,25 @@
+﻿<div class="frame-info">
+    <div class="frame-info-title clear">
+        <h1>个人中心</h1>
+        <h2>Personal Center</h2>
+    </div>
+
+    <div class="frame-info-body">
+        <div class="frame-info-tab clear" data-tab-container="true">
+            <a href="javascript:" data-tab-item="account" class="current" data-bind-action="info/person-account.html" data-bind-type="control" data-bind-target="info-person-content" data-bind-callback="info-person-account-money" data-bind-event="click" data-bind-stop="1" id="frame-person-link-account">我的账户</a>
+            <a href="javascript:" data-tab-item="transfer" data-bind-action="info/person-transfer.html" data-bind-type="control" data-bind-target="info-person-content" data-bind-event="click" data-bind-stop="1">转账中心</a>
+            <a href="javascript:" data-tab-item="message" data-bind-action="info/person-message.html" data-bind-type="control" data-bind-target="info-person-content" data-bind-event="click" data-bind-stop="1">
+                站内信
+                <span class="newmessage" data-newmessage="1"></span>
+            </a>
+            <a href="javascript:" data-tab-item="face" data-bind-action="info/person-face.html" data-bind-type="control" data-bind-target="info-person-content" data-bind-event="click" data-bind-stop="1" data-bind-callback="info-person-face-editor">头像设定</a>
+            <a href="javascript:" data-tab-item="bank" data-bind-action="info/person-bank.html" data-bind-type="control" data-bind-target="info-person-content" data-bind-event="click" data-bind-stop="1" data-bind-callback="setting-fill" id="frame-person-link-bank">银行卡</a>
+            <a href="javascript:" data-tab-item="recharge" data-bind-action="info/person-recharge.html" data-bind-type="control" data-bind-target="info-person-content" data-bind-event="click" data-bind-stop="1">充值</a>
+            <a href="javascript:" data-tab-item="withdraw" data-bind-action="info/person-withdraw.html" data-bind-type="control" data-bind-target="info-person-content" data-bind-event="click" data-bind-stop="1" data-bind-callback="setting-fill">提现</a>
+            <a href="javascript:" data-tab-item="log" data-bind-action="info/person-login.html" data-bind-type="control" data-bind-target="info-person-content" data-bind-event="click" data-bind-stop="1">登录日志</a>
+        </div>
+
+        <div id="info-person-content"></div>
+
+    </div>
+</div>

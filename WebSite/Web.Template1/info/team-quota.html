@@ -1,0 +1,24 @@
+﻿<div class="frame-info-content">
+    <h3>
+        返点配额
+    </h3>
+
+    <table class="list" data-bind-action="/handler/user/team/quota" data-bind-type="list" data-bind-callback="list">
+        <thead>
+            <tr>
+                <th>返点</th>
+                <th>配额</th>
+                <th>已使用</th>
+                <th>剩余</th>
+            </tr>
+        </thead>
+        <tbody data-list-element="true">
+            <tr>
+                <td>${MinRebate} ～ ${MaxRebate}</td>
+                <td>${Number}</td>
+                <td>${Count}</td>
+                <td>${Over}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

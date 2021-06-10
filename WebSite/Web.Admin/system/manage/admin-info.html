@@ -1,0 +1,46 @@
+﻿<div class="page-table" data-bind-action="admin/account/admininfo" data-bind-type="ajax" data-bind-callback="form-fill,admin-info-edit" data-bind-load="enum" data-bind-data="parent" data-bind-form-fill-faild="diag-close">
+    <form action="admin/account/saveadmininfo" method="post" data-bind-action="admin/account/saveadmininfo" data-bind-type="ajax" data-bind-callback="form-tip,fire" data-bind-form-tip="diag-close" data-bind-fire-target="system-admin-list">
+        <table class="post">
+            <tr>
+                <th>用户名：</th>
+                <td><input type="text" class="txt am-form-field" name="AdminName" required="required" /></td>
+            </tr>
+            <tr>
+                <th>昵称：</th>
+                <td><input type="text" class="txt am-form-field" name="NickName" /></td>
+            </tr>
+            <tr>
+                <th>密码：</th>
+                <td><input type="password" class="txt am-form-field" name="Password" /></td>
+            </tr>
+            <tr>
+                <th>所属角色：</th>
+                <td><select name="GroupID" class="txt am-form-field" data-bind-action="admin/account/grouplist" data-bind-type="ajax" data-bind-callback="select" data-select-value="ID" data-select-text="Name"></select></td>
+            </tr>
+            <tr>
+                <th>状态：</th>
+                <td><select name="Status" class="txt am-form-field" data-enum-name="BW.Common.Admins.Admin+AdminStatus"></select></td>
+            </tr>
+            <tr>
+                <th></th>
+                <td>
+                    <input type="hidden" name="ID" />
+                    <input type="submit" value="保存" class="am-btn am-btn-success am-round" />
+                </td>
+            </tr>
+        </table>
+    </form>
+</div>
+
+<script type="text/javascript">
+    BW.callback["admin-info-edit"] = function (result) {
+        var t = this;
+        if (!result.success) return;
+        var password = t.dom.element.getElement("[name=Password]");
+        if (result.info.ID == 0) {
+            password.set("required", "required");
+        } else {
+            password.set("placeholder", "如不需要修改请留空");
+        }
+    }
+</script>

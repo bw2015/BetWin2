@@ -1,0 +1,91 @@
+﻿<div class="diag-betinfo">
+    <div class="page-table">
+        <table class="post" data-bind-action="/admin/lottery/betinfo" data-bind-type="ajax" data-bind-callback="html,betinfo-number" data-bind-data="parent">
+            <tr>
+                <th>投注用户：</th>
+                <td>${UserName}</td>
+                <th>返点：</th>
+                <td>${Rebate} - ${BetReturn}</td>
+            </tr>
+            <tr>
+                <th>彩种：</th>
+                <td>${Game}</td>
+                <th>彩期：</th>
+                <td>${Index}</td>
+            </tr>
+            <tr>
+                <th>投注时间：</th>
+                <td>${CreateAt}</td>
+                <th>玩法：</th>
+                <td>${Player}</td>
+            </tr>
+            <tr>
+                <th>投注内容：</th>
+                <td colspan="3" style="word-wrap:break-word;">
+                    <textarea class="txt am-form-field" cols="72" rows="8" readonly="readonly"></textarea>
+                </td>
+            </tr>
+            <tr>
+                <th>投注倍数：</th>
+                <td>${Times}倍</td>
+                <th>模式：</th>
+                <td>${Mode}</td>
+            </tr>
+            <tr>
+                <th>投注注数：</th>
+                <td>${Bet}注</td>
+                <th>投注金额：</th>
+                <td><label class="am-text-danger">${Money:money}元</label></td>
+            </tr>
+            <tr>
+                <th>开奖时间：</th>
+                <td>${ResultAt}</td>
+                <th>开奖号码：</th>
+                <td>${ResultNumber}</td>
+            </tr>
+            <tr>
+                <th>派奖时间：</th>
+                <td>${LotteryAt}</td>
+                <th>中奖金额：</th>
+                <td><label class="am-text-success">${Reward:money}</label></td>
+            </tr>
+            <tr>
+                <th>当前状态：</th>
+                <td>${Status}</td>
+                <th>微信投注：</th>
+                <td>${Remark}</td>
+            </tr>
+            <tr>
+                <th>操作：</th>
+                <td colspan="3">
+                    <a href="javascript:" class="am-btn am-btn-danger am-btn-xs am-round" data-type="revoke" data-bind-action="/admin/lottery/revoke" data-bind-type="ajax" data-bind-callback="form-tip" data-bind-stop="true" data-bind-event="confirm" data-bind-data="parent" data-bind-form-tip="diag-close">强制撤单</a>
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+<script type="text/javascript">
+    BW.callback["betinfo-number"] = function (result) {
+        var t = this;
+        var textarea = t.dom.element.getElement("textarea");
+        var number = result.info.Number;
+        if (/\.\.\.$/.test(number)) {
+            textarea.set("value", number + "\n投注内容超过100K，请双击查看");
+            var form = new Element("form", {
+                "target": "_blank",
+                "action": "/admin/lottery/betnumber",
+                "method": "post",
+                "html": "<input type=\"hidden\" name=\"ID\" value=\"" + result.info.ID + "\" /><input type=\"hidden\" name=\"History\" value=\"" + (t.options.data.history ? 1 : 0) + "\" />"
+            });
+            form.inject(textarea, "after");
+            textarea.addEvent("dblclick", function () {
+                form.submit();
+            });
+        } else {
+            textarea.set("value", number);
+        }
+        if (t.options.data.history) {
+            t.dom.element.getElement("a").dispose();
+        }
+    }
+</script>

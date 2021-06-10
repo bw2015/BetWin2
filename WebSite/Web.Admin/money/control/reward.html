@@ -1,0 +1,35 @@
+﻿<div class="page-header">
+    <h1>发放奖励</h1>
+    <h6>此处提交奖励将会自动到达用户的账户</h6>
+</div>
+
+<div class="page-table">
+    <form action="/admin/money/reward" method="post" data-bind-action="/admin/money/reward" data-bind-type="ajax" data-bind-callback="form-tip" data-bind-load="event-userinfo">
+        <table class=" post">
+            <tr>
+                <th>用户名：</th>
+                <td><input type="text" name="UserName" data-userinfo="1" class="txt am-form-field" required="required" /></td>
+            </tr>
+            <tr>
+                <th>奖励金额：</th>
+                <td><input type="number" name="Money" class="txt am-form-field w100" required="required" /> 元</td>
+            </tr>
+            <tr>
+                <th>奖励类型：</th>
+                <td>
+                    <select class="txt am-form-field" name="Type" data-bind-action="/admin/money/rewardtype" data-bind-type="ajax" data-bind-callback="select"></select>
+                </td>
+            </tr>
+            <tr>
+                <th>备注信息：</th>
+                <td><textarea name="Description" class="txt am-form-field" cols="50" rows="2" required="required"></textarea></td>
+            </tr>
+            <tr>
+                <th></th>
+                <td>
+                    <input type="submit" value="提交" class="am-btn am-btn-success am-round" />
+                </td>
+            </tr>
+        </table>
+    </form>
+</div>

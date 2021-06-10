@@ -1,0 +1,181 @@
+﻿
+<div class="frame-info-tip">
+    <i class="icon icon40 alert"></i>
+    <p class="red">温馨提示</p>
+    <p class="red">1、银行卡直冲每天的处理时间为：每日09：30～次日02：00</p>
+    <p class="red">2、在线支付每天处理时间为：24小时自动到账</p>
+    <p class="red">3、充值后，请查看平台右上角余额数字变化或相关帐变信息，若超过3分钟未到账请与客服联系。</p>
+</div>
+
+<div class="frame-info-content" data-bind-action="/handler/site/info/paymentlist" data-bind-type="ajax" data-bind-callback="person-recharge" data-bind-data="Platform=PC">
+
+    <div class="frame-info-tab" data-tab-container="true">
+    </div>
+    <div class="lineHeight"></div>
+    <form action="info/person-recharge-payment.html" method="get" target="_blank">
+        <div id="frame-info-recharge">
+            <input type="hidden" name="ID" value="${ID}" />
+            <table class="post">
+                <tr>
+                    <th>充值类型：</th>
+                    <td>${Name}</td>
+                </tr>
+                <tr>
+                    <th>充值金额：</th>
+                    <td>
+                        <select class="txt frame-info-moneyvalue"></select>
+                        <input type="text" class="txt" name="Money" size="6" maxlength="6" data-min="${MinMoney}" data-max="${MaxMoney}" data-upper="frame-info-recharge-money" />
+                        <span class="desc gray">单笔充值限额：最低<label class="red" data-field="Name">${MinMoney:money}</label> 最高：<label class="red">${MaxMoney:money}</label> ${Reward:recharge-reward}</span>
+                    </td>
+                </tr>
+                <tr>
+                    <th>大写金额：</th>
+                    <td><label class="ft14 red" id="frame-info-recharge-money"></label></td>
+                </tr>
+                <tr>
+                    <th>选择银行：</th>
+                    <td>
+                        <div class="frame-info-bank">
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <th></th>
+                    <td>
+                        <input type="hidden" name="BankCode" value="" />
+                        <input type="submit" value=" 确认充值 " class="btn btn-red" />
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </form>
+</div>
+
+<script type="text/javascript">
+    (function () {
+        if (BW.callback["person-recharge"]) return;
+
+        BW.callback["person-recharge"] = function (result) {
+            var t = this;
+            if (!result.success) {
+                new BW.Tip(result.msg, {
+                    "callback": function () {
+                        var target = $("frame-person-link-account");
+                        if (target != null) {
+                            BW.Bind(target).fire();
+                        }
+                    }
+                });
+                return;
+            }
+            if (t.dom.element.get("data-bind") != null) return;
+
+            var recharge = $("frame-info-recharge");
+            var form = t.dom.element.getElement("form");
+
+            if (recharge.retrieve("html") == null) recharge.store("html", recharge.get("html"));
+
+            var tab = t.dom.element.getElement(".frame-info-tab");
+            var bankCode = recharge.getElement("[name=BankCode]");
+
+
+            result.info.list.each(function (item, index) {
+                var type = new Element("a", {
+                    "href": "javascript:",
+                    "text": item.Name,
+                    "events": {
+                        "click": function (e) {
+                            setCurrent(tab.getElements("a"), this);
+                            var item = this.retrieve("item");
+                            recharge.set("html", recharge.retrieve("html").toHtml(item));
+                            bindMoneyUpper(recharge.getElement("[name=Money]"));
+                            var bank = recharge.getElement(".frame-info-bank");
+                            var bankTr = bank.getParent("tr");
+
+                            if (item.Bank == null) {
+                                bankTr.setStyle("display", "none");
+                            } else {
+                                bankTr.setStyle("display", "table-row");
+                                Object.forEach(item.Bank, function (value, key) {
+                                    new Element("a", {
+                                        "href": "javascript:",
+                                        "text": value,
+                                        "title": value,
+                                        "data-value": key,
+                                        "class": "ico-bank " + key,
+                                        "events": {
+                                            "click": function () {
+                                                setCurrent(bank.getElements("a"), this);
+                                                recharge.getElement("[name=BankCode]").set("value", this.get("data-value"));
+                                            }
+                                        }
+                                    }).inject(bank);
+                                });
+                            }
+
+                            var moneyValue = t.dom.element.getElement(".frame-info-moneyvalue");
+                            var moneyObj = t.dom.element.getElement("[name=Money]");
+                            moneyValue.addEvent("change", function () {
+                                moneyObj.set("value", this.get("value"));
+                                moneyObj.fireEvent("keyup");
+                            });
+                            if (!item.MoneyValue) {
+                                moneyValue.empty();
+                                moneyValue.setStyle("display", "none");
+                                moneyObj.fade("show");
+                            } else {
+                                moneyValue.setStyle("display", "inline-block");
+                                moneyObj.fade("hide");
+                                item.MoneyValue.each(function (m) {
+                                    new Element("option", {
+                                        "value": m,
+                                        "text": m + "元"
+                                    }).inject(moneyValue);
+                                });
+                                moneyValue.fireEvent("change");
+                            }
+                        }
+                    }
+                });
+                type.inject(tab);
+                type.store("item", item);
+            });
+
+            tab.getElement("a").fireEvent("click");
+
+            form.addEvent("submit", function (e) {
+                var money = this.getElement("[name=Money]");
+                var value = money.get("value").toFloat();
+                if (isNaN(value)) {
+                    new BW.Tip("请输入要充值的金额");
+                    e.stop();
+                    return;
+                }
+                var min = money.get("data-min").toFloat();
+                var max = money.get("data-max").toFloat();
+                if (value < min) {
+                    new BW.Tip("充值金额应大于最低金额");
+                    e.stop();
+                    return;
+                }
+                if (value > max) {
+                    new BW.Tip("充值金额应小于最大金额");
+                    e.stop();
+                    return;
+                }
+            });
+        }
+    })();
+
+    htmlFunction["recharge-reward"] = function (input) {
+        var reward = input.toFloat();
+        if (isNaN(reward)) return input;
+        if (reward == 0) return "";
+
+        if (reward > 0) {
+            return "充值奖励：<span class=\"green\">" + reward.ToString("p") + "</span>";
+        } else if (reward < 0) {
+            return "充值手续费：<span class=\"red\">" + Math.abs(reward).ToString("p") + "</span>";
+        }
+    };
+</script>

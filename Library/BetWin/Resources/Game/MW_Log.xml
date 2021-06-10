@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<root>
+  <!-- 游戏类型 -->
+  <gameType>
+    <item name="50"	value="千炮捕鱼" />
+    <item name="40"	value="森林舞会" />
+    <item name="110"	value="水浒传" />
+    <item name="141"	value="百家乐" />
+    <item name="20"	value="超级斗地主"/>
+    <item name="119"	value="丛林岛" />
+    <item name="140"	value="太极" />
+    <item name="144"	value="舞狮报喜" />
+    <item name="111"	value="五龙争霸" />
+    <item name="114"	value="天龙虎地" />
+    <item name="139"	value="百乐牛牛" />
+    <item name="112"	value="水浒英雄" />
+    <item name="138"	value="皇家轮盘" />
+    <item name="120"	value="洪福齐天" />
+    <item name="22"	value="好运5扑克" />
+    <item name="115"	value="黄金777" />
+    <item name="113"	value="魔豆" />
+    <item name="21"	value="经典水果机" />
+    <item name="125"	value="HUGA" />
+    <item name="117"	value="明星97" />
+    <item name="540"	value="森林舞会"  />
+    <item name="550"	value="千炮捕鱼（手机）"/>
+    <item name="610"	value="水浒传（手机）" />
+    <item name="612"	value="水浒英雄（手机）"  />
+    <item name="640"	value="太极（手机）"  />
+    <item name="520"	value="超级斗地主（手机）" />
+  </gameType>
+</root>

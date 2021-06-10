@@ -1,0 +1,26 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>正在提交充值订单</title>
+    <script src="/studio/scripts/mootools.js"></script>
+    <script src="/studio/scripts/mootools-more.js"></script>
+    <script src="/studio/scripts/betwin.js"></script>
+    <script type="text/javascript">
+        new Request({
+            "url": "/handler/user/money/rechargeorderid",
+            "onSuccess": function (result) {
+                document.body.set("html", result);
+                $(document.body).getElement("form").submit();
+            }
+        }).post({
+            "OrderID": location.href.get("id"),
+            "BankType": location.href.get("bank")
+        });
+    </script>
+
+</head>
+<body>
+    正在提交充值订单
+</body>
+</html>

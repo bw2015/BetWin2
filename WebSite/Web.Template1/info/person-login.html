@@ -1,0 +1,21 @@
+﻿<div class="frame-info-content">
+    <h3>
+        登录日志
+    </h3>
+    <table class="list" data-bind-action="/handler/user/info/loginlog" data-bind-type="list" data-bind-callback="list">
+        <thead>
+            <tr>
+                <th class="w100">日志编号</th>
+                <th class="w150">登录时间</th>
+                <th>登录IP</th>
+            </tr>
+        </thead>
+        <tbody data-list-element="true">
+            <tr>
+                <td class="f12">${ID}</td>
+                <td class="f12">${CreateAt}</td>
+                <td class="f12">${IP} <span class="gray">(${IPAddress})</span></td>
+            </tr>
+        </tbody>
+    </table>
+</div>

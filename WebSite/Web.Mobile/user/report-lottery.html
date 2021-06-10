@@ -1,0 +1,29 @@
+﻿<div class="mobile-info-lottery">
+    <div class="alert-tip">
+        温馨提示：移动端仅显示最新的20笔投注，更多记录请移步网页版
+    </div>
+
+    <table class="list" data-bind-action="/handler/user/lottery/orderlist" data-bind-type="list" data-bind-callback="list,report-lottery-list" data-bind-data="parent">
+        <thead>
+            <tr>
+                <th>编号</th>
+                <th>彩种</th>
+                <th>投注金额</th>
+                <th>中奖</th>
+            </tr>
+        </thead>
+        <tbody data-list-element="true">
+            <tr>
+                <td><a href="javascript:OpenFrame('user/report-lottery-info.html','投注详情','id=${ID}');" class="blue">${ID}</a></td>
+                <td>${Type}</td>
+                <td>
+                    <span class="red">${Money:money}</span>
+                </td>
+                <td data-reward="${Reward}" data-status="${Status}"></td>
+            </tr>
+            <tr>
+                <td colspan="4" class="left ft12">[${Mode:lottery-mode}] ${Player} ${Bet}注×${Times}倍</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

@@ -1,0 +1,16 @@
+﻿html { background: #000 url(../images/bg.png) repeat-x; }
+body { margin: 0px; padding: 0px; min-height: 1000px; background: url(../images/bg.jpg) no-repeat top center; }
+
+header { text-align: center; height: 80px; }
+    header img#logo { width: 200px; height: 80px; background: no-repeat center center; background-size: contain; }
+
+.container { width: 960px; margin: auto; padding-top: 170px; }
+    .container .domain { float: left; width: 560px; padding-top: 70px; }
+        .container .domain .website { padding: 10px; max-height: 400px; overflow: auto; }
+            .container .domain .website a { display: block; color: #fff; position: relative; height: 50px; background: url(../images/ico.png) no-repeat 110px top,url(../images/btn01.png) no-repeat right top; }
+            .container .domain .website label { width: 104px; height: 36px; background: url(../images/input01.png) no-repeat; display: inline-block; line-height: 36px; text-align: center; position: absolute; }
+                .container .domain .website label.loading::after { content: "正在检测"; }
+            .container .domain .website .error label.loading::after { content: "超时"; color: red; }
+            .container .domain .website span { width: 211px; height: 36px; line-height: 36px; background: url(../images/input02.png) no-repeat; display: inline-block; text-indent: 1em; position: absolute; left: 190px; }
+        .container .domain .test { width: 397px; height: 62px; display: block; margin: auto; background: url(../images/btn02.png) no-repeat; overflow: hidden; text-indent: -100em; }
+    .container .tip { float: right; width: 300px; margin-right: 20px; padding-top: 80px; color: #fff; line-height: 200%; font-size: 14px; text-shadow: 1px 1px 2px #ffd800; }

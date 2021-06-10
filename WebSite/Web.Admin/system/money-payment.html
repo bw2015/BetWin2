@@ -1,0 +1,64 @@
+﻿<div class="page-table">
+    <form action="admin/system/billpayment" method="post" target="_blank">
+        <table class="post" data-bind-action="admin/system/billinfo" data-bind-type="ajax" data-bind-callback="html,system-money-payment" data-bind-form-tip="diag-close" data-bind-data="parent">
+            <tr>
+                <th>账单：</th>
+                <td>${Title}</td>
+            </tr>
+            <tr>
+                <th>账单详情：</th>
+                <td>${Content}</td>
+            </tr>
+            <tr>
+                <th>未支付金额：</th>
+                <td><label class="am-text-danger am-text-xl">${Money:money}元</label></td>
+            </tr>
+            <tr data-hide="true">
+                <th>支付金额：</th>
+                <td>
+                    <input type="number" name="Money" class="am-form-field txt w80" required="required" /> 元
+                </td>
+            </tr>
+            <tr data-hide="true">
+                <th>银行通道：</th>
+                <td>
+                    <select class="am-form-field txt" name="BankType"></select>
+                </td>
+            </tr>
+            <tr data-hide="true">
+                <th></th>
+                <td>
+                    <input type="hidden" name="BillID" value="${BillID}" />
+                    <input type="submit" value="支付账单" class="am-btn am-btn-success am-round" />
+                </td>
+            </tr>
+        </table>
+    </form>
+</div>
+
+<script type="text/javascript">
+    BW.callback["system-money-payment"] = function (result) {
+        var t = this;
+        if (!result.success) {
+            BW.callback["form-tip"].apply(t, [result]);
+            return;
+        }
+
+        var form = t.dom.element.getParent("form");
+        form.addEvent("submit", function (e) {
+            BW.callback["diag-close"].delay(500, t, [result]);
+        });
+
+        if (result.info.Status != "Normal") {
+            $$("[data-hide]").dispose();
+        } else if (result.info.Bank) {
+            var bankCode = t.dom.element.getElement("[name=BankType]");
+            Object.forEach(result.info.Bank, function (value, key) {
+                new Element("option", {
+                    "value": key,
+                    "text": value
+                }).inject(bankCode);
+            });
+        }
+    };
+</script>

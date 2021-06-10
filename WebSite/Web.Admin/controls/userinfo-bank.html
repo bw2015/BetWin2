@@ -1,0 +1,27 @@
+﻿<!-- 绑定的银行卡 -->
+<div class="userinfo-frame  userinfo-bank">
+    <div class="page-table">
+        <table class="list" data-bind-action="/admin/user/bankaccount" data-bind-type="list" data-bind-callback="list" data-bind-data="parent">
+            <thead>
+                <tr>
+                    <th>银行</th>
+                    <th>分行</th>
+                    <th>开户名</th>
+                    <th>开户帐号</th>
+                    <th>添加时间</th>
+                    <th>操作</th>
+                </tr>
+            </thead>
+            <tbody data-list-element="true">
+                <tr data-bind-delete="true">
+                    <td>${Bank}</td>
+                    <td>${BankName}</td>
+                    <td>${AccountName}</td>
+                    <td>${Account}</td>
+                    <td>${CreateAt}</td>
+                    <td><a href="javascript:" data-bind-action-delay="admin/user/deletebank" data-bind-type="ajax" data-bind-callback="form-tip,delete" data-bind-stop="true" data-bind-event="confirm" data-bind-data="id=${ID}">删除</a></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

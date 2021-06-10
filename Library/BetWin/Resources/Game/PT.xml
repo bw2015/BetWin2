@@ -1,0 +1,191 @@
+﻿<root>
+  <item value="武则天" category="老虎机" name="heavru" platform="PC,Mobile" />
+  <item value="四灵" category="老虎机" name="sling" platform="PC" />
+  <item value="超级狮子" category="老虎机" name="slion" platform="PC,Mobile" />
+  <item value="好事成双" category="老虎机" name="haocs" platform="PC" />
+  <item value="狂躁的海盗" category="老虎机" name="gts52" platform="PC,Mobile" />
+  <item value="二十一点" category="视频扑克" name="bj_mh5" platform="PC" />
+  <item value="大草原现金" category="老虎机" name="savcas" platform="PC" />
+  <item value="幸运狮子" category="老虎机" name="frtln" platform="PC,Mobile" />
+  <item value="火热KTV" category="老虎机" name="hotktv" platform="PC" />
+  <item value="三张扑克牌" category="桌面游戏" name="ash3brg" platform="PC,Mobile" />
+  <item value="漫漫长夜" category="老虎机" name="hb" platform="PC,Mobile" />
+  <item value="神灵时代：轮盘" category="桌面游戏" name="aogro" platform="PC,Mobile" />
+  <item value="狂野亚马逊" category="老虎机" name="ashamw" platform="PC,Mobile" />
+  <item value="美式21点" category="桌面游戏" name="bja" platform="PC" />
+  <item value="美式轮盘" category="桌面游戏" name="rodz" platform="PC" />
+  <item value="弓箭手" category="老虎机" name="arc" platform="PC,Mobile" />
+  <item value="北极宝藏" category="老虎机" name="art" platform="Mobile" />
+  <item value="亚特兰蒂斯女王" category="老虎机" name="gtsatq" platform="PC,Mobile" />
+  <item value="百家乐" category="桌面游戏" name="ba" platform="PC,Mobile" />
+  <item value="白狮" category="老虎机" name="bs" platform="PC,Mobile" />
+  <item value="海滨嘉年华" category="老虎机" name="bl" platform="PC,Mobile" />
+  <item value="百慕大三角" category="老虎机" name="bt" platform="PC,Mobile" />
+  <item value="21点" category="桌面游戏" name="bj" platform="PC,Mobile" />
+  <item value="21点专业版" category="桌面游戏" name="psdbj" platform="PC" />
+  <item value="熊之舞" category="老虎机" name="bob" platform="PC,Mobile" />
+  <item value="野牛闪电战" category="老虎机" name="bfb" platform="PC,Mobile" />
+  <item value="船长的宝藏" category="老虎机" name="ct" platform="PC,Mobile" />
+  <item value="船长的宝藏专业版" category="老虎机" name="ctp2" platform="PC" />
+  <item value="深海大赢家" category="虚拟游戏" name="cashfi" platform="PC" />
+  <item value="德州扑克" category="桌面游戏" name="cheaa" platform="PC,Mobile" />
+  <item value="猫赌神" category="老虎机" name="ctiv" platform="PC,Mobile" />
+  <item value="猫女王" category="视频老虎机" name="catqc" platform="Mobile" />
+  <item value="超级8" category="老虎机" name="chao" platform="PC,Mobile" />
+  <item value="樱花之恋" category="老虎机" name="chl" platform="PC,Mobile" />
+  <item value="美女船长" category="视频老虎机" name="ashcpl" platform="PC,Mobile" />
+  <item value="中国厨房" category="老虎机" name="cm" platform="PC,Mobile" />
+  <item value="警察抓小偷 " category="老虎机" name="gtscnb" platform="PC,Mobile" />
+  <item value="牛仔与外星人 " category="老虎机" name="gtscbl" platform="PC,Mobile" />
+  <item value="疯狂之七" category="老虎机" name="c7" platform="PC,Mobile" />
+  <item value="沙漠财宝" category="老虎机" name="dt" platform="PC,Mobile" />
+  <item value="海豚礁堡" category="老虎机" name="dnr" platform="PC,Mobile" />
+  <item value="惊喜复活节 " category="老虎机" name="eas" platform="PC,Mobile" />
+  <item value="埃斯梅拉达" category="老虎机" name="esm" platform="Mobile" />
+  <item value="埃斯梅拉达" category="老虎机" name="esmk" platform="PC" />
+  <item value="人人中头奖" category="老虎机" name="evj" platform="PC,Mobile" />
+  <item value="翡翠公主" category="老虎机" name="fcgz" platform="PC,Mobile" />
+  <item value="飞龙在天" category="老虎机" name="gtsflzt" platform="PC,Mobile" />
+  <item value="疯狂麻将" category="老虎机" name="fkmj" platform="PC,Mobile" />
+  <item value="魚蝦蟹" category="桌面游戏" name="gtsfpc" platform="PC" />
+  <item value="终极足球 " category="老虎机" name="fbr" platform="PC,Mobile" />
+  <item value="惊异之林" category="老虎机" name="fow" platform="PC,Mobile" />
+  <item value="幸运日" category="老虎机" name="fday" platform="PC,Mobile" />
+  <item value="狐狸的宝藏" category="老虎机" name="fxf" platform="PC,Mobile" />
+  <item value="青春之泉" category="老虎机" name="foy" platform="PC,Mobile" />
+  <item value="疯狂底特律七" category="老虎机" name="fdt" platform="PC,Mobile" />
+  <item value="疯狂底特律７- Double/弗兰基德托的魔术" category="老虎机" name="fdtjg" platform="PC,Mobile" />
+  <item value="月满梦圆 " category="老虎机" name="ashfmf" platform="PC,Mobile" />
+  <item value="酷炫水果农场 " category="老虎机" name="fff" platform="PC,Mobile" />
+  <item value="酷炫水果 " category="老虎机" name="fnfrj" platform="PC,Mobile" />
+  <item value="古怪猴子" category="老虎机" name="fm" platform="PC,Mobile" />
+  <item value="神灵时代：激情四" category="老虎机" name="furf" platform="PC,Mobile" />
+  <item value="艺伎回忆录" category="老虎机" name="ges" platform="PC,Mobile" />
+  <item value="艺伎回忆录奖池版" category="老虎机" name="gesjp" platform="PC" />
+  <item value="宝石女王" category="老虎机" name="gemq" platform="PC,Mobile" />
+  <item value="角斗士" category="老虎机" name="glr" platform="PC,Mobile" />
+  <item value="角斗士奖池版" category="老虎机" name="glrj" platform="PC,Mobile" />
+  <item value="金色之旅" category="老虎机" name="gos" platform="PC,Mobile" />
+  <item value="湛蓝深海" category="老虎机" name="bib" platform="PC,Mobile" />
+  <item value="至大奥德赛" category="老虎机" name="gro" platform="Mobile" />
+  <item value="万圣节财富 " category="老虎机" name="hlf" platform="PC,Mobile" />
+  <item value="万圣节财富2" category="老虎机" name="hlf2" platform="PC,Mobile" />
+  <item value="鬼屋" category="老虎机" name="hh" platform="PC,Mobile" />
+  <item value="丛林之心" category="老虎机" name="ashhotj" platform="PC,Mobile" />
+  <item value="高速公路之王" category="老虎机" name="hk" platform="PC,Mobile" />
+  <item value="漂移之王专业版" category="老虎机" name="gtshwkp" platform="PC" />
+  <item value="热力宝石" category="老虎机" name="gts50" platform="PC,Mobile" />
+  <item value="印加JP" category="老虎机" name="aztec" platform="PC,Mobile" />
+  <item value="幸运爱尔兰" category="老虎机" name="gtsirl" platform="PC,Mobile" />
+  <item value="巨人传" category="老虎机" name="jpgt" platform="PC,Mobile" />
+  <item value="玉皇大帝" category="老虎机" name="gtsje" platform="PC,Mobile" />
+  <item value="吉祥8" category="老虎机" name="gtsjxb" platform="PC,Mobile" />
+  <item value="金钱蛙" category="老虎机" name="jqw" platform="PC,Mobile" />
+  <item value="神灵时代：奥林匹斯之王" category="老虎机" name="zeus" platform="PC,Mobile" />
+  <item value="金刚：世界的第八奇迹" category="老虎机" name="kkg" platform="PC,Mobile" />
+  <item value="金土地" category="老虎机" name="lndg" platform="PC,Mobile" />
+  <item value="烈焰钻石" category="老虎机" name="ght_a" platform="PC,Mobile" />
+  <item value="六福兽" category="老虎机" name="kfp" platform="PC,Mobile" />
+  <item value="真人百家乐（7座）" category="现场游戏" name="7bal" platform="PC" />
+  <item value="实况法式轮盘赌" category="现场游戏" name="rofl" platform="PC" />
+  <item value="龙龙龙" category="老虎机" name="longlong" platform="PC,Mobile" />
+  <item value="疯狂乐透" category="老虎机" name="lm" platform="PC,Mobile" />
+  <item value="神奇的栈" category="老虎机" name="mgstk" platform="PC,Mobile" />
+  <item value="玛丽莲·梦露 " category="老虎机" name="gtsmrln" platform="PC,Mobile" />
+  <item value="钱先生 " category="老虎机" name="mcb" platform="PC,Mobile" />
+  <item value="海洋星王国" category="老虎机" name="nk" platform="PC,Mobile" />
+  <item value="年年有余" category="老虎机" name="nian" platform="Mobile" />
+  <item value="豹月" category="老虎机" name="pmn" platform="PC,Mobile" />
+  <item value="舞线" category="老虎机" name="pl" platform="PC" />
+  <item value="企鹅假期" category="老虎机" name="pgv" platform="PC,Mobile" />
+  <item value="法老的秘密" category="老虎机" name="pst" platform="PC,Mobile" />
+  <item value="财富蓝海 " category="老虎机" name="gtspor" platform="PC,Mobile" />
+  <item value="神灵时代：奥林匹斯王子" category="老虎机" name="hrcls" platform="PC,Mobile" />
+  <item value="紫热" category="老虎机" name="phot" platform="Mobile" />
+  <item value="紫热" category="老虎机" name="photk" platform="PC" />
+  <item value="权杖女皇（原名魔杖女皇）" category="老虎机" name="qnw" platform="PC,Mobile" />
+  <item value="日日进财" category="老虎机" name="ririjc" platform="PC,Mobile" />
+  <item value="日日生财" category="老虎机" name="ririshc" platform="PC,Mobile" />
+  <item value="罗马荣光" category="老虎机" name="gtsrng" platform="PC" />
+  <item value="欧洲轮盘" category="桌面游戏" name="ro" platform="PC,Mobile" />
+  <item value="實況轮盘（分类）" category="现场游戏" name="rol" platform="PC,Mobile" />
+  <item value="狂热野生动物园" category="老虎机" name="sfh" platform="PC,Mobile" />
+  <item value="巴西桑巴 " category="老虎机" name="gtssmbr" platform="PC,Mobile" />
+  <item value="圣诞惊喜" category="老虎机" name="ssp" platform="PC,Mobile" />
+  <item value="亚马逊之谜" category="老虎机" name="samz" platform="PC,Mobile" />
+  <item value="福尔摩斯之谜" category="老虎机" name="shmst" platform="PC,Mobile" />
+  <item value="四象" category="老虎机" name="sx" platform="PC,Mobile" />
+  <item value="沉默的武士" category="老虎机" name="sis" platform="PC,Mobile" />
+  <item value="沉默的武士奖池版" category="老虎机" name="sisjp" platform="PC" />
+  <item value="银弹" category="老虎机" name="sib" platform="PC,Mobile" />
+  <item value="辛巴达的黄金之旅" category="视频老虎机" name="ashsbd" platform="PC,Mobile" />
+  <item value="好运连连" category="老虎机" name="sol" platform="PC,Mobile" />
+  <item value="孙悟空" category="老虎机" name="gtsswk" platform="PC,Mobile" />
+  <item value="甜蜜派对" category="老虎机" name="cnpr" platform="PC,Mobile" />
+  <item value="泰国天堂" category="老虎机" name="tpd2" platform="Mobile" />
+  <item value="泰国神庙" category="老虎机" name="tht" platform="Mobile" />
+  <item value="泰国神庙" category="老虎机" name="thtk" platform="PC" />
+  <item value="大明帝国" category="老虎机" name="gtsgme" platform="PC,Mobile" />
+  <item value="爱之船 " category="老虎机" name="lvb" platform="PC,Mobile" />
+  <item value="富有的唐吉可德" category="视频老虎机" name="donq" platform="PC,Mobile" />
+  <item value="壮志凌云" category="老虎机" name="topg" platform="PC,Mobile" />
+  <item value="三个朋友(义勇三奇侠)" category="老虎机" name="ta" platform="PC" />
+  <item value="三倍猴子" category="老虎机" name="trpmnk" platform="PC,Mobile" />
+  <item value="真爱" category="老虎机" name="trl" platform="PC" />
+  <item value="丛林巫师" category="老虎机" name="ub" platform="PC" />
+  <item value="开心假期" category="老虎机" name="er" platform="PC,Mobile" />
+  <item value="开心假期加强版" category="老虎机" name="vcstd" platform="PC,Mobile" />
+  <item value="白狮子王" category="老虎机" name="whk" platform="PC,Mobile" />
+  <item value="疯狂赌徒２/北极探险" category="老虎机" name="ashwgaa" platform="PC,Mobile" />
+  <item value="舞龙 " category="老虎机" name="wlg" platform="PC,Mobile" />
+  <item value="舞龙奖池版" category="老虎机" name="wlgjp" platform="PC" />
+  <item value="五路财神" category="老虎机" name="wlcsh" platform="PC,Mobile" />
+  <item value="招财进宝 " category="老虎机" name="zcjb" platform="PC,Mobile" />
+  <item value="招财进宝奖池版" category="老虎机" name="zcjbjp" platform="PC,Mobile" />
+  <item value="招财童子" category="老虎机" name="zctz" platform="PC,Mobile" />
+  <item value="实况累积百家乐" category="现场游戏" name="plba" platform="PC" />
+  <item value="实况VIP罗盘" category="现场游戏" name="rodl" platform="PC" />
+  <item value="实况骰宝（分在桌牌）" category="现场游戏" name="sbl" platform="PC" />
+  <item value="实况无限制21点" category="现场游戏" name="ubjl" platform="PC" />
+  <item value="实况VIP百家乐" category="现场游戏" name="vbal" platform="PC" />
+  <item value="金开钻O'Reilly's作物" category="老虎机" name="spud" platform="PC,Mobile" />
+  <item value="洛基传奇" category="视频老虎机" name="rky" platform="PC,Mobile" />
+  <item value="三只小猪与狼 " category="老虎机" name="paw" platform="PC,Mobile" />
+  <item value="木乃伊刮刮乐" category="视频老虎机" name="mmy" platform="PC" />
+  <item value="木乃伊 " category="老虎机" name="ashglss" platform="Mobile" />
+  <item value="杰克与魔豆" category="老虎机" name="ashbob" platform="PC,Mobile" />
+  <item value="金字塔女王" category="老虎机" name="qop" platform="PC" />
+  <item value="金色召集 " category="老虎机" name="grel" platform="PC,Mobile" />
+  <item value="美式轮盘" category="桌面游戏" name="rodz" platform="PC" />
+  <item value="美式奖金轮盘赌" category="桌面游戏" name="rodz_g" platform="PC,Mobile" />
+  <item value="勇敢的大卫和拉神之眼 " category="老虎机" name="gtsdrdv" platform="PC,Mobile" />
+  <item value="征服四海" category="老虎机" name="dcv" platform="Mobile" />
+  <item value="粉红豹" category="老虎机" name="pnp" platform="PC,Mobile" />
+  <item value="白雪公主" category="老虎机" name="ashfta" platform="PC,Mobile" />
+  <item value="黄金游戏　" category="老虎机" name="glg" platform="PC,Mobile" />
+  <item value="魔方财富" category="老虎机" name="gtsru" platform="PC" />
+  <item value="交易时刻" category="老虎机" name="ashtmd" platform="PC,Mobile" />
+  <item value="魔幻吃角子老虎" category="老虎机" name="ms" platform="PC" />
+  <item value="完美二十一点" category="桌面游戏" name="pfbj_mh5" platform="PC,Mobile" />
+  <item value="沙漠财宝2" category="老虎机" name="dt2" platform="PC" />
+  <item value="顶级王牌-明星 " category="老虎机" name="ttc" platform="PC,Mobile" />
+  <item value="水果狂" category="老虎机" name="fmn" platform="PC" />
+  <item value="现金Blox" category="老虎机" name="gtscb" platform="PC" />
+  <item value="约翰·韦恩 " category="老虎机" name="gtsjhw" platform="PC,Mobile" />
+  <item value="欧式奖金轮盘" category="桌面游戏" name="ro_g" platform="PC,Mobile" />
+  <item value="龙之王国 " category="老虎机" name="gtsdgk" platform="PC,Mobile" />
+  <item value="爵士俱乐部 " category="老虎机" name="gtsjzc" platform="PC" />
+  <item value="神灵时代：智慧女神" category="老虎机" name="athn" platform="PC,Mobile" />
+  <item value="极地冒险" category="视频老虎机" name="gtsir" platform="PC,Mobile" />
+  <item value="神灵时代：命运姐妹" category="老虎机" name="ftsis" platform="PC,Mobile" />
+  <item value="黄金之翼 " category="老虎机" name="gtswng" platform="PC,Mobile" />
+  <item value="恋爱专家" category="老虎机" name="dlm" platform="PC,Mobile" />
+  <item value="我心狂野" category="老虎机" name="wis" platform="PC,Mobile" />
+  <item value="五个海盗" category="视频老虎机" name="frtf" platform="PC,Mobile" />
+  <item value="仙境冒险" category="老虎机" name="ashadv" platform="PC,Mobile" />
+  <item value="神灵时代" category="老虎机" name="aogs" platform="PC,Mobile" />
+  <item value="布莱恩的一生" category="视频老虎机" name="ashlob" platform="PC,Mobile" />
+  <item value="小姐财富" category="老虎机" name="mfrt" platform="PC,Mobile" />
+  <item value="经典老虎机刮刮乐" category="刮刮乐" name="scs" platform="PC" />
+  <item value="三个小丑刮刮乐" category="刮刮乐" name="tclsc" platform="PC" />
+</root>

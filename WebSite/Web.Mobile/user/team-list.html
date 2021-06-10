@@ -1,0 +1,22 @@
+﻿<!-- 资金记录 -->
+<div class="user-team-list">
+    <table class="list" data-bind-action="/handler/user/team/list" data-bind-type="list" data-bind-callback="list">
+        <thead>
+            <tr>
+                <th>用户名</th>
+                <th>返点</th>
+                <th>余额</th>
+                <th>在线</th>
+            </tr>
+        </thead>
+        <tbody data-list-element="true">
+            <tr>
+                <td><a href="javascript:OpenFrame('user/team-list.html','团队管理','id=${ID}');" class="blue">${UserName}</a></td>
+                <td>${Rebate}</td>
+                <td>${Money:money}</td>
+                <td>${IsOnline:IsOnline}</td>
+            </tr>
+        </tbody>
+    </table>
+
+</div>

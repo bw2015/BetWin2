@@ -1,0 +1,71 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <title>工作流设计器</title>
+    <meta charset="utf-8" />
+    <link href="?type=style" rel="stylesheet" />
+    <script language="javascript" type="text/javascript" src="?ac=js&file=mootools.js"></script>
+    <script language="javascript" type="text/javascript" src="?ac=js&file=moostudio.js"></script>
+    <script src="?type=script" type="text/javascript"></script>
+    <script language="javascript" type="text/javascript">
+        function loadLink(url) {
+            var obj = this;
+            obj.blur();
+            obj.addClass("loading");
+            new Request({
+                "url": url,
+                "method": "get",
+                "noCache": true,
+                "onSuccess": function () {
+                    (function () { obj.removeClass("loading");  }).delay(500);
+                }
+            }).send();
+        };
+
+        window.addEvent("domready", function () {
+            loadGroup("Group");
+            //$("lnkCreate").addEvent("click", loadLink.bind($("lnkCreate"), ["?type=create"]));
+            $("lnkCache").addEvent("click", loadLink.bind($("lnkCache"), ["?type=cache"]));
+        });
+    </script>
+    <style type="text/css">
+        
+    </style>
+</head>
+<body>
+<div class="Container">
+    <!-- 左侧工具栏 -->
+    <div class="ContainerLeft">
+        <div class="Toolbar">
+            <div class="title"><span>基本工具</span></div>
+            <div class="Bar">
+                <ul>
+                    <li><a href="javascript:" class="t1">页面</a><div title="{Genre:'page',Position:{}}"></div></li>
+                    <li><a href="javascript:" class="t2">页面事件</a><div title="{Genre:'event',Position:{}}"></div></li>
+                    <li><a href="javascript:" class="t3">事件结果处理</a><div title="{Genre:'result',Position:{}}"></div></li>
+                    <li><a href="javascript:" class="t4">连接线</a><div title="{Genre:'line',Position:{}}"></div></li>
+                </ul>
+            </div>
+            <div class="control">
+                <!--<a href="javascript:" id="lnkCreate">生成XML</a>-->
+                <a href="javascript:" id="lnkCache">刷新缓存</a>
+            </div>
+        </div>
+    </div>
+    <!-- 工作台 -->
+    <div class="ContainerBody">
+        <div class="body">
+        <canvas id="canvas" width="840" height="1200"> <div style="color:Red; font-size:16px; font-weight:bold; padding:12px;">你的浏览器不支持HTML5</div></canvas>
+        </div>
+        <div class="Group" id="Group">
+            
+        </div>
+    </div>
+</div>
+
+<div id="flow-event"></div>
+<div id="flow-result"></div>
+<div id="flow-line"></div>
+</body>
+</html>

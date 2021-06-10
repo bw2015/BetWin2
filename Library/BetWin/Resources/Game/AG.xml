@@ -1,0 +1,102 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<root>
+  <!-- AG老虎机列表 -->
+  <item name="6" value="捕鱼王" category="捕鱼王" platform="PC,Mobile" />
+  <item name="8" value="游戏大厅" category="电子游戏大厅" platform="PC" />
+  <item name="11" value="游戏大厅" category="电子游戏大厅" platform="Mobile" />  
+  <item name="YP800" value="yoplay大厅" category="YOPLAY 平台" platform="PC,Mobile" />
+  
+  <item name="501" value="水果拉霸" category="Slot小游戏" platform="PC" />
+  <item name="101" value="水果拉霸" category="Slot小游戏" platform="Mobile" />
+  <item name="502" value="杰克高手" category="Slot小游戏" platform="PC" />
+  <item name="102" value="杰克高手" category="Slot小游戏" platform="Mobile" />
+  <item name="503" value="美女沙排" category="Slot小游戏" platform="PC" />
+  <item name="504" value="运财羊" category="Slot小游戏" platform="PC" />  
+  <item name="505" value="武圣传" category="Slot小游戏" platform="PC" />  
+  <item name="507" value="极速幸运轮" category="Slot小游戏" platform="PC" />  
+  <item name="508" value="太空漫游" category="Slot小游戏" platform="PC" />
+  <item name="108" value="太空漫游" category="Slot小游戏" platform="Mobile" />  
+  <item name="509" value="复古花园" category="Slot小游戏" platform="PC" />
+  <item name="109" value="复古花园" category="Slot小游戏" platform="Mobile" />
+  <item name="510" value="关东煮" category="Slot小游戏" platform="PC" />  
+  <item name="511" value="牧场咖啡" category="Slot小游戏" platform="PC" />  
+  <item name="512" value="甜一甜屋" category="Slot小游戏" platform="PC" />  
+  <item name="513" value="日本武士" category="Slot小游戏" platform="PC" />
+  <item name="113" value="日本武士" category="Slot小游戏" platform="Mobile" />  
+  <item name="514" value="象棋老虎机" category="Slot小游戏" platform="PC" />
+  <item name="114" value="象棋老虎机" category="Slot小游戏" platform="Mobile" />
+  <item name="515" value="麻将老虎机" category="Slot小游戏" platform="PC" />
+  <item name="516" value="西洋棋老虎机" category="Slot小游戏" platform="PC" />  
+  <item name="517" value="开心农场" category="Slot小游戏" platform="PC" />
+  <item name="117" value="开心农场" category="Slot小游戏" platform="Mobile" />  
+  <item name="518" value="夏日营地" category="Slot小游戏" platform="PC" />
+  <item name="118" value="夏日营地" category="Slot小游戏" platform="Mobile" />
+  <item name="519" value="海底漫游" category="Slot小游戏" platform="PC" />  
+  <item name="520" value="鬼马小丑" category="Slot小游戏" platform="PC" />  
+  <item name="521" value="机动乐园" category="Slot小游戏" platform="PC" />  
+  <item name="522" value="惊吓鬼屋" category="Slot小游戏" platform="PC" />  
+  <item name="523" value="疯狂马戏团" category="Slot小游戏" platform="PC" />  
+  <item name="524" value="海洋剧场" category="Slot小游戏" platform="PC" />  
+  <item name="525" value="水上乐园" category="Slot小游戏" platform="PC" />
+  <item name="526" value="空中战争" category="Slot小游戏" platform="PC" />
+  <item name="527" value="摇滚狂迷" category="Slot小游戏" platform="PC" />
+  <item name="528" value="越野机车" category="Slot小游戏" platform="PC" />
+  <item name="529" value="埃及奥秘" category="Slot小游戏" platform="PC" />
+  <item name="530" value="欢乐时光" category="Slot小游戏" platform="PC" />
+  <item name="531" value="侏罗纪" category="Slot小游戏" platform="PC" />
+  <item name="532" value="土地神" category="Slot小游戏" platform="PC" />
+  <item name="533" value="布袋和尚" category="Slot小游戏" platform="PC" />
+  <item name="534" value="正财神" category="Slot小游戏" platform="PC" />
+  <item name="535" value="武财神" category="Slot小游戏" platform="PC" />
+  <item name="135" value="武财神" category="Slot小游戏" platform="Mobile" />
+  <item name="536" value="偏财神" category="Slot小游戏" platform="PC" />
+  <item name="537" value="性感女仆" category="Slot小游戏" platform="PC" />
+  <item name="539" value="灵猴献瑞" category="XIN平台" platform="PC" />
+  <item name="139" value="灵猴献瑞" category="XIN平台" platform="Mobile" />
+  <item name="540" value="百搭二王" category="XIN平台" platform="PC" />  
+  <item name="541" value="红利百搭" category="XIN平台" platform="PC" />
+  <item name="542" value="天空守护者" category="XIN平台" platform="PC" />
+  <item name="543" value="齐天大圣" category="XIN平台" platform="PC" />
+  <item name="544" value="糖果碰碰乐" category="XIN平台" platform="PC" />
+  <item name="144" value="糖果碰碰乐" category="XIN平台" platform="Mobile" />
+  <item name="545" value="冰河世界" category="XIN平台" platform="PC" />
+  <item name="145" value="冰河世界" category="XIN平台" platform="Mobile" />
+  <item name="546" value="水果拉霸2" category="XIN平台" platform="PC" />
+  <item name="146" value="水果拉霸2" category="XIN平台" platform="Mobile" />
+  <item name="547" value="欧洲列强争霸" category="XIN平台" platform="PC" />
+  <item name="548" value="捕鱼王者" category="XIN平台" platform="PC" /> 
+  <item name="549" value="上海百乐门" category="XIN平台" platform="PC" />
+  <item name="149" value="上海百乐门" category="XIN平台" platform="Mobile" />
+  <item name="550" value="竞技狂热" category="XIN平台" platform="PC" />
+  <item name="200" value="龙珠" category="XIN平台" platform="Mobile" />
+  <item name="201" value="幸运8" category="XIN平台" platform="Mobile" />
+  <item name="202" value="闪亮女郎" category="XIN平台" platform="Mobile" />  
+  <item name="203" value="金魚" category="XIN平台" platform="Mobile" />  
+  <item name="204" value="中国新年" category="XIN平台" platform="Mobile" />
+  <item name="205" value="海盗王" category="XIN平台" platform="Mobile" />
+  <item name="206" value="鲜果狂热" category="XIN平台" platform="Mobile" />
+  <item name="207" value="小熊猫" category="XIN平台" platform="Mobile" />
+  <item name="208" value="大豪客" category="XIN平台" platform="Mobile" />
+  <item name="209" value="龙舟竞渡" category="XIN平台" platform="Mobile" />
+  <item name="210" value="中秋佳节" category="XIN平台" platform="Mobile" />
+  <item name="211" value="韩风劲舞" category="XIN平台" platform="Mobile" />
+  <item name="212" value="美女大格斗" category="XIN平台" platform="Mobile" />
+  <item name="213" value="龙凤呈祥" category="XIN平台" platform="Mobile" />
+  <item name="215" value="黄金对垒" category="XIN平台" platform="Mobile" />
+  <item name="YP801" value="森林舞会单人版" category="YOPLAY 平台" platform="PC,Mobile" />
+  <item name="YP802" value="奔驰宝马单人版" category="YOPLAY 平台" platform="PC,Mobile" />
+  <item name="YP803" value="急速赛马" category="YOPLAY 平台" platform="PC,Mobile" />
+  <item name="YP804" value="猜猜乐" category="YOPLAY 平台" platform="PC,Mobile" />
+  <item name="YP805" value="水果拉霸" category="YOPLAY 平台" platform="PC,Mobile" />
+  <item name="YP806" value="德州牛仔" category="YOPLAY 平台" platform="PC,Mobile" />
+  <item name="YP807" value="飞禽走兽" category="YOPLAY 平台" platform="PC,Mobile" />
+  <item name="YP808" value="水果派对" category="YOPLAY 平台" platform="PC,Mobile" />
+  <item name="YP810" value="森林舞会多人版" category="YOPLAY 平台" platform="PC,Mobile" />
+  <item name="YP813" value="水果拉霸多人版" category="YOPLAY 平台" platform="PC,Mobile" />
+  <item name="YP817" value="百人牛牛" category="YOPLAY 平台" platform="PC,Mobile" />
+  <item name="YP818" value="多宝水果拉霸" category="YOPLAY 平台" platform="PC,Mobile" />
+  <item name="YP820" value="彩金水果拉霸" category="YOPLAY 平台" platform="PC,Mobile" />
+  <item name="YP814" value="飞禽走兽多人版" category="YOPLAY 平台" platform="PC,Mobile" />
+  <item name="YP821" value="牛牛对战" category="YOPLAY 平台" platform="PC,Mobile" />
+  <item name="YP811" value="奔驰宝马多人版" category="YOPLAY 平台" platform="PC,Mobile" />
+</root>

@@ -1,0 +1,27 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>kangle安装</title>
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/amazeui/2.7.2/css/amazeui.min.css" />
+    <script src="../scripts/md5.js"></script>
+</head>
+<body>
+    <form action="iptables.html" method="post" class="am-form am-form-inline">
+        <fieldset>
+            <legend>kagnle安装</legend>
+            <div class="am-form">
+                <textarea class="" rows="16" id="result">yum -y install wget make automake gcc gcc-c++ pcre-devel zlib-devel sqlite-devel openssl-devel
+wget http://a8.to/download/kangle.tar.gz
+tar xzf kangle.tar.gz
+cd kangle-*
+./configure --prefix=/vhs/kangle --enable-disk-cache --enable-ipv6 --enable-ssl --enable-vh-limit
+make
+make install
+/vhs/kangle/bin/kangle
+</textarea>
+            </div>
+        </fieldset>
+    </form>
+</body>
+</html>

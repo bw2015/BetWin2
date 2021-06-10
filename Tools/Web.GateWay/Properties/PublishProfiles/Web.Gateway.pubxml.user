@@ -1,0 +1,142 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+您 Web 项目的发布/打包进程将使用此文件。您可以通过编辑此 MSBuild 文件
+来自定义该进程的行为。若要了解与此相关的详细信息，请访问 http://go.microsoft.com/fwlink/?LinkID=208121。
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <_PublishTargetUrl>F:\My Project\2016\BetWin2.0\Publish\Web.Gateway</_PublishTargetUrl>
+  </PropertyGroup>
+  <ItemGroup>
+    <File Include="app/plist.xml">
+      <publishTime>01/14/2017 21:32:39</publishTime>
+    </File>
+    <File Include="app/yifayule.ipa">
+      <publishTime>11/14/2016 22:50:45</publishTime>
+    </File>
+    <File Include="App_Data/hn/VBET.1114721.key">
+      <publishTime>08/15/2016 18:34:19</publishTime>
+    </File>
+    <File Include="App_Data/hn/vbet.1114721.p12">
+      <publishTime>08/15/2016 18:34:19</publishTime>
+    </File>
+    <File Include="App_Data/hn/vbet.1114721.p12.pass">
+      <publishTime>08/15/2016 18:34:19</publishTime>
+    </File>
+    <File Include="App_Data/hn/VBET.1114721.pem">
+      <publishTime>08/15/2016 18:34:19</publishTime>
+    </File>
+    <File Include="App_Data/hn/VBETCNYTLE.key">
+      <publishTime>06/28/2016 10:12:10</publishTime>
+    </File>
+    <File Include="App_Data/hn/VBETCNYTLE.p12">
+      <publishTime>06/20/2016 13:27:20</publishTime>
+    </File>
+    <File Include="App_Data/hn/VBETCNYTLE.pass">
+      <publishTime>06/20/2016 13:27:20</publishTime>
+    </File>
+    <File Include="App_Data/hn/VBETCNYTLE.pem">
+      <publishTime>06/28/2016 10:11:58</publishTime>
+    </File>
+    <File Include="App_Data/Redirect.xml">
+      <publishTime>02/19/2017 16:45:36</publishTime>
+    </File>
+    <File Include="bin/Newtonsoft.Json.dll">
+      <publishTime>02/12/2017 12:45:31</publishTime>
+    </File>
+    <File Include="bin/SP.Studio.dll">
+      <publishTime>02/28/2017 21:04:01</publishTime>
+    </File>
+    <File Include="bin/Web.GateWay.dll">
+      <publishTime>02/28/2017 21:04:03</publishTime>
+    </File>
+    <File Include="boqu/autopay.ashx">
+      <publishTime>12/17/2016 18:20:11</publishTime>
+    </File>
+    <File Include="boqu/autopay.html">
+      <publishTime>12/24/2016 22:39:20</publishTime>
+    </File>
+    <File Include="boqu/callback.ashx">
+      <publishTime>12/16/2016 16:05:59</publishTime>
+    </File>
+    <File Include="boqu/pay.ashx">
+      <publishTime>12/16/2016 02:00:51</publishTime>
+    </File>
+    <File Include="boqu/payment.js">
+      <publishTime>12/16/2016 19:54:38</publishTime>
+    </File>
+    <File Include="css/bootstrap-theme.min.css">
+      <publishTime>11/10/2016 14:23:54</publishTime>
+    </File>
+    <File Include="css/bootstrap.min.css">
+      <publishTime>11/10/2016 14:23:43</publishTime>
+    </File>
+    <File Include="css/theme.css">
+      <publishTime>11/10/2016 14:23:59</publishTime>
+    </File>
+    <File Include="game/BBIN.ashx">
+      <publishTime>08/15/2016 19:10:10</publishTime>
+    </File>
+    <File Include="game/PT.ashx">
+      <publishTime>08/15/2016 18:14:00</publishTime>
+    </File>
+    <File Include="games/PT.ashx">
+      <publishTime>08/15/2016 18:14:00</publishTime>
+    </File>
+    <File Include="GHost.ashx">
+      <publishTime>11/11/2016 14:37:19</publishTime>
+    </File>
+    <File Include="Global.asax">
+      <publishTime>10/09/2016 20:44:52</publishTime>
+    </File>
+    <File Include="index.html">
+      <publishTime>11/11/2016 14:50:15</publishTime>
+    </File>
+    <File Include="Invite.ashx">
+      <publishTime>10/09/2016 20:47:25</publishTime>
+    </File>
+    <File Include="LotteryResult.ashx">
+      <publishTime>10/13/2016 17:02:53</publishTime>
+    </File>
+    <File Include="Payment.ashx">
+      <publishTime>10/20/2016 13:58:22</publishTime>
+    </File>
+    <File Include="Plugin/Alipay.ashx">
+      <publishTime>02/12/2017 12:48:14</publishTime>
+    </File>
+    <File Include="Plugin/Alipay.html">
+      <publishTime>02/12/2017 12:48:14</publishTime>
+    </File>
+    <File Include="scripts/game-pt-mobile.js">
+      <publishTime>10/09/2016 22:38:22</publishTime>
+    </File>
+    <File Include="scripts/ghost.js">
+      <publishTime>11/11/2016 16:24:49</publishTime>
+    </File>
+    <File Include="scripts/invite-goto.js">
+      <publishTime>10/09/2016 22:57:50</publishTime>
+    </File>
+    <File Include="scripts/invite.js">
+      <publishTime>01/01/2017 13:05:56</publishTime>
+    </File>
+    <File Include="scripts/jquery.js">
+      <publishTime>10/09/2016 22:48:46</publishTime>
+    </File>
+    <File Include="scripts/mootools-more.js">
+      <publishTime>12/17/2016 18:05:55</publishTime>
+    </File>
+    <File Include="scripts/mootools.js">
+      <publishTime>12/17/2016 18:03:40</publishTime>
+    </File>
+    <File Include="styles/invite.css">
+      <publishTime>01/01/2017 13:18:13</publishTime>
+    </File>
+    <File Include="styles/lottery-chart-360.css">
+      <publishTime>12/06/2016 11:16:34</publishTime>
+    </File>
+    <File Include="Web.config">
+      <publishTime>02/28/2017 21:04:03</publishTime>
+    </File>
+  </ItemGroup>
+</Project>

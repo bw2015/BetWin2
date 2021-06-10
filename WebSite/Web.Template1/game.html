@@ -1,0 +1,124 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>游戏中心</title>
+    <!--其它双核浏览器-->
+    <meta name="force-rendering" content="webkit">
+    <!--如果安装了GCF，则使用GCF来渲染页面，如果没有安装GCF，则使用最高版本的IE内核进行渲染。-->
+    <meta http-equiv="X-UA-Compatible" content="chrome=1" />
+    <!--360浏览器-->
+    <meta name="renderer" content="webkit">
+    <meta name="referrer" content="unsafe-url" />
+    <meta name="referrer" content="always" />
+
+    <link href="styles/animate.min.css" rel="stylesheet" />
+    <link href="studio/layui/css/layui.css" rel="stylesheet" />
+    <link href="studio/styles/icon.css" rel="stylesheet" />
+
+    <link href="styles/common.css" rel="stylesheet" />
+    <link href="styles/diag.css" rel="stylesheet" />
+    <link href="styles/game.css" rel="stylesheet" />
+    <link href="styles/theme.css" rel="stylesheet" />
+
+    <script src="studio/scripts/mootools.js"></script>
+    <script src="studio/scripts/mootools-more.js"></script>
+    <script src="studio/scripts/ui.calendar.js"></script>
+    <script src="studio/scripts/betwin.js"></script>
+    <script src="studio/scripts/diag.js"></script>
+    <script src="studio/scripts/lottery/iplayer.js"></script>
+    <script src="studio/scripts/lottery/x5.js"></script>
+    <script src="studio/scripts/lottery/x3.js"></script>
+    <script src="studio/scripts/lottery/k3.js"></script>
+    <script src="studio/scripts/lottery/x11.js"></script>
+    <script src="studio/scripts/lottery/p10.js"></script>
+    <script src="studio/scripts/lottery/m6.js"></script>
+    <script src="studio/scripts/lottery/p28.js"></script>
+
+    <script src="scripts/game.js"></script>
+    <script src="scripts/game-lottery.js"></script>
+    <script src="scripts/game-taskbar.js"></script>
+    <script src="scripts/info-person.js"></script>
+
+    <script src="studio/layui/layui.js"></script>
+    <script src="studio/layui/reconnecting-websocket.min.js"></script>
+    <link href="studio/layui/layui.betwin.css" rel="stylesheet" />
+    <script src="studio/layui/layui.betwin.js"></script>
+    <script src="studio/scripts/echarts.common.min.js"></script>
+    <script src="scripts/im.js"></script>
+    <script src="scripts/theme.js"></script>
+</head>
+<body>
+    <input type="hidden" data-bind-action="/handler/site/info/get" data-bind-type="ajax" data-bind-callback="checksiteinfo,loading-complete,error" />
+
+    <header class="common-index common-header" data-bind-action="controls/game-header.html" data-bind-type="control" data-bind-callback="common-header-theme,loading-complete"></header>
+
+    <aside data-bind-action="controls/aside.html" data-bind-type="control" data-bind-callback="theme-frame-aside,frame-open,loading-complete"></aside>
+
+    <div class="container" id="container">
+        <div class="frames">
+            <div class="frames-type">
+                <a href="javascript:" data-frame-type="frame-lottery">彩票</a>
+                <a href="javascript:" data-frame-type="frame-ag">真人视讯</a>
+                <a href="javascript:" data-frame-type="frame-pt">电子游戏</a>
+                <a href="javascript:" data-frame-type="frame-sport">体育/电竞</a>
+                <a href="javascript:" data-frame-type="frame-chess">AG捕鱼王</a>
+            </div>
+            <div class="frame lottery" id="frame-lottery" data-bind-action="/handler/user/lottery/list" data-bind-type="ajax" data-bind-callback="frame-lottery,loading-complete" data-bind-data="category=1">
+
+            </div>
+            <div class="frame ag" id="frame-ag">
+                <a href="javascript:" class="game-enter game-enter-ag" data-diag-name="game-entry-ag" data-diag-src="controls/game-enter.html" data-diag-type="control" data-diag-drag="1" data-diag-title="进入AG游戏" data-diag-mask="1" data-diag-width="420" data-diag-height="360" data-diag-data="Type=AG">进入AG大厅</a>
+                <a href="javascript:" class="game-enter game-enter-bbin" data-diag-name="game-entry-bbin" data-diag-src="controls/game-enter.html" data-diag-type="control" data-diag-drag="1" data-diag-title="进入BBIN游戏" data-diag-mask="1" data-diag-width="420" data-diag-height="360" data-diag-data="Type=BBIN&Game=live">进入BBIN大厅</a>
+                <a href="javascript:" class="game-enter game-enter-og" data-diag-name="game-entry-og" data-diag-src="controls/game-enter.html" data-diag-type="control" data-diag-drag="1" data-diag-title="进入OG游戏" data-diag-mask="1" data-diag-width="420" data-diag-height="360" data-diag-data="Type=OG">进入OG大厅</a>
+                <!--<a href="javascript:" class="game-enter game-enter-tgp" data-diag-name="game-entry-tgp" data-diag-src="controls/game-enter.html" data-diag-type="control" data-diag-drag="1" data-diag-title="进入申博游戏" data-diag-mask="1" data-diag-width="420" data-diag-height="360" data-diag-data="Type=SunBet&Game=Sunbet_Lobby">进入申博大厅</a>-->
+            </div>
+            <div class="frame pt" id="frame-pt">
+                <form action="diag/pt.html" method="post" class="category">
+                    <input type="hidden" name="Type" value="" />
+                    <input type="hidden" name="Category" value="" />
+                    <input type="hidden" name="PageSize" value="200" />
+                    <p data-bind-action="handler/game/gateway/opengamelist" data-bind-type="list" data-bind-callback="list,loading-complete,frame-slot-type" data-bind-data="PT=1&BBIN=1&MW=1&MG=1">
+                        <span class="icon type">游戏平台</span>
+                        <span data-list-element="true">
+                            <a href="javascript:" data-type="${Type}">${Name}游戏</a>
+                        </span>
+                    </p>
+                    <p>
+                        <span class="icon cate">游戏类型</span>
+                        <span class="category-list">
+                        </span>
+                    </p>
+                </form>
+                <div class="body" data-bind-action-delay="/handler/game/gateway/gamelist" data-bind-type="list" data-bind-callback="list,frame-slot-category" data-bind-load="search,frame-pt-game" data-bind-stop="true">
+                    <ul data-list-element="true">
+                        <li>
+                            <a href="javascript:">
+                                <label>${Name}</label>
+                                <img src="images/space.gif" style="background-image:url(${Cover});" data-game="${Code}" />
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <!-- 体育 -->
+            <div class="frame sport" id="frame-sport" data-bind-action-delay="/handler/game/gateway/getinfo" data-bind-type="ajax" data-bind-callback="frame-game-enter" data-bind-data="Type=BBIN" data-bind-stop="true" data-game="BBIN">
+                <a href="javascript:" class="game-enter game-enter-bbin" data-diag-name="game-entry-sport-bbin" data-diag-src="controls/game-enter.html" data-diag-type="control" data-diag-drag="1" data-diag-title="进入BB体育" data-diag-mask="1" data-diag-width="420" data-diag-height="360" data-diag-data="Type=BBIN&Game=ball">进入BB体育</a>
+                <!--<a href="javascript:" class="game-enter game-enter-bwgaming" data-diag-name="game-entry-sport-bbin" data-diag-src="controls/game-enter.html" data-diag-type="control" data-diag-drag="1" data-diag-title="进入贝盈电竞" data-diag-mask="1" data-diag-width="420" data-diag-height="360" data-diag-data="Type=BWGaming&Game=ball">进入贝盈电竞</a>-->
+
+            </div>
+            <!-- 棋牌 -->
+            <div class="frame chess" id="frame-chess">
+                <a href="javascript:" class="game-enter-fish" data-diag-name="game-entry-ag" data-diag-src="controls/game-enter.html" data-diag-type="control" data-diag-drag="1" data-diag-title="进入捕鱼游戏" data-diag-mask="1" data-diag-width="420" data-diag-height="360" data-diag-data="Type=AG&Game=6"></a>
+            </div>
+        </div>
+        <!-- 打开的窗体 -->
+        <div class="applications" id="applications">
+        </div>
+    </div>
+
+
+    <div class="loading-page" id="loading-page"></div>
+    <script src="scripts/game-loading.js"></script>
+</body>
+</html>

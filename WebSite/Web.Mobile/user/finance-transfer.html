@@ -1,0 +1,84 @@
+﻿<!-- 平台转账 -->
+<div class="user-finance-recharge" data-bind-action="/handler/game/gateway/transferinfo" data-bind-type="ajax" data-bind-callback="finance-transfer,mobile-error">
+    <div class="header-info">
+        <div class="bar sm-2 bar-white">
+            <a href="javascript:">额度转入</a>
+            <a href="javascript:">额度转出</a>
+        </div>
+    </div>
+    <div class="lineHeight"></div>
+    <div class="display-none">
+        <div class="alert-tip">
+            温馨提示：1、在转入操作完成之前请勿退出本页面，否则可能会导致您的账户资金被冻结。
+        </div>
+        <form action="/handler/game/gateway/transfer" method="post" data-bind-action="/handler/game/gateway/transfer" data-bind-type="ajax" data-bind-callback="form-tip" data-bind-form-tip="mobile-back">
+            <table class="post">
+                <tr>
+                    <td>
+                        <div class="txt">
+                            当前可用余额：<span class="bold red" data-type="UserMoney">0.00</span>元
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <select class="txt" name="In"></select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="number" class="txt" name="Money" placeholder="转入金额" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="submit" value=" 确认转入 " class="button" />
+                    </td>
+                </tr>
+            </table>
+        </form>
+
+    </div>
+
+    <div class="display-none">
+        <div class="alert-tip">
+            温馨提示：1、在转出操作完成之前请勿退出本页面，否则可能会导致您的账户资金被冻结。<br />
+            2、您需要在第三方游戏平台消费达到系统设定金额才可转出至平台余额
+        </div>
+        <form action="/handler/game/gateway/transfer" method="post" data-bind-action="/handler/game/gateway/transfer" data-bind-type="ajax" data-bind-callback="form-tip" data-bind-form-tip="mobile-back">
+            <table class="post">
+                <tr>
+                    <td>
+                        <select class="txt" name="Out"></select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="txt">
+                            平台余额：<span class="bold red" data-type="Money">0.00</span>元
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="txt">
+                            可转出：<span class="bold red" data-type="Withdraw">0.00</span>元
+                        </div>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <input type="number" class="txt" name="Money" placeholder="转出金额" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="submit" value=" 确认转出 " class="button" />
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </div>
+
+</div>

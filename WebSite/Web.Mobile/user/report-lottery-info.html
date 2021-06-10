@@ -1,0 +1,63 @@
+﻿<div class="report-lottery-info" data-bind-action="/handler/user/lottery/orderdetail" data-bind-type="ajax" data-bind-callback="html,lottery-detail" data-bind-data="parent">
+    <table class="post">
+        <tr>
+            <td>
+                <p class="txt">投注编号：${ID}</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <p class="txt">
+                    投注时间：${CreateAt}
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td><p class="txt">奖期：${Index}</p></td>
+        </tr>
+        <tr>
+            <td>
+                <p class="txt">彩种：${Game}</p>
+            </td>
+        </tr>
+        <tr>
+            <td><p class="txt">玩法：${Player}</p></td>
+        </tr>
+        <tr>
+            <td>
+                <p class="txt">
+                    奖金模式：
+                    ${Rebate} - ${BetReturn:p}
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <p class="txt">
+                    投注号码：${Number}
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td><p class="txt">模式：${Mode:lottery-mode} ${Bet}注 × ${Times}倍</p></td>
+        </tr>
+        <tr>
+            <td><p class="txt">投注金额：${Money:money}</p></td>
+        </tr>
+        <tr>
+            <td><p class="txt">当前状态：${Status}</p></td>
+        </tr>
+        <tr>
+            <td><p class="txt">开奖号码：${ResultNumber}</p></td>
+        </tr>
+        <tr data-type="LotteryAt">
+            <td><p class="txt">派奖时间：${LotteryAt}</p></td>
+        </tr>
+        <tr data-type="IsReward">
+            <td><p class="txt">中奖金额：<span class="green">${Reward:money}</span></p></td>
+        </tr>
+    </table>
+    <p class="padding-10" data-type="IsAction">
+        <a href="javascript:" class="btn btn-blue block padding-10 text-center ft18" style="border-radius:6px;" data-type="revoke">撤单</a>
+    </p>
+</div>

@@ -1,0 +1,92 @@
+﻿<div class="page-table" data-bind-action="admin/account/getgroupinfo" data-bind-type="ajax" data-bind-callback="form-fill,admin-role-fill-permission" data-bind-data="parent">
+    <form action="admin/account/savegroupinfo" data-bind-action="admin/account/savegroupinfo" data-bind-type="ajax" data-bind-load="admin-role-permission" data-bind-callback="form-tip,fire" data-bind-form-tip="diag-close" data-bind-fire-target="admin-role-list">
+        <table class="post">
+            <tr>
+                <th>角色名称：</th>
+                <td>
+                    <input type="text" name="Name" class="txt am-form-field" required="required" />
+                </td>
+            </tr>
+            <tr>
+                <th>备注信息：</th>
+                <td>
+                    <textarea name="Description" class="txt am-form-field" rows="4" cols="64"></textarea>
+                </td>
+            </tr>
+            <tr>
+                <th>角色权限：</th>
+                <td data-permission="true" class="admin-permission"></td>
+            </tr>
+            <tr>
+                <th></th>
+                <td>
+                    <input type="hidden" name="Permission" value="" />
+                    <input type="hidden" name="ID" value="" />
+                    <input type="submit" value="保存" class="am-btn am-btn-success am-round" />
+                </td>
+            </tr>
+        </table>
+    </form>
+</div>
+<script type="text/javascript">
+    BW.load["admin-role-permission"] = function () {
+        var t = this;
+        var permission = t.dom.element.getElement("[data-permission]");
+
+        var build = function (list, element) {
+            if (list == null) return;
+            var ul = new Element("ul");
+            list.each(function (item) {
+                var li = new Element("li", {
+                    "html": "<label for=\"p-${id}\"><input type=\"checkbox\" value=\"${id}\" id=\"p-${id}\" data-type=\"switch\" /> ${name}</label>".toHtml(item)
+                });
+                li.inject(ul);
+                build(item.list, li);
+            });
+            ul.inject(element);
+        }
+
+        // 获取管理员的权限列表
+        new Request.JSON({
+            "url": "admin/account/permisssion",
+            "onSuccess": function (result) {
+                permission.empty();
+                build(result.info, permission);
+            }
+        }).post();
+
+        var value = t.dom.element.getElement("[name=Permission]");
+        t.dom.element.getElement("input[type=submit]").addEvent("click", function () {
+            var list = permission.getElements("input[type=checkbox]::checked").map(function (item) { return item.get("value"); });
+            value.set("value", list.join(","));
+        });
+    }
+
+    BW.callback["admin-role-fill-permission"] = function (result) {
+        var t = this;
+        if (!result.success) return;
+
+        var timer = function () {
+            var permission = t.dom.element.getElement("[data-permission]");
+            if (permission == null) {
+                return;
+            }
+            var list = permission.getElements("input[type=checkbox]");
+            if (list.length != 0) {
+
+                var value = result.info.Permission.split(",");
+                list.each(function (item) {
+                    if (value.contains(item.get("value"))) {
+                        item.set("checked", true);
+                    }
+                });
+
+                return;
+            }
+
+            timer.delay(500);
+        };
+        timer();
+
+    }
+</script>

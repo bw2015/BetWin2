@@ -1,0 +1,93 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <link href="../styles/common.css" rel="stylesheet" />
+    <style type="text/css">
+        html, body { margin: 0px; padding: 0px; height: 100%; }
+        iframe { border: none; height: 100%; }
+        form { display: none; }
+    </style>
+    <script type="text/javascript" src="/studio/scripts/mootools.js"></script>
+    <script type="text/javascript" src="/studio/scripts/mootools-more.js"></script>
+    <script type="text/javascript" src="/studio/scripts/betwin.js"></script>
+    <script type="text/javascript">
+        // 进入游戏
+        var entryGame = function () {
+            var url = location.href;
+            var key = null;
+            if (/#(\w+)/.test(url)) {
+                key = /#(\w+)/.exec(url)[1];
+            }
+            var form = new Element("form", {
+                "action": "/handler/game/gateway/login",
+                "method": "post"
+            });
+
+            new Element("input", {
+                "type": "hidden",
+                "name": "Type",
+                "value": location.href.get("type")
+            }).inject(form);
+
+            new Element("input", {
+                "type": "hidden",
+                "name": "Key",
+                "value": location.href.get("game")
+            }).inject(form);
+
+            new Element("input", {
+                "type": "hidden",
+                "name": "Session",
+                "value": location.href.get("session")
+            }).inject(form);
+
+            document.body.empty();
+            //new Element("iframe", {
+            //    "name": "game-entry",
+            //    "width": "100%",
+            //    "height": "100%"
+            //}).inject(document.body);
+
+            form.inject($(document.body));
+            form.submit();
+        };
+
+        BW.callback["game-entry"] = function (result) {
+            var t = this;
+            if (result.success) {
+                entryGame();
+            } else {
+                t.dom.element.set("text", "正在为您创建账户..");
+                new Request.JSON({
+                    "url": "/handler/game/gateway/register",
+                    "onSuccess": function (info) {
+
+                        if (!info.success) {
+                            console.log(info);
+                            new BW.Tip(info.msg, {
+                                "callback": function () {
+                                    window.close();
+                                }
+                            });
+                        } else {
+                            entryGame();
+                        }
+                    }
+                }).post({
+                    "Type": location.href.get("type"),
+                    "Session": location.href.get("session")
+                });
+            }
+        };
+    </script>
+</head>
+<body>
+    <p data-bind-action="/handler/game/gateway/getinfo" data-bind-type="ajax" data-bind-callback="game-entry" id="entry">正在进入游戏..</p>
+
+    <script type="text/javascript">
+        $("entry").set("data-bind-data", location.href.substring(location.href.lastIndexOf("?") + 1));
+    </script>
+</body>
+</html>

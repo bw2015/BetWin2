@@ -1,0 +1,192 @@
+﻿@keyframes rotate {
+    50% { transform: scale(1.5) rotate(180deg); }
+    100% { transform: rotate(360deg); }
+}
+
+@keyframes scale-rotate {
+    50% { transform: scale(1.5) rotate(180deg); }
+    100% { transform: scale(1) rotate(360deg); }
+}
+
+label { padding: 0px; }
+input[data-type=switch] { width: 44px; height: 22px; display: inline-block; position: relative; vertical-align: bottom; cursor: pointer; outline: none; }
+    input[data-type=switch]::before { content: " "; display: block; width: 44px; height: 22px; border: #ddd 1px solid; border-radius: 22px; background: #efefef; }
+    input[data-type=switch]::after { position: absolute; content: " "; width: 22px; height: 22px; border-radius: 50%; background-color: #ccc; left: 0px; top: 0px; transition: all 0.2s; }
+    input[data-type=switch]:checked:after { background-color: #5eb95e; left: 22px; }
+
+html, body { height: 100%; }
+.shadow-bottom { box-shadow: 0 1px 3px 0 rgba(0,0,0,.2),0 1px 1px 0 rgba(0,0,0,.14),0 2px 1px -1px rgba(0,0,0,.12); }
+.shadow-right { box-shadow: 0 3px 5px -1px rgba(0,0,0,.2),0 6px 10px 0 rgba(0,0,0,.14),0 1px 18px 0 rgba(0,0,0,.12); }
+
+.layui-reply-item { display: block; text-align: left; text-indent: 0px; line-height: 18px; margin: 2px auto; }
+    .layui-reply-item:hover { background-color: rgb(3,155,229); color: white; }
+
+/*  各种等待效果 */
+.loading-form, .loading-control, .loading-ajax, .loading-list, loading-diag { background-image: url(../images/loading.gif); background-repeat: no-repeat; background-position: center center; min-height: 24px; }
+    .loading-form > *, .loading-control > *, .loading-ajax > *, .loading-list > *, loading-diag > * { visibility: hidden; }
+
+aside { width: 180px; height: 100%; background-color: rgb(45,50,62); position: fixed; left: 0px; top: 0px; box-shadow: 5px 0px 5px rgba(0,0,0,0.5); z-index: 1; }
+    aside .toolbar { height: 64px; background-color: rgba(255,255,255,.05); padding: 0 16px 0 24px; }
+        aside .toolbar h1 { height: 32px; line-height: 32px; padding: 16px 0px; color: #FFF; font-size: 16px; }
+
+/* 头部 */
+header.header-menu { height: 64px; background: #fff; padding-left: 180px; position: fixed; top: 0px; width: 100%; z-index: 1; }
+    header.header-menu .admin-info { position: absolute; right: 0px; top: 0px; }
+        header.header-menu .admin-info a { float: left; line-height: 64px; border-left: 1px solid #efefef; color: #333; font-size: 16px; padding: 0px 22px; position: relative; }
+            header.header-menu .admin-info a:hover { background-color: rgba(158,158,158,0.2); }
+            header.header-menu .admin-info a .down { color: rgba(0,0,0,0.54); font-size: 9px; }
+            header.header-menu .admin-info a.name { padding-left: 68px; }
+                header.header-menu .admin-info a.name .face { width: 48px; height: 48px; border-radius: 50%; position: absolute; left: 10px; top: 8px; background: url(../images/profile.jpg) no-repeat; background-size: cover; }
+        header.header-menu .admin-info .admin-info-control { display: none; position: absolute; right: 0px; top: 64px; width: 172px; background: #fff; border: 1px solid #ccc; border-top-color: #fff; box-shadow: 0px 5px 5px #ccc; }
+            header.header-menu .admin-info .admin-info-control a { display: block; float: none; }
+        header.header-menu .admin-info.admin-info-control-show .admin-info-control { display: block; }
+
+/* 左侧菜单 */
+menu { }
+    menu h2 { height: 42px; line-height: 42px; color: rgba(255,255,255,.7); text-indent: 24px; border-bottom: 1px solid #222222; font-size: 14px; text-shadow: 1px 1px 1px #000000; cursor: default; }
+    menu dl { margin: 0px; }
+    menu dt { margin: 0px; color: rgba(255,255,255,.7); height: 32px; line-height: 32px; padding-left: 24px; cursor: pointer; position: relative; font-weight: bold; }
+        menu dt:hover { background: rgba(0,0,0,.1); }
+        menu dt .icon { font-size: 16px; color: rgba(255,255,255,.7); }
+        menu dt span { padding-left: 12px; }
+        menu dt .extend { position: absolute; right: 16px; font-size: 14px; transition: all 0.2s; }
+        menu dt.active { }
+            menu dt.active .extend { transform: rotate(90deg); }
+
+    menu dd { margin: 0px; }
+        menu dd a { display: block; height: 32px; line-height: 32px; color: rgba(255,255,255,.7); text-indent: 52px; }
+            menu dd a:hover { background: rgba(0,0,0,.1); color: rgba(255,255,255,.7); }
+            menu dd a:visited,
+            menu dd a.current { color: #FFF; background-color: rgb(3,155,229); }
+        menu dd a,
+        menu dt,
+        menu h2 { position: relative; }
+    menu .tip { position: absolute; right: 5px; top: 8px; text-indent: 0px; font-weight: normal; }
+    menu h2 .tip { top: 12px; }
+
+.frame-content { display: block; background-color: rgb(245,245,245); margin-left: 180px; padding-top: 64px; height: 100%; overflow: hidden; }
+.frame-items { transition: margin-left 0.1s; }
+.frame-item { min-height: 200px; float: left; overflow: auto; }
+
+
+.frame-taskbar { float: left; transition: margin-left 0.5s; }
+    .frame-taskbar .frame-task { width: auto; float: left; line-height: 64px; height: 64px; border-right: 1px solid #ccc; border-bottom: none; text-align: center; font-size: 14px; cursor: pointer; transition: all 0.5s; position: relative; width: 100px; }
+        .frame-taskbar .frame-task.current,
+        .frame-taskbar .frame-task.current:hover { background: #3c4252; color: #fff; }
+        .frame-taskbar .frame-task:hover { background-color: rgba(158,158,158,0.2); }
+        .frame-taskbar .frame-task a { width: 18px; height: 18px; line-height: 18px; font-size: 14px; margin-left: 5px; position: absolute; right: 5px; top: 5px; }
+            .frame-taskbar .frame-task a:hover { animation: rotate 0.5s; }
+
+.frame-taskbar-list { float: left; position: relative; }
+    .frame-taskbar-list > a { width: 32px; height: 64px; line-height: 64px; text-align: center; background: #efefef; color: #333; font-size: 18px; transition: all 0.2s; position: absolute; top: 0px; }
+        .frame-taskbar-list > a.task-left { left: 0px; border-right: 1px solid #efefef; }
+        .frame-taskbar-list > a.task-right { right: 0px; border-left: 1px solid #efefef; }
+        .frame-taskbar-list > a:hover { background-color: #aaa; }
+    .frame-taskbar-list .frame-taskbar-container { overflow: hidden; float: left; margin-left: 32px; }
+
+.page-header { background: rgb(3,155,229) url(../images/header-bg.png) no-repeat; background-size: cover; padding-bottom: 16px; position: relative; }
+    .page-header h1 { font-size: 34px; color: #fff; text-indent: 1em; padding: 16px 0px 0px; }
+    .page-header h6 { padding-left: 34px; color: #dedede; font-size: 14px; font-weight: normal; }
+.page-action { position: absolute; right: 10px; top: 10px; }
+
+/* 搜索框 */
+.page-searchbox { background: rgba(255,255,255,0.7); margin: 12px 20px 0px; border-radius: 6px; }
+    .page-searchbox form { padding: 20px; }
+    .page-searchbox .txt { border: none; border-bottom: 1px solid rgba(0,0,0,0.1); background-color: transparent; font-size: 14px; outline: none; line-height: 32px; padding: 0px 5px; margin: auto 5px; }
+        .page-searchbox .txt[data-type=datetime] { font-size: 12px; width: 130px; }
+    .page-searchbox label[for] { line-height: 22px; padding: 5px; font-weight: normal; font-size: 14px; }
+    .page-searchbox .txt:focus { border-bottom-color: #000; box-shadow: 0px 1px 2px rgba(0,0,0,0.2); }
+    .page-searchbox .txt.w80 { width: 80px; }
+    .page-searchbox .txt.w100 { width: 100px; }
+    .page-searchbox .txt.w120 { width: 120px; }
+    .page-searchbox select { height: 32px; }
+        .page-searchbox select[disabled] { color: #ccc; }
+    .page-searchbox .am-btn { margin: auto 5px; }
+
+.page-table { background-color: #fff; width: 96%; margin: 15px auto 42px; box-shadow: 0 2px 4px -1px rgba(0,0,0,.2),0 4px 5px 0 rgba(0,0,0,.14),0 1px 10px 0 rgba(0,0,0,.12); }
+    .page-table .list { width: 100%; }
+        .page-table .list thead th { padding: 16px 8px; font-weight: bold; color: rgba(0,0,0,.54); border-bottom: 1px solid rgba(0,0,0,.12); white-space: nowrap; background: linear-gradient(to bottom, #fafafa 0%,#efefef 100%); text-align: center; }
+
+        .page-table .list th.w80 { width: 80px; }
+        .page-table .list th.w100 { width: 100px; }
+        .page-table .list th.w120 { width: 120px; }
+        .page-table .list th.w150 { width: 150px; }
+        .page-table .list th.w180 { width: 180px; }
+        .page-table .list td { padding: 12px 4px; border-bottom: 1px solid rgba(0,0,0,.12); text-align: center; }
+            .page-table .list td.left { text-align: left; }
+            .page-table .list td a { padding: 2px; border-radius: 4px; }
+                .page-table .list td a:hover { background-color: #0e90d2; color: white; }
+        .page-table .list tbody tr:hover td { background-color: rgba(255,255,0,0.2); }
+            .page-table .list tbody tr:hover td[rowspan],
+            .page-table .list tbody tr:hover td[colspan],
+            .page-table .list tbody td[rowspan] { border-right: 1px solid rgba(0,0,0,.12); background-color: #fff; }
+        .page-table .list .txt { border: 1px solid #ccc; border-radius: 4px; padding: 5px; text-align: center; }
+            .page-table .list .txt.w40 { width: 40px; }
+            .page-table .list .txt.w50 { width: 50px; }
+            .page-table .list .txt.w60 { width: 60px; }
+            .page-table .list .txt.w80 { width: 80px; }
+            .page-table .list .txt.w100 { width: 100px; }
+            .page-table .list .txt.w200 { width: 200px; }
+            .page-table .list .txt.p80 { width: 80%; }
+        .page-table .list thead .sort { cursor: pointer; }
+            .page-table .list thead .sort::after { content: "\f0dc"; color: #ccc; font: normal normal normal 1.6rem/1 FontAwesome,sans-serif; margin-left: 5px; }
+            .page-table .list thead .sort.asc::after { content: "\f162"; color: #333; }
+            .page-table .list thead .sort.desc::after { content: "\f163"; color: #333; }
+
+    .page-table .post { width: 100%; }
+        .page-table .post th { font-weight: 500; border-bottom: 1px solid rgba(0,0,0,.12); width: 120px; max-width: 120px; text-align: right; font-size: 14px; }
+        .page-table .post td { padding: 16px 8px; border-bottom: 1px solid rgba(0,0,0,.12); }
+        .page-table .post .txt { width: auto; display: inline-block; }
+            .page-table .post .txt.w40 { width: 40px; }
+            .page-table .post .txt.w50 { width: 50px; }
+            .page-table .post .txt.w60 { width: 60px; }
+            .page-table .post .txt.w80 { width: 80px; }
+            .page-table .post .txt.w100 { width: 100px; }
+            .page-table .post .txt.w120 { width: 120px; }
+            .page-table .post .txt.w150 { width: 150px; }
+            .page-table .post .txt.w180 { width: 180px; }
+            .page-table .post .txt.p80 { width: 80%; }
+        .page-table .post .desc { color: #aaa; font-size: 12px; margin-left: 12px; }
+        .page-table .post .cover { width: 120px; border: 1px solid #ccc; padding: 2px; }
+        .page-table .post label[for] { font-size: 14px; font-weight: normal; }
+            .page-table .post label[for] input { vertical-align: central; }
+
+/* 弹出框 */
+.diag { display: flex; flex-flow: column; position: absolute; left: 50%; top: 50%; background: #fff; border-radius: 4px; overflow: hidden; box-shadow: 0 7px 8px -4px rgba(0,0,0,.2),0 13px 19px 2px rgba(0,0,0,.14),0 5px 24px 4px rgba(0,0,0,.12); z-index: 101; }
+.diag-title { background-color: rgb(3,155,229); height: 48px; line-height: 48px; color: #fff; }
+    .diag-title strong { font-size: 17px; padding-left: 1em; font-weight: 400; }
+.diag-close { position: absolute; width: 24px; height: 24px; top: 12px; right: 12px; text-align: center; transition: all 0.3s; }
+    .diag-close:hover { transform: scale(1.5) rotate(360deg); }
+    .diag-close::after { display: inline-block; font: normal normal normal 1.6rem/1 FontAwesome,sans-serif; content: "\f00d"; font-size: 24px; color: #fff; }
+.diag-content { overflow: auto; flex: 1; }
+.diag-mask { width: 100%; height: 100%; left: 0px; top: 0px; background-color: rgba(0,0,0,0.3); z-index: 100; position: fixed; }
+.diag .page-table { margin-bottom: 15px; }
+
+/*  用户信息    */
+.userinfo-title { background-color: rgb(3,155,229); text-align: center; color: #fff; height: 64px; overflow: hidden; }
+    .userinfo-title h3 { font-size: 22px; color: #fff; float: left; text-indent: 1em; line-height: 64px; }
+    .userinfo-title .userinfo-status { float: right; }
+        .userinfo-title .userinfo-status a { display: inline-block; margin: auto 12px; font-size: 26px; color: white; transition: all 0.2s; }
+            .userinfo-title .userinfo-status a:hover,
+            .userinfo-title .userinfo-status a.current { color: #FFC107; }
+            .userinfo-title .userinfo-status a label { font-weight: normal; font-size: 12px; display: block; line-height: normal; }
+.userinfo-content { overflow: auto; height: 488px; }
+    .userinfo-content .userinfo-frame { }
+
+/* 提示框 */
+.input-tip { position: absolute; opacity: 0; visibility: hidden; line-height: 32px; text-indent: 10px; transition: all 0.5s; font-size: 14px; }
+    .input-tip.focus { margin-top: -22px; line-height: 22px; visibility: visible; color: #ff0000; opacity: 1; text-indent: 0px; }
+
+/* 管理员权限菜单 */
+.admin-permission { }
+    .admin-permission ul, .admin-permission li { list-style-type: none; }
+        .admin-permission li ul { padding-left: 32px; }
+
+/* 游戏设置 */
+.game-setting-player-info-list { }
+    .game-setting-player-info-list .item { display: inline-block; width: 200px; height: 100px; text-align: center; padding: 10px; border: 1px solid #ccc; border-radius: 12px; margin: 10px; }
+        .game-setting-player-info-list .item h3 { font-size: 14px; line-height: 22px; height: 44px; }
+        .game-setting-player-info-list .item h4 { width: 50%; float: left; text-align: center; line-height: 26px; }
+
+/* 管理员列表 隐藏*/
+#system-admin-list tbody tr:last-child { display: none; }

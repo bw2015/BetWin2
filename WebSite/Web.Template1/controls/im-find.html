@@ -1,0 +1,32 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>查找</title>
+    <link href="../studio/layui/css/layui.css" rel="stylesheet" />
+    <link href="../styles/common.css" rel="stylesheet" />
+    <link href="../styles/diag.css" rel="stylesheet" />
+    <link href="../styles/im-box.css" rel="stylesheet" />
+    <script src="../studio/scripts/mootools.js"></script>
+    <script src="../studio/scripts/mootools-more.js"></script>
+    <script src="../studio/scripts/betwin.js"></script>
+    <script src="../studio/scripts/diag.js"></script>
+</head>
+<body>
+    <div class="layui-tab layui-tab-brief">
+        <ul class="layui-tab-title">
+            <li class="layui-this">查找群</li>
+            <li>创建群</li>
+            <li>群管理</li>
+        </ul>
+        <div class="layui-tab-content">
+            <div class="find">
+                <form action="find.html" method="post" data-bind-action="../handler/user/im/groupsearch" data-bind-type="ajax" data-bind-callback="im-group-search">
+                    <input type="search" name="Key" class="txt padding-10" size="20" placeholder="群号/群名称" />
+                    <input type="submit" value="查找" class="btn btn-blue padding-10" />
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

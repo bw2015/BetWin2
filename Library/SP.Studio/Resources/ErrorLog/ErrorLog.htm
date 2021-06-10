@@ -1,0 +1,109 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>错误日志查看器</title>
+
+    <script type="text/javascript" src="?ac=js&file=mootools.js"></script>
+    <script type="text/javascript" src="?ac=js&file=moosutdio.js"></script>
+    <script type="text/javascript">
+        $import("UI.Diag.js");
+        window.addEvent("domready", function () {
+
+            ["Date", "Key", "Domain", "Title", "Code"].each(function (item) {
+                var value = location.href.get(item);
+                if (value != null) $F(item).set("value", unescape(value));
+            });
+
+            $$("table > tbody > tr").addEvents({
+                "click": function () {
+                    var id = this.getElement("td").get("text");
+                    var title = this.getElements("td").get("text")[2];
+                    var date = this.getElements("td").get("text").getLast();
+                    var url = "?type=detail&id=" + id + "&date=" + date;
+                    new UI.Diag({
+                        "title": title,
+                        "type": "load",
+                        "content": url,
+                        "method": "get",
+                        "width": 640,
+                        "height": 480,
+                        "opacity": 30,
+                        "onComplete": function (obj, response) {
+                            var body = obj.getBody();
+                            body.set("html", "<textarea readonly=\"readonly\">" + response + "</textarea>");
+                            var textarea = body.getElement("textarea");
+                            body.addEvent("mousewheel", function (e) {
+                                e.stopPropagation();
+                            });
+                        }
+                    });
+                }
+            });
+        });
+    </script>
+    <style type="text/css">
+        body { background: url(?type=image&src=bg.jpg) repeat-x; font-size: 12px; margin: 0px; }
+        header { height: 50px; }
+            header .Search { padding: 12px; }
+                header .Search .txt { padding: 3px; border-radius: 4px; font-family: Verdana; }
+                    header .Search .txt[type=number] { width: 50px; }
+                header .Search input[type=submit] { border-radius: 6px; border: none; box-shadow: 0 0 8px rgba(0, 0, 0, 0.6) inset; color: #4A4A4A; font-size: 14px; font-weight: bold; padding: 5px 16px; text-shadow: 0 -1px 0 #FFFFFF; cursor: pointer; }
+
+                    header .Search input[type=submit]:hover { box-shadow: 0 0 8px rgba(0, 0, 0, 1) inset; }
+        table { width: 99%; margin: auto; border-spacing: 1px; background: #DDD; margin-top: 10px; }
+            table thead th { background: #EFEFEF; font-size: 14px; padding: 5px 0px; font-weight: normal; }
+            table tbody td { background: #FFFFFF; padding: 5px; font-family: 宋体; text-align: center; }
+            table tbody tr:hover td { background: #d9e1f7; cursor: pointer; text-shadow: 1px 1px 1px #FFFFFF; }
+            table tbody td.left { text-align: left; }
+        .pageSplit { padding: 12px; text-align: center; text-shadow: 1px 1px 1px #d9e1f7; }
+        .UI-diag { border-top-left-radius: 12px; border-top-right-radius: 12px; box-shadow: #333 5px 5px 10px; }
+            .UI-diag .title { border-top-left-radius: 12px; border-top-right-radius: 12px; }
+                .UI-diag .title .tit { width: 580px; overflow: hidden; height: 30px; line-height: 30px; padding: 0px 10px; text-shadow: 1px 1px 1px white; }
+                .UI-diag .title .close { border-top-right-radius: 12px; }
+        textarea { width: 614px; height: 424px; padding: 10px; font-size: 12px; line-height: 200%; font-family: 宋体; }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="Search">
+            <form action="${Url}" method="get">
+                日期:
+                <input type="date" name="Date" class="txt" />
+                &nbsp;&nbsp;
+                编号:<input type="text" name="Key" size="15" class="txt" />
+                &nbsp;&nbsp;
+                域名:<input type="text" name="Domain" size="15" class="txt" />
+                &nbsp;&nbsp;
+                关键词:<input type="text" name="Title" size="15" class="txt" />
+                &nbsp;&nbsp;
+                错误类型：<input type="number" name="Code" class="txt" />
+                <input type="submit" value=" 搜索 " />
+                <input type="reset" value="重置" />
+            </form>
+        </div>
+    </header>
+    <table>
+        <thead>
+            <tr>
+                <th style="width: 160px;">编号</th>
+                <th style="width: 80px;">错误类型</th>
+                <th style="width: 100px">域名</th>
+                <th>标题</th>
+                <th style="width: 160px;">时间</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- ItemTemplate Begin -->
+            <tr>
+                <td>${ID}</td>
+                <td>${HttpCode}</td>
+                <td>${Domain}</td>
+                <td class="left">${Title}</td>
+                <td>${Time}</td>
+            </tr>
+            <!-- ItemTemplate End -->
+        </tbody>
+    </table>
+    ${PageSplit}
+</body>
+</html>

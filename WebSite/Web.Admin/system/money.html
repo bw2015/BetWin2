@@ -1,0 +1,47 @@
+﻿<div class="page-header">
+    <h1>财务结算</h1>
+    <h6>请在截至日期之前支付账单，否则系统将会自动关闭</h6>
+</div>
+<div class="page-table">
+    <table class="list" data-bind-action="admin/system/billlist" data-bind-type="list" data-bind-callback="list,system-money-bill">
+        <thead>
+            <tr>
+                <th>账单</th>
+                <th>账单金额</th>
+                <th>账单日期</th>
+                <th>截止时间</th>
+                <th>当前状态</th>
+                <th class="w100">操作</th>
+            </tr>
+        </thead>
+        <tbody data-list-element="true">
+            <tr>
+                <td>${Title}</td>
+                <td>${Money:money}</td>
+                <td>${CreateAt:date}</td>
+                <td>${EndAt:date}</td>
+                <td data-status="${Status}">${Status}</td>
+                <td><a href="javascript:" data-diag-name="Money-Bill-Payment" data-diag-src="system/money-payment.html" data-diag-type="control" data-diag-title="支付账单" data-diag-drag="true" data-diag-mask="true" data-diag-data="BillID=${ID}" class="am-btn am-btn-success am-round am-text-xs">支付账单</a></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<script type="text/javascript">
+    BW.callback["system-money-bill"] = function (result) {
+        var t = this;
+        t.dom.element.getElements("tbody tr").each(function (item) {
+            var status = item.getElement("[data-status]");
+            var action = item.getElement("a");
+            if (!status || !action) return;
+            switch (status.get("data-status")) {
+                case "已支付":
+                    action.dispose();
+                    break;
+                case "未支付":
+                    status.addClass("am-text-danger");
+                    break;
+            }
+        });
+    };
+</script>

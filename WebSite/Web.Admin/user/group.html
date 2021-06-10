@@ -1,0 +1,35 @@
+﻿<div class="page-header">
+    <h1>用户分组管理</h1>
+    <div class="page-action">
+        <a href="javascript:" class="am-btn am-btn-success am-round" data-diag-name="user-group-info" data-diag-type="control" data-diag-src="user/group-info.html" data-diag-title="添加分组" data-diag-mask="true" data-diag-drag="true">添加分组</a>
+    </div>
+</div>
+<div class="page-table">
+    <table class="list" data-bind-action="admin/user/grouplist" data-bind-type="list" data-bind-callback="list">
+        <thead>
+            <tr>
+                <th>编号</th>
+                <th>分组名称</th>
+                <th>备注信息</th>
+                <th>条件</th>
+                <th>排序值</th>
+                <th>默认分组</th>
+                <th>操作</th>
+            </tr>
+        </thead>
+        <tbody data-list-element="true">
+            <tr>
+                <td>${ID}</td>
+                <td>${Name}</td>
+                <td>${Description}</td>
+                <td>${Condition}</td>
+                <td>${Sort}</td>
+                <td>${IsDefault:open}</td>
+                <td>
+                    <a href="javascript:" data-diag-name="user-group-info" data-diag-type="control" data-diag-src="user/group-info.html" data-diag-title="添加分组" data-diag-mask="true" data-diag-drag="true" data-diag-data="ID=${ID}">修改</a>
+                    <a href="javascript:">删除</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

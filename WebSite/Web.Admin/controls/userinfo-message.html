@@ -1,0 +1,71 @@
+﻿
+<div class="page-table">
+    <div class="page-searchbox am-text-right am-padding-xs">
+        <input type="button" value="发送短信" class="am-btn am-btn-success am-round am-text-xs" />
+    </div>
+    <form action="/admin/user/messagesend" method="post" data-bind-action="admin/user/messagesend" data-bind-type="ajax" data-bind-callback="form-tip,success-fire" data-bind-fire-target="userinfo-message-list" data-bind-load="form-parent,user-message-event">
+        <table class="post">
+            <tr>
+                <th>标题：</th>
+                <td>
+                    <input type="text" name="Title" class="txt am-form-field" size="50" placeholder="如不填写将会自动截取内容的前20个字" />
+                </td>
+            </tr>
+            <tr>
+                <th>内容：</th>
+                <td>
+                    <textarea name="Content" class="txt am-form-field" rows="3" cols="80" placeholder="短信内容" required="required"></textarea>
+                </td>
+            </tr>
+            <tr>
+                <th></th>
+                <td>
+                    <input type="submit" class="am-btn am-btn-success am-round am-text-xs" value="发送" />
+                    <input type="button" class="am-btn am-btn-default am-round am-text-xs am-margin-left-xs" value="取消" />
+                </td>
+            </tr>
+        </table>
+    </form>
+</div>
+<div class="page-table">
+
+    <table class="list" id="userinfo-message-list" data-bind-action="/admin/user/messagelist" data-bind-type="list" data-bind-callback="list" data-bind-load="pagesplit" data-bind-data="parent">
+        <thead>
+            <tr>
+                <th>编号</th>
+                <th>标题</th>
+                <th>发送时间</th>
+                <th>读取时间</th>
+            </tr>
+        </thead>
+        <tbody data-list-element="true">
+            <tr>
+                <td>${ID}</td>
+                <td>${Title}</td>
+                <td>${CreateAt}</td>
+                <td>${ReadAt:message-read}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<script type="text/javascript">
+    BW.load["user-message-event"] = function () {
+        var t = this;
+        var send = t.dom.element.getParent().getElement("[value=发送短信]");
+        var cancel = t.dom.element.getElement("[value=取消]");
+        [send, cancel].each(function (item) {
+            item.addEvent("click", function () {
+                t.dom.element.setStyle("display", this.get("value") == "取消" ? "none" : "block");
+            });
+        })
+        cancel.fireEvent("click");
+    };
+
+    htmlFunction["message-read"] = function (value) {
+        if (value.contains("1900")) {
+            return "<span class=\"am-text-default\">未读</span>";
+        }
+        return value;
+    };
+</script>

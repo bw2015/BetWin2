@@ -1,0 +1,93 @@
+﻿<div class="page-header">
+    <h6>&nbsp;</h6>
+    <div class="page-searchbox" id="report-searchbox">
+        <form action="report.html" method="post" onsubmit="return false;"></form>
+    </div>
+</div>
+<div class="page-table" data-bind-action="/admin/report/getparameter" data-bind-type="ajax" data-bind-data="parent" data-bind-callback="report-getparameber">
+    <table class="list" data-bind-action="/admin/report/getdata" data-bind-type="ajax" data-bind-callback="report-getdata-list" data-bind-search="report-searchbox" data-bind-stop="true" id="report-data-list">
+        <thead>
+            <tr></tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+</div>
+
+<script type="text/javascript">
+    BW.callback["report-getparameber"] = function (result) {
+        var t = this;
+        if (!result.success) return;
+        var searchbox = t.dom.element.getParent(".diag").getElement("form");
+
+        result.info.list.each(function (item) {
+            if (item.Name == "SiteID") return;
+            if (item.Default == "1900-1-1") item.Default = new Date().ToShortDateString();
+            var type = "text";
+            switch (item.Type) {
+                case "DATE":
+                    type = "date";
+                    break;
+            }
+            new Element("span", {
+                "text": item.Name + "："
+            }).inject(searchbox);
+            new Element("input", {
+                "type": type,
+                "name": item.Name,
+                "value": item.Default,
+                "class": "txt",
+                "placeholder": item.Name
+            }).inject(searchbox);
+        });
+        new Element("input", {
+            "type": "hidden",
+            "name": "procname",
+            "value": result.info.data.Name
+        }).inject(searchbox);
+
+        new Element("input", {
+            "type": "hidden",
+            "name": "database",
+            "value": t.options.data["database"]
+        }).inject(searchbox);
+
+        new Element("input", {
+            "type": "submit",
+            "class": "am-btn am-btn-success am-round am-text-xs",
+            "value": "查看",
+            "data-event-fire": "report-data-list"
+        }).inject(searchbox);
+
+        BW.Bind($("report-data-list")).fire();
+
+    };
+
+    BW.callback["report-getdata-list"] = function (result) {
+        var t = this;
+        if (!result.success) return;
+        var thead = t.dom.element.getElement("thead tr");
+        var tbody = t.dom.element.getElement("tbody");
+        console.log(thead);
+        thead.empty();
+        tbody.empty();
+        var count = 0;
+        var length = 0;
+        result.info.each(function (item, index) {
+            count++;
+            if (index == 0) {
+                length = item.length;
+                thead.set("html", item.map(function (t) { return "<th>" + t + "</th>"; }).join(""));
+            } else {
+                new Element("tr", {
+                    "html": item.map(function (t) { return "<td>" + t + "</td>"; }).join("")
+                }).inject(tbody);
+            }
+        });
+        if (count == 1) {
+            new Element("<tr>", {
+                "html": "<td colspan=\"" + length + "\"><p class=\"am-alert am-text-center\">没有符合当前条件的记录</p></td>"
+            }).inject(tbody);
+        }
+    };
+
+</script>

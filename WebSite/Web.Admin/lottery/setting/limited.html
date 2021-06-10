@@ -1,0 +1,52 @@
+﻿<div class="page-header">
+    <h1>限号管理</h1>
+    <h6>设置玩法组在单期最多的派奖亏损金额，为0表示不受限制。 四星、三星、二星等的限号金额为同一位置的限制，具体设置请查看帮助文档。</h6>
+    <div class="page-searchbox">
+        <form action="/admin/lottery/limited" method="post">
+            <select name="Category" class="txt" data-enum-name="BW.Common.Lottery.LotteryCategory" id="lottery-setting-limited-category"></select>
+            <select name="Lottery" class="txt" id="lottery-setting-limited-type">
+                <option value="ChungKing"></option>
+            </select>
+            <input type="submit" value="查询" class="am-btn am-btn-success am-round am-text-xs" />
+        </form>
+    </div>
+</div>
+
+<div class="page-table">
+    <table class="list" data-bind-action="/admin/lottery/limited" data-bind-type="list" data-bind-load="search" data-bind-callback="list,update" data-bind-update-action="/admin/lottery/updatelimited">
+        <thead>
+            <tr>
+                <th>彩种</th>
+                <th>限号标识</th>
+                <th>玩法</th>
+                <th>限号金额</th>
+            </tr>
+        </thead>
+        <tbody data-list-element="true">
+            <tr>
+                <td>${Game}</td>
+                <td>${TypeName}</td>
+                <td class="am-text-left">${Player:limited-player}</td>
+                <td>
+                    <input type="number" class="txt" value="${Money}" data-update-name="Money" data-update-game="${GameCode}" data-update-type="${Type}" />
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+
+<script type="text/javascript">
+
+    (function () {
+        new BW.Select($("lottery-setting-limited-category"), $("lottery-setting-limited-type"), {
+            "url": "/admin/lottery/type",
+            "auto": true
+        });
+    }).delay(500);
+
+    htmlFunction["limited-player"] = function (value) {
+        var color = ["primary", "secondary", "success", "warning", "danger", "success"]
+        return value.split(",").map(function (item) { return "<span class=\"am-badge am-badge-" + color.getRandom() + " am-padding-xs am-radius am-margin-bottom-xs\">" + item + "</span>"; }).join(" ");
+    }
+</script>

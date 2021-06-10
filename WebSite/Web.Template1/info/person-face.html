@@ -1,0 +1,24 @@
+﻿<div class="frame-info-content">
+    <h3>
+        头像设定
+    </h3>
+    <div class="info-person-face-editor">
+    </div>
+</div>
+
+<script type="text/javascript">
+    BW.callback["info-person-face-editor"] = function () {
+        var t = this;
+        var editor = t.dom.container.getElement(".info-person-face-editor");
+       
+        new Swiff("images/face.swf", {
+            "width": 750,
+            "height": 420,
+            "container": editor,
+            "vars": {
+                "requestURL": "/handler/user/info/face",
+                "tbToken": Setting.User.Session
+            }
+        });
+    }
+</script>

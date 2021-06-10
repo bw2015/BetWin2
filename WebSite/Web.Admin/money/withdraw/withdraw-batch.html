@@ -1,0 +1,156 @@
+﻿<div class="page-table">
+    <form action="withdraw-batch.html" method="post" data-bind-action="withdraw-batch.html" data-bind-type="ajax" data-bind-load="withdraw-batch">
+        <table class="post">
+            <tr>
+                <th>金额小于：</th>
+                <td>
+                    <input type="number" class="txt w80 am-form-field" name="Money" /> 元
+                    <span class="desc">金额小于该设定的出款申请</span>
+                </td>
+            </tr>
+            <tr>
+                <th>出款接口：</th>
+                <td>
+                    <select name="WithdrawSettingID" class="txt am-form-field" data-select-value="ID" data-select-text="Name" data-bind-action-delay="/admin/site/getwithdrawlist" data-bind-type="ajax" data-bind-data="IsOpen=0" data-bind-callback="select"></select>
+                </td>
+            </tr>
+            <tr>
+                <th></th>
+                <td>
+                    <input type="button" value="确认批量出款" class="am-btn am-btn-success am-roud" />
+                </td>
+            </tr>
+        </table>
+    </form>
+</div>
+
+<script type="text/javascript">
+    if (!BW.load["withdraw-batch"]) {
+        BW.load["withdraw-batch"] = function () {
+            var t = this;
+            var button = t.dom.element.getElement("[type=button]");
+            var money = t.dom.element.getElement("[name=Money]");
+            var withdraw = t.dom.element.getElement("[name=WithdrawSettingID]");
+            button.addEvent("click", function () {
+                var value = money.get("value").toFloat();
+                if (isNaN(value)) {
+                    new BW.Tip("金额输入错误", {
+                        "callback": function () {
+                            money.focus();
+                        }
+                    });
+                    return;
+                }
+
+                new Request.JSON({
+                    "url": "admin/money/withdrawbatch",
+                    "onRequest": function () {
+                        t.dom.element.addClass("loading-form");
+                    },
+                    "onComplete": function () {
+                        t.dom.element.removeClass("loading-form");
+                    },
+                    "onSuccess": function (result) {
+                        if (result.info.RecordCount == 0) {
+                            new BW.Tip("没有小于该资金的提现记录");
+                            return;
+                        }
+
+                        new BW.Tip("共有" + result.info.RecordCount + "笔记录，总计金额" + htmlFunction["money"](result.info.data.Money) + "元", {
+                            "type": "confirm",
+                            "callback": function () {
+                                t.dom.element.set("data-withdrawid", withdraw.get("value"));
+                                BW.load["withdraw-batch-list"].apply(t, [result.info.list]);
+                            }
+                        });
+                    }
+                }).post({
+                    "money": value
+                });
+            });
+        };
+    }
+
+
+    if (!BW.load["withdraw-batch-list"]) {
+        BW.load["withdraw-batch-list"] = function (list) {
+            var t = this;
+            t.dom.element.empty();
+            var tip = new Element("div", {
+                "class": "am-alert am-alert-danger",
+                "html": "正在批量处理提现申请，批量处理完成之前，请勿关闭本窗口，"
+            });
+            tip.inject(t.dom.element);
+
+            var progress = new Element("span", {
+                "text": "当前进度：0%"
+            });
+            progress.inject(tip);
+
+            var table = new Element("table", {
+                "class": "list",
+                "html": "<thead><tr><th>用户</th><th>提现时间</th><th>金额</th><th>手续费</th><th>当前状态</th></tr></thead><tbody></tbody>"
+            });
+            table.inject(t.dom.element);
+
+            list.each(function (item) {
+                new Element("tr", {
+                    "data-id": item.ID,
+                    "html": "<td>${UserName}</td><td>${CreateAt}</td><td>${Money:money}</td><td>${Fee:money}</td><td class=\"status\">${Status}</td>".toHtml(item)
+                }).inject(table.getElement("tbody"));
+            });
+            var success = 0, faild = 0;
+            var list = t.dom.element.getElements("tr[data-id]").map(function (item) { return item.get("data-id"); });
+            var withdrawid = t.dom.element.get("data-withdrawid");
+
+            // 处理一条记录
+            var execWithdraw = function (id) {
+                var status = t.dom.element.getElement("tr[data-id=" + id + "] .status");
+                new Request.JSON({
+                    "url": "/admin/money/withdrawlistcheck",
+                    "onRequest": function () {
+                        status.addClass("loading-form");
+                    },
+                    "onComplete": function () {
+                        status.removeClass("loading-form");
+                        var index = list.indexOf(id);
+                        if (index + 1 <= list.length - 1) {
+                            execWithdraw(list[index + 1]);
+                        }
+                    },
+                    "onFailure": function (xhr) {
+                        status.set("html", "<span class=\"am-text-danger\">" + xhr.response + "</span>");
+                        faild++;
+                    },
+                    "onSuccess": function (result) {
+                        if (result.success) {
+                            status.set("html", "<span class=\"am-text-success\">" + result.msg + "</span>");
+                            success++;
+                        } else {
+                            status.set("html", "<span class=\"am-text-danger\">" + result.msg + "</span>");
+                            faild++;
+                        }
+
+                        progress.set("text", "成功：${Success}笔，失败：${Faild}笔，进度：${Progress}".toHtml({
+                            "Success": success,
+                            "Faild": faild,
+                            "Progress": ((success + faild) / list.length).ToString("p")
+                        }));
+
+                        if (success + faild == list.length) {
+                            new BW.Tip("批量出款完毕，成功" + success + "笔，失败" + faild + "笔");
+                            return;
+                        }
+                    }
+                }).post({
+                    "ID": id,
+                    "Description": "批量审核",
+                    "WithdrawSettingID": withdrawid
+                });
+            };
+
+            execWithdraw(list[0]);
+        };
+    }
+
+</script>

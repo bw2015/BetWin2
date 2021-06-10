@@ -1,0 +1,113 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>测速中心</title>
+    <script type="text/javascript" src="https://apps.bdimg.com/libs/mootools/1.4.5/mootools-yui-compressed.js"></script>
+    <script type="text/javascript" src="http://localhost:7000/"></script>
+    <style type="text/css">
+        html, body { height: 100%; margin: 0px; padding: 0px; }
+        ul, li { padding: 0px; margin: 0px; list-style-type: none; }
+        a { text-decoration: none; }
+        body { height: 100%; background-image: linear-gradient(to bottom right, #ffd551, #a92c2d); text-shadow: 0 1px 1px rgba(0, 0, 0, .2); font-family: "Arial", "Microsoft YaHei"; }
+        header { height: 70px; background-color: rgba(0, 0, 0, 0.7); display: block; }
+        .w { width: 980px; margin: auto; }
+        .container { color: #fff; }
+            .container h1 { text-align: center; font-size: 40px; padding: 20px 0px; letter-spacing: 5px; }
+        .content { padding: 20px; border-radius: 10px; background-color: rgba(255, 255, 255, .1); background-image: -webkit-gradient(linear, center top, center bottom, from(rgba(255, 255, 255, 0.2)), to(rgba(130, 130, 130, 0.2))); background-image: -webkit-linear-gradient(top, rgba(255, 255, 255, 0.2), rgba(130, 130, 130, 0.2)); background-image: -moz-linear-gradient(top, rgba(255, 255, 255, 0.2), rgba(130, 130, 130, 0.2)); background-image: -o-linear-gradient(top, rgba(255, 255, 255, 0.2), rgba(130, 130, 130, 0.2)); background-image: -ms-linear-gradient(top, rgba(255, 255, 255, 0.2), rgba(130, 130, 130, 0.2)); background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.2), rgba(130, 130, 130, 0.2)); -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.3); -moz-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.3); box-shadow: 0 1px 1px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.3) }
+            .content h3 { font-size: 16px; }
+            .content::after { clear: both; content: " "; display: block; }
+        .domain { width: 550px; float: left; }
+        ul { width: 100%; }
+            ul li { height: 40px; padding: 10px; background-color: rgba(255, 255, 2558, 0.3); }
+                ul li:nth-child(2n) { background-color: rgba(255, 255, 2558, 0.5); }
+        li .status { float: left; width: 10px; margin-right: 15px; }
+            li .status:after { content: " "; display: inline-block; width: 10px; height: 10px; background-color: #4cff00; border-radius: 50%; margin-top: 15px; }
+        li time { float: left; width: 100px; height: 40px; text-align: left; line-height: 40px; background-color: #fff; color: #666; font-size: 12px; text-indent: 1em; margin-right: 15px; }
+        li .domain { float: left; width: 210px; background-color: #fff; color: #666; height: 40px; text-align: left; line-height: 40px; text-indent: 1em; font-size: 12px; margin-right: 15px; }
+        li .link { float: left; width: auto; height: 40px; background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABsAAAAbCAMAAAC6CgRnAAAAV1BMVEUAAACrLi+rLi+rLi+rLi+rLi+rLi+rLi+rLi+rLi+rLi+rLi+rLi+rLi+rLi+rLi+rLi+rLi+rLi+rLi+rLi+rLi+rLi+rLi+rLi+rLi+rLi+rLi+rLi9yWuxFAAAAHXRSTlMAgDPMES4EIwoqu4l1VkMPeE/AtnI6HRWWXEqOX+valiIAAACRSURBVCjPpdLpCoNADATgaLOH52oPbW3f/zmb7SAohGBx/g75SCBkJZQSpq6QVNRcJP3aeSed87GVro1cS1fzWnIeDFTlwY76PNhY6kNT71BvSVNHqMVeTVDDATXu1Oms6g11gTpod3zQPRVz4J95nba7zNilxC6jIr4MMUGctyIfFd9/ig7iYvyE9UvWD57LF+FyCdopnqQKAAAAAElFTkSuQmCC') no-repeat left center; }
+            li .link a { padding: 3px 20px 6px; border-radius: 20px; text-align: center; background: -webkit-linear-gradient(#c74546, #a92c2d); background: -o-linear-gradient(#c74546, #a92c2d); background: -moz-linear-gradient(#c74546, #a92c2d); background: linear-gradient(#c74546, #a92c2d); color: #fff; display: inline-block; cursor: pointer; font-size: 12px; margin: 8px auto 8px 40px; }
+
+        .info { float: right; width: 360px; font-size: 14px; line-height: 200%; }
+            .info .title { text-align: center; }
+            .info h3 { font-size: 26px; padding: 20px 0px; margin: 0px; }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="w">
+            <a href="javascript:" class="logo"></a>
+        </div>
+    </header>
+    <div class="container w">
+        <h1>${Site}线路中心</h1>
+
+        <div class="content">
+            <div class="domain">
+                <h3>备用网址温馨提示：反应时间越小，网站速度越快，越快的网址排在越上面</h3>
+                <ul>
+                    <li>
+                        <label class="status"></label>
+                        <time>0.5秒</time>
+                        <div class="domain">https://www.yvwin.com</div>
+                        <div class="link">
+                            <a href="javascript:">进入网站</a>
+                        </div>
+                    </li>
+                    <li>
+                        <label class="status"></label>
+                        <time>0.5秒</time>
+                        <div class="domain">https://www.yvwin.com</div>
+                        <div class="link">
+                            <a href="javascript:">进入网站</a>
+                        </div>
+                    </li>
+                    <li>
+                        <label class="status"></label>
+                        <time>0.5秒</time>
+                        <div class="domain">https://www.yvwin.com</div>
+                        <div class="link">
+                            <a href="javascript:">进入网站</a>
+                        </div>
+                    </li>
+                    <li>
+                        <label class="status"></label>
+                        <time>0.5秒</time>
+                        <div class="domain">https://www.yvwin.com</div>
+                        <div class="link">
+                            <a href="javascript:">进入网站</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="info">
+                <div class="title">
+                    您当前的IP位置
+                    <h3>61.147.96.5</h3>
+                </div>
+                <p>
+                    如果我们的检查中心对您有帮助请按Ctrl+D收藏
+                </p>
+                <p>
+                    如果检测后不能登录请按以下方法操作：
+                </p>
+                <p>
+                    <span class="yellow">A. 打开IE浏览器：</span><br />
+                    打开IE浏览器，选择：工具-> Internet选项-> 再选择 (删除历史浏览记录)-> 删除-> 重启IE
+                </p>
+                <p>
+                    <span class="yellow">B. 如果您体验过程中出现卡顿： </span><br />
+                    请在您打开本界面选择其它线路看看
+                </p>
+                <p>
+                    <span class="yellow">
+                        C. 建议使用火狐或谷歌浏览器
+                    </span><br />
+                    假如你登陆后发现为非，可能您的DNS服务被劫持，请点击下面的按钮清除浏览器缓存，即可恢复正常使用。
+                </p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

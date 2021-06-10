@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<root>
+  <!-- MW的电子游戏列表 -->
+  <item name="50"	value="千炮捕鱼" category="捕鱼机" platform="PC" />
+  <item name="40"	value="森林舞会" category="老虎机" platform="PC" />
+  <item name="110"	value="水浒传" category="老虎机" platform="PC" />
+  <item name="141"	value="百家乐" category="棋牌" platform="PC" />
+  <item name="20"	value="超级斗地主" category="棋牌" platform="PC" />
+  <item name="119"	value="丛林岛" category="老虎机" platform="PC" />
+  <item name="140"	value="太极" category="老虎机" platform="PC" />
+  <item name="144"	value="舞狮报喜" category="老虎机" platform="PC" />
+  <item name="111"	value="五龙争霸" category="老虎机" platform="PC" />
+  <item name="114"	value="天龙虎地" category="老虎机" platform="PC" />
+  <item name="139"	value="百乐牛牛" category="棋牌" platform="PC" />
+  <item name="112"	value="水浒英雄" category="老虎机" platform="PC" />
+  <item name="138"	value="皇家轮盘" category="老虎机" platform="PC" />
+  <item name="120"	value="洪福齐天" category="老虎机" platform="PC" />
+  <item name="22"	value="好运5扑克" category="老虎机" platform="PC" />
+  <item name="115"	value="黄金777" category="老虎机" platform="PC" />
+  <item name="113"	value="魔豆" category="老虎机" platform="PC" />
+  <item name="21"	value="经典水果机" category="老虎机" platform="PC" />
+  <item name="125"	value="HUGA" category="老虎机" platform="PC" />
+  <item name="117"	value="明星97" category="老虎机" platform="PC" />
+  <item name="540"	value="森林舞会" category="老虎机" platform="Mobile" />
+  <item name="550"	value="千炮捕鱼" category="捕鱼机" platform="Mobile" />
+  <item name="610"	value="水浒传" category="老虎机" platform="Mobile" />
+  <item name="612"	value="水浒英雄" category="老虎机" platform="Mobile" />
+  <item name="640"	value="太极" category="老虎机" platform="Mobile" />
+  <item name="520"	value="超级斗地主" category="棋牌" platform="Mobile" />
+</root>

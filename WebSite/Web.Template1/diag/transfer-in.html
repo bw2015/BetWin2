@@ -1,0 +1,27 @@
+﻿<div class="frame-diag-info">
+    <form action="handler/game/gateway/transfer" data-bind-action="handler/game/gateway/transfer" data-bind-type="ajax" data-bind-callback="form-tip,success-fire" data-bind-form-tip="diag-close" data-bind-fire-target="person-transfer-list">
+        <table class="post" data-bind-action="handler/user/game/accountinfo" data-bind-type="ajax" data-bind-callback="html" data-bind-data="parent">
+            <tr>
+                <th>账户余额：</th>
+                <td class="red">${Money:money}</td>
+            </tr>
+            <tr>
+                <th>${TypeName}账户：</th>
+                <td class="red">${GameMoney:money}</td>
+            </tr>
+            <tr>
+                <th>转入金额：</th>
+                <td>
+                    <input type="number" class="txt w60" name="Money" /> 元
+                </td>
+            </tr>
+            <tr>
+                <th></th>
+                <td>
+                    <input type="hidden" name="IN" value="${Type}" />
+                    <input type="submit" value=" 确认转入 " class="btn btn-red" />
+                </td>
+            </tr>
+        </table>
+    </form>
+</div>

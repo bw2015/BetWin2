@@ -1,0 +1,146 @@
+[2017/7/5 1:07:40]错误日志写入数据库失败
+已成功与服务器建立连接，但是在登录前的握手期间发生错误。 (provider: Shared Memory Provider, error: 0 - 句柄无效。)
+ErrorID:2E8085E1D4174656B60E06D42BF473DA
+ErrorID : 2E8085E1D4174656B60E06D42BF473DA
+Message : 已成功与服务器建立连接，但是在登录前的握手期间发生错误。 (provider: Shared Memory Provider, error: 0 - 句柄无效。)
+RawUrl : localhost:21000/handler/user/info/get
+UrlReferrer : http://localhost/wechat/game.html?Type=Boat
+UserAgent : Mozilla/5.0 (iPhone; CPU iPhone OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13B143 Safari/601.1
+IP : ::1
+Method : POST
+Cookie:
+	GHOST	:	f6e963045b8b47eea00d3f92dfab2266
+	USER	:	3d48e67c031d4f30b3707a4be427ea0d
+	USERINFO	:	2
+	ADMIN	:	6cd478ec68c14de8b4cd916fea05a29f
+
+Request.ServerVariables
+	ALL_HTTP	:	HTTP_CACHE_CONTROL:no-cache
+HTTP_CONNECTION:close
+HTTP_PRAGMA:no-cache
+HTTP_CONTENT_LENGTH:0
+HTTP_CONTENT_TYPE:application/x-www-form-urlencoded; charset=UTF-8
+HTTP_ACCEPT:application/json
+HTTP_ACCEPT_ENCODING:gzip, deflate, br
+HTTP_ACCEPT_LANGUAGE:zh-CN,zh;q=0.8,en;q=0.6
+HTTP_COOKIE:GHOST=f6e963045b8b47eea00d3f92dfab2266; USER=3d48e67c031d4f30b3707a4be427ea0d; USERINFO=2; ADMIN=6cd478ec68c14de8b4cd916fea05a29f
+HTTP_HOST:localhost:21000
+HTTP_REFERER:http://localhost/wechat/game.html?Type=Boat
+HTTP_USER_AGENT:Mozilla/5.0 (iPhone; CPU iPhone OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13B143 Safari/601.1
+HTTP_ORIGIN:http://localhost
+HTTP_X_REQUEST:JSON
+HTTP_X_REQUESTED_WITH:XMLHttpRequest
+HTTP_X_FORWARDED_FOR:37.8.6.9,::1
+
+	ALL_RAW	:	Cache-Control: no-cache
+Connection: close
+Pragma: no-cache
+Content-Length: 0
+Content-Type: application/x-www-form-urlencoded; charset=UTF-8
+Accept: application/json
+Accept-Encoding: gzip, deflate, br
+Accept-Language: zh-CN,zh;q=0.8,en;q=0.6
+Cookie: GHOST=f6e963045b8b47eea00d3f92dfab2266; USER=3d48e67c031d4f30b3707a4be427ea0d; USERINFO=2; ADMIN=6cd478ec68c14de8b4cd916fea05a29f
+Host: localhost:21000
+Referer: http://localhost/wechat/game.html?Type=Boat
+User-Agent: Mozilla/5.0 (iPhone; CPU iPhone OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13B143 Safari/601.1
+Origin: http://localhost
+X-Request: JSON
+X-Requested-With: XMLHttpRequest
+X-Forwarded-For: 37.8.6.9,::1
+
+	APPL_MD_PATH	:	/LM/W3SVC/2/ROOT
+	APPL_PHYSICAL_PATH	:	F:\2016\BetWin 2.0\WebSite\Web.Handler\
+	AUTH_TYPE	:	
+	AUTH_USER	:	
+	AUTH_PASSWORD	:	
+	LOGON_USER	:	
+	REMOTE_USER	:	
+	CERT_COOKIE	:	
+	CERT_FLAGS	:	
+	CERT_ISSUER	:	
+	CERT_KEYSIZE	:	
+	CERT_SECRETKEYSIZE	:	
+	CERT_SERIALNUMBER	:	
+	CERT_SERVER_ISSUER	:	
+	CERT_SERVER_SUBJECT	:	
+	CERT_SUBJECT	:	
+	CONTENT_LENGTH	:	0
+	CONTENT_TYPE	:	application/x-www-form-urlencoded; charset=UTF-8
+	GATEWAY_INTERFACE	:	CGI/1.1
+	HTTPS	:	off
+	HTTPS_KEYSIZE	:	
+	HTTPS_SECRETKEYSIZE	:	
+	HTTPS_SERVER_ISSUER	:	
+	HTTPS_SERVER_SUBJECT	:	
+	INSTANCE_ID	:	2
+	INSTANCE_META_PATH	:	/LM/W3SVC/2
+	LOCAL_ADDR	:	::1
+	PATH_INFO	:	/handler/user/info/get
+	PATH_TRANSLATED	:	F:\2016\BetWin 2.0\WebSite\Web.Handler\handler\user\info\get
+	QUERY_STRING	:	
+	REMOTE_ADDR	:	::1
+	REMOTE_HOST	:	::1
+	REMOTE_PORT	:	61165
+	REQUEST_METHOD	:	POST
+	SCRIPT_NAME	:	/handler/user/info/get
+	SERVER_NAME	:	localhost
+	SERVER_PORT	:	21000
+	SERVER_PORT_SECURE	:	0
+	SERVER_PROTOCOL	:	HTTP/1.1
+	SERVER_SOFTWARE	:	Microsoft-IIS/10.0
+	URL	:	/handler/user/info/get
+	HTTP_CACHE_CONTROL	:	no-cache
+	HTTP_CONNECTION	:	close
+	HTTP_PRAGMA	:	no-cache
+	HTTP_CONTENT_LENGTH	:	0
+	HTTP_CONTENT_TYPE	:	application/x-www-form-urlencoded; charset=UTF-8
+	HTTP_ACCEPT	:	application/json
+	HTTP_ACCEPT_ENCODING	:	gzip, deflate, br
+	HTTP_ACCEPT_LANGUAGE	:	zh-CN,zh;q=0.8,en;q=0.6
+	HTTP_COOKIE	:	GHOST=f6e963045b8b47eea00d3f92dfab2266; USER=3d48e67c031d4f30b3707a4be427ea0d; USERINFO=2; ADMIN=6cd478ec68c14de8b4cd916fea05a29f
+	HTTP_HOST	:	localhost:21000
+	HTTP_REFERER	:	http://localhost/wechat/game.html?Type=Boat
+	HTTP_USER_AGENT	:	Mozilla/5.0 (iPhone; CPU iPhone OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13B143 Safari/601.1
+	HTTP_ORIGIN	:	http://localhost
+	HTTP_X_REQUEST	:	JSON
+	HTTP_X_REQUESTED_WITH	:	XMLHttpRequest
+	HTTP_X_FORWARDED_FOR	:	37.8.6.9,::1
+
+PostData : 
+堆栈信息
+Type	:	System.Data.SqlClient.SqlException
+Source	:	.Net SqlClient Data Provider
+StackTrace	:	
+   在 System.Data.SqlClient.SqlInternalConnectionTds..ctor(DbConnectionPoolIdentity identity, SqlConnectionString connectionOptions, SqlCredential credential, Object providerInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString userConnectionOptions, SessionData reconnectSessionData, DbConnectionPool pool, String accessToken, Boolean applyTransientFaultHandling)
+   在 System.Data.SqlClient.SqlConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
+   在 System.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnectionPool pool, DbConnection owningObject, DbConnectionOptions options, DbConnectionPoolKey poolKey, DbConnectionOptions userOptions)
+   在 System.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   在 System.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   在 System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   在 System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   在 System.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   在 System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   在 System.Data.SqlClient.SqlConnection.TryOpenInner(TaskCompletionSource`1 retry)
+   在 System.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry)
+   在 System.Data.SqlClient.SqlConnection.Open()
+   在 SP.Studio.Data.DbExecutor.CreateConnection()
+   在 SP.Studio.Data.DbExecutor..ctor(String connectionString, DatabaseType dbType, DataConnectionMode connMode, IsolationLevel tranLevel)
+   在 SP.Studio.Data.DbFactory.CreateExecutor(String connectionString, DatabaseType dbType, DataConnectionMode connMode, IsolationLevel tranLevel)
+   在 SP.Studio.Data.DbAgent.NewExecutor(IsolationLevel tranLevel)
+   在 BW.Agent.AgentBase`1.GetNewExecutor(DbExecutor db, Boolean& isNewExecutor)
+   在 BW.Agent.UserAgent.GetTotalMoney(Int32 userId, DbExecutor db)
+   在 BW.Handler.user.info.get(HttpContext context)
+Method	:	.ctor
+Class	:	System.Data.SqlClient.SqlInternalConnectionTds
+HelpLink.ProdName	:	Microsoft SQL Server
+HelpLink.EvtSrc	:	MSSQLServer
+HelpLink.EvtID	:	6
+HelpLink.BaseHelpUrl	:	http://go.microsoft.com/fwlink
+HelpLink.LinkId	:	20476
+Time : 2017/7/5 1:07:40
+
+
+================================
+
+

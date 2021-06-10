@@ -1,0 +1,5 @@
+﻿.find { }
+
+    .find form { margin-top: 100px; text-align: center; transition: margin-top 0.5s; }
+        .find form .txt { width: 300px; font-size: 14px; border: 1px solid #ccc; border-radius: 5px; }
+        .find form .btn { width: 80px; font-size: 14px; }

@@ -1,0 +1,45 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <link href="styles/common.css" rel="stylesheet" />
+    <link href="styles/index.css" rel="stylesheet" />
+    <link href="styles/diag.css" rel="stylesheet" />
+    <link href="styles/theme.css" rel="stylesheet" />
+    <script src="studio/scripts/mootools.js"></script>
+    <script src="studio/scripts/mootools-more.js"></script>
+    <script src="studio/scripts/betwin.js"></script>
+    <script src="studio/scripts/diag.js"></script>
+    <script src="scripts/common.js"></script>
+    <script src="scripts/index.js"></script>
+</head>
+<body>
+    <div data-bind-action="/controls/header.html" data-bind-type="control"></div>
+
+    <div class="container">
+        <div class="banner"></div>
+
+        <div class="menu clear">
+            <a href="javascript:" class="m1" data-type="lottery"></a>
+            <a href="javascript:" class="m2 center" data-type="ag"></a>
+            <a href="javascript:" class="m3" data-type="pt"></a>
+            <a href="javascript:" class="m4" data-type="sport"></a>
+            <a href="javascript:" class="m5 center" data-type="chess"></a>
+            <a href="javascript:" class="m6" data-type="news"></a>
+        </div>
+        <div class="activity-news clear" id="activity-news" data-bind-action="handler/site/info/newslist" data-bind-type="ajax" data-bind-data="ColID=0&Type=Activity" data-bind-callback="list">
+            <ul data-list-element="true">
+                <li>
+                    <a href="javascript:" style="background-image:url('${Cover}');" data-diag-name="activity" data-diag-cssname="diag-activity" data-diag-type="control" data-diag-src="/info/news-detail.html" data-diag-callback="form" data-diag-mask="true" data-diag-height="470" data-diag-title="${Title}" data-diag-drag="true" data-diag-data="ID=${ID}" data-height="420">
+                        <label>${Title}</label>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="footer"></div>
+
+</body>
+</html>

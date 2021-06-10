@@ -1,0 +1,36 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <link href="../amui/css/amazeui.min.css" rel="stylesheet" />
+    <link href="../styles/common.css" rel="stylesheet" />
+    <link href="../styles/animate.min.css" rel="stylesheet" />
+    <link href="../styles/frame.css" rel="stylesheet" />
+    <link href="../studio/layui/css/layui.css" rel="stylesheet" />
+    <link href="../studio/layui/css/modules/layim/layim.css?v=3.50Pro" rel="stylesheet" />
+
+    <!-- 公共模块 -->
+    <script src="../studio/scripts/mootools.js"></script>
+    <script src="../studio/scripts/mootools-more.js"></script>
+
+    <!-- 框架 -->
+    <script src="../studio/scripts/betwin.js"></script>
+
+    <script type="text/javascript">
+        window.addEvent("domready", function () {
+            var data = location.search.substr(1).parseQueryString();
+            var obj = new Element("div", {
+                "data-bind-action": "../services/log-detail.html",
+                "data-bind-type": "control",
+                "data-bind-post": "key=" + data["id"]
+            });
+            obj.inject(document.body);
+            BW.Bind(obj);
+        });
+    </script>
+</head>
+<body>
+
+</body>
+</html>

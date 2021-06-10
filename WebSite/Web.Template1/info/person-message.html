@@ -1,0 +1,40 @@
+﻿<div class="frame-info-content">
+    <h3>站内信</h3>
+    <table class="list" data-bind-action="/handler/user/info/messagelist" data-bind-type="list" data-bind-callback="list" data-bind-load="pagesplit">
+        <thead>
+            <tr>
+                <th class="w100">状态</th>
+                <th>标题</th>
+                <th class="w200">时间</th>
+                <th class="w100">操作</th>
+            </tr>
+        </thead>
+        <tbody data-list-element="true">
+            <tr data-bind-delete="true">
+                <td id="user-message-read-${ID}">
+                    ${IsRead:user-message-read}
+                </td>
+                <td>
+                    <a href="javascript:" class="ft14 blue" data-diag-name="user-message-info" data-diag-type="control" data-diag-src="info/person-message-info.html" data-diag-title="阅读短信" data-diag-mask="true" data-diag-drag="true" data-diag-data="id=${ID}">${Title}</a>
+                </td>
+                <td>
+                    ${CreateAt}
+                </td>
+                <td>
+                    <a href="javascript:" class="btn btn-blue" data-bind-action="/handler/user/info/messagedelete" data-bind-type="ajax" data-bind-callback="delete" data-bind-stop="true" data-bind-event="confirm" data-bind-data="id=${ID}">删除</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<script type="text/javascript">
+    if (!htmlFunction["user-message-read"]) {
+        htmlFunction["user-message-read"] = function (value) {
+            if (value == "false") {
+                return "<span class=\"red bold\">未读</span>";
+            } else {
+                return "<span class=\"gray\">已读</span>";
+            }
+        }
+    }
+</script>

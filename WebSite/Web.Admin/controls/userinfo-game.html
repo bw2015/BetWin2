@@ -1,0 +1,35 @@
+﻿<!-- 第三方游戏账户 -->
+<div class="userinfo-frame  userinfo-game">
+    <div class="page-table">
+        <table class="list" data-bind-action="/admin/user/gameaccountlist" data-bind-type="list" data-bind-callback="list,update" data-bind-data="parent" id="userinfo-game-list">
+            <thead>
+                <tr>
+                    <th>游戏类型</th>
+                    <th>用户名</th>
+                    <th>当前余额</th>
+                    <th>更新时间</th>
+                    <th>可转出额度</th>
+                    <th>更新时间</th>
+                    <th>刷新</th>
+                    <th>转出</th>
+                </tr>
+            </thead>
+            <tbody data-list-element="true">
+                <tr>
+                    <td>${Game}</td>
+                    <td>${PlayerName} <p class="am-text-xs">${Password}</p></td>
+                    <td>${Money:money}</td>
+                    <td>${UpdateAt}</td>
+                    <td><input type="text" class="txt w80" data-update-name="Withdraw" data-update-type="${Type}" data-update-userid="${UserID}" value="${Withdraw}" data-bind-update-action="admin/user/updategameaccount" /></td>
+                    <td>${WithdrawAt}</td>
+                    <td>
+                        <a href="javascript:" class="am-btn am-btn-success am-round am-text-xs" data-bind-action-delay="admin/game/updatebalance" data-bind-type="ajax" data-bind-callback="form-tip,success-fire" data-bind-data="UserID=${UserID}&Type=${Type}" data-bind-fire-target="userinfo-game-list" data-bind-stop="true" data-bind-event="click">刷新余额</a>
+                    </td>
+                    <td>
+                        <a href="javascript:" class="am-btn am-btn-danger am-round am-text-xs" data-bind-action-delay="admin/game/transfer" data-bind-type="ajax" data-bind-callback="form-tip,success-fire" data-bind-data="UserID=${UserID}&Type=${Type}&Action=OUT&Money=${Money}" data-bind-fire-target="userinfo-game-list" data-bind-stop="true" data-bind-event="confirm">转出</a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

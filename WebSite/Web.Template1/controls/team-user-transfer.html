@@ -1,0 +1,48 @@
+﻿<div class="frame-info">
+    <form action="team-user-transfer.html" data-bind-action="handler/user/team/savetransferinfo" data-bind-type="ajax" data-bind-callback="form-tip" data-bind-form-tip="diag-close">
+        <table class="post" data-bind-action="/handler/user/team/transferinfo" data-bind-type="ajax" data-bind-callback="html,user-team-transfer-info" data-bind-data="parent">
+            <tr>
+                <th>收款方：</th>
+                <td>${UserName}</td>
+            </tr>
+            <tr>
+                <th>可用余额：</th>
+                <td>
+                    <span class="bold red">${Money:money}</span>
+                </td>
+            </tr>
+            <tr>
+                <th>转账金额：</th>
+                <td>
+                    <input type="number" class="txt" name="Money" />元
+                </td>
+            </tr>
+            <tr>
+                <th>资金密码：</th>
+                <td>
+                    <input type="password" class="txt" name="PayPassword" />
+                </td>
+            </tr>
+            <tr>
+                <th></th>
+                <td>
+                    <input type="hidden" name="ID" value="${ID}" />
+                    <input type="submit" vlaue="确认转账" class="btn btn-blue" />
+                </td>
+            </tr>
+        </table>
+    </form>
+</div>
+
+<script type="text/javascript">
+    BW.callback["user-team-transfer-info"] = function (result) {
+        var t = this;
+        if (!result.success) {
+            new BW.Tip(result.msg, {
+                "callback": function () {
+                    BW.callback["diag-close"].apply(t, [result]);
+                }
+            })
+        };
+    };
+</script>

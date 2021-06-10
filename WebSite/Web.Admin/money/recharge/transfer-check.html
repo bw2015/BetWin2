@@ -1,0 +1,92 @@
+﻿<div class="page-table">
+    <form action="transfer-check.html" method="post" data-bind-action="admin/money/checktransferorder" data-bind-type="ajax" data-bind-callback="form-tip" data-bind-form-tip="diag-close,fire" data-bind-fire-target="money-transferorder-list">
+        <table class="post" data-bind-action="admin/money/transferorderinfo" data-bind-type="ajax" data-bind-callback="html,transferorder-info" data-bind-data="parent">
+            <tr>
+                <th>用户名：</th>
+                <td>${UserName}</td>
+                <th>充值渠道：</th>
+                <td>${Payment}</td>
+            </tr>
+            <tr>
+                <th>提交时间：</th>
+                <td>${CreateAt}</td>
+                <th>充值时间：</th>
+                <td>${PaymentAt}</td>
+            </tr>
+            <tr>
+                <th>提交金额：</th>
+                <td><label class="am-text-success">${Money:money}</label></td>
+                <th>姓名：</th>
+                <td>${Name}</td>
+            </tr>
+            <tr>
+                <th>备注信息：</th>
+                <td colspan="3">
+                    ${Description} &nbsp;
+                </td>
+            </tr>
+            <tr>
+                <th>实际到帐：</th>
+                <td>
+                    <input type="text" name="Amount" class="txt am-form-field" size="6" value="${Amount}" /> 元
+                </td>
+                <th>当前状态：</th>
+                <td>
+                    ${StatusName}
+                </td>
+            </tr>
+            <tr>
+                <th>流水号：</th>
+                <td colspan="3">
+                    <input type="text" name="SystemID" class="txt am-form-field" size="50" value="${SystemID}" />
+                </td>
+            </tr>
+            <tr class="submit">
+                <td colspan="4" class="am-text-center">
+                    <input type="hidden" name="Action" />
+                    <input type="hidden" name="ID" value="${ID}" />
+                    <input type="button" value="审核通过" class="am-btn am-btn-success am-round am-margin-right" data-action="Success" />
+                    <input type="button" value="审核拒绝" class="am-btn am-btn-danger am-round am-margin-left" data-action="Faild" />
+                </td>
+            </tr>
+        </table>
+    </form>
+</div>
+<script type="text/javascript">
+    BW.callback["transferorder-info"] = function (result) {
+        var t = this;
+        if (!result.success) {
+            new BW.Tip(result.msg, {
+                "callback": function () {
+                    BW.callback["diag-close"].apply(t, [result]);
+                }
+            });
+            return;
+        }
+
+        var amount = t.dom.element.getElement("[name=Amount]");
+        var action = t.dom.element.getElement("[name=Action]");
+        var submit = t.dom.element.getElement(".submit");
+        if (result.info.Status != "None") {
+            submit.dispose();
+            t.dom.element.getElements("input").each(function (item) {
+                item.set("readonly", true);
+            });
+            return;
+        }
+        amount.set("value", result.info.Money.toFloat());
+        var form = t.dom.element.getParent("form");
+
+        submit.getElements("[data-action]").addEvent("click", function () {
+            var obj = this;
+            var msg = "您确认要" + obj.get("value") + "吗？";
+            new BW.Tip(msg, {
+                "type": "confirm",
+                "callback": function () {
+                    action.set("value", obj.get("data-action"));
+                    form.send();
+                }
+            });
+        });
+    };
+</script>

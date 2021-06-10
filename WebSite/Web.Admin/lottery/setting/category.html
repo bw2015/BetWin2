@@ -1,0 +1,40 @@
+﻿<div class="page-table">
+    <table class="list" data-bind-action="admin/lottery/catelist" data-bind-type="list" data-bind-callback="list,update" id="lottery-category-list" data-bind-update-action="admin/lottery/updatecate">
+        <thead>
+            <tr>
+                <th>编号</th>
+                <th>分类名称</th>
+                <th>代码</th>
+                <th>排序值</th>
+                <th>操作</th>
+            </tr>
+        </thead>
+        <tbody data-list-element="true">
+            <tr data-bind-delete="1">
+                <td>${ID}</td>
+                <td><input type="text" data-update-name="Name" data-update-id="${ID}" value="${Name}" class="txt" /></td>
+                <td><input type="text" data-update-name="Code" data-update-id="${ID}" value="${Code}" size="2" class="txt w80" /></td>
+                <td><input type="number" data-update-name="Sort" data-update-id="${ID}" value="${Sort}" size="2" class="txt w80" /></td>
+                <td><a href="javascript:" data-bind-action="admin/lottery/deletecate" data-bind-type="ajax" data-bind-callback="delete" data-bind-data="id=${ID}" data-bind-stop="true" data-bind-event="confirm">删除</a></td>
+            </tr>
+        </tbody>
+    </table>
+    <form action="category.html" method="post" data-bind-action="admin/lottery/savecate" data-bind-type="ajax" data-bind-callback="form-tip" data-bind-form-tip="fire" data-bind-fire-target="lottery-category-list">
+        <table class="post">
+            <tr>
+                <th>名称：</th>
+                <td><input type="text" name="Name" class="txt am-form-field" placeholder="分类名称" /></td>
+            </tr>
+            <tr>
+                <th>代码：</th>
+                <td><input type="text" name="Code" class="txt am-form-field" placeholder="分类代码" /></td>
+            </tr>
+            <tr>
+                <th></th>
+                <td>
+                    <input type="submit" value="新增分类" class="am-btn am-btn-success" />
+                </td>
+            </tr>
+        </table>
+    </form>
+</div>

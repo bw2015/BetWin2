@@ -1,0 +1,40 @@
+﻿<div class="page-table">
+    <form action="admininfo-code.html" method="post" data-bind-action="admin/account/savesecretkey" data-bind-type="ajax" data-bind-callback="form-tip" data-bind-form-tip="diag-close">
+        <table class="post" data-bind-action="admin/account/getsecretkey" data-bind-type="ajax" data-bind-callback="admininfo-code">
+            <tr>
+                <td class="am-text-center">
+                    <img src="images/space.gif" class="am-img-thumbnail" style="width:220px; height:220px;" />
+                </td>
+            </tr>
+            <tr>
+                <td class="am-text-center">
+                    <input type="hidden" name="Key" />
+                    <input type="submit" value="已设定验证码" class="am-btn am-btn-success am-round" />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    使用说明：请下载谷歌身份验证器然后扫描二维码，注意：<label class="am-text-danger">如果没有进行谷歌身份验证器的扫码绑定，请勿点击“已设定验证码”，这将导致您无法登录！！</label>
+                </td>
+            </tr>
+        </table>
+    </form>
+</div>
+<script type="text/javascript">
+    BW.callback["admininfo-code"] = function (result) {
+        var t = this;
+        if (!result.success) {
+            new BW.Tip(result.msg, {
+                "callback": function () {
+                    BW.callback["diag-close"].apply(t);
+                }
+            })
+            return;
+        };
+        var img = t.dom.element.getElement("img");
+        var key = t.dom.element.getElement("[name=Key]");
+
+        key.set("value", result.info.SecretKey);
+        img.set("src", result.info.Code.toQRCode());
+    };
+</script>

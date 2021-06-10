@@ -1,0 +1,99 @@
+﻿<div class="frame-info-content">
+    <h3>
+        团队报表
+    </h3>
+    <div class="frame-info-search right">
+        <form action="report-videolog.html" method="post">
+            &nbsp;
+            业绩时间：<input type="text" name="StartAt" class="txt" data-type="calendar" size="12" data-today="1" /> ～ <input type="text" name="EndAt" class="txt" data-type="calendar" size="12" data-today="1" />
+            &nbsp;
+            上级：<input type="text" name="User" class="txt" readonly="readonly" />
+            <input type="submit" value="搜索" class="btn btn-blue" />
+            <input type="button" value="返回上级" class="btn btn-gray" data-parent="" />
+        </form>
+    </div>
+
+    <table class="list" data-bind-action="/handler/user/money/teamstatistic" data-bind-type="list" data-bind-callback="count,report-team-list,report-team-child" data-bind-load="search" data-bind-pagesize="12">
+        <thead>
+            <tr></tr>
+        </thead>
+        <tbody data-list-element="true"></tbody>
+        <tfoot>
+            <tr class="total">
+                <td>统计：</td>
+                <td data-colspan="1"></td>
+                <td><span class="ft14 green">${data.Total:money} </span></td>
+            </tr>
+        </tfoot>
+    </table>
+</div>
+
+<script type="text/javascript">
+    BW.callback["report-team-list"] = function (result) {
+        var t = this;
+        var thead = t.dom.element.getElement("thead tr");
+        var tbody = t.dom.element.getElement("tbody");
+        var colspan = t.dom.element.getElement("[data-colspan]");
+        var colcount = 0;
+        thead.empty();
+        tbody.empty();
+        new Element("th", { "text": "用户名" }).inject(thead);
+        Object.forEach(result.info.data.Category, function (value, key) {
+            colcount++;
+            new Element("th", { "text": value }).inject(thead);
+        });
+        Object.forEach(result.info.data.Game, function (value, key) {
+            colcount++;
+            new Element("th", { "text": value }).inject(thead);
+        });
+        new Element("th", { "text": "盈亏" }).inject(thead);
+
+        result.info.list.each(function (item) {
+            var tr = new Element("tr");
+            var isZero = true;
+            new Element("td", {
+                "html": "<a href=\"javascript:\" class=\"blue\" title=\"查看下级\">" + item.UserName + "</a>"
+            }).inject(tr);
+
+            Object.forEach(result.info.data.Category, function (value, key) {
+                if (item.Category[key]) isZero = false;
+                new Element("td", { "class": "ft12", "text": !item.Category[key] ? "0.00" : htmlFunction["money"](item.Category[key]) }).inject(tr);
+            });
+            Object.forEach(result.info.data.Game, function (value, key) {
+                if (item.Game[key]) isZero = false;
+                new Element("td", { "class": "ft12", "text": !item.Game[key] ? "0.00" : htmlFunction["money"](item.Game[key]) }).inject(tr);
+            });
+            new Element("td", { "text": htmlFunction["money"](item.Money), "class": item.Money > 0 ? "green" : "red" }).inject(tr);
+
+            if (!isZero)
+                tr.inject(tbody);
+        });
+
+        colspan.set("colspan", colcount);
+    };
+
+    BW.callback["report-team-child"] = function (result) {
+        var t = this;
+        var parent = t.dom.searchbox.getElement("[data-parent]");
+        parent.set("data-parent", result.info.data.Parent);
+        if (t.dom.element.get("data-isevent")) return;
+
+        var user = t.dom.searchbox.getElement("[name=User]");
+
+        t.dom.element.addEvent("click", function (e) {
+            var obj = $(e.target);
+            if (obj.get("tag") == "a") {
+                var username = obj.get("text");
+                user.set("value", username);
+                t.fire();
+            };
+        });
+
+        parent.addEvent("click", function (e) {
+            user.set("value", this.get("data-parent"));
+            t.fire();
+        })
+
+        t.dom.element.set("data-isevent", true);
+    };
+</script>

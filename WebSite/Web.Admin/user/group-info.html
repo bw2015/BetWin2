@@ -1,0 +1,79 @@
+﻿<div class="page-table">
+    <form action="group-info.html" method="post" data-bind-action="admin/user/savegroupinfo" data-bind-type="ajax" data-bind-callback="form-tip" data-bind-form-tip="diag-close">
+        <table class="post" data-bind-action="admin/user/groupinfo" data-bind-type="ajax" data-bind-callback="form-fill,user-group-info" data-bind-data="parent">
+            <tr>
+                <th>分组名称：</th>
+                <td>
+                    <input type="text" name="Name" class="txt am-form-field" required="required" />
+                </td>
+            </tr>
+            <tr>
+                <th>备注信息：</th>
+                <td>
+                    <textarea type="text" name="Description" class="txt am-form-field" cols="42" maxlength="180"></textarea>
+                </td>
+            </tr>
+            <tr>
+                <th>充值渠道：</th>
+                <td data-setting="payment"></td>
+            </tr>
+            <tr>
+                <th>默认分组：</th>
+                <td>
+                    <input type="checkbox" name="IsDefault" data-type="switch" value="1" />
+                    <span class="desc">新注册的会员使用此分组的配置信息</span>
+                </td>
+            </tr>
+            <tr>
+                <th>排序值：</th>
+                <td>
+                    <input type="text" name="Sort" class="txt am-form-field w50" />
+                    <span class="desc">配合分组条件使用，从大到小计算，为负数表示手动，不受自动条件影响。</span>
+                </td>
+            </tr>
+
+            <tr>
+                <th>分组条件：</th>
+                <td>
+                    <select name="ConditionID" class="txt am-form-field" data-bind-action="admin/user/conditionlist" data-bind-type="ajax" data-bind-callback="select" data-select-value="ID" data-select-text="Name" data-selected="${ConditionID}">
+                        <option value="0">无条件</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <th></th>
+                <td>
+                    <input type="hidden" name="ID" value="${ID}" />
+                    <input type="submit" value="保存" class="am-btn am-btn-success am-round" />
+                </td>
+            </tr>
+        </table>
+    </form>
+</div>
+<script type="text/javascript">
+    BW.callback["user-group-info"] = function (result) {
+        if (!result.success) return;
+        var t = this;
+        var dom = new Object();
+        t.dom.element.getElements("[data-setting]").each(function (item) {
+            dom[item.get("data-setting")] = item;
+        });
+
+        // 充值渠道
+        !function () {
+            if (!dom["payment"]) return;
+            result.info.Setting.Payment.each(function (item) {
+                var id = "user-group-info-payment-" + item.ID;
+                console.log(item.Selected);
+                new Element("label", {
+                    "for": id,
+                    "html": "<input type=\"checkbox\"  name=\"Setting.PayID\" id=\"" + id + "\" value=\"" + item.ID + "\"" + (item.Selected ? "checked=\"checked\"" : "") + " /> "
+                        + item.Name + (item.IsOpen ? "" : "<i class=\"am-icon-close am-text-danger\"></i>"),
+                    "styles": {
+                        "min-width": "150px"
+                    }
+                }).inject(dom["payment"]);
+            });
+        }();
+    }
+</script>

@@ -1,0 +1,92 @@
+﻿
+<div class="frame-info-tip">
+    <i class="icon icon40 alert"></i>
+    <p class="red">温馨提示</p>
+    <p class="red">1、转账之前请确保您是转出还是转入，请勿选择错误；如遇到由于个人操作失误引起的纠纷，平台概不负责。</p>
+    <p class="red">
+        2、由于平台与第三方游戏平台之间网络存在延时，可能会遇到短暂无法转入转出的情况，请耐心等待或者联系在线客服。
+    </p>
+</div>
+
+<div class="frame-info-content" id="person-transfer-list" data-bind-action="handler/game/gateway/transferinfo" data-bind-type="ajax" data-bind-callback="person-transfer-list">
+    <table class="list">
+        <thead>
+            <tr></tr>
+        </thead>
+        <tbody>
+            <tr></tr>
+        </tbody>
+    </table>
+</div>
+<script type="text/javascript">
+    // 转账信息的回调
+    BW.callback["person-transfer-list"] = function (result) {
+        var t = this;
+        var thead = t.dom.element.getElement(".list thead tr");
+        var tbody = t.dom.element.getElement(".list tbody tr");
+
+        if (!t.dom.element.get("data-click")) {
+            t.dom.element.set("data-click", true);
+            t.dom.element.addEvent("click", function (e) {
+                var obj = $(e.target);
+                if (obj.get("data-action") == "open") {
+                    var type = obj.get("data-type");
+                    new Request.JSON({
+                        "url": "handler/game/gateway/register",
+                        "onRequest": function () {
+                            t.dom.element.addClass("loading-ajax");
+                        },
+                        "onComplete": function () {
+                            t.dom.element.removeClass("loading-ajax");
+                        },
+                        "onFailure": function (xhr) {
+                            new BW.Tip(xhr.response);
+                        },
+                        "onSuccess": function (info) {
+                            if (!info.success) {
+                                new BW.Tip(info.msg);
+                            } else {
+                                new BW.Tip(info.msg, {
+                                    "callback": function () {
+                                        t.fire();
+                                    }
+                                });
+                            }
+                        }
+                    }).post({
+                        "Type": type
+                    });
+                }
+            });
+        }
+
+        thead.empty();
+        tbody.empty();
+        result.info.each(function (item) {
+            new Element("th", {
+                "text": item.Name
+            }).inject(thead);
+
+            var td = new Element("td");
+
+            if (item.Type == "") {
+                td.set("html", [
+                    "<p class=\"red\">${Money:money}</p>",
+                     "<a href=\"javascript:\" class=\"btn btn-small btn-red\" data-diag-name=\"person-transfer-exchange\" data-diag-type=\"control\" data-diag-src=\"diag/transfer-all.html\" data-diag-mask=\"true\" data-diag-drag=\"true\" data-diag-title=\"批量转入至主账户\" data-diag-data=\"Type=${Type}\">批量转入</a>"
+                ].join("").toHtml(item));
+            } else if (item.disabled == "true") {
+                td.set("html", "<p class=\"gray\">暂未开户</p><a href=\"javascript:\" class=\"btn btn-small btn-red\" data-action=\"open\" data-type=\"${Type}\">立即开户</a>".toHtml(item));
+            } else {
+                td.set("html", ["<p class=\"red\">${Money:money}</p>",
+                    "<a href=\"javascript:\" class=\"btn btn-small btn-red\" data-diag-name=\"person-transfer-exchange\" data-diag-type=\"control\" data-diag-src=\"diag/transfer-in.html\" data-diag-mask=\"true\" data-diag-drag=\"true\" data-diag-title=\"转入${Type}账户\" data-diag-data=\"Type=${Type}\">转入</a>",
+                    "<a href=\"javascript:\" class=\"btn btn-small btn-blue\" data-diag-name=\"person-transfer-exchange\" data-diag-type=\"control\" data-diag-src=\"diag/transfer-out.html\" data-diag-mask=\"true\" data-diag-drag=\"true\" data-diag-title=\"转出${Type}账户\" data-diag-data=\"Type=${Type}\">转出</a>"]
+                    .join("\n").toHtml(item));
+            }
+
+            td.inject(tbody);
+
+            //<a href="javascript:" class="btn btn-small btn-red">转入</a>
+            //<a href="javascript:" class="btn btn-small btn-blue">转出</a>
+        });
+    };
+</script>

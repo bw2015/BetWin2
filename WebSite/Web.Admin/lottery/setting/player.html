@@ -1,0 +1,68 @@
+﻿<div class="page-header">
+    <h1>玩法管理</h1>
+    <h6>奖金为2000奖金组可得的奖金，用户中奖将按照他的奖金组来发放奖金。<br />最多投注指当前玩法单注最多允许投的注数，为0表示无限制。 排序值为从大到小。</h6>
+    <div class="page-searchbox">
+        <form action="/admin/lottery/player" method="post">
+            <select name="Category" class="txt" data-enum-name="BW.Common.Lottery.LotteryCategory" id="lottery-setting-player-category"></select>
+            <select name="Lottery" class="txt" id="lottery-setting-player-type">
+                <option value="ChungKing"></option>
+            </select>
+            <input type="submit" value="查询" class="am-btn am-btn-success am-round am-text-xs" />
+        </form>
+    </div>
+</div>
+
+<div class="page-table">
+    <table class="list" id="lottery-setting-player-list" data-bind-action="/admin/lottery/player" data-bind-type="list" data-bind-load="search" data-bind-callback="list,update" data-bind-update-action="/admin/lottery/updateplayer">
+        <thead>
+            <tr>
+                <th>代码</th>
+                <th>彩种</th>
+                <th>玩法分类</th>
+                <th>二级分类</th>
+                <th>玩法名称</th>
+                <th>奖金</th>
+                <th>开启玩法</th>
+                <th>移动端</th>
+                <th>微信</th>
+                <th>最多投注</th>
+                <th>排序值</th>
+                <!--<th>最多比例</th>-->
+                <th>操作</th>
+            </tr>
+        </thead>
+        <tbody data-list-element="true">
+            <tr>
+                <td>${Code}</td>
+                <td>${Game}</td>
+                <td>${GroupName}</td>
+                <td>${LabelName}</td>
+                <td><input type="text" class="txt w80" data-update-name="PlayName" data-update-code="${Code}" value="${PlayName}" /></td>
+                <td><input type="text" class="txt w80" data-update-name="RewardMoney" data-update-code="${Code}" value="${RewardMoney}" /> 元</td>
+
+                <td><input type="checkbox" value="1" data-type="switch" data-update-name="IsOpen" data-update-code="${Code}" data-checked="${IsOpen:checked}" /></td>
+                <td><input type="checkbox" value="1" data-type="switch" data-update-name="IsMobile" data-update-code="${Code}" data-checked="${IsMobile:checked}" /></td>
+                <td>${Wechat:open}</td>
+                <td><input type="number" class="txt w50" data-update-name="MaxBet" data-update-code="${Code}" value="${MaxBet}" /></td>
+
+                <td><input type="number" class="txt w50" data-update-name="Sort" data-update-code="${Code}" value="${Sort}" /></td>
+                <!--<td><input type="number" class="txt w80" data-update-name="SingledReward" data-update-code="${Code}" value="${SingledReward}" /> 元</td>-->
+
+                <td>
+                    <a href="javascript:" data-diag-name="lottery-player-setting" data-diag-type="control" data-diag-src="controls/player-test.html" data-diag-data="id=${ID}" data-diag-title="${PlayName}" data-diag-mask="true" data-diag-drag="true">测试</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+
+<script type="text/javascript">
+
+    (function () {
+        new BW.Select($("lottery-setting-player-category"), $("lottery-setting-player-type"), {
+            "url": "/admin/lottery/type",
+            "auto": true
+        });
+    }).delay(500);
+</script>

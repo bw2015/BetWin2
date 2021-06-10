@@ -1,0 +1,30 @@
+﻿<div class="page-table">
+    <form action="reply-category.html" method="post" data-bind-action="admin/im/replycategoryadd" data-bind-type="ajax" data-bind-callback="form-tip,success-fire" data-bind-fire-target="services-reply-category">
+        <table class="list" data-bind-action="admin/im/replycategory" data-bind-type="list" data-bind-callback="list,update" id="services-reply-category">
+            <thead>
+                <tr>
+                    <th>分类名称</th>
+                    <th class="w120">操作</th>
+                </tr>
+            </thead>
+            <tbody data-list-element="true" data-bind-update-action="admin/im/replycategoryupdate">
+                <tr data-bind-delete="true">
+                    <td>
+                        <input type="text" class="txt" data-update-action="Name" data-update-id="${ID}" value="${Name}" />
+                    </td>
+                    <td>
+                        <a href="javascript:" data-bind-action="admin/im/replycategorydelete" data-bind-type="ajax" data-bind-callback="form-tip,delete" data-bind-stop="true" data-bind-event="confirm" data-bind-data="id=${ID}">删除</a>
+                    </td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td colspan="2" class="am-text-center">
+                        <input type="text" name="Name" class="txt" placeholder="分类名称" required="required" />
+                        <input type="submit" value="新增" class="am-btn am-btn-success am-text-xs" />
+                    </td>
+                </tr>
+            </tfoot>
+        </table>
+    </form>
+</div>

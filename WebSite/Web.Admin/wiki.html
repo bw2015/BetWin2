@@ -1,0 +1,57 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <link href="amui/css/amazeui.min.css" rel="stylesheet" />
+    <link href="styles/common.css" rel="stylesheet" />
+    <link href="styles/animate.min.css" rel="stylesheet" />
+    <link href="styles/frame.css" rel="stylesheet" />
+
+    <!-- 公共模块 -->
+    <script src="studio/scripts/mootools.js"></script>
+    <script src="studio/scripts/mootools-more.js"></script>
+    <script src="studio/scripts/ui.menu.js"></script>
+
+    <!-- 框架 -->
+    <script src="studio/scripts/betwin.js"></script>
+    <script src="studio/scripts/diag.js"></script>
+
+    <!-- 管理员后台脚本  -->
+    <script src="scripts/frame.js"></script>
+    <script src="scripts/admin.js"></script>
+
+
+    <!-- 第三方脚本资源 -->
+    <script src="/studio/charts/countup.js"></script>
+
+</head>
+<body>
+    <header class="header-menu shadow-bottom">
+        <div class="frame-taskbar-list" id="frame-taskbar-list">
+            <a href="javascript:" class="task-left am-icon-backward"></a>
+            <div class="frame-taskbar-container">
+                <div class="frame-taskbar" id="frame-taskbar">
+                </div>
+            </div>
+            <a href="javascript:" class="task-right am-icon-forward"></a>
+        </div>
+        <div id="admin-info" class="admin-info" data-bind-action="/admin/account/info" data-bind-type="ajax" data-bind-event="load" data-bind-callback="html" data-bind-load="GetEnumList">
+            
+        </div>
+    </header>
+
+    <aside id="aside" class="shadow-right" data-bind-action="/admin/site/get" data-bind-type="ajax" data-bind-event="load" data-bind-callback="html,frame-aside">
+        <div class="toolbar shadow-bottom">
+            <h1>帮助文档</h1>
+        </div>
+        <menu></menu>
+    </aside>
+
+    <div class="frame-content" id="frame-content">
+        <div class="frame-items" id="frame-items">
+
+        </div>
+    </div>
+</body>
+</html>

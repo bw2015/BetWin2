@@ -1,0 +1,95 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1" GroupingSetting="Access">
+  <Class Name="SP.Studio.Data.DataExtension">
+    <Position X="9.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAYAIBAIAACAAAAABAAAAABAABFACAAQAAkAAEEAAAA=</HashCode>
+      <FileName>Data\DataExtension.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SP.Studio.Data.DataModule" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="11.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAACAAACAAAAAAAAAAAAgAAAAAAGAEAAADAAAAAAA=</HashCode>
+      <FileName>Data\DataModule.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="SP.Studio.Data.DbAgent" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="13.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACIgAAAAAAAAAAAAAAAIAEAAACkAAAAAQAA=</HashCode>
+      <FileName>Data\DbAgent.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="SP.Studio.Data.DbExecutor" BaseTypeListCollapsed="true">
+    <Position X="11.5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACAIAEACADAhAAkAAABEAFhAACQAAQAFAAAAAAAAQAA=</HashCode>
+      <FileName>Data\DbExecutor.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.21" Collapsed="true" />
+  </Class>
+  <Class Name="SP.Studio.Data.DbFactory">
+    <Position X="11.5" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAQBA=</HashCode>
+      <FileName>Data\DbFactory.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SP.Studio.Data.DbSetting">
+    <Position X="13.25" Y="2.75" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Nested Types" Collapsed="false" />
+    </Compartments>
+    <NestedTypes>
+      <Class Name="SP.Studio.Data.DbSetting.Nested" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Data\DbSetting.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Class>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAIBAAAAAAAA=</HashCode>
+      <FileName>Data\DbSetting.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SP.Studio.Data.IDbOperation" Collapsed="true">
+    <Position X="6.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAEAAACCQAAAAAABAAAAEAAAAAEAAAIAAAAEAAAI=</HashCode>
+      <FileName>Data\IDbOperation.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="SP.Studio.Data.SqlDbOperation">
+    <Position X="5" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAEAAAAAAAAAAAAAAAAAEAAAAAAAAAIAAAAAAAAI=</HashCode>
+      <FileName>Data\SqlDbOperation.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SP.Studio.Data.SQLiteOperation">
+    <Position X="7.25" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAEAAAAAAAAAAAAAAAAAEAAAAAAAAAIAAAAAAAAI=</HashCode>
+      <FileName>Data\SQLiteOperation.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Enum Name="SP.Studio.Data.DatabaseType">
+    <Position X="5" Y="5.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAIBAAAAAEAAAAAAAAACAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Data\DbAgent.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="SP.Studio.Data.DataConnectionMode">
+    <Position X="7.25" Y="5.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAQAAAAAEAAAA=</HashCode>
+      <FileName>Data\DbAgent.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="宋体" Size="9" />
+</ClassDiagram>

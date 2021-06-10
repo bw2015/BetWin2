@@ -1,0 +1,19 @@
+﻿<h2>管理员登录</h2>
+
+<form action="/admin/account/login" method="post" data-bind-action="/admin/account/login" data-bind-type="form" data-bind-callback="loginbox">
+    <p>
+        <i class="am-icon-user"></i>
+        <input type="text" name="UserName" class="txt" />
+    </p>
+    <p>
+        <i class="am-icon-key"></i>
+        <input type="password" name="Password" class="txt" />
+    </p>
+    <p>
+        <i class="am-icon-google-plus"></i>
+        <input type="text" name="Code" class="txt" placeholder="谷歌验证码" />
+    </p>
+    <p>
+        <input type="submit" value="登 录" class="button" />
+    </p>
+</form>

@@ -1,0 +1,20 @@
+﻿<div class="frame-info">
+    <table class="list" data-bind-action="/handler/user/money/lockmoney" data-bind-type="list" data-bind-callback="list">
+        <thead>
+            <tr>
+                <th>锁定类型</th>
+                <th>金额</th>
+                <th>时间</th>
+                <th>备注信息</th>
+            </tr>
+        </thead>
+        <tbody data-list-element="true">
+            <tr>
+                <td>${Type}</td>
+                <td><span class="red">${Money:money}</span></td>
+                <td>${LockAt}</td>
+                <td>${Description}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

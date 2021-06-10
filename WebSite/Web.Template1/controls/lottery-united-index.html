@@ -1,0 +1,80 @@
+﻿<div class="frame-info-2">
+    <div class="frame-info">
+        <table class="list" data-bind-action="/handler/game/lottery/unitedlist" data-bind-type="list" data-bind-callback="list,pagesplit" data-bind-load="pagesplit,united-index">
+            <thead>
+                <tr>
+                    <th>彩种</th>
+                    <th>标题</th>
+                    <th>发起人</th>
+                    <th>当前进度</th>
+                    <th>状态</th>
+                    <th>操作</th>
+                </tr>
+            </thead>
+            <tbody data-list-element="true">
+                <tr>
+                    <td>${Game}</td>
+                    <td>${Title}</td>
+                    <td>${UserName}</td>
+                    <td>${Progress:p}</td>
+                    <td>${StatusName}</td>
+                    <td>
+                        <a href="javascript:" class="btn btn-blue btn-xs" data-id="${ID}">参与合买</a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="frame-info">
+        <div class="frame-info-back padding-5 text-right">
+            <a href="javascript:" class="btn btn-gray padding-5" id="lottery-united-back">返回大厅</a>
+        </div>
+        <div id="lottery-united-info">
+
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+    BW.load["united-index"] = function () {
+        var t = this;
+        var parent = t.dom.container.getParent(".frame-info-2");
+        var width = t.dom.container.getSize().x;
+        var diag = t.dom.container.getParent(".diag-content");
+        diag.setStyle("overflow-x", "hidden");
+        parent.setStyle("width", width * 2);
+        parent.getElements(".frame-info").each(function (item) {
+            item.setStyles({
+                "width": width,
+                "float": "left"
+            });
+        });
+        var fx = new Fx.Tween(parent);
+        var infoObj = $("lottery-united-info");
+        var info = null;
+
+        t.dom.container.addEvent("click", function (e) {
+            var obj = $(e.target);
+            if (!obj.get("data-id")) return;
+            var id = obj.get("data-id");
+            fx.start("margin-left", width * -1);
+            infoObj.set("data-bind-post", "ID=" + id);
+            if (!info) {
+                info = new BW.BindEvent(infoObj, {
+                    "action": "controls/lottery-united-info.html",
+                    "type": "control",
+                    "data": "parent"
+                });
+            } else {
+                info.fire();
+            }
+        });
+
+        // 返回
+        !function () {
+            $("lottery-united-back").addEvent("click", function () {
+                fx.start("margin-left", 0);
+            });
+        }();
+    };
+</script>

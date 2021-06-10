@@ -1,0 +1,123 @@
+﻿<table class="post" data-bind-action="/handler/user/lottery/orderdetail" data-bind-type="ajax" data-bind-callback="html,lottery-order-info" data-bind-data="parent">
+    <tr>
+        <th>投注编号：</th>
+        <td>${ID}</td>
+        <th>投注时间：</th>
+        <td>${CreateAt}</td>
+    </tr>
+    <tr>
+        <th>奖期：</th>
+        <td>${Index}</td>
+        <th>玩法：</th>
+        <td>${Player}</td>
+    </tr>
+    <tr>
+        <th>奖金模式：</th>
+        <td>${Rebate}</td>
+        <th>返点：</th>
+        <td>${BetReturn:p}</td>
+    </tr>
+    <tr>
+        <th>投注号码：</th>
+        <td colspan="3">
+            <textarea class="txt" cols="80" rows="4" readonly="readonly">${Number}</textarea>
+        </td>
+    </tr>
+    <tr>
+        <th>注数：</th>
+        <td>${Bet}</td>
+        <th>模式：</th>
+        <td>${Mode:lottery-mode}</td>
+    </tr>
+    <tr>
+        <th>倍数：</th>
+        <td>${Times}倍</td>
+        <th>投注金额：</th>
+        <td>${Money:money}</td>
+    </tr>
+    <tr>
+        <th>当前状态：</th>
+        <td>${Status}</td>
+        <th>开奖号码：</th>
+        <td>${ResultNumber}</td>
+    </tr>
+    <tr data-type="IsOpen">
+        <th>派奖时间：</th>
+        <td>${LotteryAt}</td>
+        <th>中奖金额：</th>
+        <td>${Reward:money}</td>
+    </tr>
+    <tr data-type="IsAction">
+        <th>操作：</th>
+        <td colspan="3">
+            <input type="button" value="打印" class="btn btn-green" data-type="print" />
+            <input type="button" value="撤单" class="btn btn-red" data-type="revoke" />
+        </td>
+    </tr>
+</table>
+
+<script type="text/javascript">
+    BW.callback["lottery-order-info"] = function (result) {
+        var t = this;
+        if (!result.success) return;
+        var dom = new Object();
+        t.dom.element.getElements("[data-type]").each(function (item) {
+            dom[item.get("data-type")] = item;
+        });
+        !function () {
+            if (!dom["print"]) return;
+            dom["print"].addEvent("click", function () {
+                var url = "diag/lotteryorder-print.html?ID=" + result.info.ID;
+                var width = 800;
+                var height = 600;
+                var left = (UI.getSize().x - width) / 2;
+                var top = (UI.getSize().y - height) / 2;
+                window.open(url, "_blank", "width=" + width + ",height=" + height + ",location=0,toolbar=0,left=" + left + ",top=" + top);
+            });
+        }();
+        if (result.info.LotteryAt.contains("1900")) {
+            dom["IsOpen"].dispose();
+        }
+        if (result.info.IsRevoke == "0") {
+            dom["revoke"].dispose();
+            return;
+        }
+
+        dom["revoke"].addEvent("click", function () {
+            var obj = this;
+            new BW.Tip("确认要撤单吗？", {
+                "type": "confirm",
+                "callback": function () {
+                    new Request.JSON({
+                        "url": "/handler/user/lottery/orderrevoke",
+                        "onRequest": function () {
+                            obj.addClass("loading");
+                        },
+                        "onComplete": function () {
+                            obj.removeClass("loading");
+                        },
+                        "onSuccess": function (info) {
+                            new BW.Tip(info.msg, {
+                                "callback": function () {
+                                    if (info.success) {
+                                        t.fire();
+                                    }
+                                }
+                            });
+                        }
+                    }).post({
+                        "id": result.info.ID
+                    });
+                }
+            })
+        });
+
+
+        if (t.options.data.history) {
+            t.dom.element.getElements("input").each(function (item) {
+                item.dispose();
+            });
+        }
+
+    }
+</script>

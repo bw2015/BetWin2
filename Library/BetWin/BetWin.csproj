@@ -1,0 +1,828 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{1B287398-D078-4465-990D-32C842ED32CB}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>BW</RootNamespace>
+    <AssemblyName>BetWin</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\WebSite\Web.Handler\bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>
+    </DocumentationFile>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <Prefer32Bit>false</Prefer32Bit>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="com.yeepay.utils">
+      <HintPath>..\com.yeepay.utils.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Agent\AdminAgent.cs" />
+    <Compile Include="Agent\AgentBase.cs" />
+    <Compile Include="Agent\GameAgent.cs" />
+    <Compile Include="Agent\Lottery\LotteryAgent-Chase.cs" />
+    <Compile Include="Agent\Lottery\LotteryAgent-Info.cs" />
+    <Compile Include="Agent\Lottery\LotteryAgent-Limited.cs" />
+    <Compile Include="Agent\Lottery\LotteryAgent-Result.cs" />
+    <Compile Include="Agent\Lottery\LotteryAgent-Service.cs" />
+    <Compile Include="Agent\Lottery\LotteryAgent-Trend.cs" />
+    <Compile Include="Agent\Lottery\LotteryAgent-United.cs" />
+    <Compile Include="Agent\Lottery\LotteryAgent-User.cs" />
+    <Compile Include="Agent\Lottery\LotteryAgent.cs" />
+    <Compile Include="Agent\Site\SiteAgent.cs" />
+    <Compile Include="Agent\Site\SiteAgent-IM.cs" />
+    <Compile Include="Agent\Site\SiteAgent-News.cs" />
+    <Compile Include="Agent\Site\SiteAgent-Plan.cs" />
+    <Compile Include="Agent\Site\SiteAgent-Task.cs" />
+    <Compile Include="Agent\SNAP\SNAPAgent-Log.cs" />
+    <Compile Include="Agent\SystemAgent.cs" />
+    <Compile Include="Agent\System\SystemAgent-Bill.cs" />
+    <Compile Include="Agent\System\SystemAgent-Info.cs" />
+    <Compile Include="Agent\System\SystemAgent-Task.cs" />
+    <Compile Include="Agent\User\UserAgent-Chat.cs" />
+    <Compile Include="Agent\User\UserAgent-Contract.cs" />
+    <Compile Include="Agent\User\UserAgent-Game.cs" />
+    <Compile Include="Agent\User\UserAgent-Lottery.cs" />
+    <Compile Include="Agent\User\UserAgent-Message.cs" />
+    <Compile Include="Agent\User\UserAgent-Money.cs" />
+    <Compile Include="Agent\Site\SiteAgent-SMS.cs" />
+    <Compile Include="Agent\User\UserAgent-Notify.cs" />
+    <Compile Include="Agent\User\UserAgent-Plan.cs" />
+    <Compile Include="Agent\User\UserAgent-Report.cs" />
+    <Compile Include="Agent\User\UserAgent-Wechat.cs" />
+    <Compile Include="Agent\User\UserAgent.cs" />
+    <Compile Include="Agent\WechatAgent.cs" />
+    <Compile Include="Common\Admins\Admin.designer.cs" />
+    <Compile Include="Common\Admins\AdminGroup.desinger.cs" />
+    <Compile Include="Common\Admins\AdminLog.desinger.cs" />
+    <Compile Include="Common\Admins\parts\Admin-IM.cs" />
+    <Compile Include="Common\Admins\parts\AdminGroup-part.cs" />
+    <Compile Include="Common\Admins\Permission.cs" />
+    <Compile Include="Common\Admins\AdminSession.desinger.cs" />
+    <Compile Include="Common\Admins\parts\Admin-Enum.cs" />
+    <Compile Include="Common\Admins\parts\AdminLog-Enum.cs" />
+    <Compile Include="Common\CommBase.cs" />
+    <Compile Include="Common\DataContext\BetDataContext-Admin.cs" />
+    <Compile Include="Common\DataContext\BetDataContext-Game.cs" />
+    <Compile Include="Common\DataContext\BetDataContext-IM.cs" />
+    <Compile Include="Common\DataContext\BetDataContext-Report.cs" />
+    <Compile Include="Common\DataContext\BetDataContext-Site.cs" />
+    <Compile Include="Common\DataContext\BetDataContext-Lottery.cs" />
+    <Compile Include="Common\DataContext\BetDataContext-System.cs" />
+    <Compile Include="Common\DataContext\BetDataContext-User.cs" />
+    <Compile Include="Common\BetDataContext.cs" />
+    <Compile Include="Common\DataContext\BetDataContext-Wechat.cs" />
+    <Compile Include="Common\Games\GameLog.desinger.cs" />
+    <Compile Include="Common\Games\GameMoneyLog.cs" />
+    <Compile Include="Common\Games\GamePlayer.desinger.cs" />
+    <Compile Include="Common\Games\GameSetting.desinger.cs" />
+    <Compile Include="Common\Games\GameType.cs" />
+    <Compile Include="Common\Games\LogStatus.cs" />
+    <Compile Include="Common\Games\parts\GamePlayer-part.cs" />
+    <Compile Include="Common\Games\parts\GameSetting-part.cs" />
+    <Compile Include="Common\Games\parts\SlotLog-part.cs" />
+    <Compile Include="Common\Games\parts\SportLog-part.cs" />
+    <Compile Include="Common\Games\parts\TransferLog-enum.cs" />
+    <Compile Include="Common\Games\parts\VideoLog-part.cs" />
+    <Compile Include="Common\Games\SlotGame.cs" />
+    <Compile Include="Common\Games\SlotLog.desinger.cs" />
+    <Compile Include="Common\Games\SportLog.desinger.cs" />
+    <Compile Include="Common\Games\TransferLog.desinger.cs" />
+    <Compile Include="Common\Games\UserGameCredit.cs" />
+    <Compile Include="Common\Games\VideoLog.desinger.cs" />
+    <Compile Include="Common\IM\SessionLog.cs" />
+    <Compile Include="Common\IM\Mine.cs" />
+    <Compile Include="Common\Lottery\BetAgentRate.cs" />
+    <Compile Include="Common\Lottery\LotteryBetAgent.desinger.cs" />
+    <Compile Include="Common\Lottery\LotteryCategory.desinger.cs" />
+    <Compile Include="Common\Lottery\LotteryChase.desinger.cs" />
+    <Compile Include="Common\Lottery\LotteryChaseItem.desinger.cs" />
+    <Compile Include="Common\Lottery\LotteryOrderReward.desinger.cs" />
+    <Compile Include="Common\Lottery\RewardTip.cs" />
+    <Compile Include="Common\Lottery\SiteOrder.desinger.cs" />
+    <Compile Include="Common\Lottery\LotteryOrderHistory.desinger.cs" />
+    <Compile Include="Common\Lottery\LotteryTrend.desinger.cs" />
+    <Compile Include="Common\Lottery\parts\LotteryChase-part.cs" />
+    <Compile Include="Common\Lottery\parts\LotteryChaseItem-part.cs" />
+    <Compile Include="Common\Lottery\parts\LotteryOrderHistory-part.cs" />
+    <Compile Include="Common\Lottery\parts\LotteryTrend-part.cs" />
+    <Compile Include="Common\Lottery\parts\SiteNumber-part.cs" />
+    <Compile Include="Common\Lottery\parts\United-Status.cs" />
+    <Compile Include="Common\Lottery\SiteResultNumber.desinger.cs" />
+    <Compile Include="Common\Lottery\StartTime.cs" />
+    <Compile Include="Common\Lottery\United.desinger.cs" />
+    <Compile Include="Common\Lottery\UnitedItem.desinger.cs" />
+    <Compile Include="Common\Reports\GameReport.cs" />
+    <Compile Include="Common\Reports\TeamDate.desinger.cs" />
+    <Compile Include="Common\Reports\UserDate.desinger.cs" />
+    <Compile Include="Common\Reports\UserGame.desinger.cs" />
+    <Compile Include="Common\Reports\UserGameReport.cs" />
+    <Compile Include="Common\Reports\UserReport.cs" />
+    <Compile Include="Common\Sites\Feedback.desinger.cs" />
+    <Compile Include="Common\Sites\News.desinger.cs" />
+    <Compile Include="Common\Sites\NewsColumn.desinger.cs" />
+    <Compile Include="Common\Sites\NewsRead.desinger.cs" />
+    <Compile Include="Common\Sites\part\Feedback-enum.cs" />
+    <Compile Include="Common\Sites\part\News-part.cs" />
+    <Compile Include="Common\Sites\part\NewsColumn-Enum.cs" />
+    <Compile Include="Common\Sites\part\Planning-part.cs" />
+    <Compile Include="Common\Sites\part\PlanStatus-part.cs" />
+    <Compile Include="Common\Sites\part\Site-Rebot.cs" />
+    <Compile Include="Common\Sites\part\Site-User.cs" />
+    <Compile Include="Common\Sites\part\TaskStatus-Enum.cs" />
+    <Compile Include="Common\Sites\PlanBouns.cs" />
+    <Compile Include="Common\Sites\Planning.desinger.cs" />
+    <Compile Include="Common\Sites\PlanStatus.desinger.cs" />
+    <Compile Include="Common\Sites\Region.desinger.cs" />
+    <Compile Include="Common\Sites\Reply.desinger.cs" />
+    <Compile Include="Common\Sites\ReplyCategory.desinger.cs" />
+    <Compile Include="Common\Sites\ReplyKeyword.cs" />
+    <Compile Include="Common\Sites\SiteCache.desinger.cs" />
+    <Compile Include="Common\Sites\SMSCode.desinger.cs" />
+    <Compile Include="Common\Sites\SMSLog.cs" />
+    <Compile Include="Common\Sites\TaskStatus.cs" />
+    <Compile Include="Common\Systems\GameInterface.cs" />
+    <Compile Include="Common\Systems\SystemKeyValue.desinger.cs" />
+    <Compile Include="Common\Systems\SystemMark.cs" />
+    <Compile Include="Common\Systems\SystemNews.desinger.cs" />
+    <Compile Include="Common\Systems\parts\SystemBill-part.cs" />
+    <Compile Include="Common\Systems\parts\SystemPayment-part.cs" />
+    <Compile Include="Common\Systems\SystemBill.cs" />
+    <Compile Include="Common\Systems\SystemBillOrder.desinger.cs" />
+    <Compile Include="Common\Systems\SystemLog.cs" />
+    <Compile Include="Common\Systems\SystemPayment.cs" />
+    <Compile Include="Common\Users\ChatTalk.desinger.cs" />
+    <Compile Include="Common\Users\Contract.desinger.cs" />
+    <Compile Include="Common\Users\ContractLog.desinger.cs" />
+    <Compile Include="Common\Users\GameWithdraw.desinger.cs" />
+    <Compile Include="Common\Users\GroupCondition.desinger.cs" />
+    <Compile Include="Common\Users\MoneyHistory.desinger.cs" />
+    <Compile Include="Common\Users\MoneyLog.cs" />
+    <Compile Include="Common\Users\part\ChatLog-enum.cs" />
+    <Compile Include="Common\Users\part\ChatTalk-Enum.cs" />
+    <Compile Include="Common\Users\part\Contract-part.cs" />
+    <Compile Include="Common\Users\part\ContractLog-part.cs" />
+    <Compile Include="Common\Users\part\TransferOrder-part.cs" />
+    <Compile Include="Common\Users\part\User-IM.cs" />
+    <Compile Include="Common\Users\part\UserGroup-part.cs" />
+    <Compile Include="Common\Users\part\UserNotify-Enum.cs" />
+    <Compile Include="Common\Users\part\UserWallet-enum.cs" />
+    <Compile Include="Common\Sites\PlanSingleBouns.cs" />
+    <Compile Include="Common\Users\RechargeCheck.cs" />
+    <Compile Include="Common\Users\TransferOrder.cs" />
+    <Compile Include="Common\Users\UserDevice.desinger.cs" />
+    <Compile Include="Common\Users\UserGroup.desinger.cs" />
+    <Compile Include="Common\Users\UserHost.desinger.cs" />
+    <Compile Include="Common\Users\UserMessage.desinger.cs" />
+    <Compile Include="Common\Users\UserNotify.desinger.cs" />
+    <Compile Include="Common\Users\UserWallet.desinger.cs" />
+    <Compile Include="Common\Users\UserWechat.desinger.cs" />
+    <Compile Include="Common\Users\UserWechatKey.desinger.cs" />
+    <Compile Include="Common\Wechat\GroupSetting.desinger.cs" />
+    <Compile Include="Common\Wechat\part\GroupSetting.cs" />
+    <Compile Include="Common\Wechat\part\WechatRebot.cs" />
+    <Compile Include="Common\Wechat\part\WechatSetting.cs" />
+    <Compile Include="Common\Wechat\WechatRebot.desinger.cs" />
+    <Compile Include="Common\Wechat\WechatSetting.desinger.cs" />
+    <Compile Include="Framework\BetCallback.cs" />
+    <Compile Include="GateWay\Games\AG.cs" />
+    <Compile Include="GateWay\Games\BBIN.cs" />
+    <Compile Include="GateWay\Games\BWGaming.cs" />
+    <Compile Include="GateWay\Games\Casino.cs" />
+    <Compile Include="GateWay\Games\MG.cs" />
+    <Compile Include="GateWay\Games\MW.cs" />
+    <Compile Include="GateWay\Games\OG.cs" />
+    <Compile Include="GateWay\Games\PT.cs" />
+    <Compile Include="Common\Logs\ChatErrorLog.cs" />
+    <Compile Include="Common\Logs\GameGatewayLog.cs" />
+    <Compile Include="Common\Lottery\LimitedSetting.desinger.cs" />
+    <Compile Include="Common\Lottery\LimitedType.cs" />
+    <Compile Include="Common\Lottery\Limited\LimitedNumber.cs" />
+    <Compile Include="Common\Lottery\Limited\SiteLimited.cs" />
+    <Compile Include="Common\Lottery\LotteryOrder.desinger.cs" />
+    <Compile Include="Common\Lottery\LotteryResultNumber.designer.cs" />
+    <Compile Include="Common\Lottery\LotterySetting.designer.cs" />
+    <Compile Include="Common\Lottery\LotteryType.cs" />
+    <Compile Include="Common\Lottery\parts\LotteryOrder-Enum.cs" />
+    <Compile Include="Common\Lottery\parts\LotteryPlayer.cs" />
+    <Compile Include="Common\Lottery\parts\LotterySetting.cs" />
+    <Compile Include="Common\Lottery\LotteryPlayer.desingner.cs" />
+    <Compile Include="Common\Lottery\parts\TimeTemplate.cs" />
+    <Compile Include="Common\Lottery\RewardOrder.cs" />
+    <Compile Include="Common\Lottery\SiteNumber.desinger.cs" />
+    <Compile Include="Common\Lottery\TimeTemplate.designer.cs" />
+    <Compile Include="Common\Lottery\UserLottery.cs" />
+    <Compile Include="Common\Permission\AdminMenu.cs" />
+    <Compile Include="Common\Permission\AdminPermission.cs" />
+    <Compile Include="Common\Sites\BankType.cs" />
+    <Compile Include="Common\Sites\part\PaymentSetting.cs" />
+    <Compile Include="Common\Sites\part\QuotaSetting-part.cs" />
+    <Compile Include="Common\Sites\part\Site-Cache.cs" />
+    <Compile Include="Common\Sites\part\Site-Enum.cs" />
+    <Compile Include="Common\Sites\part\Site-Setting.cs" />
+    <Compile Include="Common\Sites\PaymentSetting.desinger.cs" />
+    <Compile Include="Common\Sites\QuotaSetting.desinger.cs" />
+    <Compile Include="Common\Sites\Site.designer.cs" />
+    <Compile Include="Common\Sites\SiteDomain.desinger.cs" />
+    <Compile Include="Common\Sites\WithdrawSetting.desinger.cs" />
+    <Compile Include="Common\Systems\InviteDomain.cs" />
+    <Compile Include="Common\Systems\SocketServer.cs" />
+    <Compile Include="Common\Users\BankAccount.desinger.cs" />
+    <Compile Include="Common\Users\ChatLog.desinger.cs" />
+    <Compile Include="Common\Users\MoneyLock.desinger.cs" />
+    <Compile Include="Common\Users\MoneyLog.desinger.cs" />
+    <Compile Include="Common\Users\part\BankAccount.cs" />
+    <Compile Include="Common\Users\part\ChatLog-part.cs" />
+    <Compile Include="Common\Users\part\MoneyLock-Enum.cs" />
+    <Compile Include="Common\Users\part\MoneyLog-Enum.cs" />
+    <Compile Include="Common\Users\part\User-Enum.cs" />
+    <Compile Include="Common\Users\part\UserInfoLog-Enum.cs" />
+    <Compile Include="Common\Users\part\UserInvite-Enum.cs" />
+    <Compile Include="Common\Users\part\UserRemark.cs" />
+    <Compile Include="Common\Users\part\WithdrawOrder.cs" />
+    <Compile Include="Common\Users\RechargeOrder.desinger.cs" />
+    <Compile Include="Common\Users\User.designer.cs" />
+    <Compile Include="Common\Users\UserDepth.cs" />
+    <Compile Include="Common\Users\UserInfoLog.desinger.cs" />
+    <Compile Include="Common\Users\UserInvite.designer.cs" />
+    <Compile Include="Common\Users\UserLog.designer.cs" />
+    <Compile Include="Common\Users\UserLotterySetting.designer.cs" />
+    <Compile Include="Common\Users\UserMoney.cs" />
+    <Compile Include="Common\Users\UserQuota.desinger.cs" />
+    <Compile Include="Common\Users\UserRemark.designer.cs" />
+    <Compile Include="Common\Users\UserSession.designer.cs" />
+    <Compile Include="Common\Users\UserGame.desinger.cs" />
+    <Compile Include="Common\Users\WithdrawLog.desinger.cs" />
+    <Compile Include="Common\Users\WithdrawOrder.desinger.cs" />
+    <Compile Include="Common\Users\WithdrawOrderLog.desinger.cs" />
+    <Compile Include="Framework\BetModule.cs" />
+    <Compile Include="Framework\SysSetting.cs" />
+    <Compile Include="GateWay\Games\GameFactory.cs" />
+    <Compile Include="GateWay\Games\IGame.cs" />
+    <Compile Include="GateWay\Games\SB.cs" />
+    <Compile Include="GateWay\Games\SunBet.cs" />
+    <Compile Include="GateWay\IM\Config.cs" />
+    <Compile Include="GateWay\IM\Message\IMessage.cs" />
+    <Compile Include="GateWay\IM\Message\Message.cs" />
+    <Compile Include="GateWay\IM\Message\Notify.cs" />
+    <Compile Include="GateWay\IM\Message\Offline.cs" />
+    <Compile Include="GateWay\IM\Message\Online.cs" />
+    <Compile Include="GateWay\IM\Message\Tip.cs" />
+    <Compile Include="GateWay\IM\Receive\Group.cs" />
+    <Compile Include="GateWay\IM\Receive\IReceive.cs" />
+    <Compile Include="GateWay\IM\Receive\Message.cs" />
+    <Compile Include="GateWay\IM\Receive\Offline.cs" />
+    <Compile Include="GateWay\IM\Receive\Online.cs" />
+    <Compile Include="GateWay\IM\Receive\Read.cs" />
+    <Compile Include="GateWay\IM\Receive\WechatBet.cs" />
+    <Compile Include="GateWay\Lottery\BA\IBaccarat.cs" />
+    <Compile Include="GateWay\Lottery\BA\闲对子.cs" />
+    <Compile Include="GateWay\Lottery\BA\庄对子.cs" />
+    <Compile Include="GateWay\Lottery\BA\和.cs" />
+    <Compile Include="GateWay\Lottery\BA\闲赢.cs" />
+    <Compile Include="GateWay\Lottery\BA\庄赢.cs" />
+    <Compile Include="GateWay\Lottery\BetChatAttribute.cs" />
+    <Compile Include="GateWay\Lottery\K3\二同号_通选.cs" />
+    <Compile Include="GateWay\Lottery\K3\趣味_全顺.cs" />
+    <Compile Include="GateWay\Lottery\K3\不同号_三不同.cs" />
+    <Compile Include="GateWay\Lottery\K3\趣味_杂三.cs" />
+    <Compile Include="GateWay\Lottery\K3\趣味_半顺.cs" />
+    <Compile Include="GateWay\Lottery\P28\IP28.cs" />
+    <Compile Include="GateWay\Lottery\P28\猜一码.cs" />
+    <Compile Include="GateWay\Lottery\P28\特码_豹子.cs" />
+    <Compile Include="GateWay\Lottery\P28\特码_色波.cs" />
+    <Compile Include="GateWay\Lottery\P28\特码_大小中边.cs" />
+    <Compile Include="GateWay\Lottery\P28\特码_极大极小.cs" />
+    <Compile Include="GateWay\Lottery\P28\特码_大小单双.cs" />
+    <Compile Include="GateWay\Lottery\P28\特码_除三余数.cs" />
+    <Compile Include="GateWay\Lottery\P28\特码_和值.cs" />
+    <Compile Include="GateWay\Lottery\SmartGame\IGamePlayer.cs" />
+    <Compile Include="GateWay\Lottery\SmartGame\美女猜拳.cs" />
+    <Compile Include="GateWay\Lottery\IPlayer.cs" />
+    <Compile Include="GateWay\Lottery\K3\IK3.cs" />
+    <Compile Include="GateWay\Lottery\K3\三连号.cs" />
+    <Compile Include="GateWay\Lottery\K3\不同号_二不同号.cs" />
+    <Compile Include="GateWay\Lottery\K3\不同号_三不同号.cs" />
+    <Compile Include="GateWay\Lottery\K3\二同号_复选.cs" />
+    <Compile Include="GateWay\Lottery\K3\二同号_单选.cs" />
+    <Compile Include="GateWay\Lottery\K3\三同号_通选.cs" />
+    <Compile Include="GateWay\Lottery\K3\三同号_单选.cs" />
+    <Compile Include="GateWay\Lottery\K3\趣味_胆码.cs" />
+    <Compile Include="GateWay\Lottery\K3\趣味_单双.cs" />
+    <Compile Include="GateWay\Lottery\K3\趣味_大小.cs" />
+    <Compile Include="GateWay\Lottery\M6\IM6.cs" />
+    <Compile Include="GateWay\Lottery\M6\特码 直选.cs" />
+    <Compile Include="GateWay\Lottery\M6\趣味 两面.cs" />
+    <Compile Include="GateWay\Lottery\M6\趣味 生肖.cs" />
+    <Compile Include="GateWay\Lottery\M6\趣味 色波.cs" />
+    <Compile Include="GateWay\Lottery\P10\IP10.cs" />
+    <Compile Include="GateWay\Lottery\P10\排名_名次.cs" />
+    <Compile Include="GateWay\Lottery\P10\两面_五名.cs" />
+    <Compile Include="GateWay\Lottery\P10\两面_六名.cs" />
+    <Compile Include="GateWay\Lottery\P10\两面_七名.cs" />
+    <Compile Include="GateWay\Lottery\P10\两面_八名.cs" />
+    <Compile Include="GateWay\Lottery\P10\两面_九名.cs" />
+    <Compile Include="GateWay\Lottery\P10\两面_冠亚季军.cs" />
+    <Compile Include="GateWay\Lottery\P10\两面_冠亚军.cs" />
+    <Compile Include="GateWay\Lottery\P10\两面_十名.cs" />
+    <Compile Include="GateWay\Lottery\P10\两面_四名.cs" />
+    <Compile Include="GateWay\Lottery\P10\两面_季军.cs" />
+    <Compile Include="GateWay\Lottery\P10\两面_亚军.cs" />
+    <Compile Include="GateWay\Lottery\P10\两面_冠军.cs" />
+    <Compile Include="GateWay\Lottery\P10\单式_后七.cs" />
+    <Compile Include="GateWay\Lottery\P10\单式_后三.cs" />
+    <Compile Include="GateWay\Lottery\P10\单式_后五.cs" />
+    <Compile Include="GateWay\Lottery\P10\单式_后六.cs" />
+    <Compile Include="GateWay\Lottery\P10\单式_后四.cs" />
+    <Compile Include="GateWay\Lottery\P10\单式_后二.cs" />
+    <Compile Include="GateWay\Lottery\P10\单式_前六.cs" />
+    <Compile Include="GateWay\Lottery\P10\单式_前七.cs" />
+    <Compile Include="GateWay\Lottery\P10\单式_前五.cs" />
+    <Compile Include="GateWay\Lottery\P10\趣味_单双.cs" />
+    <Compile Include="GateWay\Lottery\P10\单式_前四.cs" />
+    <Compile Include="GateWay\Lottery\P10\单式_前三.cs" />
+    <Compile Include="GateWay\Lottery\P10\单式_前二.cs" />
+    <Compile Include="GateWay\Lottery\P10\定位胆_后五.cs" />
+    <Compile Include="GateWay\Lottery\P10\定位胆_前五.cs" />
+    <Compile Include="GateWay\Lottery\P10\排名_前三.cs" />
+    <Compile Include="GateWay\Lottery\P10\排名_冠亚军.cs" />
+    <Compile Include="GateWay\Lottery\P10\排名_冠军.cs" />
+    <Compile Include="GateWay\Lottery\P10\趣味_合值_大小.cs" />
+    <Compile Include="GateWay\Lottery\P10\趣味_合值_单双.cs" />
+    <Compile Include="GateWay\Lottery\P10\趣味_合值_冠亚.cs" />
+    <Compile Include="GateWay\Lottery\P10\趣味_大小.cs" />
+    <Compile Include="GateWay\Lottery\P10\龙虎_冠亚季军.cs" />
+    <Compile Include="GateWay\Lottery\P10\龙虎_冠亚军.cs" />
+    <Compile Include="GateWay\Lottery\P10\龙虎_第五名.cs" />
+    <Compile Include="GateWay\Lottery\P10\龙虎_第四名.cs" />
+    <Compile Include="GateWay\Lottery\P10\龙虎_季军.cs" />
+    <Compile Include="GateWay\Lottery\P10\龙虎_亚军.cs" />
+    <Compile Include="GateWay\Lottery\P10\龙虎_冠军.cs" />
+    <Compile Include="GateWay\Lottery\PlayerFactory.cs" />
+    <Compile Include="GateWay\Lottery\PlayerUtils.cs" />
+    <Compile Include="GateWay\Lottery\ResultIndex\ChungKing.cs" />
+    <Compile Include="GateWay\Lottery\ResultIndex\IResultIndex.cs" />
+    <Compile Include="GateWay\Lottery\X11\IX11.cs" />
+    <Compile Include="GateWay\Lottery\X11\不定位_一码.cs" />
+    <Compile Include="GateWay\Lottery\X11\任选单式_八中五.cs" />
+    <Compile Include="GateWay\Lottery\X11\任选单式_七中五.cs" />
+    <Compile Include="GateWay\Lottery\X11\任选单式_六中五.cs" />
+    <Compile Include="GateWay\Lottery\X11\任选单式_五中五.cs" />
+    <Compile Include="GateWay\Lottery\X11\任选单式_四中四.cs" />
+    <Compile Include="GateWay\Lottery\X11\任选单式_三中三.cs" />
+    <Compile Include="GateWay\Lottery\X11\任选单式_二中二.cs" />
+    <Compile Include="GateWay\Lottery\X11\任选复式_八中五.cs" />
+    <Compile Include="GateWay\Lottery\X11\任选复式_七中五.cs" />
+    <Compile Include="GateWay\Lottery\X11\任选复式_六中五.cs" />
+    <Compile Include="GateWay\Lottery\X11\任选复式_五中五.cs" />
+    <Compile Include="GateWay\Lottery\X11\任选复式_四中四.cs" />
+    <Compile Include="GateWay\Lottery\X11\任选复式_三中三.cs" />
+    <Compile Include="GateWay\Lottery\X11\任选复式_二中二.cs" />
+    <Compile Include="GateWay\Lottery\X11\任选复式_一中一.cs" />
+    <Compile Include="GateWay\Lottery\X11\前一_直选.cs" />
+    <Compile Include="GateWay\Lottery\X11\前三码_组选单式.cs" />
+    <Compile Include="GateWay\Lottery\X11\前三码_组选复式.cs" />
+    <Compile Include="GateWay\Lottery\X11\前三码_直选单式.cs" />
+    <Compile Include="GateWay\Lottery\X11\前三码_直选复式.cs" />
+    <Compile Include="GateWay\Lottery\X11\前二_直选单式.cs" />
+    <Compile Include="GateWay\Lottery\X11\前二_直选复式.cs" />
+    <Compile Include="GateWay\Lottery\X11\前二_组选复式.cs" />
+    <Compile Include="GateWay\Lottery\X11\趣味_猜中位.cs" />
+    <Compile Include="GateWay\Lottery\X11\趣味_定单双.cs" />
+    <Compile Include="GateWay\Lottery\K3\趣味_和值.cs" />
+    <Compile Include="GateWay\Lottery\X3\前三_单式.cs" />
+    <Compile Include="GateWay\Lottery\X3\前三_和值.cs" />
+    <Compile Include="GateWay\Lottery\X3\前三_复式.cs" />
+    <Compile Include="GateWay\Lottery\X3\前三_组三.cs" />
+    <Compile Include="GateWay\Lottery\X3\前三_组六.cs" />
+    <Compile Include="GateWay\Lottery\X3\后二_单式.cs" />
+    <Compile Include="GateWay\Lottery\X3\前二_单式.cs" />
+    <Compile Include="GateWay\Lottery\X3\后二_和值.cs" />
+    <Compile Include="GateWay\Lottery\X3\前二_和值.cs" />
+    <Compile Include="GateWay\Lottery\X3\后二_复式.cs" />
+    <Compile Include="GateWay\Lottery\X3\前二_复式.cs" />
+    <Compile Include="GateWay\Lottery\X3\后二_组选单式.cs" />
+    <Compile Include="GateWay\Lottery\X3\前二_组选单式.cs" />
+    <Compile Include="GateWay\Lottery\X3\后二_组选和值.cs" />
+    <Compile Include="GateWay\Lottery\X3\前二_组选和值.cs" />
+    <Compile Include="GateWay\Lottery\X3\后二_组选复式.cs" />
+    <Compile Include="GateWay\Lottery\X3\前二_组选复式.cs" />
+    <Compile Include="GateWay\Lottery\X3\胆码_不位胆_后三一码.cs" />
+    <Compile Include="GateWay\Lottery\X3\胆码_不位胆_后三二码.cs" />
+    <Compile Include="GateWay\Lottery\X3\胆码_定位胆.cs" />
+    <Compile Include="GateWay\Lottery\X5\IX5.cs" />
+    <Compile Include="GateWay\Lottery\X5\中三_组选_混选.cs" />
+    <Compile Include="GateWay\Lottery\X5\任三_混选.cs" />
+    <Compile Include="GateWay\Lottery\X5\前三_组选_混合.cs" />
+    <Compile Include="GateWay\Lottery\X5\后三_组选_混选.cs" />
+    <Compile Include="GateWay\Lottery\X5\四星_前四_单式.cs" />
+    <Compile Include="GateWay\Lottery\X5\四星_前四_复式.cs" />
+    <Compile Include="GateWay\Lottery\X5\四星_前四_组选12.cs" />
+    <Compile Include="GateWay\Lottery\X5\四星_前四_组选24.cs" />
+    <Compile Include="GateWay\Lottery\X5\四星_前四_组选4.cs" />
+    <Compile Include="GateWay\Lottery\X5\四星_前四_组选6.cs" />
+    <Compile Include="GateWay\Lottery\X5\胆码_不位胆_不定一码.cs" />
+    <Compile Include="GateWay\Lottery\X5\胆码_不位胆_不定二码.cs" />
+    <Compile Include="GateWay\Lottery\X5\胆码_不位胆_不定三码.cs" />
+    <Compile Include="GateWay\Lottery\X5\趣味_杂六.cs" />
+    <Compile Include="GateWay\Lottery\X5\趣味_对子.cs" />
+    <Compile Include="GateWay\Lottery\X5\趣味_半顺.cs" />
+    <Compile Include="GateWay\Lottery\X5\趣味_顺子.cs" />
+    <Compile Include="GateWay\Lottery\X5\趣味_豹子.cs" />
+    <Compile Include="GateWay\Lottery\X5\趣味_龙虎_十个.cs" />
+    <Compile Include="GateWay\Lottery\X5\趣味_龙虎_百个.cs" />
+    <Compile Include="GateWay\Lottery\X5\趣味_龙虎_百十.cs" />
+    <Compile Include="GateWay\Lottery\X5\趣味_龙虎_千个.cs" />
+    <Compile Include="GateWay\Lottery\X5\趣味_龙虎_千十.cs" />
+    <Compile Include="GateWay\Lottery\X5\趣味_龙虎_千百.cs" />
+    <Compile Include="GateWay\Lottery\X5\趣味_龙虎_万千.cs" />
+    <Compile Include="GateWay\Lottery\X5\趣味_龙虎_万百.cs" />
+    <Compile Include="GateWay\Lottery\X5\趣味_龙虎_万十.cs" />
+    <Compile Include="GateWay\Lottery\X5\趣味_龙虎_万个.cs" />
+    <Compile Include="GateWay\Lottery\X5\趣味_大小单双_定位胆.cs" />
+    <Compile Include="GateWay\Lottery\X5\趣味_大小单双_合值.cs" />
+    <Compile Include="GateWay\Lottery\X5\任四_单式.cs" />
+    <Compile Include="GateWay\Lottery\X5\任四_直选.cs" />
+    <Compile Include="GateWay\Lottery\X5\任三_组六.cs" />
+    <Compile Include="GateWay\Lottery\X5\任三_单式.cs" />
+    <Compile Include="GateWay\Lottery\X5\任二_单式.cs" />
+    <Compile Include="GateWay\Lottery\X5\任三_直选.cs" />
+    <Compile Include="GateWay\Lottery\X5\任三_组三.cs" />
+    <Compile Include="GateWay\Lottery\X5\任二_组选.cs" />
+    <Compile Include="GateWay\Lottery\X5\任二_直选.cs" />
+    <Compile Include="GateWay\Lottery\X5\后二_单式.cs" />
+    <Compile Include="GateWay\Lottery\X5\前二_单式.cs" />
+    <Compile Include="GateWay\Lottery\X5\后二_和值.cs" />
+    <Compile Include="GateWay\Lottery\X5\前二_和值.cs" />
+    <Compile Include="GateWay\Lottery\X5\后二_复式.cs" />
+    <Compile Include="GateWay\Lottery\X5\后二_组选单式.cs" />
+    <Compile Include="GateWay\Lottery\X5\后二_组选和值.cs" />
+    <Compile Include="GateWay\Lottery\X5\前二_组选和值.cs" />
+    <Compile Include="GateWay\Lottery\X5\前二_组选单式.cs" />
+    <Compile Include="GateWay\Lottery\X5\后二_组选复式.cs" />
+    <Compile Include="GateWay\Lottery\X5\前二_组选复式.cs" />
+    <Compile Include="GateWay\Lottery\X5\前二_复式.cs" />
+    <Compile Include="GateWay\Lottery\X5\后三_单式.cs" />
+    <Compile Include="GateWay\Lottery\X5\中三_单式.cs" />
+    <Compile Include="GateWay\Lottery\X5\后三_和值.cs" />
+    <Compile Include="GateWay\Lottery\X5\中三_和值.cs" />
+    <Compile Include="GateWay\Lottery\X5\后三_复式.cs" />
+    <Compile Include="GateWay\Lottery\X5\中三_复式.cs" />
+    <Compile Include="GateWay\Lottery\X5\后三_组三.cs" />
+    <Compile Include="GateWay\Lottery\X5\中三_组三.cs" />
+    <Compile Include="GateWay\Lottery\X5\后三_组六.cs" />
+    <Compile Include="GateWay\Lottery\X5\中三_组六.cs" />
+    <Compile Include="GateWay\Lottery\X5\前三_组六.cs" />
+    <Compile Include="GateWay\Lottery\X5\前三_组三.cs" />
+    <Compile Include="GateWay\Lottery\X5\前三_和值.cs" />
+    <Compile Include="GateWay\Lottery\X5\前三_单式.cs" />
+    <Compile Include="GateWay\Lottery\X5\前三_复式.cs" />
+    <Compile Include="GateWay\Lottery\X5\四星_组选4.cs" />
+    <Compile Include="GateWay\Lottery\X5\四星_组选6.cs" />
+    <Compile Include="GateWay\Lottery\X5\四星_组选12.cs" />
+    <Compile Include="GateWay\Lottery\X5\四星_组选24.cs" />
+    <Compile Include="GateWay\Lottery\X5\四星_单式.cs" />
+    <Compile Include="GateWay\Lottery\X5\五星_单式.cs" />
+    <Compile Include="GateWay\Lottery\X5\四星_复式.cs" />
+    <Compile Include="GateWay\Lottery\X5\五星_复式.cs" />
+    <Compile Include="GateWay\Lottery\X5\五星_组选5.cs" />
+    <Compile Include="GateWay\Lottery\X5\五星_组选10.cs" />
+    <Compile Include="GateWay\Lottery\X5\五星_组选20.cs" />
+    <Compile Include="GateWay\Lottery\X5\五星_组选30.cs" />
+    <Compile Include="GateWay\Lottery\X5\五星_组选60.cs" />
+    <Compile Include="GateWay\Lottery\X5\五星_组选120.cs" />
+    <Compile Include="GateWay\Lottery\X5\胆码_不位胆_前三一码.cs" />
+    <Compile Include="GateWay\Lottery\X5\胆码_不位胆_前三二码.cs" />
+    <Compile Include="GateWay\Lottery\X5\胆码_不位胆_后三二码.cs" />
+    <Compile Include="GateWay\Lottery\X5\胆码_不位胆_后三一码.cs" />
+    <Compile Include="GateWay\Lottery\X5\胆码_定位胆.cs" />
+    <Compile Include="GateWay\Lottery\X5\趣味_四季发财.cs" />
+    <Compile Include="GateWay\Lottery\X5\趣味_三星报喜.cs" />
+    <Compile Include="GateWay\Lottery\X5\趣味_好事成双.cs" />
+    <Compile Include="GateWay\Lottery\X5\趣味_一帆风顺.cs" />
+    <Compile Include="GateWay\Lottery\X5\趣味_大小单双_后二.cs" />
+    <Compile Include="GateWay\Lottery\X5\趣味_大小单双_前二.cs" />
+    <Compile Include="GateWay\Payment\ACPay.cs" />
+    <Compile Include="GateWay\Payment\Admin523.cs" />
+    <Compile Include="GateWay\Payment\AGPay.cs" />
+    <Compile Include="GateWay\Payment\AlipayAccount.cs" />
+    <Compile Include="GateWay\Payment\AnYi.cs" />
+    <Compile Include="GateWay\Payment\APay.cs" />
+    <Compile Include="GateWay\Payment\ASO.cs" />
+    <Compile Include="GateWay\Payment\BeiZi.cs" />
+    <Compile Include="GateWay\Payment\BianLiPay.cs" />
+    <Compile Include="GateWay\Payment\DFPay.cs" />
+    <Compile Include="GateWay\Payment\DieCode.cs" />
+    <Compile Include="GateWay\Payment\DinPay.cs" />
+    <Compile Include="GateWay\Payment\DPay.cs" />
+    <Compile Include="GateWay\Payment\DUOBAO.cs" />
+    <Compile Include="GateWay\Payment\Ecpss.cs" />
+    <Compile Include="GateWay\Payment\EPayGG.cs" />
+    <Compile Include="GateWay\Payment\F03.cs" />
+    <Compile Include="GateWay\Payment\GoPay.cs" />
+    <Compile Include="GateWay\Payment\H8Pay.cs" />
+    <Compile Include="GateWay\Payment\HaiFuPay.cs" />
+    <Compile Include="GateWay\Payment\HePay.cs" />
+    <Compile Include="GateWay\Payment\hhnnm.cs" />
+    <Compile Include="GateWay\Payment\HTCard.cs" />
+    <Compile Include="GateWay\Payment\HTPay.cs" />
+    <Compile Include="GateWay\Payment\HuiHePay.cs" />
+    <Compile Include="GateWay\Payment\HXF.cs" />
+    <Compile Include="GateWay\Payment\IEPLM.cs" />
+    <Compile Include="GateWay\Payment\IPayment.cs" />
+    <Compile Include="GateWay\Payment\IPS.cs" />
+    <Compile Include="GateWay\Payment\IPS2.cs" />
+    <Compile Include="GateWay\Payment\IYI.cs" />
+    <Compile Include="GateWay\Payment\JBPay.cs" />
+    <Compile Include="GateWay\Payment\JHZ.cs" />
+    <Compile Include="GateWay\Payment\JinYang.cs" />
+    <Compile Include="GateWay\Payment\Kagan.cs" />
+    <Compile Include="GateWay\Payment\KDPay.cs" />
+    <Compile Include="GateWay\Payment\KJF.cs" />
+    <Compile Include="GateWay\Payment\LeFu.cs" />
+    <Compile Include="GateWay\Payment\LuoBo.cs" />
+    <Compile Include="GateWay\Payment\MeitPay.cs" />
+    <Compile Include="GateWay\Payment\MKPay.cs" />
+    <Compile Include="GateWay\Payment\MMPay.cs" />
+    <Compile Include="GateWay\Payment\MOPay.cs" />
+    <Compile Include="GateWay\Payment\MSD0.cs" />
+    <Compile Include="GateWay\Payment\MY18.cs" />
+    <Compile Include="GateWay\Payment\None.cs" />
+    <Compile Include="GateWay\Payment\OKPay.cs" />
+    <Compile Include="GateWay\Payment\Pay18.cs" />
+    <Compile Include="GateWay\Payment\Pay9.cs" />
+    <Compile Include="GateWay\Payment\PaymentFactory.cs" />
+    <Compile Include="GateWay\Payment\PayV9.cs" />
+    <Compile Include="GateWay\Payment\PPL.cs" />
+    <Compile Include="GateWay\Payment\QHT.cs" />
+    <Compile Include="GateWay\Payment\RXlicai.cs" />
+    <Compile Include="GateWay\Payment\HuiPay.cs" />
+    <Compile Include="GateWay\Payment\TFPAY.cs" />
+    <Compile Include="GateWay\Payment\TTPay.cs" />
+    <Compile Include="GateWay\Payment\UPlus.cs" />
+    <Compile Include="GateWay\Payment\UZhiFu.cs" />
+    <Compile Include="GateWay\Payment\WFT.cs" />
+    <Compile Include="GateWay\Payment\WLPay.cs" />
+    <Compile Include="GateWay\Payment\xBeiPay.cs" />
+    <Compile Include="GateWay\Payment\XIFPay.cs" />
+    <Compile Include="GateWay\Payment\XJPay.cs" />
+    <Compile Include="GateWay\Payment\XRS.cs" />
+    <Compile Include="GateWay\Payment\YBPay.cs" />
+    <Compile Include="GateWay\Payment\GBOTONG.cs" />
+    <Compile Include="GateWay\Payment\YBYPay.cs" />
+    <Compile Include="GateWay\Payment\ZHF.cs" />
+    <Compile Include="GateWay\Payment\ZhiShuaPay.cs" />
+    <Compile Include="GateWay\Payment\ZhongNuo.cs" />
+    <Compile Include="GateWay\Payment\ZSAGE.cs" />
+    <Compile Include="GateWay\Planning\BankAccount.cs" />
+    <Compile Include="GateWay\Planning\Bonus.cs" />
+    <Compile Include="GateWay\Planning\GameWages.cs" />
+    <Compile Include="GateWay\Planning\SingleBonus.cs" />
+    <Compile Include="GateWay\Planning\SlotGameAgent.cs" />
+    <Compile Include="GateWay\Planning\FirstRecharge.cs" />
+    <Compile Include="GateWay\Planning\IPlan.cs" />
+    <Compile Include="GateWay\Planning\LossWages.cs" />
+    <Compile Include="GateWay\Planning\LotteryBetAgent.cs" />
+    <Compile Include="GateWay\Planning\LotteryConsumption.cs" />
+    <Compile Include="GateWay\Planning\LotteryLossBrokerage.cs" />
+    <Compile Include="GateWay\Planning\PlanFactory.cs" />
+    <Compile Include="GateWay\Planning\SlotGame.cs" />
+    <Compile Include="GateWay\Planning\SportGame.cs" />
+    <Compile Include="GateWay\Planning\SportGameAgent.cs" />
+    <Compile Include="GateWay\Planning\VideoGame.cs" />
+    <Compile Include="GateWay\Planning\VideoGameAgent.cs" />
+    <Compile Include="GateWay\Planning\WagesAgent.cs" />
+    <Compile Include="GateWay\SMS\IHuYi.cs" />
+    <Compile Include="GateWay\SMS\ISMS.cs" />
+    <Compile Include="GateWay\SMS\SMSFactory.cs" />
+    <Compile Include="GateWay\SMS\SMSProvider.cs" />
+    <Compile Include="GateWay\Withdraw\ASO.cs" />
+    <Compile Include="GateWay\Withdraw\DinPay.cs" />
+    <Compile Include="GateWay\Withdraw\EasyiPay.cs" />
+    <Compile Include="GateWay\Withdraw\GoPay.cs" />
+    <Compile Include="GateWay\Withdraw\HaiFuPay.cs" />
+    <Compile Include="GateWay\Withdraw\HTPay.cs" />
+    <Compile Include="GateWay\Withdraw\HuiChang.cs" />
+    <Compile Include="GateWay\Withdraw\IEPLM.cs" />
+    <Compile Include="GateWay\Withdraw\IWithdraw.cs" />
+    <Compile Include="GateWay\Withdraw\JBPay.cs" />
+    <Compile Include="GateWay\Withdraw\JHZ.cs" />
+    <Compile Include="GateWay\Withdraw\LeFu.cs" />
+    <Compile Include="GateWay\Withdraw\MOPay.cs" />
+    <Compile Include="GateWay\Withdraw\QHT.cs" />
+    <Compile Include="GateWay\Withdraw\THCard.cs" />
+    <Compile Include="GateWay\Withdraw\WithdrawFactory.cs" />
+    <Compile Include="GateWay\Withdraw\WithdrawType.cs" />
+    <Compile Include="GateWay\Withdraw\WLPay.cs" />
+    <Compile Include="GateWay\Withdraw\XIFPay.cs" />
+    <Compile Include="GateWay\Withdraw\ZSAGE.cs" />
+    <Compile Include="Handler\AdminAttribute.cs" />
+    <Compile Include="Handler\admin\account.cs" />
+    <Compile Include="Handler\admin\api.cs" />
+    <Compile Include="Handler\admin\game.cs" />
+    <Compile Include="Handler\admin\lottery.cs" />
+    <Compile Include="Handler\admin\money.cs" />
+    <Compile Include="Handler\admin\news.cs" />
+    <Compile Include="Handler\admin\report.cs" />
+    <Compile Include="Handler\admin\im.cs" />
+    <Compile Include="Handler\admin\site.cs" />
+    <Compile Include="Handler\admin\system.cs" />
+    <Compile Include="Handler\admin\user.cs" />
+    <Compile Include="Handler\admin\wechat.cs" />
+    <Compile Include="Handler\game\gateway.cs" />
+    <Compile Include="Handler\game\lottery.cs" />
+    <Compile Include="Handler\game\slot.cs" />
+    <Compile Include="Handler\game\wallet.cs" />
+    <Compile Include="Handler\game\wechat.cs" />
+    <Compile Include="Handler\GuestAttribute.cs" />
+    <Compile Include="Handler\IHandler.cs" />
+    <Compile Include="Handler\manage\game.cs" />
+    <Compile Include="Handler\manage\test.cs" />
+    <Compile Include="Handler\PaymentHandler-Redirect.cs" />
+    <Compile Include="Handler\PaymentHandler.cs" />
+    <Compile Include="Handler\ResultInterface.cs" />
+    <Compile Include="Handler\ServiceHandler.cs" />
+    <Compile Include="Handler\site\config.cs" />
+    <Compile Include="Handler\site\info.cs" />
+    <Compile Include="Handler\site\report.cs" />
+    <Compile Include="Handler\system\config.cs" />
+    <Compile Include="Handler\user\account.cs" />
+    <Compile Include="Handler\user\game.cs" />
+    <Compile Include="Handler\user\im.cs" />
+    <Compile Include="Handler\user\info.cs" />
+    <Compile Include="Handler\user\lottery.cs" />
+    <Compile Include="Handler\user\money.cs" />
+    <Compile Include="Handler\user\team.cs" />
+    <Compile Include="Handler\user\wechat.cs" />
+    <Compile Include="Handler\wechat\im.cs" />
+    <Compile Include="Handler\wechat\info.cs" />
+    <Compile Include="PageBase\HandlerBase.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\Res.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Res.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Utils.cs" />
+    <Compile Include="Web References\Remote.Payment.IPS2\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="GateWay\IM\Lottery\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\Res.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Res.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\AdminPermission.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Resources\Game\AG.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Resources\Game\MG.xml" />
+    <Content Include="Resources\Game\MW_Log.xml" />
+    <Content Include="Resources\Game\MW.xml" />
+    <Content Include="Resources\Game\SunBet_Log.xml" />
+    <Content Include="Resources\Game\AG_Log.xml" />
+    <Content Include="Resources\Game\BBIN_Log.xml" />
+    <Content Include="Resources\Game\BBIN.xml" />
+    <Content Include="Resources\Game\PT.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Resources\Game\Sing3_Log.xml" />
+    <Content Include="Resources\Holiday.xml" />
+    <Content Include="Resources\Payment_PlusCode.html" />
+    <Content Include="Resources\Payment_Submit.html" />
+    <Content Include="Resources\Player\P28.xml" />
+    <Content Include="Resources\Speed1.html" />
+    <None Include="app.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Resources\invite.png" />
+    <Content Include="Resources\HTTPS.html" />
+    <Content Include="Resources\Payment_Alipay.html" />
+    <Content Include="Resources\Payment_Bank.html" />
+    <Content Include="Resources\Payment_QRCode.html" />
+    <Content Include="Resources\Payment_Query.js" />
+    <Content Include="Resources\Payment_Success.html" />
+    <Content Include="Resources\Payment_QQ.html" />
+    <Content Include="Resources\Payment_Wechat.html" />
+    <Content Include="Resources\Payment_WechatSubmit.html" />
+    <Content Include="Resources\Plan.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Resources\Player\SmartGame.xml" />
+    <Content Include="Resources\Player\K3.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Resources\Player\M6.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Resources\Player\P10.xml" />
+    <Content Include="Resources\Player\X11.xml" />
+    <Content Include="Resources\Player\X3.xml" />
+    <Content Include="Resources\Player\BA.xml" />
+    <Content Include="Resources\Player\X5.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <None Include="Web References\Remote.Payment.IPS2\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\Remote.Payment.IPS2\WSScan.wsdl" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferences Include="Web References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferenceUrl Include="https://thumbpay.e-years.com/psfp-webscan/services/scan%3fwsdl">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\Remote.Payment.IPS2\</RelPath>
+      <UpdateFromURL>https://thumbpay.e-years.com/psfp-webscan/services/scan%3fwsdl</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>BetWin_Remote_Payment_IPS2_WSScan</CachedSettingsPropName>
+    </WebReferenceUrl>
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json">
+      <Version>12.0.2</Version>
+    </PackageReference>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SP.Studio\SP.Studio.csproj">
+      <Project>{780aa7cd-437d-41fd-a814-c42f7040cc91}</Project>
+      <Name>SP.Studio</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

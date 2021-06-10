@@ -1,0 +1,102 @@
+﻿<div class="page-header">
+    <h1>彩种配置</h1>
+    <h6>最大返奖不能超过系统设定的最大值。中奖概率仅限于系统彩。官方彩种开启手动派奖仍会自动开奖，但是不会自动派奖。<br />
+        单期限额为单个用户在该彩种的单期最多可投注的金额，为0表示没有限制。<br />
+        单挑限制，为0表示不限制单挑，填写0.1为10%以内为单挑，单挑注数后为设置单挑的最大奖金。<br />
+        全包限制，为0表示不限制，填写0.8表示最多可投注80%。（玩法内如果设置了单一玩法的最大投注，则以玩法的设置优先）
+    </h6>
+    <div class="page-action">
+        <a href="javascript:" class="am-btn am-btn-success am-round" data-diag-name="lottery-setting-category" data-diag-src="lottery/setting/category.html" data-diag-type="control" data-diag-title="分类管理" data-diag-mask="true">分类管理</a>
+    </div>
+</div>
+<div class="page-table">
+    <table class="list" id="lottery-bet-log" data-bind-action="/admin/lottery/list" data-bind-type="ajax" data-bind-callback="lotterysettingtype">
+        <thead>
+            <tr>
+                <th class="w180">类型</th>
+                <th>彩种</th>
+                <th>自定义名称</th>
+                <th>所属分类</th>
+                <th>中奖概率</th>
+                <th>开启</th>
+                <!--<th>关闭追号</th>-->
+                <th>手动</th>
+                <th>单期限额</th>
+                <th>单挑限制</th>
+                <th>全包限制</th>
+                <th>排序值</th>
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+</div>
+
+
+<script type="text/javascript">
+    BW.callback["lotterysettingtype"] = function (result) {
+        var t = this;
+        var tbody = t.dom.element.getElement("tbody");
+        var category = new Object();
+        result.info.each(function (item) {
+            if (!category[item.Info.Category]) {
+                category[item.Info.Category] = item.Info;
+            }
+        });
+        var html = new Array();
+        Object.forEach(category, function (value, key) {
+            var list = result.info.filter(function (item) { return item.Info.Category == key; });
+            value["Count"] = list.length;
+            list.each(function (item, index) {
+                if (item.IsOpen) item.IsOpen = "checked";
+                if (item.NoChase) item.NoChase = "checked";
+                if (item.IsManual) item.IsManual = "checked";
+                html.push("<tr>");
+                if (index == 0) {
+                    value["MaxRebate"] = item.MaxRebate;
+                    html.push("<td rowspan=\"${Count}\" class=\"am-text-center am-text-lg\"><label class=\"am-padding\">${Name}</label><p>最大返奖：<input type=\"number\" name=\"MaxRebate\" value=\"${MaxRebate}\" class=\"txt\" size=\"4\" data-update-name=\"MaxRebate\" data-update-category=\"${Category}\"  data-update-action=\"/admin/lottery/updatemaxreward\" /></p></td>".toHtml(value));
+                }
+                html.push("<td>${Game}</td><td><input type=\"text\" data-update-name=\"Name\" data-update-game=\"${Game}\" data-update-action=\"/admin/lottery/updatesetting\" value=\"${Name}\" class=\"txt\" /></td>".toHtml(item));
+                html.push("<td><select data-value=\"${CateID}\" class=\"txt\" data-update-name=\"CateID\" data-update-game=\"${Game}\" data-update-action=\"admin/lottery/updatecategory\"></select></td>".toHtml(item));
+                html.push("<td>" + (item.Info.SiteLottery == 0 ? "官方彩种" : "<input type=\"text\" name=\"\" value=\"${RewardPercent}\" class=\"txt\" size=\"4\" data-update-name=\"RewardPercent\" data-update-game=\"${Game}\" data-update-action=\"/admin/lottery/updatesetting\" /> %".toHtml(item)) + "</td>");
+                html.push("<td><input type=\"checkbox\" name=\"IsOpen\" data-type=\"switch\" value=\"1\" data-update-name=\"IsOpen\" data-update-game=\"${Game}\" data-update-action=\"/admin/lottery/updatesetting\" ${IsOpen} /></td>".toHtml(item));
+                //html.push("<td><input type=\"checkbox\" name=\"NoChase\" data-type=\"switch\" value=\"1\" data-update-name=\"NoChase\" data-update-game=\"${Game}\" data-update-action=\"/admin/lottery/updatesetting\" ${NoChase} /></td>".toHtml(item));
+                html.push("<td><input type=\"checkbox\" name=\"IsManual\" data-type=\"switch\" value=\"1\" data-update-name=\"IsManual\" data-update-game=\"${Game}\" data-update-action=\"/admin/lottery/updatesetting\" ${IsManual} /></td>".toHtml(item));
+                html.push("<td><input type=\"number\" name=\"MaxBet\" value=\"${MaxBet}\" class=\"txt w80\" size=\"2\" data-update-name=\"MaxBet\" data-update-game=\"${Game}\"  data-update-action=\"/admin/lottery/updatemaxbet\" /></td>".toHtml(item));
+                html.push("<td><input type=\"text\" name=\"SinglePercent\" value=\"${SinglePercent}\" class=\"txt w40\" size=\"2\" data-update-name=\"SinglePercent\" data-update-game=\"${Game}\"  data-update-action=\"/admin/lottery/updatesinglepercent\" /> / <input type=\"text\" name=\"SingleReward\" value=\"${SingleReward}\" class=\"txt w80\" size=\"2\" data-update-name=\"SingleReward\" data-update-game=\"${Game}\"  data-update-action=\"/admin/lottery/updatesinglereward\" /></td>".toHtml(item));
+                html.push("<td><input type=\"text\" name=\"MaxPercent\" value=\"${MaxPercent}\" class=\"txt w60\" size=\"2\" data-update-name=\"MaxPercent\" data-update-game=\"${Game}\" data-update-action=\"/admin/lottery/updatemaxpercent\" /></td>".toHtml(item));
+
+                html.push("<td><input type=\"number\" name=\"Sort\" value=\"${Sort}\" class=\"txt w80\" size=\"2\" data-update-name=\"Sort\" data-update-game=\"${Game}\"  data-update-action=\"/admin/lottery/updatesort\" /></td>".toHtml(item));
+                //html.push("<td><a href=\"javascript:\">详情</a></td>");
+                html.push("</tr>");
+            });
+        });
+        tbody.set("html", html.join(""));
+
+        tbody.getElements("[data-update-action]").each(function (item) {
+            new BW.Update(item);
+        });
+
+        new Request.JSON({
+            "url": "admin/lottery/catelist",
+            "onSuccess": function (category) {
+                t.dom.element.getElements("select[data-update-name=CateID]").each(function (item) {
+                    var value = item.get("data-value");
+                    new Element("option", {
+                        "text": "无分类",
+                        "value": "0",
+                        "selected": value == "0"
+                    }).inject(item);
+
+                    category.info.list.each(function (cate) {
+                        new Element("option", {
+                            "text": cate.Name,
+                            "value": cate.ID,
+                            "selected": value == cate.ID
+                        }).inject(item);
+                    });
+                });
+            }
+        }).post();
+
+    };
+</script>

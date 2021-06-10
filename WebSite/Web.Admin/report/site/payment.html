@@ -1,0 +1,36 @@
+﻿<div class="page-header">
+    <h1>充提统计</h1>
+    <div class="page-searchbox">
+        <form action="payment.html" method="post">
+            统计时间：从<input type="date" class="txt" name="StartAt" /> ～ <input type="date" class="txt" name="EndAt" />
+            <input type="submit" value="查看" class="am-btn am-btn-success am-round am-text-xs" />
+        </form>
+    </div>
+</div>
+<div class="page-table">
+    <table class="list" data-bind-action="/admin/report/sitepayment" data-bind-type="list" data-bind-callback="list,count" data-bind-load="search">
+        <thead>
+            <tr>
+                <th>日期</th>
+                <th>充值</th>
+                <th>提现</th>
+                <th>统计</th>
+            </tr>
+        </thead>
+        <tbody data-list-element="true">
+            <tr>
+                <td>${Date}</td>
+                <td>${Recharge:money}</td>
+                <td>${Withdraw:money}</td>
+                <td>${Money:money-show}</td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <td>统计：</td>
+                <td colspan="2"></td>
+                <td>${data.Money:money-show}</td>
+            </tr>
+        </tfoot>
+    </table>
+</div>

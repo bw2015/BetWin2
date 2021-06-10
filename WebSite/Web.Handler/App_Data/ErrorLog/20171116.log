@@ -1,0 +1,1037 @@
+[2017/11/16 16:53:41]错误日志写入数据库失败
+在从服务器接收结果时发生传输级错误。 (provider: Shared Memory Provider, error: 0 - 句柄无效。)SaveErrorLog
+@SiteID : 1000 
+@ErrorID : F29673F3C14E4FCDB217D515D3D9725B 
+@HttpCode : 0 
+@Content : ErrorID : F29673F3C14E4FCDB217D515D3D9725B
+Message : 在从服务器接收结果时发生传输级错误。 (provider: Shared Memory Provider, error: 0 - 句柄无效。)SaveHandler
+@SiteID : 1000 
+@UserID : 2 
+@Method : /admin/site/tip 
+@Data :  
+@Time : 51 
+
+RawUrl : localhost:21000/admin/site/tip
+UrlReferrer : http://localhost:8089/frame.html
+UserAgent : Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.94 Safari/537.36
+IP : ::1
+Method : POST
+Cookie:
+	GHOST	:	e11fa5d4324f43468abb63d4f56eda44
+	uid	:	1m30jc31qf1cjiymsvyacyvv
+	USER	:	f77f6a1823e74242a5a4382109e57108
+	USERINFO	:	2
+	ADMIN	:	7de416e6645a48448c1143c4a5d7c2bc
+
+Request.ServerVariables
+	ALL_HTTP	:	HTTP_CONNECTION:close
+HTTP_CONTENT_LENGTH:0
+HTTP_CONTENT_TYPE:application/x-www-form-urlencoded; charset=UTF-8
+HTTP_ACCEPT:application/json
+HTTP_ACCEPT_ENCODING:gzip, deflate, br
+HTTP_ACCEPT_LANGUAGE:zh-CN,zh;q=0.9,en;q=0.8
+HTTP_COOKIE:GHOST=e11fa5d4324f43468abb63d4f56eda44; uid=1m30jc31qf1cjiymsvyacyvv; USER=f77f6a1823e74242a5a4382109e57108; USERINFO=2; ADMIN=7de416e6645a48448c1143c4a5d7c2bc
+HTTP_HOST:localhost:21000
+HTTP_REFERER:http://localhost:8089/frame.html
+HTTP_USER_AGENT:Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.94 Safari/537.36
+HTTP_ORIGIN:http://localhost:8089
+HTTP_X_REQUESTED_WITH:XMLHttpRequest
+HTTP_X_REQUEST:JSON
+HTTP_X_FORWARDED_FOR:172.8.5.9
+
+	ALL_RAW	:	Connection: close
+Content-Length: 0
+Content-Type: application/x-www-form-urlencoded; charset=UTF-8
+Accept: application/json
+Accept-Encoding: gzip, deflate, br
+Accept-Language: zh-CN,zh;q=0.9,en;q=0.8
+Cookie: GHOST=e11fa5d4324f43468abb63d4f56eda44; uid=1m30jc31qf1cjiymsvyacyvv; USER=f77f6a1823e74242a5a4382109e57108; USERINFO=2; ADMIN=7de416e6645a48448c1143c4a5d7c2bc
+Host: localhost:21000
+Referer: http://localhost:8089/frame.html
+User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.94 Safari/537.36
+Origin: http://localhost:8089
+X-Requested-With: XMLHttpRequest
+X-Request: JSON
+X-Forwarded-For: 172.8.5.9
+
+	APPL_MD_PATH	:	/LM/W3SVC/2/ROOT
+	APPL_PHYSICAL_PATH	:	F:\2017\BetWin 2.0\WebSite\Web.Handler\
+	AUTH_TYPE	:	
+	AUTH_USER	:	
+	AUTH_PASSWORD	:	
+	LOGON_USER	:	
+	REMOTE_USER	:	
+	CERT_COOKIE	:	
+	CERT_FLAGS	:	
+	CERT_ISSUER	:	
+	CERT_KEYSIZE	:	
+	CERT_SECRETKEYSIZE	:	
+	CERT_SERIALNUMBER	:	
+	CERT_SERVER_ISSUER	:	
+	CERT_SERVER_SUBJECT	:	
+	CERT_SUBJECT	:	
+	CONTENT_LENGTH	:	0
+	CONTENT_TYPE	:	application/x-www-form-urlencoded; charset=UTF-8
+	GATEWAY_INTERFACE	:	CGI/1.1
+	HTTPS	:	off
+	HTTPS_KEYSIZE	:	
+	HTTPS_SECRETKEYSIZE	:	
+	HTTPS_SERVER_ISSUER	:	
+	HTTPS_SERVER_SUBJECT	:	
+	INSTANCE_ID	:	2
+	INSTANCE_META_PATH	:	/LM/W3SVC/2
+	LOCAL_ADDR	:	::1
+	PATH_INFO	:	/admin/site/tip
+	PATH_TRANSLATED	:	F:\2017\BetWin 2.0\WebSite\Web.Handler\admin\site\tip
+	QUERY_STRING	:	
+	REMOTE_ADDR	:	::1
+	REMOTE_HOST	:	::1
+	REMOTE_PORT	:	54630
+	REQUEST_METHOD	:	POST
+	SCRIPT_NAME	:	/admin/site/tip
+	SERVER_NAME	:	localhost
+	SERVER_PORT	:	21000
+	SERVER_PORT_SECURE	:	0
+	SERVER_PROTOCOL	:	HTTP/1.1
+	SERVER_SOFTWARE	:	Microsoft-IIS/10.0
+	URL	:	/admin/site/tip
+	HTTP_CONNECTION	:	close
+	HTTP_CONTENT_LENGTH	:	0
+	HTTP_CONTENT_TYPE	:	application/x-www-form-urlencoded; charset=UTF-8
+	HTTP_ACCEPT	:	application/json
+	HTTP_ACCEPT_ENCODING	:	gzip, deflate, br
+	HTTP_ACCEPT_LANGUAGE	:	zh-CN,zh;q=0.9,en;q=0.8
+	HTTP_COOKIE	:	GHOST=e11fa5d4324f43468abb63d4f56eda44; uid=1m30jc31qf1cjiymsvyacyvv; USER=f77f6a1823e74242a5a4382109e57108; USERINFO=2; ADMIN=7de416e6645a48448c1143c4a5d7c2bc
+	HTTP_HOST	:	localhost:21000
+	HTTP_REFERER	:	http://localhost:8089/frame.html
+	HTTP_USER_AGENT	:	Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.94 Safari/537.36
+	HTTP_ORIGIN	:	http://localhost:8089
+	HTTP_X_REQUESTED_WITH	:	XMLHttpRequest
+	HTTP_X_REQUEST	:	JSON
+	HTTP_X_FORWARDED_FOR	:	172.8.5.9
+
+PostData : 
+堆栈信息
+Type	:	System.Exception
+Source	:	SP.Studio
+StackTrace	:	
+   在 SP.Studio.Data.DbExecutor.ExecuteNonQuery(CommandType cmdType, String cmdText, DbParameter[] parameters)
+   在 BW.Agent.SNAPAgent.AddHandlerLog(Int16 time)
+   在 BW.Framework.BetModule.Context_EndRequest(Object sender, EventArgs e)
+   在 System.Web.HttpApplication.SyncEventExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   在 System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+Method	:	ExecuteNonQuery
+Class	:	SP.Studio.Data.DbExecutor
+Time : 2017/11/16 16:53:41
+ 
+@Title : 在从服务器接收结果时发生传输级错误。 (provider: Shared Memory Provider, error: 0 - 句柄无效。)SaveHandler
+@SiteID : 1000 
+@UserID : 2 
+@Method : /admin/site/tip 
+@Data :  
+@Time : 51 
+ 
+
+ErrorID:F29673F3C14E4FCDB217D515D3D9725B
+ErrorID : F29673F3C14E4FCDB217D515D3D9725B
+Message : 在从服务器接收结果时发生传输级错误。 (provider: Shared Memory Provider, error: 0 - 句柄无效。)SaveHandler
+@SiteID : 1000 
+@UserID : 2 
+@Method : /admin/site/tip 
+@Data :  
+@Time : 51 
+
+RawUrl : localhost:21000/admin/site/tip
+UrlReferrer : http://localhost:8089/frame.html
+UserAgent : Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.94 Safari/537.36
+IP : ::1
+Method : POST
+Cookie:
+	GHOST	:	e11fa5d4324f43468abb63d4f56eda44
+	uid	:	1m30jc31qf1cjiymsvyacyvv
+	USER	:	f77f6a1823e74242a5a4382109e57108
+	USERINFO	:	2
+	ADMIN	:	7de416e6645a48448c1143c4a5d7c2bc
+
+Request.ServerVariables
+	ALL_HTTP	:	HTTP_CONNECTION:close
+HTTP_CONTENT_LENGTH:0
+HTTP_CONTENT_TYPE:application/x-www-form-urlencoded; charset=UTF-8
+HTTP_ACCEPT:application/json
+HTTP_ACCEPT_ENCODING:gzip, deflate, br
+HTTP_ACCEPT_LANGUAGE:zh-CN,zh;q=0.9,en;q=0.8
+HTTP_COOKIE:GHOST=e11fa5d4324f43468abb63d4f56eda44; uid=1m30jc31qf1cjiymsvyacyvv; USER=f77f6a1823e74242a5a4382109e57108; USERINFO=2; ADMIN=7de416e6645a48448c1143c4a5d7c2bc
+HTTP_HOST:localhost:21000
+HTTP_REFERER:http://localhost:8089/frame.html
+HTTP_USER_AGENT:Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.94 Safari/537.36
+HTTP_ORIGIN:http://localhost:8089
+HTTP_X_REQUESTED_WITH:XMLHttpRequest
+HTTP_X_REQUEST:JSON
+HTTP_X_FORWARDED_FOR:172.8.5.9
+
+	ALL_RAW	:	Connection: close
+Content-Length: 0
+Content-Type: application/x-www-form-urlencoded; charset=UTF-8
+Accept: application/json
+Accept-Encoding: gzip, deflate, br
+Accept-Language: zh-CN,zh;q=0.9,en;q=0.8
+Cookie: GHOST=e11fa5d4324f43468abb63d4f56eda44; uid=1m30jc31qf1cjiymsvyacyvv; USER=f77f6a1823e74242a5a4382109e57108; USERINFO=2; ADMIN=7de416e6645a48448c1143c4a5d7c2bc
+Host: localhost:21000
+Referer: http://localhost:8089/frame.html
+User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.94 Safari/537.36
+Origin: http://localhost:8089
+X-Requested-With: XMLHttpRequest
+X-Request: JSON
+X-Forwarded-For: 172.8.5.9
+
+	APPL_MD_PATH	:	/LM/W3SVC/2/ROOT
+	APPL_PHYSICAL_PATH	:	F:\2017\BetWin 2.0\WebSite\Web.Handler\
+	AUTH_TYPE	:	
+	AUTH_USER	:	
+	AUTH_PASSWORD	:	
+	LOGON_USER	:	
+	REMOTE_USER	:	
+	CERT_COOKIE	:	
+	CERT_FLAGS	:	
+	CERT_ISSUER	:	
+	CERT_KEYSIZE	:	
+	CERT_SECRETKEYSIZE	:	
+	CERT_SERIALNUMBER	:	
+	CERT_SERVER_ISSUER	:	
+	CERT_SERVER_SUBJECT	:	
+	CERT_SUBJECT	:	
+	CONTENT_LENGTH	:	0
+	CONTENT_TYPE	:	application/x-www-form-urlencoded; charset=UTF-8
+	GATEWAY_INTERFACE	:	CGI/1.1
+	HTTPS	:	off
+	HTTPS_KEYSIZE	:	
+	HTTPS_SECRETKEYSIZE	:	
+	HTTPS_SERVER_ISSUER	:	
+	HTTPS_SERVER_SUBJECT	:	
+	INSTANCE_ID	:	2
+	INSTANCE_META_PATH	:	/LM/W3SVC/2
+	LOCAL_ADDR	:	::1
+	PATH_INFO	:	/admin/site/tip
+	PATH_TRANSLATED	:	F:\2017\BetWin 2.0\WebSite\Web.Handler\admin\site\tip
+	QUERY_STRING	:	
+	REMOTE_ADDR	:	::1
+	REMOTE_HOST	:	::1
+	REMOTE_PORT	:	54630
+	REQUEST_METHOD	:	POST
+	SCRIPT_NAME	:	/admin/site/tip
+	SERVER_NAME	:	localhost
+	SERVER_PORT	:	21000
+	SERVER_PORT_SECURE	:	0
+	SERVER_PROTOCOL	:	HTTP/1.1
+	SERVER_SOFTWARE	:	Microsoft-IIS/10.0
+	URL	:	/admin/site/tip
+	HTTP_CONNECTION	:	close
+	HTTP_CONTENT_LENGTH	:	0
+	HTTP_CONTENT_TYPE	:	application/x-www-form-urlencoded; charset=UTF-8
+	HTTP_ACCEPT	:	application/json
+	HTTP_ACCEPT_ENCODING	:	gzip, deflate, br
+	HTTP_ACCEPT_LANGUAGE	:	zh-CN,zh;q=0.9,en;q=0.8
+	HTTP_COOKIE	:	GHOST=e11fa5d4324f43468abb63d4f56eda44; uid=1m30jc31qf1cjiymsvyacyvv; USER=f77f6a1823e74242a5a4382109e57108; USERINFO=2; ADMIN=7de416e6645a48448c1143c4a5d7c2bc
+	HTTP_HOST	:	localhost:21000
+	HTTP_REFERER	:	http://localhost:8089/frame.html
+	HTTP_USER_AGENT	:	Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.94 Safari/537.36
+	HTTP_ORIGIN	:	http://localhost:8089
+	HTTP_X_REQUESTED_WITH	:	XMLHttpRequest
+	HTTP_X_REQUEST	:	JSON
+	HTTP_X_FORWARDED_FOR	:	172.8.5.9
+
+PostData : 
+堆栈信息
+Type	:	System.Exception
+Source	:	SP.Studio
+StackTrace	:	
+   在 SP.Studio.Data.DbExecutor.ExecuteNonQuery(CommandType cmdType, String cmdText, DbParameter[] parameters)
+   在 BW.Agent.SNAPAgent.AddHandlerLog(Int16 time)
+   在 BW.Framework.BetModule.Context_EndRequest(Object sender, EventArgs e)
+   在 System.Web.HttpApplication.SyncEventExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   在 System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+Method	:	ExecuteNonQuery
+Class	:	SP.Studio.Data.DbExecutor
+Time : 2017/11/16 16:53:41
+
+
+================================
+
+[2017/11/16 17:05:34]错误日志写入数据库失败
+在从服务器接收结果时发生传输级错误。 (provider: Shared Memory Provider, error: 0 - 句柄无效。)SaveErrorLog
+@SiteID : 1000 
+@ErrorID : 30CBAD79965E4117BB800EFD0A429E76 
+@HttpCode : 0 
+@Content : ErrorID : 30CBAD79965E4117BB800EFD0A429E76
+Message : 在从服务器接收结果时发生传输级错误。 (provider: Shared Memory Provider, error: 0 - 句柄无效。)SaveHandler
+@SiteID : 1000 
+@UserID : 2 
+@Method : /admin/site/tip 
+@Data :  
+@Time : 51 
+
+RawUrl : localhost:21000/admin/site/tip
+UrlReferrer : http://localhost:8089/frame.html
+UserAgent : Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.94 Safari/537.36
+IP : ::1
+Method : POST
+Cookie:
+	GHOST	:	e11fa5d4324f43468abb63d4f56eda44
+	uid	:	1m30jc31qf1cjiymsvyacyvv
+	USER	:	f77f6a1823e74242a5a4382109e57108
+	USERINFO	:	2
+	ADMIN	:	7de416e6645a48448c1143c4a5d7c2bc
+
+Request.ServerVariables
+	ALL_HTTP	:	HTTP_CONNECTION:close
+HTTP_CONTENT_LENGTH:0
+HTTP_CONTENT_TYPE:application/x-www-form-urlencoded; charset=UTF-8
+HTTP_ACCEPT:application/json
+HTTP_ACCEPT_ENCODING:gzip, deflate, br
+HTTP_ACCEPT_LANGUAGE:zh-CN,zh;q=0.9,en;q=0.8
+HTTP_COOKIE:GHOST=e11fa5d4324f43468abb63d4f56eda44; uid=1m30jc31qf1cjiymsvyacyvv; USER=f77f6a1823e74242a5a4382109e57108; USERINFO=2; ADMIN=7de416e6645a48448c1143c4a5d7c2bc
+HTTP_HOST:localhost:21000
+HTTP_REFERER:http://localhost:8089/frame.html
+HTTP_USER_AGENT:Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.94 Safari/537.36
+HTTP_ORIGIN:http://localhost:8089
+HTTP_X_REQUESTED_WITH:XMLHttpRequest
+HTTP_X_REQUEST:JSON
+HTTP_X_FORWARDED_FOR:172.8.5.9
+
+	ALL_RAW	:	Connection: close
+Content-Length: 0
+Content-Type: application/x-www-form-urlencoded; charset=UTF-8
+Accept: application/json
+Accept-Encoding: gzip, deflate, br
+Accept-Language: zh-CN,zh;q=0.9,en;q=0.8
+Cookie: GHOST=e11fa5d4324f43468abb63d4f56eda44; uid=1m30jc31qf1cjiymsvyacyvv; USER=f77f6a1823e74242a5a4382109e57108; USERINFO=2; ADMIN=7de416e6645a48448c1143c4a5d7c2bc
+Host: localhost:21000
+Referer: http://localhost:8089/frame.html
+User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.94 Safari/537.36
+Origin: http://localhost:8089
+X-Requested-With: XMLHttpRequest
+X-Request: JSON
+X-Forwarded-For: 172.8.5.9
+
+	APPL_MD_PATH	:	/LM/W3SVC/2/ROOT
+	APPL_PHYSICAL_PATH	:	F:\2017\BetWin 2.0\WebSite\Web.Handler\
+	AUTH_TYPE	:	
+	AUTH_USER	:	
+	AUTH_PASSWORD	:	
+	LOGON_USER	:	
+	REMOTE_USER	:	
+	CERT_COOKIE	:	
+	CERT_FLAGS	:	
+	CERT_ISSUER	:	
+	CERT_KEYSIZE	:	
+	CERT_SECRETKEYSIZE	:	
+	CERT_SERIALNUMBER	:	
+	CERT_SERVER_ISSUER	:	
+	CERT_SERVER_SUBJECT	:	
+	CERT_SUBJECT	:	
+	CONTENT_LENGTH	:	0
+	CONTENT_TYPE	:	application/x-www-form-urlencoded; charset=UTF-8
+	GATEWAY_INTERFACE	:	CGI/1.1
+	HTTPS	:	off
+	HTTPS_KEYSIZE	:	
+	HTTPS_SECRETKEYSIZE	:	
+	HTTPS_SERVER_ISSUER	:	
+	HTTPS_SERVER_SUBJECT	:	
+	INSTANCE_ID	:	2
+	INSTANCE_META_PATH	:	/LM/W3SVC/2
+	LOCAL_ADDR	:	::1
+	PATH_INFO	:	/admin/site/tip
+	PATH_TRANSLATED	:	F:\2017\BetWin 2.0\WebSite\Web.Handler\admin\site\tip
+	QUERY_STRING	:	
+	REMOTE_ADDR	:	::1
+	REMOTE_HOST	:	::1
+	REMOTE_PORT	:	54770
+	REQUEST_METHOD	:	POST
+	SCRIPT_NAME	:	/admin/site/tip
+	SERVER_NAME	:	localhost
+	SERVER_PORT	:	21000
+	SERVER_PORT_SECURE	:	0
+	SERVER_PROTOCOL	:	HTTP/1.1
+	SERVER_SOFTWARE	:	Microsoft-IIS/10.0
+	URL	:	/admin/site/tip
+	HTTP_CONNECTION	:	close
+	HTTP_CONTENT_LENGTH	:	0
+	HTTP_CONTENT_TYPE	:	application/x-www-form-urlencoded; charset=UTF-8
+	HTTP_ACCEPT	:	application/json
+	HTTP_ACCEPT_ENCODING	:	gzip, deflate, br
+	HTTP_ACCEPT_LANGUAGE	:	zh-CN,zh;q=0.9,en;q=0.8
+	HTTP_COOKIE	:	GHOST=e11fa5d4324f43468abb63d4f56eda44; uid=1m30jc31qf1cjiymsvyacyvv; USER=f77f6a1823e74242a5a4382109e57108; USERINFO=2; ADMIN=7de416e6645a48448c1143c4a5d7c2bc
+	HTTP_HOST	:	localhost:21000
+	HTTP_REFERER	:	http://localhost:8089/frame.html
+	HTTP_USER_AGENT	:	Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.94 Safari/537.36
+	HTTP_ORIGIN	:	http://localhost:8089
+	HTTP_X_REQUESTED_WITH	:	XMLHttpRequest
+	HTTP_X_REQUEST	:	JSON
+	HTTP_X_FORWARDED_FOR	:	172.8.5.9
+
+PostData : 
+堆栈信息
+Type	:	System.Exception
+Source	:	SP.Studio
+StackTrace	:	
+   在 SP.Studio.Data.DbExecutor.ExecuteNonQuery(CommandType cmdType, String cmdText, DbParameter[] parameters)
+   在 BW.Agent.SNAPAgent.AddHandlerLog(Int16 time)
+   在 BW.Framework.BetModule.Context_EndRequest(Object sender, EventArgs e)
+   在 System.Web.HttpApplication.SyncEventExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   在 System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+Method	:	ExecuteNonQuery
+Class	:	SP.Studio.Data.DbExecutor
+Time : 2017/11/16 17:05:34
+ 
+@Title : 在从服务器接收结果时发生传输级错误。 (provider: Shared Memory Provider, error: 0 - 句柄无效。)SaveHandler
+@SiteID : 1000 
+@UserID : 2 
+@Method : /admin/site/tip 
+@Data :  
+@Time : 51 
+ 
+
+ErrorID:30CBAD79965E4117BB800EFD0A429E76
+ErrorID : 30CBAD79965E4117BB800EFD0A429E76
+Message : 在从服务器接收结果时发生传输级错误。 (provider: Shared Memory Provider, error: 0 - 句柄无效。)SaveHandler
+@SiteID : 1000 
+@UserID : 2 
+@Method : /admin/site/tip 
+@Data :  
+@Time : 51 
+
+RawUrl : localhost:21000/admin/site/tip
+UrlReferrer : http://localhost:8089/frame.html
+UserAgent : Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.94 Safari/537.36
+IP : ::1
+Method : POST
+Cookie:
+	GHOST	:	e11fa5d4324f43468abb63d4f56eda44
+	uid	:	1m30jc31qf1cjiymsvyacyvv
+	USER	:	f77f6a1823e74242a5a4382109e57108
+	USERINFO	:	2
+	ADMIN	:	7de416e6645a48448c1143c4a5d7c2bc
+
+Request.ServerVariables
+	ALL_HTTP	:	HTTP_CONNECTION:close
+HTTP_CONTENT_LENGTH:0
+HTTP_CONTENT_TYPE:application/x-www-form-urlencoded; charset=UTF-8
+HTTP_ACCEPT:application/json
+HTTP_ACCEPT_ENCODING:gzip, deflate, br
+HTTP_ACCEPT_LANGUAGE:zh-CN,zh;q=0.9,en;q=0.8
+HTTP_COOKIE:GHOST=e11fa5d4324f43468abb63d4f56eda44; uid=1m30jc31qf1cjiymsvyacyvv; USER=f77f6a1823e74242a5a4382109e57108; USERINFO=2; ADMIN=7de416e6645a48448c1143c4a5d7c2bc
+HTTP_HOST:localhost:21000
+HTTP_REFERER:http://localhost:8089/frame.html
+HTTP_USER_AGENT:Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.94 Safari/537.36
+HTTP_ORIGIN:http://localhost:8089
+HTTP_X_REQUESTED_WITH:XMLHttpRequest
+HTTP_X_REQUEST:JSON
+HTTP_X_FORWARDED_FOR:172.8.5.9
+
+	ALL_RAW	:	Connection: close
+Content-Length: 0
+Content-Type: application/x-www-form-urlencoded; charset=UTF-8
+Accept: application/json
+Accept-Encoding: gzip, deflate, br
+Accept-Language: zh-CN,zh;q=0.9,en;q=0.8
+Cookie: GHOST=e11fa5d4324f43468abb63d4f56eda44; uid=1m30jc31qf1cjiymsvyacyvv; USER=f77f6a1823e74242a5a4382109e57108; USERINFO=2; ADMIN=7de416e6645a48448c1143c4a5d7c2bc
+Host: localhost:21000
+Referer: http://localhost:8089/frame.html
+User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.94 Safari/537.36
+Origin: http://localhost:8089
+X-Requested-With: XMLHttpRequest
+X-Request: JSON
+X-Forwarded-For: 172.8.5.9
+
+	APPL_MD_PATH	:	/LM/W3SVC/2/ROOT
+	APPL_PHYSICAL_PATH	:	F:\2017\BetWin 2.0\WebSite\Web.Handler\
+	AUTH_TYPE	:	
+	AUTH_USER	:	
+	AUTH_PASSWORD	:	
+	LOGON_USER	:	
+	REMOTE_USER	:	
+	CERT_COOKIE	:	
+	CERT_FLAGS	:	
+	CERT_ISSUER	:	
+	CERT_KEYSIZE	:	
+	CERT_SECRETKEYSIZE	:	
+	CERT_SERIALNUMBER	:	
+	CERT_SERVER_ISSUER	:	
+	CERT_SERVER_SUBJECT	:	
+	CERT_SUBJECT	:	
+	CONTENT_LENGTH	:	0
+	CONTENT_TYPE	:	application/x-www-form-urlencoded; charset=UTF-8
+	GATEWAY_INTERFACE	:	CGI/1.1
+	HTTPS	:	off
+	HTTPS_KEYSIZE	:	
+	HTTPS_SECRETKEYSIZE	:	
+	HTTPS_SERVER_ISSUER	:	
+	HTTPS_SERVER_SUBJECT	:	
+	INSTANCE_ID	:	2
+	INSTANCE_META_PATH	:	/LM/W3SVC/2
+	LOCAL_ADDR	:	::1
+	PATH_INFO	:	/admin/site/tip
+	PATH_TRANSLATED	:	F:\2017\BetWin 2.0\WebSite\Web.Handler\admin\site\tip
+	QUERY_STRING	:	
+	REMOTE_ADDR	:	::1
+	REMOTE_HOST	:	::1
+	REMOTE_PORT	:	54770
+	REQUEST_METHOD	:	POST
+	SCRIPT_NAME	:	/admin/site/tip
+	SERVER_NAME	:	localhost
+	SERVER_PORT	:	21000
+	SERVER_PORT_SECURE	:	0
+	SERVER_PROTOCOL	:	HTTP/1.1
+	SERVER_SOFTWARE	:	Microsoft-IIS/10.0
+	URL	:	/admin/site/tip
+	HTTP_CONNECTION	:	close
+	HTTP_CONTENT_LENGTH	:	0
+	HTTP_CONTENT_TYPE	:	application/x-www-form-urlencoded; charset=UTF-8
+	HTTP_ACCEPT	:	application/json
+	HTTP_ACCEPT_ENCODING	:	gzip, deflate, br
+	HTTP_ACCEPT_LANGUAGE	:	zh-CN,zh;q=0.9,en;q=0.8
+	HTTP_COOKIE	:	GHOST=e11fa5d4324f43468abb63d4f56eda44; uid=1m30jc31qf1cjiymsvyacyvv; USER=f77f6a1823e74242a5a4382109e57108; USERINFO=2; ADMIN=7de416e6645a48448c1143c4a5d7c2bc
+	HTTP_HOST	:	localhost:21000
+	HTTP_REFERER	:	http://localhost:8089/frame.html
+	HTTP_USER_AGENT	:	Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.94 Safari/537.36
+	HTTP_ORIGIN	:	http://localhost:8089
+	HTTP_X_REQUESTED_WITH	:	XMLHttpRequest
+	HTTP_X_REQUEST	:	JSON
+	HTTP_X_FORWARDED_FOR	:	172.8.5.9
+
+PostData : 
+堆栈信息
+Type	:	System.Exception
+Source	:	SP.Studio
+StackTrace	:	
+   在 SP.Studio.Data.DbExecutor.ExecuteNonQuery(CommandType cmdType, String cmdText, DbParameter[] parameters)
+   在 BW.Agent.SNAPAgent.AddHandlerLog(Int16 time)
+   在 BW.Framework.BetModule.Context_EndRequest(Object sender, EventArgs e)
+   在 System.Web.HttpApplication.SyncEventExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   在 System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+Method	:	ExecuteNonQuery
+Class	:	SP.Studio.Data.DbExecutor
+Time : 2017/11/16 17:05:34
+
+
+================================
+
+[2017/11/16 17:14:46]错误日志写入数据库失败
+在从服务器接收结果时发生传输级错误。 (provider: Shared Memory Provider, error: 0 - 句柄无效。)SaveErrorLog
+@SiteID : 1000 
+@ErrorID : 58D1D9EFBABA4688A7689024B3762CBD 
+@HttpCode : 0 
+@Content : ErrorID : 58D1D9EFBABA4688A7689024B3762CBD
+Message : 在从服务器接收结果时发生传输级错误。 (provider: Shared Memory Provider, error: 0 - 句柄无效。)SaveHandler
+@SiteID : 1000 
+@UserID : 2 
+@Method : /admin/site/tip 
+@Data :  
+@Time : 32 
+
+RawUrl : localhost:21000/admin/site/tip
+UrlReferrer : http://localhost:8089/frame.html
+UserAgent : Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.94 Safari/537.36
+IP : ::1
+Method : POST
+Cookie:
+	GHOST	:	e11fa5d4324f43468abb63d4f56eda44
+	uid	:	1m30jc31qf1cjiymsvyacyvv
+	USER	:	f77f6a1823e74242a5a4382109e57108
+	USERINFO	:	2
+	ADMIN	:	7de416e6645a48448c1143c4a5d7c2bc
+
+Request.ServerVariables
+	ALL_HTTP	:	HTTP_CONNECTION:close
+HTTP_CONTENT_LENGTH:0
+HTTP_CONTENT_TYPE:application/x-www-form-urlencoded; charset=UTF-8
+HTTP_ACCEPT:application/json
+HTTP_ACCEPT_ENCODING:gzip, deflate, br
+HTTP_ACCEPT_LANGUAGE:zh-CN,zh;q=0.9,en;q=0.8
+HTTP_COOKIE:GHOST=e11fa5d4324f43468abb63d4f56eda44; uid=1m30jc31qf1cjiymsvyacyvv; USER=f77f6a1823e74242a5a4382109e57108; USERINFO=2; ADMIN=7de416e6645a48448c1143c4a5d7c2bc
+HTTP_HOST:localhost:21000
+HTTP_REFERER:http://localhost:8089/frame.html
+HTTP_USER_AGENT:Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.94 Safari/537.36
+HTTP_ORIGIN:http://localhost:8089
+HTTP_X_REQUESTED_WITH:XMLHttpRequest
+HTTP_X_REQUEST:JSON
+HTTP_X_FORWARDED_FOR:172.8.5.9
+
+	ALL_RAW	:	Connection: close
+Content-Length: 0
+Content-Type: application/x-www-form-urlencoded; charset=UTF-8
+Accept: application/json
+Accept-Encoding: gzip, deflate, br
+Accept-Language: zh-CN,zh;q=0.9,en;q=0.8
+Cookie: GHOST=e11fa5d4324f43468abb63d4f56eda44; uid=1m30jc31qf1cjiymsvyacyvv; USER=f77f6a1823e74242a5a4382109e57108; USERINFO=2; ADMIN=7de416e6645a48448c1143c4a5d7c2bc
+Host: localhost:21000
+Referer: http://localhost:8089/frame.html
+User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.94 Safari/537.36
+Origin: http://localhost:8089
+X-Requested-With: XMLHttpRequest
+X-Request: JSON
+X-Forwarded-For: 172.8.5.9
+
+	APPL_MD_PATH	:	/LM/W3SVC/2/ROOT
+	APPL_PHYSICAL_PATH	:	F:\2017\BetWin 2.0\WebSite\Web.Handler\
+	AUTH_TYPE	:	
+	AUTH_USER	:	
+	AUTH_PASSWORD	:	
+	LOGON_USER	:	
+	REMOTE_USER	:	
+	CERT_COOKIE	:	
+	CERT_FLAGS	:	
+	CERT_ISSUER	:	
+	CERT_KEYSIZE	:	
+	CERT_SECRETKEYSIZE	:	
+	CERT_SERIALNUMBER	:	
+	CERT_SERVER_ISSUER	:	
+	CERT_SERVER_SUBJECT	:	
+	CERT_SUBJECT	:	
+	CONTENT_LENGTH	:	0
+	CONTENT_TYPE	:	application/x-www-form-urlencoded; charset=UTF-8
+	GATEWAY_INTERFACE	:	CGI/1.1
+	HTTPS	:	off
+	HTTPS_KEYSIZE	:	
+	HTTPS_SECRETKEYSIZE	:	
+	HTTPS_SERVER_ISSUER	:	
+	HTTPS_SERVER_SUBJECT	:	
+	INSTANCE_ID	:	2
+	INSTANCE_META_PATH	:	/LM/W3SVC/2
+	LOCAL_ADDR	:	::1
+	PATH_INFO	:	/admin/site/tip
+	PATH_TRANSLATED	:	F:\2017\BetWin 2.0\WebSite\Web.Handler\admin\site\tip
+	QUERY_STRING	:	
+	REMOTE_ADDR	:	::1
+	REMOTE_HOST	:	::1
+	REMOTE_PORT	:	54881
+	REQUEST_METHOD	:	POST
+	SCRIPT_NAME	:	/admin/site/tip
+	SERVER_NAME	:	localhost
+	SERVER_PORT	:	21000
+	SERVER_PORT_SECURE	:	0
+	SERVER_PROTOCOL	:	HTTP/1.1
+	SERVER_SOFTWARE	:	Microsoft-IIS/10.0
+	URL	:	/admin/site/tip
+	HTTP_CONNECTION	:	close
+	HTTP_CONTENT_LENGTH	:	0
+	HTTP_CONTENT_TYPE	:	application/x-www-form-urlencoded; charset=UTF-8
+	HTTP_ACCEPT	:	application/json
+	HTTP_ACCEPT_ENCODING	:	gzip, deflate, br
+	HTTP_ACCEPT_LANGUAGE	:	zh-CN,zh;q=0.9,en;q=0.8
+	HTTP_COOKIE	:	GHOST=e11fa5d4324f43468abb63d4f56eda44; uid=1m30jc31qf1cjiymsvyacyvv; USER=f77f6a1823e74242a5a4382109e57108; USERINFO=2; ADMIN=7de416e6645a48448c1143c4a5d7c2bc
+	HTTP_HOST	:	localhost:21000
+	HTTP_REFERER	:	http://localhost:8089/frame.html
+	HTTP_USER_AGENT	:	Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.94 Safari/537.36
+	HTTP_ORIGIN	:	http://localhost:8089
+	HTTP_X_REQUESTED_WITH	:	XMLHttpRequest
+	HTTP_X_REQUEST	:	JSON
+	HTTP_X_FORWARDED_FOR	:	172.8.5.9
+
+PostData : 
+堆栈信息
+Type	:	System.Exception
+Source	:	SP.Studio
+StackTrace	:	
+   在 SP.Studio.Data.DbExecutor.ExecuteNonQuery(CommandType cmdType, String cmdText, DbParameter[] parameters)
+   在 BW.Agent.SNAPAgent.AddHandlerLog(Int16 time)
+   在 BW.Framework.BetModule.Context_EndRequest(Object sender, EventArgs e)
+   在 System.Web.HttpApplication.SyncEventExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   在 System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+Method	:	ExecuteNonQuery
+Class	:	SP.Studio.Data.DbExecutor
+Time : 2017/11/16 17:14:46
+ 
+@Title : 在从服务器接收结果时发生传输级错误。 (provider: Shared Memory Provider, error: 0 - 句柄无效。)SaveHandler
+@SiteID : 1000 
+@UserID : 2 
+@Method : /admin/site/tip 
+@Data :  
+@Time : 32 
+ 
+
+ErrorID:58D1D9EFBABA4688A7689024B3762CBD
+ErrorID : 58D1D9EFBABA4688A7689024B3762CBD
+Message : 在从服务器接收结果时发生传输级错误。 (provider: Shared Memory Provider, error: 0 - 句柄无效。)SaveHandler
+@SiteID : 1000 
+@UserID : 2 
+@Method : /admin/site/tip 
+@Data :  
+@Time : 32 
+
+RawUrl : localhost:21000/admin/site/tip
+UrlReferrer : http://localhost:8089/frame.html
+UserAgent : Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.94 Safari/537.36
+IP : ::1
+Method : POST
+Cookie:
+	GHOST	:	e11fa5d4324f43468abb63d4f56eda44
+	uid	:	1m30jc31qf1cjiymsvyacyvv
+	USER	:	f77f6a1823e74242a5a4382109e57108
+	USERINFO	:	2
+	ADMIN	:	7de416e6645a48448c1143c4a5d7c2bc
+
+Request.ServerVariables
+	ALL_HTTP	:	HTTP_CONNECTION:close
+HTTP_CONTENT_LENGTH:0
+HTTP_CONTENT_TYPE:application/x-www-form-urlencoded; charset=UTF-8
+HTTP_ACCEPT:application/json
+HTTP_ACCEPT_ENCODING:gzip, deflate, br
+HTTP_ACCEPT_LANGUAGE:zh-CN,zh;q=0.9,en;q=0.8
+HTTP_COOKIE:GHOST=e11fa5d4324f43468abb63d4f56eda44; uid=1m30jc31qf1cjiymsvyacyvv; USER=f77f6a1823e74242a5a4382109e57108; USERINFO=2; ADMIN=7de416e6645a48448c1143c4a5d7c2bc
+HTTP_HOST:localhost:21000
+HTTP_REFERER:http://localhost:8089/frame.html
+HTTP_USER_AGENT:Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.94 Safari/537.36
+HTTP_ORIGIN:http://localhost:8089
+HTTP_X_REQUESTED_WITH:XMLHttpRequest
+HTTP_X_REQUEST:JSON
+HTTP_X_FORWARDED_FOR:172.8.5.9
+
+	ALL_RAW	:	Connection: close
+Content-Length: 0
+Content-Type: application/x-www-form-urlencoded; charset=UTF-8
+Accept: application/json
+Accept-Encoding: gzip, deflate, br
+Accept-Language: zh-CN,zh;q=0.9,en;q=0.8
+Cookie: GHOST=e11fa5d4324f43468abb63d4f56eda44; uid=1m30jc31qf1cjiymsvyacyvv; USER=f77f6a1823e74242a5a4382109e57108; USERINFO=2; ADMIN=7de416e6645a48448c1143c4a5d7c2bc
+Host: localhost:21000
+Referer: http://localhost:8089/frame.html
+User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.94 Safari/537.36
+Origin: http://localhost:8089
+X-Requested-With: XMLHttpRequest
+X-Request: JSON
+X-Forwarded-For: 172.8.5.9
+
+	APPL_MD_PATH	:	/LM/W3SVC/2/ROOT
+	APPL_PHYSICAL_PATH	:	F:\2017\BetWin 2.0\WebSite\Web.Handler\
+	AUTH_TYPE	:	
+	AUTH_USER	:	
+	AUTH_PASSWORD	:	
+	LOGON_USER	:	
+	REMOTE_USER	:	
+	CERT_COOKIE	:	
+	CERT_FLAGS	:	
+	CERT_ISSUER	:	
+	CERT_KEYSIZE	:	
+	CERT_SECRETKEYSIZE	:	
+	CERT_SERIALNUMBER	:	
+	CERT_SERVER_ISSUER	:	
+	CERT_SERVER_SUBJECT	:	
+	CERT_SUBJECT	:	
+	CONTENT_LENGTH	:	0
+	CONTENT_TYPE	:	application/x-www-form-urlencoded; charset=UTF-8
+	GATEWAY_INTERFACE	:	CGI/1.1
+	HTTPS	:	off
+	HTTPS_KEYSIZE	:	
+	HTTPS_SECRETKEYSIZE	:	
+	HTTPS_SERVER_ISSUER	:	
+	HTTPS_SERVER_SUBJECT	:	
+	INSTANCE_ID	:	2
+	INSTANCE_META_PATH	:	/LM/W3SVC/2
+	LOCAL_ADDR	:	::1
+	PATH_INFO	:	/admin/site/tip
+	PATH_TRANSLATED	:	F:\2017\BetWin 2.0\WebSite\Web.Handler\admin\site\tip
+	QUERY_STRING	:	
+	REMOTE_ADDR	:	::1
+	REMOTE_HOST	:	::1
+	REMOTE_PORT	:	54881
+	REQUEST_METHOD	:	POST
+	SCRIPT_NAME	:	/admin/site/tip
+	SERVER_NAME	:	localhost
+	SERVER_PORT	:	21000
+	SERVER_PORT_SECURE	:	0
+	SERVER_PROTOCOL	:	HTTP/1.1
+	SERVER_SOFTWARE	:	Microsoft-IIS/10.0
+	URL	:	/admin/site/tip
+	HTTP_CONNECTION	:	close
+	HTTP_CONTENT_LENGTH	:	0
+	HTTP_CONTENT_TYPE	:	application/x-www-form-urlencoded; charset=UTF-8
+	HTTP_ACCEPT	:	application/json
+	HTTP_ACCEPT_ENCODING	:	gzip, deflate, br
+	HTTP_ACCEPT_LANGUAGE	:	zh-CN,zh;q=0.9,en;q=0.8
+	HTTP_COOKIE	:	GHOST=e11fa5d4324f43468abb63d4f56eda44; uid=1m30jc31qf1cjiymsvyacyvv; USER=f77f6a1823e74242a5a4382109e57108; USERINFO=2; ADMIN=7de416e6645a48448c1143c4a5d7c2bc
+	HTTP_HOST	:	localhost:21000
+	HTTP_REFERER	:	http://localhost:8089/frame.html
+	HTTP_USER_AGENT	:	Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.94 Safari/537.36
+	HTTP_ORIGIN	:	http://localhost:8089
+	HTTP_X_REQUESTED_WITH	:	XMLHttpRequest
+	HTTP_X_REQUEST	:	JSON
+	HTTP_X_FORWARDED_FOR	:	172.8.5.9
+
+PostData : 
+堆栈信息
+Type	:	System.Exception
+Source	:	SP.Studio
+StackTrace	:	
+   在 SP.Studio.Data.DbExecutor.ExecuteNonQuery(CommandType cmdType, String cmdText, DbParameter[] parameters)
+   在 BW.Agent.SNAPAgent.AddHandlerLog(Int16 time)
+   在 BW.Framework.BetModule.Context_EndRequest(Object sender, EventArgs e)
+   在 System.Web.HttpApplication.SyncEventExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   在 System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+Method	:	ExecuteNonQuery
+Class	:	SP.Studio.Data.DbExecutor
+Time : 2017/11/16 17:14:46
+
+
+================================
+
+[2017/11/16 20:43:29]错误日志写入数据库失败
+在从服务器接收结果时发生传输级错误。 (provider: Shared Memory Provider, error: 0 - 句柄无效。)SaveErrorLog
+@SiteID : 1000 
+@ErrorID : 1E6C87411AAA4FE2B46BB13931D99B85 
+@HttpCode : 0 
+@Content : ErrorID : 1E6C87411AAA4FE2B46BB13931D99B85
+Message : 在从服务器接收结果时发生传输级错误。 (provider: Shared Memory Provider, error: 0 - 句柄无效。)SaveHandler
+@SiteID : 1000 
+@UserID : 2 
+@Method : /admin/site/tip 
+@Data :  
+@Time : 29 
+
+RawUrl : localhost:21000/admin/site/tip
+UrlReferrer : http://localhost:8089/frame.html
+UserAgent : Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.94 Safari/537.36
+IP : ::1
+Method : POST
+Cookie:
+	GHOST	:	e11fa5d4324f43468abb63d4f56eda44
+	uid	:	1m30jc31qf1cjiymsvyacyvv
+	USER	:	f77f6a1823e74242a5a4382109e57108
+	USERINFO	:	2
+	ADMIN	:	7de416e6645a48448c1143c4a5d7c2bc
+
+Request.ServerVariables
+	ALL_HTTP	:	HTTP_CONNECTION:close
+HTTP_CONTENT_LENGTH:0
+HTTP_CONTENT_TYPE:application/x-www-form-urlencoded; charset=UTF-8
+HTTP_ACCEPT:application/json
+HTTP_ACCEPT_ENCODING:gzip, deflate, br
+HTTP_ACCEPT_LANGUAGE:zh-CN,zh;q=0.9,en;q=0.8
+HTTP_COOKIE:GHOST=e11fa5d4324f43468abb63d4f56eda44; uid=1m30jc31qf1cjiymsvyacyvv; USER=f77f6a1823e74242a5a4382109e57108; USERINFO=2; ADMIN=7de416e6645a48448c1143c4a5d7c2bc
+HTTP_HOST:localhost:21000
+HTTP_REFERER:http://localhost:8089/frame.html
+HTTP_USER_AGENT:Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.94 Safari/537.36
+HTTP_ORIGIN:http://localhost:8089
+HTTP_X_REQUESTED_WITH:XMLHttpRequest
+HTTP_X_REQUEST:JSON
+HTTP_X_FORWARDED_FOR:172.8.5.9
+
+	ALL_RAW	:	Connection: close
+Content-Length: 0
+Content-Type: application/x-www-form-urlencoded; charset=UTF-8
+Accept: application/json
+Accept-Encoding: gzip, deflate, br
+Accept-Language: zh-CN,zh;q=0.9,en;q=0.8
+Cookie: GHOST=e11fa5d4324f43468abb63d4f56eda44; uid=1m30jc31qf1cjiymsvyacyvv; USER=f77f6a1823e74242a5a4382109e57108; USERINFO=2; ADMIN=7de416e6645a48448c1143c4a5d7c2bc
+Host: localhost:21000
+Referer: http://localhost:8089/frame.html
+User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.94 Safari/537.36
+Origin: http://localhost:8089
+X-Requested-With: XMLHttpRequest
+X-Request: JSON
+X-Forwarded-For: 172.8.5.9
+
+	APPL_MD_PATH	:	/LM/W3SVC/2/ROOT
+	APPL_PHYSICAL_PATH	:	F:\2017\BetWin 2.0\WebSite\Web.Handler\
+	AUTH_TYPE	:	
+	AUTH_USER	:	
+	AUTH_PASSWORD	:	
+	LOGON_USER	:	
+	REMOTE_USER	:	
+	CERT_COOKIE	:	
+	CERT_FLAGS	:	
+	CERT_ISSUER	:	
+	CERT_KEYSIZE	:	
+	CERT_SECRETKEYSIZE	:	
+	CERT_SERIALNUMBER	:	
+	CERT_SERVER_ISSUER	:	
+	CERT_SERVER_SUBJECT	:	
+	CERT_SUBJECT	:	
+	CONTENT_LENGTH	:	0
+	CONTENT_TYPE	:	application/x-www-form-urlencoded; charset=UTF-8
+	GATEWAY_INTERFACE	:	CGI/1.1
+	HTTPS	:	off
+	HTTPS_KEYSIZE	:	
+	HTTPS_SECRETKEYSIZE	:	
+	HTTPS_SERVER_ISSUER	:	
+	HTTPS_SERVER_SUBJECT	:	
+	INSTANCE_ID	:	2
+	INSTANCE_META_PATH	:	/LM/W3SVC/2
+	LOCAL_ADDR	:	::1
+	PATH_INFO	:	/admin/site/tip
+	PATH_TRANSLATED	:	F:\2017\BetWin 2.0\WebSite\Web.Handler\admin\site\tip
+	QUERY_STRING	:	
+	REMOTE_ADDR	:	::1
+	REMOTE_HOST	:	::1
+	REMOTE_PORT	:	56918
+	REQUEST_METHOD	:	POST
+	SCRIPT_NAME	:	/admin/site/tip
+	SERVER_NAME	:	localhost
+	SERVER_PORT	:	21000
+	SERVER_PORT_SECURE	:	0
+	SERVER_PROTOCOL	:	HTTP/1.1
+	SERVER_SOFTWARE	:	Microsoft-IIS/10.0
+	URL	:	/admin/site/tip
+	HTTP_CONNECTION	:	close
+	HTTP_CONTENT_LENGTH	:	0
+	HTTP_CONTENT_TYPE	:	application/x-www-form-urlencoded; charset=UTF-8
+	HTTP_ACCEPT	:	application/json
+	HTTP_ACCEPT_ENCODING	:	gzip, deflate, br
+	HTTP_ACCEPT_LANGUAGE	:	zh-CN,zh;q=0.9,en;q=0.8
+	HTTP_COOKIE	:	GHOST=e11fa5d4324f43468abb63d4f56eda44; uid=1m30jc31qf1cjiymsvyacyvv; USER=f77f6a1823e74242a5a4382109e57108; USERINFO=2; ADMIN=7de416e6645a48448c1143c4a5d7c2bc
+	HTTP_HOST	:	localhost:21000
+	HTTP_REFERER	:	http://localhost:8089/frame.html
+	HTTP_USER_AGENT	:	Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.94 Safari/537.36
+	HTTP_ORIGIN	:	http://localhost:8089
+	HTTP_X_REQUESTED_WITH	:	XMLHttpRequest
+	HTTP_X_REQUEST	:	JSON
+	HTTP_X_FORWARDED_FOR	:	172.8.5.9
+
+PostData : 
+堆栈信息
+Type	:	System.Exception
+Source	:	SP.Studio
+StackTrace	:	
+   在 SP.Studio.Data.DbExecutor.ExecuteNonQuery(CommandType cmdType, String cmdText, DbParameter[] parameters)
+   在 BW.Agent.SNAPAgent.AddHandlerLog(Int16 time)
+   在 BW.Framework.BetModule.Context_EndRequest(Object sender, EventArgs e)
+   在 System.Web.HttpApplication.SyncEventExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   在 System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+Method	:	ExecuteNonQuery
+Class	:	SP.Studio.Data.DbExecutor
+Time : 2017/11/16 20:43:29
+ 
+@Title : 在从服务器接收结果时发生传输级错误。 (provider: Shared Memory Provider, error: 0 - 句柄无效。)SaveHandler
+@SiteID : 1000 
+@UserID : 2 
+@Method : /admin/site/tip 
+@Data :  
+@Time : 29 
+ 
+
+ErrorID:1E6C87411AAA4FE2B46BB13931D99B85
+ErrorID : 1E6C87411AAA4FE2B46BB13931D99B85
+Message : 在从服务器接收结果时发生传输级错误。 (provider: Shared Memory Provider, error: 0 - 句柄无效。)SaveHandler
+@SiteID : 1000 
+@UserID : 2 
+@Method : /admin/site/tip 
+@Data :  
+@Time : 29 
+
+RawUrl : localhost:21000/admin/site/tip
+UrlReferrer : http://localhost:8089/frame.html
+UserAgent : Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.94 Safari/537.36
+IP : ::1
+Method : POST
+Cookie:
+	GHOST	:	e11fa5d4324f43468abb63d4f56eda44
+	uid	:	1m30jc31qf1cjiymsvyacyvv
+	USER	:	f77f6a1823e74242a5a4382109e57108
+	USERINFO	:	2
+	ADMIN	:	7de416e6645a48448c1143c4a5d7c2bc
+
+Request.ServerVariables
+	ALL_HTTP	:	HTTP_CONNECTION:close
+HTTP_CONTENT_LENGTH:0
+HTTP_CONTENT_TYPE:application/x-www-form-urlencoded; charset=UTF-8
+HTTP_ACCEPT:application/json
+HTTP_ACCEPT_ENCODING:gzip, deflate, br
+HTTP_ACCEPT_LANGUAGE:zh-CN,zh;q=0.9,en;q=0.8
+HTTP_COOKIE:GHOST=e11fa5d4324f43468abb63d4f56eda44; uid=1m30jc31qf1cjiymsvyacyvv; USER=f77f6a1823e74242a5a4382109e57108; USERINFO=2; ADMIN=7de416e6645a48448c1143c4a5d7c2bc
+HTTP_HOST:localhost:21000
+HTTP_REFERER:http://localhost:8089/frame.html
+HTTP_USER_AGENT:Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.94 Safari/537.36
+HTTP_ORIGIN:http://localhost:8089
+HTTP_X_REQUESTED_WITH:XMLHttpRequest
+HTTP_X_REQUEST:JSON
+HTTP_X_FORWARDED_FOR:172.8.5.9
+
+	ALL_RAW	:	Connection: close
+Content-Length: 0
+Content-Type: application/x-www-form-urlencoded; charset=UTF-8
+Accept: application/json
+Accept-Encoding: gzip, deflate, br
+Accept-Language: zh-CN,zh;q=0.9,en;q=0.8
+Cookie: GHOST=e11fa5d4324f43468abb63d4f56eda44; uid=1m30jc31qf1cjiymsvyacyvv; USER=f77f6a1823e74242a5a4382109e57108; USERINFO=2; ADMIN=7de416e6645a48448c1143c4a5d7c2bc
+Host: localhost:21000
+Referer: http://localhost:8089/frame.html
+User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.94 Safari/537.36
+Origin: http://localhost:8089
+X-Requested-With: XMLHttpRequest
+X-Request: JSON
+X-Forwarded-For: 172.8.5.9
+
+	APPL_MD_PATH	:	/LM/W3SVC/2/ROOT
+	APPL_PHYSICAL_PATH	:	F:\2017\BetWin 2.0\WebSite\Web.Handler\
+	AUTH_TYPE	:	
+	AUTH_USER	:	
+	AUTH_PASSWORD	:	
+	LOGON_USER	:	
+	REMOTE_USER	:	
+	CERT_COOKIE	:	
+	CERT_FLAGS	:	
+	CERT_ISSUER	:	
+	CERT_KEYSIZE	:	
+	CERT_SECRETKEYSIZE	:	
+	CERT_SERIALNUMBER	:	
+	CERT_SERVER_ISSUER	:	
+	CERT_SERVER_SUBJECT	:	
+	CERT_SUBJECT	:	
+	CONTENT_LENGTH	:	0
+	CONTENT_TYPE	:	application/x-www-form-urlencoded; charset=UTF-8
+	GATEWAY_INTERFACE	:	CGI/1.1
+	HTTPS	:	off
+	HTTPS_KEYSIZE	:	
+	HTTPS_SECRETKEYSIZE	:	
+	HTTPS_SERVER_ISSUER	:	
+	HTTPS_SERVER_SUBJECT	:	
+	INSTANCE_ID	:	2
+	INSTANCE_META_PATH	:	/LM/W3SVC/2
+	LOCAL_ADDR	:	::1
+	PATH_INFO	:	/admin/site/tip
+	PATH_TRANSLATED	:	F:\2017\BetWin 2.0\WebSite\Web.Handler\admin\site\tip
+	QUERY_STRING	:	
+	REMOTE_ADDR	:	::1
+	REMOTE_HOST	:	::1
+	REMOTE_PORT	:	56918
+	REQUEST_METHOD	:	POST
+	SCRIPT_NAME	:	/admin/site/tip
+	SERVER_NAME	:	localhost
+	SERVER_PORT	:	21000
+	SERVER_PORT_SECURE	:	0
+	SERVER_PROTOCOL	:	HTTP/1.1
+	SERVER_SOFTWARE	:	Microsoft-IIS/10.0
+	URL	:	/admin/site/tip
+	HTTP_CONNECTION	:	close
+	HTTP_CONTENT_LENGTH	:	0
+	HTTP_CONTENT_TYPE	:	application/x-www-form-urlencoded; charset=UTF-8
+	HTTP_ACCEPT	:	application/json
+	HTTP_ACCEPT_ENCODING	:	gzip, deflate, br
+	HTTP_ACCEPT_LANGUAGE	:	zh-CN,zh;q=0.9,en;q=0.8
+	HTTP_COOKIE	:	GHOST=e11fa5d4324f43468abb63d4f56eda44; uid=1m30jc31qf1cjiymsvyacyvv; USER=f77f6a1823e74242a5a4382109e57108; USERINFO=2; ADMIN=7de416e6645a48448c1143c4a5d7c2bc
+	HTTP_HOST	:	localhost:21000
+	HTTP_REFERER	:	http://localhost:8089/frame.html
+	HTTP_USER_AGENT	:	Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.94 Safari/537.36
+	HTTP_ORIGIN	:	http://localhost:8089
+	HTTP_X_REQUESTED_WITH	:	XMLHttpRequest
+	HTTP_X_REQUEST	:	JSON
+	HTTP_X_FORWARDED_FOR	:	172.8.5.9
+
+PostData : 
+堆栈信息
+Type	:	System.Exception
+Source	:	SP.Studio
+StackTrace	:	
+   在 SP.Studio.Data.DbExecutor.ExecuteNonQuery(CommandType cmdType, String cmdText, DbParameter[] parameters)
+   在 BW.Agent.SNAPAgent.AddHandlerLog(Int16 time)
+   在 BW.Framework.BetModule.Context_EndRequest(Object sender, EventArgs e)
+   在 System.Web.HttpApplication.SyncEventExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   在 System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+Method	:	ExecuteNonQuery
+Class	:	SP.Studio.Data.DbExecutor
+Time : 2017/11/16 20:43:29
+
+
+================================
+
+

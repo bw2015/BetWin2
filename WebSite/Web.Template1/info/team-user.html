@@ -1,0 +1,179 @@
+﻿<div class="frame-info-content">
+    <div class="team-user-list">
+        <h3>
+            我的下级
+            <span class="buttons">
+                <a href="javascript:" class="btn btn-blue" data-action="form"><i class="icon icon24 account"></i><s></s>新增下级用户</a>
+            </span>
+        </h3>
+        <div class="frame-info-search right">
+            <form action="#" id="team-user-search">
+                用户名：<input type="text" name="User" class="txt" size="12" />
+                上级：<input type="text" name="Agent" class="txt" size="12" />
+                <input type="button" value="搜索" class="btn btn-blue" data-event-fire="team-user-list" />
+            </form>
+        </div>
+        <table class="list" data-bind-action="/handler/user/team/list" id="team-user-list" data-bind-type="list" data-bind-callback="list,team-user-list-userid" data-bind-pagesplit="team-user-pagesplit" data-bind-search="team-user-search">
+            <thead>
+                <tr>
+                    <th>用户名</th>
+                    <th>用户类型</th>
+                    <th>返点</th>
+                    <th>账户余额</th>
+                    <th>注册时间</th>
+                    <th>在线状态</th>
+                    <th>操作</th>
+                </tr>
+            </thead>
+            <tbody data-list-element="true">
+                <tr data-userid="${ID}" data-username="${UserName}">
+                    <td><a href="javascript:" class="blue underline" title="点击查看下级" data-agent="${UserName}">${UserName}</a></td>
+                    <td>${Type:team-user-type}</td>
+                    <td>
+                        ${Rebate}
+                    </td>
+                    <td>${Money:money}</td>
+                    <td>${CreateAt}</td>
+                    <td>${IsOnline:online}</td>
+                    <td>
+                        <a href="javascript:" class="btn btn-green" data-diag-name="team-user-rebate" data-diag-type="control" data-diag-src="controls/team-user-rebate.html" data-diag-data="id=${ID}" data-diag-title="调整返点" data-diag-width="600" data-diag-height="400" data-diag-mask="true" data-diag-drag="true">返点调整</a>
+                        <a href="javascript:" class="btn btn-blue" data-diag-name="team-user-transfer" data-diag-type="control" data-diag-src="controls/team-user-transfer.html" data-diag-data="id=${ID}" data-diag-title="转账" data-diag-width="600" data-diag-height="400" data-diag-mask="true" data-diag-drag="true">转账</a>
+
+
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="pageSplit" id="team-user-pagesplit"></div>
+    </div>
+    <form action="/handler/user/account/create" method="post" data-bind-action="/handler/user/account/create" data-bind-type="ajax" data-bind-load="team-user-init" data-bind-callback="fire,form-tip" data-bind-fire-target="team-user-list">
+        <h3>
+            新增下级用户
+            <span class="buttons">
+                <a href="javascript:" class="btn btn-blue" data-action="list"><i class="icon icon24 account"></i><s></s>返回列表</a>
+            </span>
+        </h3>
+        <table class="post">
+            <tr>
+                <th>用户名：</th>
+                <td><input type="text" name="UserName" class="txt" /></td>
+            </tr>
+            <tr>
+                <th>密码：</th>
+                <td>
+                    <input type="hidden" name="Password" value="a123456" />
+                    <span class="red ft12">默认密码：<label class="ft14">a123456</label></span>
+                </td>
+            </tr>
+            <tr>
+                <th>用户类型：</th>
+                <td>
+                    <select name="Type" class="txt"><option value="Agent">代理</option><option value="Member">会员</option></select>
+                    <span class="desc gray">普通会员有一次机会可以升级成为代理</span>
+                </td>
+            </tr>
+            <tr>
+                <th>我的返水：</th>
+                <td>
+                    <span class="red ft14 bold" data-field="Rebate"></span>
+                </td>
+            </tr>
+            <tr>
+                <th>返水比例：</th>
+                <td>
+                    <input type="number" class="txt w60" name="Rebate" data-field="UserRebate" />
+                    <span class="desc ft12 gray">剩余配额：<label class="red ft14 bold">0</label> 人</span>
+                </td>
+            </tr>
+            <tr>
+                <th>备注信息：</th>
+                <td>
+                    <textarea rows="2" cols="32" class="txt" name="Description"></textarea>
+                    <p class="desc gray">备注信息仅直属上级代理可见</p>
+                </td>
+            </tr>
+            <tr>
+                <th></th>
+                <td>
+                    <input type="submit" value="添加用户" class="btn btn-red" />
+                </td>
+            </tr>
+        </table>
+    </form>
+</div>
+
+
+<script type="text/javascript">
+
+    if (!htmlFunction["team-user-type"]) {
+        htmlFunction["team-user-type"] = function (value) {
+            if (value == "会员") {
+                value = "<a href=\"javascript:\" class=\"btn btn-blue\" data-confirm=\"update\" title=\"升级成为代理\">会员</a>";
+            }
+            return value;
+        }
+    }
+
+    BW.callback["team-user-list-userid"] = function (result) {
+        var t = this;
+        t.dom.container.getElements("[data-diag-name]").each(function (item) {
+            var tr = item.getParent("[data-userid]");
+            if (tr == null) return;
+            item.set("data-diag-data", "id=" + tr.get("data-userid"));
+        });
+    }
+
+    if (!BW.load["team-user-init"]) {
+        BW.load["team-user-init"] = function (result) {
+            var t = this;
+            var list = BW.Bind($("team-user-list"));
+            t.dom.container = t.dom.container.getParent();
+            var dom = {
+                "form": t.dom.element,
+                "list": t.dom.container.getElement(".team-user-list")
+            };
+            dom.form.setStyle("display", "none");
+            var agentObj = t.dom.container.getElement("[name=Agent]");
+            var userObj = t.dom.container.getElement("[name=User]");
+
+            t.dom.container.addEvent("click", function (e) {
+                var item = $(e.target);
+                if (item.get("data-action")) {
+                    Object.forEach(dom, function (value, key) {
+                        value.setStyle("display", key == item.get("data-action") ? "block" : "none");
+                    });
+                }
+                if (item.get("data-agent")) {
+                    agentObj.set("value", item.get("data-agent"));
+                    userObj.set("value", "");
+                    list.fire();
+                }
+                if (item.get("data-confirm")) {
+                    var tr = item.getParent("tr");
+                    var msg = "您确认要把" + tr.get("data-username") + "升级成为代理吗？";
+                    new BW.Tip(msg, {
+                        "type": "confirm",
+                        "callback": function () {
+                            new Request.JSON({
+                                "url": "/handler/user/team/updateusertype",
+                                "onSuccess": function (result) {
+                                    if (!result.success) {
+                                        new BW.Tip(result.msg);
+                                        return;
+                                    }
+                                    list.fire();
+                                }
+                            }).post({
+                                "id": tr.get("data-userid")
+                            })
+                        }
+                    });
+                }
+            });
+
+            console.log(Setting);
+            t.dom.container.getElement("[data-field=Rebate]").set("text", Setting.User.Rebate);
+            t.dom.container.getElement("[data-field=UserRebate]").set("value", Math.max(Setting.Site.Setting.MinRebate.toInt(), Setting.User.Rebate.toInt() - 2));
+        }
+    }
+</script>

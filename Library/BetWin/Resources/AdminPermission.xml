@@ -1,0 +1,166 @@
+<root ID="7808c65ebfb8428c83105a41db92c27a">
+  <menu name="系统首页" ID="2ee54859496d4967bb103d684b5d2679">
+    <menu name="贝盈首页" ID="ff3fd3a26af6400db0c65b6b0f96e880" icon="am-icon-home">
+      <menu name="系统通知" href="/system/notify.html" ID="e2f354f891a94a2e820c1689c711694f" />
+      <menu name="财务结算" href="/system/money.html" ID="9f7dd3bdaac94615a6fadabcd70a3b99" />
+    </menu>
+    <menu name="快捷操作" ID="2256f9e0056140e48f846aaedf1196d4" icon="am-icon-wheelchair">
+      <menu name="今日数据统计" href="/report/today.html" ID="553e5c91f9084f78bcefc0f948016fda" />
+    </menu>
+    <action name="修改密码" ID="770056be66f1427eac9827ef3531d8a6" />
+  </menu>
+  <menu name="会员管理" ID="4b6a5a387ec249949207ec18ffc612aa">
+    <menu name="账号管理" ID="4b567804fe26493c8e54c165c7886703" icon="am-icon-user">
+      <menu name="用户列表" href="/user/list.html" ID="7707f79e0c084fe2b4a2158c5ae0b889" />
+      <menu name="分组管理" href="/user/group.html" ID="a813fc89d10c43ca9b0ad4f0713eb884" />
+      <action name="踢下线" ID="191c1aab6f57413a9e51bbd3633c41ec" />
+      <action name="新增" ID="2a33eb7fdf2e4465ba33df82f6a91146" />
+      <action name="修改" ID="28ebcdc9fab24b7db96fe738e0ae9a44" />
+      <action name="删除" ID="38d1c76728a14d878d8076d9ef2cdbe8" />
+    </menu>
+    <menu name="风控管理" ID="2c87effa14f14e38af9b09f11e000e78" icon="am-icon-user-secret">
+      <menu name="IP管理" href="/user/risk/ip.html" ID="fc7d4b95c0874a2f9ae026aded695d19" />
+      <menu name="用户日志" href="/user/risk/log.html" ID="fde09cbceb0c4e989259358a7e89bc86" />
+      <menu name="红利记录" href="/user/risk/bonus.html" ID="11269264dae74b5291f06fe04d48ea22" />
+      <menu name="大额投注" href="/user/risk/large.html" ID="2f31151e7cd14e578c9fafe121910bcf" />
+    </menu>
+    <menu name="代理管理" icon="am-icon-users" ID="c241f784575b4eeeb040cc06a417a633">
+      <menu name="新增总代" href="/user/agent/add.html" ID="09d7c93832944a7faef390f22d516952" />
+      <menu name="配额管理" href="/user/agent/quota.html" ID="039a3f1c210f4628b0f9e649ad6ead41" />
+      <menu name="契约管理" href="/user/agent/contract.html" ID="4b5a8f57842b41e0ba622d766cb526e7" />
+      <menu name="契约转账" href="/user/agent/contractlog.html" ID="840ec24cb04c4d4a98876618ad774f5d" />
+      <menu name="分红管理" href="/user/agent/bouns.html" ID="86da5312095b4f2b96d79aa4b99cbe83" />
+      <menu name="单层分红" href="/user/agent/singlebouns.html" ID="59e108c76c9d4d1fb340fcc0ce2635a4" />
+    </menu>
+    <action name="会员备注" ID="d0419372547e49129c6590fa052d5464" />
+    <action name="会员帐变" ID="12a6197f835944f3b6a37d4e2ee213f9" />
+    <action name="解锁资金" ID="bc88db86dbce459dab1b33b3fbe6721b" />
+    <action name="操作记录" ID="e42f467385994df798ed240ac92c8897" />
+    <action name="银行卡信息" ID="f51a76fbf720466288185de9b79cf490" />
+    <action name="删除会员" ID="a550b9d1105e431ca109d7904fe5e5ab" />
+    <action name="站内信" ID="d97a6820bc1842feaa94cb3aa180737f" />
+    <action name="修改会员资料" ID="d977907b06824a97aef1a4709d6b1af9" />
+    <action name="重置登录密码" ID="c6f40e3a7b024d9db43bfe974350d433" />
+    <action name="重置资金密码" ID="d483ce79fb7b41809f514e70e56fe3b8" />
+    <action name="重置提现账户" ID="2013f7f6b1c245a7bb2d3e8b7d3c2c14" />
+    <action name="查看会员报表" ID="371b7ffed9ea49a4b8b69f16fbbafce9" />
+    <action name="修改代理配额" ID="dcc3def21d20443c82e5f858924dd957" />
+    <action name="第三方游戏" ID="e5baaad4e0004350878fc525f9f4a27d" />
+  </menu>
+  <menu name="彩票管理" ID="0174dc5408a44e39b1ffb53610518bbf">
+    <menu name="投注管理" ID="ba82fa224fc94283974b9424237c6157" icon="am-icon-futbol-o">
+      <menu name="投注记录" href="/lottery/bet/log.html" ID="af76a98637ed4937b33b206c08702d15" />
+      <menu name="历史订单" href="/lottery/bet/history.html" ID="b3280deb85c14c39bc5d3db415ea5963" />
+      <menu name="追号管理" href="/lottery/bet/chase.html" ID="b93a6562f7df4814b8ead63332d17fe1" />
+      <menu name="合买管理" href="/lottery/bet/united.html" ID="328959d2bdcf4391ade660d78e260709" />
+      <action name="改单" ID="654aa293c5154d0e9f9b53ec0e783881" />
+      <action name="撤单" ID="b9dd41b28738450098fd6a681ffa1974" />
+    </menu>
+    <menu name="彩票配置" ID="177bd2dc2ae24454b622584697d07058" icon="am-icon-cogs">
+      <menu name="开奖管理" href="/lottery/setting/reward.html" ID="ceeda10e3f2e4440a0563e5ed4460057" />
+      <menu name="彩种管理" href="/lottery/setting/type.html" ID="c4460d250c3a4e51908faf5405f2b43f" />
+      <menu name="玩法管理" href="/lottery/setting/player.html" ID="312e0a0c3b704faba414063dd6d4cd49" />
+      <menu name="限号管理" href="/lottery/setting/limited.html" ID="82150553c5724be68bea85e6be2de4ae" />
+    </menu>
+  </menu>
+  <menu name="电子竞技" ID="b650771c2569448a8e4decc5b2287288">
+    <menu name="电竞管理" ID="c9b91375156342a58ccb81d0e9fa3c2b">
+      <menu name="会员信息" href="/esport/info/user.html" ID="8046f82551194775a1ec3b1d2868ce97" />
+      <menu name="额度记录" href="/esport/info/transfer.html" ID="2c26e246e2874abeaca4a7368a19a8d9" />
+      <menu name="赛事管理" href="/esport/info/game.html" ID="52a3011b413e44ff926022c91654d6c4" />
+      <menu name="投注订单" href="/esport/info/order.html" ID="75e33573e8d54642a6a4a0b3b2bc8e56" />
+      <menu name="参数设定" href="/esport/info/setting.html" ID="53bb21dbc32a4c29a93a6d212e366619" />
+    </menu>
+    <menu name="电竞报表" ID="f09da9dcb7e045c1875b7eff2cc8e5df">
+      <menu name="会员盈亏" href="/esport/report/user.html" ID="6d4ee73409dd43c38dfb738964cc80f1" />
+    </menu>
+  </menu>
+  <menu name="第三方游戏" ID="ff2efafdb49c46cd988c398002e33bba">
+    <menu name="游戏记录" icon="am-icon-database" ID="93e704bf74e94c02887b04587eaa3fa9">
+      <menu name="电子记录" href="/game/log/slot.html" ID="ea7454f4103c42e1b1362f2b1f127165" />
+      <menu name="真人记录" href="/game/log/video.html" ID="45b0a259ef17495a8f518d8cf7dbeacf" />
+      <menu name="体育记录" href="/game/log/sport.html" ID="0f0674f5fadd44b7bd51c959cda0c5b0" />
+      <menu name="电竟记录" href="/game/log/esport.html" ID="5fae7a8848204d2580e8e422a2d09546" />
+    </menu>
+    <menu name="游戏配置" icon="am-icon-gamepad" ID="d6a80f056b3d4276b2d70c4c3a824eef">
+      <menu name="用户余额" href="/game/credit.html" ID="89e4d356a37143ed90719dc2b1ac3c03" />
+      <menu name="筹码兑换" href="/game/casino.html" ID="554ea9c44076433298491ef9b1517b24" />
+      <menu name="转账记录" href="/game/transfer.html" ID="70446a5c8de0439fae15d2a16af561d2" />
+      <menu name="参数设定" href="/game/setting.html" ID="9ad8ddb5c2164a33a5b5abd2ea6be41f" />
+    </menu>
+  </menu>
+  <menu name="财务管理" ID="d1cab74f53ce4e349c45781aee69867f">
+    <menu name="充值管理" ID="4d87a0d805c148a8b60f8a536972849d" icon="am-icon-paypal">
+      <menu name="充值记录" href="/money/recharge/list.html" ID="2230cb4802e2412cb82ce048f7486f27">
+        <action name="确认到账" ID="c5e95d25106a4a55b1ba3a21e92bf8ae" />
+      </menu>
+      <menu name="代客充值" href="/money/recharge/payment.html" ID="aabd7c46b8ed4722963c5d1449b4bf22" />
+      <menu name="发放奖励" href="/money/control/reward.html" ID="aee24361737b4836854cd3cf925a66f9" />
+      <menu name="转账审核" href="/money/recharge/transfer.html" ID="061ab65e41d84a358d36e5e920fe1604" />
+    </menu>
+    <menu name="提现管理" ID="ff0467381d024ebf9ff94d934b1ff8e1" icon="am-icon-credit-card">
+      <menu name="提现记录" href="/money/withdraw/list.html" ID="82e2f7bb54ca4b6d98404a6699d6e6ff">
+        <action name="处理提现" ID="495526657b574e8694f4a60c3bb7694a" />
+      </menu>
+      <menu name="会员扣款" href="/money/control/debit.html" ID="363b26b261a645df98304999a461b677" />
+    </menu>
+    <menu name="参数设定" ID="dab2a8f22c644354854ea43c2bb779c9" icon="am-icon-bank">
+      <menu name="提现银行" href="/money/setting/bank.html" ID="44765d316e7b47d6b94c96caf111386c" />
+      <menu name="充值接口" href="/money/setting/payment.html" ID="ee4c8fd84652479abbe79698cd46a6a0" />
+      <menu name="提现接口" href="/money/setting/withdraw.html" ID="ac1620ab491d4d348cd5383599cbe427" />
+    </menu>
+  </menu>
+  <menu name="数据统计" ID="1e238d0ad37e4c25a888f2447f6864b9">
+    <menu name="会员数据" ID="8ebba5ea677e4380b2c943a53bf70fc6" icon="am-icon-users">
+      <menu name="会员帐变" href="/report/user/moneylog.html" ID="8b2879a7c2e04659af370c13a7334def" />
+      <menu name="个人盈亏" href="/report/user/personal.html" ID="322d53b61a994bd0b233fdfd5eda0e2a" />
+      <menu name="团队盈亏" href="/report/user/team.html" ID="4d68db35c67749529fca78b17f001eb3" />
+      <menu name="团队充提" href="/report/user/payment.html" ID="4d68db35c67849529fca78b17f001eb4" />
+    </menu>
+    <menu name="平台数据" ID="0304bd42a8e146f08d1bd4472b513a7f" icon="am-icon-bar-chart">
+      <menu name="充提统计" href="/report/site/payment.html" ID="4339c7f898e340d8ab846d4278fa8666" />
+      <menu name="盈亏统计" href="/report/site/money.html" ID="430428441bac4ac1884da4147b83bf9e" />
+    </menu>
+    <menu name="游戏报表" ID="78c2b5d984c448e999c3bccc5df6dc0f" icon="am-icon-line-chart">
+      <menu name="彩票报表" href="/report/game/lottery.html" ID="4bd4f1b380eb425e902487d39e07c715" />
+      <menu name="第三方游戏" href="/report/game/game.html" ID="73c30e8d82a04d678d0fc57c8c4ef742" />
+    </menu>
+  </menu>
+  <menu name="活动管理" ID="d4b9eb494b7646cc983ac483331a20ab">
+    <menu name="活动设定" ID="0d427ada668f446e877adee6b9ac4078" icon="am-icon-gift">
+      <menu name="会员活动" href="/activity/user.html" ID="521525e389af4046ae297fa374ade971" />
+      <menu name="活动公告" href="/activity/notice.html" ID="f914161d30e049018e06e64637d9f920" />
+    </menu>
+  </menu>
+  <menu name="系统管理" ID="79b46aeffc274f3aa54dc10d1d3de6fd">
+    <menu name="系统设置" icon="am-icon-cogs" ID="d4aaf1a864b54173a54807302575514c">
+      <menu name="常规设置" href="/system/setting/main.html" ID="3255460145f044428f6d6720d5179edb" />
+      <menu name="平台公告" href="/system/setting/news.html" ID="1b87c18fbef246019d1023b9fe9b6ca4" />
+      <menu name="帮助中心" href="/system/setting/help.html" ID="7c7d9829511d48f2883f1ad8d5db7d23" />
+      <menu name="内容管理" href="/system/setting/region.html" ID="dcd7ecab16c44972883aab3ee6dc5007" />
+      <menu name="短信记录" href="/system/setting/smslog.html" ID="9c93f69604344cf7a5061604875ef2b3" />
+    </menu>
+    <menu name="后台权限" ID="a85cdfd06dbb4cc3ae25adb77927c0ad" icon="am-icon-lock">
+      <menu name="管理员列表" href="/system/manage/list.html" ID="8f81dcc6fcf242f48a192df0dfe35b43" />
+      <menu name="管理员角色" href="/system/manage/role.html" ID="38cccae77848424296137e4da150c47d" />
+      <menu name="管理员日志" href="/system/manage/log.html" ID="38cccae77848424296137e4da150c48d" />
+    </menu>
+  </menu>
+  <menu name="客服管理" ID="6b893876f8254e6c8c0bdbc512e4b897">
+    <menu name="客服设置" ID="8586ec839d6142fca256616bd9f2bd0c" icon="am-icon-smile-o">
+      <menu name="聊天记录" href="/services/log.html" ID="0da2a3ae36654500bab1271a77f8ab7e" />
+      <menu name="常用语设置" href="/services/reply.html" ID="7ce537f0558749f7b9a2fc32d1f0092a" />
+      <menu name="关键词设置" href="/services/keyword.html" ID="ef1df1e0d061494491506fb524f67533" />
+      <menu name="系统设置" href="/services/setting.html" ID="f4a7662790f245d8aa0ba902ab0a5c26" />
+      <menu name="留言反馈" href="/services/feedback.html" ID="2e249bbe3fa44d0c9f2732f437466412" />
+    </menu>
+    <action name="在线客服" ID="d06a599b8da4432f8adcd9a33fa17fa9" />
+  </menu>
+  <menu name="微信设置" ID="eeda12dd214f46138ea6877783df980d">
+    <menu name="微信参数" icon="am-icon-weixin" ID="2c71d07d62094de991bb19fdefa64a7b">
+      <menu name="公共号设置" href="/wxsetting/setting.html" ID="d22bab4c571c42cbaeba78abd43f46c3" />
+      <menu name="机器人设置" href="/wxsetting/rebot.html" ID="2c53212bfb03401197bfe13c597e10b3" />
+      <menu name="微信群设置" href="/wxsetting/group.html" ID="07e7a5140bcf475eba456626a14bd076" />
+    </menu>
+  </menu>
+</root>

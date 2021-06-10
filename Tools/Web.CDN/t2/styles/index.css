@@ -1,0 +1,37 @@
+﻿* { margin: 0; padding: 0; }
+body { background: #E6E6E6; }
+
+.w { width: 980px; margin: auto; }
+
+header { height: 90px; background: #368FEB url(../images/header.png) repeat-x center bottom; }
+    header img { width: 160px; height: 80px; margin: 5px; background: no-repeat center center; background-size: contain; }
+.container { margin: 0 auto; background: #F3F3F3; box-shadow: 0 0 12px 0 #DBDBDB; margin-top: 20px; padding: 20px 0; }
+
+.website { margin: 20px 50px; }
+    .website::after { clear: both; display: block; content: " "; }
+    .website a { float: left; width: 35%; margin: auto 2.5% 25px; display: block; background: #55A0F5; border-radius: 4px; padding: 10px 40px; position: relative; height: 60px; color: white; text-decoration: none; cursor: pointer; }
+        .website a::before { content: "?"; position: absolute; width: 40px; height: 40px; line-height: 40px; top: 50%; margin-top: -20px; left: 20px; background-color: #fff; border-radius: 50%; color: #4ba3f1; font-size: 22px; text-align: center; }
+    .website label { position: absolute; font-size: 18px; left: 80px; top: 15px; line-height: 24px; font-size: 14px; }
+        .website label.loading { font-size: 12px; }
+            .website label.loading::after { content: "检测中..."; }
+    .website span { position: absolute; font-size: 16px; left: 80px; top: 42px; line-height: 24px; }
+    .website a::after { transition: all 0.2s; content: "点击进入"; position: absolute; background: url(../images/speedarrow.png) no-repeat right center; height: 50px; line-height: 50px; padding-right: 50px; font-size: 22px; right: 15px; top: 50%; margin-top: -25px; }
+    .website a:hover { color: #fff; background: #6cadf6; box-shadow: 0px 0px 10px rgba(0,0,0,.9); }
+        .website a:hover::after { background-size: 42px; }
+    .website a.error { background-color: #aa0000; }
+        .website a.error label.loading::after { content: "测速失败"; }
+
+    .website a:nth-child(1)::before { content: "1" }
+    .website a:nth-child(2)::before { content: "2" }
+    .website a:nth-child(3)::before { content: "3" }
+    .website a:nth-child(4)::before { content: "4" }
+    .website a:nth-child(5)::before { content: "5" }
+    .website a:nth-child(6)::before { content: "6" }
+    .website a:nth-child(7)::before { content: "7" }
+    .website a:nth-child(8)::before { content: "8" }
+    .website a:nth-child(9)::before { content: "9" }
+    .website a:nth-child(10)::before { content: "10" }
+
+.test { background: #5DA3F5; box-shadow: 0 2px 8px 0 #64A6F5; border-radius: 66.68px; color: #fff; font-size: 16px; display: block; width: 130px; height: 40px; line-height: 40px; text-align: center; text-decoration: none; margin: auto; }
+
+.tip { line-height: 24px; font-size: 14px; padding: 20px 40px; box-sizing: padding-box; }

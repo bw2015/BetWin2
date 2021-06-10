@@ -1,0 +1,71 @@
+﻿<div class="frame-info report-chase-detail">
+    <table class="post" data-bind-action="/handler/user/lottery/chaseinfo" data-bind-type="ajax" data-bind-callback="html,report-chase-revoke" data-bind-data="parent">
+        <tr>
+            <th>彩种：</th>
+            <td>${Game}</td>
+        </tr>
+        <tr>
+            <th>追号编号：</th>
+            <td>${ID}</td>
+        </tr>
+        <tr>
+            <th>追号内容：</th>
+            <td class="content">
+                <ul data-dom="content"></ul>
+            </td>
+        </tr>
+        <tr>
+            <th>当前状态：</th>
+            <td>${StatusName}</td>
+        </tr>
+        <tr data-dom="revoke">
+            <th>操作：</th>
+            <td>
+                <input type="button" class="btn btn-blue ft14" value="取消追号" data-bind-action-delay="/handler/user/lottery/chaserevoke" data-bind-type="ajax" data-bind-callback="form-tip" data-bind-form-tip="diag-close" data-bind-stop="true" data-bind-event="confirm" data-bind-data="id=${ID}" />
+            </td>
+        </tr>
+    </table>
+    <div class="lineHeight"></div>
+    <table class="list" data-bind-action="/handler/user/lottery/chaseitemlist" data-bind-type="list" data-bind-callback="list" data-bind-data="parent">
+        <thead>
+            <tr>
+                <th>期号</th>
+                <th>倍数</th>
+                <th>开奖时间</th>
+                <th>当前状态</th>
+                <th>投注金额</th>
+                <th>中奖奖金</th>
+            </tr>
+        </thead>
+        <tbody data-list-element="true">
+            <tr>
+                <td>${Index}</td>
+                <td>${Times}</td>
+                <td>${StartAt}</td>
+                <td>${StatusName}</td>
+                <td class="green">${Money:money}</td>
+                <td class="red">${Reward:money}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<script type="text/javascript">
+    BW.callback["report-chase-revoke"] = function (result) {
+        var t = this;
+        var revoke = t.dom.element.getElement("[data-dom=revoke]");
+        var content = t.dom.element.getElement("[data-dom=content]");
+        result.info.Content.each(function (item) {
+            var li = new Element("li", {
+                "html": ["<span class=\"type\">[${Player}]</span>",
+                    "<span class=\"info\"><label class=\"red\">[${Mode:lottery-mode}]</label> <label class=\"red\">${Bet}注</label> <label class=\"red\">${Times}倍</label> <label class=\"red\">${Money:money}</label></span>",
+                    "<div class=\"content\">投注内容：${Number}</div>"
+                    ].join("").toHtml(item)
+            });
+            li.inject(content);
+        });
+        if (result.info.Status != "Normal") {
+            revoke.dispose();
+            return;
+        }
+    }
+</script>

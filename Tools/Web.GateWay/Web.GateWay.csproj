@@ -1,0 +1,289 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{19CDBA09-1924-445F-B142-570A2B276CAF}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Web.GateWay</RootNamespace>
+    <AssemblyName>Web.GateWay</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <TypeScriptToolsVersion>1.0</TypeScriptToolsVersion>
+    <TargetFrameworkProfile />
+    <UseGlobalApplicationHostFile />
+    <Use64BitIISExpress />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="app\app.html" />
+    <Content Include="App_Data\cert\PFX密码.txt" />
+    <Content Include="App_Data\plist.xml" />
+    <Content Include="App_Data\Redirect.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="css\bootstrap-theme.min.css" />
+    <Content Include="css\bootstrap.min.css" />
+    <Content Include="css\theme.css" />
+    <Content Include="Global.asax" />
+    <Content Include="Handler\invite.html" />
+    <Content Include="Handler\redirect.html" />
+    <Content Include="images\app-bg.jpg" />
+    <Content Include="images\app-bg2.jpg" />
+    <Content Include="images\app-download-active.png" />
+    <Content Include="images\app-download.png" />
+    <Content Include="images\app-ios.png" />
+    <Content Include="images\app-wechat-arrow.png" />
+    <Content Include="images\app-wechat.png" />
+    <Content Include="images\loading.gif" />
+    <Content Include="index.html" />
+    <Content Include="Plugin\Alipay.ashx" />
+    <Content Include="Plugin\Alipay.html" />
+    <Content Include="Plugin\Alipay\favicon.png" />
+    <Content Include="Plugin\Alipay\images\button.png" />
+    <Content Include="Plugin\Alipay\images\logo.png" />
+    <Content Include="Plugin\Alipay\popup.html" />
+    <Content Include="Plugin\Alipay\scripts\content-alipay.js" />
+    <Content Include="Plugin\Alipay\scripts\background.js" />
+    <Content Include="Plugin\Alipay\scripts\content.js" />
+    <Content Include="Plugin\Alipay\scripts\md5.js" />
+    <Content Include="Plugin\Alipay\scripts\mootools-more.js" />
+    <Content Include="Plugin\Alipay\scripts\mootools.js" />
+    <Content Include="Plugin\Alipay\scripts\popup.js" />
+    <Content Include="Plugin\Alipay\scripts\utils.js" />
+    <Content Include="Plugin\Alipay\styles\allinpay-client.css" />
+    <Content Include="Plugin\Wechat\images\button.png" />
+    <Content Include="Plugin\Wechat\images\icon128.png" />
+    <Content Include="Plugin\Wechat\images\icon16.png" />
+    <Content Include="Plugin\Wechat\images\icon48.png" />
+    <Content Include="Plugin\Wechat\images\logo.png" />
+    <Content Include="Plugin\Wechat\popup.html" />
+    <Content Include="Plugin\Wechat\scripts\background.js" />
+    <Content Include="Plugin\Wechat\scripts\content.js" />
+    <Content Include="Plugin\Wechat\scripts\devtools.js" />
+    <Content Include="Plugin\Wechat\scripts\md5.js" />
+    <Content Include="Plugin\Wechat\scripts\mootools.js" />
+    <Content Include="Plugin\Wechat\scripts\popup.js" />
+    <Content Include="Plugin\Wechat\styles\client.css" />
+    <Content Include="Plugin\Wechat\styles\popup.css" />
+    <Content Include="scripts\game-pt-mobile.js" />
+    <Content Include="scripts\ghost.js" />
+    <Content Include="scripts\invite.js" />
+    <Content Include="scripts\iSlider.min.js" />
+    <Content Include="scripts\md5.js" />
+    <Content Include="scripts\mootools-more.js" />
+    <Content Include="scripts\mootools.js" />
+    <Content Include="scripts\redirect.js" />
+    <Content Include="scripts\speed.js" />
+    <Content Include="styles\app.css" />
+    <Content Include="styles\invite.css" />
+    <Content Include="styles\iSlider.min.css" />
+    <Content Include="styles\lottery-chart-360.css" />
+    <Content Include="Test\P10.html" />
+    <Content Include="Test\P10\Player01.js" />
+    <Content Include="Test\P10\Player101.js" />
+    <Content Include="Test\P10\Player02.js" />
+    <Content Include="Test\X11.html" />
+    <Content Include="Test\X11\Player55.js" />
+    <Content Include="Test\X11\PlayerDingDanShuang.js" />
+    <Content Include="tool\iptables.html" />
+    <Content Include="tool\kangle.html" />
+    <Content Include="tool\md5.html" />
+    <Content Include="tool\resultnumber.html" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Code\GatewayAgent.cs" />
+    <Compile Include="App_Code\AgentBase.cs" />
+    <Compile Include="App_Code\LotteryConfig.cs" />
+    <Compile Include="App_Code\ResultAgent.cs" />
+    <Compile Include="App_Code\SystemAgent.cs" />
+    <Compile Include="App_Code\WXAgent.cs" />
+    <Compile Include="game\BBIN.ashx.cs">
+      <DependentUpon>BBIN.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="game\PT.ashx.cs">
+      <DependentUpon>PT.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="GHost.ashx.cs">
+      <DependentUpon>GHost.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Handler\App.ashx.cs">
+      <DependentUpon>App.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Handler\Config.ashx.cs">
+      <DependentUpon>Config.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Handler\Invite.ashx.cs">
+      <DependentUpon>Invite.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Handler\IP.ashx.cs">
+      <DependentUpon>IP.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Handler\PList.ashx.cs">
+      <DependentUpon>PList.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Handler\Redirect.ashx.cs">
+      <DependentUpon>Redirect.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Handler\VR.ashx.cs">
+      <DependentUpon>VR.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Handler\Wechat.ashx.cs">
+      <DependentUpon>Wechat.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="LotteryResult.ashx.cs">
+      <DependentUpon>LotteryResult.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Plugin\Alipay.ashx.cs">
+      <DependentUpon>Alipay.ashx</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="tool\hack.ashx.cs">
+      <DependentUpon>hack.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="tool\log.ashx.cs">
+      <DependentUpon>log.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="tool\MY18.ashx.cs">
+      <DependentUpon>MY18.ashx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="game\PT.ashx" />
+    <Content Include="game\BBIN.ashx" />
+    <Content Include="App_Data\pt\VBETCNYTLE.key" />
+    <Content Include="App_Data\pt\VBETCNYTLE.p12" />
+    <Content Include="App_Data\pt\VBETCNYTLE.pass" />
+    <Content Include="App_Data\pt\VBETCNYTLE.pem" />
+    <Content Include="Handler\Invite.ashx" />
+    <Content Include="LotteryResult.ashx" />
+    <Content Include="GHost.ashx" />
+    <Content Include="App_Data\cert\a8.to.crt" />
+    <Content Include="App_Data\cert\a8.to.key" />
+    <Content Include="App_Data\cert\a8.to.pfx" />
+    <Content Include="Plugin\Alipay.zip" />
+    <Content Include="Handler\App.ashx" />
+    <Content Include="Handler\Redirect.ashx" />
+    <Content Include="Handler\PList.ashx" />
+    <Content Include="Plugin\Alipay\manifest.json" />
+    <Content Include="Plugin\Wechat\manifest.json" />
+    <Content Include="Handler\Config.ashx" />
+    <Content Include="Handler\Wechat.ashx" />
+    <Content Include="Handler\IP.ashx" />
+    <Content Include="Handler\VR.ashx" />
+    <None Include="Properties\PublishProfiles\Web.Gateway.pubxml" />
+    <Content Include="tool\log.ashx" />
+    <Content Include="tool\MY18.ashx" />
+    <Content Include="tool\hack.ashx" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\result\" />
+    <Folder Include="Plugin\Wechat\icon\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Library\SP.Studio\SP.Studio.csproj">
+      <Project>{780aa7cd-437d-41fd-a814-c42f7040cc91}</Project>
+      <Name>SP.Studio</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup Condition="'$(Configuration)' == 'Debug'">
+    <TypeScriptCompileOnSaveEnabled>False</TypeScriptCompileOnSaveEnabled>
+    <TypeScriptNoImplicitAny>True</TypeScriptNoImplicitAny>
+    <TypeScriptRemoveComments>True</TypeScriptRemoveComments>
+    <TypeScriptSourceMap>False</TypeScriptSourceMap>
+  </PropertyGroup>
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets')" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>20168</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:20168/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+      <UserProperties Plugin_4Alipay_4manifest_1json__JSONSchema="http://json.schemastore.org/bowerrc" />
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

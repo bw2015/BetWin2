@@ -1,0 +1,30 @@
+﻿<!-- 资金记录 -->
+<div class="user-money-log">
+    <div class="alert-tip">
+        温馨提示：移动端只有最新的20笔资金记录，如需查询更多请登录网页版。
+    </div>
+    <table class="list" data-bind-action="/handler/user/money/moneylog" data-bind-type="list" data-bind-callback="list">
+        <thead>
+            <tr>
+                <th>交易时间</th>
+                <th>类型</th>
+                <th>金额</th>
+                <th>余额</th>
+            </tr>
+        </thead>
+        <tbody data-list-element="true">
+            <tr>
+                <td>${CreateAt}</td>
+                <td>${Type}</td>
+                <td>${Money:trunover}</td>
+                <td>${Balance:money}</td>
+            </tr>
+            <tr>
+                <td class="left line" colspan="4">
+                    备注：${Description}
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+</div>

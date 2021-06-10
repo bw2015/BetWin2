@@ -1,0 +1,50 @@
+﻿<div class="page-header">
+    <h1>IP风控管理</h1>
+    <h6>输入用户名可以查看与该用户在同一IP或者同一电脑上进行过操作的所有用户</h6>
+    <div class="page-searchbox">
+        <form action="ip.html" method="post">
+            <select class="txt" name="Type">
+                <option value="IP">同IP</option>
+                <option value="Browser">同电脑</option>
+            </select>
+            关联用户：<input type="text" name="User" class="txt" placeholder="用户名" />
+            操作时间段：
+            <input type="date" name="StartAt" placeholder="开始时间" class="txt" />
+            <input type="date" name="EndAt" placeholder="结束时间" class="txt" />
+            <input type="submit" value="搜索" class="am-btn am-btn-success am-round am-text-xs" />
+            <input type="reset" value="重置" class="am-btn am-round  am-text-xs" />
+        </form>
+    </div>
+</div>
+<div class="page-table">
+    <table class="list" data-bind-action="admin/user/iprisk" data-bind-type="list" data-bind-callback="list,count" data-bind-load="search,pagesplit">
+        <thead>
+            <tr>
+                <th>用户名</th>
+                <th>上级</th>
+                <th>当前余额</th>
+                <th>注册时间</th>
+                <th>登录时间</th>
+                <th>登录IP</th>
+            </tr>
+        </thead>
+        <tbody data-list-element="true">
+            <tr>
+                <td><a href="javascript:" data-userid="${ID}">${UserName}</a></td>
+                <td class="am-text-left">${Agent}</td>
+                <td>${Money:money}</td>
+                <td>${CreateAt}</td>
+                <td>${LoginAt}</td>
+                <td>${LoginIP}<div class="am-text-xs">${IPAddress}</div></td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <td>统计：</td>
+                <td></td>
+                <td><label class="am-text-success">${data.Money:money}</label></td>
+                <td colspan="3"></td>
+            </tr>
+        </tfoot>
+    </table>
+</div>

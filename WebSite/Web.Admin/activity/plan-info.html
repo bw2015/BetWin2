@@ -1,0 +1,38 @@
+﻿<form action="/admin/site/saveplan" data-bind-action="/admin/site/saveplan" data-bind-type="ajax" data-bind-callback="form-tip,success-fire" data-bind-form-tip="diag-close" data-bind-fire-target="activity-plan-list">
+    <div class="page-table" data-bind-action="admin/site/planinfo" data-bind-type="ajax" data-bind-callback="html,form-fill,plan-info-setting" data-bind-data="parent">
+        <p class="am-alert am-alert-danger am-margin-bottom">${setting.Description}</p>
+        <table class="post">
+            <tbody>
+                <tr>
+                    <th>开启：</th>
+                    <td>
+                        <input type="checkbox" name="IsOpen" value="1" data-type="switch" />
+                    </td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <th></th>
+                    <td>
+                        <input type="hidden" name="Type" value="${Type}" />
+                        <input type="submit" value="保存" class="am-btn am-btn-success am-round" />
+                    </td>
+                </tr>
+            </tfoot>
+        </table>
+    </div>
+</form>
+<script type="text/javascript">
+    BW.callback["plan-info-setting"] = function (result) {
+        var t = this;
+        var body = t.dom.element.getElement("tbody");
+        result.info.setting.Setting.each(function (item) {
+            var tr = new Element("tr", {
+                "html": "<th>${Name}：</th><td><input type=\"text\" class=\"txt am-form-field w100\" name=\"Setting.${Key}\" value=\"${Value}\" /> <span class=\"desc\">${Description}</span></td>".toHtml(item)
+            });
+            tr.inject(body);
+        });
+        var tr = t.dom.element.getElement("tfoot tr");
+        tr.inject(body);
+    };
+</script>

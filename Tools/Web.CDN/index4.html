@@ -1,0 +1,37 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <script src="scripts/mootools.js"></script>
+    <script src="/handler/site/info/cdndomain"></script>
+    <link href="t4/styles/index.css" rel="stylesheet" />
+    <title>测速</title>
+</head>
+<body>
+    <header>
+        <div class="w">
+            <img src="images/space.gif" id="logo" />
+        </div>
+    </header>
+
+
+    <div class="container w">
+        <div class="tip">
+            <h1>域名测速检测中心</h1>
+            <h2>
+                访问状态说明：
+                <span class="good">很好</span>
+                <span class="normal">一般</span>
+                <span class="low">较差</span>
+            </h2>
+        </div>
+    </div>
+    <div class="container w">
+        <div class="website" id="website">
+        </div>
+        <a href="javascript:testSpeed()" class="test">重新测速</a>
+    </div>
+
+    <script src="scripts/speed.js"></script>
+</body>
+</html>

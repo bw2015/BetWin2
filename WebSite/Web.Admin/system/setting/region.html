@@ -1,0 +1,34 @@
+﻿<div class="page-header">
+    <h1>自定义内容管理</h1>
+    <h6>自定义区域内容管理，如果不确定请勿进行删除操作。</h6>
+    <div class="page-action">
+        <a href="javascript:" class="am-btn am-btn-success am-round" data-diag-name="region-info" data-diag-src="system/setting/region-info.html" data-diag-type="control" data-diag-title="添加内容" data-diag-mask="true" data-diag-drag="true" data-diag-width="1024" data-diag-height="768">添加内容</a>
+    </div>
+</div>
+<div class="page-table">
+    <table class="list" id="system-setting-region-list" data-bind-action="admin/news/regionlist" data-bind-type="list" data-bind-callback="list">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>名称</th>
+                <th>说明</th>
+                <th>添加时间</th>
+                <th>操作</th>
+            </tr>
+        </thead>
+        <tbody data-list-element="true">
+            <tr data-bind-delete="true">
+                <td>${ID}</td>
+                <td>${Name}</td>
+                <td>${Title}</td>
+                <td>${CreateAt}</td>
+                <td>
+                    <a href="javascript:" data-diag-name="region-info" data-diag-src="system/setting/region-info.html" data-diag-type="control" data-diag-title="添加内容" data-diag-mask="true" data-diag-drag="true" data-diag-width="1024" data-diag-height="768" data-diag-data="id=${ID}">修改</a>
+                    <a href="javascript:" data-bind-action-delay="admin/news/deleteregion" data-bind-type="ajax" data-bind-callback="delete" data-bind-data="id=${ID}" data-bind-stop="true" data-bind-event="confirm" data-bind-confirm-tip="确认要删除吗？">删除</a>
+
+
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

@@ -1,0 +1,30 @@
+﻿<div class="page-table" data-bind-action="admin/account/info" data-bind-type="ajax" data-bind-callback="form-fill">
+    <form action="admin/account/saveinfo" method="post" enctype="application/x-www-form-urlencoded" data-bind-action="admin/account/saveinfo" data-bind-type="ajax" data-bind-callback="form-tip" data-bind-form-tip="diag-close">
+        <table class="post">
+            <tr>
+                <th>用户名：</th>
+                <td>
+                    <input type="text" class="txt am-form-field" name="AdminName" disabled="disabled" />
+                </td>
+            </tr>
+            <tr>
+                <th>昵称：</th>
+                <td><input type="text" class="txt am-form-field" name="NickName" autocomplete="off" /></td>
+            </tr>
+            <tr>
+                <th>密码：</th>
+                <td><input type="password" class="txt am-form-field" name="Password" placeholder="如不需要修改请留空" autocomplete="off" /></td>
+            </tr>
+            <tr>
+                <th>重复密码：</th>
+                <td><input type="password" class="txt am-form-field" name="Password2" placeholder="如不需要修改请留空" autocomplete="off" /></td>
+            </tr>
+            <tr>
+                <th></th>
+                <td>
+                    <input type="submit" value="保存" class="am-btn am-btn-success am-round" />
+                </td>
+            </tr>
+        </table>
+    </form>
+</div>

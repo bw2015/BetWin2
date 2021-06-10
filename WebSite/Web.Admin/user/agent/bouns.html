@@ -1,0 +1,89 @@
+﻿<div class="page-header">
+    <h1>分红管理</h1>
+    <h6>注意：选择分红时间请务必确认正确，系统不允许发放已经发放日期之前的分红。</h6>
+    <div class="page-searchbox">
+        <form action="bouns.html" method="post">
+            开始时间：<input type="date" class="txt" name="StartAt" />
+            &nbsp;&nbsp;
+            结束时间：<input type="date" class="txt" name="EndAt" />
+            &nbsp;&nbsp;
+            <input type="submit" value="搜索" class="am-btn am-btn-success am-round am-text-xs" />
+        </form>
+    </div>
+</div>
+<div class="page-table">
+    <table class="list" data-bind-action="admin/user/bounslist" data-bind-type="list" data-bind-callback="list,count,user-agent-bouns" data-bind-load="search">
+        <thead>
+            <tr>
+                <th>团队</th>
+                <th data-list-sort="true">销售业绩</th>
+                <th data-list-sort="true">有效会员</th>
+                <th data-list-sort="true">盈亏</th>
+                <th data-list-sort="true">分红</th>
+            </tr>
+        </thead>
+        <tbody data-list-element="true">
+            <tr>
+                <td><a href="javascript:" class="diag-user" data-userid="${UserID}">${UserName}</a></td>
+                <td>${Sales:money}</td>
+                <td>${Member}人</td>
+                <td>${Money:money-show}</td>
+                <td>${Bouns:money-show}</td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <td colspan="5" class="am-text-center">
+                    <button type="button" class="am-btn am-btn-danger am-round" data-start="${data.StartAt}" data-end="${data.EndAt}">
+                        发放${data.StartAt}到${data.EndAt}分红
+                    </button>
+                </td>
+            </tr>
+        </tfoot>
+    </table>
+</div>
+
+<script type="text/javascript">
+    BW.callback["user-agent-bouns"] = function () {
+        var t = this;
+        t.dom.element.getElements("td").each(function (item) {
+            var value = item.get("text");
+            console.log(value);
+            if (!/^\$/.test(value)) return;
+            item.set("text", "￥0.00");
+        });
+
+        !function () {
+            var btn = t.dom.element.getElement("tfoot button");
+            if (!btn || btn.get("data-bind")) return;
+
+            btn.addEvent("click", function () {
+                var msg = "确认要" + btn.get("text") + "吗？";
+                new BW.Tip(msg, {
+                    "type": "confirm",
+                    "callback": function () {
+                        var data = {
+                            "StartAt": btn.get("data-start"),
+                            "EndAt": btn.get("data-end")
+                        };
+
+                        new Request.JSON({
+                            "url": "admin/user/bounsrun",
+                            "onRequest": function () {
+                                btn.set("disabled", true);
+                                btn.addClass("loading-ajax");
+                            },
+                            "onComplete": function () {
+                                btn.set("disabled", false);
+                                btn.removeClass("loading-ajax");
+                            },
+                            "onSuccess": function (callback) {
+                                new BW.Tip(callback.msg);
+                            }
+                        }).post(data);
+                    }
+                })
+            });
+        }();
+    };
+</script>

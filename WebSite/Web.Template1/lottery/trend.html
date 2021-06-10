@@ -1,0 +1,288 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+    <title>走势图</title>
+    <link href="../styles/common.css" rel="stylesheet" />
+    <link href="../styles/trend.css" rel="stylesheet" />
+
+    <script type="text/javascript" src="../studio/scripts/mootools.js"></script>
+    <script type="text/javascript" src="../studio/scripts/mootools-more.js"></script>
+    <script type="text/javascript" src="../studio/scripts/betwin.js"></script>
+    <script type="text/javascript">
+        BW.callback["lottery-trend"] = function (result) {
+            var t = this;
+            var number = new Object();
+            t.dom.element.getElements(".header-number th").each(function (item, index) {
+                number[index + 2] = item.get("text");
+            });
+
+            t.dom.element.getElements("tbody tr").each(function (tr) {
+                var resultNumber = tr.get("data-result");
+                var result = new Object();
+                resultNumber.split(',').each(function (n) {
+                    if (result[n]) {
+                        result[n]++;
+                    } else {
+                        result[n] = 1;
+                    }
+                });
+                var tdlist = tr.getElements("td");
+                tdlist.each(function (td, index) {
+                    var em = td.getElement("em");
+                    if (!em) return;
+                    var value = em.get("text");
+
+                    if (index < 52) {
+                        if (!number[index]) return;
+                        if (value == "0") {
+                            em.addClass("num");
+                            em.set("text", number[index]);
+                        }
+                    } else {
+                        var disNumber = (index - 52).toString();
+                        if (result[disNumber]) {
+                            em.addClass("distributed num-" + result[disNumber]);
+                            em.set("text", index - 52);
+                        }
+                    }
+                    if (!/^\d+$/.test(value)) { em.set("text", ""); }
+                });
+            });
+
+            var list = new Array();
+            t.dom.element.getElements("tbody tr").each(function (tr) {
+                list.push(tr.getElements(".num"));
+            });
+
+            var section = t.dom.element.getParent("section");
+            section.getElements("canvas").dispose();
+
+            for (var i = 0; i < list.length - 1; i++) {
+                list[i].each(function (num, index) {
+                    var next = list[i + 1][index];
+
+                    var pos1 = num.getPosition(section);
+                    var pos2 = next.getPosition(section);
+
+                    var width = Math.max(1, Math.abs(pos1.x - pos2.x));
+                    var height = Math.abs(pos1.y - pos2.y);
+
+                    var canvas = new Element("canvas", {
+                        "width": width,
+                        "height": height,
+                        "styles": {
+                            "left": Math.min(pos1.x, pos2.x) + 8,
+                            "top": pos1.y + 8
+                        }
+                    });
+                    canvas.inject(section);
+                    var context = canvas.getContext("2d");
+
+                    context.beginPath();
+                    context.moveTo(pos1.x < pos2.x ? 0 : width, 0);
+                    context.lineTo(pos1.x > pos2.x ? 0 : width, height);
+                    context.strokeStyle = index % 2 == 0 ? "#AA0000" : "#d6bd9a";
+                    context.lineWidth = 2;
+                    context.stroke();
+                });
+            }
+        };
+
+        BW.load["lottery-trend"] = function () {
+            var t = this;
+            var parent = t.dom.element.getParent("[data-bind-search]");
+            var form = parent.getElement("form");
+            var reg = /[#|\?](\w+)$/i;
+            var type = reg.exec(location.href)[1];
+            $("lottery-type").addClass(type);
+
+            var field = new Object();
+            form.getElements("[name]").each(function (item) {
+                field[item.get("name")] = item;
+            });
+            field["Type"].set("value", type);
+
+            form.getElements("[data-field]").addEvent("click", function () {
+                field[this.get("data-field")].set("value", this.get("data-value"));
+                t.fire();
+            });
+        };
+    </script>
+</head>
+<body>
+    <div class="container" data-bind-search="true">
+        <header>
+            <em class="lottery64" id="lottery-type"></em>
+        </header>
+        <menu>
+            <form action="trend.html" method="post">
+                <input type="hidden" name="Type" value="" />
+                <input type="hidden" name="Count" value="30" />
+                <div class="right">
+                    <a href="javascript:" data-field="Count" data-value="30">最近30期</a>
+                    <a href="javascript:" data-field="Count" data-value="50">最近50期</a>
+                    <a href="javascript:" data-field="Count" data-value="120">最近120期</a>
+                </div>
+            </form>
+        </menu>
+        <section>
+            <table data-bind-action="/handler/game/lottery/trendlist" data-bind-type="list" data-bind-callback="list,lottery-trend" data-bind-load="lottery-trend,search">
+                <thead>
+                    <tr>
+                        <th rowspan="2">期号</th>
+                        <th rowspan="2">开奖号码</th>
+                        <th colspan="10">万位走势</th>
+                        <th colspan="10">千位走势</th>
+                        <th colspan="10">百位走势</th>
+                        <th colspan="10">十位走势</th>
+                        <th colspan="10">个位走势</th>
+                        <th colspan="10">号码分布</th>
+                    </tr>
+                    <tr class="header-number">
+                        <th>0</th>
+                        <th>1</th>
+                        <th>2</th>
+                        <th>3</th>
+                        <th>4</th>
+                        <th>5</th>
+                        <th>6</th>
+                        <th>7</th>
+                        <th>8</th>
+                        <th>9</th>
+
+                        <th>0</th>
+                        <th>1</th>
+                        <th>2</th>
+                        <th>3</th>
+                        <th>4</th>
+                        <th>5</th>
+                        <th>6</th>
+                        <th>7</th>
+                        <th>8</th>
+                        <th>9</th>
+
+                        <th>0</th>
+                        <th>1</th>
+                        <th>2</th>
+                        <th>3</th>
+                        <th>4</th>
+                        <th>5</th>
+                        <th>6</th>
+                        <th>7</th>
+                        <th>8</th>
+                        <th>9</th>
+
+                        <th>0</th>
+                        <th>1</th>
+                        <th>2</th>
+                        <th>3</th>
+                        <th>4</th>
+                        <th>5</th>
+                        <th>6</th>
+                        <th>7</th>
+                        <th>8</th>
+                        <th>9</th>
+
+                        <th>0</th>
+                        <th>1</th>
+                        <th>2</th>
+                        <th>3</th>
+                        <th>4</th>
+                        <th>5</th>
+                        <th>6</th>
+                        <th>7</th>
+                        <th>8</th>
+                        <th>9</th>
+
+                        <th>0</th>
+                        <th>1</th>
+                        <th>2</th>
+                        <th>3</th>
+                        <th>4</th>
+                        <th>5</th>
+                        <th>6</th>
+                        <th>7</th>
+                        <th>8</th>
+                        <th>9</th>
+                    </tr>
+                </thead>
+                <tbody data-list-element="true">
+                    <tr data-result="${Number}">
+                        <td><em class="index">${Index}</em></td>
+                        <td><em class="number">${Number}</em></td>
+
+                        <td><em>${Data.N0-0}</em></td>
+                        <td><em>${Data.N0-1}</em></td>
+                        <td><em>${Data.N0-2}</em></td>
+                        <td><em>${Data.N0-3}</em></td>
+                        <td><em>${Data.N0-4}</em></td>
+                        <td><em>${Data.N0-5}</em></td>
+                        <td><em>${Data.N0-6}</em></td>
+                        <td><em>${Data.N0-7}</em></td>
+                        <td><em>${Data.N0-8}</em></td>
+                        <td><em>${Data.N0-9}</em></td>
+
+                        <td class="odd"><em>${Data.N1-0}</em></td>
+                        <td class="odd"><em>${Data.N1-1}</em></td>
+                        <td class="odd"><em>${Data.N1-2}</em></td>
+                        <td class="odd"><em>${Data.N1-3}</em></td>
+                        <td class="odd"><em>${Data.N1-4}</em></td>
+                        <td class="odd"><em>${Data.N1-5}</em></td>
+                        <td class="odd"><em>${Data.N1-6}</em></td>
+                        <td class="odd"><em>${Data.N1-7}</em></td>
+                        <td class="odd"><em>${Data.N1-8}</em></td>
+                        <td class="odd"><em>${Data.N1-9}</em></td>
+
+                        <td><em>${Data.N2-0}</em></td>
+                        <td><em>${Data.N2-1}</em></td>
+                        <td><em>${Data.N2-2}</em></td>
+                        <td><em>${Data.N2-3}</em></td>
+                        <td><em>${Data.N2-4}</em></td>
+                        <td><em>${Data.N2-5}</em></td>
+                        <td><em>${Data.N2-6}</em></td>
+                        <td><em>${Data.N2-7}</em></td>
+                        <td><em>${Data.N2-8}</em></td>
+                        <td><em>${Data.N2-9}</em></td>
+
+                        <td class="odd"><em>${Data.N3-0}</em></td>
+                        <td class="odd"><em>${Data.N3-1}</em></td>
+                        <td class="odd"><em>${Data.N3-2}</em></td>
+                        <td class="odd"><em>${Data.N3-3}</em></td>
+                        <td class="odd"><em>${Data.N3-4}</em></td>
+                        <td class="odd"><em>${Data.N3-5}</em></td>
+                        <td class="odd"><em>${Data.N3-6}</em></td>
+                        <td class="odd"><em>${Data.N3-7}</em></td>
+                        <td class="odd"><em>${Data.N3-8}</em></td>
+                        <td class="odd"><em>${Data.N3-9}</em></td>
+
+                        <td><em>${Data.N4-0}</em></td>
+                        <td><em>${Data.N4-1}</em></td>
+                        <td><em>${Data.N4-2}</em></td>
+                        <td><em>${Data.N4-3}</em></td>
+                        <td><em>${Data.N4-4}</em></td>
+                        <td><em>${Data.N4-5}</em></td>
+                        <td><em>${Data.N4-6}</em></td>
+                        <td><em>${Data.N4-7}</em></td>
+                        <td><em>${Data.N4-8}</em></td>
+                        <td><em>${Data.N4-9}</em></td>
+
+                        <td><em>${Data.D0}</em></td>
+                        <td><em>${Data.D1}</em></td>
+                        <td><em>${Data.D3}</em></td>
+                        <td><em>${Data.D3}</em></td>
+                        <td><em>${Data.D4}</em></td>
+                        <td><em>${Data.D5}</em></td>
+                        <td><em>${Data.D6}</em></td>
+                        <td><em>${Data.D7}</em></td>
+                        <td><em>${Data.D8}</em></td>
+                        <td><em>${Data.D9}</em></td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+    </div>
+</body>
+</html>

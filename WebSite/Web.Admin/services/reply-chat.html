@@ -1,0 +1,33 @@
+﻿<div class="am-panel-group" data-bind-action="admin/im/getreplylist" data-bind-type="ajax" data-bind-callback="service-reply">
+</div>
+
+<script type="text/javascript">
+    // 快捷回复（来自 studio/scripts/betwin.im.js)
+    BW.callback["service-reply"] = function (result) {
+        var t = this;
+        Object.forEach(result.info, function (value, key) {
+            new Element("div", {
+                "class": "am-panel am-panel-default am-margin-top-0",
+                "html": "<div class=\"am-panel-hd\"><h4 class=\"am-panel-title am-text-center\">${Category}</h4></div><div class=\"am-panel-collapse am-collapse am-in\">${List}</div>".toHtml({
+                    "Category": key,
+                    "List": value.map(function (item) { return "<a href=\"javascript:\">" + item + "</a>"; }).join("")
+                })
+            }).inject(t.dom.element);
+        });
+
+
+        t.dom.element.addEvents({
+            "click": function (e) {
+                var obj = $(e.target);
+                if (obj.get("tag") == "a") {
+                    var textarea = im.dom.chatobj.getElement("textarea");
+                    textarea.set("value", obj.get("html"));
+                    textarea.focus();
+                }
+            },
+            "dblclick": function (e) {
+            }
+        });
+
+    };
+</script>

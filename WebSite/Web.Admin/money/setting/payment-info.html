@@ -1,0 +1,98 @@
+﻿<div class="page-table" data-bind-action="/admin/site/getpaymentinfo" data-bind-type="ajax" data-bind-callback="form-fill,loadsetting,payment-platform" data-bind-data="parent">
+    <form action="/admin/site/savepaymentinfo" data-bind-action="/admin/site/savepaymentinfo" data-bind-type="ajax" data-bind-load="enum,loadsetting,payment-platform" data-bind-callback="form-tip,fire,diag-close" data-bind-fire-target="money-setting-payment-list">
+        <input type="hidden" name="ID" value="0" />
+        <table class="post">
+            <tr>
+                <th>接口名字：</th>
+                <td>
+                    <input type="text" name="Name" class="txt am-form-field" required="required" placeholder="请输入接口名字" />
+                </td>
+            </tr>
+            <tr>
+                <th>手续费：</th>
+                <td>
+                    <input type="text" name="Fee" class="txt w80 am-form-field" /> <span class="desc">如千分之一请输入 0.001，手续费用于平台财务计算，不向会员收取</span>
+                </td>
+            </tr>
+            <tr>
+                <th>充值奖励：</th>
+                <td>
+                    <input type="text" name="Reward" class="txt w80 am-form-field" /> <span class="desc">如千分之一请输入 0.001，如果是扣除则填入负数，例如：-0.001</span>
+                </td>
+            </tr>
+            <tr>
+                <th>单笔金额：</th>
+                <td>
+                    <input type="number" name="MinMoney" class="txt w80 am-form-field" min="1" /> ～
+                    <input type="number" name="MaxMoney" class="txt w80 am-form-field" />
+                </td>
+            </tr>
+            <tr>
+                <th>开启接口：</th>
+                <td>
+                    <input type="checkbox" name="IsOpen" value="1" data-type="switch" />
+                </td>
+            </tr>
+            <tr>
+                <th>排序值：</th>
+                <td>
+                    <input type="number" name="Sort" class="txt w80 am-form-field" />
+                    <span class="desc">从小到大</span>
+                </td>
+            </tr>
+            <tr>
+                <th>支持平台：</th>
+                <td class="platform"></td>
+            </tr>
+            <tr>
+                <th>图标：</th>
+                <td>
+                    <select name="Icon" class="txt am-form-field" data-enum-name="BW.Common.Sites.PaymentSetting+IconType"></select>
+                </td>
+            </tr>
+            <tr>
+                <th>接口类型：</th>
+                <td>
+                    <select name="Type" class="txt am-form-field" data-enum-name="BW.GateWay.Payment.PaymentType" data-loadsetting="/admin/site/paymentsetting" data-id="${ID}"></select>
+                </td>
+            </tr>
+            <tr>
+                <th></th>
+                <td>
+                    <input type="submit" class="am-btn am-btn-success am-round" value=" 保存 " />
+                </td>
+            </tr>
+        </table>
+    </form>
+</div>
+
+<script type="text/javascript">
+    BW.load["payment-platform"] = function () {
+        var t = this;
+        var platform = t.dom.element.getElement(".platform");
+        var list = GolbalSetting.Enum["BW.Common.Sites.PaymentSetting+PlatformType"];
+        list.each(function (item) {
+            var id = "PLATFORM_" + item.value;
+            item["id"] = id;
+            new Element("label", {
+                "for": id,
+                "html": "<input type=\"checkbox\" id=\"${id}\" name=\"Platform\" value=\"${value}\" /> ${text} &nbsp;&nbsp; ".toHtml(item)
+            }).inject(platform);
+        });
+    };
+
+    BW.callback["payment-platform"] = function (result) {
+        if (!result.success) return;
+        var t = this;
+        var platform = new Object();
+        t.dom.element.getElements("[name=Platform]").each(function (item) {
+            platform[item.get("value")] = item;
+        })
+        result.info.Platform.split(',').each(function (item) {
+            item = item.trim();
+            if (platform[item]) {
+                platform[item].set("checked", true);
+            }
+        });
+    };
+</script>

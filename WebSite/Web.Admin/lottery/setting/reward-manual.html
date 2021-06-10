@@ -1,0 +1,83 @@
+﻿<div class="page-table">
+    <form action="reward-manual.html" method="post" data-bind-action="admin/lottery/savenumber" data-bind-type="ajax" data-bind-callback="form-tip,success-fire" data-bind-form-tip="diag-close" data-bind-fire-target="lottery-bet-resultnumber">
+        <table class="post" data-bind-action="admin/lottery/getindex" data-bind-type="ajax" data-bind-callback="form-fill,lottery-setting-reward-manual-index" data-bind-data="parent">
+            <tr>
+                <th>彩种：</th>
+                <td><input type="text" name="Game" class="txt am-form-field" disabled /></td>
+            </tr>
+            <tr>
+                <th>彩期：</th>
+                <td>
+                    <input type="text" name="Index" class="txt am-form-field" />
+                    <select class="txt am-form-field am-text-xs"></select>
+                </td>
+            </tr>
+            <tr>
+                <th>开奖号码：</th>
+                <td>
+                    <input type="text" name="Number" class="txt am-form-field" placeholder="请输入开奖号码，使用逗号隔开" required="required" />
+                    <input type="button" value="试算盈亏" class="am-btn am-btn-danger btn-test" />
+                </td>
+            </tr>
+            <tr>
+                <th></th>
+                <td>
+                    <input type="hidden" name="Type" id="" />
+                    <input type="submit" value="保存" class="am-btn am-btn-success" />
+                </td>
+            </tr>
+        </table>
+        <div id="lottery-setting-reward-manual-testnumber">
+
+        </div>
+    </form>
+</div>
+<script type="text/javascript">
+    BW.callback["lottery-setting-reward-manual-index"] = function (result) {
+        var t = this;
+        var select = t.dom.element.getElement("select");
+        var index = t.dom.element.getElement("[name=Index]");
+        var number = t.dom.element.getElement("[name=Number]");
+        var btnTest = t.dom.element.getElement(".btn-test");
+        var testResult = document.getElementById("lottery-setting-reward-manual-testnumber");
+
+        !function () {
+            result.info.List.map(function (item) {
+                return {
+                    "text": item.Index + " - " + item.ResultAt,
+                    "value": item.Index
+                };
+            }).bind(select);
+            select.addEvent("change", function () {
+                index.set("value", this.get("value"));
+            });
+            select.fireEvent("change");
+        }();
+
+        btnTest.addEvent("click", function (e) {
+            new Request.JSON({
+                url: "admin/lottery/testnumber",
+                onRequest: function () {
+                    testResult.empty();
+                    t.dom.element.addClass("loading-ajax");
+                },
+                onComplete: function () {
+                    t.dom.element.removeClass("loading-ajax");
+                },
+                onSuccess: function (test) {
+                    var html = [];
+                    test.info.list.each(function (item) {
+                        html.push("<button type=\"button\" class=\"am-btn am-btn-default am-btn-sm am-round\" data-number=" + item.Number + ">" + item.Number + "（" + htmlFunction.money(item.Money) + "）</button>")
+                    });
+                    testResult.innerHTML = html.join("  ");
+                }
+            }).post(Element.GetData(t.dom.element.getParent("form")));
+        });
+
+        testResult.addEvent("click", function (e) {
+            var btn = e.target;
+            if (!btn.getAttribute("data-number")) return;
+            number.set("value", btn.getAttribute("data-number"));
+        });
+    };
+</script>

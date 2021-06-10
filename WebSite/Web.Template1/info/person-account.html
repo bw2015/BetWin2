@@ -1,0 +1,101 @@
+﻿<div class="frame-info-content">
+    <table class="list info-person-account-money">
+        <thead>
+            <tr>
+                <th>主账户</th>
+                <th>锁定金额</th>
+                <th>总金额</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>
+                    <span class="red">${Money:c}元</span>
+                </td>
+                <td>
+                    <span class="red">￥0.00元</span>
+                </td>
+                <td>
+                    <span class="red">￥0.00元</span>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <h3>资料管理</h3>
+    <table class="list" data-bind-action="/handler/user/info/last" data-bind-type="ajax" data-bind-callback="info-person-account-info">
+        <thead>
+            <tr>
+                <th>资料项</th>
+                <th>描述</th>
+                <th>当前状态</th>
+                <th>操作</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>
+                    <span class="red">银行卡</span>
+                </td>
+                <td class="left"><span class="gray ft12">绑定玩家的银行卡开户姓名后，将无法自行更改，可保证资金安全</span></td>
+                <td data-type="BankAccount"></td>
+                <td>
+                    <a href="javascript:" class="btn btn-red" data-event-target="frame-person-link-bank">设定</a>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span class="red">登录密码</span>
+                </td>
+                <td class="left"><span class="gray ft12">我们建议玩家不定时修改登录密码，可提高账号的安全性</span></td>
+                <td data-type="Password"></td>
+                <td>
+                    <a href="javascript:" class="btn btn-red" data-diag-name="UpdatePassword" data-diag-src="info/person-password.html" data-diag-type="control" data-diag-drag="1" data-diag-title="修改登录密码" data-diag-mask="1" data-diag-height="360">设定</a>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span class="red">资金密码</span>
+                </td>
+                <td class="left"><span class="gray ft12">我们建议玩家不定时修改资金密码，可提高帐号的安全性</span></td>
+                <td data-type="PayPassword"></td>
+                <td>
+                    <a href="javascript:" class="btn btn-red" data-diag-name="UpdatePayPassword" data-diag-src="info/person-paypassword.html" data-diag-type="control" data-diag-drag="1" data-diag-title="修改资金密码" data-diag-mask="1" data-diag-height="360">设定</a>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span class="red">密保问题</span>
+                </td>
+                <td class="left"><span class="gray ft12">玩家忘记密码的时候可通过密保答案找回登录密码、资金密码</span></td>
+                <td data-type="Answer"></td>
+                <td>
+                    <a href="javascript:" class="btn btn-red" data-diag-name="Answer" data-diag-src="info/person-answer.html" data-diag-type="control" data-diag-drag="1" data-diag-title="修改密保问题" data-diag-mask="1" data-diag-height="360">设定</a>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span class="red">谷歌验证码</span>
+                </td>
+                <td class="left"><span class="gray ft12">绑定谷歌验证码，使用手机验证登录，让您的帐户更加安全快捷。</span></td>
+                <td data-type="SecretKey"></td>
+                <td>
+                    <a href="javascript:" class="btn btn-red" data-diag-name="Answer" data-diag-src="info/person-secretkey.html" data-diag-type="control" data-diag-drag="1" data-diag-title="设定谷歌验证码" data-diag-mask="1" data-diag-height="480">设定</a>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span class="red">联系信息</span>
+                </td>
+                <td class="left"><span class="gray ft12">设定您的个人联系信息，增加账户安全性</span></td>
+                <td data-type="Email"></td>
+                <td>
+                    <a href="javascript:" class="btn btn-red" data-diag-name="UserInfo" data-diag-src="info/person-info.html" data-diag-type="control" data-diag-drag="1" data-diag-title="修改联系信息" data-diag-mask="1" data-diag-height="480">设定</a>
+                </td>
+            </tr>
+            <tr>
+                <td><span class="green">登录密钥</span></td>
+                <td colspan="3" class="left" data-type="Session"></td>
+            </tr>
+        </tbody>
+    </table>
+</div>

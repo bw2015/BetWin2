@@ -1,0 +1,250 @@
+﻿<div class="lottery-player lottery-player-baccarat" data-bind-action="/handler/user/lottery/player" data-bind-type="ajax" data-bind-callback="lottery-player" data-bind-data="parent">
+    <input type="hidden" data-resulttime="OpenTime" />
+    <!-- 开奖记录 -->
+    <div class="lottery-player-body1">
+        <div class="lottery-player-info1">
+            <h3 class="lottery-game-name"></h3>
+            <h4 class="lottery-game-betindex" data-resulttime="BetIndex"></h4>
+            <h5>
+                <span class="tit"><i class="icon16 icon-clock"></i> 销售倒计时</span>
+                <label class="counter-time" data-timer="0" data-resulttime="BetTime"></label>
+            </h5>
+        </div>
+        <div class="lottery-player-info2 loading" data-resulttime="OpenNumber" data-video="PK10,HKSM">
+            <div class="tit">
+                <span class="name text lottery-game-name"></span>
+                <span class="index lottery-game-index" data-resulttime="OpenIndex"></span>
+                <span class="text">期开奖结果</span>
+                <a href="javascript:" class="icon24 sound"></a>
+            </div>
+            <div class="lottery-number lottery-number-baccarat">
+                <ul>
+                    <li class="index0"></li>
+                    <li class="index1"></li>
+                    <li class="index2"></li>
+                    <li class="index3"></li>
+                </ul>
+            </div>
+        </div>
+        <!-- 彩票信息 -->
+        <div class="lottery-player-info3" data-bind-action-delay="controls/lottery-info.html" data-bind-type="control" data-bind-callback="lottery-player-info">
+
+        </div>
+    </div>
+
+    <!-- 玩法列表 -->
+    <div class="lottery-player-body2 player-baccarat">
+        <!-- 百家乐玩法 -->
+        <div class="bet" data-bind-action="handler/user/lottery/player" data-bind-type="ajax" data-bind-callback="bet-beccarat-player" data-bind-data="parent">
+        </div>
+
+        <!-- 提交区域 -->
+        <div class="lottery-player-submit">
+            <div class="chip">
+                <ul>
+                    <li class="clip-item n1" data-money="1"></li>
+                    <li class="clip-item n5" data-money="5"></li>
+                    <li class="clip-item n10" data-money="10"></li>
+                    <li class="clip-item n50" data-money="50"></li>
+                    <li class="clip-item n100" data-money="100"></li>
+                    <li class="clip-item n0"><input type="number" value="888" /></li>
+                </ul>
+            </div>
+            <div class="lottery-player-submit-button">
+                <a href="javascript:" class="btn-red" data-dom="submit">立即投注</a>
+            </div>
+        </div>
+
+    </div>
+
+
+    <!-- 投注记录 -->
+    <div class="lottery-player-body3 frame-info" data-bind-action="lottery/bet-log.html" data-bind-type="control" data-bind-callback="lottery-bet-log">
+    </div>
+
+    <div class="lottery-player-bottom">
+    </div>
+</div>
+
+<script type="text/javascript">
+    BW.callback["bet-beccarat-player"] = function (result) {
+        var t = this;
+        if (!result.success) {
+            new BW.Tip(result.msg, {
+                "callback": function () {
+
+                }
+            });
+            return;
+        }
+
+        var container = t.dom.element.getParent(".lottery-player");
+        var dom = new Object();
+        container.getElements("[data-dom]").each(function (item) {
+            dom[item.get("data-dom")] = item;
+        });
+
+        var clipSelected = null;
+
+        // 获取投注金额
+        var getTotalMoney = function (player) {
+            var betMoney = 0;
+            player.getElements("em[data-money]").each(function (item) {
+                betMoney += item.get("data-money").toFloat();
+            });
+
+            var label = player.getElement("label");
+            label.set("text", htmlFunction["money"](betMoney));
+            if (betMoney == 0) {
+                player.set("data-money", null);
+            } else {
+                player.set("data-money", betMoney);
+            }
+        };
+
+        // 玩法加载
+        result.info.Player.each(function (item) {
+            var className = item.Code.substring(item.Code.indexOf("_") + 1);
+            item.Reward = item.RewardMoney.toFloat() / 2;
+            var player = new Element("a", {
+                "href": "javascript:",
+                "class": className,
+                "html": "<strong>${PlayName}<br />1：${Reward}</strong><label>0.00</label>".toHtml(item),
+                "events": {
+                    "click": function (e) {
+                        var position = this.getPosition();
+                        var size = this.getPosition();
+                        if (!clipSelected) return;
+                        var money = clipSelected.get("data-money");
+                        var left = e.client.x - position.x - 45 + 10 * Math.random();
+                        var top = e.client.y - position.y - 45 + 10 * Math.random();
+                        var hasMoney = false;
+                        if (!money) {
+                            money = clipSelected.getElement("input").get("value").toFloat();
+                            hasMoney = true;
+                        }
+                        if (!money) return;
+
+                        var em = new Element("em", {
+                            "class": clipSelected.get("class"),
+                            "data-money": money,
+                            "text": hasMoney ? money : "",
+                            "styles": {
+                                "opacity": 0,
+                                "top": top * -1,
+                                "left": left * -1
+                            }
+                        });
+                        em.inject(this);
+                        em.setStyles.delay(50, em, [{
+                            "left": left,
+                            "top": top,
+                            "opacity": 1
+                        }]);
+
+                        getTotalMoney(this);
+
+                    }
+                },
+                "data-id": item.ID,
+                "data-number": item.PlayName
+            });
+            player.inject(t.dom.element);
+            // 撤销投注
+            new Element("button", {
+                "type": "button",
+                "text": "撤销",
+                "class": "btn btn-green",
+                "events": {
+                    "click": function (e) {
+                        e.stopPropagation();
+                        new BW.Tip("确认要撤销吗？", {
+                            "type": "confirm",
+                            "callback": function () {
+                                var list = player.getElements("[data-money]");
+                                var size = player.getSize();
+                                list.each(function (item, index) {
+                                    item.setStyles.delay(50 * index, item, [{
+                                        "opacity": 0,
+                                        "left": size.x / 2 - 40,
+                                        "top": size.y
+                                    }]);
+                                });
+                                (function () {
+                                    list.dispose();
+                                    getTotalMoney(player);
+                                }).delay(list.length * 50 + 100);
+                            }
+                        })
+                    }
+                }
+            }).inject(player);
+        });
+
+        // 选择筹码
+        !function () {
+            var clip = container.getElements(".clip-item");
+            var current = null;
+            clip.addEvent("click", function () {
+                if (current) current.removeClass("current");
+                current = this;
+                current.addClass("current");
+                clipSelected = current;
+            });
+            clip[0].fireEvent("click");
+        }();
+
+        //[{"id":"28","number":"2,3","mode":"元","times":1,"rebate":0,"reward":652.68,"bet":2,"money":4}]:
+        // 提交
+        !function () {
+
+            dom["submit"].addEvent("click", function () {
+                var data = new Array();
+                t.dom.element.getElements("a[data-money]").each(function (item) {
+                    data.push({
+                        "id": item.get("data-id"),
+                        "number": item.get("data-number"),
+                        "mode": "一元",
+                        "times": item.get("data-money")
+                    });
+                });
+                if (data.length == 0) {
+                    new BW.Tip("请选择要投注的内容");
+                    return;
+                }
+
+
+                new Request.JSON({
+                    "url": "/handler/user/lottery/save",
+                    "onRequest": function () {
+                        container.addClass("loading-lottery");
+                    },
+                    "onComplete": function () {
+                        container.removeClass("loading-lottery");
+                    },
+                    "onSuccess": function (result) {
+                        new BW.Tip(result.msg, {
+                            "callback": function () {
+                                if (result.success) {
+                                    t.dom.element.getElements("a[data-id]").each(function (item) {
+                                        item.getElements("[data-money]").dispose();
+                                        getTotalMoney(item);
+                                    });
+                                    var submitcallback = container.retrieve("submit-callback");
+                                    if (submitcallback) {
+                                        submitcallback.each(function (callback) {
+                                            callback.apply(t, [result]);
+                                        });
+                                    }
+                                }
+                            }
+                        });
+                    }
+                }).post(JSON.encode(data))
+            });
+        }();
+    }
+</script>
+
+<style type="text/css">
+</style>

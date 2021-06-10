@@ -1,0 +1,105 @@
+﻿<div class="page-header">
+    <h1>充值记录</h1>
+
+    <div class="page-searchbox">
+        <form>
+            <input type="text" name="User" class="txt w80" placeholder="用户名" />
+            <input type="text" name="Agent" class="txt w80" placeholder="团队代理" />
+            <input type="text" name="ID" class="txt" placeholder="充值编号" />
+            <input type="text" name="SystemID" class="txt" placeholder="网关编号" />
+            <select name="PayID" class="txt" data-bind-action="/admin/site/getpaymentlist" data-bind-type="ajax" data-bind-callback="select" data-select-value="ID" data-select-text="Name">
+                <option value="">全部方式</option>
+            </select>
+            <select name="Status" class="txt">
+                <option value="1">已到帐</option>
+                <option value="0">未到账</option>
+            </select>
+            <label for="recharge-list-paymenttime">
+                <input type="checkbox" name="IsPayment" id="recharge-list-paymenttime" value="1" data-type="switch" placeholder="到账时间" />
+            </label>
+            <input type="date" class="txt" name="StartAt" placeholder="开始时间" />
+            <input type="date" class="txt" name="EndAt" placeholder="结束时间" />
+            <input type="submit" class="am-btn am-btn-xs am-btn-success am-round" value="查询" />
+            <input type="reset" class="am-btn am-btn-xs am-btn-default am-round" value="重置" />
+        </form>
+    </div>
+    <div class="page-action">
+        <a href="javascript:" class="am-btn am-btn-success am-round" data-diag-name="money-recharge-check" data-diag-type="control" data-diag-src="money/recharge/payment-check.html" data-diag-drag="true" data-diag-title="充值对账" data-diag-width="800" data-diag-height="600">充值对账</a>
+    </div>
+</div>
+
+<div class="page-table">
+    <table class="list" data-bind-action="/admin/money/rechargelist" data-bind-type="list" data-bind-callback="list,count" data-bind-load="search,pagesplit">
+        <thead>
+            <tr>
+                <th>订单编号</th>
+                <th>支付方式</th>
+                <th>用户名</th>
+                <th>提交金额</th>
+                <th>提交时间</th>
+                <th>到账金额</th>
+                <th>手续费</th>
+                <th>到账时间</th>
+                <th>状态</th>
+                <th>备注</th>
+                <th>操作</th>
+            </tr>
+        </thead>
+        <tbody data-list-element="true">
+            <tr data-id="${ID}" data-diag-data="id=${ID}">
+                <td title="网关编号：${SystemID}">${ID}</td>
+                <td>${Payment}</td>
+                <td><a href="javascript:" class="diag-user" data-userid="${UserID}">${UserName}</a></td>
+                <td>${Money:money}</td>
+                <td>${CreateAt}</td>
+                <td>${Amount:money}${Reward:recharge-reward}</td>
+                <td>${Fee:money}</td>
+                <td>${PayAt:datetime}</td>
+                <td>${IsPayment:recharge-status}</td>
+                <td class="am-text-left">${Description}</td>
+                <td>${IsPayment:recharge-action} </td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <td colspan="3"></td>
+                <td><label class="am-text-danger">${data.Money:money}元</label></td>
+                <td></td>
+                <td><label class="am-text-success">${data.Amount:money}元${data.Reward:recharge-reward}</label></td>
+                <td><label class="am-text-success">${data.Fee:money}元</label></td>
+                <td colspan="4"></td>
+            </tr>
+        </tfoot>
+    </table>
+
+</div>
+
+<script type="text/javascript">
+    htmlFunction["recharge-status"] = function (value) {
+        return value == "true" ? "<label class=\"am-text-success\">已到账</label>" : "<label class=\"am-text-danger\">未到账</span>";
+    };
+
+    htmlFunction["recharge-action"] = function (input) {
+        switch (input) {
+            case "true":
+                input = "<a href=\"javascript:\" data-diag-name=\"recharge-detail\" data-diag-type=\"control\" data-diag-src=\"money/recharge/payment-detail.html\" data-diag-data=\"parent\" data-diag-mask=\"true\" data-diag-drag=\"true\" data-diag-title=\"充值详情\">充值详情</a>";
+                break;
+            case "false":
+                input = "<a href=\"javascript:\" data-diag-name=\"recharge-detail\" data-diag-type=\"control\" data-diag-src=\"money/recharge/payment-detail.html\" data-diag-data=\"parent\" data-diag-mask=\"true\" data-diag-drag=\"true\" data-diag-title=\"确认存款到账\">确认到账</a>";
+                break;
+        }
+        return input;
+    };
+
+    htmlFunction["recharge-reward"] = function (input) {
+        var reward = input.toFloat();
+        if (isNaN(reward)) return input;
+        if (input > 0) {
+            return "<span class=\"am-text-success am-text-xs\">(+" + reward.ToString("c") + ")</span>";
+        } else if (input < 0) {
+            return "<span class=\"am-text-danger am-text-xs\">(" + reward.ToString("c") + ")</span>";
+        }
+
+        return "";
+    };
+</script>

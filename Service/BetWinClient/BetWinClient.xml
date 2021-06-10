@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<root gateway="http://a8.to/LotteryResult.ashx" game="">
+  <!-- 11选5 -->
+  <item name="opencai.GD11x5"><![CDATA[http://a.apiplus.net/newly.do?token=ea8d49d9151643a7&code=gd11x5]]></item>
+  <item name="mcai.GD11x5"><![CDATA[http://vip.manycai.com/K259fc623021a54/gd11x5-10.xml]]></item>
+  <item name="opencai.GZ11x5"><![CDATA[http://a.apiplus.net/newly.do?token=ea8d49d9151643a7&code=gz11x5]]></item>
+  <item name="opencai.JS11x5"><![CDATA[http://a.apiplus.net/newly.do?token=ea8d49d9151643a7&code=js11x5]]></item>
+  <item name="mcai.JS11x5"><![CDATA[http://vip.manycai.com/K259fc623021a54/js11x5-10.xml]]></item>
+  <item name="opencai.SD11x5"><![CDATA[http://a.apiplus.net/newly.do?token=ea8d49d9151643a7&code=sd11x5]]></item>
+  <item name="mcai.SD11x5"><![CDATA[http://vip.manycai.com/K259fc623021a54/sd11x5-10.xml]]></item>
+  <item name="opencai.SX11x5"><![CDATA[http://a.apiplus.net/newly.do?token=ea8d49d9151643a7&code=sxr11x5]]></item>  
+  <!-- 快三 -->
+  <item name="opencai.AHK3"><![CDATA[http://a.apiplus.net/newly.do?token=ea8d49d9151643a7&code=ahk3]]></item>
+  <item name="mcai.AHK3"><![CDATA[http://vip.manycai.com/K259fc623021a54/ahk3-10.xml]]></item>
+  <item name="opencai.GXK3"><![CDATA[http://a.apiplus.net/newly.do?token=ea8d49d9151643a7&code=gxk3]]></item>
+  <item name="opencai.GZK3"><![CDATA[http://a.apiplus.net/newly.do?token=ea8d49d9151643a7&code=gzk3]]></item>
+  <item name="opencai.HEBEIK3"><![CDATA[http://a.apiplus.net/newly.do?token=ea8d49d9151643a7&code=hebk3]]></item>
+  <item name="opencai.HBK3"><![CDATA[http://a.apiplus.net/newly.do?token=ea8d49d9151643a7&code=hubk3]]></item>
+  <item name="mcai.HBK3"><![CDATA[http://vip.manycai.com/K259fc623021a54/hbk3-10.xml]]></item>
+  <item name="opencai.JSK3"><![CDATA[http://a.apiplus.net/newly.do?token=ea8d49d9151643a7&code=jsk3]]></item>
+  <item name="mcai.JSK3"><![CDATA[http://vip.manycai.com/K259fc623021a54/jsks-10.xml]]></item>
+  <item name="opencai.SHK3"><![CDATA[http://a.apiplus.net/newly.do?token=ea8d49d9151643a7&code=shk3]]></item>  
+  <!-- 时时彩 -->
+  <item name="opencai.ChungKing"><![CDATA[http://a.apiplus.net/newly.do?token=ea8d49d9151643a7&code=cqssc]]></item>  
+  <item name="opencai.Tianjin"><![CDATA[http://a.apiplus.net/newly.do?token=ea8d49d9151643a7&code=tjssc]]></item>
+  <item name="mcai.Tianjin"><![CDATA[http://vip.manycai.com/K259fc623021a54/tjssc-10.xml]]></item>
+  <item name="opencai.Sinkiang"><![CDATA[http://a.apiplus.net/newly.do?token=ea8d49d9151643a7&code=xjssc]]></item>
+  <item name="opencai.BJKL8"><![CDATA[http://a.apiplus.net/newly.do?token=ea8d49d9151643a7&code=bjkl8]]></item>
+  <item name="mcai.BJKL8"><![CDATA[http://vip.manycai.com/K259fc623021a54/bjkl8-10.xml]]></item>
+  <item name="mcai.TWBingo"><![CDATA[http://vip.manycai.com/K259fc623021a54/tw300-10.xml]]></item>
+  
+  <item name="opencai.PK10"><![CDATA[http://a.apiplus.net/newly.do?token=ea8d49d9151643a7&code=bjpk10]]></item>
+  <item name="opencai.TWBingo"><![CDATA[http://a.apiplus.net/newly.do?token=ea8d49d9151643a7&code=twbingo]]></item>
+  
+</root>

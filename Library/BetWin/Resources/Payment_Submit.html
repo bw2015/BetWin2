@@ -1,0 +1,36 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+    <title>提交充值</title>
+    <script src="//cdn.bootcss.com/mootools/1.6.0/mootools-core-compat.min.js"></script>
+</head>
+<body>
+    <div id="result">正在提交...</div>
+    <script type="text/javascript">
+        var data = {
+            "PayID": "${ID}",
+            "Money": "${Money}",
+            "BankType": "${BankCode}"
+        };
+        new Request({
+            "url": "/handler/user/money/recharge",
+            "onRequest": function () {
+
+            },
+            "onSuccess": function (result) {
+                document.id("result").set("html", result);
+                (function () {
+                    var form = document.body.getElementsByTagName("form");
+                    console.log(form);
+                    if (form.length > 0) {
+                        form[0].submit();
+                    }
+                }).delay(500);
+            }
+        }).post(data);
+    </script>
+</body>
+</html>

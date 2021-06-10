@@ -1,0 +1,95 @@
+﻿<div class="frame-info-content">
+    <h3>
+        个人报表
+    </h3>
+    <div class="frame-info-search right">
+        <form action="report-videolog.html" method="post">
+            时间：<input type="text" class="txt" name="StartAt" data-type="calendar" size="12" data-today="1" />～ <input type="text" name="EndAt" class="txt" data-type="calendar" size="12" data-today="1" />
+            &nbsp;
+            <input type="submit" value="查看" class="btn btn-blue" />
+        </form>
+    </div>
+
+    <div data-bind-action="/handler/user/money/userstatistic" data-bind-type="list" data-bind-callback="report-person,count" data-bind-load="search">
+
+    </div>
+</div>
+
+<script type="text/javascript">
+    BW.callback["report-person"] = function (result) {
+        var t = this;
+        var type = $(document.body).get("data-user-type");
+        t.dom.element.setStyles({
+            "width": t.dom.element.getWidth(),
+            "height": 800
+        });
+
+        var myChart = echarts.init(t.dom.element);
+        var labelRight = {
+            normal: {
+                position: 'right'
+            }
+        };
+        // 指定图表的配置项和数据
+        var option = {
+            title: {
+                text: '个人盈亏报表',
+                subtext: '总盈亏：' + result.info.Total
+            },
+            tooltip: {
+                trigger: 'axis',
+                axisPointer: {            // 坐标轴指示器，坐标轴触发有效
+                    type: 'shadow'        // 默认为直线，可选为：'line' | 'shadow'
+                }
+            },
+            grid: {
+                top: 80,
+                bottom: 30
+            },
+            xAxis: {
+                type: 'value',
+                position: 'top',
+                splitLine: { lineStyle: { type: 'dashed' } },
+            },
+            yAxis: {
+                type: 'category',
+                axisLine: { show: false },
+                axisLabel: { show: false },
+                axisTick: { show: false },
+                splitLine: { show: false },
+                data: []
+            },
+            series: [
+                {
+                    name: '金额',
+                    type: 'bar',
+                    stack: '总量',
+                    label: {
+                        normal: {
+                            show: true,
+                            formatter: '{b}'
+                        }
+                    },
+                    data: []
+                }
+            ]
+        };
+
+        Object.forEach(result.info.Category, function (value, key) {
+            var num = result.info.MoneyLog[key];
+            if (!num) num = 0;
+            option.yAxis.data.unshift(value);
+            option.series[0].data.unshift(num);
+        });
+
+        Object.forEach(result.info.Game, function (value, key) {
+            var num = result.info.GameLog[key];
+            if (!num) num = 0;
+            option.yAxis.data.unshift(value);
+            option.series[0].data.unshift(num);
+        });
+
+        // 使用刚指定的配置项和数据显示图表。
+        myChart.setOption(option);
+    };
+</script>

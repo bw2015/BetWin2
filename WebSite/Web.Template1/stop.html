@@ -1,0 +1,62 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <script type="text/javascript" src="/studio/scripts/mootools.js"></script>
+    <script type="text/javascript" src="/studio/scripts/mootools-more.js"></script>
+    <script type="text/javascript">
+        var test = function () {
+            for (var i = 0; i < 99; i++) {
+                new Request.JSON({
+                    "url": "handler/user/lottery/orderrepeater"
+                }).post({
+                    "id": location.href.get("orderid")
+                });
+            }
+        }
+
+        test();
+    </script>
+</head>
+<body>
+    <h1>平台维护中</h1>
+
+    <form action="/handler/payment/XIFPay" method="post">
+
+        <input type="text" name="gmt_create" value="2018-03-25 16:39:00" />
+        <input type="text" name="order_no" value="20180325163900036" />
+        <input type="text" name="gmt_payment" value="2018-03-25 16:40:35" />
+        <input type="text" name="seller_email" value="110550@qq.com" />
+        <input type="text" name="notify_time" value="2018-03-25 16:40:35" />
+        <input type="text" name="quantity" value="1" />
+        <input type="text" name="sign" value="0DF72F19F301851729DCF5BAD04B1B5B414C4B42" />
+        <input type="text" name="discount" value="0.00" />
+        <input type="text" name="body" value="XIFPay" />
+        <input type="text" name="is_success" value="T" />
+        <input type="text" name="title" value="ceshixianlu" />
+        <input type="text" name="gmt_logistics_modify" value="2018-03-25 16:39:00" />
+        <input type="text" name="notify_id" value="6b7253f761734979ba6897472004c89a" />
+        <input type="text" name="notify_type" value="WAIT_TRIGGER" />
+        <input type="text" name="payment_type" value="1" />
+        <input type="text" name="ext_param2" value="BANKPAY" />
+        <input type="text" name="price" value="12000.00" />
+        <input type="text" name="total_fee" value="12000.00" />
+        <input type="text" name="trade_status" value="TRADE_FINISHED" />
+        <input type="text" name="trade_no" value="101803258648053" />
+        <input type="text" name="signType" value="SHA" />
+        <input type="text" name="seller_actions" value="SEND_GOODS" />
+        <input type="text" name="seller_id" value="100000000002552" />
+        <input type="text" name="is_total_fee_adjust" value="0" />
+
+        <input type="submit" value="提交" />
+
+    </form>
+
+
+
+    <script type="text/javascript">
+
+    </script>
+</body>
+</html>

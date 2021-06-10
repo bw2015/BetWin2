@@ -1,0 +1,25 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" manifest="mobile.appcache">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>首页</title>
+    <script src="/studio/scripts/mootools.js"></script>
+    <script src="/studio/scripts/mootools-more.js"></script>
+    <script src="/studio/scripts/betwin.js"></script>
+    <link href="styles/common.css" rel="stylesheet" />
+    <script type="text/javascript">
+        BW.callback["index"] = function (result) {
+            var t = this;
+            if (result.success) {
+                location.href = "main.html";
+            } else {
+                location.href = "login.html?r=" + new Date().getTime();
+            }
+        };
+    </script>
+</head>
+<body data-bind-action="/handler/user/info/get" data-bind-type="ajax" data-bind-callback="index">
+    <!-- 判断当前是否登录，如果已经登录则进入页面 -->
+
+</body>
+</html>

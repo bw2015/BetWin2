@@ -1,0 +1,70 @@
+﻿<!-- 玩法列表 -->
+<!-- 一级分类 -->
+<div class="lottery-player-group"></div>
+<!-- 二级、三级分类 -->
+<div class="lottery-player-label">
+    <div class="lottery-player-list"></div>
+    <div class="lottery-player-tip" title="查看帮助">
+    </div>
+</div>
+<!-- 选号区域 -->
+<div class="lottery-player-content">
+    <!-- 选号区 -->
+    <div class="lottery-player-selector">
+        <!-- 选号区 -->
+        <div class="lottery-player-selector-ball" data-dom="container">
+
+        </div>
+        <!-- 单式投注区 -->
+        <div class="lottery-player-selector-single">
+        </div>
+    </div>
+    <!-- 已选号区域 -->
+    <div class="lottery-player-selected">
+        <h3>
+            <strong>投注项目</strong>
+            <a href="javascript:" data-action="clear"><i class="icon icon16 delete"></i>清空</a>
+        </h3>
+        <ul data-dom="selected"></ul>
+        <div class="lottery-player-total">
+            投注总金额：<label class="red" data-dom="total">0.00</label>元
+        </div>
+    </div>
+</div>
+<!-- 提交区域 -->
+<div class="lottery-player-submit">
+    <div class="lottery-player-submit-rebate">
+        <a href="javascript:" class="lottery-player-submit-rebate-switch" data-dom="rebate">
+            <i></i>
+        </a>
+        <span class="text lottery-player-submit-rebate-range">
+            奖金：<label data-field="Rebate"></label>
+            返点：<label data-field="Return"></label>
+            <input type="range" data-dom="rebate-range" step="2" />
+        </span>
+    </div>
+    <span class="lottery-player-submit-split"></span>
+    <div class="lottery-player-submit-mode" data-dom="mode">
+        <a href="javascript:" class="current mode-yuan">元</a>
+        <a href="javascript:" class="mode-yiyuan">一元</a>
+        <a href="javascript:" class="mode-angle">角</a>
+        <a href="javascript:" class="mode-points">分</a>
+        <a href="javascript:" class="mode-thousandth">厘</a>
+    </div>
+    <span class="lottery-player-submit-split"></span>
+    <div class="lottery-player-submit-times">
+        <input type="number" class="lottery-player-submit-times-input" placeholder="倍数" min="1" data-dom="times" value="1" />
+    </div>
+    <span class="lottery-player-submit-split"></span>
+    <div class="lottery-player-submit-total">
+        <span class="text">共<label data-dom="bet">0</label>注，共<label data-dom="money">0.00</label>元</span>
+        <span class="text" data-dom="reward"></span>
+    </div>
+    <div class="lottery-player-submit-button">
+        <a href="javascript:" class="btn-red" data-dom="quick">快速投注</a>
+        <a href="javascript:" class="btn-gray" data-dom="select">选号</a>
+        <a href="javascript:" class="btn-gray" data-dom="chase">追号</a>
+        <!--<a href="javascript:" class="btn-orange" data-dom="united">发起合买</a>-->
+        <a href="javascript:" class="btn-blue" data-dom="submit">立即投注</a>
+    </div>
+</div>

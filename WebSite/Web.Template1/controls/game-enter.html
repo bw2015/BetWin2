@@ -1,0 +1,88 @@
+﻿
+<form action="game-enter.html" method="post" data-bind-action="/handler/game/gateway/transfer" data-bind-type="ajax" data-bind-callback="form-tip" data-bind-form-tip="">
+    <div data-bind-action="/handler/game/gateway/getinfo" data-bind-type="ajax" data-bind-callback="html,game-entry" data-bind-data="parent">
+        <table class="post">
+            <tr>
+                <th>游戏平台：</th>
+                <td>${Game}</td>
+            </tr>
+            <tr>
+                <th>游戏账户：</th>
+                <td><span class="red ft14" data-name="GameMoney">${Money:money}</span> <a href="javascript:" class="btn btn-blue xs" data-bind-action="/handler/game/gateway/updatemoney" data-bind-type="ajax" data-bind-data="parent" data-bind-event="click" data-bind-stop="true" data-bind-callback="form-tip,game-enter-updatemoney">刷新</a></td>
+            </tr>
+            <tr>
+                <th>当前余额：</th>
+                <td>
+                    <span class="red ft14">${UserMoney:money}</span>
+                </td>
+            </tr>
+            <tr>
+                <th>转入金额：</th>
+                <td>
+                    <input type="text" class="txt" size="6" name="Money" /> 元
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2" class="text-center">
+                    <input type="hidden" name="IN" value="${Type}" />
+                    <input type="submit" value="转入游戏" class="btn btn-red" />
+                    &nbsp;&nbsp;&nbsp;&nbsp;
+                    <input type="button" value="直接进入" class="btn btn-gray" data-dom="entry" />
+                </td>
+            </tr>
+        </table>
+    </div>
+</form>
+
+<script type="text/javascript">
+    BW.callback["game-entry"] = function (result) {
+        var t = this;
+        var diag = t.dom.element.getParent(".diag");
+
+        if (result.success) {
+            var entry = t.dom.element.getElement("[data-dom=entry]");
+            if (entry) {
+                entry.set("data-dom", null);
+                entry.addEvent("click", function () {
+                    window.open("controls/game-entry.html?" + Object.toQueryString(t.options.data), "_blank");
+                });
+            }
+        } else {
+            if (result.info && result.info.Type == "Login") {
+                new BW.Tip(result.msg, {
+                    "callback": function () {
+                        BW.callback["diag-close"].apply(t);
+                    }
+                });
+                return;
+            }
+            new Request.JSON({
+                "url": "/handler/game/gateway/register",
+                "onRequest": function () {
+                    t.dom.element.addClass("loading-ajax");
+                },
+                "onComplete": function () {
+                    t.dom.element.removeClass("loading-diag");
+                },
+                "onSuccess": function (info) {
+                    if (!info.success) {
+                        new BW.Tip(info.msg, {
+                            "callback": function () {
+                                BW.callback["diag-close"].apply(t, [result]);
+                            }
+                        });
+                    } else {
+                        t.fire();
+                    }
+                }
+            }).post(t.options.data);
+        }
+    };
+
+    // 刷新游戏账户余额
+    BW.callback["game-enter-updatemoney"] = function (result) {
+        var t = this;
+        if (!result.success) return;
+        t.dom.element.getParent().getElement("[data-name=GameMoney]").set("html", htmlFunction["money"](result.info.Money));
+    };
+</script>

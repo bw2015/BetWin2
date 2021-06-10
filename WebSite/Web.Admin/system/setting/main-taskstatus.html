@@ -1,0 +1,27 @@
+﻿<div class="page-table">
+    <div class="page-searchbox am-padding-xs am-text-right">
+        <input type="button" value="刷新" class="am-round am-btn am-btn-success am-text-xs" data-event-fire="main-setting-status-list" />
+    </div>
+    <table class="list" data-bind-action="admin/site/taskstatus" data-bind-type="list" data-bind-callback="list" id="main-setting-status-list">
+        <thead>
+            <tr>
+                <th>类型</th>
+                <th>总任务量</th>
+                <th>已执行量</th>
+                <th>执行时间</th>
+                <th>耗时</th>
+                <th>当前进度</th>
+            </tr>
+        </thead>
+        <tbody data-list-element="true">
+            <tr>
+                <td>${Type}</td>
+                <td>${Total}</td>
+                <td>${Count}</td>
+                <td>${StartAt}</td>
+                <td>${Time}秒</td>
+                <td>${Progress:p}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

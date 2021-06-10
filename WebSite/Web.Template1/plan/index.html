@@ -1,0 +1,44 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <link href="../styles/common.css" rel="stylesheet" />
+    <link href="styles/index.css" rel="stylesheet" />
+    <script src="../studio/scripts/mootools.js"></script>
+    <script src="../studio/scripts/mootools-more.js"></script>
+    <script src="../studio/scripts/betwin.js"></script>
+    <script src="scripts/plan.js"></script>
+    <title>全天计划</title>
+</head>
+<body>
+    <div class="top" data-bind-action="../handler/site/info/get" data-bind-type="ajax" data-bind-callback="html,siteinfo">
+        欢迎您访问【${Name}】-全天<span data-dom="gamename"></span>计划网页版 易记网址：<strong data-dom="domain"></strong>
+    </div>
+    <header class="w">
+        <div class="lottery">
+            <img src="../images/space.gif" class="lottery64" id="icon" />
+            <h1 data-dom="gamename"></h1>
+        </div>
+        <div class="result">
+            <h3><span data-dom="openindex"></span>期开奖号码</h3>
+            <div class="number loading" data-dom="opennumber"></div>
+        </div>
+        <div class="next">
+            <h3>距离<span data-dom="nextindex"></span>期开奖剩余</h3>
+            <div class="nexttime">
+                <span class="time minute" data-dom="minute">00</span> 分 <span class="time second" data-dom="second">00</span> 秒
+            </div>
+        </div>
+    </header>
+
+    <menu id="menu" class="w" data-bind-action-delay="../handler/site/info/regionlist" data-bind-type="list" data-bind-callback="regionlist" data-bind-load="regionlist-data">
+        <div class="plan" data-list-element="true">
+            <a href="javascript:" data-id="${ID}" data-time="${TimeStamp}">${Title}</a>
+        </div>
+    </menu>
+    <content class="w" id="content">
+
+    </content>
+    <footer></footer>
+</body>
+</html>

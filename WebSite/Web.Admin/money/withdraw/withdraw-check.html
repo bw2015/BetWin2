@@ -1,0 +1,167 @@
+﻿<div class="page-table" data-bind-action="/admin/money/withdrawinfo" data-bind-type="ajax" data-bind-callback="list,html,enum,withdraw-check" data-bind-data="parent">
+    <form action="/admin/money/withdrawcheck" method="post">
+        <input type="hidden" name="ID" value="${ID}" />
+        <input type="hidden" name="Action" />
+        <table class="post">
+            <tbody>
+                <tr>
+                    <th>提现编号：</th>
+                    <td>
+                        ${ID}
+                    </td>
+                    <th>提交时间：</th>
+                    <td>${CreateAt}</td>
+                </tr>
+                <tr>
+                    <th>提现用户：</th>
+                    <td>
+                        ${UserName}
+                    </td>
+                    <th>当前状态：</th>
+                    <td colspan="3"><label class="am-text-success am-text-xl" data-enum-name="BW.Common.Users.WithdrawOrder+WithdrawStatus">${Status}</label></td>
+                </tr>
+                <tr>
+                    <th>提现金额：</th>
+                    <td colspan="3">
+                        <label class="am-text-danger am-text-xl">${TotalMoney:money} 元</label>
+                        <span class="am-text-xs">
+                            手续费：<label class="am-text-success">${Fee:money}元</label>，实际到账：<label class="am-text-success">${Money:money}元，</label>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <th>提现账号：</th>
+                    <td colspan="3">
+                        <span class="am-alert-default am-round am-padding-xs am-margin-xs">
+                            ${Bank}
+                        </span>
+                        <span class="am-alert-default am-round am-padding-xs am-margin-xs">
+                            ${AccountName}
+                        </span>
+                        <span class="am-alert-default am-round am-padding-xs am-margin-xs">
+                            ${AccountNumber}
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <th>出款接口：</th>
+                    <td>
+                        <select name="WithdrawSettingID" class="txt am-form-field" data-select-value="ID" data-select-text="Name" data-selected="${WithdrawSettingID}" data-bind-action-delay="/admin/site/getwithdrawlist" data-bind-type="ajax" data-bind-data="IsOpen=0" data-bind-callback="select"></select>
+                    </td>
+                    <th>提现来源：</th>
+                    <td>
+                        ${Source}
+                    </td>
+                </tr>
+                <tr>
+                    <th>备注信息：</th>
+                    <td colspan="3">
+                        <input type="text" name="Description" class="txt am-form-field" size="50" value="${Description}" />
+                    </td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td colspan="4" class="am-text-center">
+                        <input type="button" value="拆分订单" data-action="split" class="am-btn am-btn-primary am-round am-margin am-margin-top-0 am-margin-bottom-0" />
+                        <input type="button" value="通过审核" data-action="agree" class="am-btn am-btn-success am-round am-margin am-margin-top-0 am-margin-bottom-0" />
+                        <input type="button" value="拒绝提现" data-action="reject" class="am-btn am-btn-danger am-round am-margin am-margin-top-0 am-margin-bottom-0" />
+                        <input type="button" value="自动核对" data-action="check" class="am-btn am-btn-secondary am-round am-margin am-margin-top-0 am-margin-bottom-0" />
+                        <input type="button" value="银行退单" data-action="return" class="am-btn am-btn-danger am-round am-margin am-margin-top-0 am-margin-bottom-0" />
+                        <input type="button" value="重新提交" data-action="resubmit" class="am-btn am-btn-danger am-round am-margin am-margin-top-0 am-margin-bottom-0" />
+                    </td>
+                </tr>
+            </tfoot>
+        </table>
+    </form>
+    <table class="list">
+        <thead>
+            <tr>
+                <th>处理人</th>
+                <th>处理时间</th>
+                <th>处理状态</th>
+                <th>备注信息</th>
+            </tr>
+        </thead>
+        <tbody data-list-element="true">
+            <tr>
+                <td>${Admin}</td>
+                <td>${CreateAt}</td>
+                <td data-enum-name="BW.Common.Users.WithdrawOrder+WithdrawStatus">${Status}</td>
+                <td>${Description}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<script type="text/javascript">
+    BW.callback["withdraw-check"] = function (result) {
+        var t = this;
+        var tfoot = t.dom.element.getElement("tfoot");
+        var btnReturn = tfoot.getElement("[data-action=return]");
+        var btnResubmit = tfoot.getElement("[data-action=resubmit]");
+        switch (result.info.Status) {
+            case "None":
+                [btnReturn, btnResubmit].dispose();
+                break;
+            case "Finish":
+                tfoot.getElements("[data-action]").filter(function (item) { return item.get("data-action") != "return"; }).dispose();
+                btnReturn.fade("hide");
+                tfoot.addEvent("dblclick", function () {
+                    btnReturn.fade("in");
+                    tfoot.removeEvents("dblclick");
+                });
+                break;
+            case "Return":
+                tfoot.getElements("[data-action]").filter(function (item) { return item.get("data-action") != "resubmit"; }).dispose();
+                break;
+            default:
+                tfoot.dispose();
+                t.dom.element.getElements("input,select").set("disabled", true);
+                return;
+                break;
+        }
+
+        var form = t.dom.element.getElement("form");
+        var diag = form.getParent(".diag[data-name]");
+        form.set("send", {
+            "onRequest": function () {
+                form.addClass("loading-form");
+            },
+            "onComplete": function () {
+                form.removeClass("loading-form");
+            },
+            "onFailure": function (xhr) {
+                new BW.Tip(xhr.response);
+            },
+            "onSuccess": function (json) {
+                json = JSON.decode(json);
+                new BW.Tip(json.msg, {
+                    "callback": function () {
+                        if (json.success) {
+                            BW.Bind($("money-withdraw-list")).fire();
+                            BW.callback["diag-close"].apply(t, [result]);
+                        }
+                    }
+                });
+            }
+        });
+
+        tfoot.getElements("[data-action]").addEvent("click", function () {
+            var obj = this;
+            var action = obj.get("data-action");
+            var callback = function () {
+                form.getElement("[name=Action]").set("value", obj.get("data-action"));
+                form.send();
+            };
+            if (action == "check") {
+                callback();
+            } else {
+                new BW.Tip("您确认要对该笔提现进行“" + obj.get("value") + "”操作吗？", {
+                    "type": "confirm",
+                    "callback": callback
+                });
+            }
+        });
+    }
+</script>

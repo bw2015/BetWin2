@@ -1,0 +1,41 @@
+﻿<div class="page-header">
+    <h1>微信机器人设置</h1>
+    <h6>机器人的指令系统将不检测正确性，请确保指令正确</h6>
+    <div class="page-action">
+        <a href="javascript:" class="am-btn am-btn-success am-round" data-diag-name="wechat-rebot-info" data-diag-type="control" data-diag-src="wxsetting/rebot-info.html" data-diag-height="520" data-diag-mask="true" data-diag-title="添加微信机器人">添加微信机器人</a>
+    </div>
+    <div class="page-searchbox">
+        <form action="rebot.html">
+            机器人类型：<select class="txt" name="Type" data-enum-name="BW.Common.Users.ChatTalk+GroupType" data-enum-none="所有类型"></select>
+            用户名：<input type="text" name="User" class="txt" />
+            <input type="submit" value="搜索" class="am-btn am-btn-success am-round am-text-xs" />
+        </form>
+    </div>
+</div>
+
+
+<div class="page-table">
+    <table class="list" data-bind-action="admin/wechat/getrebotlist" data-bind-type="list" data-bind-callback="list,pagesplit" data-bind-load="search,pagesplit" id="wechat-rebot-list">
+        <thead>
+            <tr>
+                <th>类型</th>
+                <th>用户名</th>
+                <th>当前余额</th>
+                <th>状态</th>
+                <th>操作</th>
+            </tr>
+        </thead>
+        <tbody data-list-element="true">
+            <tr data-bind-delete="true">
+                <td>${Type}</td>
+                <td><a href="javascript:" class="diag-user" data-userid="${UserID}">${UserName}</a></td>
+                <td>${Money:money}</td>
+                <td>${IsOpen:switch}</td>
+                <td>
+                    <a href="javascript:" data-diag-name="wechat-rebot-info" data-diag-type="control" data-diag-src="wxsetting/rebot-info.html" data-diag-height="520" data-diag-mask="true" data-diag-title="修改机器人信息" data-diag-data="ID=${ID}">修改</a>
+                    <a href="javascript:" data-bind-action="admin/wechat/deleterebot" data-bind-type="ajax" data-bind-callback="delete" data-bind-data="ID=${ID}" data-bind-stop="true" data-bind-event="confirm">删除</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

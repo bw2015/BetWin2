@@ -1,0 +1,47 @@
+﻿<div class="page-header">
+    <h1>系统设置</h1>
+    <div class="page-action">
+        <input type="button" value="新建关键词" class="am-btn am-btn-success am-round" />
+    </div>
+</div>
+
+<div class="page-table">
+    <form action="setting.html" method="post" enctype="multipart/form-data" data-bind-action="admin/im/saverebot" data-bind-type="ajax" data-bind-callback="form-tip" data-bind-form-tip="success-fire" data-bind-fire-target="service-setting-info">
+        <table class=" post" id="service-setting-info" data-bind-action="admin/im/rebotinfo" data-bind-type="ajax" data-bind-callback="form-fill">
+            <tr>
+                <th>开启客服合并：</th>
+                <td>
+                    <input type="checkbox" name="IsOpen" data-type="switch" value="1" />
+                </td>
+            </tr>
+            <tr>
+                <th>客服昵称：</th>
+                <td>
+                    <input type="text" name="Name" class="txt am-form-field" />
+                </td>
+            </tr>
+            <tr>
+                <th>客服签名：</th>
+                <td>
+                    <input type="text" name="Sign" class="txt am-form-field" size="50" />
+                </td>
+            </tr>
+            <tr>
+                <th>客服头像：</th>
+                <td>
+                    <img src="/images/space.gif" data-name="FaceShow" class="am-img-thumbnail am-round" style="height:64px;" data-upload="true" />
+                    <p class="am-padding-top-xs">
+                        <input type="file" name="face" class="txt am-form-field" />
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <th></th>
+                <td>
+                    <input type="submit" value=" 保存 " class="am-btn am-btn-success" />
+                </td>
+            </tr>
+        </table>
+    </form>
+</div>
+

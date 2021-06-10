@@ -1,0 +1,63 @@
+﻿<!-- 盈亏报表 -->
+<div class="userinfo-frame  userinfo-moneylog" data-bind-search="true">
+    <div class="page-searchbox">
+        <form action="userinfo-report.html" method="post">
+            时间段：
+            <input type="date" class="txt" name="StartAt" placeholder="开始时间" />
+            <input type="date" class="txt" name="EndAt" placeholder="结束时间" />
+            <input type="submit" value=" 搜索 " class="am-btn am-btn-success am-round am-text-xs" />
+            <input type="reset" value="重置" class="am-btn am-btn-default am-round am-text-xs" />
+        </form>
+    </div>
+    <div class="page-table">
+        <table class="list" data-bind-action="/admin/report/userpayment" data-bind-type="list" data-bind-callback="list,userinfo-userpayment,count" data-bind-load="search" data-bind-data="parent">
+            <thead>
+                <tr>
+                    <th>日期</th>
+                    <th>投注</th>
+                    <th>派奖</th>
+                    <th>返点</th>
+                    <th>佣金</th>
+                    <th>活动</th>
+                    <th>日工资</th>
+                    <th>分红</th>
+                    <th>盈亏</th>
+                </tr>
+            </thead>
+            <tbody data-list-element="true">
+                <tr>
+                    <td>${Date}</td>
+                    <td>${Data.Bet:money}</td>
+                    <td>${Data.Reward:money}</td>
+                    <td>${Data.Return:money}</td>
+                    <td>${Data.Agent:money}</td>
+                    <td>${Data.Activity:money}</td>
+                    <td>${Data.Wages:money}</td>
+                    <td>${Data.Bonus:money}</td>
+                    <td>${Money:money-show}</td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td>统计：</td>
+                    <td colspan="7"></td>
+                    <td>${data.Money:money-show}</td>
+                </tr>
+            </tfoot>
+        </table>
+    </div>
+</div>
+
+<script type="text/javascript">
+    BW.callback["userinfo-userpayment"] = function (result) {
+        var t = this;
+        t.dom.element.getElements("tbody td").each(function (item) {
+            if (item.get("text").contains("$")) {
+                item.set({
+                    "class": "am-text-default",
+                    "text": "0.00"
+                });
+            }
+        });
+    };
+</script>

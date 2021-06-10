@@ -1,0 +1,33 @@
+﻿@keyframes header {
+    0% { background-position: 0px 0px; }
+    100% { background-position: -800px -800px; }
+}
+
+body { background: #efefef; }
+a { color: #A87549; }
+em { font-style: normal; color: #999; font-family: Verdana; }
+    em.number { color: #AA0000; }
+    em.index { color: #000; }
+    em.num,
+    em.distributed { line-height: 16px; display: inline-block; min-width: 16px; border-radius: 50%; background-color: #A00; color: white; z-index: 1; position: relative; }
+        em.distributed.num-1 { background-color: blue; }
+        em.distributed.num-2 { background-color: green; }
+        em.distributed.num-3 { background-color: black; }
+        em.distributed.num-4 { background-color: pink; }
+        em.distributed.num-5 { background-color: red; }
+
+.container { width: 1280px; margin: 10px auto; background: white; border: 1px #ddd solid; border-radius: 3px; }
+header { height: 80px; background: url(../images/background.jpg); background-size: cover; animation: header 60s ease infinite normal; }
+    header .lottery64 { float: left; margin: 8px; }
+
+menu { border-top: 4px #e67e22 solid; border-bottom: 1px solid #ddd; height: 32px; line-height: 32px; box-shadow: 1px 0px 2px #ccc; }
+    menu .right { float: right; margin-right: 12px; }
+        menu .right a { margin: auto 5px; }
+
+section { margin: 5px; position: relative; }
+    section table { width: 100%; border-spacing: 0px; border-collapse: collapse; }
+        section table thead th { border: solid 1px #c0392b; background-color: #e74c3c; color: white; font-weight: normal; padding: 4px 2px; }
+        section table tbody td { border: solid 1px #eee; background-color: #fff; text-align: center; padding: 4px 0px; }
+            section table tbody td:nth-child(10n+2) { border-right-color: #c0392b; }
+            section table tbody td.odd .num { background-color: #d6bd9a; }
+    section canvas { position: absolute; }

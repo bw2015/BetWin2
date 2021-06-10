@@ -1,0 +1,34 @@
+﻿<div class="page-table" data-bind-action="admin/game/setting" data-bind-type="ajax" data-bind-callback="form-fill,load-setting-delete" data-bind-data="parent">
+    <form action="admin/game/savesetting" data-bind-action="admin/game/savesetting" data-bind-type="ajax" data-bind-callback="form-tip,fire" data-bind-form-tip="diag-close" data-bind-fire-target="game-setting-list">
+        <table class="post">
+            <tr>
+                <th>启用：</th>
+                <td><input type="checkbox" name="IsOpen" class="txt" data-type="switch" /> </td>
+            </tr>
+            <tr>
+                <th>自动注册：</th>
+                <td><input type="checkbox" name="IsRegister" class="txt" data-type="switch" /> </td>
+            </tr>
+            <tr data-loadsetting="true">
+                <th>提现流水：</th>
+                <td>
+                    <input type="text" name="Turnover" class="txt am-form-field" size="6" /> 倍
+                    <span class="desc">提现需要的流水倍数，如果为0则转出没有流水要求</span>
+                </td>
+            </tr>
+            <tr>
+                <th>接口参数：</th>
+                <td>
+                    <textarea class="txt am-form-field" name="SettingString" rows="3" cols="30"></textarea>
+                </td>
+            </tr>
+            <tr>
+                <th></th>
+                <td>
+                    <input type="hidden" name="Type" />
+                    <input type="submit" value="保存" class="am-btn am-btn-success am-round" />
+                </td>
+            </tr>
+        </table>
+    </form>
+</div>

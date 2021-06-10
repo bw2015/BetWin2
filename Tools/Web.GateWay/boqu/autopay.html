@@ -1,0 +1,117 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <script src="../scripts/mootools.js"></script>
+    <script src="../scripts/mootools-more.js"></script>
+    <style type="text/css">
+        body { margin: auto; padding: 0px; font-size: 12px; overflow: hidden; text-align: center; }
+        .money { font-size: 12px; font-weight: bold; color: red; }
+        #none { display: none; line-height: 42px; font-size: 16px; font-weight: bold; color: red; }
+        .none #pay { display: none; }
+        .none #none { display: block; }
+    </style>
+    <script type="text/javascript">
+        function showError(msg) {
+            $("none").set("html", msg);
+            document.body.addClass("none");
+        }
+
+        function query(orderid, payid, count) {
+            if (!count) count = 0;
+            new Request.JSON({
+                "url": "autopay.ashx?ac=query",
+                "onComplete": function () {
+                    query.delay(3000, this, [orderid, payid, count + 1]);
+                },
+                "onSuccess": function (result) {
+                    showError("第" + count + "次查询,当前订单状态：" + result.msg);
+                }
+            }).post({
+                "orderid": orderid,
+                "payid": payid
+            })
+        }
+
+        window.addEvent("domready", function () {
+            var pay = $("pay");
+            var info = new Object();
+            info["orderid"] = location.href.get("orderid");
+            info["info"] = decodeURI(location.href.get("info"));
+            info["money"] = location.href.get("money");
+            if (!info["orderid"]) {
+                showError("没有获取到出款订单，请重试");
+                return;
+            }
+
+            $$("[data-name]").each(function (item) {
+                item.set("text", info[item.get("data-name")]);
+            });
+
+            $("submit").addEvent("click", function (e) {
+                info["payid"] = $("payid").get("value");
+                var submit = this;
+                var msg = info["info"] + "\n" + "出款金额：" + info["money"] + "元\n\r" + "请确认信息无误！";
+                if (!confirm(msg)) return;
+
+                new Request.JSON({
+                    "url": "autopay.ashx",
+                    "onRequest": function () {
+                        submit.set({
+                            "value": "正在出款...",
+                            "disabled": true
+                        });
+                    },
+                    "onSuccess": function (result) {
+                        if (!result.success) {
+                            showError(result.msg);
+                        } else {
+                            showError("出款成功，开始查询状态");
+                            query(info["orderid"], info["payid"]);
+                        }
+                    }
+                }).post(info);
+            });
+
+            $("query").addEvent("click", function (e) {
+                var payId = $("payid").get("value");
+                var obj = this;
+                new Request.JSON({
+                    "url": "autopay.ashx?ac=query",
+                    "onRequest": function () {
+                        obj.set({
+                            "disabled": true,
+                            "value": "正在查询"
+                        });
+                    },
+                    "onComplete": function () {
+                        obj.set({
+                            "disabled": false,
+                            "value": "查询状态"
+                        });
+                    },
+                    "onSuccess": function (result) {
+                        alert("当前订单状态：" + result.msg);
+                    }
+                }).post({
+                    "orderid": info["orderid"],
+                    "payid": payId
+                });
+            });
+        });
+    </script>
+</head>
+<body>
+    <div id="pay">
+        <p><span data-name="info"></span> 出款金额：<span data-name="money" class="money">100.00</span>元</p>
+        <p>
+            订单编号：<span data-name="orderid"></span>
+            出款接口：<select class="txt" id="payid"><option value="12481996">出款接口（微信）</option><option value="17118371">出款接口（网银）</option></select>
+            <input type="button" value="查询状态" class="query" id="query" />
+            <input type="submit" value="确认出款" class="submit" id="submit" />
+        </p>
+    </div>
+    <div id="none"></div>
+</body>
+</html>

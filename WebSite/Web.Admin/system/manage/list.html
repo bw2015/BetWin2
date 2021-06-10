@@ -1,0 +1,42 @@
+﻿<div class="page-header">
+    <h1>管理员列表</h1>
+    <div class="page-action">
+        <a href="javascript:" class="am-btn am-btn-danger" data-diag-name="admin-info" data-diag-type="control" data-diag-src="system/manage/admin-info.html" data-diag-mask="true" data-diag-title="新增管理员" data-diag-drag="true"><i class="am-icon-plus"></i> 新增管理员</a>
+    </div>
+</div>
+<div class="page-table">
+    <table class="list" id="system-admin-list" data-bind-action="admin/account/adminlist" data-bind-type="list" data-bind-callback="list">
+        <thead>
+            <tr>
+                <th class="w100">ID</th>
+                <th class="w150">用户名</th>
+                <th>谷歌验证</th>
+                <th>角色</th>
+                <th>创建时间</th>
+                <th>登录IP</th>
+                <th>登录时间</th>
+                <th>当前状态</th>
+                <th>操作</th>
+            </tr>
+        </thead>
+        <tbody data-list-element="true">
+            <tr data-bind-delete="true">
+                <td>${ID}</td>
+                <td>${AdminName}（${Name}）</td>
+                <td>
+                    ${IsCode:open}<br />
+                    <a href="javascript:" class="am-btn am-btn-danger am-round am-text-xs" data-bind-action="admin/account/cleanadminsecret" data-bind-type="ajax" data-bind-callback="form-tip" data-bind-event="confirm" data-bind-stop="true" data-bind-data="id=${ID}">关闭</a>
+                </td>
+                <td><span class="am-badge am-badge-warning am-padding-xs am-radius ">${Group}</span></td>
+                <td>${CreateAt}</td>
+                <td>${LoginIP} <p>(${IPAddress})</p></td>
+                <td>${LoginAt}</td>
+                <td>${Status}</td>
+                <td>
+                    <a href="javascript:" data-diag-name="admin-info" data-diag-type="control" data-diag-src="system/manage/admin-info.html" data-diag-mask="true" data-diag-title="修改资料" data-diag-drag="true" data-diag-data="id=${ID}">修改</a>
+                    <a href="javascript:" data-bind-action="admin/account/deleteadmin" data-bind-type="ajax" data-bind-callback="delete" data-bind-event="click" data-bind-stop="true" data-bind-data="id=${ID}">删除</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

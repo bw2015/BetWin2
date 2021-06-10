@@ -1,0 +1,80 @@
+﻿<div class="page-header">
+    <h1>契约转账管理</h1>
+    <div class="page-searchbox">
+        <form action="contractlog.html" method="post">
+            编号：<input type="text" name="ID" class="txt" size="8" />
+            上级：<input type="text" name="User1" class="txt" size="8" />
+            下级：<input type="text" name="User2" class="txt" size="8" />
+            时间：<input type="date" name="StartAt" class="txt" size="8" />～<input type="date" name="EndAt" class="txt" size="8" />
+            类型：<select name="Type" class="txt" data-enum-name="BW.Common.Users.Contract+ContractType" data-enum-none="全部"></select>
+            状态：<select name="Status" class="txt" data-enum-name="BW.Common.Users.ContractLog+TransferStatus" data-enum-none="全部"></select>
+            <input type="submit" value="搜索" class="am-btn am-btn-success am-round" />
+        </form>
+    </div>
+</div>
+<div class="page-table">
+    <table class="list" data-bind-action="admin/user/getcontractloglist" data-bind-type="list" data-bind-callback="list,user-contractlist" data-bind-load="search,pagesplit">
+        <thead>
+            <tr>
+                <th>编号</th>
+                <th>类型</th>
+                <th>上级</th>
+                <th>下级</th>
+                <th>时间</th>
+                <th>金额</th>
+                <th>状态</th>
+                <th>备注</th>
+                <th>操作</th>
+            </tr>
+        </thead>
+        <tbody data-list-element="true">
+            <tr>
+                <td>${ID}</td>
+                <td>${Type}</td>
+                <td><a href="javascript:" data-userid="${User1}" class="diag-user">${UserName1}</a></td>
+                <td><a href="javascript:" data-userid="${User2}" class="diag-user">${UserName2}</a></td>
+                <td>${CreateAt}</td>
+                <td>${Money:money}</td>
+                <td>${Status}</td>
+                <td>${Description}</td>
+                <td data-id="${ID}" data-status="${Status}"></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<script type="text/javascript">
+    BW.callback["user-contractlist"] = function (result) {
+        var t = this;
+        t.dom.element.getElements("[data-status]").each(function (item) {
+            console.log(item.get("data-status"));
+            if (item.get("data-status") != "待支付") return;
+            var id = item.get("data-id");
+            new Element("a", {
+                "href": "javascript:",
+                "text": "支付",
+                "events": {
+                    "click": function () {
+                        new Request.JSON({
+                            "url": "admin/user/paymentcontractlog",
+                            "onRequest": function () {
+                                item.fade("hide");
+                            },
+                            "onComplete": function () {
+                                item.fade("in");
+                            },
+                            "onSuccess": function (paymentResult) {
+                                new BW.Tip(paymentResult.msg, {
+                                    "callback": function () {
+                                        if (paymentResult.success) t.fire();
+                                    }
+                                });
+                            }
+                        }).post({
+                            "ID": id
+                        });
+                    }
+                }
+            }).inject(item);
+        });
+    };
+</script>

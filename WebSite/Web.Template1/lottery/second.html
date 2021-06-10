@@ -1,0 +1,41 @@
+﻿<div class="lottery-player lottery-player-x5" data-bind-action="/handler/user/lottery/player" data-bind-type="ajax" data-bind-callback="lottery-player,lottery-buildindex" data-bind-data="parent" data-game="X5">
+    <!-- 开奖记录 -->
+    <div class="lottery-player-body1 lottery-second">
+        <div class="lottery-player-info1">
+            <h3 class="lottery-game-name"></h3>
+            <h5>
+                <span class="tit">即投即开 趣味无穷</span>
+            </h5>
+        </div>
+        <div class="lottery-player-info2" data-resulttime="OpenNumber">
+            <div class="tit">
+                <span class="name text lottery-game-name"></span>
+                <a href="javascript:" class="icon24 sound"></a>
+                <a href="javascript:" class="icon24 chart">走势图</a>
+            </div>
+            <div class="lottery-number lottery-number-x5">
+                <ul>
+                    <li class="index0"></li>
+                    <li class="index1"></li>
+                    <li class="index2"></li>
+                    <li class="index3"></li>
+                    <li class="index4"></li>
+                </ul>
+            </div>
+        </div>
+        <!-- 彩票信息 -->
+        <div class="lottery-player-info3" data-bind-action-delay="controls/lottery-info.html" data-bind-type="control" data-bind-callback="lottery-player-info">
+
+        </div>
+    </div>
+
+    <!-- 玩法列表 -->
+    <div class="lottery-player-body2" data-bind-action-delay="lottery/bet-player.html" data-bind-type="control" data-bind-callback="lottery-bet-player">
+    </div>
+    <!-- 投注记录 -->
+    <div class="lottery-player-body3 frame-info" data-bind-action-delay="lottery/bet-log.html" data-bind-type="control" data-bind-callback="lottery-bet-log">
+    </div>
+
+    <div class="lottery-player-bottom">
+    </div>
+</div>

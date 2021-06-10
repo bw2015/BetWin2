@@ -1,0 +1,384 @@
+﻿
+<div class="lottery-chase frame-info" style="padding:0px;">
+    <div class="lineHeight"></div>
+    <div class="bw-tab bw-tab-3 bw-tab-blue" style="width:400px;">
+        <a href="javascript:" data-tab-link="bet-chase-type" data-tab-current="current">同倍追号</a>
+        <a href="javascript:" data-tab-link="bet-chase-type">倍数追号</a>
+        <a href="javascript:" data-tab-link="bet-chase-type">利润率追号</a>
+    </div>
+    <div class="lineHeight"></div>
+    <div class="lottery-chase-tool frame-info-search text-center">
+        <p data-tab-target="bet-chase-type">
+            追号期数：
+            <select class="txt" data-dom="chaseindex-count"></select>
+            &nbsp;&nbsp;
+            倍数：
+            <input type="text" data-dom="chaseindex-times" class="txt" size="4" value="1" />
+            &nbsp;&nbsp;
+            <input type="submit" value="生成计划" class="btn btn-blue" data-dom="chaseindex-build" />
+        </p>
+        <p data-tab-target="bet-chase-type">
+            追号期数：
+            <select class="txt" data-dom="chasemultiple-count"></select>
+            &nbsp;&nbsp;
+            起始倍数：
+            <input type="text" data-dom="chasemultiple-start" class="txt" size="4" value="1" />
+            &nbsp;&nbsp;
+            每隔
+            <input type="text" data-dom="chasemultiple-skip" class="txt" size="4" value="1" />
+            期 倍数x <input type="text" data-dom="chasemultiple-times" class="txt" size="4" value="2" />
+            &nbsp;&nbsp;
+            <input type="submit" value="生成计划" class="btn btn-blue" data-dom="chasemultiple-build" />
+        </p>
+        <p data-tab-target="bet-chase-type">
+            追号期数：
+            <select class="txt" data-dom="chaseprofit-count"></select>
+            &nbsp;&nbsp;
+            起始倍数：
+            <input type="text" data-dom="chaseprofit-times" class="txt" size="4" value="1" />
+            &nbsp;&nbsp;
+            利润率：<input type="text" class="txt" style="width:50px;" data-dom="chaseprofit-percent" value="10" /> %
+            &nbsp;&nbsp;
+            <input type="submit" value="生成追号" class="btn btn-blue" data-dom="chaseprofit-build" />
+        </p>
+    </div>
+    <div class="lottery-chase-list" style="height:310px; overflow:auto;">
+        <table class="list" data-bind-action-delay="/handler/game/lottery/numberindex" data-bind-type="list" data-bind-callback="list,game-lottery-chase-list" data-bind-data="parent">
+            <thead>
+                <tr>
+                    <th>序号</th>
+                    <th>期号</th>
+                    <th>倍数</th>
+                    <th>金额</th>
+                </tr>
+            </thead>
+            <tbody data-list-element="true">
+                <tr data-index="${Index}">
+                    <td>
+                        ${ID}
+                    </td>
+                    <td>
+                        <label for="${Index}"><input type="checkbox" name="Index" id="${Index}" /> ${Index}</label>
+                    </td>
+                    <td>
+                        <input type="text" class="txt center ft14" name="Times" size="8" maxlength="3" disabled />
+                    </td>
+                    <td>
+                        <span class="red ft14">0.00</span> 元
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="lineHeight"></div>
+    <table class="post">
+        <tr>
+            <th>追号期数/总金额：</th>
+            <td>
+                <span class="ft14 blue bold" data-dom="totalindex">0</span> 期
+                /
+                <span class="ft14 red bold" data-dom="totalmoney">0.00</span> 元
+                <label for="lottery-bet-chase-stopreward" class="ft14" style="float:right;">
+                    <input type="checkbox" id="lottery-bet-chase-stopreward" name="StopReward" data-type="switch" checked="checked" data-dom="stop" />
+                    中奖后停止
+                </label>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2" class="center">
+                <input type="button" value="确认追号" class="btn btn-red" data-dom="submit" />
+                &nbsp;&nbsp;
+                <input type="button" value="取消追号" class="btn btn-while" data-dom="cancel" />
+            </td>
+        </tr>
+    </table>
+</div>
+
+<script type="text/javascript">
+
+    BW.callback["game-lottery-chase"] = function (html) {
+        var t = this;
+        var tbody = t.dom.element.getElement(".list tbody");
+
+        var data = t.dom.element.retrieve("data");
+        if (data == null || data.length == 0) {
+            new BW.Tip("没有选择追号内容", {
+                "callback": function () {
+                    BW.callback["diag-close"].apply(t);
+                }
+            });
+            return;
+        }
+    };
+
+
+    BW.callback["game-lottery-chase-list"] = function (result) {
+        var t = this;
+        var max = 999;
+        var content = t.dom.element.getParent(".diag-content");
+        var data = content.retrieve("data");
+        var dom = new Object();
+        content.getElements("[data-dom]").each(function (item) {
+            dom[item.get("data-dom")] = item;
+        });
+
+        var list = t.dom.element.getElements("tbody tr");
+
+        var itemMoney = 0;
+        var itemReward = 0;
+        data.each(function (item) {
+            itemMoney += item.money;
+            itemReward += item.reward;
+        });
+
+        // 获取金额
+        var getMoney = function (tr, options) {
+            var obj = tr.getElement("[type=checkbox]");
+            var times = tr.getElement("input[name=Times]");
+            if (options) {
+                if (!obj.get("checked") && !options.checked) return;
+                obj.set("checked", options.checked);
+                times.set("value", options.times);
+
+                getMoney(tr);
+                return;
+            }
+            var money = tr.getElement(".red");
+            var timesValue = 0;
+            if (!obj.get("checked")) {
+                times.set({
+                    "value": "",
+                    "disabled": true
+                });
+            } else {
+                times.set("disabled", false);
+                timesValue = times.get("value").toInt();
+                if (isNaN(timesValue) || timesValue < 1) {
+                    timesValue = 1;
+                } else if (timesValue > 999) {
+                    timesValue = 999;
+                }
+                times.set("value", timesValue);
+            }
+            money.set("text", timesValue * itemMoney);
+
+            if (options == undefined) getTotal();
+        };
+
+        // 获取统计
+        var getTotal = function () {
+            var totalindex = 0;
+            var totalmoney = 0;
+            var list = t.dom.element.getElements("tbody tr input::checked")
+            totalindex = list.length;
+            list.each(function (item) {
+                var tr = item.getParent("tr");
+                totalmoney += tr.getElement(".red").get("text").toFloat();
+            });
+            dom["totalindex"].set("text", totalindex);
+            dom["totalmoney"].set("text", totalmoney.ToString("c"));
+        };
+
+        t.dom.element.getElements("input[type=checkbox]").addEvent("click", function (e) {
+            var obj = this;
+            var tr = obj.getParent("tr[data-index]");
+            getMoney.apply(t, [tr]);
+        });
+
+        t.dom.element.getElements("input[name=Times]").addEvents({
+            "focus": function () {
+                this.select();
+            },
+            "blur": function (e) {
+                var tr = this.getParent("tr");
+                getMoney(tr);
+            }
+        });
+
+
+        // 生成期号
+        for (var i = 1; i <= list.length ; i++) {
+            ["chaseindex-count", "chaseprofit-count", "chasemultiple-count"].each(function (item) {
+                new Element("option", {
+                    "text": i,
+                    "value": i
+                }).inject(dom[item]);
+            });
+        }
+
+        // 倍数输入
+        ["chaseindex-times", "chaseprofit-times", "chasemultiple-skip", "chasemultiple-times", "chasemultiple-start"].each(function (item) {
+            dom[item].addEvent("blur", function () {
+                var value = this.get("value").toInt();
+                if (isNaN(value) || value < 1) {
+                    this.set("value", 1);
+                } else if (value > max) {
+                    this.set("value", max);
+                }
+            });
+        });
+
+        // 同倍追号
+        dom["chaseindex-build"].addEvent("click", function () {
+            var count = dom["chaseindex-count"].get("value").toInt();
+            var times = dom["chaseindex-times"].get("value").toInt();
+            if (isNaN(times) || times < 1) {
+                times = 1;
+            }
+            list.each(function (tr, index) {
+                if (index < count) {
+                    getMoney(tr, {
+                        "checked": true,
+                        "times": times
+                    });
+                } else {
+                    getMoney(tr, {
+                        "checked": false,
+                        "times": 0
+                    });
+                }
+            });
+            getTotal();
+        });
+
+        // 翻倍追号
+        dom["chasemultiple-build"].addEvent("click", function () {
+            var start = dom["chasemultiple-start"].get("value").toFloat();
+            var count = dom["chasemultiple-count"].get("value").toInt();
+            var skip = dom["chasemultiple-skip"].get("value").toInt();
+            var times = dom["chasemultiple-times"].get("value").toInt();
+            var maxtip = false;
+            list.each(function (tr, index) {
+                if (index < count) {
+                    var itemTimes = start * Math.pow(times, index / skip);
+                    if (itemTimes > max) {
+                        itemTimes = max;
+                        maxtip = true;
+                    }
+                    getMoney(tr, {
+                        "checked": true,
+                        "times": itemTimes
+                    });
+                } else {
+                    getMoney(tr, {
+                        "checked": false,
+                        "times": 0
+                    });
+                }
+
+            });
+            getTotal();
+
+            if (maxtip) {
+                new BW.Tip("倍数超过了最大倍数限制，系统将自动调整为最大可设置倍数。");
+            }
+        });
+
+
+        // 利润率追号
+        dom["chaseprofit-percent"].addEvent("blur", function () {
+            var value = this.get("value").toFloat();
+            if (isNaN(value) || value < 1) {
+                this.set("value", 1);
+            } else if (value > 1000) {
+                this.set("value", 1000);
+            }
+        });
+
+        dom["chaseprofit-build"].addEvent("click", function () {
+            var value = dom["chaseprofit-percent"].get("value").toFloat() / 100;
+            var count = dom["chaseprofit-count"].get("value").toInt();
+            var times = dom["chaseprofit-times"].get("value").toInt();
+
+            if ((itemReward - itemMoney) / itemMoney < value) {
+                new BW.Tip("您设置的盈利金额追号参数过高<br />无法达到您预期的目标值，请您重新修改参数设置。");
+                return;
+            }
+
+            var totalMoney = 0;
+            var maxtip = false;
+            list.each(function (tr, index) {
+                if (index == 0) {
+                    getMoney(tr, {
+                        "checked": true,
+                        "times": times
+                    });
+                    totalMoney += itemMoney * times;
+
+                } else if (index < count) {
+                    times = Math.floor((value * totalMoney) / (itemReward - itemMoney * value)) + 1;
+                    if (times > max) {
+                        times = max;
+                        maxtip = true;
+                    }
+                    getMoney(tr, {
+                        "checked": true,
+                        "times": times
+                    });
+                    totalMoney += itemMoney * times;
+                } else {
+                    getMoney(tr, {
+                        "checked": false,
+                        "times": 0
+                    });
+                }
+
+            });
+            getTotal();
+
+            if (maxtip) {
+                new BW.Tip("倍数超过了最大倍数限制，系统将自动调整为最大可设置倍数。");
+            }
+        });
+
+        // 退出
+        dom["cancel"].addEvent("click", function () {
+            BW.callback["diag-close"].apply(t);
+        });
+
+        // 提交追号
+        dom["submit"].addEvent("click", function () {
+            var chase = new Array();
+            list.each(function (tr) {
+                var checked = tr.getElement("input::checked");
+                if (checked == null) return;
+                var times = tr.getElement("input[name=Times]");
+                chase.push({
+                    "index": tr.get("data-index"),
+                    "times": times.get("value")
+                });
+            });
+            if (chase.length == 0) {
+                new BW.Tip("没有设置追号内容");
+                return;
+            }
+            console.log(t);
+            var post = {
+                "type": t.options.data.Type,
+                "stop": dom["stop"].get("checked") ? 1 : 0,
+                "chase": chase,
+                "data": data
+            };
+
+            new Request.JSON({
+                "url": "/handler/user/lottery/savechase",
+                "onRequest": function () {
+                    content.addClass("loading-form");
+                },
+                "onComplete": function () {
+                    content.removeClass("loading-form");
+                },
+                "onSuccess": function (result) {
+
+                    new BW.Tip(result.msg, {
+                        "callback": function () {
+                            if (result.success) {
+                                BW.callback["diag-close"].apply(t);
+                            }
+                        }
+                    });
+                }
+            }).post(JSON.encode(post));
+        });
+    };
+</script>

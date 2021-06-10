@@ -1,0 +1,79 @@
+﻿<div class="page-header">
+    <h1>团队盈亏</h1>
+    <h6>不包括测试帐号。</h6>
+    <div class="page-searchbox">
+        <form action="/admin/report/personal" method="post">
+            <input type="text" class="txt w120" name="UserName" placeholder="用户名" />
+            <input type="text" class="txt w120" name="Agent" placeholder="上级" />
+            <input type="date" name="StartAt" class="txt" placeholder="统计时间（开始）" data-type="datetime" />
+            <input type="date" name="EndAt" class="txt" placeholder="统计时间（结束）" data-type="datetime" />
+            <label for="report-user-team-self">
+                <input type="checkbox" name="IsSelf" data-type="switch" id="report-user-team-self" value="1" />包括本级
+            </label>
+            <input type="submit" class="am-btn am-btn-success am-round am-text-xs" value="搜索" />
+            <input type="reset" class="am-btn am-round am-text-xs" value="重置" />
+        </form>
+    </div>
+</div>
+
+<div class="page-table">
+    <table class="list" data-bind-action="/admin/report/teammoney" data-bind-type="list" data-bind-callback="list,count,report-teammoney" data-bind-load="search,report-teammoney,list-sort">
+        <thead>
+            <tr>
+                <th>用户名</th>
+                <th>下级</th>
+                <th data-list-sort="true">投注</th>
+                <th data-list-sort="true">派奖</th>
+                <th data-list-sort="true">返点</th>
+                <th data-list-sort="true">佣金</th>
+                <th data-list-sort="true">活动</th>
+                <th data-list-sort="true">日工资</th>
+                <th data-list-sort="true">分红</th>
+                <th data-list-sort="true">盈亏</th>
+            </tr>
+        </thead>
+        <tbody data-list-element="true">
+            <tr>
+                <td><a href="javascript:" class="diag-user" data-userid="${UserID}">${UserName}</a></td>
+                <td><a href="javascript:" data-agent="${UserName}">下级</a></td>
+                <td>${Data.Bet:money}</td>
+                <td>${Data.Reward:money}</td>
+                <td>${Data.Return:money}</td>
+                <td>${Data.Agent:money}</td>
+                <td>${Data.Activity:money}</td>
+                <td>${Data.Wages:money}</td>
+                <td>${Data.Bonus:money}</td>
+                <td>${Money:money-show}</td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <td>统计：</td>
+                <td colspan="8"></td>
+                <td>${data.Money:money-show}</td>
+            </tr>
+        </tfoot>
+    </table>
+</div>
+
+<script type="text/javascript">
+    BW.callback["report-teammoney"] = function (result) {
+        var t = this;
+        t.dom.element.getElements("tbody td").each(function (item) {
+            if (item.get("text").contains("$")) {
+                item.set("text", "0.00");
+            }
+        });
+    };
+
+    BW.load["report-teammoney"] = function () {
+        var t = this;
+        t.dom.element.addEvent("click", function (e) {
+            var obj = $(e.target);
+            if (!obj.get("data-agent")) return;
+            var searchId = t.dom.element.get("data-bind-search");
+            $(searchId).getElement("[name=Agent]").set("value", obj.get("data-agent"));
+            t.fire();
+        });
+    };
+</script>

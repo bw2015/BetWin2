@@ -1,0 +1,31 @@
+﻿<div class="page-table" data-bind-action="/admin/lottery/playerinfo" data-bind-type="ajax" data-bind-callback="html-field" data-bind-data="parent">
+    <form action="/admin/lottery/playertest" data-bind-action="/admin/lottery/playertest" data-bind-callback="form-tip" method="post" onreset="return false;">
+        <table class="post">
+            <tr>
+                <th>彩种：</th>
+                <td data-bind-html>${Game}</td>
+                <th>玩法：</th>
+                <td data-bind-html>${Name}</td>
+            </tr>
+            <tr>
+                <th>开奖号码：</th>
+                <td colspan="3" data-bind-html><input type="text" class="txt am-form-field" size="32" name="ResultNumber" required="required" value="${ResultNumber}" /></td>
+            </tr>
+            <tr>
+                <th>投注号码：</th>
+                <td colspan="3">
+                    <textarea class="txt am-form-field" name="Number" rows="4" cols="60" required="required"></textarea>
+                </td>
+            </tr>
+            <tr>
+                <th></th>
+                <td>
+                    <span data-bind-html>
+                        <input type="hidden" name="id" value="${ID}" />
+                    </span>
+                    <input type="submit" value="测试" class="am-btn am-btn-success am-round" />
+                </td>
+            </tr>
+        </table>
+    </form>
+</div>

@@ -1,0 +1,41 @@
+﻿<div class="frame-info-content">
+    <h3>
+        追号记录
+    </h3>
+    <div class="frame-info-search right">
+        <form action="report-moneylog.html" method="post">
+            <input type="submit" value="搜索" class="btn btn-blue">
+        </form>
+    </div>
+
+    <table class="list" data-bind-action-delay="/handler/user/lottery/chaselist" data-bind-type="list" data-bind-callback="list" data-bind-load="search,pagesplit">
+        <thead>
+            <tr>
+                <th>编号</th>
+                <th>彩种</th>
+                <th>追号总金额</th>
+                <th>追号期数</th>
+                <th>追号时间</th>
+                <th>追号状态</th>
+                <th>已投注金额</th>
+                <th>中奖奖金</th>
+                <th>操作</th>
+            </tr>
+        </thead>
+        <tbody data-list-element="true">
+            <tr>
+                <td>${ID}</td>
+                <td>${Type}</td>
+                <td>${Money:money}</td>
+                <td>${Count}/${Total}</td>
+                <td>${CreateAt}</td>
+                <td>${Status}</td>
+                <td class="green">${BetMoney:money}</td>
+                <td class="red">${Reward:money}</td>
+                <td>
+                    <a href="javascript:" class="btn btn-blue" data-diag-name="report-chase-detail" data-diag-type="control" data-diag-src="info/report-chase-detail.html" data-diag-width="800" data-diag-height="600" data-diag-title="查看追号详情" data-diag-drag="true" data-diag-mask="true" data-diag-data="ID=${ID}">详情</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

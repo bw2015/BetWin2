@@ -1,0 +1,23 @@
+﻿body { margin: 0; padding: 0; background: #E6EAEB; font-family: Arial,'微软雅黑','宋体',sans-serif; }
+
+.container { position: relative; margin: 96px auto 0; border-radius: 10px 10px 0 0; background: #FFF; box-shadow: 5px 9px 17px rgba(102,102,102,0.75); width: 456px; min-height: 500px; color: #FFF; text-align: center; }
+
+.circle { margin-left: -116px; width: 232px; height: 232px; position: absolute; top: -50px; left: 50%; }
+    .circle::before { content: " "; position: absolute; left: 0px; top: 0px; border-radius: 50%; background-color: #fff; width: 200px; height: 200px; border: solid 16px #dedede; }
+    .circle .circle-progress { width: 116px; height: 232px; overflow: hidden; position: absolute; top: 0px; }
+    .circle .circle-progress-left { left: 0px; }
+    .circle .circle-progress-right { right: 0px; }
+    .circle .circle-progress em { content: " "; position: absolute; width: 200px; height: 200px; top: 0px; border: solid 16px #43aefa; border-radius: 50%; border-left-color: transparent; border-top-color: transparent; transition: all 0.5s linear; }
+
+    .circle .circle-progress-left em { left: 0px; transform: rotate(315deg); }
+    .circle .circle-progress-right em { left: -116px; transform: rotate(135deg); }
+
+.progress { position: absolute; width: 80px; top: 45%; left: 50%; margin: -40px auto auto -40px; text-align: center; }
+    .progress strong { text-align: center; font-size: 68px; color: #000; display: block; }
+    .progress span { display: block; font-size: 34px; color: #ccc; }
+
+h3 { padding-top: 220px; color: #333; color: #242424; font-size: 28px; font-weight: normal; }
+    h3.error { color: #f00; font-weight: bold; text-decoration: underline; }
+p { margin: 25px 60px 14px; color: #7B7B7B; font-size: 18px; }
+.btn { display: block; border-radius: 10px; background-color: #4AB0F7; height: 55px; line-height: 55px; width: 286px; color: #FFF; font-size: 20px; text-decoration: none; letter-spacing: 2px; margin: auto; }
+    .btn:hover { background-color: #6BC2FF; }

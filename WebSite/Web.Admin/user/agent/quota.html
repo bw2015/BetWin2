@@ -1,0 +1,47 @@
+﻿<div class="page-header">
+    <h1>配额管理</h1>
+    <h6>返点范围为该范围内总共的配额数量，如果没有配置则无数量限制。如1950-1960 表示大于等于1950，小于等于1960，请勿重复区间配置。</h6>
+</div>
+<div class="page-table">
+    <table class="list" id="user-agent-quota-list" data-bind-action="/admin/user/quotalist" data-bind-type="list" data-bind-callback="list">
+        <thead>
+            <tr>
+                <th>编号</th>
+                <th>返点范围</th>
+                <th>配额数量</th>
+                <th>操作</th>
+            </tr>
+        </thead>
+        <tbody data-list-element="true">
+            <tr data-bind-delete="true">
+                <td>${ID}</td>
+                <td>${MinRebate} - ${MaxRebate}</td>
+                <td>${Number}</td>
+                <td><a href="javascript:" data-bind-action="/admin/user/deletequota" data-bind-type="ajax" data-bind-callback="delete" data-bind-data="ID=${ID}" data-bind-event="click" data-bind-stop="true">删除</a></td>
+            </tr>
+        </tbody>
+    </table>
+    <hr />
+    <form action="/admin/user/addquota" method="post" data-bind-action="/admin/user/addquota" data-bind-type="ajax" data-bind-callback="form-submit-tip,fire" data-bind-fire-target="user-agent-quota-list">
+        <table class="post">
+            <tr>
+                <th>返点范围：</th>
+                <td>
+                    <input type="number" name="MinRebate" class="txt am-form-field w80" placeholder="最低返点" /> ～ <input type="number" name="MaxRebate" class="txt am-form-field w80" placeholder="最高返点" />
+                </td>
+            </tr>
+            <tr>
+                <th>配额数量：</th>
+                <td>
+                    <input type="number" name="Number" class="txt am-form-field w80" />
+                </td>
+            </tr>
+            <tr>
+                <th></th>
+                <td>
+                    <input type="submit" value="添加配额设定" class="am-btn am-btn-success am-round" />
+                </td>
+            </tr>
+        </table>
+    </form>
+</div>

@@ -1,0 +1,25 @@
+﻿<div class="page-table">
+    <form action="keyword-info.html" method="post" data-bind-action="admin/im/savekeyword" data-bind-type="ajax" data-bind-callback="form-tip,success-fire" data-bind-form-tip="diag-close" data-bind-fire-target="service-keyword-list">
+        <table class="post" data-bind-action="admin/im/getkeywordinfo" data-bind-type="ajax" data-bind-callback="form-fill" data-bind-data="parent">
+            <tr>
+                <th>关键词：</th>
+                <td>
+                    <input type="text" name="Keyword" class=" am-form-field" placeholder="多个关键词用空格隔开" required="required" />
+                </td>
+            </tr>
+            <tr>
+                <th>回复内容：</th>
+                <td>
+                    <textarea name="Content" class=" am-form-field" rows="11" cols="50" required="required" placeholder="请输入回复内容" maxlength="500"></textarea>
+                </td>
+            </tr>
+            <tr>
+                <th></th>
+                <td>
+                    <input type="hidden" name="ID" />
+                    <input type="submit" value="保存" class="am-btn am-btn-success" />
+                </td>
+            </tr>
+        </table>
+    </form>
+</div>

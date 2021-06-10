@@ -1,0 +1,20 @@
+﻿<div class="page-table">
+    <table class="list" data-bind-action="admin/site/getmoneytypelist" data-bind-type="list" data-bind-callback="list,update" data-bind-update-action="admin/site/savemoneytypesetting">
+        <thead>
+            <tr>
+                <th>编号</th>
+                <th>名称</th>
+                <th>无需消费</th>
+            </tr>
+        </thead>
+        <tbody data-list-element="true">
+            <tr>
+                <td class="am-text-left">${ID} - ${Key}</td>
+                <td>${Name}</td>
+                <td>
+                    <input type="checkbox" name="NoTrunover" data-update-name="NoTrunover" data-update-id="${ID}" data-type="switch" data-checked="${NoTrunover}" />
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

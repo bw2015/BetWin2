@@ -1,0 +1,36 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script src="../scripts/mootools.js"></script>
+    <script src="../scripts/mootools-more.js"></script>
+    <script type="text/javascript">
+        var data = new Object();
+        var total = 0;
+
+        !function () {
+            var href = location.href;
+            var type = /(\w+)\.html/i.exec(href)[1];
+            var player = /\?(.+)/i.exec(href)[1];
+            var src = type + "/Player" + player + ".js";
+            document.writeln("<script src=\"" + src + "\"><\/script>");
+        }();
+
+        window.addEvent("domready", function () {
+            var output = new Array();
+            output.push("总注数：" + total);
+
+            Object.forEach(data, function (value, key) {
+                output.push(key + " 注数：" + value + " 奖金：" + (total / value) * 2);
+            });
+
+            console.log(output.join("\n"));
+        });
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,243 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>SP.Studio 简易BUG管理系统</title>
+    <link href="?ac=style" rel="stylesheet" type="text/css" />
+    <script src="../Studio/resources/Scripts/MooStudio.js" type="text/javascript"></script>
+    <script src="../Studio/resources/Scripts/mootools.js" type="text/javascript"></script>
+    <script src="/HtmlEditor/kindeditor.js" type="text/javascript"></script>
+    <script src="?ac=js" type="text/javascript"></script>
+
+</head>
+<body>
+<div class=" Wrapper">
+    <div class="Content">
+        <div class="Right Sub Sar">
+            <div class="Title">
+                <div class="Bugicon Midbox">项目概况</div>
+                <div class="right">
+                    <a href="javascript:">系统设置</a>
+                    <a href="javascript:">成员管理</a>
+                </div>
+            </div>
+            <div class="clear"></div>
+            <div class="SearchBox">
+                <div class="left BiggestFont Count">
+                    <a href="javascript:" class="bugs-total">Bug总数:<span class="num"></span></a>
+                    <label></label>
+                    <a href="javascript:" class="bugs-unfix">未修复的Bug数:<span class="num"></span></a>
+                    <label></label>
+                    <a href="javascript:" class="bugs-approval">待审核的Bug数:<span class="num"></span></a>
+                    <label></label>
+                    <a href="javascript:" class="bugs-fix">已解决的Bug数:<span class="num"></span></a>
+                    <label></label>
+                </div>
+                <a class="button-create" href="javascript:"><span>提交新Bug</span></a>
+            </div>
+
+            <div class="Solution" id="User">
+                <table class="list" cellspacing="0">
+                    <thead>
+                        <tr class="center">
+                            <th>用户名</th>
+                            <th>密码</th>
+                            <th>邮箱</th>
+                            <th>手机</th>
+                            <th>加入日期</th>
+                            <th>类型</th>
+                            <th>删除</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                </table>
+                <form action="?ac=saveuser" method="post">
+                <table class="post">
+                    <tbody>
+                        <tr>
+                            <th>用户名:</th>
+                            <td><input type="text" name="Name" class="txt" /></td>
+                        </tr>
+                        <tr>
+                            <th>密码:</th>
+                            <td><input type="password" name="Password" class="txt" /></td>
+                        </tr>
+                        <tr class="save">
+                            <th></th>
+                            <td><input type="button" value=" 保存 " class="button" id="btnUser" /></td>
+                        </tr>
+                    </tbody>
+                </table>
+                </form>
+             </div>
+
+            <div class="Solution" id="ItemSave">
+                <form action="?ac=itemsave" method="post" id="frmItemSave">
+                <table class="post">
+                    <tr>
+                        <th>Bug 标题:</th>
+                        <td><input type="text" name="Title" class="txt" size="50" /></td>
+                    </tr>
+                    <tr>
+                        <th>优先级:</th>
+                        <td>
+                            <select name="Level" class="txt">
+                                <option value="Low">低</option>
+                                <option value="Middle">中</option>
+                                <option value="High">高</option>
+                                <option value="Urgent">紧急</option>
+                                <option value="Serious">严重</option>
+                            </select>
+                         </td>
+                    </tr>
+                    <tr>
+                        <th>提交者:</th>
+                        <td><input type="text" name="Name" class="txt" size="12" readonly="readonly" /></td>
+                    </tr>
+                    <tr>
+                        <th>处理者:</th>
+                        <td class="dever"></td>
+                    </tr>
+                    <tr>
+                        <th>描述与截图:</th>
+                        <td>
+                            <textarea rows="10" cols="50" name="Content" style="width:700px; height:400px;" id="txtContent"></textarea>
+                        </td>
+                    </tr>
+                    <tr class="save">
+                        <th></th>
+                        <td>
+                            <input type="hidden" name="ID" />
+                            <input type="button" value=" 保存 " class="button" id="btnItemSave" />
+                        </td>
+                    </tr>
+                </table>
+                </form>
+            </div>
+
+            <div class="Solution" id="Item">
+                <div class="SearchBox">
+                    <div class="search">
+                    优先级: 
+                        <select name="Level" class="txt">
+                            <option value="">全部</option>
+                            <option value="Low">低</option>
+                            <option value="Middle">中</option>
+                            <option value="High">高</option>
+                            <option value="Urgent">紧急</option>
+                            <option value="Serious">严重</option>
+                        </select>
+                    状态: 
+                        <select name="Status" class="txt">
+                            <option value="">全部</option>
+                            <option value="unfix">未解决</option>
+                            <option value="approval">待审核</option>
+                            <option value="fix">已解决</option>
+                        </select>
+                    关键词: <input type="text" name="Key" class="txt" size="10" />
+                    <input type="submit" class="Buttom" value="搜索" id="btnSearch" />
+                    </div>
+                </div>
+                <table class="list" cellspacing="0">
+                    <thead>
+                        <tr>
+                            <th>标题</th>
+                            <th class="w">级别</th>
+                            <th class="w">状态</th>
+                            <th class="w">处理人</th>
+                            <th class="w">日期</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                </table>
+                <div class="pageSplit" id="pageSplit"></div>
+            </div>
+
+            <div class="Solution" id="ItemInfo">
+                <form action="?ac=follow" method="post" id="frmFollow">
+                <div class="right">
+                    <a href="javascript:" id="lnkDelete"></a>
+                    <a href="javascript:" id="lnkEdit"></a>
+                </div>
+                 <table class="post">
+                    <tbody>
+                    <tr>
+                        <th>编号:</th>
+                        <td><div title="ID"></div></td>
+                    </tr>
+                    <tr>
+                        <th>Bug 标题:</th>
+                        <td><div title="Title"></div></td>
+                    </tr>
+                    <tr>
+                        <th>提交时间:</th>
+                        <td><div title="CreateAt"></div></td>
+                    </tr>
+                    <tr>
+                        <th>优先级:</th>
+                        <td><div title="Level"></div></td>
+                    </tr>
+                    <tr>
+                        <th>状态:</th>
+                        <td><div title="Status"></div></td>
+                    </tr>
+                    <tr>
+                        <th>提交者:</th>
+                        <td><div title="Name"></div></td>
+                    </tr>
+                    <tr>
+                        <th>处理者:</th>
+                        <td><div title="Owner"></div></td>
+                    </tr>
+                    <tr>
+                        <th>描述与截图:</th>
+                        <td><div title="Content"></div></td>
+                    </tr>
+                    <tr>
+                        <th>处理过程:</th>
+                        <td>
+                            <div class="Follow">
+                                <table class="list" cellspacing="0">
+                                    <tbody>
+                                        <tr>
+                                            <td>状态</td>
+                                            <td>发布人 -> 接收人</td>
+                                            <td>创建项目</td>
+                                            <td>2011-9-10 17:22:12</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </td>
+                    </tr>
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <th>状态:</th>
+                            <td class="status">
+                                <span><input type="radio" name="Status" value="fix" id="info_fix" /><label for="info_fix">已解决</label></span>
+                                <span><input type="radio" name="Status" value="unfix" id="info_unfix" /><label for="info_unfix">未解决</label></span>
+                             </td>
+                        </tr>
+                        <tr>
+                            <th>备注:</th>
+                            <td><textarea name="Description" id="txtDescription" rows="5" cols="60" style="width:580px;"></textarea></td>
+                        </tr>
+                        <tr class="save">
+                            <th></th>
+                            <td>
+                                <input type="hidden" name="ID" />
+                                <input type="button" value=" 提交 " id="btnFollow" />
+                            </td>
+                        </tr>
+                    </tfoot>
+                </table>
+                </form>
+            </div>
+        </div>
+    </div>
+    </div>
+</body>
+</html>

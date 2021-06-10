@@ -1,0 +1,25 @@
+﻿<div class="page-header">
+    <h1>短信发送日志</h1>
+</div>
+<div class="page-table">
+    <table class="list" data-bind-action="admin/site/smslog" data-bind-type="list" data-bind-load="pagesplit" data-bind-callback="list">
+        <thead>
+            <tr>
+                <th>编号</th>
+                <th>手机号码</th>
+                <th>发送时间</th>
+                <th>发送状态</th>
+                <th>内容</th>
+            </tr>
+        </thead>
+        <tbody data-list-element="true">
+            <tr>
+                <td>${ID}</td>
+                <td>${Mobile}</td>
+                <td>${CreateAt}</td>
+                <td>${Status}</td>
+                <td>${Content}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

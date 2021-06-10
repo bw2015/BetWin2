@@ -1,0 +1,84 @@
+﻿<div class="page-table" data-bind-action="/admin/money/rechargeinfo" data-bind-type="ajax" data-bind-callback="html,recharge-detail-info" data-bind-data="parent">
+    <form action="/admin/money/rechargeconfirm" method="post" data-bind-action="/admin/money/rechargeconfirm" data-bind-type="ajax" data-bind-callback="form-tip" data-bind-form-tip="diag-close">
+        <table class="post">
+            <tr>
+                <th>订单编号：</th>
+                <td>${ID}</td>
+                <th>当前状态：</th>
+                <td>${IsPayment:recharge-status}</td>
+            </tr>
+            <tr>
+                <th>充值用户：</th>
+                <td>${UserName}</td>
+                <th>充值渠道：</th>
+                <td>${Payment}</td>
+            </tr>
+            <tr>
+                <th>提交时间：</th>
+                <td>${CreateAt}</td>
+                <th>到账时间：</th>
+                <td>${PayAt}</td>
+            </tr>
+            <tr>
+                <th>资金记录：</th>
+                <td colspan="3">
+                    <table class="list">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>金额</th>
+                                <th>余额</th>
+                                <th>备注</th>
+                            </tr>
+                        </thead>
+                        <tbody></tbody>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <th>充值金额：</th>
+                <td><label class="am-text-xl am-text-danger">${Money:money}</label></td>
+                <th>到账金额：</th>
+                <td><input type="number" class="am-form-field txt w80" name="Amount" value="${Amount:n}" /></td>
+            </tr>
+            <tr>
+                <th>网关编号：</th>
+                <td colspan="3"><input type="text" class="txt am-form-field" size="50" name="SystemID" required="required" placeholder="支付网关的入款单号" value="${SystemID}" /></td>
+            </tr>
+            <tr data-action="save">
+                <th>操作：</th>
+                <td colspan="3">
+                    <input type="hidden" name="ID" value="${ID}" />
+                    <input type="submit" value="确认到账" class="am-btn am-btn-success am-round" />
+                </td>
+            </tr>
+        </table>
+    </form>
+</div>
+
+<script type="text/javascript">
+    BW.callback["recharge-detail-info"] = function (result) {
+        var t = this;
+        if (!result.success) return;
+
+        var tbody = t.dom.element.getElement(".list tbody");
+        if (result.info.Log.length == 0) {
+            tbody.set("html", "<tr><td colspan=\"4\"><p class=\"am-alert am-text-center\">没有符合当前条件的记录</p></td></tr>");
+        } else {
+            result.info.Log.each(function (item) {
+                new Element("tr", {
+                    "html": "<td>${ID}</td><td>${Money:money}</td><td>${Balance:money}</td><td>${Description}</td>".toHtml(item)
+                }).inject(tbody);
+            });
+        }
+
+        if (result.info.IsPayment == "true") {
+            var action = t.dom.element.getElement("[data-action]");
+            action.dispose();
+            t.dom.element.getElements("input").set("readonly", true);
+        } else {
+            var amount = t.dom.element.getElement("[name=Amount]");
+            amount.set("value", result.info.Money.toFloat());
+        }
+    };
+</script>

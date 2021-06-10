@@ -1,0 +1,56 @@
+﻿<div class="page-header">
+    <h1>转账充值审核</h1>
+
+    <div class="page-searchbox">
+        <form>
+            <input type="text" name="User" class="txt w80" placeholder="用户名" />
+            <select name="PayID" class="txt" data-bind-action="/admin/site/getpaymentlist" data-bind-type="ajax" data-bind-callback="select" data-select-value="ID" data-select-text="Name">
+                <option value="">全部方式</option>
+            </select>
+            <select name="Status" class="txt" data-enum-name="BW.Common.Users.TransferOrder+TransferStatus"></select>
+            <input type="datetime-local" class="txt" name="StartAt" placeholder="开始时间" />
+            <input type="datetime-local" class="txt" name="EndAt" placeholder="结束时间" />
+            <input type="submit" class="am-btn am-btn-xs am-btn-success am-round" value="查询" />
+            <input type="reset" class="am-btn am-btn-xs am-btn-default am-round" value="重置" />
+        </form>
+    </div>
+</div>
+<div class="page-table">
+    <table class="list" id="money-transferorder-list" data-bind-action="admin/money/transferorderlist" data-bind-type="list" data-bind-callback="list,count" data-bind-load="search,pagesplit">
+        <thead>
+            <tr>
+                <th>编号</th>
+                <th>充值用户</th>
+                <th>充值渠道</th>
+                <th>充值金额</th>
+                <th>实际到帐</th>
+                <th>充值时间</th>
+                <th>当前状态</th>
+                <th>操作</th>
+            </tr>
+        </thead>
+        <tbody data-list-element="true">
+            <tr>
+                <td>${ID}</td>
+                <td><a href="javascript:" class="diag-user" data-userid="${UserID}">${UserName}</a></td>
+                <td>${Payment}</td>
+                <td>${Money:money}</td>
+                <td>${Amount:money}</td>
+                <td>${PaymentAt}</td>
+                <td>${Status}</td>
+                <td>
+                    <a href="javascript:" data-diag-name="money-transferorder-check" data-diag-type="control" data-diag-src="money/recharge/transfer-check.html" data-diag-title="转账订单详情" data-diag-drag="true" data-diag-mask="true" data-diag-data="ID=${ID}">审核</a>
+                </td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <td>统计：</td>
+                <td colspan="2"></td>
+                <td>${data.Money:money}</td>
+                <td>${data.Amount:money}</td>
+                <td colspan="3"></td>
+            </tr>
+        </tfoot>
+    </table>
+</div>

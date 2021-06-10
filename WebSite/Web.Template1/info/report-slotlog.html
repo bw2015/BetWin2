@@ -1,0 +1,57 @@
+﻿<div class="frame-info-content">
+    <h3>
+        电子游艺记录
+    </h3>
+    <div class="frame-info-search right">
+        <form action="report-videolog.html" method="post">
+            查看：<select name="View" class="txt">
+                <option value="0">自己</option>
+                <option value="1">直属下级</option>
+                <option value="2">所有下级</option>
+                <option value="3">指定用户</option>
+            </select>
+            &nbsp;
+            用户：<input type="text" name="User" class="txt" size="12">
+            &nbsp;
+            时间：<input type="text" name="StartAt" class="txt" data-type="calendar" size="12" /> ～ <input type="text" name="EndAt" class="txt" data-type="calendar" size="12" />
+            &nbsp;
+            <input type="submit" value="搜索" class="btn btn-blue" />
+        </form>
+    </div>
+
+    <table class="list" data-bind-action="/handler/game/gateway/slotlog" data-bind-type="list" data-bind-callback="list,count" data-bind-load="search,pagesplit" data-bind-pagesize="12">
+        <thead>
+            <tr>
+                <th>平台</th>
+                <th>用户名</th>
+                <th>流水号</th>
+                <th>游戏名称</th>
+                <th>投注金额</th>
+                <th>盈亏金额</th>
+                <th>余额</th>
+                <th>投注时间</th>
+            </tr>
+        </thead>
+        <tbody data-list-element="true">
+            <tr>
+                <td>${Type}</td>
+                <td>${UserName}</td>
+                <td>${BillNo}</td>
+                <td>${GameName}</td>
+                <td>${BetAmount:money}</td>
+                <td>${Money:money}</td>
+                <td>${Balance:money}</td>
+                <td>${PlayAt}</td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <td>统计：</td>
+                <td colspan="3"></td>
+                <td><span class="ft14 green">${data.BetAmount:money}</span></td>
+                <td><span class="ft14 green">${data.Money:money}</span></td>
+                <td colspan="2"></td>
+            </tr>
+        </tfoot>
+    </table>
+</div>

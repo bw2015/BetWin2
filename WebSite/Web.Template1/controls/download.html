@@ -1,0 +1,58 @@
+﻿<ul>
+    <li data-name="APPPC">
+        <div class="pic pc"></div>
+        <h2>PC客户端</h2>
+    </li>
+    <li data-name="WAP">
+        <div class="pic"><em></em></div>
+        <h2>wap网页</h2>
+    </li>
+    <li data-name="APP">
+        <div class="pic"><em></em></div>
+        <h2>手机客户端</h2>
+    </li>
+    <li data-name="Wechat">
+        <div class="pic"><em></em></div>
+        <h2>微信投注</h2>
+    </li>
+</ul>
+
+<script type="text/javascript">
+    BW.callback["index-download"] = function () {
+        var t = this;
+        var info = Setting.Site.Setting;
+        t.dom.element.getElements("[data-name]").each(function (item) {
+            var name = item.get("data-name");
+            var em = item.getElement("em");
+            var size = em ? em.getSize() : null;
+            switch (name) {
+                case "APPPC":
+                    item.addEvent("click", function () {
+                        console.log(info[name]);
+                        if (info[name]) {
+                            window.open(info[name], "_blank");
+                        } else {
+                            new BW.Tip("暂不支持");
+                        }
+                    });
+                    break;
+                case "WAP":
+                    var url = ("http://" + location.host + "/mobile/").toQRCode(size.x,size.y);
+                    em.setStyle("background-image", "url(" + url + ")");
+                    break;
+                case "APP":
+                    var url = encodeURI(info["APP"] || "http://" + location.host + "/mobile/app.html");
+                    em.setStyle("background-image", "url(" + url.toQRCode(size.x, size.y) + ")");
+                    break;
+                case "Wechat":
+                    if (!info.Wechat) {
+                        item.dispose();
+                    } else {
+                        var url = encodeURI(info.Wechat.replace("localhost", location.host));
+                        em.setStyle("background-image", "url(" + url.toQRCode(size.x, size.y) + ")");
+                    }
+                    break;
+            }
+        });
+    };
+</script>

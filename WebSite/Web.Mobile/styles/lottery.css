@@ -1,0 +1,95 @@
+﻿.lottery-player { }
+
+.lottery-player-name { height: 32px; z-index: 10; background: #fff; position: relative; border-bottom: 1px solid #CCC; position: relative; }
+
+    .lottery-player-name h3 { float: left; font-weight: normal; text-indent: 1em; }
+    .lottery-player-name a.lottery-player-select { float: right; width: 42px; text-align: center; background: #eff9f8; text-align: center; border-left: 1px solid #bee3db; }
+        .lottery-player-name a.lottery-player-select i { transition: all 0.5s; }
+
+/* 玩法列表 */
+.lottery-player-list { background: #eff9f8; text-align: left; width: 100%; height: 0px; overflow: auto; top: 32px; position: absolute; border-bottom: 1px solid #bee3db; transition: height 0.5s; }
+
+.lottery-player-list-group { padding: 10px; border-bottom: 1px solid #ccc; border-top: 1px solid #fff; }
+    .lottery-player-list-group label, .lottery-player-list-group a { display: inline-block; padding: 0px 5px; margin: 2px 5px; }
+    .lottery-player-list-group label { font-weight: bold; }
+    .lottery-player-list-group a { background: #fff; border: 1px solid #ccc; }
+        .lottery-player-list-group a.current { background-color: orange; color: white; }
+
+/* 选择玩法时候的样式 */
+.lottery-player-name.show a.lottery-player-select i { transform: rotate(180deg); }
+.lottery-player-name.show .lottery-player-list { height: auto; box-shadow: 0px 10px 10px rgba(0,0,0,.6); }
+
+.lottery-player-name,
+.lottery-player-betindex { height: 32px; line-height: 32px; background-color: #fff; border-bottom: 1px solid #ccc; text-align: center; }
+.lottery-player-result { text-align: center; padding: 12px 0px; }
+/* 开奖号码效果 */
+.lottery-number { width: auto; margin: 5px; box-shadow: 0px 0px 10px rgba(0,0,0,.2); background: rgba(255,255,255,0.3); border-radius: 5px; padding: 10px; }
+    .lottery-number li { display: inline-block; font-size: 22px; line-height: 42px; width: 42px; height: 42px; border-radius: 50%; background: -webkit-radial-gradient(50% 120%, circle cover, #81e8f6, #76deef 10%, #055194 80%, #062745 100%); position: relative; color: #fff; text-shadow: 1px 1px 0px #000; font-weight: bold; }
+        .lottery-number li::before { content: ""; position: absolute; top: 1%; left: 5%; width: 90%; height: 90%; border-radius: 50%; background: -webkit-radial-gradient(50% 0px, circle, #ffffff, rgba(255, 255, 255, 0) 58%); -webkit-filter: blur(5px); z-index: 2; }
+
+.lottery-player-result.loading .lottery-number ul { background-image: url(../images/loading.gif); background-repeat: no-repeat; background-position: center center; }
+.lottery-player-result.loading .lottery-game-index::after { content: "(开奖中)"; color: #666; }
+.lottery-player-result.loading .lottery-number li { visibility: hidden; }
+
+
+/* 投注时候的等待效果 */
+.lottery-loading { background: rgba(255,255,255,.8) url(../images/loading.gif) no-repeat center center; }
+    .lottery-loading > * { visibility: hidden; }
+
+.lottery-player-selector { }
+
+.lottery-player-selector-ball { padding: 0px 12px 0px; }
+    .lottery-player-selector-ball .item { position: relative; padding: 0px 0px 10px; }
+        .lottery-player-selector-ball .item label { display: block; height: 36px; line-height: 36px; width: 100%; font-size: 16px; border-bottom: 1px solid #ccc; }
+        .lottery-player-selector-ball .item .tool { position: absolute; height: 36px; line-height: 36px; top: 0px; right: 0px; }
+            .lottery-player-selector-ball .item .tool a { font-size: 16px; margin: auto 5px; }
+        .lottery-player-selector-ball .item .ball { }
+            .lottery-player-selector-ball .item .ball a { display: inline-block; width: 32px; height: 32px; line-height: 32px; margin: 10px 3px auto; border-radius: 50%; text-align: center; color: #333; background: url(../../images/lottery_player.png) no-repeat -4px -84px; transition: transform 0.2s; }
+                .lottery-player-selector-ball .item .ball a.current { background-position: -44px -84px; color: #fff; transform: scale(1.2); }
+
+    /* 单式 */
+    .lottery-player-selector-ball textarea { width: 100%; height: 300px; outline: none; resize: none; border-radius: 12px; border-color: #ccc; }
+
+.lottery-player-submit { position: fixed; width: 100%; left: 0px; bottom: 0px; background: #fff; border-top: 1px solid #ccc; }
+
+/* 任选的位数选择 */
+.lottery-player-selector-flags { text-align: center; }
+    .lottery-player-selector-flags a { height: 32px; line-height: 32px; padding: 0px 5px 0px 25px; color: #333; display: inline-block; margin-left: -1px; background: url(../../images/lottery-flags.png) no-repeat 6px 0px; transition: background-position 0.2s; border: 1px solid #ccc; background-color: white; font-size: 12px; }
+        .lottery-player-selector-flags a.current { background-position: 6px -32px; background-color: #e74c3c; color: #fff; }
+
+/* 选择模式和倍数 */
+.lottery-player-submit-tool { height: 32px; padding: 10px; border-top: 1px solid #ccc; background: #fff; margin-bottom: 50px; box-shadow: 0px 0px 5px rgba(0,0,0,0.3) inset; }
+    .lottery-player-submit-tool::after { content: " "; clear: both; }
+.lottery-player-submit-mode { float: left; }
+.lottery-player-submit-times { float: right; }
+
+.lottery-player-submit-save { height: 32px; padding: 5px; line-height: 16px; }
+.lottery-player-submit-button { position: absolute; width: 88px; line-height: 40px; text-align: center; top: 1px; right: 1px; }
+
+.lottery-player-submit-total { float: left; }
+.lottery-player-submit-mode a { width: 32px; height: 28px; line-height: 28px; display: inline-block; border: 1px solid #ccc; text-align: center; }
+    .lottery-player-submit-mode a.current { background-color: orange; color: white; }
+
+.lottery-player-submit-times { margin-left: 10px; }
+
+.lottery-player-submit-times-input { width: 48px; height: 24px; text-align: center; }
+
+
+/*  六合彩 */
+.lottery-player-selector-ball-m6-player1 { padding-bottom: 50px; }
+    .lottery-player-selector-ball-m6-player1::after { clear: both; content: " "; display: block; }
+    .lottery-player-selector-ball-m6-player1 li { width: 49%; height: 46px; line-height: 46px; float: left; background-color: #f8f9fb; border: 1px solid #f0f1f6; border-right-color: #fff; }
+        .lottery-player-selector-ball-m6-player1 li .ball { width: 36px; height: 36px; float: left; line-height: 36px; text-align: center; border-radius: 50%; color: #fff; margin: 5px; font-size: 16px; font-weight: bold; }
+        .lottery-player-selector-ball-m6-player1 li .color-red { background-color: #ff5e44; }
+        .lottery-player-selector-ball-m6-player1 li .color-blue { background-color: #7092ff; }
+        .lottery-player-selector-ball-m6-player1 li .color-green { background-color: #9dce28; }
+        .lottery-player-selector-ball-m6-player1 li .lunar { color: #000; }
+        .lottery-player-selector-ball-m6-player1 li input { border: 1px solid #dedede; background-color: #fff; font-size: 14px; width: 60px; float: left; height: 26px; margin: 10px 5px; text-align: center; color: #333; border-radius: 4px; }
+        .lottery-player-selector-ball-m6-player1 li a { float: left; height: 28px; line-height: 28px; padding: 0px 5px; margin: 10px 3px; border-radius: 4px; }
+
+.lottery-m6 .lottery-player-submit-tool { display: none; }
+
+.lottery-m6 .lottery-player-submit-button { display: none; }
+.lottery-m6 .lottery-player-submit-total { float: initial; }
+    .lottery-m6 .lottery-player-submit-total p:first-child { display: none; }
+    .lottery-m6 .lottery-player-submit-total p:last-child { font-size: 16px; line-height: 32px; text-align: center; }

@@ -1,0 +1,49 @@
+﻿<div class="page-header">
+    <br />
+    <h6>排序值从大到小</h6>
+    <div class="page-searchbox">
+        <form action="setting-player-info.html" method="post">
+            分类：<select name="Category" class="txt" data-bind-action="/admin/game/playercategory" data-bind-type="ajax" data-bind-callback="select" data-bind-data="parent"><option value="">所有分类</option></select>
+            游戏名称：<input type="text" name="Name" class="txt w150" placeholder="游戏名称" />
+            平台：<select name="Platform" class="txt">
+                <option value="PC">网页版</option>
+                <option value="Mobile">移动端</option>
+            </select>
+            <input type="submit" value="搜索" class="am-btn am-btn-success am-round am-btn-xs" />
+            <input type="reset" value="重置" class="am-btn am-btn-default am-round am-btn-xs" />
+        </form>
+    </div>
+    <div class="page-action">
+        <input type="button" value="同步游戏数据" class="am-btn am-btn-success am-round am-text-xs"
+               data-bind-action="/admin/game/playersync" data-bind-type="ajax" data-bind-callback="form-tip,success-fire" data-bind-fire-target="setting-player-info-list" data-bind-stop="true" data-bind-event="click" data-bind-data="parent" />
+    </div>
+</div>
+<div class="page-table" id="setting-player-info-list" data-bind-action="/admin/game/playerlist" data-bind-type="list" data-bind-callback="list,update" data-bind-load="search,pagesplit" data-bind-data="parent" data-bind-pagesize="">
+    <table class="list">
+        <thead>
+            <tr>
+                <th>编号</th>
+                <th>分类</th>
+                <th>名称</th>
+                <th>使用平台</th>
+                <th>推荐</th>
+                <th>开启</th>
+                <th>排序值</th>
+            </tr>
+        </thead>
+        <tbody data-list-element="true">
+            <tr data-bind-update-action="/admin/game/updateplayercategory">
+                <td>${ID}</td>
+                <td>${Category}</td>
+                <td>${Name}</td>
+                <td>${Platform}</td>
+                <td><input type="checkbox" value="1" data-type="switch" data-update-name="IsTop" data-update-id="${ID}" data-checked="${IsTop}"></td>
+                <td>
+                    <input type="checkbox" value="1" data-type="switch" data-update-name="IsOpen" data-update-id="${ID}" data-checked="${IsOpen}">
+                </td>
+                <td><input type="number" class="txt w50" name="Sort" data-update-name="Sort" data-update-id="${ID}" value="${Sort}" /></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+

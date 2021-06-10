@@ -1,0 +1,66 @@
+﻿@keyframes bg1 {
+    0% { opacity: 1; }
+    20% { opacity: 1; }
+    30% { opacity: 0; }
+    90% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+@keyframes bg2 {
+    0% { opacity: 0; }
+    20% { opacity: 0; }
+    30% { opacity: 1; }
+    70% { opacity: 1; }
+    100% { opacity: 0; }
+}
+
+@keyframes bg3 {
+    0% { opacity: 0; }
+    70% { opacity: 0; }
+    90% { opacity: 1; }
+    100% { opacity: 0; }
+}
+
+@keyframes login {
+    0% { top: -80px; }
+    100% { top: 50%; }
+}
+
+@keyframes login-title {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+@keyframes login-success {
+    50% { width: 0px; height: 0px; left: 100%; top: 0px; margin-left: 0px; margin-right: 0px; transform: rotate(720deg); }
+    100% { width: 0px; height: 0px; left: 110%; top: -100px; opacity: 0; }
+}
+
+html, body { height: 100%; }
+.background { height: 100%; }
+    .background .item { position: absolute; left: 0px; top: 0px; width: 100%; height: 100%; background-repeat: no-repeat; background-size: cover; opacity: 0; animation-duration: 20s; animation-iteration-count: infinite; }
+    .background .bg1 { background-image: url(../images/bg1.jpg); animation-name: bg1; }
+    .background .bg2 { background-image: url(../images/bg2.jpg); animation-name: bg2; }
+    .background .bg3 { background-image: url(../images/bg3.jpg); animation-name: bg3; }
+
+
+.login { width: 420px; height: 160px; position: fixed; top: 50%; left: 50%; margin-left: -210px; margin-top: -80px; text-align: center; animation: login 1s; }
+    .login h1 { width: 420px; height: 88px; background: url(../images/login-tit.png) no-repeat; margin-bottom: 10px; }
+    .login a { height: 42px; width: 226px; font-size: 14px; color: #fff; display: inline-block; line-height: 42px; letter-spacing: 5px; border-color: #00bbee; background: #00bbee; border-radius: 8px; }
+        .login a:hover { border-color: #00a3d2; background: #00a3d2; }
+
+.diag { position: absolute; left: 50%; top: 50%; }
+
+.loginbox { position: absolute; background-color: rgba(0,0,0,0.8); border-radius: 8px; box-shadow: 0px 0px 10px; }
+    .loginbox h2 { height: 42px; line-height: 42px; color: #fff; font-size: 16px; text-align: center; }
+    .loginbox p { width: 220px; margin: auto; height: 65px; line-height: 40px; }
+    .loginbox i { width: 40px; height: 40px; background-color: #aaabab; float: left; font-size: 22px; color: white; text-align: center; }
+    .loginbox .txt { width: 180px; height: 40px; border: none; background: #fff; float: left; text-indent: 1em; font-size: 16px; }
+    .loginbox .button { border: 1px solid #00bbee; background: #00bbee; height: 40px; line-height: 40px; border-radius: 6px; width: 100%; color: white; font-size: 16px; }
+
+.login-success { animation: login-success 4s; overflow: hidden; }
+
+div.diag.login-faild { animation-duration: 0.5s; }
+
+.loading-form { background-image: url(../images/loadbar.gif); background-repeat: no-repeat; background-position: center center; }
+    .loading-form > * { visibility: hidden; }

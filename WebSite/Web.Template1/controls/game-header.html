@@ -1,0 +1,36 @@
+﻿<a href="game.html" class="logo"></a>
+<div class="header-userinfo" id="header-userinfo" data-bind-action="/handler/user/info/get" data-bind-type="ajax" data-bind-callback="checklogin,header-userinfo,showmoney,loading-complete">
+    <div class="header-userinfo-item" data-submenu="0">
+        <label>用户名：</label><span data-name="Name"></span>
+    </div>
+    <div class="header-userinfo-item" data-submenu="1">
+        <label>余额：</label>
+        <span class="money-show" data-money-field="Money"></span>
+        <label>元</label>
+    </div>
+    <a href="javascript:" class="btn btn-orange" onclick="BW.OpenFrame($(this));" data-name="Person" data-title="个人中心" data-src="info/person.html" data-callback="frame-tab,frame-control,frame-person-recharge">充值</a>
+    <a href="javascript:" class="btn btn-green" onclick="BW.OpenFrame($(this));" data-name="Person" data-title="个人中心" data-src="info/person.html" data-callback="frame-tab,frame-control,frame-person-withdraw">提现</a>
+    <a href="javascript:" class="btn btn-red" data-diag-name="app-download" data-diag-type="control" data-diag-src="controls/download.html" data-diag-cssname="diag-download" data-diag-width="980" data-diag-height="280" data-diag-mask="true" data-diag-callback="index-download">手机客户端</a>
+    <a href="javascript:" target="_blank" class="btn btn-gray" id="app-pc">电脑客户端</a>
+    <a href="javascript:" class="sound"></a>
+    <a href="javascript:" class="theme"></a>
+
+    <div class="sub-menu">
+        <p class="ft14">用户名：<span data-name="UserName" class="purple"></span></p>
+        <p class="ft14">奖金：<span data-name="Rebate" class="red"></span></p>
+        <a href="javascript:" data-bind-action-delay="/handler/user/account/logout" data-bind-type="ajax" data-bind-callback="header-logout" data-bind-target="header-userinfo" data-bind-event="click" data-bind-stop="1"><span class="ico-logout">退出</span></a>
+    </div>
+
+    <div class="sub-menu">
+        <p class="ft14">可用余额：<span data-name="Money" class="purple"></span></p>
+        <p class="ft14">锁定金额：<span data-name="LockMoney" class="red"></span></p>
+        <p class="ft14">游戏钱包：<span data-name="Wallet" class="green"></span></p>
+    </div>
+
+    <div class="sub-menu theme-background">
+
+    </div>
+</div>
+
+<div class="header-taskbar" id="header-taskbar">
+</div>

@@ -1,0 +1,171 @@
+﻿<!-- 彩票的信息显示 -->
+<div class="lottery-info-tab">
+    <a href="javascript:" class="lottery-info-result">今日开奖</a>
+    <a href="javascript:" class="lottery-info-money">账户全览</a>
+    <a href="javascript:" class="lottery-info-moneylog">帐变明细</a>
+    <!--<a href="javascript:" class="lottery-info-reward">中奖名单</a>-->
+    <a href="javascript:" target="_blank" class="lottery-info-trend btn btn-red">走势图</a>
+</div>
+<!-- 今日开奖 -->
+<div class="lottery-info-content lottery-info-content-result" data-bind-action="handler/game/lottery/resultnumber" data-bind-type="list" data-bind-callback="list,lottery-info-resultnumber" data-bind-data="parent" data-bind-stop="true">
+    <table>
+        <thead>
+            <tr>
+                <th>期号</th>
+                <th>开奖号码</th>
+            </tr>
+        </thead>
+        <tbody data-list-element="true">
+            <tr>
+                <td>${Index}</td>
+                <td data-number="true">${Number}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<!-- 合买 -->
+<!--
+<div class="lottery-info-content" data-bind-action="handler/game/lottery/unitedlist" data-bind-type="list" data-bind-callback="list,lottery-info-united" data-bind-data="parent,pagesize=3" data-bind-stop="true">
+    <table>
+        <thead>
+            <tr>
+                <th>期号</th>
+                <th>总金额</th>
+                <th>当前进度</th>
+                <th>状态</th>
+                <th>操作</th>
+            </tr>
+        </thead>
+        <tbody data-list-element="true">
+            <tr>
+                <td>${Index}</td>
+                <td>${Money:money}</td>
+                <td>${Progress:p}</td>
+                <td>${StatusName}</td>
+                <td><a href="javascript:" class="btn btn-blue btn-xs" data-diag-name="lottery-united-info" data-diag-title="参与合买" data-diag-mask="true" data-diag-drag="true" data-diag-type="control" data-diag-src="controls/lottery-united-info.html" data-diag-data="id=${ID}" data-diag-width="800" data-diag-height="600">参与合买</a></td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <td colspan="5" class="text-center padding-5">
+                    <div class="lineHeight"></div>
+                    <a href="javascript:" class="btn btn-xl btn-green btn-block" style="margin:auto;" data-diag-name="lottery-united-index" data-diag-title="合买大厅" data-diag-mask="true" data-diag-drag="true" data-diag-type="control" data-diag-src="controls/lottery-united-index.html" data-diag-width="800" data-diag-height="600">查看更多</a>
+                </td>
+            </tr>
+        </tfoot>
+    </table>
+</div>
+-->
+<!-- 账户全览 -->
+<div class="lottery-info-content lottery-info-content-account" data-bind-action="handler/game/lottery/accountcount" data-bind-type="ajax" data-bind-callback="html" data-bind-data="parent" data-bind-stop="true">
+    <div class="item">
+        <h3>${Bet:money}</h3>
+        <h6>今日投注</h6>
+    </div>
+    <div class="item">
+        <h3>${Reward:money}</h3>
+        <h6>今日中奖</h6>
+    </div>
+</div>
+<!-- 帐变明细 -->
+<div class="lottery-info-content" data-bind-action="handler/user/money/moneylog" data-bind-type="list" data-bind-callback="list" data-bind-data="parent" data-bind-stop="true">
+    <table>
+        <thead>
+            <tr>
+                <th>时间</th>
+                <th>帐变类型</th>
+                <th>金额</th>
+                <th>余额</th>
+            </tr>
+        </thead>
+        <tbody data-list-element="true">
+            <tr>
+                <td>${CreateAt}</td>
+                <td>${Type}</td>
+                <td>${Money:money}</td>
+                <td>${Balance:money}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<!-- 中奖名单 -->
+<!--<div class="lottery-info-content" data-bind-action="handler/game/lottery/rewardlist" data-bind-type="list" data-bind-callback="list" data-bind-data="parent" data-bind-stop="true">
+    <table>
+        <tbody data-list-element="true">
+            <tr>
+                <td class="left">
+                    &nbsp;&nbsp;
+                    恭喜玩家<span class="red">${UserName}</span>在<span class="red">${Game}</span>喜中<span class="red">${Reward:money}</span>元
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>-->
+
+<div class="lottery-info-content">
+
+</div>
+
+<script type="text/javascript">
+    BW.callback["lottery-info-resultnumber"] = function (result) {
+        var t = this;
+        var game = t.dom.element.getParent("[data-game]");
+        if (game == null) return;
+        var head = null;
+        var funs = null;
+        switch (game.get("data-game")) {
+            case "X5":
+                head = ["后三组态", "总和", "龙虎"];
+                funs = [function (value) {
+                    var list = value.split(',').filter(function (item, index) {
+                        return index > 1;
+                    });
+                    return ["豹子", "组三", "组六"][list.distinct().length - 1];
+                }, function (value) {
+                    var sum = 0;
+                    value.split(',').each(function (item, index) {
+                        sum += item.toInt();
+                    });
+                    return (sum >= 23 ? "大" : "小") + (sum % 2 == 0 ? "双" : "单");
+                }, function (value) {
+                    var list = value.split(',');
+                    var n1 = list[0].toInt();
+                    var n2 = list.getLast().toInt();
+                    var result = "和";
+                    if (n1 > n2) {
+                        result = "龙";
+                    } else if (n1 < n2) {
+                        result = "虎";
+                    }
+                    return result;
+                }];
+                break;
+        }
+
+
+        var thead = t.dom.element.getElement("thead tr");
+        var tbody = t.dom.element.getElement("tbody");
+        if (!thead.getElement("[data-header]")) {
+            head.each(function (item) {
+                new Element("th", {
+                    "data-header": true,
+                    "text": item
+                }).inject(thead);
+            });
+        }
+
+        tbody.getElements("tr").each(function (item) {
+            if (item.getElement("[data-header]")) return;
+            var td = item.getElement("td[data-number]");
+            if (!td) return;
+            var value = td.get("text");
+            funs.each(function (fun) {
+                new Element("td", {
+                    "data-header": true,
+                    "text": fun(value)
+                }).inject(item);
+            });
+        });
+    };
+</script>

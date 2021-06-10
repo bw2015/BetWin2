@@ -1,0 +1,43 @@
+﻿<div class="page-header">
+    <h1>留言反馈</h1>
+</div>
+<div class="page-table">
+    <table class="list" data-bind-action="admin/site/feedlist" data-bind-type="list" data-bind-callback="list" data-bind-load="pagesplit">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>用户</th>
+                <th>联系信息</th>
+                <th>备注信息</th>
+                <th>IP</th>
+                <th>提交时间</th>
+                <th>操作</th>
+            </tr>
+        </thead>
+        <tbody data-list-element="true">
+            <tr data-bind-delete="true">
+                <td>${ID}</td>
+                <td><a href="javascript:" data-userid="${UserID}" class="diag-user">${UserName}</a></td>
+                <td>
+                    <i class="am-icon-qq"></i>${QQ}
+                    <i class="am-icon-at"></i>${Email}
+                    <i class="am-icon-skype"></i>${Skype}
+                    <i class="am-icon-phone"></i>${Other}
+                </td>
+                <td>
+                    ${Content}
+                </td>
+                <td>
+                    ${IP}
+                    <span class="am-text-xs">(${IPAddress})</span>
+                </td>
+                <td>
+                    ${CreateAt}
+                </td>
+                <td>
+                    <a href="javascript:" data-bind-action="admin/site/deletefeed" data-bind-type="ajax" data-bind-callback="delete" data-bind-stop="true" data-bind-event="confirm" data-bind-data="ID=${ID}">删除</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

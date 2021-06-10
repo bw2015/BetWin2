@@ -1,0 +1,67 @@
+﻿<div class="frame-info-content">
+    <h3>
+        投注记录
+        <span class="buttons">
+            <a href="javascript:" class="btn btn-blue"data-bind-action="info/report-lotteryhistory.html" data-bind-type="control" data-bind-target="info-report-content" data-bind-callback="ui-calendar" data-bind-event="click" data-bind-stop="1">历史订单记录</a>
+        </span>
+    </h3>
+    <div class="frame-info-search">
+        <form action="report-lotterylog.html" method="post">
+            彩种：<select name="Type" class="txt" data-bind-action="/handler/user/lottery/gamelist" data-bind-type="ajax" data-bind-callback="select" data-select-value="Game" data-select-text="Name">
+                <option value="">所有类型</option>
+            </select>
+            &nbsp;&nbsp;
+            状态：<select name="Status" class="txt" data-bind-action="/handler/user/lottery/orderstatus" data-bind-type="ajax" data-bind-callback="select">
+                <option value="">所有状态</option>
+            </select>
+            &nbsp;&nbsp;
+            查看：<select name="View" class="txt">
+                <option value="0">自己</option>
+                <option value="1">直属下级</option>
+                <option value="2">所有下级</option>
+                <option value="3">指定用户</option>
+            </select>
+            &nbsp;&nbsp;
+            用户：<input type="text" name="User" class="txt" disabled="disabled" />
+            &nbsp;&nbsp;
+            时间范围：<input type="text" class="txt" name="StartAt" data-type="calendar" size="8" readonly="readonly" />
+            ～
+            <input type="text" class="txt" name="EndAt" data-type="calendar" size="8" readonly="readonly" />
+            <input type="submit" value="搜索" class="btn btn-blue" />
+        </form>
+    </div>
+
+    <table class="list" data-bind-action="/handler/user/lottery/orderlist" data-bind-type="list" data-bind-callback="list" data-bind-load="search,pagesplit,report-moneylog">
+        <thead>
+            <tr>
+                <th>编号</th>
+                <th>用户名</th>
+                <th>彩种</th>
+                <th>玩法</th>
+                <th>投注内容</th>
+                <th>模式</th>
+                <th>倍数</th>
+                <th>注数</th>
+                <th>金额</th>
+                <th>状态</th>
+            </tr>
+        </thead>
+        <tbody data-list-element="true">
+            <tr>
+                <td><a href="javascript:" class="btn btn-blue" data-diag-name="report-betlog-detail" data-diag-type="control" data-diag-src="diag/lotteryorder-info.html" data-diag-title="投注订单：${ID}" data-diag-mask="true" data-diag-drag="true" data-diag-data="id=${ID}" data-diag-width="800" data-diag-height="600">${ID}</a></td>
+                <td>${UserName}</td>
+                <td>${Type}</td>
+                <td>${Player}</td>
+                <td>${Number}</td>
+                <td>${Mode:lottery-mode}</td>
+                <td>${Times}</td>
+                <td>${Bet}</td>
+                <td class="red">${Money:money}</td>
+                <td>
+                    ${Reward:money-reward}
+                    ${Status}
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

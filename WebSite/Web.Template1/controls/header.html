@@ -1,0 +1,77 @@
+﻿<div class="common-header common-index">
+    <a href="game.html" class="logo"></a>
+    <div class="header-info">
+        <div class="header-userinfo" id="header-userinfo" data-bind-action="/handler/user/info/get" data-bind-type="ajax" data-bind-callback="index-getuserinfo">
+            <div class="header-guest">
+                <i class="icon icon16 icon-user"></i>
+                <a href="javascript:" data-diag-name="loginbox" data-diag-cssname="diag-loginbox" data-diag-type="control" data-diag-src="/controls/loginbox.html" data-diag-callback="form" data-diag-mask="true" data-diag-height="470" data-diag-title="会员登录" data-diag-drag="true" data-height="420">登录</a>
+                <span class="split">|</span>
+                <a href="register.html" id="lnkRegister">注册</a>
+                <span class="split">|</span>
+                <a href="javascript:" class="code-google" data-diag-name="login-code" data-diag-src="controls/login-code.html" data-diag-type="control" data-diag-title="快速登录" data-diag-width="320" data-diag-height="240" data-diag-cssname="diag-google-code">快速登录</a>
+                <span class="split">|</span>
+                <a href="javascript:" class="forget" data-diag-name="forget-diag" data-diag-src="controls/forget.html" data-diag-type="control" data-diag-title="忘记密码" data-diag-drag="true" data-diag-cssname="diag-forget" data-diag-mask="true">忘记密码</a>
+            </div>
+            <div class="header-user">
+                <i class="icon icon16 icon-user"></i>
+                <a href="game.html">欢迎您，${Name}</a>
+                <span class="split">|</span>
+                <a href="game.html">游戏大厅</a>
+                <span class="split">|</span>
+                <a href="javascript:" id="lnk-logout" data-bind-action-delay="/handler/user/account/logout" data-bind-type="ajax" data-bind-callback="index-getuserinfo" data-bind-target="header-userinfo" data-bind-event="click" data-bind-stop="1">退出登录</a>
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+    BW.callback["index-getuserinfo"] = function (result) {
+        var t = this;
+        var guest = t.dom.container.getElement(".header-guest");
+        var user = t.dom.container.getElement(".header-user");
+        if (result.success) {
+            window["USER_ISLOGIN"] = true;
+            user.set("html", user.get("html").toHtml(result.info));
+            user.setStyle("display", "block");
+            guest.setStyle("display", "none");
+            if (location.href.contains("logout")) {
+                new BW.Bind($("lnk-logout")).fire();
+                location.href = "#" + new Date().getTime().toString(32);
+            }
+        } else {
+            window["USER_ISLOGIN"] = false;
+            user.setStyle("display", "none");
+            guest.setStyle("display", "block");
+        }
+
+
+        var loadRegister = function () {
+            if (!GolbalSetting.Site || !GolbalSetting.Site.Setting) {
+                loadRegister.delay(50);
+                return;
+            }
+
+            var lnk = t.dom.element.getElement("#lnkRegister");
+            var split = lnk.getNext("span");
+            if (!GolbalSetting.Site.Setting.RegisterInvite) {
+                lnk.dispose();
+                split.dispose();
+            } else {
+                lnk.set("href", "register.html#" + GolbalSetting.Site.Setting.RegisterInvite);
+            }
+
+            var speed = GolbalSetting.Site.Domain.filter(function (item) { return item.IsSpeed == "true"; });
+            if (speed.length > 0) {
+                new Element("span", {
+                    "class": "split",
+                    "text": "|"
+                }).inject(guest);
+                new Element("a", {
+                    "href": speed[0].Link,
+                    "text": "切换线路"
+                }).inject(guest);
+            }
+        };
+
+        loadRegister();
+    };
+</script>

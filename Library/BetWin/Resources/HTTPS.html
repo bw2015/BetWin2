@@ -1,0 +1,17 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>HTTPS</title>
+    <script type="text/javascript">
+        var host = location.host;
+        if (host.indexOf(":") != -1) host = host.substr(0, host.indexOf(":"));
+        var url = location.pathname;
+        location.href = "https://" + host + url;
+    </script>
+</head>
+<body>
+
+</body>
+</html>

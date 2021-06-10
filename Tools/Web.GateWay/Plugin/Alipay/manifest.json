@@ -1,0 +1,28 @@
+﻿{
+  "name": "支付宝自动到帐插件",
+  "version": "2.1.1",
+  "manifest_version": 2,
+  "description": "应对支付宝升级，查询账单需扫码授权的问题。",
+  "background": {
+    "scripts": [ "scripts/mootools.js", "scripts/md5.js", "scripts/background.js" ]
+  },
+  "icons": {
+    "16": "favicon.png",
+    "48": "favicon.png",
+    "128": "favicon.png"
+  },
+  "browser_action": {
+    "default_icon": "favicon.png",
+    "default_popup": "popup.html"
+  },
+  "content_scripts": [
+    {
+      "matches": [ "https://personalweb.alipay.com/portal/i.htm" ],
+      "css": [ "styles/client-alipay.css" ],
+      "js": [ "scripts/mootools.js", "scripts/content-alipay.js" ],
+      "run_at": "document_end",
+      "all_frames": true
+    }
+  ],
+  "permissions": [ "https://personalweb.alipay.com/portal/i.htm" ]
+}

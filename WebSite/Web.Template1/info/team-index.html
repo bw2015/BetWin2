@@ -1,0 +1,165 @@
+﻿<div class="frame-info-content">
+    <div class="info-team-index-info" data-bind-action="/handler/user/team/today" data-bind-type="ajax" data-bind-callback="html">
+        <div class="item">
+            <h4>今日返点</h4>
+            <h5 class="red ft14">${Return:money}</h5>
+        </div>
+        <div class="item">
+            <h4>今日佣金</h4>
+            <h5 class="red ft14">${Agent:money}</h5>
+        </div>
+        <div class="item">
+            <h4>查看配额</h4>
+            <h5 class="red ft14">查看配额详情</h5>
+        </div>
+        <div class="item">
+            <h4>团队人数</h4>
+            <h5 class="red ft14">${Member}人</h5>
+        </div>
+        <div class="item">
+            <h4>团队余额</h4>
+            <h5 class="red ft14">${Balance:money}</h5>
+        </div>
+        <div class="item">
+            <h4>在线人数</h4>
+            <h5 class="red ft14">${Online}人</h5>
+        </div>
+    </div>
+
+    <div class="info-team-statistics-bar" id="info-team-statistics-bar" data-bind-action="/handler/user/team/datestatistics" data-bind-type="ajax" data-bind-load="info-team-statistics,ui-calendar" data-bind-callback="html" data-bind-target="info-team-statistics" data-bind-search="info-team-statistics-search" data-bind-stop="true">
+        <div class="info-team-statistics-tab">
+            <a href="javascript:" data-date="today">今日</a>
+            <a href="javascript:" data-date="yesterday">昨日</a>
+            <a href="javascript:" data-date="week">最近七天</a>
+        </div>
+        <div class="info-team-statistics-search" id="info-team-statistics-search">
+            <input type="text" name="StartAt" class="info-team-statistics-search-date" readonly="readonly" data-type="calendar" />
+            -
+            <input type="text" name="EndAt" class="info-team-statistics-search-date" readonly="readonly" data-type="calendar" />
+            <button class="info-team-statistics-search-submit" data-event-fire="info-team-statistics-bar">查询</button>
+        </div>
+    </div>
+    <ul class="info-team-statistics" id="info-team-statistics">
+        <li>
+            <a href="javascript:" class="info-team-statistics-1">
+                <span><i class="icon icon40 recharge"></i></span>
+                <h4>充值量</h4>
+                <h5>${Recharge:money}</h5>
+            </a>
+        </li>
+        <li>
+            <a href="javascript:" class="info-team-statistics-2">
+                <span><i class="icon icon40 withdraw"></i></span>
+                <h4>提现量</h4>
+                <h5>${Withdraw:money}</h5>
+            </a>
+        </li>
+        <li>
+            <a href="javascript:" class="info-team-statistics-3">
+                <span><i class="icon icon40 bet"></i></span>
+                <h4>投注量</h4>
+                <h5>${Bet:money}</h5>
+            </a>
+        </li>
+        <li>
+            <a href="javascript:" class="info-team-statistics-4">
+                <span><i class="icon icon40 rebate"></i></span>
+                <h4>返点量</h4>
+                <h5>${Return:money}</h5>
+            </a>
+        </li>
+        <li>
+            <a href="javascript:" class="info-team-statistics-5">
+                <span><i class="icon icon40 user"></i></span>
+                <h4>新增用户</h4>
+                <h5>${Member}</h5>
+            </a>
+        </li>
+    </ul>
+    <div class="info-team-statistics-report" data-bind-action="handler/user/team/getteamcalendar" data-bind-type="ajax" data-bind-callback="info-team-calendar">
+    </div>
+</div>
+
+<script type="text/javascript">
+    BW.load["info-team-statistics"] = function () {
+        var t = this;
+        var start = t.dom.element.getElement("[name=StartAt]");
+        var end = t.dom.element.getElement("[name=EndAt]");
+        var datetab = t.dom.element.getElements("[data-date]");
+        datetab.addEvent("click", function () {
+            var obj = this;
+            var endat = new Date().ToShortDateString();
+            var startat = new Date();
+            switch (obj.get("data-date")) {
+                case "yesterday":
+                    startat = startat.AddDays(-1);
+                    endat = startat.ToShortDateString();
+                    break;
+                case "week":
+                    startat = startat.AddDays(-7);
+                    break;
+            }
+            start.set("value", startat.ToShortDateString());
+            end.set("value", endat);
+
+            setCurrent(datetab, obj);
+
+            t.fire.delay(50, t);
+        });
+        datetab[0].fireEvent("click");
+    }
+
+    BW.callback["info-team-calendar"] = function (result) {
+        var t = this;
+        t.dom.element.setStyles({
+            "width": t.dom.element.getWidth(),
+            "height": t.dom.element.getHeight()
+        });
+
+        var option = {
+            color: ['#3398DB', '#FF98DB'],
+            tooltip: {
+                trigger: 'axis',
+                axisPointer: {            // 坐标轴指示器，坐标轴触发有效
+                    type: 'shadow'        // 默认为直线，可选为：'line' | 'shadow'
+                }
+            },
+            grid: {
+                left: '3%',
+                right: '4%',
+                bottom: '3%',
+                containLabel: true
+            },
+            xAxis: [
+                {
+                    type: 'category',
+                    data: [],
+                    axisTick: {
+                        alignWithLabel: true
+                    }
+                }
+            ],
+            yAxis: [
+                {
+                    type: 'value'
+                }
+            ],
+            series: [
+                {
+                    name: '盈亏',
+                    type: 'bar',
+                    barWidth: '60%',
+                    data: []
+                }
+            ]
+        };
+
+        result.info.list.each(function (item) {
+            option.xAxis[0].data.push(htmlFunction["date"](item.Date));
+            option.series[0].data.push(item.Money);
+        });
+
+        var myChart = echarts.init(t.dom.element);
+        myChart.setOption(option);
+    }
+</script>

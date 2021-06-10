@@ -1,0 +1,28 @@
+﻿<div class="page-header">
+    <h1>关键词设定</h1>
+    <h6>机器人根据关键词自动回复，多个关键词用空格隔开。如果出现关键词重复将会随机回答</h6>
+    <div class="page-action">
+        <a href="javascript:" class="am-btn am-btn-success am-round" data-diag-name="service-keyword-info" data-diag-type="control" data-diag-src="services/keyword-info.html" data-diag-title="添加关键词" data-diag-mask="true">添加关键词</a>
+    </div>
+</div>
+<div class="page-table">
+    <table class="list" id="service-keyword-list" data-bind-action="admin/im/keywordlist" data-bind-type="list" data-bind-callback="list" data-bind-load="pagesplit">
+        <thead>
+            <tr>
+                <th class="w180">关键词</th>
+                <th>回复内容</th>
+                <th class="w100">操作</th>
+            </tr>
+        </thead>
+        <tbody data-list-element="true">
+            <tr data-bind-delete="true">
+                <td>${Keyword}</td>
+                <td class="am-text-left am-text-xs">${Content}</td>
+                <td>
+                    <a href="javascript:" data-diag-name="service-keyword-info" data-diag-type="control" data-diag-src="services/keyword-info.html" data-diag-title="修改关键词设置" data-diag-mask="true" data-diag-data="id=${ID}">修改</a>
+                    <a href="javascript:" data-bind-action="admin/im/deletekeyword" data-bind-type="ajax" data-bind-callback="delete" data-bind-stop="true" data-bind-event="confirm" data-bind-data="id=${ID}">删除</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

@@ -1,0 +1,8 @@
+﻿body { background: #484848; }
+.container { width: 980px; margin: auto; }
+header { display: block; background: #fff; height: 40px; }
+    header .wechat { width: 130px; height: 40px; background: url(../images/logo-wechat.png); float: left; }
+
+.main { height: 695px; background: url(../images/wechat-bg.jpg) no-repeat center top; position: relative; padding-top: 500px; }
+    .main .qrcode { background: url(../images/wechat-qrcode.jpg) no-repeat; width: 250px; height: 250px; position: absolute; left: 50%; top: 80px; margin-left: -445px; background-size: contain; }
+.step { width: 920px; padding-top: 600px; background:#fff url(../images/wechat-step.jpg) no-repeat center 10px; margin: auto; }

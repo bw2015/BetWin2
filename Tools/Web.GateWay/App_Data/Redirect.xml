@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<root>
+  <item key="BetWin" value="http://t1.betwin.ph/mobile/" />
+  
+  <item key="YINHE" value="http://www.diyiyinhe.com/mobile/" />
+  
+  <item key="YIFA" value="http://yf18.net/mobile/" />
+  <item key="1004m" value="http://yf18.net/mobile/" />
+
+  <item key="1005" value="http://www.boqu518.com/" />
+  <item key="1005m" value="http://www.boqu518.com/mobile/" />
+  
+  <item key="WANLI" value="http://www.wanli018.com/mobile/" />
+  
+  <item key="JINZUAN" value="http://www.jinzuan666.net/" />
+  <item key="JINZUANm" value="http://www.jinzuan666.net/mobile/" />
+  
+  <item key="BOQU8" value="http://www.boqu888.com/mobile/" />
+  <item key="BOQU" value="http://www.boqu888.com/" />
+
+  <item key="XTDm" value="http://www.xtd888.shop/mobile/" />
+  <item key="XTD" value="http://www.xtd888.shop/" />
+
+  <!-- 1011 汇宝娱乐 -->
+  <item key="1011m" value="/mobile/1011144" />
+  <item key="1011" value="http://www.91link.cn/" />
+
+  <!-- 1012 壬天堂II -->
+  <item key="1012" value="http://game1.rtt.lu:88/" />
+  <item key="1012m" value="http://game1.rtt.lu:88/mobile/" />
+</root>

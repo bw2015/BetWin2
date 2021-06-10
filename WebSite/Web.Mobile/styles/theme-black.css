@@ -1,0 +1,17 @@
+﻿/* 黑色背景皮肤 */
+
+html, body { background: url(../images/black//background.jpg) no-repeat center center; background-size: cover; }
+
+header { background: rgba(0,0,0,0.5) url(../images/black/header.png) repeat-x; border-bottom: none; }
+
+.user-home .recommend,
+.header-info .bar.bar-white,
+.header-info { background-color: transparent; background-image: none; }
+    .user-home .recommend .news { border-bottom-color: rgba(255,255,255,0.1); }
+        .user-home .recommend a,
+        .header-info .bar.bar-white a,
+        .header-info a,
+        .user-home .recommend .news a { color: white; }
+
+            .header-info .bar.bar-white a::after { background-color: rgba(255,255,255,0.1); }
+            .header-info .bar.bar-white a:last-child::after { display: none; }

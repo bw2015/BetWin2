@@ -1,0 +1,32 @@
+﻿<div class="page-header">
+    <h1>新增总代</h1>
+</div>
+<div class="page-table">
+    <form action="/admin/user/agentadd" method="post" data-bind-action="/admin/user/agentadd" data-bind-type="ajax" data-bind-callback="form-submit-tip" data-bind-load="setting-fill">
+        <table class="post">
+            <tr>
+                <th>用户名：</th>
+                <td><input type="text" name="UserName" class="txt am-form-field" placeholder="请输入用户名" required="required" /></td>
+            </tr>
+            <tr>
+                <th>返点：</th>
+                <td>
+                    <input type="number" name="Rebate" class="txt am-form-field" placeholder="返点值" required="required" />
+                    <span class="am-text-danger">当前系统返点值范围：<label>${Site.Setting.MinRebate}</label> ～ <label>${Site.Setting.MaxRebate}</label></span>
+                </td>
+            </tr>
+            <tr>
+                <th>登录密码：</th>
+                <td>
+                    <input type="text" name="Password" class="txt am-form-field" placeholder="登录密码" required="required" />
+                </td>
+            </tr>
+            <tr>
+                <th></th>
+                <td>
+                    <input type="submit" value=" 提交 " class="am-btn am-btn-success am-round" />
+                </td>
+            </tr>
+        </table>
+    </form>
+</div>

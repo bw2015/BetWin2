@@ -1,0 +1,411 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="12.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{780AA7CD-437D-41FD-A814-C42F7040CC91}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SP.Studio</RootNamespace>
+    <AssemblyName>SP.Studio</AssemblyName>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <IsWebBootstrapper>true</IsWebBootstrapper>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <PublishUrl>http://localhost/SP.Studio/</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Web</InstallFrom>
+    <UpdateEnabled>true</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\WebSite\Web.Handler\bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <DocumentationFile>
+    </DocumentationFile>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+    <Optimize>false</Optimize>
+    <DocumentationFile>
+    </DocumentationFile>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>false</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>
+    </AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.mshtml, Version=7.0.3300.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="System" />
+    <Reference Include="System.Activities" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Configuration.Install" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.IO.Compression" />
+    <Reference Include="System.IO.Compression.FileSystem" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.ServiceModel.Activities" />
+    <Reference Include="System.ServiceModel.Web" />
+    <Reference Include="System.Speech" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Array\ArrayAgent.cs" />
+    <Compile Include="Array\ArrayExtensions.cs" />
+    <Compile Include="Array\HashtableExtendsions.cs" />
+    <Compile Include="Cache\CacheAgent.cs" />
+    <Compile Include="Cache\CacheAttribute.cs" />
+    <Compile Include="Cache\ICacheBase.cs" />
+    <Compile Include="Cache\Redis\RedisAgent.cs" />
+    <Compile Include="Cache\Redis\IRedisBase.cs" />
+    <Compile Include="Cache\Redis\RedisCacheBase.cs" />
+    <Compile Include="Cache\Redis\RedisUtils.cs" />
+    <Compile Include="Cache\Redis\RedisResultStatus.cs" />
+    <Compile Include="Component\Regedit.cs" />
+    <Compile Include="Configuration\Config.cs" />
+    <Compile Include="Controls\Chart.cs" />
+    <Compile Include="Controls\Charts\ChartMode.cs" />
+    <Compile Include="Controls\Code.cs" />
+    <Compile Include="Core\HtmlEncodeAttribute.cs" />
+    <Compile Include="Data\DbAgentBase.cs" />
+    <Compile Include="Data\LockType.cs" />
+    <Compile Include="Data\Mapping\DbColumnAttribute.cs" />
+    <Compile Include="Data\TablesAttribute.cs" />
+    <Compile Include="Drawing\ImageUploadHandler.cs" />
+    <Compile Include="Files\LocalData.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LocalData.resx</DependentUpon>
+    </Compile>
+    <Compile Include="GateWay\AliYun\MQ\MessageQueue.cs" />
+    <Compile Include="GateWay\WeChat\SNSInfo.cs" />
+    <Compile Include="GateWay\WeChat\Token.cs" />
+    <Compile Include="GateWay\WeChat\UserToken.cs" />
+    <Compile Include="GateWay\WeChat\Utils.cs" />
+    <Compile Include="IO\DocumentAgent.cs" />
+    <Compile Include="Media\TTS.cs" />
+    <Compile Include="Model\AsyncResult.cs" />
+    <Compile Include="Model\Enums\ErrorType.cs" />
+    <Compile Include="Model\Enums\UserStatus.cs" />
+    <Compile Include="Model\GuestAttribute.cs" />
+    <Compile Include="Model\IMethod.cs" />
+    <Compile Include="Model\IPLimitAttribute.cs" />
+    <Compile Include="Model\PermissionAttribute.cs" />
+    <Compile Include="MQ\Publish.cs" />
+    <Compile Include="PageBase\ControlBase.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controls\HtmlEditor.cs" />
+    <Compile Include="Controls\KindEditor.cs" />
+    <Compile Include="Controls\LanguageKey.cs" />
+    <Compile Include="Controls\PageSplit.cs" />
+    <Compile Include="Controls\Table.cs" />
+    <Compile Include="Core\DateTimeExtensions.cs" />
+    <Compile Include="Core\EnumExtensions.cs" />
+    <Compile Include="Core\ISetting.cs" />
+    <Compile Include="Core\JsonBase.cs" />
+    <Compile Include="Core\NoFillAttribute.cs" />
+    <Compile Include="Core\ObjectExtensions.cs" />
+    <Compile Include="Core\SerializationExtensions.cs" />
+    <Compile Include="Core\ServerExtensions.cs" />
+    <Compile Include="Core\SettingBase.cs" />
+    <Compile Include="Core\TreeExtensions.cs" />
+    <Compile Include="Core\TypeExtensions.cs" />
+    <Compile Include="Core\XmlSettingBase.cs" />
+    <Compile Include="Data\DataExtension.cs" />
+    <Compile Include="Data\DataModule.cs" />
+    <Compile Include="Data\DbAgent.cs" />
+    <Compile Include="Data\DbExecutor.cs" />
+    <Compile Include="Data\DbFactory.cs" />
+    <Compile Include="Data\Linq\DataContextExtension.cs" />
+    <Compile Include="Data\Linq\EntityBase.cs" />
+    <Compile Include="Data\Linq\ExpressionExtend.cs" />
+    <Compile Include="Data\Linq\Mapping.cs" />
+    <Compile Include="Data\Linq\Sqlite\SqliteDataContext.cs" />
+    <Compile Include="Data\Linq\Sqlite\SqliteProvider.cs" />
+    <Compile Include="Data\Linq\Sqlite\SqliteQueryable.cs" />
+    <Compile Include="Data\Linq\Table.cs" />
+    <Compile Include="Data\Mapping\DbGeneratedArrtibute.cs" />
+    <Compile Include="Data\DbSetting.cs" />
+    <Compile Include="Data\IDbOperation.cs" />
+    <Compile Include="Data\DataContextExtension.cs" />
+    <Compile Include="Data\OledbOperation.cs" />
+    <Compile Include="Data\SQLiteOperation.cs" />
+    <Compile Include="Drawing\ImageAgent.cs" />
+    <Compile Include="Drawing\ValidateCodeHandler.cs" />
+    <Compile Include="ErrorLog\ErrorAgent.cs" />
+    <Compile Include="ErrorLog\ErrorLogModule.cs" />
+    <Compile Include="ErrorLog\IISLog.cs" />
+    <Compile Include="Files\Language.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Language.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Interop\SystemManager.cs" />
+    <Compile Include="IO\FileAgent.cs" />
+    <Compile Include="IO\FileExtension.cs" />
+    <Compile Include="Json\JsonAgent.cs" />
+    <Compile Include="Model\AgentBase.cs" />
+    <Compile Include="Model\EnumObject.cs" />
+    <Compile Include="Model\FormatAttribute.cs" />
+    <Compile Include="Model\FormModel.cs" />
+    <Compile Include="Model\IAutoSave.cs" />
+    <Compile Include="Model\Link.cs" />
+    <Compile Include="Model\Notification.cs" />
+    <Compile Include="Model\Result.cs" />
+    <Compile Include="Model\XMLBase.cs" />
+    <Compile Include="Net\FTPAgent.cs" />
+    <Compile Include="Net\ReverseProxy.cs" />
+    <Compile Include="PageBase\ExcelHandler.cs" />
+    <Compile Include="PageBase\FormBase.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PageBase\HandlerBase.cs" />
+    <Compile Include="PageBase\IHandlerBase.cs" />
+    <Compile Include="PageBase\MethodResult.cs" />
+    <Compile Include="PageBase\PlatformType.cs" />
+    <Compile Include="Permission\Model\AdminUser.cs" />
+    <Compile Include="Permission\Model\AdminMenu.cs" />
+    <Compile Include="Permission\Model\AdminStatus.cs" />
+    <Compile Include="Permission\PermissionAgent.cs" />
+    <Compile Include="Security\AES.cs" />
+    <Compile Include="Security\Auth.cs" />
+    <Compile Include="Security\DES.cs" />
+    <Compile Include="Security\GoogleAuthenticator.cs" />
+    <Compile Include="Security\HMAC.cs" />
+    <Compile Include="Security\RSA.cs" />
+    <Compile Include="Security\RSAJAVA.cs" />
+    <Compile Include="Text\ResponseBig5.cs" />
+    <Compile Include="IO\ZipAgent.cs" />
+    <Compile Include="Data\SqlDbOperation.cs" />
+    <Compile Include="Model\ModelBase.cs" />
+    <Compile Include="Net\CDN.cs" />
+    <Compile Include="Net\MailAgent.cs" />
+    <Compile Include="Net\NetAgent.cs" />
+    <Compile Include="Net\UploadAgent.cs" />
+    <Compile Include="PageBase\Pagebase.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="Security\MD5.cs" />
+    <Compile Include="Security\Rijndael.cs" />
+    <Compile Include="Text\ChineseAgent.cs" />
+    <Compile Include="Text\HtmlAgent.cs" />
+    <Compile Include="Text\StringAgent.cs" />
+    <Compile Include="Text\StringExtensions.cs" />
+    <Compile Include="Text\UbbCode.cs" />
+    <Compile Include="Web\BankType.cs" />
+    <Compile Include="Web\ChartAgent.cs" />
+    <Compile Include="Controls\Charts\Item.cs" />
+    <Compile Include="Controls\Charts\Singles.cs" />
+    <Compile Include="Controls\Charts\XmlDataBase.cs" />
+    <Compile Include="Web\ContextExtend.cs" />
+    <Compile Include="Web\Enums.cs" />
+    <Compile Include="Web\ExcelAgent.cs" />
+    <Compile Include="Web\FormAttribute.cs" />
+    <Compile Include="Web\IPAgent.cs" />
+    <Compile Include="Web\ipdb\BaseStation.cs" />
+    <Compile Include="Web\ipdb\BaseStationInfo.cs" />
+    <Compile Include="Web\ipdb\City.cs" />
+    <Compile Include="Web\ipdb\CityInfo.cs" />
+    <Compile Include="Web\ipdb\District.cs" />
+    <Compile Include="Web\ipdb\DistrictInfo.cs" />
+    <Compile Include="Web\ipdb\IDC.cs" />
+    <Compile Include="Web\ipdb\IDCInfo.cs" />
+    <Compile Include="Web\ipdb\InvalidDatabaseException.cs" />
+    <Compile Include="Web\ipdb\IPFormatException.cs" />
+    <Compile Include="Web\ipdb\MetaData.cs" />
+    <Compile Include="Web\ipdb\NotFoundException.cs" />
+    <Compile Include="Web\ipdb\Reader.cs" />
+    <Compile Include="Web\JSAgent.cs" />
+    <Compile Include="Web\LanguageBag.cs" />
+    <Compile Include="Web\MobileAgent.cs" />
+    <Compile Include="Web\SSLAgent.cs" />
+    <Compile Include="Web\UrlRewrite.cs" />
+    <Compile Include="Web\WebAgent.cs" />
+    <Compile Include="Xml\DynamicXml.cs" />
+    <Compile Include="Xml\XmlAgent.cs" />
+    <Compile Include="Xml\XmlExtension.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.2.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 2.0 %28x86%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.0 %28x86%29</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.VisualBasic.PowerPacks.10.0">
+      <Visible>False</Visible>
+      <ProductName>Microsoft Visual Basic PowerPacks 10.0</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Files\Language.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Language.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Files\LocalData.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>LocalData.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\Language\css.css" />
+    <Content Include="Resources\Language\js.js" />
+    <Content Include="Resources\Language\page.htm" />
+    <Content Include="Resources\LocalData\Bank.xml" />
+    <Content Include="Resources\LocalData\WorkDay.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Compress\" />
+    <Folder Include="GateWay\AliYun\MQ\SDK\" />
+    <Folder Include="GateWay\AliYun\SMS\" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="BouncyCastle">
+      <Version>1.8.4</Version>
+    </PackageReference>
+    <PackageReference Include="DocumentFormat.OpenXml">
+      <Version>2.8.1</Version>
+    </PackageReference>
+    <PackageReference Include="Microsoft.International.Converters.PinYinConverter">
+      <Version>1.0.0</Version>
+    </PackageReference>
+    <PackageReference Include="Newtonsoft.Json">
+      <Version>12.0.1</Version>
+    </PackageReference>
+    <PackageReference Include="StackExchange.Redis">
+      <Version>2.0.519</Version>
+    </PackageReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

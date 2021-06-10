@@ -1,0 +1,20 @@
+﻿<div class="page-table">
+    <table class="list" data-bind-action="admin/game/moneylog" data-bind-type="list" data-bind-callback="list" data-bind-load="pagesplit" data-bind-data="parent">
+        <thead>
+            <tr>
+                <th>额度帐变</th>
+                <th>余额</th>
+                <th>时间</th>
+                <th>备注信息</th>
+            </tr>
+        </thead>
+        <tbody data-list-element="true">
+            <tr>
+                <td>${Money:money-show}</td>
+                <td>${Balance:money}</td>
+                <td>${CreateAt}</td>
+                <td>${Description}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

@@ -1,0 +1,45 @@
+﻿<div class="frame-info">
+    <form action="team-user-rebate.html" data-bind-action="handler/user/team/saverebate" data-bind-type="ajax" data-bind-callback="form-tip,fire" data-bind-fire-target="team-user-list" data-bind-form-tip="diag-close">
+        <table class="post" data-bind-action="/handler/user/team/rebateinfo" data-bind-type="ajax" data-bind-callback="html,user-team-rebate-info" data-bind-data="parent">
+            <tr>
+                <th>用户名：</th>
+                <td>${UserName}</td>
+            </tr>
+            <tr>
+                <th>返点：</th>
+                <td>
+                    <select class="txt" name="Rebate"></select>
+                </td>
+            </tr>
+            <tr>
+                <th></th>
+                <td>
+                    <input type="hidden" name="ID" value="${UserID}" />
+                    <input type="submit" vlaue="修改" class="btn btn-blue" />
+                </td>
+            </tr>
+        </table>
+    </form>
+</div>
+
+<script type="text/javascript">
+    BW.callback["user-team-rebate-info"] = function (result) {
+        var t = this;
+        if (!result.success) {
+            new BW.Tip(result.msg, {
+                "callback": function () {
+                    BW.callback["diag-close"].apply(t, [result]);
+                }
+            });
+            return;
+        }
+        var select = t.dom.element.getElement("[name=Rebate]");
+        result.info.RebateList.each(function (item) {
+            new Element("option", {
+                "value": item,
+                "text": item,
+                "selected": item == result.info.Rebate
+            }).inject(select);
+        });
+    };
+</script>
